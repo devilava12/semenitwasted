@@ -1,0 +1,2 @@
+# semenitwasted
+web portofolio
