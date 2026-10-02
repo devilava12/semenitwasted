@@ -1,0 +1,21 @@
+# File sistem operasi (Windows & macOS)
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Folder konfigurasi editor kode (VS Code, IntelliJ, dll.)
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# File log
+*.log

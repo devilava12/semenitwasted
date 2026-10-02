@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Belajar Web - Creative Portfolio</title>
+  <meta name="description"
+    content="Personal creative portfolio and digital design showcase featuring UI design, icons, and illustrations.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo-nav.svg">
+
+  <!-- Google Fonts: Rubik -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <!-- Main Container -->
+  <div class="page-container">
+
+    <!-- Top Navbar -->
+    <header class="navbar-wrapper">
+      <nav class="navbar" id="mainNavbar">
+        <a href="#home" class="nav-brand" aria-label="Home">
+          <img src="assets/logo-nav.svg" alt="Brand Logo" class="brand-logo" width="116" height="48">
+        </a>
+
+        <!-- Desktop Menu -->
+        <ul class="nav-menu" id="navMenu">
+          <li class="nav-item">
+            <a href="#home" class="nav-link active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <ul class="mobile-nav-list">
+        <li><a href="#home" class="mobile-link active">Home</a></li>
+        <li><a href="#portfolio" class="mobile-link">Portfolio</a></li>
+        <li><a href="#about" class="mobile-link">About</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <main class="hero-section" id="home">
+
+      <!-- Desktop Interactive Canvas (>= 992px) -->
+      <div class="hero-stage-container">
+        <div class="hero-stage" id="heroStage">
+
+          <!-- Layer 1: Dark Graphic Composition Backdrop -->
+          <div class="stage-dark-bg" aria-hidden="true" style="left: 220px; top: 116px; width: 937px; height: 638px;">
+            <img src="assets/decorative-dark.svg" alt="" class="dark-svg-bg" draggable="false">
+          </div>
+
+          <!-- Layer 2: White Decorative Floating Tiles -->
+          <div class="stage-decoratives" aria-hidden="true">
+            <div class="decor-tile decor-14" style="left: 439px; top: 128px; width: 79px; height: 69px;"></div>
+            <div class="decor-tile decor-13" style="left: 375px; top: 155px; width: 48px; height: 42px;"></div>
+            <div class="decor-tile decor-12" style="left: 153px; top: 351px; width: 43px; height: 43px;"></div>
+            <div class="decor-tile decor-11" style="left: 470px; top: 571px; width: 42px; height: 42px;"></div>
+            <div class="decor-tile decor-10" style="left: 484px; top: 629px; width: 28px; height: 28px;"></div>
+            <div class="decor-tile decor-09" style="left: 756px; top: 90px; width: 79px; height: 69px;"></div>
+            <div class="decor-tile decor-08" style="left: 851px; top: 191px; width: 48px; height: 42px;"></div>
+            <div class="decor-tile decor-08-bar" style="left: 657px; top: 656px; width: 217px; height: 41px;"></div>
+            <div class="decor-tile decor-07" style="left: 657px; top: 713px; width: 96px; height: 41px;"></div>
+            <div class="decor-tile decor-06" style="left: 769px; top: 713px; width: 28px; height: 41px;"></div>
+            <div class="decor-tile decor-05" style="left: 813px; top: 713px; width: 28px; height: 41px;"></div>
+            <div class="decor-tile decor-04" style="left: 884px; top: 656px; width: 40px; height: 41px;"></div>
+            <div class="decor-tile decor-03" style="left: 940px; top: 657px; width: 28px; height: 41px;"></div>
+            <div class="decor-tile decor-02" style="left: 984px; top: 657px; width: 28px; height: 41px;"></div>
+            <div class="decor-tile decor-01" style="left: 1141px; top: 379px; width: 48px; height: 42px;"></div>
+          </div>
+
+          <!-- Layer 3: Main Interactive Cards -->
+          <div class="stage-cards">
+
+            <!-- Card 1: LinkedIn -->
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+              class="interactive-card card-linkedin" id="cardLinkedin" data-title="LinkedIn Profile"
+              data-desc="Connect on LinkedIn for professional collaborations and network."
+              style="left: 212px; top: 351px; width: 86px; height: 86px;">
+              <div class="card-inner">
+                <img src="assets/linkedin.svg" alt="LinkedIn" class="card-icon" width="61" height="60">
+              </div>
+            </a>
+
+            <!-- Card 2: Portfolio -->
+            <button type="button" class="interactive-card card-portfolio" id="cardPortfolio"
+              data-title="Portfolio Showcase" data-desc="Explore curated UI/UX, graphic design, and illustration works."
+              style="left: 344px; top: 265px; width: 174px; height: 70px;">
+              <div class="card-inner">
+                <span class="card-text text-portfolio">Portfolio</span>
+              </div>
+            </button>
+
+            <!-- Card 3: Adobe Stock -->
+            <a href="https://stock.adobe.com/contributor/207802543/dicky" target="_blank" rel="noopener noreferrer"
+              class="interactive-card card-adobe" id="cardAdobe" data-title="Adobe Stock Contributor"
+              data-desc="High quality stock vectors, illustrations, and digital assets."
+              style="left: 314px; top: 351px; width: 204px; height: 204px;">
+              <div class="card-inner">
+                <img src="assets/adobe-stock.svg" alt="Adobe Stock" class="card-icon adobe-icon" width="184"
+                  height="184">
+              </div>
+            </a>
+
+            <!-- Card 4: Central Avatar & Brand Logo Card -->
+            <div class="interactive-card card-center-hero" id="cardCenterHero" data-title="Creative Studio & Avatar"
+              data-desc="Original character artwork & personal brand signature."
+              style="left: 534px; top: 249px; width: 300px; height: 300px;">
+              <div class="card-inner hero-inner">
+                <img src="assets/card-center.png" alt="Creative Illustration and Brand Mark" class="card-hero-img"
+                  width="300" height="300">
+                <div class="shimmer-effect"></div>
+              </div>
+            </div>
+
+            <!-- Card 5: E-Book -->
+            <a href="https://lynk.id/semenitwasted" target="_blank" rel="noopener noreferrer" class="interactive-card card-ebook" id="cardEbook" data-title="Design E-Book"
+              data-desc="Educational guides and design tutorials for creators."
+              style="left: 698px; top: 175px; width: 136px; height: 58px;">
+              <div class="card-inner">
+                <span class="card-text text-ebook">E-Book</span>
+              </div>
+            </a>
+
+            <!-- Card 6: Instagram -->
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+              class="interactive-card card-instagram" id="cardInstagram" data-title="Instagram Visuals"
+              data-desc="Daily artwork updates, design experiments, and behind the scenes."
+              style="left: 850px; top: 249px; width: 172px; height: 172px;">
+              <div class="card-inner">
+                <img src="assets/instagram.svg" alt="Instagram" class="card-icon instagram-icon" width="152"
+                  height="152">
+              </div>
+            </a>
+
+            <!-- Card 7: CV / Resume -->
+            <button type="button" class="interactive-card card-cv" id="cardCv" data-title="Curriculum Vitae"
+              data-desc="Professional background, skills, achievements, and career history."
+              style="left: 1038px; top: 344px; width: 87px; height: 77px;">
+              <div class="card-inner">
+                <span class="card-text text-cv">CV</span>
+              </div>
+            </button>
+
+            <!-- Card 8: The Noun Project -->
+            <a href="https://thenounproject.com/creator/ReionDesign/" target="_blank" rel="noopener noreferrer"
+              class="interactive-card card-nounproject" id="cardNounProject" data-title="The Noun Project"
+              data-desc="Minimalist icon sets and symbols published for global designers."
+              style="left: 850px; top: 437px; width: 292px; height: 112px;">
+              <div class="card-inner">
+                <img src="assets/noun-project.svg" alt="The Noun Project" class="card-icon noun-icon" width="272"
+                  height="92">
+              </div>
+            </a>
+
+            <!-- Card 9: Canva -->
+            <a href="https://www.canva.com/p/gambar-reion" target="_blank" rel="noopener noreferrer"
+              class="interactive-card card-canva" id="cardCanva" data-title="Canva Creator"
+              data-desc="Templates, graphic assets, and layouts for social media and brands."
+              style="left: 528px; top: 565px; width: 113px; height: 113px;">
+              <div class="card-inner">
+                <img src="assets/canva.svg" alt="Canva" class="card-icon canva-icon" width="93" height="93">
+              </div>
+            </a>
+
+            <!-- Card 10: Flaticon -->
+            <a href="https://www.flaticon.com/authors/reion" target="_blank" rel="noopener noreferrer"
+              class="interactive-card card-flaticon" id="cardFlaticon" data-title="Flaticon Contributor"
+              data-desc="Vector icon packs and digital stickers available on Flaticon."
+              style="left: 657px; top: 565px; width: 302px; height: 75px;">
+              <div class="card-inner">
+                <img src="assets/flaticon.svg" alt="Flaticon" class="card-icon flaticon-icon" width="282" height="55">
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile & Tablet Responsive Bento Grid (< 992px) -->
+      <div class="mobile-bento-grid">
+
+        <!-- Featured Avatar Centerpiece -->
+        <div class="bento-item bento-hero">
+          <div class="bento-card">
+            <img src="assets/card-center.png" alt="Creative Illustration" class="bento-hero-img">
+          </div>
+        </div>
+
+        <div class="bento-row">
+          <!-- Portfolio Card -->
+          <div class="bento-item bento-portfolio">
+            <div class="bento-card">
+              <span class="card-text text-portfolio">Portfolio</span>
+            </div>
+          </div>
+
+          <!-- E-Book Card -->
+          <a href=" https://lynk.id/semenitwasted" target="_blank" rel="noopener noreferrer"
+            class="bento-item bento-ebook">
+            <div class="bento-card">
+              <span class="card-text text-ebook">E-Book</span>
+            </div>
+          </a>
+
+          <!-- CV Card -->
+          <div class="bento-item bento-cv">
+            <div class="bento-card">
+              <span class="card-text text-cv">CV</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bento-grid-2x2">
+          <!-- Adobe Stock -->
+          <a href="https://stock.adobe.com/contributor/207802543/dicky" target="_blank" rel="noopener noreferrer"
+            class="bento-item bento-brand">
+            <div class="bento-card">
+              <img src="assets/adobe-stock.svg" alt="Adobe Stock" class="bento-icon">
+            </div>
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="bento-item bento-brand">
+            <div class="bento-card">
+              <img src="assets/instagram.svg" alt="Instagram" class="bento-icon">
+            </div>
+          </a>
+
+          <!-- Canva -->
+          <a href="https://www.canva.com/p/gambar-reion" target="_blank" rel="noopener noreferrer"
+            class="bento-item bento-brand">
+            <div class="bento-card">
+              <img src="assets/canva.svg" alt="Canva" class="bento-icon">
+            </div>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="bento-item bento-brand">
+            <div class="bento-card">
+              <img src="assets/linkedin.svg" alt="LinkedIn" class="bento-icon">
+            </div>
+          </a>
+        </div>
+
+        <!-- Flaticon & Noun Project wide cards -->
+        <a href="https://www.flaticon.com/authors/reion" target="_blank" rel="noopener noreferrer"
+          class="bento-item bento-wide">
+          <div class="bento-card">
+            <img src="assets/flaticon.svg" alt="Flaticon" class="bento-icon-wide">
+          </div>
+        </a>
+
+        <a href="https://thenounproject.com/creator/ReionDesign/" target="_blank" rel="noopener noreferrer"
+          class="bento-item bento-wide">
+          <div class="bento-card">
+            <img src="assets/noun-project.svg" alt="The Noun Project" class="bento-icon-wide">
+          </div>
+        </a>
+
+      </div>
+
+    </main>
+
+    <!-- Modal for interactive card clicks -->
+    <div class="modal-overlay" id="cardModal" aria-hidden="true" role="dialog">
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose" aria-label="Close dialog">&times;</button>
+        <div class="modal-header">
+          <h3 id="modalTitle">Item Details</h3>
+        </div>
+        <div class="modal-body">
+          <p id="modalDescription">Details about this section.</p>
+        </div>
+        <div class="modal-footer">
+          <a href="#" id="modalLink" target="_blank" rel="noopener noreferrer" class="modal-btn">Visit Link &rarr;</a>
+          <button type="button" class="modal-btn modal-btn-secondary" id="modalDismiss">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+      <p>&copy; 2026 Creative Portfolio. Crafted with precision from Figma design.</p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
