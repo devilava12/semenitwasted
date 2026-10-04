@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — semenitwasted</title>
+  <meta name="description"
+    content="Selected works, experiments & ideas by semenitwasted. Personal showcase of character design, icon systems, and web design concepts.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo-nav.svg">
+
+  <!-- Google Fonts: Rubik -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+
+<body>
+  <div class="portfolio-page-wrapper">
+
+    <!-- 10. NAVBAR -->
+    <header class="portfolio-navbar">
+      <a href="index.html" class="brand-link" aria-label="semenitwasted Home">
+        <img src="assets/logo-nav.svg" alt="semenitwasted logo" class="brand-logo-img" width="116" height="48">
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav aria-label="Main Navigation">
+        <ul class="navbar-nav">
+          <li><a href="index.html" class="nav-link-item">Home</a></li>
+          <li><a href="portfolio.html" class="nav-link-item active" aria-current="page">Portfolio</a></li>
+          <li><a href="index.html#about" class="nav-link-item">About</a></li>
+          <li><a href="index.html#contact" class="nav-link-item">Contact</a></li>
+          <li>
+            <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark/light theme">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-menu-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+
+    <!-- 11. HERO SECTION -->
+    <section class="portfolio-hero">
+      <div class="hero-layout">
+        <!-- Hero Text Column -->
+        <div class="hero-copy">
+          <div class="hero-eyebrow">
+            <span class="hero-eyebrow-dot"></span>
+            PORTFOLIO
+          </div>
+          <h1 class="hero-title">Selected works, experiments &amp; ideas</h1>
+          <p class="hero-desc">
+            A curated personal collection of character design, vector icon systems, web UI concepts, and tactile visual experiments.
+          </p>
+          <div class="hero-actions">
+            <a href="#portfolioGrid" class="btn-primary">Explore Projects →</a>
+            <a href="index.html#about" class="btn-secondary">About Me</a>
+          </div>
+        </div>
+
+        <!-- Hero Right: Abstract Neumorphic Visual (Section 11) -->
+        <div class="hero-visual-card" aria-hidden="true">
+          <svg class="abstract-neumorphic-art" viewBox="0 0 360 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <filter id="softShadow" x="-10%" y="-10%" width="130%" height="130%">
+                <feDropShadow dx="4" dy="8" stdDeviation="12" flood-color="#450D50" flood-opacity="0.12" />
+              </filter>
+            </defs>
+
+            <!-- Background soft geometric shapes (10px signature radius) -->
+            <rect x="24" y="44" width="220" height="180" rx="10" fill="#FCFAFD" stroke="#E4DCE9" stroke-width="1.5" filter="url(#softShadow)" />
+            <circle cx="260" cy="80" r="54" fill="#F5F0F8" stroke="#E4DCE9" stroke-width="1.5" />
+            
+            <!-- Secondary floating card -->
+            <rect x="120" y="112" width="210" height="144" rx="10" fill="#FCFAFD" stroke="#E4DCE9" stroke-width="1.5" filter="url(#softShadow)" />
+            
+            <!-- Structural lines & bars (even numbers) -->
+            <rect x="48" y="76" width="68" height="12" rx="4" fill="#211B28" />
+            <rect x="48" y="100" width="132" height="8" rx="4" fill="#E4DCE9" />
+            <rect x="48" y="116" width="88" height="8" rx="4" fill="#E4DCE9" />
+
+            <rect x="144" y="136" width="56" height="12" rx="4" fill="#211B28" />
+            <rect x="144" y="160" width="140" height="8" rx="4" fill="#E4DCE9" />
+            <rect x="144" y="176" width="112" height="8" rx="4" fill="#E4DCE9" />
+
+            <!-- Tactile Accent Dot & Arrow -->
+            <circle cx="288" cy="216" r="14" fill="#211B28" />
+            <path d="M284 216L292 216M288 212L292 216L288 220" stroke="#FCFAFD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. CATEGORY FILTER -->
+    <section class="category-filter-section" aria-label="Filter works by category">
+      <div class="filter-pills-group" role="tablist">
+        <button type="button" class="filter-pill active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button type="button" class="filter-pill" data-filter="web" role="tab" aria-selected="false">Web Design</button>
+        <button type="button" class="filter-pill" data-filter="illustration" role="tab" aria-selected="false">Character</button>
+        <button type="button" class="filter-pill" data-filter="icons" role="tab" aria-selected="false">Icons</button>
+        <button type="button" class="filter-pill" data-filter="branding" role="tab" aria-selected="false">Branding</button>
+        <button type="button" class="filter-pill" data-filter="experiment" role="tab" aria-selected="false">Experiments</button>
+        <button type="button" class="filter-pill" data-filter="personal" role="tab" aria-selected="false">Personal</button>
+      </div>
+
+      <div class="filter-sort-indicator">
+        <span>Sort:</span>
+        <span class="sort-badge">Latest</span>
+      </div>
+    </section>
+
+    <!-- 13. BENTO PORTFOLIO GRID -->
+    <section id="portfolioGrid" class="bento-grid" aria-label="Portfolio works grid">
+      <!-- Populated dynamically by portfolio.js via portfolioData -->
+    </section>
+
+    <!-- 18. EMPTY STATE / COMING SOON -->
+    <section class="empty-state-section" aria-label="Upcoming works notice">
+      <div class="empty-state-card">
+        <div class="empty-state-icon-wrap" aria-hidden="true">+</div>
+        <h2 class="empty-state-title">More works coming soon</h2>
+        <p class="empty-state-desc">
+          This space will grow as new personal projects, character explorations, and web experiments come together.
+        </p>
+      </div>
+    </section>
+
+    <!-- 19. DESIGN STATEMENT -->
+    <section class="design-statement-section" aria-label="Design philosophy">
+      <div class="design-statement-card">
+        <div class="statement-quote-mark" aria-hidden="true">“</div>
+        <blockquote class="statement-quote-text">
+          Good design is not about adding more. It's about making the right things clear.
+        </blockquote>
+        <cite class="statement-author">— semenitwasted</cite>
+      </div>
+    </section>
+
+    <!-- 20. CTA SECTION -->
+    <section class="cta-section" id="contact" aria-label="Call to action">
+      <div class="cta-card">
+        <div class="cta-copy">
+          <h2 class="cta-title">Have an idea in mind?</h2>
+          <p class="cta-desc">
+            Let's create something useful, simple and visually interesting. Open for creative personal collaborations and design experiments.
+          </p>
+        </div>
+        <div class="cta-actions">
+          <a href="mailto:dicky.art@gmail.com" class="btn-primary">Get in touch →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 21. FOOTER -->
+    <footer class="portfolio-footer">
+      <div class="footer-left">
+        <span class="footer-brand">semenitwasted</span>
+        <span class="footer-subtitle">Design · Icons · Illustration · Web</span>
+      </div>
+      <div class="footer-right">
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-link">Instagram</a>
+        <a href="https://behance.net" target="_blank" rel="noopener noreferrer" class="footer-social-link">Behance</a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="footer-social-link">GitHub</a>
+        <a href="https://stock.adobe.com/contributor/207802543/dicky" target="_blank" rel="noopener noreferrer" class="footer-social-link">Adobe Stock</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="portfolio.js"></script>
+</body>
+
+</html>
