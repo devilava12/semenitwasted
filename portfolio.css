@@ -56,6 +56,34 @@
   --shadow-depth: 4px 4px 8px rgba(0, 0, 0, 0.36);
 }
 
+[data-theme="dark"] .btn-primary {
+  color: var(--color-dark);
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  color: #FCFAFD;
+}
+
+[data-theme="dark"] .brand-logo-img {
+  filter: brightness(0) invert(1);
+}
+
+[data-theme="dark"] .filter-pill.active {
+  color: var(--color-dark);
+}
+
+[data-theme="dark"] .footer-platform-card {
+  background: var(--surface-soft);
+}
+
+[data-theme="dark"] .footer-platform-card:hover {
+  background: var(--surface);
+}
+
+[data-theme="dark"] .footer-platform-icon--monochrome {
+  filter: brightness(0) invert(1);
+}
+
 /* --- Reset & Global Baseline --- */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -941,22 +969,35 @@ body {
   color: var(--text-secondary);
 }
 
-.footer-right {
+.footer-platforms {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(64px, 82px));
+  gap: 12px;
+}
+
+.footer-platform-card {
+  height: 72px;
+  padding: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-depth);
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-.footer-social-link {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: color 0.2s ease;
+.footer-platform-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--strong);
+  box-shadow: var(--shadow-primary);
 }
 
-.footer-social-link:hover {
-  color: var(--strong);
+.footer-platform-icon {
+  max-width: 100%;
+  max-height: 36px;
+  object-fit: contain;
 }
 
 /* --- 22. RESPONSIVE DESIGN --- */
@@ -1080,5 +1121,10 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
+  }
+
+  .footer-platforms {
+    width: 100%;
+    grid-template-columns: repeat(5, 1fr);
   }
 }
