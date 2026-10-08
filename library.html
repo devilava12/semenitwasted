@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library — Motion &amp; Animation System — semenitwasted</title>
+  <meta name="description"
+    content="Living design system and interactive animation library for semenitwasted. Interactive documentation of tactile motion, easing curves, timing tokens, and code snippets.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo-nav.svg">
+
+  <!-- Google Fonts: Rubik -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="library.css">
+</head>
+
+<body>
+  <div class="library-page-wrapper">
+
+    <!-- GLOBAL NAVBAR -->
+    <header class="portfolio-navbar">
+      <a href="index.html" class="brand-link" aria-label="semenitwasted Home">
+        <img src="assets/logo-nav.svg" alt="semenitwasted logo" class="brand-logo-img" width="116" height="48">
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav aria-label="Main Navigation">
+        <ul class="navbar-nav">
+          <li><a href="index.html" class="nav-link-item">Home</a></li>
+          <li><a href="portfolio.html" class="nav-link-item">Portfolio</a></li>
+          <li><a href="about.html" class="nav-link-item">About</a></li>
+          <li><a href="library.html" class="nav-link-item active" aria-current="page">Library</a></li>
+          <li><a href="contact.html" class="nav-link-item">Contact</a></li>
+          <li>
+            <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark/light theme">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-menu-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu"
+        aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="library.html" class="active" aria-current="page">Library</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="library-main">
+
+      <!-- HERO SECTION -->
+      <section class="library-hero" aria-labelledby="libraryHeroTitle">
+        <div class="hero-eyebrow">
+          <span class="hero-eyebrow-dot"></span>
+          LIVING DESIGN SYSTEM
+        </div>
+        <h1 class="hero-title" id="libraryHeroTitle">Library</h1>
+        <p class="hero-desc">
+          Dokumentasi hidup dan sandbox interaktif untuk standar desain semenitwasted. Eksplorasi perilaku taktil,
+          nilai token, kurva easing, dan implementasi kode CSS siap pakai.
+        </p>
+
+        <!-- CATEGORY SWITCHER (Scalable Multi-Library Hub) -->
+        <nav class="library-tabs-nav" aria-label="Kategori Library">
+          <ul class="library-tabs-list">
+            <li>
+              <button class="lib-tab-btn active" data-tab="motion" aria-current="true">
+                <span>Motion &amp; Animation</span>
+                <span class="tab-badge-count">10</span>
+              </button>
+            </li>
+            <li>
+              <button class="lib-tab-btn disabled" data-tab="components" aria-disabled="true" title="Akan datang">
+                <span>Components &amp; UI</span>
+                <span class="tab-badge-soon">Soon</span>
+              </button>
+            </li>
+            <li>
+              <button class="lib-tab-btn disabled" data-tab="vectors" aria-disabled="true" title="Akan datang">
+                <span>Vectors &amp; Icons</span>
+                <span class="tab-badge-soon">Soon</span>
+              </button>
+            </li>
+            <li>
+              <button class="lib-tab-btn disabled" data-tab="tokens" aria-disabled="true" title="Akan datang">
+                <span>Design Tokens</span>
+                <span class="tab-badge-soon">Soon</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </section>
+
+      <!-- SANDBOX TOOLBAR & CONTROLS -->
+      <section class="sandbox-toolbar" aria-label="Kontrol Sandbox dan Filter">
+        <div class="toolbar-left">
+          <div class="filter-pills-group" role="group" aria-label="Filter Kategori Animasi">
+            <button class="filter-pill active" data-filter="all">All Modules</button>
+            <button class="filter-pill" data-filter="button">Buttons &amp; Controls</button>
+            <button class="filter-pill" data-filter="card">Surfaces &amp; Cards</button>
+            <button class="filter-pill" data-filter="spatial">Spatial &amp; Reveal</button>
+            <button class="filter-pill" data-filter="system">Feedback &amp; A11y</button>
+          </div>
+        </div>
+
+        <div class="toolbar-right">
+          <!-- Reduced Motion Simulator -->
+          <div class="simulator-control">
+            <label class="switch-label" for="toggleReducedMotion">
+              <span class="switch-title">Reduced Motion</span>
+              <span class="switch-desc">Simulator</span>
+            </label>
+            <button type="button" class="switch-toggle" id="toggleReducedMotion" role="switch" aria-checked="false"
+              aria-label="Simulasi prefers-reduced-motion">
+              <span class="switch-handle"></span>
+            </button>
+          </div>
+
+          <!-- Slow Motion 0.5x Toggle -->
+          <div class="simulator-control">
+            <label class="switch-label" for="toggleSlowMotion">
+              <span class="switch-title">Slow Motion</span>
+              <span class="switch-desc">0.5x Speed</span>
+            </label>
+            <button type="button" class="switch-toggle" id="toggleSlowMotion" role="switch" aria-checked="false"
+              aria-label="Perlambat animasi 0.5x speed">
+              <span class="switch-handle"></span>
+            </button>
+          </div>
+
+          <!-- Replay All -->
+          <button class="btn-tool" id="btnReplayAll" title="Memicu ulang semua animasi modul">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M1 4v6h6M23 20v-6h-6" />
+              <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15" />
+            </svg>
+            <span>Replay All</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ANIMATION CATALOG GRID (Bento Layout) -->
+      <section class="animation-catalog" id="animationCatalog" aria-label="Katalog Animasi semenitwasted">
+        <div class="bento-catalog-grid">
+
+          <!-- 01. TACTILE LIFT -->
+          <article class="bento-anim-card" data-category="button" id="anim-tactile-lift">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Primary Interaction</span>
+                <span class="timing-badge">200ms</span>
+              </div>
+              <h2 class="anim-title">Tactile Lift</h2>
+              <p class="anim-desc">
+                Interaksi tombol fisik dengan sedikit pengangkatan pada hover dan reduksi kedalaman permukaan saat ditekan (active state).
+              </p>
+            </header>
+
+            <div class="stage-canvas">
+              <div class="stage-caption">Interactive Playground — Hover &amp; Press</div>
+              <div class="stage-demo-area">
+                <button type="button" class="demo-tactile-btn" id="demoTactileBtn">
+                  <span>Explore Work</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+              <div class="stage-status-indicator" id="statusTactileBtn">State: Default / Resting</div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Property</span>
+                <span class="spec-value">transform, box-shadow</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Easing</span>
+                <span class="spec-value">cubic-bezier(0.2, 0.8, 0.2, 1)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Hover Delta</span>
+                <span class="spec-value">translateY(-2px)</span>
+              </div>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>.btn-tactile {
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.btn-tactile:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 4px rgb(69 13 80 / 25%);
+}
+.btn-tactile:active {
+  transform: translateY(0);
+}</code></pre>
+              <button class="btn-copy-code" data-copy-target="anim-tactile-lift" aria-label="Salin kode CSS Tactile Lift">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy CSS</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 02. MICRO TACTILE LIFT -->
+          <article class="bento-anim-card" data-category="button" id="anim-micro-tactile-lift">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Micro Interaction</span>
+                <span class="timing-badge">~200ms</span>
+              </div>
+              <h2 class="anim-title">Micro Tactile Lift</h2>
+              <p class="anim-desc">
+                Versi lebih ringan dari Tactile Lift untuk kontrol ringkas seperti filter pills dan kategori. Mempertahankan bayangan depth tanpa switch ke primary shadow.
+              </p>
+            </header>
+
+            <div class="stage-canvas">
+              <div class="stage-caption">Filter Pills Group — Click to Toggle</div>
+              <div class="stage-demo-area">
+                <div class="demo-pills-row" role="tablist" aria-label="Demo filter pills">
+                  <button type="button" class="demo-pill">All</button>
+                  <button type="button" class="demo-pill">Web Design</button>
+                  <button type="button" class="demo-pill">Character</button>
+                  <button type="button" class="demo-pill">Icons</button>
+                  <button type="button" class="demo-pill">Branding</button>
+                  <button type="button" class="demo-pill">Experiments</button>
+                  <button type="button" class="demo-pill active">Personal</button>
+                </div>
+              </div>
+              <div class="stage-status-indicator" id="statusMicroPills">Active: "Personal" (Primary shadow) · Hover to lift</div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Property</span>
+                <span class="spec-value">transform, box-shadow</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Duration</span>
+                <span class="spec-value">~200ms cubic-bezier(0.2, 0.8, 0.2, 1)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Active State</span>
+                <span class="spec-value">--shadow-primary + dark fill</span>
+              </div>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>.filter-pill {
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: var(--shadow-depth);
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+              background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+.filter-pill:hover {
+  color: var(--text-primary);
+  transform: translateY(-2px);
+  background-color: var(--surface-soft);
+}
+.filter-pill:active {
+  transform: translateY(0);
+}
+.filter-pill.active {
+  background: var(--color-dark);
+  color: #FCFAFD;
+  border-color: var(--color-dark);
+  font-weight: 600;
+  box-shadow: var(--shadow-primary);
+}</code></pre>
+              <button class="btn-copy-code" data-copy-target="anim-micro-tactile-lift" aria-label="Salin kode CSS Micro Tactile Lift">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy CSS</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 03. CARD TACTILE ELEVATION -->
+          <article class="bento-anim-card" data-category="card" id="anim-card-elevation">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Surface &amp; Depth</span>
+                <span class="timing-badge">250ms</span>
+              </div>
+              <h2 class="anim-title">Neumorphic Card Elevation</h2>
+              <p class="anim-desc">
+                Peningkatan elevasi halus pada permukaan kartu Bento. Memberikan umpan balik fisik tactile yang membedakan kartu interaktif dari kartu statis.
+              </p>
+            </header>
+
+            <div class="stage-canvas">
+              <div class="stage-caption">Interactive Card Surface — Hover over card</div>
+              <div class="stage-demo-area">
+                <div class="demo-surface-card" id="demoSurfaceCard">
+                  <div class="card-inner-top">
+                    <span class="card-badge">Bento Module</span>
+                    <span class="card-corner-arrow">↗</span>
+                  </div>
+                  <h3 class="card-sample-title">Tactile Experience</h3>
+                  <p class="card-sample-text">Restrained depth transitions without excessive blur.</p>
+                </div>
+              </div>
+              <div class="stage-status-indicator" id="statusSurfaceCard">Elevation: Standard (Resting)</div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Property</span>
+                <span class="spec-value">transform, box-shadow, border-color</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Easing</span>
+                <span class="spec-value">cubic-bezier(0.2, 0.8, 0.2, 1)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Shadow Rule</span>
+                <span class="spec-value">--shadow-primary</span>
+              </div>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>.bento-card {
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 4px 4px 4px rgb(69 13 80 / 25%);
+}
+.bento-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 18px 18px 16px rgb(69 13 80 / 20%);
+}</code></pre>
+              <button class="btn-copy-code" data-copy-target="anim-card-elevation" aria-label="Salin kode CSS Card Elevation">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy CSS</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 04. IMAGE SUBTLE SCALE -->
+          <article class="bento-anim-card" data-category="card" id="anim-image-scale">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Media &amp; Visual</span>
+                <span class="timing-badge">350ms</span>
+              </div>
+              <h2 class="anim-title">Image Subtle Scale</h2>
+              <p class="anim-desc">
+                Pembesaran foto/grafis yang tertahan (scale 1.01–1.03) dengan overflow terpotong rapi. Dilarang zoom agresif agar konten visual tetap tenang.
+              </p>
+            </header>
+
+            <div class="stage-canvas">
+              <div class="stage-caption">Media Frame — Hover to trigger subtle scale</div>
+              <div class="stage-demo-area">
+                <div class="demo-media-frame">
+                  <img src="assets/card-center.png" alt="Demo artwork preview" class="demo-media-img">
+                  <div class="demo-media-overlay">
+                    <span class="media-scale-badge">scale(1.02)</span>
+                  </div>
+                </div>
+              </div>
+              <div class="stage-status-indicator">Hover container to view scale response</div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Property</span>
+                <span class="spec-value">transform: scale(1.02)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Duration</span>
+                <span class="spec-value">350ms</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Easing</span>
+                <span class="spec-value">cubic-bezier(0.2, 0.8, 0.2, 1)</span>
+              </div>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>.media-frame {
+  overflow: hidden;
+  border-radius: 10px;
+}
+.media-img {
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.media-frame:hover .media-img {
+  transform: scale(1.02);
+}</code></pre>
+              <button class="btn-copy-code" data-copy-target="anim-image-scale" aria-label="Salin kode CSS Image Subtle Scale">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy CSS</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 05. PAGE ENTRANCE SEQUENCE -->
+          <article class="bento-anim-card" data-category="spatial" id="anim-page-entrance">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Spatial &amp; Orientation</span>
+                <span class="timing-badge">Staggered (350ms)</span>
+              </div>
+              <h2 class="anim-title">Page Entrance Sequence</h2>
+              <p class="anim-desc">
+                Kemunculan konten bertingkat: Heading (0ms) → Subtitle (50ms) → Primary Action (100ms) → Main Content (150ms). Menghindari jeda yang memperlambat pengguna.
+              </p>
+            </header>
+
+            <div class="stage-canvas">
+              <div class="stage-caption">Sequence Preview Stage</div>
+              <div class="stage-demo-area">
+                <div class="demo-sequence-container" id="entranceSeqContainer">
+                  <div class="seq-item seq-item-1">
+                    <span class="seq-label">01. Heading</span>
+                  </div>
+                  <div class="seq-item seq-item-2">
+                    <span class="seq-label">02. Supporting Text</span>
+                  </div>
+                  <div class="seq-item seq-item-3">
+                    <span class="seq-label">03. Primary Action</span>
+                  </div>
+                  <div class="seq-item seq-item-4">
+                    <span class="seq-label">04. Main Content</span>
+                  </div>
+                </div>
+              </div>
+              <div class="stage-actions-row">
+                <button type="button" class="btn-stage-action" id="btnReplayEntrance">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                  <span>Replay Sequence</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Property</span>
+                <span class="spec-value">opacity, transform: translateY(12px)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Stagger Step</span>
+                <span class="spec-value">50ms per hierarchy level</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Duration</span>
+                <span class="spec-value">350ms per item</span>
+              </div>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>@keyframes pageEntrance {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-title  { animation: pageEntrance 0.35s ease 0.00s forwards; }
+.hero-desc   { animation: pageEntrance 0.35s ease 0.05s forwards; }
+.hero-action { animation: pageEntrance 0.35s ease 0.10s forwards; }
+.hero-grid   { animation: pageEntrance 0.35s ease 0.15s forwards; }</code></pre>
+              <button class="btn-copy-code" data-copy-target="anim-page-entrance" aria-label="Salin kode CSS Page Entrance">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy CSS</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 06. SCROLL REVEAL (Intersection Observer) -->
+          <article class="bento-anim-card" data-category="spatial" id="anim-scroll-reveal">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Content Reveal</span>
+                <span class="timing-badge">400ms</span>
+              </div>
+              <h2 class="anim-title">Scroll Reveal (Observer)</h2>
+              <p class="anim-desc">
+                Animasi satu kali (one-time) saat konten melintasi viewport. Menggunakan IntersectionObserver efisien tanpa mendengarkan event scroll secara konstan.
+              </p>
+            </header>
+
+            <div class="stage-canvas">
+              <div class="stage-caption">Mini Viewport Simulator — Scroll inside box</div>
+              <div class="stage-demo-area">
+                <div class="demo-scroll-viewport" id="scrollDemoViewport">
+                  <div class="scroll-stream-content">
+                    <div class="scroll-stream-item is-visible">Item A (In view)</div>
+                    <div class="scroll-stream-item">Item B (Scroll down)</div>
+                    <div class="scroll-stream-item">Item C (Scroll down)</div>
+                    <div class="scroll-stream-item">Item D (Scroll down)</div>
+                  </div>
+                </div>
+              </div>
+              <div class="stage-actions-row">
+                <button type="button" class="btn-stage-action" id="btnResetScrollDemo">
+                  <span>Reset Scroll Box</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Observer Root</span>
+                <span class="spec-value">IntersectionObserver (threshold 0.15)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Transform</span>
+                <span class="spec-value">translateY(16px) → 0</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Rule</span>
+                <span class="spec-value">Unobserve once triggered</span>
+              </div>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>.reveal-item {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+              transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}</code></pre>
+              <button class="btn-copy-code" data-copy-target="anim-scroll-reveal" aria-label="Salin kode CSS Scroll Reveal">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy CSS</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 07. MAGNETIC BUTTON (Selective Primary CTA) -->
+          <article class="bento-anim-card" data-category="button" id="anim-magnetic-button">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">High-Intent Action</span>
+                <span class="timing-badge">Dynamic Spring</span>
+              </div>
+              <h2 class="anim-title">Magnetic Button</h2>
+              <p class="anim-desc">
+                Interaksi selektif untuk tombol konversi utama (CTA). Tombol bergeser halus beberapa pixel mengikuti arah kursor dan kembali elastis saat kursor keluar.
+              </p>
+            </header>
+
+            <div class="stage-canvas">
+              <div class="stage-caption">Magnetic Proximity Area — Hover near button</div>
+              <div class="stage-demo-area magnetic-zone" id="magneticZone">
+                <button type="button" class="demo-magnetic-btn" id="demoMagneticBtn">
+                  <span>Contact Me</span>
+                  <span class="magnetic-dot"></span>
+                </button>
+              </div>
+              <div class="stage-status-indicator" id="magneticStatus">Proximity: Move cursor inside zone</div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Proximity Max</span>
+                <span class="spec-value">±8px delta (Restrained)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Spring Reset</span>
+                <span class="spec-value">300ms cubic-bezier(0.2, 0.8, 0.2, 1)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">A11y Constraint</span>
+                <span class="spec-value">Disabled on touch &amp; reduced motion</span>
+              </div>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>// Vanilla JS Proximity calculation
+const bounds = btn.getBoundingClientRect();
+const dx = (e.clientX - (bounds.left + bounds.width / 2)) * 0.25;
+const dy = (e.clientY - (bounds.top + bounds.height / 2)) * 0.25;
+btn.style.transform = `translate(${dx}px, ${dy}px)`;
+
+// On mouse leave:
+btn.style.transform = 'translate(0, 0)';</code></pre>
+              <button class="btn-copy-code" data-copy-target="anim-magnetic-button" aria-label="Salin kode JS Magnetic Button">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy Code</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 08. NAVIGATION INDICATOR TRANSITION -->
+          <article class="bento-anim-card" data-category="spatial" id="anim-nav-indicator">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Navigation Motion</span>
+                <span class="timing-badge">200ms</span>
+              </div>
+              <h2 class="anim-title">Navigation Indicator Transition</h2>
+              <p class="anim-desc">
+                Pergeseran penanda aktif (active pill/underline) antar tautan navigasi. Memberikan kepastian orientasi dan kehalusan visual pada bar navigasi.
+              </p>
+            </header>
+
+            <div class="stage-canvas">
+              <div class="stage-caption">Interactive Nav Bar — Click links to slide indicator</div>
+              <div class="stage-demo-area">
+                <nav class="demo-nav-bar" id="demoNavBar" aria-label="Demo Nav">
+                  <div class="demo-nav-pill-bg" id="demoNavPillBg"></div>
+                  <button type="button" class="demo-nav-link active" data-index="0">Home</button>
+                  <button type="button" class="demo-nav-link" data-index="1">Portfolio</button>
+                  <button type="button" class="demo-nav-link" data-index="2">Library</button>
+                </nav>
+              </div>
+              <div class="stage-status-indicator">Click any link to observe fluid indicator repositioning</div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Property</span>
+                <span class="spec-value">transform: translateX(), width</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Timing</span>
+                <span class="spec-value">200ms cubic-bezier(0.2, 0.8, 0.2, 1)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Visual</span>
+                <span class="spec-value">Soft monochrome highlight</span>
+              </div>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>.nav-pill-bg {
+  position: absolute;
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+              width 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  background: var(--surface-soft);
+  border-radius: 999px;
+}</code></pre>
+              <button class="btn-copy-code" data-copy-target="anim-nav-indicator" aria-label="Salin kode CSS Navigation Indicator">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy CSS</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 09. FOCUS STATE INDICATOR -->
+          <article class="bento-anim-card" data-category="system" id="anim-focus-indicator">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Accessibility &amp; A11y</span>
+                <span class="timing-badge">150ms</span>
+              </div>
+              <h2 class="anim-title">Focus State Indicator</h2>
+              <p class="anim-desc">
+                Transisi cincin fokus ganda (high contrast outline + subtle glow) yang memenuhi standar aksesibilitas keyboard tanpa mengorbankan estetika visual.
+              </p>
+            </header>
+
+            <div class="stage-canvas">
+              <div class="stage-caption">Keyboard Focus Stage — Tab to focus or click button</div>
+              <div class="stage-demo-area">
+                <div class="demo-focus-wrap">
+                  <input type="text" class="demo-focus-input" id="demoFocusInput" placeholder="Click or press Tab..."
+                    aria-label="Input simulasi fokus">
+                  <button type="button" class="demo-focus-btn" id="btnTriggerFocus">Simulate Focus</button>
+                </div>
+              </div>
+              <div class="stage-status-indicator" id="statusFocusIndicator">Ring: Inactive</div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Outline Rule</span>
+                <span class="spec-value">1.5px solid var(--color-shadow)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Ring Shadow</span>
+                <span class="spec-value">0 0 0 3px rgb(69 13 80 / 14%)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">WCAG Target</span>
+                <span class="spec-value">3:1 Minimum focus contrast</span>
+              </div>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>.interactive-element:focus-visible {
+  outline: none;
+  border-color: #450D50;
+  box-shadow: 0 0 0 3px rgb(69 13 80 / 14%);
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}</code></pre>
+              <button class="btn-copy-code" data-copy-target="anim-focus-indicator" aria-label="Salin kode CSS Focus Indicator">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy CSS</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 10. TACTILE SUBMIT SPINNER (Zero Layout Shift) -->
+          <article class="bento-anim-card" data-category="system" id="anim-submit-spinner">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">State Feedback</span>
+                <span class="timing-badge">Micro Loop</span>
+              </div>
+              <h2 class="anim-title">Tactile Submit Spinner</h2>
+              <p class="anim-desc">
+                Transisi status aksi form dari resting ke status proses (spinner) tanpa pergeseran layout (zero CLS) dan kembali dengan sinyal konfirmasi sukses.
+              </p>
+            </header>
+
+            <div class="stage-canvas">
+              <div class="stage-caption">Form Submit Action — Click to test state feedback</div>
+              <div class="stage-demo-area">
+                <button type="button" class="demo-spinner-btn" id="demoSpinnerBtn">
+                  <span class="btn-text">Send Message</span>
+                  <span class="btn-spinner" aria-hidden="true"></span>
+                  <span class="btn-success-check" aria-hidden="true">✓ Sent</span>
+                </button>
+              </div>
+              <div class="stage-status-indicator" id="statusSpinnerBtn">State: Idle / Ready</div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Animation</span>
+                <span class="spec-value">rotate 0.75s linear infinite</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Layout Principle</span>
+                <span class="spec-value">Fixed button min-width (Zero CLS)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Reduced Motion</span>
+                <span class="spec-value">Static "Loading..." text fallback</span>
+              </div>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>.btn-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}</code></pre>
+              <button class="btn-copy-code" data-copy-target="anim-submit-spinner" aria-label="Salin kode CSS Submit Spinner">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy CSS</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 21. FOOTER -->
+    <footer class="portfolio-footer">
+      <div class="footer-left">
+        <span class="footer-brand">semenitwasted</span>
+        <span class="footer-subtitle">Design · Icons · Illustration · Web</span>
+      </div>
+      <div class="footer-platforms" aria-label="Platform links">
+        <a href="https://www.linkedin.com/in/reionnyx/" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="LinkedIn">
+          <img src="assets/linkedin.svg" alt="" class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+        <a href="https://stock.adobe.com/contributor/207802543/dicky" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Adobe Stock">
+          <img src="assets/adobe-stock.svg" alt="" class="footer-platform-icon">
+        </a>
+        <a href="https://www.canva.com/p/gambar-reion" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Canva">
+          <img src="assets/canva.svg" alt="" class="footer-platform-icon">
+        </a>
+        <a href="https://thenounproject.com/creator/ReionDesign/" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="The Noun Project">
+          <img src="assets/noun-project.svg" alt="" class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+        <a href="https://www.flaticon.com/authors/reion" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Flaticon">
+          <img src="assets/flaticon.svg" alt="" class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+      </div>
+    </footer>
+
+    <!-- Toast Notification for Copied Code -->
+    <div class="toast-notification" id="toastNotification" role="status" aria-live="polite" aria-hidden="true">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+      <span id="toastMessage">CSS Snippet Copied to Clipboard!</span>
+    </div>
+
+  </div>
+
+  <script src="library.js"></script>
+</body>
+
+</html>
