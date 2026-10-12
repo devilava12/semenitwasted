@@ -716,6 +716,32 @@ body {
   line-height: 1.5;
 }
 
+.card-case-link {
+  align-self: flex-start;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-top: 16px;
+  text-decoration: none;
+  text-underline-offset: 0.2em;
+}
+
+.card-case-link:hover {
+  text-decoration: underline;
+}
+
+.preview-content--roche {
+  overflow: hidden;
+}
+
+.roche-preview-image {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  width: 100%;
+}
+
 .card-tags {
   display: flex;
   gap: 8px;
@@ -1078,74 +1104,6 @@ body {
   font-weight: 500;
 }
 
-.about-photo-placeholder {
-  width: min(100%, 360px);
-  aspect-ratio: 4 / 5;
-  min-height: 360px;
-  justify-self: end;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-card);
-  background: var(--surface);
-  box-shadow: var(--shadow-primary);
-}
-
-.about-photo-illustration {
-  position: relative;
-  flex: 1;
-  min-height: 264px;
-  overflow: hidden;
-  background: var(--surface-soft);
-}
-
-.about-photo-head,
-.about-photo-shoulders {
-  position: absolute;
-  left: 50%;
-  display: block;
-  background: var(--strong);
-}
-
-.about-photo-head {
-  top: 56px;
-  width: 96px;
-  height: 96px;
-  border-radius: 50%;
-  transform: translateX(-50%);
-}
-
-.about-photo-shoulders {
-  bottom: -64px;
-  width: 248px;
-  height: 184px;
-  border-radius: 124px 124px 0 0;
-  transform: translateX(-50%);
-}
-
-.about-photo-caption {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 20px 24px;
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-}
-
-.about-photo-caption strong {
-  color: var(--strong);
-  font-size: 1rem;
-}
-
-.about-photo-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
 .about-section {
   margin-bottom: 80px;
 }
@@ -1432,12 +1390,6 @@ button:focus-visible {
     grid-template-columns: 1fr;
   }
 
-  .about-photo-placeholder {
-    width: 100%;
-    max-width: none;
-    min-height: 320px;
-    justify-self: stretch;
-  }
 
   .about-section,
   .about-support-grid {

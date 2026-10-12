@@ -10,6 +10,19 @@
 // (semua akan saya masukkan dalam bentuk desain web tapi isinya antara desain karakter, icon dan konsep web design)"
 const portfolioData = [
   {
+    id: "roche-ayocekhpv",
+    title: "Roche #AyoCekHPV",
+    category: "Web",
+    categoryLabel: "Website Design",
+    description: "Desain Figma untuk situs #AyoCekHPV, dikerjakan bersama KelolaWeb.com.",
+    span: "col-span-6",
+    tags: ["Figma", "Website", "KelolaWeb.com"],
+    previewType: "roche-case-study",
+    featured: false,
+    href: "portfolio-roche.html",
+    ctaText: "Baca studi kasus"
+  },
+  {
     id: "web-tactile-studio",
     title: "Tactile Neumorphic Web Studio",
     category: "Web",
@@ -129,6 +142,14 @@ function renderPreviewHTML(item) {
   let innerContent = '';
 
   switch (item.previewType) {
+    case 'roche-case-study':
+      innerContent = `
+        <div class="preview-content preview-content--roche">
+          <img src="portfolio/roche/%23AyocekHPV.png" alt="Tampilan desain landing page #AyoCekHPV untuk Roche" class="roche-preview-image" loading="lazy" decoding="async" width="5760" height="7008">
+        </div>
+      `;
+      break;
+
     case 'character-avatar':
       innerContent = `
         <div class="preview-content">
@@ -256,7 +277,7 @@ function renderPreviewHTML(item) {
 
 // --- RENDER BENTO GRID CARDS ---
 function renderBentoGrid(items) {
-  const gridContainer = document.getElementById('bentoGrid');
+  const gridContainer = document.getElementById('portfolioGrid');
   if (!gridContainer) return;
 
   gridContainer.innerHTML = '';
@@ -268,6 +289,10 @@ function renderBentoGrid(items) {
     cardEl.setAttribute('data-category', item.category);
 
     const tagsHtml = item.tags.map(t => `<span class="card-tag">${t}</span>`).join('');
+
+    const actionHtml = item.href
+      ? `<a class="card-case-link" href="${item.href}">${item.ctaText || 'View Project'} <span aria-hidden="true">→</span></a>`
+      : '';
 
     cardEl.innerHTML = `
       <div class="card-top-meta">
@@ -283,6 +308,7 @@ function renderBentoGrid(items) {
         <div class="card-tags">
           ${tagsHtml}
         </div>
+        ${actionHtml}
       </div>
     `;
 
