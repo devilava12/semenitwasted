@@ -74,6 +74,8 @@ Avoid introducing:
 
 If an existing framework is already used, preserve its conventions and use its static-generation capabilities where appropriate.
 
+Do not add a service worker or offline caching layer unless the user asks for it. It adds complexity and can serve stale content.
+
 ---
 
 ## 5. JavaScript
@@ -102,6 +104,8 @@ Prefer progressive enhancement:
 
 > The page should remain understandable and usable without unnecessary client-side JavaScript.
 
+Content must not stay hidden until JavaScript runs. Hide an element for animation only after JavaScript has confirmed it can reveal it, as shown in `animation.md` section 27.
+
 ---
 
 ## 6. JavaScript Loading
@@ -115,6 +119,8 @@ When JavaScript is required:
 - split page-specific functionality where appropriate.
 
 Do not load a large global JavaScript bundle when only one page requires a small interaction.
+
+Use `defer` or `type="module"` (modules are deferred by default) for external scripts. The one allowed exception is the single-line `js` flag script from `animation.md` section 27, which may stay inline in `<head>`. Keep it tiny.
 
 ---
 
@@ -139,6 +145,10 @@ Avoid:
 - inline styles repeated across many elements.
 
 The existing design system should be represented through reusable variables rather than duplicated values.
+
+A per-element CSS variable such as `style="--i: 2"` (used for stagger in `animation.md`) is allowed. It sets a value, not a repeated style.
+
+For a small site, prefer one stylesheet linked in `<head>`. Do not chain `@import` rules, because each import adds another request that blocks rendering.
 
 ---
 
@@ -168,6 +178,8 @@ If a user explicitly requests preservation of image sharpness or quality:
 
 Performance optimization must not unnecessarily degrade important visual assets.
 
+Static hosting serves files as they are unless a separate image service is configured, so do not assume the host will convert formats or resize images. Produce the optimized files before deployment. When using AVIF or WebP, keep a JPEG or PNG fallback with `<picture>` and `<source type="...">`. Add `decoding="async"` to non-critical images.
+
 ---
 
 ## 9. Images Above the Fold
@@ -184,6 +196,13 @@ Consider:
 - avoiding unnecessary JavaScript-based loading.
 
 The actual treatment should depend on the page composition.
+
+For the primary image (the likely Largest Contentful Paint element):
+
+- use a real `<img>` in the HTML, not a CSS `background-image`, so the browser discovers it early,
+- do not add `loading="lazy"`,
+- add `fetchpriority="high"`,
+- do not hide it behind a reveal animation (see `animation.md` sections 4 and 27).
 
 ---
 
@@ -221,6 +240,12 @@ Avoid loading unused weights.
 Use appropriate `font-display` behavior so text does not remain invisible while the font loads.
 
 A suitable fallback font stack should remain available.
+
+Legitimate sources include the official Google Fonts download and the open-source Fontsource packages (`@fontsource/rubik`, `@fontsource-variable/rubik`) from npm. Check what the package actually contains, and keep Rubik's license text (SIL Open Font License) with the files. Use WOFF2 only.
+
+Choose the file format by how many weights the page uses. One variable-font file covers the whole 400 to 700 range in a single request, which suits three or more weights. Static files suit one or two weights. Do not load both.
+
+Rubik is the core of the visual identity, so preloading its primary WOFF2 file is a justified use of a resource hint (see section 25). A font preload must include `crossorigin`, even for a same-origin file. Without it the browser downloads the font twice.
 
 ---
 
@@ -262,6 +287,8 @@ When introducing one:
 - avoid blocking critical rendering,
 - load it only where needed,
 - do not add it globally without a reason.
+
+If an external embed (video, map, social post) is genuinely needed, add `loading="lazy"` to its iframe, or show a lightweight preview that loads the real embed only when the user clicks. If a library must come from a CDN, pin its version and add Subresource Integrity (`integrity` and `crossorigin`). Self-hosting it is usually better.
 
 ---
 
@@ -306,6 +333,8 @@ Avoid:
 
 Scroll reveal must never interfere with normal scrolling.
 
+For one-time reveals, stop observing each element after it is revealed (`unobserve`).
+
 ---
 
 ## 15. Interaction Responsiveness
@@ -348,6 +377,8 @@ Pay particular attention to:
 
 Avoid inserting content above already-rendered content without reserved space.
 
+When the web font swaps in, text can shift if its metrics differ from the fallback. Where supported, tune a local fallback with the `@font-face` descriptors `size-adjust`, `ascent-override`, `descent-override`, and `line-gap-override`. Measure the values instead of guessing them, and treat this as an enhancement, not a requirement.
+
 ---
 
 ## 17. Core Web Vitals
@@ -375,6 +406,10 @@ A slightly lower synthetic score may be acceptable when the alternative would da
 
 The objective is healthy real-world performance.
 
+The published "good" thresholds, measured at the 75th percentile of real users, are LCP of 2.5 seconds or less, INP of 200 milliseconds or less, and CLS of 0.1 or less. Use them as reference points, not as goals to push past at any cost.
+
+Lighthouse is a lab tool and does not report INP. It reports Total Blocking Time as a proxy. Real INP comes from field data.
+
 ---
 
 ## 18. Lighthouse
@@ -396,6 +431,8 @@ If a change increases the score but makes the website visually worse or less usa
 
 Treat the score as evidence, not as the final design authority.
 
+Run it against the built or deployed output, not a development server, because dev servers serve unminified code. Use mobile emulation with its default throttling, and run it more than once, since scores vary between runs. If Lighthouse cannot run in the current environment, say so and do not estimate a score (see section 38).
+
 ---
 
 ## 19. Caching
@@ -414,6 +451,8 @@ Good candidates may include:
 HTML documents may require different caching behavior because they can change independently of versioned assets.
 
 Do not apply aggressive immutable caching to files that are expected to change at the same URL.
+
+A plain project with files such as `styles.css` and `script.js` has no hashes in its filenames, so its files must not be marked immutable. Apply long-lived caching only to files whose name changes when their content changes (hashed build output, or a version in the name such as `rubik-v2.woff2`). Section 36 shows how to set it.
 
 ---
 
@@ -460,6 +499,8 @@ Avoid unnecessarily large asset directories containing unused files.
 
 Remove unused assets when safe to do so.
 
+Use lowercase names with hyphens and no spaces. Group assets by type, for example `assets/img/`, `assets/fonts/`, and `assets/icons/`.
+
 ---
 
 ## 22. SVG
@@ -484,6 +525,8 @@ Inline SVG may be appropriate when:
 - interaction requires direct access to the SVG.
 
 External SVG files may be preferable for reusable static assets.
+
+When optimizing, keep the `viewBox` attribute. Removing it breaks scaling. If the same icon appears many times on a page, define it once as a `<symbol>` and reuse it with `<use>` instead of repeating the markup.
 
 ---
 
@@ -533,6 +576,8 @@ Incorrect preloading can compete with more important resources and make performa
 
 For a small static site, the default should be to keep resource hints minimal.
 
+A justified preload is the primary Rubik WOFF2 file, with `as="font"`, `type="font/woff2"`, and `crossorigin`. Preload at most one or two critical resources in total. If fonts come from a third-party host instead, `preconnect` to that host (with `crossorigin` for the font file origin).
+
 ---
 
 ## 26. Above-the-Fold Experience
@@ -575,6 +620,8 @@ Do not assume desktop performance represents mobile performance.
 
 However, do not create a separate low-quality visual design simply to reduce resource usage.
 
+Always include `<meta name="viewport" content="width=device-width, initial-scale=1">`. Without it, mobile browsers render a desktop-width page.
+
 ---
 
 ## 28. Responsive Asset Loading
@@ -608,6 +655,8 @@ When reduced motion is enabled:
 - preserve content and functionality.
 
 Performance and accessibility should work together here.
+
+Switch these values from one place with the motion tokens in `animation.md` section 26.
 
 ---
 
@@ -762,3 +811,94 @@ The goal is:
 The best implementation combines:
 
 **simple architecture + minimal JavaScript + optimized assets + stable rendering + thoughtful motion + sensible delivery + visual fidelity.**
+
+---
+
+## 35. Starting budgets
+
+These are starting points for a simple personal page, not hard limits. Measure the compressed (transferred) size. Going over a budget is acceptable when the visual benefit is real (section 31), but note it in the completion summary.
+
+| Resource | Starting budget |
+|---|---|
+| JavaScript | about 50 KB or less, and often 0 to 10 KB with plain JavaScript |
+| CSS | about 50 KB or less |
+| Fonts (WOFF2, all files) | about 100 KB or less |
+| Primary image | about 100 to 250 KB |
+| Total initial transfer | about 500 KB or less, excluding large intentional imagery |
+
+A page far under these numbers needs no further optimization. A page over them should be checked for the cause, not automatically stripped down.
+
+---
+
+## 36. Cloudflare Pages delivery
+
+Cloudflare Pages serves the build output as static files and compresses text assets automatically.
+
+**Caching.** To set long-lived caching, add a `_headers` file to the build output directory, and only for files whose name changes when their content changes:
+
+```text
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+```
+
+Use this only if everything under `/assets/` is hashed or versioned in its filename. Otherwise leave the platform defaults in place, so a changed file is never served stale. Add a `_headers` file only when there is a real need (see `SKILL.md`).
+
+**Limits.** Pages has per-deployment limits on file size and file count (at the time of writing, 25 MiB per file and 20,000 files per deployment on the free plan). Check the current limits before adding large media.
+
+**Video and large media.** Do not self-host large video by default. If a short video is needed, compress it, set `preload="none"` with a `poster` image, and keep it well under the per-file limit. For longer video, link to or embed it from a video host with a lazy-loaded or click-to-load embed (section 12).
+
+**No assumed transforms.** The platform does not convert image formats or resize images for you. Deliver optimized files (section 8).
+
+---
+
+## 37. Paint and rendering cost
+
+The signature Neumorphic shadows use large blur radii, and large blurred shadows are expensive to paint when many of them are on screen, especially during scroll or animation.
+
+- Keep the number of primary-shadow surfaces visible at once modest (a handful per viewport), in line with the design system rule not to put a shadow on every element.
+- Do not animate shadow values on many elements at once (see `animation.md` section 12).
+- Avoid large `filter: blur()` and `backdrop-filter` areas, and do not animate them.
+- For a long page made of many tall sections, `content-visibility: auto` can skip rendering work for sections that are off screen. Pair it with `contain-intrinsic-size` so the scrollbar and layout do not jump. This is optional, so apply it only to long pages and check for layout shift.
+
+---
+
+## 38. Measuring when tools are unavailable
+
+A browser, Lighthouse, or network access may not be available in the current environment. In that case:
+
+- do not report a score, an LCP value, or any other number that was not measured,
+- do a code-level review against sections 32 and 39,
+- state plainly that Lighthouse and Core Web Vitals could not be measured.
+
+Useful checks that need only a shell:
+
+```bash
+# Largest files in the output folder
+find . -type f -size +200k -exec ls -lh {} \;
+
+# Approximate compressed size of one text file (Brotli will be slightly smaller)
+gzip -9 -c styles.css | wc -c
+```
+
+Use the results to compare against the budgets in section 35.
+
+---
+
+## 39. Additional checks
+
+Run these together with section 32:
+
+- [ ] The primary image is a real `<img>`, is not lazy-loaded, has `fetchpriority="high"`, and is not hidden behind a reveal animation.
+- [ ] At most one or two resources are preloaded, and any font preload includes `crossorigin`.
+- [ ] Fonts are WOFF2 from a legitimate source, with the license text kept, and only one font file format strategy (variable or static) is used.
+- [ ] The `@font-face` fallback is tuned, or the font swap was checked for layout shift.
+- [ ] Immutable caching is applied only to files with hashed or versioned names.
+- [ ] The stylesheet is small, linked in `<head>`, and has no `@import` chain.
+- [ ] The only inline script is the tiny `js` flag script, if used.
+- [ ] Content is not hidden until JavaScript runs.
+- [ ] External embeds are lazy-loaded, click-to-load, or removed, and CDN scripts have pinned versions with Subresource Integrity.
+- [ ] Heavy shadows and filters are limited and not animated at scale.
+- [ ] No service worker was added unless requested.
+- [ ] No file exceeds the current Cloudflare Pages per-file limit.
+- [ ] Compressed sizes were checked against the budgets, or the reason for exceeding them is noted.
+- [ ] If Lighthouse or Core Web Vitals could not be measured, no numbers were reported and the limitation is stated.

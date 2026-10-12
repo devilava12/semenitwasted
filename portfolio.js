@@ -1,6 +1,6 @@
 /**
  * SEMENITWASTED — Portfolio Engine (portfolio.js)
- * Data-Driven Bento Grid Rendering, Category Filtering, Theme & Drawer
+ * Data-Driven Bento Grid Rendering and Category Filtering
  * Adheres strictly to porfolio_page_spec.md
  */
 
@@ -146,11 +146,11 @@ function renderPreviewHTML(item) {
             </div>
             <div class="featured-details-side">
               <span class="featured-stat-badge">✦ Interactive Stage Canvas</span>
-              <p style="font-size:0.85rem; color:#D5CCD9; line-height: 1.5;">
+              <p class="featured-preview-copy">
                 Merging 2D vector character assets with real-time responsive CSS grid cards and tactile hover states.
               </p>
-              <div style="display:flex; gap:8px;">
-                <span class="card-tag" style="background:rgba(255,255,255,0.12); color:#FCFAFD; border-color:rgba(255,255,255,0.25);">Live Preview</span>
+              <div class="featured-preview-tags">
+                <span class="card-tag card-tag--light">Live Preview</span>
                 <span class="card-tag">Figma to Code</span>
               </div>
             </div>
@@ -188,14 +188,14 @@ function renderPreviewHTML(item) {
 
     case 'branding-swatch':
       innerContent = `
-        <div class="preview-content" style="flex-direction: column; gap: 10px;">
-          <div style="display:flex; gap:8px; width: 100%; justify-content: center;">
-            <div style="width:36px; height:36px; border-radius:10px; background:#211B28; box-shadow:0 4px 8px rgba(33,27,40,0.3);" title="#211B28 Core Dark"></div>
-            <div style="width:36px; height:36px; border-radius:10px; background:#450D50; box-shadow:0 4px 8px rgba(69,13,80,0.25);" title="#450D50 Shadow Core"></div>
-            <div style="width:36px; height:36px; border-radius:10px; background:#E4DCE9; border:1px solid #D5CCD9;" title="#E4DCE9 Border Neutral"></div>
-            <div style="width:36px; height:36px; border-radius:10px; background:#F0EDF4; border:1px solid #D5CCD9;" title="#F0EDF4 Canvas Light"></div>
+        <div class="preview-content preview-content--swatches">
+          <div class="preview-swatch-row">
+            <div class="preview-swatch preview-swatch--dark" title="#211B28 Core Dark"></div>
+            <div class="preview-swatch preview-swatch--shadow" title="#450D50 Shadow Core"></div>
+            <div class="preview-swatch preview-swatch--border" title="#E4DCE9 Border Neutral"></div>
+            <div class="preview-swatch preview-swatch--light" title="#F0EDF4 Canvas Light"></div>
           </div>
-          <div style="font-size:0.75rem; color:var(--text-secondary); text-align:center; font-weight:500;">
+          <div class="preview-caption">
             Rubik Typography · 8px Spacing Matrix
           </div>
         </div>
@@ -205,15 +205,15 @@ function renderPreviewHTML(item) {
     case 'experiment-controls':
       innerContent = `
         <div class="preview-content">
-          <div style="display:flex; flex-direction:column; gap:12px; width:100%; max-width:280px; align-items:center;">
-            <div style="display:flex; gap:12px; align-items:center;">
-              <span style="font-size:0.75rem; color:var(--text-secondary); font-weight:600;">Tactile Switch</span>
-              <div style="width:48px; height:26px; border-radius:999px; background:var(--strong); padding:3px; display:flex; justify-content:flex-end; cursor:pointer;">
-                <div style="width:20px; height:20px; border-radius:50%; background:#FCFAFD; box-shadow:0 2px 4px rgba(0,0,0,0.25);"></div>
+          <div class="preview-controls">
+            <div class="preview-switch-row">
+              <span class="preview-control-label">Tactile Switch</span>
+              <div class="preview-switch" aria-hidden="true">
+                <div class="preview-switch-thumb"></div>
               </div>
             </div>
-            <div style="width:100%; height:8px; background:var(--border); border-radius:999px; overflow:hidden;">
-              <div style="width:68%; height:100%; background:var(--strong);"></div>
+            <div class="preview-progress" aria-hidden="true">
+              <div class="preview-progress-value"></div>
             </div>
           </div>
         </div>
@@ -223,14 +223,8 @@ function renderPreviewHTML(item) {
     case 'audio-visual-preview':
       innerContent = `
         <div class="preview-content">
-          <div style="display:flex; align-items:center; gap:4px; height:50px;" aria-hidden="true">
-            <span style="width:4px; height:18px; background:var(--strong); border-radius:2px;"></span>
-            <span style="width:4px; height:34px; background:var(--strong); border-radius:2px;"></span>
-            <span style="width:4px; height:46px; background:var(--text-secondary); border-radius:2px;"></span>
-            <span style="width:4px; height:28px; background:var(--strong); border-radius:2px;"></span>
-            <span style="width:4px; height:40px; background:var(--text-secondary); border-radius:2px;"></span>
-            <span style="width:4px; height:22px; background:var(--strong); border-radius:2px;"></span>
-            <span style="width:4px; height:12px; background:var(--strong); border-radius:2px;"></span>
+          <div class="preview-audio-bars" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
           </div>
         </div>
       `;
@@ -239,13 +233,12 @@ function renderPreviewHTML(item) {
     default: // web-layout-1 or generic
       innerContent = `
         <div class="preview-content">
-          <div style="width:100%; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:12px; display:flex; flex-direction:column; gap:8px;">
-            <div style="width:40%; height:8px; background:var(--accent-purple); border-radius:4px; opacity:0.75;"></div>
-            <div style="width:85%; height:6px; background:var(--border); border-radius:4px;"></div>
-            <div style="width:65%; height:6px; background:var(--border); border-radius:4px;"></div>
-            <div style="display:flex; gap:6px; margin-top:4px;">
-              <div style="width:24px; height:14px; background:var(--soft-purple); border-radius:4px;"></div>
-              <div style="width:24px; height:14px; background:var(--soft-pink); border-radius:4px;"></div>
+          <div class="preview-web-layout">
+            <div class="preview-web-title"></div>
+            <div class="preview-web-line preview-web-line--long"></div>
+            <div class="preview-web-line preview-web-line--medium"></div>
+            <div class="preview-web-actions">
+              <div></div><div></div>
             </div>
           </div>
         </div>
@@ -322,53 +315,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 3. Mobile Navigation Drawer
-  const mobileToggle = document.getElementById('mobileNavToggle');
-  const mobileDrawer = document.getElementById('mobileNavDrawer');
-  if (mobileToggle && mobileDrawer) {
-    mobileToggle.addEventListener('click', () => {
-      mobileDrawer.classList.toggle('open');
-      const expanded = mobileDrawer.classList.contains('open');
-      mobileToggle.setAttribute('aria-expanded', expanded);
-      mobileDrawer.setAttribute('aria-hidden', String(!expanded));
-    });
-
-    mobileDrawer.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileDrawer.classList.remove('open');
-        mobileToggle.setAttribute('aria-expanded', 'false');
-        mobileDrawer.setAttribute('aria-hidden', 'true');
-      });
-    });
-  }
-
-  // 4. Theme Toggle (Light / Dark)
-  const themeToggle = document.getElementById('themeToggle');
-  const savedTheme = localStorage.getItem('semenitwasted_theme');
-  if (savedTheme === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    updateThemeIcon(true);
-  }
-
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      if (isDark) {
-        document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem('semenitwasted_theme', 'light');
-        updateThemeIcon(false);
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('semenitwasted_theme', 'dark');
-        updateThemeIcon(true);
-      }
-    });
-  }
-
-  function updateThemeIcon(isDark) {
-    if (!themeToggle) return;
-    themeToggle.innerHTML = isDark 
-      ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`
-      : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
-  }
 });

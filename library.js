@@ -7,41 +7,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- 1. Theme Toggle & Persistence ---
-  const themeToggle = document.getElementById('themeToggle');
-  const savedTheme = localStorage.getItem('theme') || 'light';
-  document.documentElement.setAttribute('data-theme', savedTheme);
-
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme') || 'light';
-      const target = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', target);
-      localStorage.setItem('theme', target);
-    });
-  }
-
-  // --- 2. Mobile Navigation Drawer ---
-  const mobileNavToggle = document.getElementById('mobileNavToggle');
-  const mobileNavDrawer = document.getElementById('mobileNavDrawer');
-
-  if (mobileNavToggle && mobileNavDrawer) {
-    mobileNavToggle.addEventListener('click', () => {
-      const isOpen = mobileNavDrawer.classList.toggle('open');
-      mobileNavToggle.setAttribute('aria-expanded', String(isOpen));
-      mobileNavDrawer.setAttribute('aria-hidden', String(!isOpen));
-    });
-
-    // Close drawer when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!mobileNavDrawer.contains(e.target) && !mobileNavToggle.contains(e.target)) {
-        mobileNavDrawer.classList.remove('open');
-        mobileNavToggle.setAttribute('aria-expanded', 'false');
-        mobileNavDrawer.setAttribute('aria-hidden', 'true');
-      }
-    });
-  }
-
   // --- 3. Toast Notification Helper ---
   const toast = document.getElementById('toastNotification');
   const toastMessage = document.getElementById('toastMessage');

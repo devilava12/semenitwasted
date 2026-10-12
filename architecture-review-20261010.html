@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Architecture review: semenitwasted.web.id</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+      mermaid.initialize({ startOnLoad: true, theme: "neutral", securityLevel: "loose" });
+    </script>
+    <style>
+      .seam { stroke-dasharray: 4 4; }
+      .leak { stroke: #dc2626; }
+      .deep { background: linear-gradient(135deg, #0f172a, #1e293b); }
+      .dashed-seam { border-top: 2px dashed #94a3b8; }
+    </style>
+  </head>
+  <body class="bg-stone-50 text-slate-900 font-sans">
+    <main class="max-w-5xl mx-auto px-6 py-12 space-y-12">
+      <header class="space-y-3">
+        <h1 class="font-serif text-3xl">Architecture review: semenitwasted.web.id</h1>
+        <p class="text-sm text-slate-500">10 Oktober 2026 · situs live (tanpa repo, tanpa git history, tanpa CONTEXT.md atau ADR). Struktur disimpulkan dari file yang dilayani: 5 halaman HTML, <span class="font-mono">portfolio.css</span>, <span class="font-mono">style.css</span>, <span class="font-mono">portfolio.js</span>, <span class="font-mono">library.js</span>, <span class="font-mono">script.js</span>, <span class="font-mono">contact.js</span>.</p>
+        <div class="flex flex-wrap gap-4 text-xs uppercase tracking-wider text-slate-600">
+          <span class="flex items-center gap-2"><span class="inline-block w-5 h-4 border border-slate-400 bg-white"></span>module</span>
+          <span class="flex items-center gap-2"><span class="inline-block w-8 border-t-2 border-dashed border-slate-400"></span>seam</span>
+          <span class="flex items-center gap-2"><span class="inline-block w-8 border-t-2 border-red-600"></span>leakage / drift</span>
+          <span class="flex items-center gap-2"><span class="inline-block w-5 h-4 deep"></span>deep module</span>
+        </div>
+      </header>
+
+      <section id="candidates" class="space-y-10">
+
+        <!-- CANDIDATE 1 -->
+        <article id="c1" class="rounded-xl border border-slate-200 bg-white p-6 space-y-5">
+          <h2 class="font-serif text-2xl">Satukan site chrome (header, nav, drawer) jadi satu module</h2>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="rounded-full bg-emerald-100 text-emerald-800 px-3 py-1 font-semibold">Strong</span>
+            <span class="rounded-full bg-slate-100 text-slate-700 px-3 py-1">in-process</span>
+          </div>
+          <ul class="font-mono text-sm text-slate-600">
+            <li>about.html · contact.html · portfolio.html · library.html (header + #mobileNavDrawer)</li>
+            <li>index.html (header sendiri, nav memakai #home)</li>
+          </ul>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="rounded-lg border border-slate-200 p-4">
+              <p class="text-xs uppercase tracking-wider text-slate-500 mb-2">Before: 5 salinan, sudah drift</p>
+              <pre class="mermaid">
+flowchart TB
+  P[portfolio.html] --- N1[nav + drawer 5 link]
+  A[about.html] --- N2[nav + drawer 5 link]
+  L[library.html] --- N3[nav + drawer 5 link]
+  C[contact.html] --- N4[nav + drawer 4 link, tanpa Library]
+  I[index.html] --- N5[header lain, link ke #home]
+  classDef leak stroke:#dc2626,stroke-width:2px;
+  class N4,N5 leak
+              </pre>
+            </div>
+            <div class="rounded-lg border border-slate-200 p-4">
+              <p class="text-xs uppercase tracking-wider text-slate-500 mb-2">After: satu module, halaman hanya memanggil</p>
+              <pre class="mermaid">
+flowchart TB
+  P[portfolio.html] --> SC
+  A[about.html] --> SC
+  L[library.html] --> SC
+  C[contact.html] --> SC
+  I[index.html] --> SC
+  SC[[Site chrome: daftar link, state aktif, drawer]]
+  classDef deep fill:#0f172a,color:#fff,stroke:#0f172a,stroke-width:3px;
+  class SC deep
+              </pre>
+            </div>
+          </div>
+
+          <p><strong>Problem:</strong> Daftar link ada di 2 tempat per halaman dan di 5 halaman, jadi Contact kehilangan link Library di nav dan drawer.</p>
+          <p><strong>Solution:</strong> Satu module memegang daftar link dan state halaman aktif; tiap halaman hanya menyatakan "saya halaman About".</p>
+          <ul class="list-disc pl-5 text-sm">
+            <li>locality: tambah halaman = satu edit</li>
+            <li>Drift antar halaman hilang</li>
+            <li>Head SEO (canonical, OG) ikut terpusat</li>
+            <li>Link bersih /about tanpa redirect .html</li>
+          </ul>
+        </article>
+
+        <!-- CANDIDATE 2 -->
+        <article id="c2" class="rounded-xl border border-slate-200 bg-white p-6 space-y-5">
+          <h2 class="font-serif text-2xl">Pisahkan perilaku chrome (tema + drawer) dari portfolio grid</h2>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="rounded-full bg-emerald-100 text-emerald-800 px-3 py-1 font-semibold">Strong</span>
+            <span class="rounded-full bg-slate-100 text-slate-700 px-3 py-1">in-process</span>
+          </div>
+          <ul class="font-mono text-sm text-slate-600">
+            <li>portfolio.js (15.6 KB, dimuat di About, Contact, Portfolio)</li>
+            <li>library.js (13.4 KB, salinan tema + drawer sendiri)</li>
+          </ul>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="rounded-lg border border-slate-200 p-4 space-y-3">
+              <p class="text-xs uppercase tracking-wider text-slate-500">Before (skema, bukan skala)</p>
+              <div class="flex gap-3 items-end h-44">
+                <div class="flex-1 flex flex-col border border-slate-400 h-full">
+                  <div class="bg-white text-[10px] uppercase tracking-wider p-1 border-b border-slate-300">portfolio.js</div>
+                  <div class="flex-1 bg-slate-100 text-[10px] p-1 text-slate-500">data + render grid + filter (tidak dipakai di About)</div>
+                  <div class="h-10 bg-red-50 border-t border-red-400 text-[10px] p-1 text-red-700">tema + drawer · key: semenitwasted_theme</div>
+                </div>
+                <div class="flex-1 flex flex-col border border-slate-400 h-full">
+                  <div class="bg-white text-[10px] uppercase tracking-wider p-1 border-b border-slate-300">library.js</div>
+                  <div class="flex-1 bg-slate-100 text-[10px] p-1 text-slate-500">logika Library</div>
+                  <div class="h-10 bg-red-50 border-t border-red-400 text-[10px] p-1 text-red-700">tema + drawer · key: theme</div>
+                </div>
+              </div>
+              <p class="text-xs text-red-700">Dua implementation, dua key localStorage: pilihan tema tidak ikut pindah antar Library dan halaman lain.</p>
+            </div>
+            <div class="rounded-lg border border-slate-200 p-4 space-y-3">
+              <p class="text-xs uppercase tracking-wider text-slate-500">After</p>
+              <div class="flex gap-3 items-end h-44">
+                <div class="flex-1 deep text-white flex flex-col justify-center items-center h-full rounded">
+                  <div class="text-[10px] uppercase tracking-wider">site-chrome.js</div>
+                  <div class="text-[10px] opacity-70 text-center px-2">tema + drawer + satu key + apply sebelum paint</div>
+                </div>
+                <div class="flex-1 flex flex-col gap-3 h-full">
+                  <div class="flex-1 border border-slate-400 bg-white text-[10px] uppercase tracking-wider p-2">portfolio-grid.js (hanya Portfolio)</div>
+                  <div class="flex-1 border border-slate-400 bg-white text-[10px] uppercase tracking-wider p-2">library.js (hanya Library)</div>
+                </div>
+              </div>
+              <p class="text-xs text-slate-500">About dan Contact memuat site-chrome saja.</p>
+            </div>
+          </div>
+
+          <p><strong>Problem:</strong> portfolio.js berubah karena dua alasan tak berkaitan (isi portfolio dan perilaku chrome), dan perilaku chrome ditulis dua kali dengan key berbeda.</p>
+          <p><strong>Solution:</strong> Satu module untuk tema dan drawer di setiap halaman; data dan render grid pindah ke module yang hanya dimuat di Portfolio.</p>
+          <ul class="list-disc pl-5 text-sm">
+            <li>locality: bug tema diperbaiki sekali</li>
+            <li>Tema terapply sebelum paint (tanpa flash)</li>
+            <li>About berhenti memuat kode grid</li>
+            <li>Drawer: satu tempat untuk perbaikan aria-hidden dan Escape</li>
+          </ul>
+        </article>
+
+        <!-- CANDIDATE 3 -->
+        <article id="c3" class="rounded-xl border border-slate-200 bg-white p-6 space-y-5">
+          <h2 class="font-serif text-2xl">Tutup kebocoran design token di preview card</h2>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="rounded-full bg-amber-100 text-amber-800 px-3 py-1 font-semibold">Worth exploring</span>
+            <span class="rounded-full bg-slate-100 text-slate-700 px-3 py-1">in-process</span>
+          </div>
+          <ul class="font-mono text-sm text-slate-600">
+            <li>portfolio.js (renderPreviewHTML, 32 atribut style inline)</li>
+            <li>portfolio.css (:root tokens)</li>
+          </ul>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="rounded-lg border border-slate-200 p-4 space-y-0">
+              <p class="text-xs uppercase tracking-wider text-slate-500 mb-2">Before: 3 band, token bocor di tengah</p>
+              <div class="h-12 border-l-4 border-slate-700 bg-slate-50 px-3 flex items-center text-xs uppercase tracking-wider">portfolio.css :root (monochrome, locked)</div>
+              <div class="h-12 border-l-4 border-red-600 bg-red-50 px-3 flex items-center text-xs uppercase tracking-wider">JS: style="..." inline x32</div>
+              <div class="h-12 border-l-4 border-red-600 bg-red-50 px-3 flex items-center text-xs uppercase tracking-wider">var(--accent-purple, --soft-purple, --soft-pink): tidak terdefinisi</div>
+            </div>
+            <div class="rounded-lg border border-slate-200 p-4">
+              <p class="text-xs uppercase tracking-wider text-slate-500 mb-2">After: satu band</p>
+              <div class="h-36 border-l-4 border-slate-900 deep text-white px-3 flex items-center text-xs uppercase tracking-wider">portfolio.css: preview memakai class + token yang terdefinisi</div>
+            </div>
+          </div>
+
+          <p><strong>Problem:</strong> JS menulis style langsung dan memakai 3 variabel yang tidak ada di stylesheet, sehingga seam token terlewati dan header CSS ("monochrome, locked") tidak ditaati.</p>
+          <p><strong>Solution:</strong> Preview card memakai class dari stylesheet; variabel yang dipakai wajib terdefinisi, atau dihapus.</p>
+          <ul class="list-disc pl-5 text-sm">
+            <li>locality: tampilan hanya berubah di CSS</li>
+            <li>Dark theme otomatis konsisten</li>
+            <li>JS menyusut jadi data + markup</li>
+          </ul>
+          <div class="rounded border border-amber-300 bg-amber-50 text-amber-900 text-sm px-3 py-2">Verifikasi: variabel tak terdefinisi diperiksa lewat pencarian di portfolio.css dan portfolio.js. Dampak visual di halaman Portfolio belum saya lihat langsung.</div>
+        </article>
+
+        <!-- CANDIDATE 4 -->
+        <article id="c4" class="rounded-xl border border-slate-200 bg-white p-6 space-y-5">
+          <h2 class="font-serif text-2xl">Dua sistem desain dalam satu situs: index.html berdiri sendiri</h2>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="rounded-full bg-amber-100 text-amber-800 px-3 py-1 font-semibold">Worth exploring</span>
+            <span class="rounded-full bg-slate-100 text-slate-700 px-3 py-1">in-process</span>
+          </div>
+          <ul class="font-mono text-sm text-slate-600">
+            <li>index.html · style.css · script.js</li>
+          </ul>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="rounded-lg border border-slate-200 p-4">
+              <p class="text-xs uppercase tracking-wider text-slate-500 mb-2">Before</p>
+              <pre class="mermaid">
+flowchart LR
+  I[index.html] --> S1[style.css]
+  I --> J1[script.js]
+  O[about, contact, portfolio, library] --> S2[portfolio.css]
+  O --> J2[portfolio.js / library.js]
+  I -. title: Belajar Web, tanpa theme toggle .- O
+  classDef leak stroke:#dc2626,stroke-width:2px;
+  class I,S1,J1 leak
+              </pre>
+            </div>
+            <div class="rounded-lg border border-slate-200 p-4">
+              <p class="text-xs uppercase tracking-wider text-slate-500 mb-2">After</p>
+              <pre class="mermaid">
+flowchart LR
+  I[index.html] --> SC[[Site chrome]]
+  O[halaman lain] --> SC
+  SC --> T[Token + stylesheet bersama]
+  classDef deep fill:#0f172a,color:#fff,stroke:#0f172a,stroke-width:3px;
+  class SC deep
+              </pre>
+            </div>
+          </div>
+
+          <p><strong>Problem:</strong> Beranda tidak berbagi stylesheet, script, atau header dengan 4 halaman lain, dan title-nya masih "Belajar Web - Creative Portfolio".</p>
+          <p><strong>Solution:</strong> Beranda ikut memakai module chrome dan token yang sama, jika perbedaannya memang tidak disengaja.</p>
+          <ul class="list-disc pl-5 text-sm">
+            <li>leverage: satu perbaikan chrome, 5 halaman</li>
+            <li>Brand dan title konsisten</li>
+            <li>Theme toggle tersedia di beranda</li>
+          </ul>
+          <div class="rounded border border-amber-300 bg-amber-50 text-amber-900 text-sm px-3 py-2">Bisa jadi sengaja (landing page berbeda). Konfirmasi dulu sebelum disatukan.</div>
+        </article>
+
+        <!-- CANDIDATE 5 -->
+        <article id="c5" class="rounded-xl border border-slate-200 bg-white p-6 space-y-5">
+          <h2 class="font-serif text-2xl">Pecah portfolio.css per halaman</h2>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="rounded-full bg-slate-200 text-slate-700 px-3 py-1 font-semibold">Speculative</span>
+            <span class="rounded-full bg-slate-100 text-slate-700 px-3 py-1">in-process</span>
+          </div>
+          <ul class="font-mono text-sm text-slate-600">
+            <li>portfolio.css (26 KB, ±105 class, ±72 tidak dipakai di About)</li>
+          </ul>
+          <div class="rounded-lg border border-slate-200 p-4 space-y-2">
+            <p class="text-xs uppercase tracking-wider text-slate-500">Deletion test</p>
+            <div class="flex items-center gap-1 h-8">
+              <div class="h-full bg-slate-800" style="width:31%"></div>
+              <div class="h-full bg-slate-200" style="width:69%"></div>
+            </div>
+            <p class="text-xs text-slate-500">Terpakai di About: ±33 dari ±105 class (hitungan kasar dari regex). Sisanya dipakai halaman lain.</p>
+          </div>
+          <p><strong>Problem:</strong> About mengunduh class milik halaman lain.</p>
+          <p><strong>Solution:</strong> Stylesheet dipecah, tetapi menghapus bagian itu hanya memindahkan kompleksitas, bukan memusatkannya.</p>
+          <ul class="list-disc pl-5 text-sm">
+            <li>Satu file ter-cache melayani 5 halaman</li>
+            <li>Nilai kecil untuk 26 KB</li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="top-recommendation">
+        <div class="rounded-2xl deep text-white p-8 space-y-3">
+          <p class="text-xs uppercase tracking-wider opacity-70">Top recommendation</p>
+          <h2 class="font-serif text-2xl">Candidate 2: pisahkan perilaku chrome dari portfolio grid</h2>
+          <p>Tidak butuh build tool, memperbaiki key tema yang tidak sinkron, dan membuka jalan untuk candidate 1.</p>
+          <a href="#c2" class="inline-block underline text-sm">Lihat kartunya</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
