@@ -4,19 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="light">
+  <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#F0EDF4">
   <title>Roche #AyoCekHPV — Portfolio semenitwasted</title>
-  <meta name="description" content="Studi kasus desain Figma #AyoCekHPV untuk Roche, dikerjakan bersama KelolaWeb.com sebagai dasar implementasi website.">
+  <meta name="description"
+    content="Studi kasus desain Figma #AyoCekHPV untuk Roche Indonesia, dikerjakan bersama KelolaWeb.com sebagai rancangan antarmuka dan fondasi visual sebelum website diimplementasikan.">
   <link rel="icon" type="image/svg+xml" href="assets/logo-nav.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="portfolio.css">
   <link rel="stylesheet" href="portfolio-roche.css">
   <script src="site-chrome.js"></script>
+  <script src="portfolio-roche.js" defer></script>
 </head>
 
 <body>
@@ -24,118 +27,463 @@
     <div data-site-chrome data-active-page="portfolio"></div>
 
     <main>
-      <nav class="case-breadcrumb" aria-label="Breadcrumb">
+      <!-- BREADCRUMB NAVIGATION -->
+      <nav class="case-breadcrumb reveal-item" aria-label="Breadcrumb">
         <a href="portfolio.html">Portfolio</a>
-        <span aria-hidden="true">/</span>
+        <span aria-hidden="true" class="breadcrumb-sep">/</span>
         <span aria-current="page">Roche #AyoCekHPV</span>
       </nav>
 
+      <!-- HERO SECTION -->
       <section class="case-hero" aria-labelledby="case-title">
-        <div class="case-hero-copy">
-          <p class="case-kicker">Case Study / Website Design</p>
+        <div class="case-hero-copy reveal-item">
+          <div class="hero-eyebrow">
+            <span class="hero-eyebrow-dot"></span>
+            Case Study · Website Design
+          </div>
           <h1 id="case-title">Roche #AyoCekHPV</h1>
-          <p class="case-intro">Bersama KelolaWeb.com, saya berkontribusi membuat desain Figma untuk #AyoCekHPV—sebagai dasar visual sebelum website diimplementasikan.</p>
+          <p class="case-intro">
+            Bersama KelolaWeb.com, saya berkontribusi merancang desain antarmuka Figma untuk situs edukasi kesehatan
+            #AyoCekHPV milik Roche Indonesia—sebagai acuan visual terstruktur sebelum website diimplementasikan.
+          </p>
           <div class="case-actions">
-            <a class="btn-primary" href="https://www.ayocekhpv.com/" target="_blank" rel="noopener noreferrer">Kunjungi website <span aria-hidden="true">↗</span></a>
-            <a class="btn-secondary" href="#layar-desain">Lihat rancangan</a>
+            <a class="btn-primary" href="https://www.ayocekhpv.com/" target="_blank" rel="noopener noreferrer">
+              <span>Kunjungi website</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="btn-secondary" href="#layar-desain">
+              <span>Lihat rancangan Figma</span>
+              <span aria-hidden="true">↓</span>
+            </a>
           </div>
         </div>
 
-        <aside class="case-facts" aria-label="Ringkasan proyek">
-          <div>
+        <aside class="case-facts reveal-item" aria-label="Ringkasan proyek">
+          <div class="fact-item">
             <p>Kolaborasi</p>
             <strong>KelolaWeb.com</strong>
           </div>
-          <div>
-            <p>Peran</p>
-            <strong>Desain Figma</strong>
+          <div class="fact-item">
+            <p>Klien / Brand</p>
+            <strong>Roche Indonesia</strong>
           </div>
-          <div>
-            <p>Output</p>
-            <strong>Rancangan website</strong>
+          <div class="fact-item">
+            <p>Peran</p>
+            <strong>Desain Figma UI</strong>
+          </div>
+          <div class="fact-item">
+            <p>Output Desain</p>
+            <strong>5 Artboard Web Hand-off</strong>
           </div>
         </aside>
       </section>
 
-      <figure class="case-hero-visual">
-        <img src="portfolio/roche/%23AyocekHPV.png" width="5760" height="7008" fetchpriority="high" decoding="async" alt="Rancangan halaman utama #AyoCekHPV dengan navigasi Roche, hero ungu, dan ajakan menjadwalkan skrining">
-        <figcaption>Cuplikan rancangan halaman utama #AyoCekHPV di Figma.</figcaption>
+      <!-- HERO VISUAL PREVIEW -->
+      <figure class="case-hero-visual reveal-item">
+        <div class="browser-top-bar" aria-hidden="true">
+          <span class="browser-dot dot-red"></span>
+          <span class="browser-dot dot-yellow"></span>
+          <span class="browser-dot dot-green"></span>
+          <span class="browser-address">ayocekhpv.com</span>
+          <span class="browser-badge">Hero Overview</span>
+        </div>
+        <div class="hero-image-wrap">
+          <img src="portfolio/roche/%23AyocekHPV.webp" width="2880" height="3504" fetchpriority="high"
+            decoding="async" alt="Rancangan halaman utama #AyoCekHPV dengan navigasi Roche, hero ungu, dan ajakan menjadwalkan skrining">
+        </div>
+        <figcaption>Cuplikan rancangan antarmuka halaman utama #AyoCekHPV di Figma yang telah dioptimasi ke format WebP.</figcaption>
       </figure>
 
-      <section class="case-section case-overview" aria-labelledby="overview-title">
+      <!-- CONTEXT / OVERVIEW -->
+      <section class="case-section case-overview reveal-item" aria-labelledby="overview-title">
         <div class="case-section-heading">
-          <p class="case-kicker">Konteks</p>
-          <h2 id="overview-title">Merancang fondasi visual untuk informasi yang mudah dijelajahi.</h2>
+          <div class="section-kicker-tag">
+            <span class="hero-eyebrow-dot"></span>
+            Konteks Proyek
+          </div>
+          <h2 id="overview-title">Merancang fondasi visual untuk informasi medis yang mudah dijelajahi.</h2>
         </div>
         <div class="case-section-copy">
-          <p>Proyek ini berfokus pada penyusunan rancangan antarmuka Figma untuk situs #AyoCekHPV milik Roche. Rancangan tersebut digunakan sebagai acuan visual dalam proses pembuatan website.</p>
-          <p>Sebagai salah satu anggota KelolaWeb.com, saya membantu mengolah arah desain halaman agar alur informasi, navigasi, dan ajakan bertindak dapat tersaji secara jelas.</p>
+          <p>
+            Proyek ini berfokus pada penyusunan rancangan antarmuka Figma untuk situs kampanye kesehatan #AyoCekHPV milik
+            Roche Indonesia. Tantangan utamanya adalah mengemas materi edukasi kanker serviks dan skrining HPV yang bersifat teknis
+            menjadi pengalaman digital yang ramah, informatif, dan tidak mengintimidasi audiens umum.
+          </p>
+          <p>
+            Sebagai anggota tim desain di KelolaWeb.com, saya membantu menyusun tata letak antarmuka agar hierarki pesan, navigasi,
+            alur edukasi faktor risiko, dan titik konversi skrining tersaji secara lugas dan konsisten sebelum dilanjutkan ke tahap penulisan kode website.
+          </p>
         </div>
       </section>
 
-      <section class="case-section case-contribution" aria-labelledby="contribution-title">
+      <!-- CONTRIBUTION -->
+      <section class="case-section case-contribution reveal-item" aria-labelledby="contribution-title">
         <div class="case-section-heading">
-          <p class="case-kicker">Kontribusi</p>
-          <h2 id="contribution-title">Desain yang disiapkan untuk perjalanan pengguna di web.</h2>
+          <div class="section-kicker-tag">
+            <span class="hero-eyebrow-dot"></span>
+            Kontribusi Utama
+          </div>
+          <h2 id="contribution-title">Desain terukur yang disiapkan untuk perjalanan pengguna di web.</h2>
         </div>
-        <ul class="contribution-list">
-          <li>Merancang tampilan halaman di Figma sebagai bahan implementasi website.</li>
-          <li>Menyusun presentasi visual untuk halaman utama dan halaman informasi pendukung.</li>
-          <li>Menjaga penggunaan pola navigasi dan ajakan bertindak agar konsisten antarlayar.</li>
-        </ul>
+        <div class="contribution-cards-grid">
+          <div class="contribution-card">
+            <div class="contrib-number">01</div>
+            <h3>Perancangan Layar Figma</h3>
+            <p>Menyusun sistem artboard Figma lengkap dari beranda hingga halaman FAQ sebagai cetak biru visual implementasi web.</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contrib-number">02</div>
+            <h3>Hierarki Pesan &amp; Edukasi</h3>
+            <p>Mengatur alur informasi bertahap agar pesan pencegahan, risiko HPV, dan tes DNA diserap audiens dengan tenang dan nyaman.</p>
+          </div>
+          <div class="contribution-card">
+            <div class="contrib-number">03</div>
+            <h3>Konsistensi Komponen &amp; CTA</h3>
+            <p>Menjaga keselarasan elemen tombol skrining, kartu modul, navigasi Roche, dan tipografi agar konsisten antarlayar.</p>
+          </div>
+        </div>
       </section>
 
-      <section class="case-section case-gallery" id="layar-desain" aria-labelledby="gallery-title">
-        <div class="case-section-heading case-section-heading--wide">
-          <p class="case-kicker">Rancangan layar</p>
+      <!-- BENTO GALLERY SECTION: DOKUMENTASI DESAIN FIGMA -->
+      <section class="case-section case-gallery-section" id="layar-desain" aria-labelledby="gallery-title">
+        <header class="case-section-heading case-section-heading--wide reveal-item">
+          <div class="hero-eyebrow">
+            <span class="hero-eyebrow-dot"></span>
+            ARSIP ARTBOARD FIGMA
+          </div>
           <h2 id="gallery-title">Dokumentasi desain Figma.</h2>
-          <p>Berikut beberapa layar yang disiapkan untuk membantu proses pengembangan website.</p>
+          <p>
+            Berikut dokumentasi layar antarmuka yang disiapkan di Figma untuk proses pengembangan website #AyoCekHPV.
+            Setiap kartu dilengkapi pratinjau interaktif, rincian teknis, dan tampilan WebP teroptimasi.
+          </p>
+        </header>
+
+        <!-- TOOLBAR & CATEGORY FILTER -->
+        <div class="gallery-toolbar reveal-item" aria-label="Kontrol filter artboard">
+          <div class="filter-pills-group" role="tablist" aria-label="Filter kategori artboard">
+            <button type="button" class="filter-pill active" data-filter="all" role="tab" aria-selected="true">
+              <span>Semua Layar</span>
+              <span class="pill-badge">5</span>
+            </button>
+            <button type="button" class="filter-pill" data-filter="landing" role="tab" aria-selected="false">
+              <span>Landing Page</span>
+            </button>
+            <button type="button" class="filter-pill" data-filter="edu" role="tab" aria-selected="false">
+              <span>Edukasi (Learn)</span>
+            </button>
+            <button type="button" class="filter-pill" data-filter="act" role="tab" aria-selected="false">
+              <span>Skrining (ACT)</span>
+            </button>
+            <button type="button" class="filter-pill" data-filter="faq" role="tab" aria-selected="false">
+              <span>Tanya Jawab (FAQ)</span>
+            </button>
+          </div>
+
+          <div class="gallery-meta-summary" aria-hidden="true">
+            <span class="meta-icon">✦</span>
+            <span>5 Artboard WebP Dioptimalkan (Hemat ~85% Ukuran)</span>
+          </div>
         </div>
 
-        <div class="case-gallery-grid">
-          <figure class="case-screen case-screen--wide">
-            <img src="portfolio/roche/Landing%20Page.png" width="5760" height="31580" loading="lazy" decoding="async" alt="Rancangan Figma halaman landing #AyoCekHPV">
-            <figcaption>Landing page</figcaption>
-          </figure>
-          <figure class="case-screen">
-            <img src="portfolio/roche/Page%20Kenali%20(Learn)-%2020.png" width="5760" height="28468" loading="lazy" decoding="async" alt="Rancangan halaman Kenali atau Learn #AyoCekHPV">
-            <figcaption>Halaman Kenali</figcaption>
-          </figure>
-          <figure class="case-screen">
-            <img src="portfolio/roche/ACT.png" width="5637" height="32768" loading="lazy" decoding="async" alt="Rancangan halaman ACT #AyoCekHPV">
-            <figcaption>Halaman ACT</figcaption>
-          </figure>
-          <figure class="case-screen">
-            <img src="portfolio/roche/Page%20Tanya%20Jawab%20(FAQ)%20-%2044.png" width="5760" height="16540" loading="lazy" decoding="async" alt="Rancangan halaman Tanya Jawab #AyoCekHPV">
-            <figcaption>Halaman Tanya Jawab</figcaption>
-          </figure>
-          <figure class="case-screen">
-            <img src="portfolio/roche/Page%20Tanya%20Jawab%20(FAQ)%20-%2045.png" width="5760" height="16540" loading="lazy" decoding="async" alt="Varian rancangan halaman Tanya Jawab #AyoCekHPV">
-            <figcaption>Varian Tanya Jawab</figcaption>
-          </figure>
+        <!-- BENTO CATALOG GRID OF SCREENS -->
+        <div class="case-bento-grid">
+
+          <!-- 01. LANDING PAGE (Featured Spanning Card) -->
+          <article class="bento-screen-card bento-screen-card--featured reveal-item" data-category="landing" id="screen-landing">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Halaman Utama / Beranda</span>
+                <span class="timing-badge">720 × 3948 px</span>
+                <span class="format-badge">WebP 263 KB</span>
+              </div>
+              <h3 class="anim-title">01. Landing Page #AyoCekHPV</h3>
+              <p class="anim-desc">
+                Gerbang utama kampanye dengan navigasi korporat Roche yang presisi, visual hero ungu yang menenangkan,
+                kalkulator risiko HPV, serta ajakan tindakan skrining mandiri.
+              </p>
+            </header>
+
+            <div class="stage-canvas">
+              <div class="stage-caption">Interactive Mockup — Scroll untuk menjelajahi artboard Figma</div>
+              <div class="stage-demo-area">
+                <div class="browser-mockup-frame">
+                  <div class="browser-top-bar" aria-hidden="true">
+                    <span class="browser-dot dot-red"></span>
+                    <span class="browser-dot dot-yellow"></span>
+                    <span class="browser-dot dot-green"></span>
+                    <span class="browser-address">https://www.ayocekhpv.com/</span>
+                  </div>
+                  <div class="mockup-scroll-viewport" tabindex="0" role="region" aria-label="Pratinjau gulir Landing Page">
+                    <img src="portfolio/roche/Landing%20Page.webp" width="720" height="3948" loading="lazy" decoding="async"
+                      alt="Rancangan Figma halaman landing page #AyoCekHPV" class="artboard-img">
+                  </div>
+                </div>
+              </div>
+              <div class="stage-status-indicator">Status Hand-off: Final · Komponen Siap Web</div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Komponen Kunci</span>
+                <span class="spec-value">Hero Banner, Edukasi Risiko, CTA Skrining</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Format File</span>
+                <span class="spec-value">WebP (Turun 94% dari 4.2 MB PNG)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Peran Kolaborasi</span>
+                <span class="spec-value">Desain UI Figma untuk KelolaWeb.com</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 02. HALAMAN KENALI (LEARN) -->
+          <article class="bento-screen-card reveal-item" data-category="edu" id="screen-kenali">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Informasi &amp; Edukasi</span>
+                <span class="timing-badge">720 × 3559 px</span>
+                <span class="format-badge">WebP 245 KB</span>
+              </div>
+              <h3 class="anim-title">02. Halaman Kenali (Learn)</h3>
+              <p class="anim-desc">
+                Halaman komprehensif yang menguraikan bahaya infeksi virus HPV, cara penularan, serta pentingnya deteksi dini dengan tes DNA HPV.
+              </p>
+            </header>
+
+            <div class="stage-canvas">
+              <div class="stage-caption">Interactive Mockup — Scroll untuk memeriksa alur konten</div>
+              <div class="stage-demo-area">
+                <div class="browser-mockup-frame">
+                  <div class="browser-top-bar" aria-hidden="true">
+                    <span class="browser-dot dot-red"></span>
+                    <span class="browser-dot dot-yellow"></span>
+                    <span class="browser-dot dot-green"></span>
+                    <span class="browser-address">https://www.ayocekhpv.com/kenali</span>
+                  </div>
+                  <div class="mockup-scroll-viewport" tabindex="0" role="region" aria-label="Pratinjau gulir Halaman Kenali">
+                    <img src="portfolio/roche/Page%20Kenali%20(Learn)-%2020.webp" width="720" height="3559" loading="lazy" decoding="async"
+                      alt="Rancangan halaman Kenali atau Learn #AyoCekHPV" class="artboard-img">
+                  </div>
+                </div>
+              </div>
+              <div class="stage-status-indicator">Tahap Edukasi · Struktur Infografik Modular</div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Fokus Desain</span>
+                <span class="spec-value">Infografis Medis, Kartu Gejala, Fakta HPV</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Format File</span>
+                <span class="spec-value">WebP (Turun 87% dari 1.9 MB PNG)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Peran Kolaborasi</span>
+                <span class="spec-value">Hierarki Informasi &amp; Tipografi Medis</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 03. HALAMAN ACT (SKRINING & AKSI) -->
+          <article class="bento-screen-card reveal-item" data-category="act" id="screen-act">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Konversi &amp; Skrining</span>
+                <span class="timing-badge">720 × 4186 px</span>
+                <span class="format-badge">WebP 232 KB</span>
+              </div>
+              <h3 class="anim-title">03. Halaman ACT (Aksi Skrining)</h3>
+              <p class="anim-desc">
+                Alur interaktif penentuan faskes dan laboratorium rekanan Roche, panduan tata cara skrining mandiri, dan integrasi pendaftaran.
+              </p>
+            </header>
+
+            <div class="stage-canvas">
+              <div class="stage-caption">Interactive Mockup — Alur aksi &amp; pemilihan faskes</div>
+              <div class="stage-demo-area">
+                <div class="browser-mockup-frame">
+                  <div class="browser-top-bar" aria-hidden="true">
+                    <span class="browser-dot dot-red"></span>
+                    <span class="browser-dot dot-yellow"></span>
+                    <span class="browser-dot dot-green"></span>
+                    <span class="browser-address">https://www.ayocekhpv.com/act</span>
+                  </div>
+                  <div class="mockup-scroll-viewport" tabindex="0" role="region" aria-label="Pratinjau gulir Halaman ACT">
+                    <img src="portfolio/roche/ACT.webp" width="720" height="4186" loading="lazy" decoding="async"
+                      alt="Rancangan halaman ACT #AyoCekHPV" class="artboard-img">
+                  </div>
+                </div>
+              </div>
+              <div class="stage-status-indicator">Tahap Konversi · Alur Penjadwalan Pasien</div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Fokus Desain</span>
+                <span class="spec-value">Pencarian Faskes, Step Wizard, Form Skrining</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Format File</span>
+                <span class="spec-value">WebP (Turun 90% dari 2.4 MB PNG)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Peran Kolaborasi</span>
+                <span class="spec-value">User Journey &amp; Komponen Form Interaktif</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 04. HALAMAN TANYA JAWAB (FAQ) FLIP CARD DEPAN -->
+          <article class="bento-screen-card reveal-item" data-category="faq" id="screen-faq-44">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">FAQ Flip Card (Depan)</span>
+                <span class="timing-badge">720 × 2068 px</span>
+                <span class="format-badge">WebP 123 KB</span>
+              </div>
+              <h3 class="anim-title">04. Tanya Jawab (FAQ) — Flip Card Depan</h3>
+              <p class="anim-desc">
+                Desain modul akordeon tanya jawab seputar tes DNA HPV, akurasi pemeriksaan, dan kesiapan medis sebelum skrining.
+              </p>
+            </header>
+
+            <div class="stage-canvas">
+              <div class="stage-caption">Interactive Mockup — Modul akordeon tanya jawab</div>
+              <div class="stage-demo-area">
+                <div class="browser-mockup-frame">
+                  <div class="browser-top-bar" aria-hidden="true">
+                    <span class="browser-dot dot-red"></span>
+                    <span class="browser-dot dot-yellow"></span>
+                    <span class="browser-dot dot-green"></span>
+                    <span class="browser-address">https://www.ayocekhpv.com/faq</span>
+                  </div>
+                  <div class="mockup-scroll-viewport" tabindex="0" role="region" aria-label="Pratinjau gulir Tanya Jawab flip card depan">
+                    <img src="portfolio/roche/Page%20Tanya%20Jawab%20(FAQ)%20-%2044.webp" width="720" height="2068" loading="lazy" decoding="async"
+                      alt="Rancangan halaman Tanya Jawab #AyoCekHPV Flip Card Depan" class="artboard-img">
+                  </div>
+                </div>
+              </div>
+              <div class="stage-status-indicator">Basis Pengetahuan · Desain Sisi Depan Kartu</div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Fokus Desain</span>
+                <span class="spec-value">Akordeon Interaktif, Kategori Pertanyaan</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Format File</span>
+                <span class="spec-value">WebP (Turun 65% dari 355 KB PNG)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Peran Kolaborasi</span>
+                <span class="spec-value">UI Akordeon &amp; Keterbacaan Teks Medis</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 05. HALAMAN TANYA JAWAB (FAQ) FLIP CARD BELAKANG -->
+          <article class="bento-screen-card reveal-item" data-category="faq" id="screen-faq-45">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">FAQ Flip Card (Belakang)</span>
+                <span class="timing-badge">720 × 2068 px</span>
+                <span class="format-badge">WebP 107 KB</span>
+              </div>
+              <h3 class="anim-title">05. Tanya Jawab (FAQ) — Flip Card Belakang</h3>
+              <p class="anim-desc">
+                Eksplorasi tata letak modul flip card sisi belakang dengan pengelompokan topik modular untuk perbandingan review klien.
+              </p>
+            </header>
+
+            <div class="stage-canvas">
+              <div class="stage-caption">Interactive Mockup — Sisi belakang modul flip card</div>
+              <div class="stage-demo-area">
+                <div class="browser-mockup-frame">
+                  <div class="browser-top-bar" aria-hidden="true">
+                    <span class="browser-dot dot-red"></span>
+                    <span class="browser-dot dot-yellow"></span>
+                    <span class="browser-dot dot-green"></span>
+                    <span class="browser-address">https://www.ayocekhpv.com/faq-back</span>
+                  </div>
+                  <div class="mockup-scroll-viewport" tabindex="0" role="region" aria-label="Pratinjau gulir Tanya Jawab flip card belakang">
+                    <img src="portfolio/roche/Page%20Tanya%20Jawab%20(FAQ)%20-%2045.webp" width="720" height="2068" loading="lazy" decoding="async"
+                      alt="Varian rancangan halaman Tanya Jawab #AyoCekHPV Flip Card Belakang" class="artboard-img">
+                  </div>
+                </div>
+              </div>
+              <div class="stage-status-indicator">Eksplorasi Varian · Desain Sisi Belakang Kartu</div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Fokus Desain</span>
+                <span class="spec-value">Modular Card Grid, Pill Navigasi Topik</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Format File</span>
+                <span class="spec-value">WebP (Turun 74% dari 412 KB PNG)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Peran Kolaborasi</span>
+                <span class="spec-value">Opsi Alternatif untuk Pengambilan Keputusan</span>
+              </div>
+            </div>
+          </article>
+
         </div>
       </section>
 
-      <section class="case-next" aria-labelledby="next-title">
-        <div>
-          <p class="case-kicker">Portfolio</p>
-          <h2 id="next-title">Lihat proyek lainnya.</h2>
+      <!-- NAVIGATION TO OTHER PROJECTS -->
+      <section class="case-next reveal-item" aria-labelledby="next-title">
+        <div class="case-next-copy">
+          <div class="hero-eyebrow">
+            <span class="hero-eyebrow-dot"></span>
+            PORTFOLIO SHOWCASE
+          </div>
+          <h2 id="next-title">Jelajahi karya desain dan eksperimen lainnya.</h2>
+          <p>Koleksi konsep web UI, sistem ikon vektor minimal, dan eksplorasi karakter semenitwasted.</p>
         </div>
-        <a class="btn-primary" href="portfolio.html">Kembali ke portfolio <span aria-hidden="true">→</span></a>
+        <div class="case-next-actions">
+          <a class="btn-primary" href="portfolio.html">
+            <span>Kembali ke portfolio</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
       </section>
     </main>
 
+    <!-- TOAST NOTIFICATION -->
+    <div class="toast-notification" id="toastNotification" role="status" aria-live="polite" aria-hidden="true">
+      <span class="toast-dot" aria-hidden="true">✦</span>
+      <span id="toastMessage">Pemberitahuan</span>
+    </div>
+
+    <!-- SHARED FOOTER -->
     <footer class="portfolio-footer">
       <div class="footer-left">
         <span class="footer-brand">semenitwasted</span>
         <span class="footer-subtitle">Design · Icons · Illustration · Web</span>
       </div>
       <div class="footer-platforms" aria-label="Platform links">
-        <a href="https://www.linkedin.com/in/reionnyx/" target="_blank" rel="noopener noreferrer" class="footer-platform-card" aria-label="LinkedIn"><img src="assets/linkedin.svg" alt="" class="footer-platform-icon footer-platform-icon--monochrome"></a>
-        <a href="https://stock.adobe.com/contributor/207802543/dicky" target="_blank" rel="noopener noreferrer" class="footer-platform-card" aria-label="Adobe Stock"><img src="assets/adobe-stock.svg" alt="" class="footer-platform-icon"></a>
-        <a href="https://www.canva.com/p/gambar-reion" target="_blank" rel="noopener noreferrer" class="footer-platform-card" aria-label="Canva"><img src="assets/canva.svg" alt="" class="footer-platform-icon"></a>
-        <a href="https://thenounproject.com/creator/ReionDesign/" target="_blank" rel="noopener noreferrer" class="footer-platform-card" aria-label="The Noun Project"><img src="assets/noun-project.svg" alt="" class="footer-platform-icon footer-platform-icon--monochrome"></a>
-        <a href="https://www.flaticon.com/authors/reion" target="_blank" rel="noopener noreferrer" class="footer-platform-card" aria-label="Flaticon"><img src="assets/flaticon.svg" alt="" class="footer-platform-icon footer-platform-icon--monochrome"></a>
+        <a href="https://www.linkedin.com/in/reionnyx/" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="LinkedIn"><img src="assets/linkedin.svg" alt=""
+            class="footer-platform-icon footer-platform-icon--monochrome"></a>
+        <a href="https://stock.adobe.com/contributor/207802543/dicky" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Adobe Stock"><img src="assets/adobe-stock.svg" alt=""
+            class="footer-platform-icon"></a>
+        <a href="https://www.canva.com/p/gambar-reion" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Canva"><img src="assets/canva.svg" alt=""
+            class="footer-platform-icon"></a>
+        <a href="https://thenounproject.com/creator/ReionDesign/" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="The Noun Project"><img src="assets/noun-project.svg" alt=""
+            class="footer-platform-icon footer-platform-icon--monochrome"></a>
+        <a href="https://www.flaticon.com/authors/reion" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Flaticon"><img src="assets/flaticon.svg" alt=""
+            class="footer-platform-icon footer-platform-icon--monochrome"></a>
       </div>
     </footer>
   </div>

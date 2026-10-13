@@ -145,7 +145,7 @@ function renderPreviewHTML(item) {
     case 'roche-case-study':
       innerContent = `
         <div class="preview-content preview-content--roche">
-          <img src="portfolio/roche/%23AyocekHPV.png" alt="Tampilan desain landing page #AyoCekHPV untuk Roche" class="roche-preview-image" loading="lazy" decoding="async" width="5760" height="7008">
+          <img src="portfolio/roche/%23AyocekHPV.webp" alt="Tampilan desain landing page #AyoCekHPV untuk Roche" class="roche-preview-image" loading="lazy" decoding="async" width="2880" height="3504">
         </div>
       `;
       break;
