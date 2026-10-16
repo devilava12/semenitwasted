@@ -48,9 +48,13 @@
   --border: #3B3248;
 
   --text-primary: #F7F4FA;
-  --text-secondary: #AFA6B7;
+  --text-secondary: #B8AFC0;
+  --text-muted: #9B8EA6;
   --strong: #FAF8FC;
   --disabled: #554A62;
+
+  --color-shadow: #D8B5E4;
+  --color-accent: #D8B5E4;
 
   --shadow-primary: 18px 18px 24px rgba(0, 0, 0, 0.46);
   --shadow-depth: 4px 4px 8px rgba(0, 0, 0, 0.36);

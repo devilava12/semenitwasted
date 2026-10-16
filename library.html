@@ -49,20 +49,20 @@
               </button>
             </li>
             <li>
-              <button class="lib-tab-btn disabled" data-tab="components" aria-disabled="true" title="Akan datang">
+              <button class="lib-tab-btn" data-tab="tokens" aria-current="false">
+                <span>Design Tokens</span>
+                <span class="tab-badge-count">8 Groups</span>
+              </button>
+            </li>
+            <li>
+              <button class="lib-tab-btn" data-tab="components" aria-current="false">
                 <span>Components &amp; UI</span>
-                <span class="tab-badge-soon">Soon</span>
+                <span class="tab-badge-count">8 Sets</span>
               </button>
             </li>
             <li>
               <button class="lib-tab-btn disabled" data-tab="vectors" aria-disabled="true" title="Akan datang">
                 <span>Vectors &amp; Icons</span>
-                <span class="tab-badge-soon">Soon</span>
-              </button>
-            </li>
-            <li>
-              <button class="lib-tab-btn disabled" data-tab="tokens" aria-disabled="true" title="Akan datang">
-                <span>Design Tokens</span>
                 <span class="tab-badge-soon">Soon</span>
               </button>
             </li>
@@ -73,18 +73,42 @@
       <!-- SANDBOX TOOLBAR & CONTROLS -->
       <section class="sandbox-toolbar" aria-label="Kontrol Sandbox dan Filter">
         <div class="toolbar-left">
-          <div class="filter-pills-group" role="group" aria-label="Filter Kategori Animasi">
+          <!-- Motion Filter Pills -->
+          <div class="filter-pills-group" data-tab-scope="motion" role="group" aria-label="Filter Kategori Animasi">
             <button class="filter-pill active" data-filter="all">All Modules</button>
             <button class="filter-pill" data-filter="button">Buttons &amp; Controls</button>
             <button class="filter-pill" data-filter="card">Surfaces &amp; Cards</button>
             <button class="filter-pill" data-filter="spatial">Spatial &amp; Reveal</button>
             <button class="filter-pill" data-filter="system">Feedback &amp; A11y</button>
           </div>
+
+          <!-- Tokens Filter Pills -->
+          <div class="filter-pills-group" data-tab-scope="tokens" role="group" aria-label="Filter Kategori Design Tokens" style="display: none;">
+            <button class="filter-pill active" data-token-filter="all">All Tokens</button>
+            <button class="filter-pill" data-token-filter="color">Core Colors</button>
+            <button class="filter-pill" data-token-filter="text">Text Tones</button>
+            <button class="filter-pill" data-token-filter="shadow">Shadow &amp; Depth</button>
+            <button class="filter-pill" data-token-filter="radius">Radius</button>
+            <button class="filter-pill" data-token-filter="spacing">Spacing</button>
+            <button class="filter-pill" data-token-filter="typography">Typography</button>
+            <button class="filter-pill" data-token-filter="motion">Motion</button>
+            <button class="filter-pill" data-token-filter="layout">Grid &amp; A11y</button>
+          </div>
+
+          <!-- Components Filter Pills -->
+          <div class="filter-pills-group" data-tab-scope="components" role="group" aria-label="Filter Kategori Components" style="display: none;">
+            <button class="filter-pill active" data-cmp-filter="all">All Components</button>
+            <button class="filter-pill" data-cmp-filter="buttons">Buttons</button>
+            <button class="filter-pill" data-cmp-filter="cards">Cards &amp; Surfaces</button>
+            <button class="filter-pill" data-cmp-filter="forms">Forms &amp; Selection</button>
+            <button class="filter-pill" data-cmp-filter="navigation">Navigation &amp; Disclosure</button>
+            <button class="filter-pill" data-cmp-filter="feedback">Tags &amp; Feedback</button>
+          </div>
         </div>
 
         <div class="toolbar-right">
-          <!-- Reduced Motion Simulator -->
-          <div class="simulator-control">
+          <!-- Reduced Motion Simulator (Motion Tab) -->
+          <div class="simulator-control" data-tab-scope="motion">
             <label class="switch-label" for="toggleReducedMotion">
               <span class="switch-title">Reduced Motion</span>
               <span class="switch-desc">Simulator</span>
@@ -95,8 +119,8 @@
             </button>
           </div>
 
-          <!-- Slow Motion 0.5x Toggle -->
-          <div class="simulator-control">
+          <!-- Slow Motion 0.5x Toggle (Motion Tab) -->
+          <div class="simulator-control" data-tab-scope="motion">
             <label class="switch-label" for="toggleSlowMotion">
               <span class="switch-title">Slow Motion</span>
               <span class="switch-desc">0.5x Speed</span>
@@ -107,14 +131,35 @@
             </button>
           </div>
 
-          <!-- Replay All -->
-          <button class="btn-tool" id="btnReplayAll" title="Memicu ulang semua animasi modul">
+          <!-- Replay All (Motion Tab) -->
+          <button class="btn-tool" id="btnReplayAll" data-tab-scope="motion" title="Memicu ulang semua animasi modul">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <path d="M1 4v6h6M23 20v-6h-6" />
               <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15" />
             </svg>
             <span>Replay All</span>
           </button>
+
+          <!-- Copy All :root CSS Button (Tokens Tab) -->
+          <button class="btn-tool tokens-tool-btn" id="btnCopyAllTokens" data-tab-scope="tokens" title="Salin seluruh token :root CSS ke clipboard" style="display: none;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span>Copy Full :root CSS</span>
+          </button>
+
+          <!-- Forced Colors Preview (Components Tab) -->
+          <div class="simulator-control" data-tab-scope="components" style="display: none;">
+            <label class="switch-label" for="toggleForcedColors">
+              <span class="switch-title">Forced Colors</span>
+              <span class="switch-desc">Preview (tanpa shadow)</span>
+            </label>
+            <button type="button" class="switch-toggle" id="toggleForcedColors" role="switch" aria-checked="false"
+              aria-label="Pratinjau mode forced colors">
+              <span class="switch-handle"></span>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -773,6 +818,1792 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                 </svg>
                 <span>Copy CSS</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- DESIGN TOKENS CATALOG GRID (Bento Layout) -->
+      <section class="tokens-catalog" id="tokensCatalog" aria-label="Katalog Design Tokens semenitwasted" style="display: none;">
+        <div class="bento-catalog-grid">
+
+          <!-- 01. CORE MONOCHROME PALETTE -->
+          <article class="bento-anim-card" data-category="color" id="token-core-palette">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Color System</span>
+                <span class="timing-badge">3 Locked Colors</span>
+              </div>
+              <h2 class="anim-title">Core Monochrome Palette</h2>
+              <p class="anim-desc">
+                Fondasi palet monokrom semenitwasted yang terkunci ketat: kanvas terang <code>#F0EDF4</code>, teks &amp; permukaan gelap <code>#211B28</code>, dan bayangan signature <code>#450D50</code>. Tidak ada warna aksen atau gradasi buatan.
+              </p>
+            </header>
+
+            <div class="stage-canvas">
+              <div class="stage-caption">Color Swatches — Click Swatch to Copy CSS Variable</div>
+              <div class="token-swatches-grid">
+                <!-- Swatch 1: Light Canvas -->
+                <button type="button" class="token-swatch-card" data-copy-token="var(--color-light)" aria-label="Salin var(--color-light)">
+                  <div class="swatch-color-box swatch-color-light">
+                    <span class="swatch-badge-contrast">14.48:1 (AAA)</span>
+                  </div>
+                  <div class="swatch-info">
+                    <span class="swatch-var-name">--color-light</span>
+                    <span class="swatch-hex-val">#F0EDF4</span>
+                    <span class="swatch-role-desc">Primary Surface, Body Canvas, Light Button Text</span>
+                  </div>
+                </button>
+
+                <!-- Swatch 2: Dark Solid -->
+                <button type="button" class="token-swatch-card" data-copy-token="var(--color-dark)" aria-label="Salin var(--color-dark)">
+                  <div class="swatch-color-box swatch-color-dark">
+                    <span class="swatch-badge-contrast">Primary Text</span>
+                  </div>
+                  <div class="swatch-info">
+                    <span class="swatch-var-name">--color-dark</span>
+                    <span class="swatch-hex-val">#211B28</span>
+                    <span class="swatch-role-desc">Primary Text, Dark Surfaces, Focus Ring, High Contrast</span>
+                  </div>
+                </button>
+
+                <!-- Swatch 3: Signature Purple Shadow -->
+                <button type="button" class="token-swatch-card" data-copy-token="var(--color-shadow)" aria-label="Salin var(--color-shadow)">
+                  <div class="swatch-color-box swatch-color-shadow">
+                    <span class="swatch-badge-contrast">Signature Tint</span>
+                  </div>
+                  <div class="swatch-info">
+                    <span class="swatch-var-name">--color-shadow</span>
+                    <span class="swatch-hex-val">#450D50</span>
+                    <span class="swatch-role-desc">Reserved Exclusively for Tactile Shadow System</span>
+                  </div>
+                </button>
+              </div>
+              <div class="stage-status-indicator" id="statusCoreColor">Click any swatch to copy CSS variable · Zero decorative gradients</div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Light / Dark Ratio</span>
+                <span class="spec-value">14.48:1 (WCAG AAA Pass)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Shadow Tint</span>
+                <span class="spec-value">#450D50 (RGB 69 13 80)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Palette Constraint</span>
+                <span class="spec-value">Zero artificial accent colors</span>
+              </div>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>:root {
+  /* Core Monochrome Palette (SKILL.md Section 2) */
+  --color-light:  #F0EDF4; /* Light canvas & surface */
+  --color-dark:   #211B28; /* Primary text & dark surface */
+  --color-shadow: #450D50; /* Signature tactile shadow tint */
+}</code></pre>
+              <button class="btn-copy-code" data-copy-target="token-core-palette" aria-label="Salin kode CSS Core Monochrome Palette">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy CSS</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 02. DERIVED TEXT TONES & STATE CONTROLS -->
+          <article class="bento-anim-card" data-category="text" id="token-text-tones">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Color System</span>
+                <span class="timing-badge">Text Hierarchy &amp; Borders</span>
+              </div>
+              <h2 class="anim-title">Derived Text Tones &amp; States</h2>
+              <p class="anim-desc">
+                Tingkatan kontras teks berbasis penurunan opacity dari <code>--color-dark</code> untuk menjaga keharmonisan tanpa menambah warna abu-abu acak. Setiap level lolos uji kontras WCAG 2.2 AA.
+              </p>
+            </header>
+
+            <div class="stage-canvas">
+              <div class="stage-caption">Live Typographic Hierarchy &amp; Contrast Specimen</div>
+              <div class="token-tones-specimens">
+                <!-- Tone 1: Primary Text -->
+                <div class="tone-specimen-row">
+                  <div class="tone-left">
+                    <span class="tone-sample-text tone-sample-primary">Primary Body &amp; Heading Copy</span>
+                    <span class="tone-var-label"><code>--color-text</code> : <code>var(--color-dark)</code></span>
+                  </div>
+                  <div class="tone-right">
+                    <span class="contrast-score-badge contrast-aaa">14.48:1 AAA</span>
+                    <button type="button" class="btn-mini-copy" data-copy-token="var(--color-text)" title="Salin var(--color-text)">Copy</button>
+                  </div>
+                </div>
+
+                <!-- Tone 2: Muted Text -->
+                <div class="tone-specimen-row">
+                  <div class="tone-left">
+                    <span class="tone-sample-text tone-sample-muted">Supporting labels, metadata, captions, and secondary notes</span>
+                    <span class="tone-var-label"><code>--color-text-muted</code> : <code>rgb(33 27 40 / 70%)</code></span>
+                  </div>
+                  <div class="tone-right">
+                    <span class="contrast-score-badge contrast-aa">5.78:1 AA</span>
+                    <button type="button" class="btn-mini-copy" data-copy-token="var(--color-text-muted)" title="Salin var(--color-text-muted)">Copy</button>
+                  </div>
+                </div>
+
+                <!-- Tone 3: Disabled Text -->
+                <div class="tone-specimen-row">
+                  <div class="tone-left">
+                    <span class="tone-sample-text tone-sample-disabled">Inactive control label and disabled placeholder state</span>
+                    <span class="tone-var-label"><code>--color-text-disabled</code> : <code>rgb(33 27 40 / 50%)</code></span>
+                  </div>
+                  <div class="tone-right">
+                    <span class="contrast-score-badge contrast-exempt">3.16:1 Disabled</span>
+                    <button type="button" class="btn-mini-copy" data-copy-token="var(--color-text-disabled)" title="Salin var(--color-text-disabled)">Copy</button>
+                  </div>
+                </div>
+
+                <!-- Tone 4: Control Border -->
+                <div class="tone-specimen-row">
+                  <div class="tone-left">
+                    <div class="input-boundary-preview">
+                      <span class="input-boundary-text">Input Field Boundary (Perceivable without shadow)</span>
+                    </div>
+                    <span class="tone-var-label"><code>--color-border-control</code> : <code>rgb(33 27 40 / 50%)</code></span>
+                  </div>
+                  <div class="tone-right">
+                    <span class="contrast-score-badge contrast-ui">3.16:1 UI AA</span>
+                    <button type="button" class="btn-mini-copy" data-copy-token="var(--color-border-control)" title="Salin var(--color-border-control)">Copy</button>
+                  </div>
+                </div>
+              </div>
+              <div class="stage-status-indicator" id="statusTextTones">Muted text maintains &ge; 4.5:1 on light canvas (5.78:1) and &ge; 7.0:1 on dark canvas</div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Primary Ratio</span>
+                <span class="spec-value">14.48:1 (AAA)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Muted Ratio</span>
+                <span class="spec-value">5.78:1 Light / 7.69:1 Dark</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Control Border</span>
+                <span class="spec-value">3.16:1 Non-text contrast</span>
+              </div>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>:root {
+  /* Derived Text Tones (design-system.md Section 22) */
+  --color-text:           var(--color-dark);            /* 14.48:1 (AAA) */
+  --color-text-muted:     rgb(33 27 40 / 70%);        /* 5.78:1 (AA) */
+  --color-text-disabled:  rgb(33 27 40 / 50%);        /* 3.16:1 (Disabled) */
+  --color-border-control: rgb(33 27 40 / 50%);        /* 3.16:1 (Input boundary) */
+}</code></pre>
+              <button class="btn-copy-code" data-copy-target="token-text-tones" aria-label="Salin kode CSS Derived Text Tones">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy CSS</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 03. SIGNATURE SHADOW & DEPTH SYSTEM -->
+          <article class="bento-anim-card" data-category="shadow" id="token-shadow-system">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Elevation System</span>
+                <span class="timing-badge">Tactile Neumorphism</span>
+              </div>
+              <h2 class="anim-title">Signature Shadow &amp; Depth System</h2>
+              <p class="anim-desc">
+                Bayangan taktil terkunci dengan rona signature <code>#450D50</code> yang jatuh ke arah kanan bawah (lit from top-left). Nilai bayangan tidak boleh diubah atau diganti dengan multi-layer shadow acak.
+              </p>
+            </header>
+
+            <div class="stage-canvas">
+              <div class="stage-caption">Tactile Elevation Sandbox — Click Box to Copy Token</div>
+              <div class="token-elevation-sandbox">
+                <!-- Shadow 1: Primary -->
+                <button type="button" class="elevation-box elevation-primary" data-copy-token="var(--shadow-primary)" aria-label="Salin var(--shadow-primary)">
+                  <div class="elevation-content">
+                    <span class="elevation-title">Primary Shadow</span>
+                    <span class="elevation-token">--shadow-primary</span>
+                    <span class="elevation-formula">18px 18px 16px rgb(69 13 80 / 20%)</span>
+                    <span class="elevation-use">Major Elevated Surfaces &amp; Bento Cards</span>
+                  </div>
+                </button>
+
+                <!-- Shadow 2: Depth -->
+                <button type="button" class="elevation-box elevation-depth" data-copy-token="var(--shadow-depth)" aria-label="Salin var(--shadow-depth)">
+                  <div class="elevation-content">
+                    <span class="elevation-title">Depth Shadow</span>
+                    <span class="elevation-token">--shadow-depth</span>
+                    <span class="elevation-formula">4px 4px 4px rgb(69 13 80 / 25%)</span>
+                    <span class="elevation-use">Micro-Controls, Resting Pills &amp; Overlaps</span>
+                  </div>
+                </button>
+
+                <!-- Shadow 3: Hover -->
+                <button type="button" class="elevation-box elevation-hover" data-copy-token="var(--shadow-hover)" aria-label="Salin var(--shadow-hover)">
+                  <div class="elevation-content">
+                    <span class="elevation-title">Hover Shadow</span>
+                    <span class="elevation-token">--shadow-hover</span>
+                    <span class="elevation-formula">8px 8px 8px rgb(69 13 80 / 22%)</span>
+                    <span class="elevation-use">Hover State on Small Controls &amp; Buttons</span>
+                  </div>
+                </button>
+
+                <!-- Shadow 4: Pressed -->
+                <button type="button" class="elevation-box elevation-pressed" data-copy-token="var(--shadow-pressed)" aria-label="Salin var(--shadow-pressed)">
+                  <div class="elevation-content">
+                    <span class="elevation-title">Pressed Shadow</span>
+                    <span class="elevation-token">--shadow-pressed</span>
+                    <span class="elevation-formula">2px 2px 2px rgb(69 13 80 / 25%)</span>
+                    <span class="elevation-use">Tactile Physical Active State (0px Delta)</span>
+                  </div>
+                </button>
+              </div>
+              <div class="stage-status-indicator" id="statusShadowSystem">Dark surfaces cannot rely on purple shadow (1.14:1 contrast); use surface steps or light 1px borders instead</div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Primary Parameters</span>
+                <span class="spec-value">X: 18px, Y: 18px, Blur: 16px (20%)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Depth Parameters</span>
+                <span class="spec-value">X: 4px, Y: 4px, Blur: 4px (25%)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Light Source</span>
+                <span class="spec-value">Top-left &rarr; Bottom-right fall</span>
+              </div>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>:root {
+  /* Signature Shadows (Preserve exactly — SKILL.md Section 3) */
+  --shadow-primary: 18px 18px 16px rgb(69 13 80 / 20%); /* Major surfaces */
+  --shadow-depth:   4px 4px 4px rgb(69 13 80 / 25%);   /* Overlaps & controls */
+  --shadow-hover:   8px 8px 8px rgb(69 13 80 / 22%);   /* Derived small hover */
+  --shadow-pressed: 2px 2px 2px rgb(69 13 80 / 25%);   /* Derived active */
+}</code></pre>
+              <button class="btn-copy-code" data-copy-target="token-shadow-system" aria-label="Salin kode CSS Signature Shadow & Depth">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy CSS</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 04. BORDER RADIUS & BOUNDARY TOKENS -->
+          <article class="bento-anim-card" data-category="radius" id="token-radius-system">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Geometry</span>
+                <span class="timing-badge">Corner Radius &amp; Boundaries</span>
+              </div>
+              <h2 class="anim-title">Border Radius &amp; Shape Language</h2>
+              <p class="anim-desc">
+                Radius baku <code>10px</code> untuk seluruh kartu, tombol, dan input form, dipadukan dengan radius pill <code>999px</code> untuk filter pills dan status badge. Termasuk border transparan 1px untuk mode High Contrast.
+              </p>
+            </header>
+
+            <div class="stage-canvas">
+              <div class="stage-caption">Geometry Specimens — Click Specimen to Copy Token</div>
+              <div class="token-radius-sandbox">
+                <!-- Specimen 1: Signature 10px -->
+                <button type="button" class="radius-specimen-card radius-card-10" data-copy-token="var(--radius)" aria-label="Salin var(--radius)">
+                  <div class="specimen-shape shape-radius-10">
+                    <span class="shape-corner-label">10px</span>
+                  </div>
+                  <div class="specimen-info">
+                    <span class="specimen-title">Signature Radius</span>
+                    <span class="specimen-var"><code>--radius: 10px</code></span>
+                    <span class="specimen-usage">Cards, Buttons, Inputs, Image Containers</span>
+                  </div>
+                </button>
+
+                <!-- Specimen 2: Pill 999px -->
+                <button type="button" class="radius-specimen-card radius-card-pill" data-copy-token="var(--radius-pill)" aria-label="Salin var(--radius-pill)">
+                  <div class="specimen-shape shape-radius-pill">
+                    <span class="shape-corner-label">999px Pill</span>
+                  </div>
+                  <div class="specimen-info">
+                    <span class="specimen-title">Pill Radius</span>
+                    <span class="specimen-var"><code>--radius-pill: 999px</code></span>
+                    <span class="specimen-usage">Category Switcher, Filter Pills, Status Badges</span>
+                  </div>
+                </button>
+
+                <!-- Specimen 3: Small 6px -->
+                <button type="button" class="radius-specimen-card radius-card-sm" data-copy-token="var(--radius-sm)" aria-label="Salin var(--radius-sm)">
+                  <div class="specimen-shape shape-radius-6">
+                    <span class="shape-corner-label">6px</span>
+                  </div>
+                  <div class="specimen-info">
+                    <span class="specimen-title">Sub-Element Radius</span>
+                    <span class="specimen-var"><code>--radius-sm: 6px</code></span>
+                    <span class="specimen-usage">Inner Badges, Code Tags, Compact Chips</span>
+                  </div>
+                </button>
+
+                <!-- Specimen 4: Forced Colors Transparent Border -->
+                <div class="radius-specimen-card radius-card-fc">
+                  <div class="specimen-shape shape-forced-colors">
+                    <span class="shape-corner-label">1px Transparent</span>
+                  </div>
+                  <div class="specimen-info">
+                    <span class="specimen-title">Forced-Colors Boundary</span>
+                    <span class="specimen-var"><code>border: 1px solid transparent</code></span>
+                    <span class="specimen-usage">Preserves control edges in Windows High Contrast Mode</span>
+                  </div>
+                </div>
+              </div>
+              <div class="stage-status-indicator" id="statusRadiusSystem">All control radii use 10px or 999px · No arbitrary odd radii</div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Signature Radius</span>
+                <span class="spec-value">10px (--radius-card)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Pill Radius</span>
+                <span class="spec-value">999px (--radius-pill)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Forced Colors Mode</span>
+                <span class="spec-value">CanvasText border fallback</span>
+              </div>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>:root {
+  /* Radius Tokens (design-system.md Section 5) */
+  --radius:      10px;  /* Signature card, button, input radius */
+  --radius-card: 10px;  /* Semantic card alias */
+  --radius-pill: 999px; /* Filter pills & status tags */
+  --radius-sm:   6px;   /* Sub-element chips */
+}
+.card, .button, .input {
+  border: 1px solid transparent; /* Visible in forced-colors mode */
+}</code></pre>
+              <button class="btn-copy-code" data-copy-target="token-radius-system" aria-label="Salin kode CSS Radius Tokens">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy CSS</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 05. STRICT EVEN-NUMBER SPACING SCALE -->
+          <article class="bento-anim-card" data-category="spacing" id="token-spacing-scale">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Rhythm &amp; Spacing</span>
+                <span class="timing-badge">14 Modular Steps</span>
+              </div>
+              <h2 class="anim-title">Even-Number Spacing Scale</h2>
+              <p class="anim-desc">
+                Skala modular genap tanpa angka ganjil untuk padding, margin, dan gap. Menjamin proporsi visual teratur dan bebas kerapuhan layout. Klik baris bar untuk menyalin token.
+              </p>
+            </header>
+
+            <div class="stage-canvas">
+              <div class="stage-caption">Interactive Spacing Scale Meter (4px &rarr; 128px)</div>
+              <div class="token-spacing-ruler" id="tokenSpacingRuler">
+                <!-- 14 Even Spacing Steps -->
+                <div class="spacing-step-row" data-token="--space-4" data-px="4" data-scope="Internals">
+                  <span class="step-label">--space-4</span>
+                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 4px;"></div></div>
+                  <span class="step-px">4px</span>
+                  <span class="step-scope">Micro gap / icon padding</span>
+                </div>
+                <div class="spacing-step-row" data-token="--space-8" data-px="8" data-scope="Internals">
+                  <span class="step-label">--space-8</span>
+                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 8px;"></div></div>
+                  <span class="step-px">8px</span>
+                  <span class="step-scope">Label &rarr; Heading gap</span>
+                </div>
+                <div class="spacing-step-row" data-token="--space-12" data-px="12" data-scope="Internals">
+                  <span class="step-label">--space-12</span>
+                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 14px;"></div></div>
+                  <span class="step-px">12px</span>
+                  <span class="step-scope">Card sub-element spacing</span>
+                </div>
+                <div class="spacing-step-row" data-token="--space-16" data-px="16" data-scope="Related">
+                  <span class="step-label">--space-16</span>
+                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 22px;"></div></div>
+                  <span class="step-px">16px</span>
+                  <span class="step-scope">Base mobile gutter &amp; padding</span>
+                </div>
+                <div class="spacing-step-row" data-token="--space-20" data-px="20" data-scope="Related">
+                  <span class="step-label">--space-20</span>
+                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 30px;"></div></div>
+                  <span class="step-px">20px</span>
+                  <span class="step-scope">Tablet grid gutter</span>
+                </div>
+                <div class="spacing-step-row" data-token="--space-24" data-px="24" data-scope="Related">
+                  <span class="step-label">--space-24</span>
+                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 40px;"></div></div>
+                  <span class="step-px">24px</span>
+                  <span class="step-scope">Desktop gutter / card padding</span>
+                </div>
+                <div class="spacing-step-row" data-token="--space-32" data-px="32" data-scope="Groups">
+                  <span class="step-label">--space-32</span>
+                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 58px;"></div></div>
+                  <span class="step-px">32px</span>
+                  <span class="step-scope">Content block grouping</span>
+                </div>
+                <div class="spacing-step-row" data-token="--space-40" data-px="40" data-scope="Groups">
+                  <span class="step-label">--space-40</span>
+                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 76px;"></div></div>
+                  <span class="step-px">40px</span>
+                  <span class="step-scope">Section padding rhythm</span>
+                </div>
+                <div class="spacing-step-row" data-token="--space-48" data-px="48" data-scope="Sections">
+                  <span class="step-label">--space-48</span>
+                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 96px;"></div></div>
+                  <span class="step-px">48px</span>
+                  <span class="step-scope">Mobile section separation</span>
+                </div>
+                <div class="spacing-step-row" data-token="--space-56" data-px="56" data-scope="Sections">
+                  <span class="step-label">--space-56</span>
+                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 116px;"></div></div>
+                  <span class="step-px">56px</span>
+                  <span class="step-scope">Medium section padding</span>
+                </div>
+                <div class="spacing-step-row" data-token="--space-64" data-px="64" data-scope="Sections">
+                  <span class="step-label">--space-64</span>
+                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 138px;"></div></div>
+                  <span class="step-px">64px</span>
+                  <span class="step-scope">Tablet section separation</span>
+                </div>
+                <div class="spacing-step-row" data-token="--space-80" data-px="80" data-scope="Sections">
+                  <span class="step-label">--space-80</span>
+                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 172px;"></div></div>
+                  <span class="step-px">80px</span>
+                  <span class="step-scope">Large block separation</span>
+                </div>
+                <div class="spacing-step-row" data-token="--space-96" data-px="96" data-scope="Sections">
+                  <span class="step-label">--space-96</span>
+                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 210px;"></div></div>
+                  <span class="step-px">96px</span>
+                  <span class="step-scope">Desktop section gap</span>
+                </div>
+                <div class="spacing-step-row" data-token="--space-128" data-px="128" data-scope="Sections">
+                  <span class="step-label">--space-128</span>
+                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 260px;"></div></div>
+                  <span class="step-px">128px</span>
+                  <span class="step-scope">Hero breathing room</span>
+                </div>
+              </div>
+              <div class="stage-status-indicator" id="statusSpacingScale">Click any row to copy var(--space-X) · Odd-number values strictly prohibited</div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Range</span>
+                <span class="spec-value">4px &ndash; 128px (14 steps)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Section Gaps</span>
+                <span class="spec-value">Desktop 96px · Tablet 64px · Mobile 48px</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Odd Values Rule</span>
+                <span class="spec-value">Hairline borders (1px, 2px) exempt only</span>
+              </div>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>:root {
+  /* Spacing Scale (Even numbers only — design-system.md Section 6) */
+  --space-4:   4px;    --space-8:   8px;    --space-12:  12px;   --space-16:  16px;
+  --space-20:  20px;   --space-24:  24px;   --space-32:  32px;   --space-40:  40px;
+  --space-48:  48px;   --space-56:  56px;   --space-64:  64px;   --space-80:  80px;
+  --space-96:  96px;   --space-128: 128px;
+}</code></pre>
+              <button class="btn-copy-code" data-copy-target="token-spacing-scale" aria-label="Salin kode CSS Spacing Scale">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy CSS</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 06. FLUID TYPOGRAPHY SCALE & MEASURES -->
+          <article class="bento-anim-card" data-category="typography" id="token-typography-scale">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Typography</span>
+                <span class="timing-badge">Rubik Fluid Scale</span>
+              </div>
+              <h2 class="anim-title">Fluid Typography Scale</h2>
+              <p class="anim-desc">
+                Skala tipografi responsif Rubik berbasis <code>clamp()</code> dengan batas <code>rem</code> dan interpolasi <code>vw</code>. Menyesuaikan ukuran secara mulus antara 375px hingga 1280px+ tanpa lonjakan mendadak.
+              </p>
+            </header>
+
+            <div class="stage-canvas">
+              <div class="stage-caption">Interactive Viewport Width Simulator (360px &mdash; 1440px)</div>
+              
+              <!-- Viewport Width Slider for live clamp simulation -->
+              <div class="type-scrubber-wrap">
+                <div class="scrubber-controls">
+                  <label for="typeWidthSlider" class="scrubber-label">Simulated Viewport Width:</label>
+                  <span class="scrubber-val" id="scrubberVal">1280px (Desktop)</span>
+                </div>
+                <input type="range" min="360" max="1440" value="1280" step="10" class="type-width-slider" id="typeWidthSlider">
+              </div>
+
+              <div class="token-type-ladder" id="tokenTypeLadder">
+                <!-- Level: Display -->
+                <div class="type-specimen-item" data-token="--text-display">
+                  <div class="specimen-meta">
+                    <span class="type-level-name">Display Hero</span>
+                    <span class="type-clamp-formula">clamp(2.5rem, 1.5rem + 3vw, 4rem)</span>
+                    <span class="type-computed-px" id="compDisplay">64px (Desktop)</span>
+                  </div>
+                  <div class="type-render-sample sample-display">Tactile Craft</div>
+                </div>
+
+                <!-- Level: H1 -->
+                <div class="type-specimen-item" data-token="--text-h1">
+                  <div class="specimen-meta">
+                    <span class="type-level-name">Heading 1</span>
+                    <span class="type-clamp-formula">clamp(2.25rem, 1.5rem + 2vw, 3rem)</span>
+                    <span class="type-computed-px" id="compH1">48px (Desktop)</span>
+                  </div>
+                  <div class="type-render-sample sample-h1">Living Design System</div>
+                </div>
+
+                <!-- Level: H2 -->
+                <div class="type-specimen-item" data-token="--text-h2">
+                  <div class="specimen-meta">
+                    <span class="type-level-name">Heading 2</span>
+                    <span class="type-clamp-formula">clamp(2rem, 1.25rem + 1.5vw, 2.5rem)</span>
+                    <span class="type-computed-px" id="compH2">40px (Desktop)</span>
+                  </div>
+                  <div class="type-render-sample sample-h2">Bento Modular Architecture</div>
+                </div>
+
+                <!-- Level: H3 -->
+                <div class="type-specimen-item" data-token="--text-h3">
+                  <div class="specimen-meta">
+                    <span class="type-level-name">Heading 3</span>
+                    <span class="type-clamp-formula">clamp(1.5rem, 1rem + 1.5vw, 2rem)</span>
+                    <span class="type-computed-px" id="compH3">32px (Desktop)</span>
+                  </div>
+                  <div class="type-render-sample sample-h3">Tactile Lift &amp; Micro Shadows</div>
+                </div>
+
+                <!-- Level: H4 -->
+                <div class="type-specimen-item" data-token="--text-h4">
+                  <div class="specimen-meta">
+                    <span class="type-level-name">Heading 4</span>
+                    <span class="type-clamp-formula">clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem)</span>
+                    <span class="type-computed-px" id="compH4">24px (Desktop)</span>
+                  </div>
+                  <div class="type-render-sample sample-h4">Interactive Control States</div>
+                </div>
+
+                <!-- Level: Intro -->
+                <div class="type-specimen-item" data-token="--text-intro">
+                  <div class="specimen-meta">
+                    <span class="type-level-name">Intro / Large Body</span>
+                    <span class="type-clamp-formula">clamp(1.125rem, 1.05rem + 0.25vw, 1.25rem)</span>
+                    <span class="type-computed-px" id="compIntro">20px (Desktop)</span>
+                  </div>
+                  <div class="type-render-sample sample-intro">Quietly expressive personal aesthetic built for longevity.</div>
+                </div>
+
+                <!-- Level: Body -->
+                <div class="type-specimen-item" data-token="--text-body">
+                  <div class="specimen-meta">
+                    <span class="type-level-name">Body Copy (Fixed)</span>
+                    <span class="type-clamp-formula">1rem (16px) &middot; line-height 1.6 &middot; max-width 65ch</span>
+                    <span class="type-computed-px">16px Fixed</span>
+                  </div>
+                  <p class="type-render-sample sample-body">
+                    Body text uses 16px font size with comfortable 1.6 line height and maximum measure constrained to 65 characters per line (<code>--measure: 65ch</code>) to maintain readable eye-tracking.
+                  </p>
+                </div>
+
+                <!-- Level: Small & Caption -->
+                <div class="type-specimen-item" data-token="--text-small">
+                  <div class="specimen-meta">
+                    <span class="type-level-name">Small (14px) &amp; Caption (12px)</span>
+                    <span class="type-clamp-formula">0.875rem &middot; 0.75rem (Minimum accessible size)</span>
+                    <span class="type-computed-px">14px / 12px</span>
+                  </div>
+                  <div class="type-render-sample sample-caption">Metadata &middot; Timestamps &middot; Secondary Badges &middot; System Version 2.0</div>
+                </div>
+              </div>
+              <div class="stage-status-indicator" id="statusTypography">Drag slider above to watch clamp() headings fluidly interpolate in real time</div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Typeface</span>
+                <span class="spec-value">Rubik (system-ui fallback)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Weights</span>
+                <span class="spec-value">400 (Body), 500 (Labels), 600/700 (Headings)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Line Measure</span>
+                <span class="spec-value">--measure: 65ch (45&ndash;75ch max)</span>
+              </div>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>:root {
+  /* Fluid Typography Scale (typography.md Section 27) */
+  --font-sans: 'Rubik', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --text-display: clamp(2.5rem, 1.5rem + 3vw, 4rem);      /* 40 &rarr; 64px */
+  --text-h1:      clamp(2.25rem, 1.5rem + 2vw, 3rem);     /* 36 &rarr; 48px */
+  --text-h2:      clamp(2rem, 1.25rem + 1.5vw, 2.5rem);   /* 32 &rarr; 40px */
+  --text-h3:      clamp(1.5rem, 1rem + 1.5vw, 2rem);      /* 24 &rarr; 32px */
+  --text-h4:      clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem); /* 20 &rarr; 24px */
+  --text-intro:   clamp(1.125rem, 1.05rem + 0.25vw, 1.25rem); /* 18 &rarr; 20px */
+  --text-body:    1rem;                                   /* 16px */
+  --text-small:   0.875rem;                               /* 14px */
+  --text-caption: 0.75rem;                                /* 12px */
+
+  --leading-display: 1.1;  --leading-heading: 1.15;
+  --leading-body: 1.6;     --leading-small: 1.5;
+  --measure: 65ch;
+}</code></pre>
+              <button class="btn-copy-code" data-copy-target="token-typography-scale" aria-label="Salin kode CSS Typography Tokens">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy CSS</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 07. MOTION & INTERACTION TOKENS -->
+          <article class="bento-anim-card card-full-width" data-category="motion" id="token-motion-tokens">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Motion System</span>
+                <span class="timing-badge">Timing &amp; Easing</span>
+              </div>
+              <h2 class="anim-title">Motion &amp; Timing Tokens</h2>
+              <p class="anim-desc">
+                Kurva easing alami <code>cubic-bezier(0.2, 0.8, 0.2, 1)</code> dan token durasi terstandarisasi untuk mikro-interaksi, aksi UI, transisi spatial, dan entrance. Menjamin seluruh komponen bergerak dengan harmonis dan taktil.
+              </p>
+            </header>
+
+            <div class="stage-canvas">
+              <div class="stage-caption">Timing Comparison &amp; Live Motion Benchmark (Klik baris atau tombol untuk menguji)</div>
+              
+              <div class="motion-timing-demo-wrap">
+                <!-- Bar 1: Micro -->
+                <div class="timing-meter-row" data-benchmark-row="micro" role="button" tabindex="0" title="Klik untuk memicu animasi durasi ini (150ms)">
+                  <div class="timing-meta-col">
+                    <span class="timing-name">Micro Interaction</span>
+                    <span class="timing-token">--dur-micro (150ms)</span>
+                  </div>
+                  <div class="timing-track">
+                    <div class="timing-fill-bar fill-micro" id="fillMicro"></div>
+                    <div class="timing-puck puck-micro" id="puckMicro"></div>
+                  </div>
+                  <span class="timing-usage-note">Toggles, micro-icons</span>
+                </div>
+
+                <!-- Bar 2: UI Standard -->
+                <div class="timing-meter-row" data-benchmark-row="ui" role="button" tabindex="0" title="Klik untuk memicu animasi durasi ini (200ms)">
+                  <div class="timing-meta-col">
+                    <span class="timing-name">Standard UI</span>
+                    <span class="timing-token">--dur-ui (200ms)</span>
+                  </div>
+                  <div class="timing-track">
+                    <div class="timing-fill-bar fill-ui" id="fillUi"></div>
+                    <div class="timing-puck puck-ui" id="puckUi"></div>
+                  </div>
+                  <span class="timing-usage-note">Buttons, hover lift, card depth</span>
+                </div>
+
+                <!-- Bar 3: Reveal -->
+                <div class="timing-meter-row" data-benchmark-row="reveal" role="button" tabindex="0" title="Klik untuk memicu animasi durasi ini (400ms)">
+                  <div class="timing-meta-col">
+                    <span class="timing-name">Content Reveal</span>
+                    <span class="timing-token">--dur-reveal (400ms)</span>
+                  </div>
+                  <div class="timing-track">
+                    <div class="timing-fill-bar fill-reveal" id="fillReveal"></div>
+                    <div class="timing-puck puck-reveal" id="puckReveal"></div>
+                  </div>
+                  <span class="timing-usage-note">Entrance &amp; Scroll reveal</span>
+                </div>
+
+                <!-- Bar 4: Spatial Move -->
+                <div class="timing-meter-row" data-benchmark-row="move" role="button" tabindex="0" title="Klik untuk memicu animasi durasi ini (500ms)">
+                  <div class="timing-meta-col">
+                    <span class="timing-name">Spatial Movement</span>
+                    <span class="timing-token">--dur-move (500ms)</span>
+                  </div>
+                  <div class="timing-track">
+                    <div class="timing-fill-bar fill-move" id="fillMove"></div>
+                    <div class="timing-puck puck-move" id="puckMove"></div>
+                  </div>
+                  <span class="timing-usage-note">Drawers, modal overlays</span>
+                </div>
+
+                <div class="motion-benchmark-trigger-row">
+                  <div class="benchmark-controls-left">
+                    <button type="button" class="demo-tactile-btn" id="btnTestMotionBenchmark">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                      </svg>
+                      <span>Play All Timing Benchmark (Full Track)</span>
+                    </button>
+                    <span class="benchmark-live-status" id="benchmarkLiveStatus">Klik tombol atau klik salah satu baris di atas</span>
+                  </div>
+                  <span class="motion-easing-label">Easing: <code>cubic-bezier(0.2, 0.8, 0.2, 1)</code></span>
+                </div>
+
+                <!-- Tactile Movement Tokens (Lift & Reveal Distance with Clear Comparison) -->
+                <div class="motion-distance-specimens">
+                  <div class="distance-specimen-card" id="demoHoverLiftCard">
+                    <div class="distance-specimen-preview">
+                      <div class="lift-comparison-column">
+                        <button type="button" class="mini-lift-btn standard-lift" id="btnTestLiftStandard" title="Hover untuk menguji elevasi standar semenitwasted">
+                          <span>Hover: -2px (Standar)</span>
+                          <span class="lift-badge-spec">semenitwasted</span>
+                        </button>
+                        <button type="button" class="mini-lift-btn exaggerated-lift" id="btnTestLiftExaggerated" title="Hover untuk membandingkan dengan elevasi berlebihan">
+                          <span>Hover: -8px (Berlebihan)</span>
+                          <span class="lift-badge-spec non-std">non-standard</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="distance-specimen-info">
+                      <span class="distance-name">Tactile Hover Lift (Mengapa Hanya -2px?)</span>
+                      <span class="distance-token"><code>--lift: -2px</code> (Bukan -8px atau -12px)</span>
+                      <p class="distance-desc">
+                        <strong>Filosofi Restraint:</strong> Pada semenitwasted (<em>animation.md Section 8</em>), gerakan hover dibatasi hanya <strong>-2px</strong> agar elemen tetap terasa berpijak mantap (<em>tactile &amp; grounded</em>). Elevasi besar (-8px ke atas) membuat UI terasa melompat berlebihan dan tidak tenang.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="distance-specimen-card" id="demoRevealCard">
+                    <div class="distance-specimen-preview">
+                      <div class="mini-reveal-container">
+                        <div class="mini-reveal-box" id="miniRevealBox">
+                          <span>12px Entrance</span>
+                        </div>
+                        <button type="button" class="mini-trigger-btn" id="btnTriggerRevealDemo" title="Klik untuk memutar ulang animasi entrance 12px">
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                          <span>Replay Entrance (12px)</span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="distance-specimen-info">
+                      <span class="distance-name">Reveal Distance &amp; Easing</span>
+                      <span class="distance-token"><code>--reveal-distance: 12px</code> &bull; <code>--dur-reveal: 400ms</code></span>
+                      <p class="distance-desc">
+                        Pergeseran vertikal halus 12px berbarengan dengan transisi opacity 0 &rarr; 1. Jarak 12px cukup untuk memberikan kesan kemunculan dinamis tanpa mengganggu fokus membaca pengguna.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stage-status-indicator" id="statusMotionTokens">Under prefers-reduced-motion: --reveal-distance &rarr; 0px, --lift &rarr; 0px, durations &rarr; 150ms instant</div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Natural Easing</span>
+                <span class="spec-value">cubic-bezier(0.2, 0.8, 0.2, 1)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Stagger Step</span>
+                <span class="spec-value">50ms (--stagger-step)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Hover Lift Delta</span>
+                <span class="spec-value">-2px (--lift)</span>
+              </div>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>:root {
+  /* Motion Tokens (animation.md Section 26) */
+  --ease-out:         cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-micro:        150ms;        /* Micro interaction */
+  --dur-ui:           200ms;        /* Hover, buttons, cards */
+  --dur-reveal:       400ms;        /* Entrance & scroll reveal */
+  --dur-move:         500ms;        /* Spatial movements */
+  --reveal-distance:  12px;         /* Subtle entrance delta */
+  --lift:             -2px;         /* Standard tactile lift */
+  --stagger-step:     50ms;         /* Stagger cascade step */
+}
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --reveal-distance: 0px;  --lift: 0px;
+    --dur-reveal: 150ms;     --dur-move: 150ms;
+    --stagger-step: 0ms;
+  }
+}</code></pre>
+              <button class="btn-copy-code" data-copy-target="token-motion-tokens" aria-label="Salin kode CSS Motion Tokens">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy CSS</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 08. GRID, GUTTERS & ACCESSIBILITY RULES -->
+          <article class="bento-anim-card" data-category="layout" id="token-layout-grid">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Layout &amp; A11y</span>
+                <span class="timing-badge">Grid, Gutters &amp; Targets</span>
+              </div>
+              <h2 class="anim-title">Grid, Gutters &amp; Accessibility</h2>
+              <p class="anim-desc">
+                Sistem kolom 12-8-4 responsif, kontainer maks 1200px / 1440px, tap target minimal 44px, dan cincin fokus kontras tinggi untuk seluruh interaksi keyboard.
+              </p>
+            </header>
+
+            <div class="stage-canvas">
+              <div class="stage-caption">Responsive Columns &amp; Touch Target Demonstration</div>
+              
+              <div class="layout-demo-sandbox">
+                <!-- Mini Grid Columns Reflow Visualization -->
+                <div class="mini-grid-preview">
+                  <div class="mini-grid-header">
+                    <span class="mini-grid-title">Responsive Columns Matrix:</span>
+                    <span class="mini-grid-breakpoint">Desktop: 12 Cols &middot; Tablet: 8 Cols &middot; Mobile: 4 Cols</span>
+                  </div>
+                  <div class="mini-columns-row" aria-hidden="true">
+                    <div class="col-pill">1</div><div class="col-pill">2</div><div class="col-pill">3</div><div class="col-pill">4</div>
+                    <div class="col-pill col-tablet">5</div><div class="col-pill col-tablet">6</div><div class="col-pill col-tablet">7</div><div class="col-pill col-tablet">8</div>
+                    <div class="col-pill col-desktop">9</div><div class="col-pill col-desktop">10</div><div class="col-pill col-desktop">11</div><div class="col-pill col-desktop">12</div>
+                  </div>
+                </div>
+
+                <!-- Touch & Focus Demo Block -->
+                <div class="a11y-demo-boxes">
+                  <div class="a11y-target-box">
+                    <div class="touch-target-visual">
+                      <span class="touch-target-indicator">&ge; 44px</span>
+                    </div>
+                    <div class="touch-target-desc">
+                      <span class="touch-target-name">Minimum Tap Target</span>
+                      <span class="touch-target-token"><code>--tap-min: 44px</code></span>
+                    </div>
+                  </div>
+
+                  <div class="a11y-target-box">
+                    <button type="button" class="focus-ring-demo-btn">
+                      <span>Click to Focus Ring</span>
+                    </button>
+                    <div class="touch-target-desc">
+                      <span class="touch-target-name">Accessible Focus Ring</span>
+                      <span class="touch-target-token"><code>--focus-ring: 2px solid</code></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stage-status-indicator" id="statusLayoutGrid">Sticky navbar includes scroll-padding-top to avoid obscuring focused elements</div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Gutters</span>
+                <span class="spec-value">Desktop 24px · Tablet 20px · Mobile 16px</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Focus Ring</span>
+                <span class="spec-value">2px solid var(--color-dark)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Touch Target</span>
+                <span class="spec-value">&ge; 44px by 44px (WCAG AA)</span>
+              </div>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>:root {
+  /* Layout & Accessibility Tokens (design-system.md & responsive.md) */
+  --container-max:  1200px;
+  --page-pad:       clamp(16px, 4vw, 48px);
+  --gutter:         16px; /* Mobile first */
+  --focus-ring:     2px solid var(--color-dark);
+  --focus-offset:   2px;
+  --tap-min:        44px;
+}
+@media (min-width: 768px)  { :root { --gutter: 20px; } }
+@media (min-width: 1024px) { :root { --gutter: 24px; } }</code></pre>
+              <button class="btn-copy-code" data-copy-target="token-layout-grid" aria-label="Salin kode CSS Layout & Grid Tokens">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy CSS</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 09. MASTER TOKEN EXPORT (Full-Width Card) -->
+          <article class="bento-anim-card card-full-width" data-category="master" id="token-master-export">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Master Export</span>
+                <span class="timing-badge">Production Ready</span>
+              </div>
+              <h2 class="anim-title">Complete Design Tokens (:root)</h2>
+              <p class="anim-desc">
+                Blok CSS variabel lengkap yang siap disalin dan digunakan langsung pada seluruh berkas stylesheet proyek untuk menjamin keselarasan dengan sistem desain semenitwasted.
+              </p>
+            </header>
+
+            <div class="card-snippet-drawer master-snippet-drawer">
+              <pre><code>:root {
+  /* ==========================================================================
+     SEMENITWASTED DESIGN TOKENS
+     Source: web-builder-SKILL.md, design-system.md, typography.md, animation.md
+     ========================================================================== */
+
+  /* --- 1. Core Colors --- */
+  --color-light: #F0EDF4;
+  --color-dark: #211B28;
+  --color-shadow: #450D50;
+
+  /* --- 2. Signature Shadows (Preserve Exactly) --- */
+  --shadow-primary: 18px 18px 16px rgb(69 13 80 / 20%);
+  --shadow-depth: 4px 4px 4px rgb(69 13 80 / 25%);
+  --shadow-hover: 8px 8px 8px rgb(69 13 80 / 22%);
+  --shadow-pressed: 2px 2px 2px rgb(69 13 80 / 25%);
+
+  /* --- 3. Radius & Containers --- */
+  --radius: 10px;
+  --radius-card: 10px;
+  --radius-pill: 999px;
+  --radius-sm: 6px;
+  --container-max: 1200px;
+  --page-pad: clamp(16px, 4vw, 48px);
+
+  /* --- 4. Spacing Scale (Even numbers only) --- */
+  --space-4: 4px;   --space-8: 8px;   --space-12: 12px;  --space-16: 16px;
+  --space-20: 20px; --space-24: 24px; --space-32: 32px;  --space-40: 40px;
+  --space-48: 48px; --space-56: 56px; --space-64: 64px;  --space-80: 80px;
+  --space-96: 96px; --space-128: 128px;
+
+  /* --- 5. Text Tones & State Colors --- */
+  --color-text: var(--color-dark);                  /* 14.48:1 AAA */
+  --color-text-muted: rgb(33 27 40 / 70%);          /* 5.78:1 AA */
+  --color-text-disabled: rgb(33 27 40 / 50%);       /* 3.16:1 Disabled */
+  --color-border-control: rgb(33 27 40 / 50%);      /* 3.16:1 Input boundary */
+
+  /* --- 6. Fluid Typography Scale --- */
+  --font-sans: 'Rubik', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --text-display: clamp(2.5rem, 1.5rem + 3vw, 4rem);      /* 40 &rarr; 64px */
+  --text-h1:      clamp(2.25rem, 1.5rem + 2vw, 3rem);     /* 36 &rarr; 48px */
+  --text-h2:      clamp(2rem, 1.25rem + 1.5vw, 2.5rem);   /* 32 &rarr; 40px */
+  --text-h3:      clamp(1.5rem, 1rem + 1.5vw, 2rem);      /* 24 &rarr; 32px */
+  --text-h4:      clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem); /* 20 &rarr; 24px */
+  --text-intro:   clamp(1.125rem, 1.05rem + 0.25vw, 1.25rem); /* 18 &rarr; 20px */
+  --text-body:    1rem;                                   /* 16px */
+  --text-small:   0.875rem;                               /* 14px */
+  --text-caption: 0.75rem;                                /* 12px */
+
+  --leading-display: 1.1;  --leading-heading: 1.15;
+  --leading-body: 1.6;     --leading-small: 1.5;
+  --measure: 65ch;
+
+  /* --- 7. Motion & Interaction Tokens --- */
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-micro: 150ms;
+  --dur-ui: 200ms;
+  --dur-reveal: 400ms;
+  --dur-move: 500ms;
+  --reveal-distance: 12px;
+  --lift: -2px;
+  --stagger-step: 50ms;
+
+  /* --- 8. Focus & Tap Accessibility --- */
+  --focus-ring: 2px solid var(--color-dark);
+  --focus-offset: 2px;
+  --tap-min: 44px;
+
+  /* --- 9. Responsive Gutters --- */
+  --gutter: 16px;
+}
+
+@media (min-width: 768px)  { :root { --gutter: 20px; } }
+@media (min-width: 1024px) { :root { --gutter: 24px; } }
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --reveal-distance: 0px;
+    --lift: 0px;
+    --dur-reveal: 150ms;
+    --dur-move: 150ms;
+    --stagger-step: 0ms;
+  }
+}</code></pre>
+              <button class="btn-copy-code" data-copy-target="token-master-export" aria-label="Salin seluruh Master Design Tokens">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy Master Tokens</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- COMPONENTS & UI CATALOG -->
+      <section class="components-catalog" id="componentsCatalog" aria-label="Katalog Components &amp; UI semenitwasted" style="display: none;">
+        <div class="bento-catalog-grid">
+
+          <!-- 01. BUTTON HIERARCHY & STATES -->
+          <article class="bento-anim-card card-full-width" data-category="buttons" id="cmp-buttons">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Buttons</span>
+                <span class="timing-badge">4 Levels &middot; 6 States</span>
+              </div>
+              <h2 class="anim-title">Button Hierarchy &amp; States</h2>
+              <p class="anim-desc">
+                Empat tingkat tombol &mdash; primer, sekunder, quiet, dan icon-only &mdash; dengan radius 10px, area sentuh minimal 44px, dan state yang konsisten. Gunakan satu aksi primer per kelompok agar hierarki tetap terbaca.
+              </p>
+            </header>
+
+            <div class="stage-canvas ui-stage">
+              <div class="stage-caption">Live Buttons &mdash; hover, klik, atau tekan Tab untuk melihat state asli</div>
+
+              <div class="ui-button-row">
+                <button type="button" class="ui-btn ui-btn--primary" id="cmpBtnPrimary">Aksi Utama</button>
+                <button type="button" class="ui-btn ui-btn--secondary" id="cmpBtnSecondary">Aksi Sekunder</button>
+                <button type="button" class="ui-btn ui-btn--quiet" id="cmpBtnQuiet">Aksi Ringan</button>
+                <button type="button" class="ui-btn ui-btn--icon" id="cmpBtnIcon" aria-label="Tambah item">
+                  <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                </button>
+                <button type="button" class="ui-btn ui-btn--primary" id="cmpBtnLoading">
+                  <span class="ui-spinner" aria-hidden="true"></span>
+                  <span class="ui-btn-label">Simpan Perubahan</span>
+                </button>
+              </div>
+
+              <ul class="ui-state-strip" aria-label="Spesimen state tombol primer">
+                <li class="ui-state-item">
+                  <span class="ui-btn ui-btn--primary ui-specimen" aria-hidden="true">Label</span>
+                  <span class="ui-state-name">Rest</span>
+                  <span class="ui-state-token">--shadow-depth</span>
+                </li>
+                <li class="ui-state-item">
+                  <span class="ui-btn ui-btn--primary ui-specimen is-hover" aria-hidden="true">Label</span>
+                  <span class="ui-state-name">Hover</span>
+                  <span class="ui-state-token">--shadow-hover &middot; -2px</span>
+                </li>
+                <li class="ui-state-item">
+                  <span class="ui-btn ui-btn--primary ui-specimen is-pressed" aria-hidden="true">Label</span>
+                  <span class="ui-state-name">Pressed</span>
+                  <span class="ui-state-token">--shadow-pressed &middot; 0px</span>
+                </li>
+                <li class="ui-state-item">
+                  <span class="ui-btn ui-btn--primary ui-specimen is-focus" aria-hidden="true">Label</span>
+                  <span class="ui-state-name">Focus</span>
+                  <span class="ui-state-token">outline 2px &middot; offset 2px</span>
+                </li>
+                <li class="ui-state-item">
+                  <span class="ui-btn ui-btn--primary ui-specimen is-loading" aria-hidden="true"><span class="ui-spinner"></span>Label</span>
+                  <span class="ui-state-name">Loading</span>
+                  <span class="ui-state-token">aria-busy &middot; disabled</span>
+                </li>
+                <li class="ui-state-item">
+                  <span class="ui-btn ui-btn--primary ui-specimen is-disabled" aria-hidden="true">Label</span>
+                  <span class="ui-state-name">Disabled</span>
+                  <span class="ui-state-token">no shadow &middot; no lift</span>
+                </li>
+              </ul>
+
+              <div class="stage-status-indicator" id="cmpButtonStatus" role="status">Klik tombol mana pun untuk melihat umpan balik</div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Tap Target</span>
+                <span class="spec-value">min 44 &times; 44px (--tap-min)</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Radius &amp; Weight</span>
+                <span class="spec-value">10px &middot; Rubik 500</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Forced Colors</span>
+                <span class="spec-value">1px solid transparent border</span>
+              </div>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 44px; padding: 12px 20px;
+  font: 500 0.9375rem/1 var(--font-sans);
+  border: 1px solid transparent;               /* visible in forced-colors */
+  border-radius: var(--radius);                /* 10px */
+  transition: transform var(--dur-ui) var(--ease-out),
+              box-shadow var(--dur-ui) var(--ease-out);
+}
+.btn--primary   { background: var(--color-dark); color: var(--color-light); box-shadow: var(--shadow-depth); }
+.btn--secondary { background: var(--color-light); color: var(--color-dark); border-color: var(--color-border-control); }
+.btn--quiet     { background: transparent; color: var(--color-dark); text-decoration: underline; text-underline-offset: 0.2em; }
+.btn--icon      { width: 44px; padding: 0; }
+
+@media (hover: hover) and (pointer: fine) {
+  .btn--primary:hover { transform: translateY(var(--lift)); box-shadow: var(--shadow-hover); }
+}
+.btn--primary:active  { transform: none; box-shadow: var(--shadow-pressed); }
+.btn:focus-visible    { outline: var(--focus-ring); outline-offset: var(--focus-offset); }
+.btn:disabled         { color: var(--color-text-disabled); box-shadow: none; transform: none; cursor: not-allowed; }</code></pre>
+              <button class="btn-copy-code" aria-label="Salin kode CSS Button">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy CSS</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 02. CARDS & SIGNATURE SURFACES -->
+          <article class="bento-anim-card card-full-width" data-category="cards" id="cmp-cards">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Cards &amp; Surfaces</span>
+                <span class="timing-badge">5 Signature Types</span>
+              </div>
+              <h2 class="anim-title">Cards &amp; Signature Surfaces</h2>
+              <p class="anim-desc">
+                Keluarga kecil permukaan yang mudah dikenali: standard, elevated, depth, interactive, dan image/content. Kartu interaktif menunjukkan hover hanya lewat pergerakan &minus;2px, sehingga nilai shadow signature tidak pernah diubah.
+              </p>
+            </header>
+
+            <div class="stage-canvas ui-stage">
+              <div class="stage-caption">Bento Surface Family &mdash; isi berbentuk placeholder</div>
+
+              <div class="ui-surface-bento">
+                <figure class="ui-card ui-card--media">
+                  <div class="ui-media-placeholder" role="img" aria-label="Placeholder gambar proyek, rasio 4:3">
+                    <svg aria-hidden="true" focusable="false" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></svg>
+                    <span>[Gambar proyek &middot; 4:3]</span>
+                  </div>
+                  <figcaption class="ui-card-body">
+                    <span class="ui-card-kicker">Image / Content</span>
+                    <h3 class="ui-card-title">[Judul proyek]</h3>
+                    <p class="ui-card-text">[Deskripsi singkat 1&ndash;2 kalimat tentang proyek.]</p>
+                  </figcaption>
+                </figure>
+
+                <div class="ui-card ui-card--elevated">
+                  <span class="ui-card-kicker">Elevated &middot; --shadow-primary</span>
+                  <h3 class="ui-card-title">[Konten unggulan]</h3>
+                  <p class="ui-card-text">Shadow signature 18px untuk permukaan paling penting di satu bagian.</p>
+                </div>
+
+                <div class="ui-card ui-card--standard">
+                  <span class="ui-card-kicker">Standard &middot; no shadow</span>
+                  <h3 class="ui-card-title">[Grup konten]</h3>
+                  <p class="ui-card-text">Permukaan tenang untuk mengelompokkan informasi pendukung.</p>
+                </div>
+
+                <div class="ui-card ui-card--depth">
+                  <span class="ui-card-kicker">Depth &middot; --shadow-depth</span>
+                  <h3 class="ui-card-title">[Komposisi berlapis]</h3>
+                  <div class="ui-depth-stack" aria-hidden="true">
+                    <span class="ui-depth-layer ui-depth-layer--back"></span>
+                    <span class="ui-depth-layer ui-depth-layer--front">Overlap</span>
+                  </div>
+                </div>
+
+                <a class="ui-card ui-card--interactive" href="portfolio.html">
+                  <span class="ui-card-kicker">Interactive &middot; hover &minus;2px</span>
+                  <span class="ui-card-title">Lihat Portfolio</span>
+                  <span class="ui-card-text">Seluruh kartu adalah satu tautan nyata dengan focus ring yang jelas.</span>
+                  <span class="ui-card-arrow" aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="tech-specs-bar">
+              <div class="spec-item">
+                <span class="spec-label">Hover Rule</span>
+                <span class="spec-value">translateY(-2px), shadow tetap</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Media</span>
+                <span class="spec-value">aspect-ratio fixed &middot; no CLS</span>
+              </div>
+              <div class="spec-item">
+                <span class="spec-label">Shadow Room</span>
+                <span class="spec-value">~34px, jangan overflow:hidden</span>
+              </div>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>.card {
+  background: var(--color-light);
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  padding: var(--space-24);
+}
+.card--elevated { box-shadow: var(--shadow-primary); }
+.card--depth    { box-shadow: var(--shadow-depth); }
+
+/* Interactive card: movement only, signature shadow untouched */
+.card--interactive {
+  display: block; color: inherit; text-decoration: none;
+  box-shadow: var(--shadow-primary);
+  transition: transform var(--dur-ui) var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .card--interactive:hover { transform: translateY(var(--lift)); }
+}
+.card--interactive:active        { transform: none; }
+.card--interactive:focus-visible { outline: var(--focus-ring); outline-offset: 4px; }
+
+.card__media { aspect-ratio: 4 / 3; border-radius: var(--radius); overflow: hidden; }
+
+@media (forced-colors: active) { .card { border-color: CanvasText; } }</code></pre>
+              <button class="btn-copy-code" aria-label="Salin kode CSS Card">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy CSS</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 03. FORM FIELDS & VALIDATION -->
+          <article class="bento-anim-card" data-category="forms" id="cmp-forms">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Forms</span>
+                <span class="timing-badge">Label &middot; Hint &middot; Error</span>
+              </div>
+              <h2 class="anim-title">Form Fields &amp; Validation</h2>
+              <p class="anim-desc">
+                Label selalu terlihat di atas field, batas 1px dengan kontras 3:1, hint dan pesan error terhubung lewat <code>aria-describedby</code>. Error ditandai teks + ikon, bukan warna saja.
+              </p>
+            </header>
+
+            <div class="stage-canvas ui-stage ui-stage--left">
+              <div class="stage-caption">Coba kirim kosong untuk melihat state error</div>
+
+              <form class="ui-form" id="cmpFormDemo" novalidate>
+                <div class="ui-field">
+                  <label class="ui-label" for="cmpName">Nama <span class="ui-req">(wajib)</span></label>
+                  <input class="ui-input" id="cmpName" name="name" type="text" autocomplete="name" required minlength="2" aria-describedby="cmpNameHint">
+                  <p class="ui-hint" id="cmpNameHint">Minimal 2 karakter.</p>
+                  <p class="ui-error" id="cmpNameError" hidden>
+                    <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                    <span>Nama belum diisi. Tulis minimal 2 karakter.</span>
+                  </p>
+                </div>
+
+                <div class="ui-field">
+                  <label class="ui-label" for="cmpEmail">Email <span class="ui-req">(wajib)</span></label>
+                  <input class="ui-input" id="cmpEmail" name="email" type="email" autocomplete="email" required aria-describedby="cmpEmailHint">
+                  <p class="ui-hint" id="cmpEmailHint">Contoh: nama@domain.com</p>
+                  <p class="ui-error" id="cmpEmailError" hidden>
+                    <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                    <span>Format email belum benar. Tambahkan tanda @ dan nama domain.</span>
+                  </p>
+                </div>
+
+                <div class="ui-field">
+                  <label class="ui-label" for="cmpTopic">Topik <span class="ui-opt">(opsional)</span></label>
+                  <div class="ui-select-wrap">
+                    <select class="ui-input ui-select" id="cmpTopic" name="topic">
+                      <option value="">Pilih topik</option>
+                      <option value="ilustrasi">Ilustrasi</option>
+                      <option value="ikon">Ikon</option>
+                      <option value="web">Web</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="ui-field">
+                  <label class="ui-label" for="cmpMessage">Pesan <span class="ui-opt">(opsional)</span></label>
+                  <textarea class="ui-input ui-textarea" id="cmpMessage" name="message" rows="3" maxlength="200" aria-describedby="cmpMessageCount"></textarea>
+                  <p class="ui-hint ui-hint--right" id="cmpMessageCount">0 / 200 karakter</p>
+                </div>
+
+                <div class="ui-form-actions">
+                  <button type="submit" class="ui-btn ui-btn--primary">Cek Validasi</button>
+                  <button type="reset" class="ui-btn ui-btn--quiet">Reset</button>
+                </div>
+
+                <p class="ui-form-status" id="cmpFormStatus" role="status"></p>
+              </form>
+
+              <p class="ui-demo-note">Demo validasi lokal &mdash; tidak ada data yang dikirim ke mana pun.</p>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>.field   { display: grid; gap: var(--space-8); }
+.label   { font-weight: 500; }
+.input {
+  min-height: 44px; padding: 12px 16px;
+  font: 400 1rem/1.5 var(--font-sans);        /* 16px: no iOS zoom */
+  background: var(--color-light);
+  border: 1px solid var(--color-border-control);  /* 3.16:1 */
+  border-radius: var(--radius);
+}
+.input:focus-visible { outline: var(--focus-ring); outline-offset: var(--focus-offset); }
+.input[aria-invalid="true"] { border-color: #B3261E; border-width: 2px; }
+.hint  { font-size: 0.875rem; color: var(--color-text-muted); }
+.error { display: flex; gap: var(--space-8); color: #B3261E; }  /* text + icon */
+
+&lt;label for="email"&gt;Email (wajib)&lt;/label&gt;
+&lt;input id="email" type="email" autocomplete="email" required
+       aria-describedby="email-hint email-error" aria-invalid="true"&gt;
+&lt;p id="email-hint"&gt;Contoh: nama@domain.com&lt;/p&gt;
+&lt;p id="email-error"&gt;Format email belum benar.&lt;/p&gt;
+&lt;p id="form-status" role="status"&gt;&lt;/p&gt;</code></pre>
+              <button class="btn-copy-code" aria-label="Salin kode Form Field">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy CSS</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 04. SELECTION CONTROLS -->
+          <article class="bento-anim-card" data-category="forms" id="cmp-selection">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Selection</span>
+                <span class="timing-badge">Checkbox &middot; Radio &middot; Switch</span>
+              </div>
+              <h2 class="anim-title">Selection Controls</h2>
+              <p class="anim-desc">
+                Checkbox dan radio native dikelompokkan dalam <code>fieldset</code> + <code>legend</code>, setiap baris setinggi 44px. Switch memakai <code>role="switch"</code> dengan label teks status, sehingga tidak bergantung pada warna.
+              </p>
+            </header>
+
+            <div class="stage-canvas ui-stage ui-stage--left">
+              <div class="stage-caption">Pilih opsi &mdash; ringkasan diperbarui langsung</div>
+
+              <div class="ui-selection-wrap" id="cmpSelectionGroup">
+                <fieldset class="ui-fieldset">
+                  <legend class="ui-legend">Notifikasi</legend>
+                  <label class="ui-check"><input type="checkbox" name="cmpNotif" value="Email mingguan" checked><span>Email mingguan</span></label>
+                  <label class="ui-check"><input type="checkbox" name="cmpNotif" value="Update proyek baru"><span>Update proyek baru</span></label>
+                  <label class="ui-check is-disabled"><input type="checkbox" name="cmpNotif" value="SMS" disabled><span>SMS (belum tersedia)</span></label>
+                </fieldset>
+
+                <fieldset class="ui-fieldset">
+                  <legend class="ui-legend">Kepadatan tampilan</legend>
+                  <label class="ui-check"><input type="radio" name="cmpDensity" value="Lapang" checked><span>Lapang (default)</span></label>
+                  <label class="ui-check"><input type="radio" name="cmpDensity" value="Standar"><span>Standar</span></label>
+                  <label class="ui-check"><input type="radio" name="cmpDensity" value="Rapat"><span>Rapat</span></label>
+                </fieldset>
+
+                <div class="ui-switch-row">
+                  <span class="ui-switch-text" id="cmpSwitchLabel">Mode fokus</span>
+                  <button type="button" class="ui-switch" id="cmpSwitch" role="switch" aria-checked="false" aria-labelledby="cmpSwitchLabel">
+                    <span class="ui-switch-thumb" aria-hidden="true"></span>
+                  </button>
+                  <span class="ui-switch-state" id="cmpSwitchState" aria-hidden="true">Nonaktif</span>
+                </div>
+              </div>
+
+              <p class="stage-status-indicator ui-selection-summary" id="cmpSelectionSummary" role="status">Notifikasi: Email mingguan &middot; Kepadatan: Lapang &middot; Mode fokus: nonaktif</p>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>.fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: var(--space-4); }
+.legend   { font-weight: 500; margin-bottom: var(--space-8); }
+.check {
+  display: flex; align-items: center; gap: var(--space-12);
+  min-height: 44px; cursor: pointer;
+}
+.check input {
+  width: 20px; height: 20px; margin: 0;
+  accent-color: var(--color-dark);     /* native = forced-colors safe */
+}
+.check input:focus-visible { outline: var(--focus-ring); outline-offset: var(--focus-offset); }
+
+/* Switch: role="switch" + aria-checked + visible state text */
+.switch { width: 48px; height: 28px; border-radius: 999px;
+  border: 1px solid var(--color-border-control); background: var(--color-light); }
+.switch[aria-checked="true"] { background: var(--color-dark); }
+.switch__thumb { width: 20px; height: 20px; border-radius: 50%;
+  transition: transform var(--dur-micro) var(--ease-out); }
+.switch[aria-checked="true"] .switch__thumb { transform: translateX(20px); }</code></pre>
+              <button class="btn-copy-code" aria-label="Salin kode Selection Controls">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy CSS</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 05. TAGS, CHIPS & STATUS BADGES -->
+          <article class="bento-anim-card" data-category="feedback" id="cmp-tags">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Tags &amp; Badges</span>
+                <span class="timing-badge">Static &middot; Toggle &middot; Status</span>
+              </div>
+              <h2 class="anim-title">Tags, Chips &amp; Status Badges</h2>
+              <p class="anim-desc">
+                Tag statis untuk kategori, chip toggle dengan <code>aria-pressed</code> dan ikon centang, serta badge status semantik yang selalu menggabungkan warna, ikon, dan teks.
+              </p>
+            </header>
+
+            <div class="stage-canvas ui-stage ui-stage--left">
+              <div class="ui-subgroup">
+                <h3 class="ui-subhead">Tag statis</h3>
+                <ul class="ui-tag-list" aria-label="Contoh tag kategori">
+                  <li class="ui-tag">Ilustrasi</li>
+                  <li class="ui-tag">Ikon</li>
+                  <li class="ui-tag">Web</li>
+                  <li class="ui-tag">Motion</li>
+                </ul>
+              </div>
+
+              <div class="ui-subgroup">
+                <h3 class="ui-subhead" id="cmpChipHeading">Filter chip (toggle)</h3>
+                <div class="ui-chip-group" role="group" aria-labelledby="cmpChipHeading">
+                  <button type="button" class="ui-chip" aria-pressed="true">
+                    <svg class="ui-chip-check" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+                    <span>Branding</span>
+                  </button>
+                  <button type="button" class="ui-chip" aria-pressed="false">
+                    <svg class="ui-chip-check" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+                    <span>Editorial</span>
+                  </button>
+                  <button type="button" class="ui-chip" aria-pressed="false">
+                    <svg class="ui-chip-check" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+                    <span>UI Kit</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="ui-subgroup">
+                <h3 class="ui-subhead">Status badge</h3>
+                <ul class="ui-badge-list" aria-label="Contoh status badge">
+                  <li class="ui-badge ui-badge--neutral">
+                    <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="9"/></svg>
+                    Draft
+                  </li>
+                  <li class="ui-badge ui-badge--success">
+                    <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+                    Terbit
+                  </li>
+                  <li class="ui-badge ui-badge--warning">
+                    <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+                    Perlu ditinjau
+                  </li>
+                  <li class="ui-badge ui-badge--error">
+                    <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                    Gagal
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>.tag  { display: inline-flex; padding: 4px 12px; border-radius: 999px;
+  font-size: 0.875rem; background: rgb(33 27 40 / 6%); border: 1px solid transparent; }
+
+.chip { display: inline-flex; align-items: center; gap: var(--space-8);
+  min-height: 44px; padding: 8px 16px; border-radius: 999px;
+  border: 1px solid var(--color-border-control); background: var(--color-light); }
+.chip .check { display: none; }
+.chip[aria-pressed="true"] { background: var(--color-dark); color: var(--color-light); }
+.chip[aria-pressed="true"] .check { display: block; }   /* not color-only */
+
+/* Semantic: only for real states, always icon + text (&ge; 4.5:1) */
+.badge--success { color: #1E6B3A; background: rgb(30 107 58 / 10%); }
+.badge--warning { color: #7A4F00; background: rgb(138 90 0 / 12%); }
+.badge--error   { color: #B3261E; background: rgb(179 38 30 / 10%); }</code></pre>
+              <button class="btn-copy-code" aria-label="Salin kode Tags dan Badges">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy CSS</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 06. TABS & BREADCRUMB -->
+          <article class="bento-anim-card" data-category="navigation" id="cmp-tabs">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Navigation</span>
+                <span class="timing-badge">ARIA Tabs &middot; Breadcrumb</span>
+              </div>
+              <h2 class="anim-title">Tabs &amp; Breadcrumb</h2>
+              <p class="anim-desc">
+                Tab mengikuti pola ARIA dengan roving tabindex dan navigasi panah. Tab aktif ditandai garis bawah tebal + bobot huruf, bukan warna saja. Breadcrumb memakai <code>aria-current="page"</code>.
+              </p>
+            </header>
+
+            <div class="stage-canvas ui-stage ui-stage--left">
+              <nav class="ui-breadcrumb" aria-label="Breadcrumb contoh">
+                <ol>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="library.html">Library</a></li>
+                  <li><span aria-current="page">Components &amp; UI</span></li>
+                </ol>
+              </nav>
+
+              <div class="ui-tabs" id="cmpTabs">
+                <div class="ui-tablist" role="tablist" aria-label="Contoh tab studi kasus">
+                  <button type="button" class="ui-tab" role="tab" id="cmpTab1" aria-controls="cmpPanel1" aria-selected="true" tabindex="0">Ringkasan</button>
+                  <button type="button" class="ui-tab" role="tab" id="cmpTab2" aria-controls="cmpPanel2" aria-selected="false" tabindex="-1">Proses</button>
+                  <button type="button" class="ui-tab" role="tab" id="cmpTab3" aria-controls="cmpPanel3" aria-selected="false" tabindex="-1">Hasil</button>
+                </div>
+                <div class="ui-tabpanel" role="tabpanel" id="cmpPanel1" aria-labelledby="cmpTab1" tabindex="0">
+                  <p>[Ringkasan singkat studi kasus dalam 1&ndash;2 kalimat.]</p>
+                </div>
+                <div class="ui-tabpanel" role="tabpanel" id="cmpPanel2" aria-labelledby="cmpTab2" tabindex="0" hidden>
+                  <p>[Langkah proses utama: riset, eksplorasi, dan iterasi.]</p>
+                </div>
+                <div class="ui-tabpanel" role="tabpanel" id="cmpPanel3" aria-labelledby="cmpTab3" tabindex="0" hidden>
+                  <p>[Hasil akhir dan pembelajaran dari proyek.]</p>
+                </div>
+              </div>
+
+              <p class="ui-demo-note">Keyboard: <kbd>&larr;</kbd> <kbd>&rarr;</kbd> pindah tab &middot; <kbd>Home</kbd> / <kbd>End</kbd> ke ujung.</p>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>&lt;div role="tablist" aria-label="Studi kasus"&gt;
+  &lt;button role="tab" id="t1" aria-controls="p1" aria-selected="true" tabindex="0"&gt;Ringkasan&lt;/button&gt;
+  &lt;button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1"&gt;Proses&lt;/button&gt;
+&lt;/div&gt;
+&lt;div role="tabpanel" id="p1" aria-labelledby="t1" tabindex="0"&gt;...&lt;/div&gt;
+&lt;div role="tabpanel" id="p2" aria-labelledby="t2" tabindex="0" hidden&gt;...&lt;/div&gt;
+
+.tab { min-height: 44px; padding: 8px 16px; font-weight: 500;
+  border: 0; border-bottom: 2px solid transparent; background: none; }
+.tab[aria-selected="true"] { font-weight: 700; border-bottom-color: var(--color-dark); }
+.tab:focus-visible { outline: var(--focus-ring); outline-offset: var(--focus-offset); }
+
+.breadcrumb ol { display: flex; flex-wrap: wrap; gap: var(--space-8); list-style: none; }
+.breadcrumb li + li::before { content: "/"; margin-right: var(--space-8); color: var(--color-text-muted); }
+.breadcrumb [aria-current="page"] { font-weight: 600; }</code></pre>
+              <button class="btn-copy-code" aria-label="Salin kode Tabs dan Breadcrumb">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy Code</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 07. ACCORDION / DISCLOSURE -->
+          <article class="bento-anim-card" data-category="navigation" id="cmp-accordion">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Disclosure</span>
+                <span class="timing-badge">aria-expanded &middot; 200ms</span>
+              </div>
+              <h2 class="anim-title">Accordion</h2>
+              <p class="anim-desc">
+                Tombol pemicu di dalam heading dengan <code>aria-expanded</code> yang sesuai state nyata. Panel membuka lewat transisi tinggi yang halus dan langsung instan pada reduced motion.
+              </p>
+            </header>
+
+            <div class="stage-canvas ui-stage ui-stage--left">
+              <div class="ui-accordion" id="cmpAccordion">
+                <div class="ui-accordion-item">
+                  <h3 class="ui-accordion-heading">
+                    <button type="button" class="ui-accordion-trigger" id="cmpAccBtn1" aria-expanded="true" aria-controls="cmpAccPanel1">
+                      <span>Kapan memakai accordion?</span>
+                      <svg class="ui-accordion-icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                  </h3>
+                  <div class="ui-accordion-panel is-open" id="cmpAccPanel1" role="region" aria-labelledby="cmpAccBtn1">
+                    <div class="ui-accordion-inner">
+                      <p>Untuk konten sekunder yang panjang, seperti FAQ atau detail teknis. Jangan sembunyikan informasi utama di dalam accordion.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ui-accordion-item">
+                  <h3 class="ui-accordion-heading">
+                    <button type="button" class="ui-accordion-trigger" id="cmpAccBtn2" aria-expanded="false" aria-controls="cmpAccPanel2">
+                      <span>Bagaimana dengan keyboard?</span>
+                      <svg class="ui-accordion-icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                  </h3>
+                  <div class="ui-accordion-panel" id="cmpAccPanel2" role="region" aria-labelledby="cmpAccBtn2">
+                    <div class="ui-accordion-inner">
+                      <p>Pemicu adalah <code>&lt;button&gt;</code> asli, jadi Tab, Enter, dan Space langsung bekerja tanpa skrip tambahan.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ui-accordion-item">
+                  <h3 class="ui-accordion-heading">
+                    <button type="button" class="ui-accordion-trigger" id="cmpAccBtn3" aria-expanded="false" aria-controls="cmpAccPanel3">
+                      <span>Apakah panel tertutup tetap diakses?</span>
+                      <svg class="ui-accordion-icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                    </button>
+                  </h3>
+                  <div class="ui-accordion-panel" id="cmpAccPanel3" role="region" aria-labelledby="cmpAccBtn3">
+                    <div class="ui-accordion-inner">
+                      <p>Tidak. Panel tertutup memakai <code>visibility: hidden</code> sehingga tidak bisa difokus dan tidak dibacakan screen reader.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>&lt;h3&gt;
+  &lt;button aria-expanded="false" aria-controls="panel-1" id="acc-1"&gt;Pertanyaan&lt;/button&gt;
+&lt;/h3&gt;
+&lt;div id="panel-1" role="region" aria-labelledby="acc-1" class="panel"&gt;
+  &lt;div class="panel__inner"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+.panel {
+  display: grid; grid-template-rows: 0fr; visibility: hidden;
+  transition: grid-template-rows var(--dur-ui) var(--ease-out),
+              visibility 0s linear var(--dur-ui);
+}
+.panel.is-open {
+  grid-template-rows: 1fr; visibility: visible;
+  transition: grid-template-rows var(--dur-ui) var(--ease-out);
+}
+.panel__inner { overflow: hidden; }
+[aria-expanded="true"] .icon { transform: rotate(180deg); }</code></pre>
+              <button class="btn-copy-code" aria-label="Salin kode Accordion">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy Code</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- 08. ALERTS, TOAST & DIALOG -->
+          <article class="bento-anim-card" data-category="feedback" id="cmp-feedback">
+            <header class="card-meta-header">
+              <div class="meta-tag-wrap">
+                <span class="meta-tag">Feedback</span>
+                <span class="timing-badge">Alert &middot; Toast &middot; Dialog</span>
+              </div>
+              <h2 class="anim-title">Alerts, Toast &amp; Dialog</h2>
+              <p class="anim-desc">
+                Alert inline dengan ikon + judul teks, toast di region <code>role="status"</code> yang sudah ada sejak awal, dan dialog <code>&lt;dialog&gt;</code> native: fokus terkunci, Escape menutup, fokus kembali ke pemicu.
+              </p>
+            </header>
+
+            <div class="stage-canvas ui-stage ui-stage--left">
+              <div class="ui-alert-stack">
+                <div class="ui-alert ui-alert--info">
+                  <svg class="ui-alert-icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                  <div class="ui-alert-body"><strong>Info:</strong> Perubahan tersimpan otomatis setiap 30 detik.</div>
+                </div>
+                <div class="ui-alert ui-alert--success">
+                  <svg class="ui-alert-icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+                  <div class="ui-alert-body"><strong>Berhasil:</strong> File berhasil diunggah.</div>
+                </div>
+                <div class="ui-alert ui-alert--warning" id="cmpAlertDismissable">
+                  <svg class="ui-alert-icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+                  <div class="ui-alert-body"><strong>Perhatian:</strong> Ukuran gambar melebihi 2&nbsp;MB.</div>
+                  <button type="button" class="ui-alert-close" id="cmpAlertClose" aria-label="Tutup peringatan">
+                    <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                  </button>
+                </div>
+                <div class="ui-alert ui-alert--error">
+                  <svg class="ui-alert-icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></svg>
+                  <div class="ui-alert-body"><strong>Gagal:</strong> Koneksi terputus. Coba lagi.</div>
+                </div>
+              </div>
+
+              <div class="ui-feedback-actions">
+                <button type="button" class="ui-btn ui-btn--secondary" id="cmpToastTrigger">Tampilkan Toast</button>
+                <button type="button" class="ui-btn ui-btn--primary" id="cmpDialogTrigger" aria-haspopup="dialog" aria-controls="cmpDialog">Buka Dialog</button>
+                <button type="button" class="ui-btn ui-btn--quiet" id="cmpAlertRestore" hidden>Tampilkan peringatan lagi</button>
+              </div>
+
+              <dialog class="ui-dialog" id="cmpDialog" aria-labelledby="cmpDialogTitle" aria-describedby="cmpDialogDesc">
+                <h3 class="ui-dialog-title" id="cmpDialogTitle">Hapus draft ini?</h3>
+                <p class="ui-dialog-desc" id="cmpDialogDesc">Contoh dialog konfirmasi. Ini hanya demo &mdash; tidak ada data yang benar-benar dihapus.</p>
+                <div class="ui-dialog-actions">
+                  <button type="button" class="ui-btn ui-btn--quiet" data-dialog-cancel>Batal</button>
+                  <button type="button" class="ui-btn ui-btn--primary" data-dialog-confirm>Ya, hapus</button>
+                </div>
+              </dialog>
+            </div>
+
+            <div class="card-snippet-drawer">
+              <pre><code>.alert { display: flex; gap: var(--space-12); align-items: flex-start;
+  padding: var(--space-12) var(--space-16); border-radius: var(--radius);
+  border: 1px solid currentColor; }                /* border survives forced-colors */
+.alert--info    { color: var(--color-dark); background: rgb(33 27 40 / 5%); }
+.alert--success { color: #1E6B3A; background: rgb(30 107 58 / 8%); }
+.alert--warning { color: #7A4F00; background: rgb(138 90 0 / 10%); }
+.alert--error   { color: #B3261E; background: rgb(179 38 30 / 8%); }
+
+/* Native dialog: focus trap + Escape for free */
+.dialog { max-width: min(440px, calc(100vw - 32px)); padding: var(--space-24);
+  border: 1px solid transparent; border-radius: var(--radius); box-shadow: var(--shadow-primary); }
+.dialog::backdrop { background: rgb(33 27 40 / 45%); }
+
+trigger.addEventListener('click', () =&gt; dialog.showModal());
+dialog.addEventListener('close', () =&gt; trigger.focus());</code></pre>
+              <button class="btn-copy-code" aria-label="Salin kode Feedback">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy Code</span>
               </button>
             </div>
           </article>
