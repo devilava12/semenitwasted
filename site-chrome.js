@@ -25,21 +25,22 @@
       : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
   }
 
-  function linkMarkup(page, activePage, className) {
+  function linkMarkup(page, activePage, className, basePath = '') {
     const active = page.id === activePage;
-    return `<a href="${page.href}"${className ? ` class="${className}${active ? ' active' : ''}"` : active ? ' class="active"' : ''}${active ? ' aria-current="page"' : ''}>${page.label}</a>`;
+    return `<a href="${basePath}${page.href}"${className ? ` class="${className}${active ? ' active' : ''}"` : active ? ' class="active"' : ''}${active ? ' aria-current="page"' : ''}>${page.label}</a>`;
   }
 
   function renderChrome(host) {
     const activePage = host.dataset.activePage;
-    const navLinks = pages.map(page => `<li>${linkMarkup(page, activePage, 'nav-link-item')}</li>`).join('');
-    const drawerLinks = pages.map(page => linkMarkup(page, activePage, '')).join('');
+    const basePath = host.dataset.basePath || '';
+    const navLinks = pages.map(page => `<li>${linkMarkup(page, activePage, 'nav-link-item', basePath)}</li>`).join('');
+    const drawerLinks = pages.map(page => linkMarkup(page, activePage, '', basePath)).join('');
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
 
     host.outerHTML = `
       <header class="portfolio-navbar">
-        <a href="index.html" class="brand-link" aria-label="semenitwasted Home">
-          <img src="assets/logo-nav.svg" alt="semenitwasted logo" class="brand-logo-img" width="116" height="48">
+        <a href="${basePath}index.html" class="brand-link" aria-label="semenitwasted Home">
+          <img src="${basePath}assets/logo-nav.svg" alt="semenitwasted logo" class="brand-logo-img" width="116" height="48">
         </a>
         <nav aria-label="Main navigation">
           <ul class="navbar-nav">

@@ -1,0 +1,577 @@
+/* ==========================================================================
+   SELENIA — CHARACTER DESIGN
+   Direct Implementation of Figma "Frame 14" (1440 × 5689 px)
+   ========================================================================== */
+
+/* --- 1. Global Reset & Base Setup --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #C0BEBE;
+}
+
+body {
+  font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #1A1A1A;
+  background-color: #C0BEBE;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Master 1440px Stage Canvas */
+.site-canvas {
+  width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  background-color: #D2D2D2;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+/* Common Section Divider — Full Width Infinite Marquee (Loop Square to Left) */
+.section-divider {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 44px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.divider-marquee-track {
+  display: flex;
+  width: calc(100% + 340px);
+  height: 100%;
+  animation: dividerMarqueeLeft 8s linear infinite;
+  will-change: transform;
+}
+
+.divider-marquee-inner {
+  width: 100%;
+  height: 100%;
+  background-image: url('assets/divider-tile.svg'), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='24' viewBox='0 0 34 24' fill='none'%3E%3Crect width='24' height='24' fill='%231C1C1C'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: 0 4px;
+  background-size: 34px 24px;
+  filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.25));
+}
+
+@keyframes dividerMarqueeLeft {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-340px, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .divider-marquee-track {
+    animation: none;
+  }
+}
+
+
+/* ==========================================================================
+   SECTION 1: HERO IMAGE (Figma Node 22:2 — 1440 × 944 px)
+   ========================================================================== */
+.section-hero {
+  position: relative;
+  width: 1440px;
+  height: 944px;
+  background-color: #D2D2D2;
+}
+
+/* Menu / Navbar (Figma Node 71:150: x=49, y=27, w=1342, h=80) */
+.navbar-frame {
+  position: absolute;
+  top: 27px;
+  left: 49px;
+  width: 1342px;
+  height: 80px;
+  background-color: #F8FAFC;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.20);
+  z-index: 20;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 48px;
+}
+
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.brand-logo:hover {
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+.brand-logo img {
+  width: 116px;
+  height: 48px;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav-link {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+  opacity: 0.65;
+  transform: translateY(-1px);
+}
+
+.nav-link.active {
+  font-weight: 600;
+}
+
+/* Background Graphic (Figma Node 103:2: render bounds left=54, top=0, w=1348, h=920) */
+.hero-bg-graphic {
+  position: absolute;
+  left: 54px;
+  top: 0;
+  width: 1348px;
+  height: 920px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-bg-graphic img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Hero Main Card (Figma Node 22:165: render bounds left=212, top=168, w=1040, h=443) */
+.hero-main-card {
+  position: absolute;
+  left: 212px;
+  top: 168px;
+  width: 1040px;
+  height: 443px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hero-main-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Hero Modular Title (Figma Node 22:50: render bounds left=628, top=647, w=502, h=125) */
+.hero-title-wrap {
+  position: absolute;
+  left: 628px;
+  top: 647px;
+  width: 502px;
+  height: 125px;
+  z-index: 15;
+  pointer-events: none;
+}
+
+.hero-title-wrap .pixel-title-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.section-hero .section-divider {
+  position: absolute;
+  left: 0;
+  top: 896px;
+  z-index: 12;
+}
+
+/* ==========================================================================
+   SECTION 2: SKETS (Figma Node 22:219 — 1440 × 892 px)
+   ========================================================================== */
+.section-skets {
+  position: relative;
+  width: 1440px;
+  height: 892px;
+  background-color: #D2D2D2;
+}
+
+/* Card Background with Masked Sketch Artwork (Figma Node 103:3: render bounds left=158, top=0, w=1140, h=868) */
+.skets-card-bg {
+  position: absolute;
+  left: 158px;
+  top: 0;
+  width: 1140px;
+  height: 868px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.skets-card-bg img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Title - Skets (Figma Node 22:274: render bounds left=316, top=144, w=294, h=60) */
+.skets-title-wrap {
+  position: absolute;
+  left: 316px;
+  top: 144px;
+  width: 294px;
+  height: 60px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.skets-title-wrap .pixel-title-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Text Description (Figma Node 22:313: left=316, top=227, w=288, h=187) */
+.skets-text {
+  position: absolute;
+  left: 316px;
+  top: 227px;
+  width: 288px;
+  height: 187px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 24px;
+  line-height: 1.35;
+  color: #ECECEC;
+  font-weight: 400;
+  text-shadow: 6px 6px 2px #3C3C3C;
+  z-index: 5;
+}
+
+.section-skets .section-divider {
+  position: absolute;
+  left: 0;
+  top: 844px;
+  z-index: 10;
+}
+
+/* ==========================================================================
+   SECTION 3: COLOR (Figma Node 35:509 — 1440 × 963 px)
+   ========================================================================== */
+.section-color {
+  position: relative;
+  width: 1440px;
+  height: 963px;
+  background-color: #D2D2D2;
+}
+
+/* Card - Gambar Utama (Figma Node 35:510: render bounds left=57, top=0, w=613, h=936) */
+.color-main-card {
+  position: absolute;
+  left: 57px;
+  top: 0;
+  width: 613px;
+  height: 936px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.color-main-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Title - Color (Figma Node 35:577: render bounds left=732, top=67, w=508, h=114) */
+.color-title-wrap {
+  position: absolute;
+  left: 732px;
+  top: 67px;
+  width: 508px;
+  height: 114px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.color-title-wrap .pixel-title-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Card - Kumpulan Gambar (Figma Node 35:534: render bounds left=586, top=194, w=804, h=734) */
+.color-variants-card {
+  position: absolute;
+  left: 586px;
+  top: 194px;
+  width: 804px;
+  height: 734px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.color-variants-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.section-color .section-divider {
+  position: absolute;
+  left: 0;
+  top: 915px;
+  z-index: 10;
+}
+
+/* ==========================================================================
+   SECTION 4: LIGHT & SHADOW (Figma Node 35:1270 — 1440 × 945 px)
+   ========================================================================== */
+.section-light-shadow {
+  position: relative;
+  width: 1440px;
+  height: 945px;
+  background: linear-gradient(148deg, #D2D2D2 0%, #D2D2D2 50%, #474747 50%, #474747 100%);
+}
+
+/* Card Light Variants (Figma Node 35:1365: x=108, y=38, w=808, h=558) */
+.card-light-variants {
+  position: absolute;
+  left: 108px;
+  top: 38px;
+  width: 808px;
+  height: 558px;
+  z-index: 5;
+}
+
+.card-light-variants img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(12px 18px 24px rgba(0, 0, 0, 0.25));
+  transition: transform 0.3s ease;
+}
+
+.card-light-variants:hover img {
+  transform: translateY(-4px);
+}
+
+/* Title - Light (Figma Node 35:1282: render bounds left=940, top=38, w=399, h=92) */
+.title-light-wrap {
+  position: absolute;
+  left: 940px;
+  top: 38px;
+  width: 399px;
+  height: 92px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.title-light-wrap .pixel-title-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Card Shadow Variants (Figma Node 35:1405: x=524, y=330, w=808, h=558) */
+.card-shadow-variants {
+  position: absolute;
+  left: 524px;
+  top: 330px;
+  width: 808px;
+  height: 558px;
+  z-index: 6;
+}
+
+.card-shadow-variants img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(12px 18px 30px rgba(0, 0, 0, 0.45));
+  transition: transform 0.3s ease;
+}
+
+.card-shadow-variants:hover img {
+  transform: translateY(-4px);
+}
+
+/* Title - Shadow (Figma Node 35:1312: render bounds left=108, top=812, w=503, h=80) */
+.title-shadow-wrap {
+  position: absolute;
+  left: 108px;
+  top: 812px;
+  width: 503px;
+  height: 80px;
+  z-index: 7;
+  pointer-events: none;
+}
+
+.title-shadow-wrap .pixel-title-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ==========================================================================
+   SECTION 5: TEXTURE (Figma Node 35:2508 — 1440 × 1001 px)
+   ========================================================================== */
+.section-texture {
+  position: relative;
+  width: 1440px;
+  height: 1001px;
+  background-color: #474747;
+}
+
+/* Kumpulan Card Gambar Texture (Figma Node 103:4: x=108, y=0, w=1224, h=944) */
+.texture-main-card {
+  position: absolute;
+  left: 108px;
+  top: 0;
+  width: 1224px;
+  height: 944px;
+  z-index: 2;
+}
+
+.texture-main-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.40));
+  transition: transform 0.3s ease;
+}
+
+.texture-main-card:hover img {
+  transform: translateY(-4px);
+}
+
+/* Title - Texture (Figma Node 35:2535: x=108, y=877, w=496, h=67) */
+.texture-title-wrap {
+  position: absolute;
+  left: 108px;
+  top: 877px;
+  width: 496px;
+  height: 67px;
+  z-index: 5;
+}
+
+.texture-title-wrap .pixel-title-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: drop-shadow(5px 5px 0px rgba(60, 60, 60, 0.40));
+}
+
+/* ==========================================================================
+   SECTION 6: FINISH (Figma Node 35:2885 — 1440 × 944 px)
+   ========================================================================== */
+.section-finish {
+  position: relative;
+  width: 1440px;
+  height: 944px;
+  background-color: #D2D2D2;
+  background-image: url('assets/section6-bg.png');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Card Judul Section / Summary (Figma Node 35:2931: render bounds left=66, top=226, w=804, h=390) */
+.finish-summary-card {
+  position: absolute;
+  left: 66px;
+  top: 226px;
+  width: 804px;
+  height: 390px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.finish-summary-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Title - Finish (Figma Node 35:3002: render bounds left=274, top=548, w=492, h=202) */
+.finish-title-wrap {
+  position: absolute;
+  left: 274px;
+  top: 548px;
+  width: 492px;
+  height: 202px;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.finish-title-wrap .pixel-title-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Card Gambar Utama Final Render (Figma Node 35:2978: x=836, y=60, w=496, h=824) */
+.finish-artwork-card {
+  position: absolute;
+  left: 836px;
+  top: 60px;
+  width: 496px;
+  height: 824px;
+  z-index: 5;
+}
+
+.finish-artwork-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(12px 20px 32px rgba(0, 0, 0, 0.25));
+  transition: transform 0.3s ease;
+}
+
+.finish-artwork-card:hover img {
+  transform: translateY(-4px);
+}
+
+/* ==========================================================================
+   RESPONSIVE SCALING FOR TABLET & MOBILE
+   Scales down the 1440px canvas gracefully while preserving exact design
+   ========================================================================== */
+@media (max-width: 1440px) {
+  body {
+    overflow-x: auto;
+  }
+}

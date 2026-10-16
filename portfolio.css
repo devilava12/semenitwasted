@@ -631,10 +631,10 @@ body {
 }
 
 /* Portfolio preview primitives: presentation belongs in CSS, not generated inline styles. */
-.featured-preview-copy { font-size: 0.85rem; color: #D5CCD9; line-height: 1.5; }
+.featured-preview-copy { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; }
 .featured-preview-tags, .preview-swatch-row, .preview-switch-row, .preview-audio-bars, .preview-web-actions { display: flex; align-items: center; }
 .featured-preview-tags { gap: 8px; }
-.card-tag--light { background: rgb(255 255 255 / 12%); color: #FCFAFD; border-color: rgb(255 255 255 / 25%); }
+.card-tag--light { background: var(--surface-soft); color: var(--text-secondary); border: 1px solid var(--border); }
 .preview-content--swatches { flex-direction: column; gap: 10px; }
 .preview-swatch-row { justify-content: center; gap: 8px; width: 100%; }
 .preview-swatch { width: 36px; height: 36px; border-radius: var(--radius-card); }
@@ -746,6 +746,28 @@ body {
   width: 100%;
 }
 
+.preview-content--selenia {
+  overflow: hidden;
+  background-color: #D2D2D2;
+}
+
+[data-theme="dark"] .preview-content--selenia {
+  background-color: #211B28;
+}
+
+.selenia-preview-image {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  width: 100%;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.bento-card:hover .selenia-preview-image {
+  transform: scale(1.035);
+}
+
 .card-tags {
   display: flex;
   gap: 8px;
@@ -763,62 +785,66 @@ body {
   border: 1px solid var(--border);
 }
 
-/* --- 15. FEATURED CARD (Dark Dominant Card) --- */
+/* --- 15. FEATURED CARD (Unified with White Neumorphic Bento System) --- */
 .bento-card.card-featured {
-  background: #211B28;
-  color: #FCFAFD;
-  border-color: #382D42;
-  box-shadow: 18px 18px 24px rgba(33, 27, 40, 0.35);
+  background: var(--surface);
+  color: var(--text-primary);
+  border-color: var(--border);
+  box-shadow: var(--shadow-primary);
 }
 
 .card-featured .card-category-label {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.2);
-  color: #FCFAFD;
+  background: var(--surface-soft);
+  border-color: var(--border);
+  color: var(--text-primary);
 }
 
 .card-featured .card-cta-icon {
-  background: rgba(255, 255, 255, 0.1);
-  color: #FCFAFD;
-  border-color: rgba(255, 255, 255, 0.2);
+  background: var(--surface-soft);
+  color: var(--text-primary);
+  border-color: var(--border);
 }
 
 .card-featured:hover .card-cta-icon {
-  background: #FCFAFD;
-  color: #211B28;
-  border-color: #FCFAFD;
+  background: var(--strong);
+  color: #FCFAFD;
+  border-color: var(--strong);
 }
 
 .card-featured .card-title {
-  color: #FCFAFD;
+  color: var(--strong);
   font-size: 1.65rem;
 }
 
 .card-featured .card-description {
-  color: #D5CCD9;
+  color: var(--text-secondary);
   max-width: 580px;
 }
 
 .card-featured .card-preview-frame {
-  background: #18121E;
-  border-color: #382D42;
+  background: var(--surface-soft);
+  border-color: var(--border);
 }
 
 .card-featured .browser-top-bar {
-  background: rgba(0, 0, 0, 0.4);
-  border-color: #382D42;
+  background: rgba(255, 255, 255, 0.65);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .card-featured .browser-top-bar {
+  background: rgba(0, 0, 0, 0.25);
 }
 
 .card-featured .browser-address {
-  background: #211B28;
-  color: #AFA6B7;
-  border-color: #382D42;
+  background: var(--surface);
+  color: var(--text-secondary);
+  border-color: var(--border);
 }
 
 .card-featured .card-tag {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.16);
-  color: #E8DDF0;
+  background: var(--surface-soft);
+  border-color: var(--border);
+  color: var(--text-secondary);
 }
 
 /* Featured visual composition */
@@ -840,7 +866,7 @@ body {
 .featured-art-side img {
   max-height: 190px;
   width: auto;
-  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.45));
+  filter: drop-shadow(0 10px 20px rgba(69, 13, 80, 0.15));
   transition: transform 0.3s ease;
 }
 
@@ -860,7 +886,7 @@ body {
   align-items: center;
   gap: 6px;
   font-size: 0.75rem;
-  color: #E8DDF0;
+  color: var(--text-primary);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;

@@ -19,8 +19,23 @@ const portfolioData = [
     tags: ["Figma", "Website", "KelolaWeb.com"],
     previewType: "roche-case-study",
     featured: false,
-    href: "portfolio-roche.html",
+    href: "portfolio/roche/index.html",
     ctaText: "Baca studi kasus"
+  },
+  {
+    id: "selenia-character-experiment",
+    title: "Selenia — Character Design Experiment",
+    category: "Web",
+    categories: ["Web", "Illustration", "Experiment"],
+    categoryLabel: "Character · Web Design · Experiments",
+    description: "Eksplorasi visual perancangan karakter Selenia dari sketsa kertas, digitalisasi vektor, studi warna, pencahayaan, tekstur, hingga karya render final.",
+    span: "col-span-6",
+    tags: ["Web Design", "Character", "Experiments", "Illustrator"],
+    urlText: "semenitwasted.com/portfolio/eksperimen-1",
+    previewType: "selenia-experiment-preview",
+    featured: false,
+    href: "portfolio/eksperimen 1/index.html",
+    ctaText: "Buka eksperimen"
   },
   {
     id: "web-tactile-studio",
@@ -84,7 +99,7 @@ const portfolioData = [
     tags: ["Featured", "Character + Web UI", "Interactive Canvas"],
     urlText: "showcase.semenitwasted.com/fusion",
     previewType: "featured-character",
-    featured: true,
+    featured: false,
     ctaText: "Explore Showcase →"
   },
   {
@@ -146,6 +161,14 @@ function renderPreviewHTML(item) {
       innerContent = `
         <div class="preview-content preview-content--roche">
           <img src="portfolio/roche/%23AyocekHPV.webp" alt="Tampilan desain landing page #AyoCekHPV untuk Roche" class="roche-preview-image" loading="lazy" decoding="async" width="2880" height="3504">
+        </div>
+      `;
+      break;
+
+    case 'selenia-experiment-preview':
+      innerContent = `
+        <div class="preview-content preview-content--selenia">
+          <img src="portfolio/eksperimen 1/assets/frame14-overview.png" alt="Tampilan eksplorasi desain karakter Selenia" class="selenia-preview-image" loading="lazy" decoding="async" width="1440" height="2845">
         </div>
       `;
       break;
@@ -333,9 +356,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (selectedCategory === 'all') {
         renderBentoGrid(portfolioData);
       } else {
-        const filtered = portfolioData.filter(item => 
-          item.category.toLowerCase() === selectedCategory.toLowerCase()
-        );
+        const target = selectedCategory.toLowerCase();
+        const filtered = portfolioData.filter(item => {
+          const cat = (item.category || '').toLowerCase();
+          const cats = Array.isArray(item.categories) ? item.categories.map(c => c.toLowerCase()) : [];
+          return cat === target || cats.includes(target);
+        });
         renderBentoGrid(filtered);
       }
     });
