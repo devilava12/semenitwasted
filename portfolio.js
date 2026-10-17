@@ -17,6 +17,7 @@ const portfolioData = [
     description: "Desain Figma untuk situs #AyoCekHPV, dikerjakan bersama KelolaWeb.com.",
     span: "col-span-6",
     tags: ["Figma", "Website", "KelolaWeb.com"],
+    urlText: "semenitwasted.com/portfolio/roche",
     previewType: "roche-case-study",
     featured: false,
     href: "portfolio/roche/index.html",
@@ -36,6 +37,21 @@ const portfolioData = [
     featured: false,
     href: "portfolio/eksperimen 1/index.html",
     ctaText: "Buka eksperimen"
+  },
+  {
+    id: "artificial-intelligence-icons",
+    title: "Artificial Intelligence Icon System",
+    category: "Icons",
+    categories: ["Icons", "Web"],
+    categoryLabel: "Icon Design",
+    description: "Sistem ikon vektor bertema AI dengan 50 konsep unik dalam 2 varian gaya (Line & Glyph) di atas grid presisi 76×76 px.",
+    span: "col-span-6",
+    tags: ["Icon", "Icons", "Vector Art", "AI Icons", "76px Grid"],
+    urlText: "semenitwasted.com/portfolio/ai-icons",
+    previewType: "ai-icon-grid",
+    featured: false,
+    href: "portfolio/artificial intelegent icon/index.html",
+    ctaText: "Jelajahi icon set"
   },
   {
     id: "web-tactile-studio",
@@ -201,6 +217,31 @@ function renderPreviewHTML(item) {
           </div>
         </div>
       `;
+    case 'ai-icon-grid':
+      innerContent = `
+        <div class="preview-content preview-content--ai-icons">
+          <div class="preview-ai-icon-grid" aria-label="AI Icon Grid Preview">
+            <div class="mini-ai-box" title="Brain Icon (Line)">
+              <img src="portfolio/artificial%20intelegent%20icon/Brain%20icon,%20line%20icon%20style.svg" alt="Brain Icon" width="28" height="28">
+            </div>
+            <div class="mini-ai-box" title="AI Core Icon (Glyph)">
+              <img src="portfolio/artificial%20intelegent%20icon/AI%20icon,%20glyph%20icon%20style.svg" alt="AI Icon" width="28" height="28">
+            </div>
+            <div class="mini-ai-box" title="Chip Icon (Line)">
+              <img src="portfolio/artificial%20intelegent%20icon/Chip%20icon,%20line%20icon%20style.svg" alt="Chip Icon" width="28" height="28">
+            </div>
+            <div class="mini-ai-box" title="Robot Icon (Glyph)">
+              <img src="portfolio/artificial%20intelegent%20icon/Robot%20icon,%20glyph%20icon%20style.svg" alt="Robot Icon" width="28" height="28">
+            </div>
+            <div class="mini-ai-box" title="Database Icon (Line)">
+              <img src="portfolio/artificial%20intelegent%20icon/Database%20icon,%20line%20icon%20style.svg" alt="Database Icon" width="28" height="28">
+            </div>
+            <div class="mini-ai-box" title="Shield Icon (Glyph)">
+              <img src="portfolio/artificial%20intelegent%20icon/Shield%20icon,%20glyph%20icon%20style.svg" alt="Shield Icon" width="28" height="28">
+            </div>
+          </div>
+        </div>
+      `;
       break;
 
     case 'icon-grid':
@@ -291,7 +332,7 @@ function renderPreviewHTML(item) {
   }
 
   return `
-    <div class="card-preview-frame">
+    <div class="card-preview-frame card-preview-frame--${item.previewType}">
       ${browserBar}
       ${innerContent}
     </div>
@@ -317,10 +358,14 @@ function renderBentoGrid(items) {
       ? `<a class="card-case-link" href="${item.href}">${item.ctaText || 'View Project'} <span aria-hidden="true">→</span></a>`
       : '';
 
+    const ctaIconHtml = item.href
+      ? `<a class="card-cta-icon" href="${item.href}" aria-label="Buka ${item.title}">→</a>`
+      : `<div class="card-cta-icon" aria-hidden="true">→</div>`;
+
     cardEl.innerHTML = `
       <div class="card-top-meta">
         <span class="card-category-label">${item.categoryLabel}</span>
-        <div class="card-cta-icon" aria-hidden="true">→</div>
+        ${ctaIconHtml}
       </div>
       
       ${renderPreviewHTML(item)}

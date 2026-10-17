@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F0EDF4">
+  <title>Artificial Intelligence Icons — Portfolio semenitwasted</title>
+  <meta name="description"
+    content="Sistem ikon vektor Artificial Intelligence oleh semenitwasted. 50 konsep unik dalam varian Line & Glyph, dibangun di atas grid geometris 76×76px dengan estetika monokromatis dan Neumorphism halus.">
+  <link rel="icon" type="image/svg+xml" href="../../assets/logo-nav.svg">
+
+  <!-- Local Font: Rubik (Self-hosted) -->
+  <link rel="stylesheet" href="../../assets/fonts/rubik.css">
+
+  <!-- Core System Stylesheet -->
+  <link rel="stylesheet" href="../../portfolio.css">
+  <!-- Custom Icon Showcase Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Shared Site Chrome & Theme Controller -->
+  <script src="../../site-chrome.js"></script>
+  <!-- Embedded Icon Dataset -->
+  <script src="icons-data.js"></script>
+  <!-- Interactive Gallery Script -->
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="portfolio-page-wrapper icon-page-wrapper">
+
+    <!-- Global Header via Site Chrome -->
+    <div data-site-chrome data-active-page="portfolio" data-base-path="../../"></div>
+
+    <main>
+      <!-- BREADCRUMB NAVIGATION -->
+      <nav class="case-breadcrumb" aria-label="Breadcrumb">
+        <a href="../../portfolio.html">Portfolio</a>
+        <span aria-hidden="true" class="breadcrumb-sep">/</span>
+        <span aria-current="page">Artificial Intelligence Icons</span>
+      </nav>
+
+      <!-- 1. HERO SECTION -->
+      <section class="icon-hero" aria-labelledby="heroTitle">
+        <div class="hero-header-block">
+          <div class="hero-eyebrow">
+            <span class="hero-eyebrow-dot"></span>
+            VECTOR ICON SYSTEM · 76PX BASE GRID
+          </div>
+          <h1 class="hero-title" id="heroTitle">Artificial Intelligence Icons</h1>
+          <p class="hero-desc">
+            Eksplorasi sistem ikon vektor komprehensif bertema kecerdasan buatan (<em>Artificial Intelligence</em>) yang
+            dibangun di atas grid geometris presisi 76×76 piksel. Hadir dalam 2 varian gaya—<strong>Line</strong> dan
+            <strong>Glyph</strong>—dengan bahasa visual monokromatis semenitwasted, siap pakai untuk antarmuka produk digital,
+            dashboard machine learning, dan identitas teknologi modern.
+          </p>
+          <div class="hero-actions">
+            <a href="#iconGallery" class="btn-primary">Jelajahi Koleksi Ikon ↓</a>
+            <a href="#gridAnatomy" class="btn-secondary">Spesifikasi Grid &amp; Anatomi</a>
+            <a href="#officialPlatforms" class="btn-secondary">Platform Distribusi Resmi ↗</a>
+          </div>
+        </div>
+
+        <!-- HERO METRICS BENTO CARDS (4-Columns) -->
+        <div class="hero-metrics-bento" aria-label="Spesifikasi icon set">
+          <div class="metric-bento-card">
+            <div class="metric-num">50 <span class="metric-num-unit">Konsep</span></div>
+            <div class="metric-label">Konsep Unik AI</div>
+            <div class="metric-desc">Dari Neural Network, Robotika, Algoritma, hingga Security &amp; Data.</div>
+          </div>
+
+          <div class="metric-bento-card">
+            <div class="metric-num">100 <span class="metric-num-unit">SVG</span></div>
+            <div class="metric-label">Total File Vektor</div>
+            <div class="metric-desc">Setiap konsep memiliki varian Line (outline) dan Glyph (solid silhouette).</div>
+          </div>
+
+          <div class="metric-bento-card">
+            <div class="metric-num">76<span class="metric-num-unit">×76 px</span></div>
+            <div class="metric-label">Grid Geometris</div>
+            <div class="metric-desc">Skala angka genap presisi dengan 4px/8px keylines dan sudut terstruktur.</div>
+          </div>
+
+          <div class="metric-bento-card">
+            <div class="metric-num">3 <span class="metric-num-unit">Platform</span></div>
+            <div class="metric-label">Marketplace Resmi</div>
+            <div class="metric-desc">Tersedia untuk lisensi resmi di Canva, The Noun Project, dan Adobe Stock.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. INTERACTIVE SHOWCASE & TOOLBAR -->
+      <section id="iconGallery" class="showcase-section" aria-label="Katalog interaktif ikon AI">
+        
+        <!-- TOOLBAR CONTROLS -->
+        <div class="showcase-toolbar">
+          <!-- Top Row: Search & Style Switcher -->
+          <div class="toolbar-top-row">
+            <div class="search-input-wrap">
+              <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="searchIconsInput" class="search-input" placeholder="Cari ikon (misal: Brain, Robot, Chip, Data)... Tekan '/' untuk fokus" aria-label="Cari nama ikon">
+              <button type="button" id="searchClearBtn" class="search-clear-btn" aria-label="Hapus pencarian">✕</button>
+            </div>
+
+            <!-- Segmented Style Switcher -->
+            <div class="style-switcher" role="tablist" aria-label="Pilih gaya ikon">
+              <button type="button" class="style-tab-btn active" data-style="line" role="tab" aria-selected="true">
+                Line Style (50)
+              </button>
+              <button type="button" class="style-tab-btn" data-style="glyph" role="tab" aria-selected="false">
+                Glyph Style (50)
+              </button>
+              <button type="button" class="style-tab-btn" data-style="all" role="tab" aria-selected="false">
+                Semua Gaya (100)
+              </button>
+            </div>
+          </div>
+
+          <!-- Bottom Row: Category Filter & View Options -->
+          <div class="toolbar-bottom-row">
+            <!-- Category Pills -->
+            <div class="category-pills-wrap" role="group" aria-label="Filter kategori domain">
+              <button type="button" class="cat-pill-btn active" data-cat="all">Semua (50)</button>
+              <button type="button" class="cat-pill-btn" data-cat="Core AI">Core AI (10)</button>
+              <button type="button" class="cat-pill-btn" data-cat="Hardware & Infra">Hardware &amp; Infra (10)</button>
+              <button type="button" class="cat-pill-btn" data-cat="Data & Analytics">Data &amp; Analytics (10)</button>
+              <button type="button" class="cat-pill-btn" data-cat="Dev & System">Dev &amp; System (10)</button>
+              <button type="button" class="cat-pill-btn" data-cat="Interface & Security">Interface &amp; Security (10)</button>
+            </div>
+
+            <!-- View Options: Size & Surface -->
+            <div class="view-options-wrap">
+              <!-- Size Scale Switcher -->
+              <div class="size-control-group" aria-label="Ukuran tampilan ikon">
+                <span class="control-label">Ukuran:</span>
+                <button type="button" class="size-btn" data-size="36" title="Ukuran 36px">36</button>
+                <button type="button" class="size-btn" data-size="48" title="Ukuran 48px">48</button>
+                <button type="button" class="size-btn active" data-size="64" title="Ukuran 64px">64</button>
+                <button type="button" class="size-btn" data-size="76" title="Ukuran 76px asli">76</button>
+              </div>
+
+              <!-- Surface Preview Switcher -->
+              <div class="surface-preview-toggle" aria-label="Latar belakang permukaan">
+                <span class="control-label">Kanvas:</span>
+                <button type="button" class="surface-dot-btn surface-dot--soft active" data-surface="soft" title="Neumorphic Soft (#F5F0F8)"></button>
+                <button type="button" class="surface-dot-btn surface-dot--white" data-surface="white" title="Pure White (#FFFFFF)"></button>
+                <button type="button" class="surface-dot-btn surface-dot--dark" data-surface="dark" title="Dark Canvas (#211B28)"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="gallery-status-bar">
+          <div id="galleryCountText" class="gallery-count-badge">Menampilkan 50 ikon</div>
+          <div class="gallery-hint">Tip: Klik salah satu kartu ikon untuk membuka inspeksi perbandingan &amp; grid detail.</div>
+        </div>
+
+        <!-- THE ICON GRID -->
+        <div id="iconGalleryGrid" class="icon-grid" data-size="64" aria-live="polite">
+          <!-- Populated dynamically by script.js via window.AI_ICONS_DATA -->
+        </div>
+      </section>
+
+      <!-- 2.5 OFFICIAL PLATFORMS BANNER -->
+      <section id="officialPlatforms" class="platforms-showcase-section" aria-labelledby="platformsBannerTitle">
+        <div class="platforms-banner-card">
+          <div class="platforms-banner-left">
+            <span class="platforms-banner-kicker">
+              <span class="hero-eyebrow-dot"></span>
+              DISTRIBUSI RESMI &amp; LISENSI
+            </span>
+            <h2 id="platformsBannerTitle" class="platforms-banner-title">Gunakan Kumpulan Ikon Ini dalam Proyek Anda</h2>
+            <p class="platforms-banner-desc">
+              Seluruh 50 konsep ikon vektor ini tersedia secara resmi untuk lisensi komersial dan penggunaan desain langsung melalui akun kreator kami di marketplace berikut:
+            </p>
+          </div>
+          <div class="platforms-banner-actions">
+            <a href="https://www.canva.com/p/gambar-reion" target="_blank" rel="noopener noreferrer" class="banner-platform-btn">
+              <img src="../../assets/canva.svg" alt="" width="24" height="24" class="banner-platform-icon">
+              <div class="btn-text-wrap">
+                <span class="btn-label">Canva Elements</span>
+                <span class="btn-sub">Gunakan langsung di template</span>
+              </div>
+              <span class="btn-arrow" aria-hidden="true">↗</span>
+            </a>
+
+            <a href="https://thenounproject.com/creator/ReionDesign/" target="_blank" rel="noopener noreferrer" class="banner-platform-btn">
+              <img src="../../assets/noun-project.svg" alt="" width="24" height="24" class="banner-platform-icon monochrome-icon">
+              <div class="btn-text-wrap">
+                <span class="btn-label">The Noun Project</span>
+                <span class="btn-sub">Vektor SVG &amp; PNG katalog</span>
+              </div>
+              <span class="btn-arrow" aria-hidden="true">↗</span>
+            </a>
+
+            <a href="https://stock.adobe.com/contributor/207802543/dicky" target="_blank" rel="noopener noreferrer" class="banner-platform-btn">
+              <img src="../../assets/adobe-stock.svg" alt="" width="24" height="24" class="banner-platform-icon">
+              <div class="btn-text-wrap">
+                <span class="btn-label">Adobe Stock</span>
+                <span class="btn-sub">Lisensi standar &amp; komersial</span>
+              </div>
+              <span class="btn-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. SECTION: GRID & DESIGN SYSTEM ANATOMY -->
+      <section id="gridAnatomy" class="anatomy-section" aria-labelledby="anatomyTitle">
+        <div class="section-head-wrap">
+          <div class="section-eyebrow">
+            <span class="hero-eyebrow-dot"></span>
+            DESIGN SYSTEM &amp; CRAFT SPECIFICATION
+          </div>
+          <h2 class="section-title" id="anatomyTitle">Anatomi &amp; Prinsip Desain Grid 76px</h2>
+          <p class="section-intro">
+            Setiap ikon dalam sistem ini dibangun dengan disiplin geometris yang ketat untuk memastikan konsistensi ritme optik, ketebalan garis yang seragam, dan ketajaman piksel tinggi di seluruh ukuran aplikasi.
+          </p>
+        </div>
+
+        <!-- Bento Grid 12-Columns -->
+        <div class="anatomy-bento-grid">
+          <!-- Card 1: 76px Geometric Grid -->
+          <div class="anatomy-card col-span-6">
+            <div>
+              <h3 class="anatomy-card-title">Grid Koordinat 76×76 px</h3>
+              <p class="anatomy-card-desc">
+                Kanvas dasar vektor berukuran 76×76 px dengan batas live-area tengah 64×64 px dan padding optik luar 6 px. Grid ini menjamin semua siluet dan keyline bundar maupun kotak memiliki bobot visual (<em>optical visual weight</em>) yang seimbang.
+              </p>
+            </div>
+            <div class="anatomy-visual-box">
+              <div class="grid-spec-diagram">
+                <div class="grid-spec-canvas" aria-hidden="true">
+                  <div class="grid-crosshair-h"></div>
+                  <div class="grid-crosshair-v"></div>
+                  <div class="grid-safe-zone">
+                    <div class="grid-keyline-circle"></div>
+                  </div>
+                </div>
+                <div class="grid-spec-notes">
+                  <div><span class="grid-spec-badge">76×76</span> Ukuran Dasar Kanvas</div>
+                  <div><span class="grid-spec-badge">64×64</span> Live Drawing Area</div>
+                  <div><span class="grid-spec-badge">6 px</span> Padding Pengaman Optik</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Dual Style Balance -->
+          <div class="anatomy-card col-span-6">
+            <div>
+              <h3 class="anatomy-card-title">Keseimbangan Dual Gaya (Line vs Glyph)</h3>
+              <p class="anatomy-card-desc">
+                Setiap konsep memiliki pasangan simetris: varian <strong>Line</strong> menggunakan outline stroke 2–3px yang elegan untuk antarmuka teknis, sedangkan varian <strong>Glyph</strong> memanfaatkan massa solid untuk hierarki tombol atau status aktif.
+              </p>
+            </div>
+            <div class="anatomy-visual-box">
+              <div class="pair-compare-wrap" aria-hidden="true">
+                <div class="pair-side">
+                  <div class="pair-icon-box">
+                    <svg viewBox="0 0 76 76"><path d="M43.6801758,53H13V13h40v30.6801758c0,2.2055664,1.7944336,4,4,4s4-1.7944336,4-4V13c0-4.4111328-3.5888672-8-8-8H13c-4.4111328,0-8,3.5888672-8,8v40c0,4.4111328,3.5888672,8,8,8h30.6801758c2.2055664,0,4-1.7944336,4-4s-1.7944336-4-4-4ZM43.6801758,59H13c-3.3085938,0-6-2.6914062-6-6V13c0-3.3085938,2.6914062-6,6-6h40c3.3085938,0,6,2.6914062,6,6v30.6801758c0,1.1030273-.8969727,2-2,2s-2-.8969727-2-2V13c0-1.1030273-.8969727-2-2-2H13c-1.1030273,0-2,.8969727-2,2v40c0,1.1030273.8969727,2,2,2h30.6801758c1.1030273,0,2,.8969727,2,2s-.8969727,2-2,2Z"/><path d="M36.2929688,27.8789062c-.5664062-.5668945-1.3203125-.8789062-2.121582-.8789062h-4.1713867c-1.6542969,0-3,1.3457031-3,3v6c0,1.6542969,1.3457031,3,3,3h6c1.6542969,0,3-1.3457031,3-3v-4.1713867c0-.8012695-.3120117-1.5551758-.8789062-2.121582l-1.828125-1.828125ZM37,36c0,.5512695-.4487305,1-1,1h-6c-.5512695,0-1-.4487305-1-1v-6c0-.5512695.4487305-1,1-1h4.1713867c.2670898,0,.5185547.1040039.7075195.2929688l1.828125,1.828125c.1889648.1889648.2929688.4404297.2929688.7075195v4.1713867Z"/></svg>
+                  </div>
+                  <span class="pair-label">Line Style</span>
+                </div>
+                <div class="pair-side">
+                  <div class="pair-icon-box">
+                    <svg viewBox="0 0 76 76"><path d="M43.6799927,53H13V13h40v30.6799927c0,2.210022,1.789978,4,4,4s4-1.789978,4-4V13c0-4.4099731-3.5900269-8-8-8H13c-4.4099731,0-8,3.5900269-8,8v40c0,4.4099731,3.5900269,8,8,8h30.6799927c2.210022,0,4-1.789978,4-4s-1.789978-4-4-4Z"/><path d="M36.2929688,27.8789062c-.5664062-.5668945-1.3203125-.8789062-2.121582-.8789062h-4.1713867c-1.6542969,0-3,1.3457031-3,3v6c0,1.6542969,1.3457031,3,3,3h6c1.6542969,0,3-1.3457031,3-3v-4.1713867c0-.8012695-.3120117-1.5551758-.8789062-2.121582l-1.828125-1.828125Z"/></svg>
+                  </div>
+                  <span class="pair-label">Glyph Style</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Even-Number Scale Rules -->
+          <div class="anatomy-card col-span-6">
+            <div>
+              <h3 class="anatomy-card-title">Skala Angka Genap (Even-Number Rule)</h3>
+              <p class="anatomy-card-desc">
+                Sesuai filosofi <code>SKILL.md</code> semenitwasted, semua lengkungan (fillet), padding, dan ketebalan garis menggunakan angka genap: 2px, 4px, 8px, 12px, dan 16px. Menghindari nilai ganjil demi rendering pixel-grid yang tajam tanpa blur sub-pixel.
+              </p>
+            </div>
+            <div class="anatomy-visual-box">
+              <div class="grid-spec-notes">
+                <div><span class="grid-spec-badge">2 px</span> Garis detail &amp; batas aksen tipis</div>
+                <div><span class="grid-spec-badge">4 px</span> Radius lengkungan fillet sudut</div>
+                <div><span class="grid-spec-badge">8 px</span> Jarak minimum antar elemen vektor</div>
+                <div><span class="grid-spec-badge">12 px</span> Diameter titik pivot &amp; nodus koneksi</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Monochrome Harmony -->
+          <div class="anatomy-card col-span-6">
+            <div>
+              <h3 class="anatomy-card-title">Harmoni Monokrom &amp; Mode Gelap</h3>
+              <p class="anatomy-card-desc">
+                Setiap path SVG tidak memakai hardcoded fill warna sehingga mewarisi <code>fill: currentColor</code>. Ketika beralih ke Dark Mode, seluruh ikon beradaptasi otomatis ke palet terang <code>#F0EDF4</code> tanpa modifikasi kode.
+              </p>
+            </div>
+            <div class="anatomy-visual-box">
+              <div class="grid-spec-notes">
+                <div><span class="grid-spec-badge">Light</span> Menyesuaikan ke <code>#211B28</code> (Gelap Taktil)</div>
+                <div><span class="grid-spec-badge">Dark</span> Otomatis beralih ke <code>#F0EDF4</code> (Terang Lembut)</div>
+                <div><span class="grid-spec-badge">Shadow</span> Elevasi Neumorphic <code>#450D50</code> yang terkendali</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. NEXT PORTFOLIO PROJECTS -->
+      <section class="next-projects-section" aria-label="Eksplorasi portofolio lainnya">
+        <div class="hero-eyebrow">
+          <span class="hero-eyebrow-dot"></span>
+          SELECTED WORKS
+        </div>
+        <h2 class="section-title">Lihat Proyek Portofolio Lainnya</h2>
+
+        <div class="next-projects-grid">
+          <!-- Roche Case Study -->
+          <a href="../roche/index.html" class="next-project-card">
+            <div class="next-project-copy">
+              <span class="next-project-tag">Website Design · Case Study</span>
+              <span class="next-project-title">Roche #AyoCekHPV</span>
+            </div>
+            <div class="next-project-arrow" aria-hidden="true">→</div>
+          </a>
+
+          <!-- Selenia Experiment -->
+          <a href="../eksperimen 1/index.html" class="next-project-card">
+            <div class="next-project-copy">
+              <span class="next-project-tag">Character Design · Experiment</span>
+              <span class="next-project-title">Selenia — Character Design Experiment</span>
+            </div>
+            <div class="next-project-arrow" aria-hidden="true">→</div>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="portfolio-footer">
+      <div class="footer-left">
+        <span class="footer-brand">semenitwasted</span>
+        <span class="footer-subtitle">Design · Icons · Illustration · Web</span>
+      </div>
+      <div class="footer-platforms" aria-label="Platform distribusi">
+        <a href="https://www.linkedin.com/in/reionnyx/" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="LinkedIn">
+          <img src="../../assets/linkedin.svg" alt="" class="footer-platform-icon monochrome-icon">
+        </a>
+        <a href="https://stock.adobe.com/contributor/207802543/dicky" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Adobe Stock">
+          <img src="../../assets/adobe-stock.svg" alt="" class="footer-platform-icon">
+        </a>
+        <a href="https://www.canva.com/p/gambar-reion" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Canva">
+          <img src="../../assets/canva.svg" alt="" class="footer-platform-icon">
+        </a>
+        <a href="https://thenounproject.com/creator/ReionDesign/" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="The Noun Project">
+          <img src="../../assets/noun-project.svg" alt="" class="footer-platform-icon monochrome-icon">
+        </a>
+        <a href="https://www.flaticon.com/authors/reion" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Flaticon">
+          <img src="../../assets/flaticon.svg" alt="" class="footer-platform-icon monochrome-icon">
+        </a>
+      </div>
+      <div class="footer-right">
+        <a href="../../portfolio.html">← Kembali ke Portfolio Utama</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- 5. DETAIL INSPECTOR MODAL DIALOG -->
+  <div id="iconModalBackdrop" class="icon-modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalIconTitle" aria-hidden="true">
+    <div class="icon-modal-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h3 id="modalIconTitle" class="modal-title">Icon Name</h3>
+          <span id="modalCategoryBadge" class="badge-style">Core AI</span>
+        </div>
+        <button type="button" id="modalCloseBtn" class="modal-close-btn" aria-label="Tutup jendela inspeksi">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Dual Stage Comparison -->
+        <div class="modal-comparison-stage">
+          <!-- Line Style Side -->
+          <div class="modal-style-box">
+            <div id="modalLineCanvas" class="modal-stage-canvas" aria-label="Pratinjau Line Style"></div>
+            <span class="modal-style-label">Line Style (Outline)</span>
+          </div>
+
+          <!-- Glyph Style Side -->
+          <div class="modal-style-box">
+            <div id="modalGlyphCanvas" class="modal-stage-canvas" aria-label="Pratinjau Glyph Style"></div>
+            <span class="modal-style-label">Glyph Style (Solid)</span>
+          </div>
+        </div>
+
+        <!-- Grid Guidelines Toggle -->
+        <div class="modal-grid-action-row">
+          <button type="button" id="modalToggleGridBtn" class="modal-grid-toggle-btn" aria-pressed="false">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="3" y1="9" x2="21" y2="9"></line>
+              <line x1="3" y1="15" x2="21" y2="15"></line>
+              <line x1="9" y1="3" x2="9" y2="21"></line>
+              <line x1="15" y1="3" x2="15" y2="21"></line>
+            </svg>
+            <span id="modalGridBtnText">Tampilkan Garis Grid 76px</span>
+          </button>
+        </div>
+
+        <!-- Specifications Breakdown Table -->
+        <div class="modal-specs-wrap">
+          <div class="modal-specs-grid">
+            <div class="spec-item">
+              <span class="spec-title">Ukuran Kanvas</span>
+              <span class="spec-value">76 × 76 px</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-title">Format Desain</span>
+              <span class="spec-value">Scalable Vector</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-title">Pewarnaan</span>
+              <span class="spec-value">fill: currentColor</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Official Platform Licensing Links in Modal -->
+        <div class="modal-platforms-block">
+          <div class="modal-platforms-header">
+            <span class="modal-platforms-kicker">Koleksi Tersedia di Platform Resmi:</span>
+          </div>
+          <div class="modal-platform-links">
+            <a href="https://www.canva.com/p/gambar-reion" target="_blank" rel="noopener noreferrer" class="platform-link-btn" title="Buka profil di Canva">
+              <img src="../../assets/canva.svg" alt="" width="20" height="20" class="platform-btn-icon">
+              <span class="platform-btn-text">Canva</span>
+              <span class="platform-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="https://thenounproject.com/creator/ReionDesign/" target="_blank" rel="noopener noreferrer" class="platform-link-btn" title="Buka profil di The Noun Project">
+              <img src="../../assets/noun-project.svg" alt="" width="20" height="20" class="platform-btn-icon monochrome-icon">
+              <span class="platform-btn-text">The Noun Project</span>
+              <span class="platform-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="https://stock.adobe.com/contributor/207802543/dicky" target="_blank" rel="noopener noreferrer" class="platform-link-btn" title="Buka profil di Adobe Stock">
+              <img src="../../assets/adobe-stock.svg" alt="" width="20" height="20" class="platform-btn-icon">
+              <span class="platform-btn-text">Adobe Stock</span>
+              <span class="platform-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
