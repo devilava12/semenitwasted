@@ -48,7 +48,10 @@
             <li><button class="theme-toggle-btn" id="themeToggle" type="button" aria-label="${isDark ? 'Switch to light theme' : 'Switch to dark theme'}">${themeIcon(isDark)}</button></li>
           </ul>
         </nav>
-        <button class="mobile-menu-toggle" id="mobileNavToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNavDrawer"><span></span><span></span><span></span></button>
+        <div class="mobile-nav-controls">
+          <button class="theme-toggle-btn mobile-theme-btn" id="mobileThemeToggle" type="button" aria-label="${isDark ? 'Switch to light theme' : 'Switch to dark theme'}">${themeIcon(isDark)}</button>
+          <button class="mobile-menu-toggle" id="mobileNavToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileNavDrawer"><span></span><span></span><span></span></button>
+        </div>
       </header>
       <nav class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile navigation" aria-hidden="true" inert>
         ${drawerLinks}
@@ -58,10 +61,10 @@
   function initialise() {
     document.querySelectorAll('[data-site-chrome]').forEach(renderChrome);
 
-    const toggle = document.getElementById('themeToggle');
+    const toggleButtons = document.querySelectorAll('.theme-toggle-btn');
     const drawer = document.getElementById('mobileNavDrawer');
     const menuButton = document.getElementById('mobileNavToggle');
-    if (!toggle || !drawer || !menuButton) return;
+    if (!drawer || !menuButton) return;
 
     function closeDrawer({ restoreFocus = false } = {}) {
       drawer.classList.remove('open');
@@ -93,13 +96,20 @@
       }
     });
 
-    toggle.addEventListener('click', () => {
-      const nextTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      applyTheme(nextTheme);
-      localStorage.setItem(THEME_KEY, nextTheme);
-      const isDark = nextTheme === 'dark';
-      toggle.innerHTML = themeIcon(isDark);
-      toggle.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+    function updateToggleButtons(isDark) {
+      toggleButtons.forEach(btn => {
+        btn.innerHTML = themeIcon(isDark);
+        btn.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+      });
+    }
+
+    toggleButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const nextTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        applyTheme(nextTheme);
+        localStorage.setItem(THEME_KEY, nextTheme);
+        updateToggleButtons(nextTheme === 'dark');
+      });
     });
   }
 

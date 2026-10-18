@@ -102,12 +102,13 @@
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
               </svg>
-              <input type="text" id="searchIconsInput" class="search-input" placeholder="Cari ikon (misal: Brain, Robot, Chip, Data)... Tekan '/' untuk fokus" aria-label="Cari nama ikon">
+              <input type="text" id="searchIconsInput" class="search-input" placeholder="Cari ikon AI (misal: Brain, Robot, Chip)..." aria-label="Cari nama ikon">
               <button type="button" id="searchClearBtn" class="search-clear-btn" aria-label="Hapus pencarian">✕</button>
             </div>
 
-            <!-- Segmented Style Switcher -->
-            <div class="style-switcher" role="tablist" aria-label="Pilih gaya ikon">
+            <!-- Segmented Style Switcher with Navigation Indicator Transition -->
+            <div class="style-switcher" id="styleSwitcher" role="tablist" aria-label="Pilih gaya ikon">
+              <div class="style-switcher-pill-bg" id="styleSwitcherPillBg" aria-hidden="true"></div>
               <button type="button" class="style-tab-btn active" data-style="line" role="tab" aria-selected="true">
                 Line Style (50)
               </button>

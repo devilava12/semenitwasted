@@ -238,28 +238,48 @@
   display: block;
 }
 
-/* Segmented Style Switcher */
+/* Segmented Style Switcher (Interactive Nav Bar matching Library .demo-nav-bar) */
 .style-switcher {
   display: inline-flex;
-  align-items: center;
-  background: var(--surface-soft);
-  padding: 5px;
-  border-radius: var(--radius-pill);
+  position: relative;
+  background: var(--surface);
   border: 1px solid var(--border);
-  gap: 4px;
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  box-shadow: var(--shadow-depth);
+  align-items: center;
+}
+
+.style-switcher-pill-bg {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  height: calc(100% - 8px);
+  background: var(--color-dark);
+  border-radius: var(--radius-pill);
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              width 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+[data-theme="dark"] .style-switcher-pill-bg {
+  background: var(--color-light);
 }
 
 .style-tab-btn {
-  padding: 10px 22px;
-  font-family: inherit;
-  font-size: 0.88rem;
-  font-weight: 500;
+  position: relative;
+  z-index: 2;
+  padding: 8px 18px;
+  font-family: var(--font-family);
+  font-size: 0.8125rem;
+  font-weight: 600;
   color: var(--text-secondary);
-  background: transparent;
+  background: transparent !important;
   border: none;
   border-radius: var(--radius-pill);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: color 0.25s ease;
   white-space: nowrap;
 }
 
@@ -268,10 +288,14 @@
 }
 
 .style-tab-btn.active {
-  background: var(--strong);
-  color: #FCFAFD;
+  color: var(--color-light) !important;
   font-weight: 600;
-  box-shadow: var(--shadow-depth);
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .style-tab-btn.active {
+  color: var(--color-dark) !important;
 }
 
 /* Category Filter Pills & Controls */
@@ -506,6 +530,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  margin-top: auto;
 }
 
 .icon-card-title-row {
@@ -1310,9 +1335,9 @@
    ========================================================================== */
 
 [data-theme="dark"] .style-tab-btn.active {
-  background: var(--strong);
+  background: transparent !important;
   color: var(--color-dark) !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: none !important;
 }
 
 [data-theme="dark"] .category-pills-wrap .cat-pill-btn {
@@ -1465,6 +1490,14 @@
    RESPONSIVE BREAKPOINTS
    ========================================================================== */
 
+/* Smooth Anchor Scrolling & Sticky Navbar Offset */
+#iconGallery,
+#officialPlatforms,
+#gridAnatomy,
+.next-projects-section {
+  scroll-margin-top: 96px;
+}
+
 @media (max-width: 1024px) {
   .hero-metrics-bento {
     grid-template-columns: repeat(2, 1fr);
@@ -1489,72 +1522,593 @@
 }
 
 @media (max-width: 768px) {
+  /* Page Container & Padding */
   .icon-page-wrapper {
-    padding: 0 20px 80px 20px;
+    padding: 0 16px 64px 16px;
   }
 
+  .case-breadcrumb {
+    margin-bottom: 24px;
+    font-size: 0.82rem;
+    gap: 8px;
+  }
+
+  /* Hero Section */
+  .icon-hero {
+    margin-bottom: 40px;
+  }
+
+  .hero-header-block {
+    margin-bottom: 24px;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 6px 14px;
+    margin-bottom: 16px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 7.5vw, 2.5rem);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    word-break: break-word;
+    margin-bottom: 16px;
+  }
+
+  .hero-desc {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 13px 20px;
+    font-size: 0.92rem;
+  }
+
+  /* Hero 2x2 Bento Metrics Grid */
   .hero-metrics-bento {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 24px;
   }
 
+  .metric-bento-card {
+    padding: 18px 14px;
+    min-height: auto;
+  }
+
+  .metric-num {
+    font-size: 1.75rem;
+    margin-bottom: 6px;
+    gap: 4px;
+  }
+
+  .metric-num-unit {
+    font-size: 0.82rem;
+  }
+
+  .metric-label {
+    font-size: 0.88rem;
+    margin-bottom: 4px;
+  }
+
+  .metric-desc {
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  /* Showcase Toolbar */
   .showcase-toolbar {
-    padding: 20px;
-    gap: 20px;
+    padding: 18px 14px;
+    gap: 16px;
+    margin-bottom: 28px;
   }
 
   .toolbar-top-row {
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
   }
 
   .search-input-wrap {
     min-width: 100%;
+    max-width: 100%;
+  }
+
+  .search-input {
+    padding: 12px 36px 12px 42px;
+    font-size: 16px; /* Prevents auto-zoom on iOS Safari */
+  }
+
+  .search-icon-svg {
+    left: 14px;
+    width: 16px;
+    height: 16px;
   }
 
   .style-switcher {
-    width: 100%;
-    justify-content: space-around;
+    display: inline-flex;
+    align-self: center;
+    margin: 4px auto 0 auto;
+    max-width: 100%;
+    position: relative;
+    padding: 4px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    box-shadow: var(--shadow-depth);
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .style-switcher::-webkit-scrollbar {
+    display: none;
   }
 
   .style-tab-btn {
-    flex: 1;
-    text-align: center;
-    padding: 8px 12px;
+    flex: none;
+    flex-shrink: 0;
+    padding: 7px 14px;
     font-size: 0.8rem;
+    white-space: nowrap;
   }
 
   .toolbar-bottom-row {
     flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding-top: 16px;
+  }
+
+  /* Category filter pills - wrap down cleanly so they never exceed the card */
+  .category-pills-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+  }
+
+  .cat-pill-btn {
+    flex-shrink: 0;
+    padding: 7px 14px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  /* View Options (Size & Surface) */
+  .view-options-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .size-control-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .size-btn {
+    padding: 6px 10px;
+    font-size: 0.78rem;
+  }
+
+  .surface-preview-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .surface-dot-btn {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Status Bar */
+  .gallery-status-bar {
+    flex-direction: column;
     align-items: flex-start;
+    gap: 6px;
+    margin-bottom: 18px;
+  }
+
+  .gallery-count-badge {
+    font-size: 0.88rem;
+  }
+
+  .gallery-hint {
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+
+  /* 2-Column Balanced Icon Grid on Mobile */
+  .icon-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+
+  .icon-card {
+    padding: 16px 12px 14px 12px;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  .icon-card-preview {
+    min-height: auto;
+    aspect-ratio: 1 / 1;
+    margin-bottom: 12px;
+  }
+
+  .icon-card-title {
+    font-size: 0.92rem;
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.25;
+  }
+
+  .icon-card-badges {
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  .badge-style {
+    font-size: 0.65rem;
+    padding: 2px 7px;
+  }
+
+  .badge-category {
+    font-size: 0.7rem;
+    line-height: 1.25;
+  }
+
+  /* Detail Inspector Modal Dialog */
+  .icon-modal-backdrop {
+    padding: 14px 10px;
+  }
+
+  .icon-modal-card {
+    max-height: 94vh;
+    border-radius: 14px;
+  }
+
+  .modal-header {
+    padding: 16px 18px;
+  }
+
+  .modal-title-group {
+    gap: 10px;
+  }
+
+  .modal-title {
+    font-size: 1.2rem;
+  }
+
+  .modal-close-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .modal-body {
+    padding: 16px;
     gap: 16px;
   }
 
-  .icon-grid {
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    gap: 14px;
+  /* Dual Stage Comparison Side-by-Side */
+  .modal-comparison-stage {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
 
-  .modal-comparison-stage {
-    grid-template-columns: 1fr;
+  .modal-style-box {
+    padding: 14px 8px;
+    gap: 8px;
+    border-radius: var(--radius-sm);
   }
 
   .modal-stage-canvas {
-    width: 140px;
-    height: 140px;
+    width: 96px;
+    height: 96px;
+  }
+
+  .modal-stage-canvas svg {
+    width: 64px;
+    height: 64px;
+  }
+
+  .modal-style-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+
+  .modal-grid-toggle-btn {
+    padding: 8px 14px;
+    font-size: 0.78rem;
+    gap: 6px;
+  }
+
+  .modal-specs-wrap {
+    padding: 12px 14px;
   }
 
   .modal-specs-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .spec-title {
+    font-size: 0.68rem;
+  }
+
+  .spec-value {
+    font-size: 0.78rem;
+  }
+
+  .modal-platforms-block {
+    gap: 10px;
+  }
+
+  .modal-platforms-kicker {
+    font-size: 0.75rem;
+  }
+
+  .modal-platform-links {
     grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .platform-link-btn {
+    padding: 10px 14px;
+    font-size: 0.82rem;
+  }
+
+  /* Official Platforms Showcase Banner */
+  .platforms-showcase-section {
+    margin-bottom: 48px;
+  }
+
+  .platforms-banner-card {
+    padding: 24px 18px;
+    gap: 20px;
+  }
+
+  .platforms-banner-title {
+    font-size: 1.35rem;
+  }
+
+  .platforms-banner-desc {
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .banner-platform-btn {
+    padding: 12px 14px;
+  }
+
+  .btn-label {
+    font-size: 0.88rem;
+  }
+
+  .btn-sub {
+    font-size: 0.72rem;
+  }
+
+  /* Grid Anatomy Section */
+  .anatomy-section {
+    margin-bottom: 48px;
+  }
+
+  .section-head-wrap {
+    margin-bottom: 24px;
+  }
+
+  .section-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    padding: 5px 12px;
+  }
+
+  .section-title {
+    font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .section-intro {
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .anatomy-bento-grid {
+    gap: 16px;
+  }
+
+  .anatomy-card {
+    padding: 22px 16px;
+    gap: 16px;
+  }
+
+  .anatomy-card-title {
+    font-size: 1.15rem;
+  }
+
+  .anatomy-card-desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .anatomy-visual-box {
+    padding: 16px 12px;
+  }
+
+  .grid-spec-diagram {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .grid-spec-canvas {
+    width: 100px;
+    height: 100px;
+  }
+
+  .grid-safe-zone {
+    width: 80px;
+    height: 80px;
+  }
+
+  .grid-keyline-circle {
+    width: 66px;
+    height: 66px;
+  }
+
+  .grid-spec-notes {
+    font-size: 0.82rem;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .pair-compare-wrap {
+    gap: 16px;
+  }
+
+  .pair-icon-box {
+    width: 72px;
+    height: 72px;
+  }
+
+  .pair-icon-box svg {
+    width: 44px;
+    height: 44px;
+  }
+
+  .pair-label {
+    font-size: 0.75rem;
+  }
+
+  /* Next Projects Section */
+  .next-projects-section {
+    margin-bottom: 48px;
   }
 
   .next-projects-grid {
     grid-template-columns: 1fr;
+    gap: 14px;
   }
 
+  .next-project-card {
+    padding: 18px 16px;
+    gap: 12px;
+  }
+
+  .next-project-title {
+    font-size: 1.1rem;
+  }
+
+  .next-project-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  /* Footer */
   .portfolio-footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
+    padding: 32px 0 24px 0;
+    margin-top: 48px;
+  }
+
+  .footer-platforms {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .footer-platform-card {
+    width: 42px;
+    height: 42px;
   }
 }
+
+/* Extra Small Devices (< 360px) */
+@media (max-width: 360px) {
+  .icon-page-wrapper {
+    padding: 0 12px 48px 12px;
+  }
+
+  .hero-title {
+    font-size: 1.85rem;
+  }
+
+  .hero-metrics-bento {
+    gap: 8px;
+  }
+
+  .metric-bento-card {
+    padding: 12px 10px;
+  }
+
+  .metric-num {
+    font-size: 1.45rem;
+  }
+
+  .style-tab-btn {
+    padding: 6px 10px;
+    font-size: 0.74rem;
+  }
+
+  .icon-grid {
+    gap: 8px;
+  }
+
+  .icon-card {
+    padding: 12px 10px 10px 10px;
+  }
+
+  .modal-comparison-stage {
+    gap: 6px;
+  }
+
+  .modal-style-box {
+    padding: 10px 4px;
+  }
+
+  .modal-stage-canvas {
+    width: 80px;
+    height: 80px;
+  }
+
+  .modal-stage-canvas svg {
+    width: 52px;
+    height: 52px;
+  }
+
+  .modal-specs-grid {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+

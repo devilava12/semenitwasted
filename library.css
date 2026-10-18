@@ -251,81 +251,92 @@ body {
 .theme-toggle-btn {
   background: transparent;
   border: none;
-  cursor: pointer;
-  color: var(--text-primary);
-  display: flex;
+  border-radius: var(--radius-sm);
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: var(--radius-pill);
+  cursor: pointer;
+  color: var(--text-primary);
   transition: background-color 0.2s ease, transform 0.2s ease;
+  margin-left: -16px;
 }
 
 .theme-toggle-btn:hover {
-  background-color: var(--surface-soft);
-  transform: translateY(-2px);
+  background: var(--surface-soft);
+  transform: scale(1.04);
+}
+
+.mobile-nav-controls {
+  display: none;
+  align-items: center;
+  gap: 4px;
+}
+
+.mobile-theme-btn {
+  margin-left: 0;
 }
 
 .mobile-menu-toggle {
   display: none;
-  background: transparent;
+  background: none;
   border: none;
   cursor: pointer;
-  flex-direction: column;
-  gap: 6px;
   padding: 8px;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .mobile-menu-toggle span {
-  display: block;
   width: 24px;
   height: 2px;
   background-color: var(--text-primary);
   border-radius: 2px;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  transition: 0.3s ease;
 }
 
-/* Mobile Nav Drawer */
+/* Mobile Drawer */
 .mobile-nav-drawer {
   display: none;
-  flex-direction: column;
   position: fixed;
-  top: 100px;
+  top: 112px;
   left: 24px;
   right: 24px;
   background: var(--surface);
   border-radius: var(--radius-card);
-  box-shadow: var(--shadow-primary);
   padding: 24px;
-  gap: 16px;
-  z-index: 99;
+  box-shadow: var(--shadow-primary);
+  z-index: 100;
   border: 1px solid var(--border);
+  flex-direction: column;
+  gap: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .mobile-nav-drawer.open {
   display: flex;
-  animation: drawerSlideDown 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-}
-
-@keyframes drawerSlideDown {
-  from { opacity: 0; transform: translateY(-12px); }
-  to   { opacity: 1; transform: translateY(0); }
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .mobile-nav-drawer a {
-  font-size: 1.1rem;
-  font-weight: 500;
   text-decoration: none;
   color: var(--text-primary);
   padding: 8px 12px;
+  font-size: 1.15rem;
+  font-weight: 600;
   border-radius: var(--radius-sm);
   transition: background-color 0.2s ease;
 }
 
 .mobile-nav-drawer a:hover,
 .mobile-nav-drawer a.active {
-  background-color: var(--surface-soft);
+  background: var(--surface-soft);
 }
 
 /* --- HERO SECTION --- */
@@ -1498,6 +1509,10 @@ body {
     display: none;
   }
 
+  .mobile-nav-controls {
+    display: flex;
+  }
+
   .mobile-menu-toggle {
     display: flex;
   }
@@ -1507,19 +1522,20 @@ body {
   }
 
   .portfolio-navbar {
-    height: 64px;
-    top: 10px;
-    margin: 10px auto 28px;
-    padding: 0 18px;
-    border-radius: var(--radius);
+    height: 70px;
+    top: 12px;
+    margin: 12px auto 28px;
+    padding: 0 24px;
+    border-radius: var(--radius-card);
   }
 
   .brand-logo-img {
-    height: 36px;
+    height: 38px;
   }
 
   .mobile-nav-drawer {
-    top: 80px;
+    display: flex;
+    top: 96px;
     left: 16px;
     right: 16px;
     padding: 20px 16px;
@@ -1762,17 +1778,17 @@ body {
   }
 
   .portfolio-navbar {
-    height: 58px;
-    padding: 0 14px;
+    height: 64px;
+    padding: 0 16px;
     margin: 8px auto 20px;
   }
 
   .brand-logo-img {
-    height: 32px;
+    height: 34px;
   }
 
   .mobile-nav-drawer {
-    top: 74px;
+    top: 80px;
     left: 12px;
     right: 12px;
     padding: 16px 14px;

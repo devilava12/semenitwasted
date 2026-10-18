@@ -11,6 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchIconsInput');
   const searchClearBtn = document.getElementById('searchClearBtn');
   const styleTabBtns = document.querySelectorAll('.style-tab-btn');
+  const styleSwitcher = document.getElementById('styleSwitcher');
+  const styleSwitcherPillBg = document.getElementById('styleSwitcherPillBg');
+
+  function updateStylePill(activeBtn) {
+    if (!styleSwitcherPillBg || !activeBtn) return;
+    const offsetLeft = activeBtn.offsetLeft;
+    const width = activeBtn.offsetWidth;
+    styleSwitcherPillBg.style.transform = `translateX(${offsetLeft - 4}px)`;
+    styleSwitcherPillBg.style.width = `${width}px`;
+  }
   // Scoped strictly to category pills inside the toolbar so other pill buttons are NEVER included
   const catPillBtns = document.querySelectorAll('.category-pills-wrap .cat-pill-btn');
   const sizeBtns = document.querySelectorAll('.size-btn');
@@ -149,8 +159,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchClearBtn) searchClearBtn.classList.remove('visible');
 
     styleTabBtns.forEach(btn => {
-      btn.classList.toggle('active', btn.getAttribute('data-style') === 'line');
-      btn.setAttribute('aria-selected', btn.getAttribute('data-style') === 'line' ? 'true' : 'false');
+      const isLine = btn.getAttribute('data-style') === 'line';
+      btn.classList.toggle('active', isLine);
+      btn.setAttribute('aria-selected', isLine ? 'true' : 'false');
+      if (isLine) updateStylePill(btn);
     });
 
     catPillBtns.forEach(btn => {
@@ -266,6 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       btn.classList.add('active');
       btn.setAttribute('aria-selected', 'true');
+      updateStylePill(btn);
       currentStyle = btn.getAttribute('data-style');
       renderGallery();
     });
@@ -312,4 +325,19 @@ document.addEventListener('DOMContentLoaded', () => {
     galleryGrid.setAttribute('data-size', currentSize);
   }
   renderGallery();
+
+  const initialActiveStyle = document.querySelector('.style-tab-btn.active') || styleTabBtns[0];
+  if (initialActiveStyle) updateStylePill(initialActiveStyle);
+
+  window.addEventListener('resize', () => {
+    const active = document.querySelector('.style-tab-btn.active');
+    if (active) updateStylePill(active);
+  });
+
+  if (document.fonts) {
+    document.fonts.ready.then(() => {
+      const active = document.querySelector('.style-tab-btn.active');
+      if (active) updateStylePill(active);
+    });
+  }
 });
