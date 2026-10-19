@@ -217,6 +217,8 @@ function renderPreviewHTML(item) {
           </div>
         </div>
       `;
+      break;
+
     case 'ai-icon-grid':
       innerContent = `
         <div class="preview-content preview-content--ai-icons">

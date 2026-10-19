@@ -557,7 +557,7 @@
 }
 
 .badge-style {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -656,26 +656,43 @@
 .banner-platform-btn {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   padding: 14px 20px;
   background: var(--surface-soft);
   border: 1px solid var(--border);
   border-radius: var(--radius-card);
   text-decoration: none;
   color: var(--text-primary);
-  transition: all 0.25s ease;
   box-shadow: var(--shadow-depth);
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              background-color var(--dur-ui) var(--ease-out),
+              border-color var(--dur-ui) var(--ease-out);
 }
 
 .banner-platform-btn:hover {
   transform: translateY(-2px);
-  border-color: var(--strong);
-  background: var(--surface);
+  border-color: rgba(69, 13, 80, 0.35);
   box-shadow: var(--shadow-primary);
+}
+
+.banner-platform-btn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-depth);
+}
+
+.banner-platform-btn:focus-visible {
+  outline: 2px solid var(--color-dark);
+  outline-offset: 2px;
 }
 
 .banner-platform-icon {
   flex-shrink: 0;
+  transition: transform var(--dur-ui) var(--ease-out);
+}
+
+.banner-platform-btn:hover .banner-platform-icon {
+  transform: scale(1.08);
 }
 
 .btn-text-wrap {
@@ -697,14 +714,40 @@
 }
 
 .btn-arrow {
-  font-size: 1.1rem;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  min-height: 32px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  font-weight: 700;
   color: var(--text-secondary);
-  transition: transform 0.2s ease, color 0.2s ease;
+  box-shadow: 2px 2px 3px rgba(69, 13, 80, 0.08);
+  transition: transform var(--dur-ui) var(--ease-out),
+              background-color var(--dur-ui) var(--ease-out),
+              color var(--dur-ui) var(--ease-out),
+              border-color var(--dur-ui) var(--ease-out),
+              box-shadow var(--dur-ui) var(--ease-out);
+  flex-shrink: 0;
 }
 
 .banner-platform-btn:hover .btn-arrow {
-  transform: translate(2px, -2px);
-  color: var(--strong);
+  background: var(--strong);
+  color: var(--surface);
+  border-color: var(--strong);
+  transform: translateX(3px);
+  box-shadow: var(--shadow-depth);
+}
+
+[data-theme="dark"] .banner-platform-btn:hover .btn-arrow {
+  background: var(--strong);
+  color: #211B28;
+  border-color: var(--strong);
 }
 
 /* --- SECTION 3: GRID & DESIGN SYSTEM ANATOMY --- */
@@ -1294,7 +1337,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 18px;
+  gap: 12px;
+  padding: 10px 16px;
   background: var(--surface-soft);
   border: 1px solid var(--border);
   border-radius: var(--radius-card);
@@ -1302,30 +1346,63 @@
   color: var(--text-primary);
   font-size: 0.88rem;
   font-weight: 600;
-  transition: all 0.2s ease;
   box-shadow: var(--shadow-depth);
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              background-color var(--dur-ui) var(--ease-out),
+              border-color var(--dur-ui) var(--ease-out);
 }
 
 .platform-link-btn:hover {
-  background: var(--surface);
-  border-color: var(--strong);
+  border-color: rgba(69, 13, 80, 0.35);
   transform: translateY(-2px);
   color: var(--strong);
+  box-shadow: var(--shadow-primary);
+}
+
+.platform-link-btn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-depth);
 }
 
 .platform-btn-icon {
   flex-shrink: 0;
+  transition: transform var(--dur-ui) var(--ease-out);
+}
+
+.platform-link-btn:hover .platform-btn-icon {
+  transform: scale(1.08);
 }
 
 .platform-arrow {
-  font-size: 0.95rem;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
   color: var(--text-secondary);
-  transition: transform 0.2s ease;
+  box-shadow: 2px 2px 3px rgba(69, 13, 80, 0.08);
+  transition: transform var(--dur-ui) var(--ease-out),
+              background-color var(--dur-ui) var(--ease-out),
+              color var(--dur-ui) var(--ease-out),
+              border-color var(--dur-ui) var(--ease-out),
+              box-shadow var(--dur-ui) var(--ease-out);
+  flex-shrink: 0;
 }
 
 .platform-link-btn:hover .platform-arrow {
-  transform: translate(2px, -2px);
-  color: var(--strong);
+  background: var(--strong);
+  color: #FCFAFD;
+  border-color: var(--strong);
+  transform: translateX(3px);
+  box-shadow: var(--shadow-depth);
 }
 
 
@@ -1435,6 +1512,19 @@
 [data-theme="dark"] .banner-platform-btn:hover {
   background: var(--surface-soft);
   color: var(--strong);
+  border-color: #D8B5E4;
+}
+
+[data-theme="dark"] .btn-arrow {
+  background: var(--surface-soft);
+  border-color: var(--border);
+  color: var(--text-secondary);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .banner-platform-btn:hover .btn-arrow {
+  background: var(--strong);
+  color: #211B28 !important;
   border-color: var(--strong);
 }
 
@@ -1447,12 +1537,25 @@
 [data-theme="dark"] .platform-link-btn:hover {
   background: var(--surface-soft);
   color: var(--strong);
+  border-color: #D8B5E4;
+}
+
+[data-theme="dark"] .platform-arrow {
+  background: var(--surface-soft);
+  border-color: var(--border);
+  color: var(--text-secondary);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .platform-link-btn:hover .platform-arrow {
+  background: var(--strong);
+  color: #211B28 !important;
   border-color: var(--strong);
 }
 
 [data-theme="dark"] .next-project-card:hover .next-project-arrow {
   background: var(--strong);
-  color: var(--color-dark) !important;
+  color: #211B28 !important;
 }
 
 [data-theme="dark"] .monochrome-icon {
@@ -1543,7 +1646,7 @@
   }
 
   .hero-eyebrow {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     letter-spacing: 0.12em;
     padding: 6px 14px;
     margin-bottom: 16px;
@@ -1773,12 +1876,12 @@
   }
 
   .badge-style {
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     padding: 2px 7px;
   }
 
   .badge-category {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     line-height: 1.25;
   }
 
@@ -1838,7 +1941,7 @@
   }
 
   .modal-style-label {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     letter-spacing: 0.04em;
     text-align: center;
   }
@@ -1925,7 +2028,7 @@
   }
 
   .section-eyebrow {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     letter-spacing: 0.12em;
     padding: 5px 12px;
   }
@@ -2077,7 +2180,7 @@
 
   .style-tab-btn {
     padding: 6px 10px;
-    font-size: 0.74rem;
+    font-size: 0.75rem;
   }
 
   .icon-grid {
@@ -2109,6 +2212,26 @@
   .modal-specs-grid {
     grid-template-columns: 1fr;
     gap: 6px;
+  }
+}
+
+/* Accessibility: Prefers Reduced Motion (references/animation.md) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .icon-card:hover,
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .banner-platform-btn:hover,
+  .banner-platform-btn:hover .btn-arrow,
+  .banner-platform-btn:hover .banner-platform-icon,
+  .platform-link-btn:hover,
+  .platform-link-btn:hover .platform-arrow {
+    transform: none !important;
   }
 }
 

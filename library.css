@@ -160,7 +160,6 @@ body {
   background-color: var(--background);
   color: var(--text-primary);
   min-height: 100vh;
-  overflow-x: hidden;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -425,22 +424,25 @@ body {
               box-shadow 0.2s ease;
 }
 
-.lib-tab-btn:hover:not(.disabled) {
+.lib-tab-btn:hover:not(.disabled):not(.active) {
   transform: translateY(-2px);
   color: var(--text-primary);
   background: var(--surface-soft);
   box-shadow: var(--shadow-depth);
 }
 
-.lib-tab-btn.active {
+.lib-tab-btn.active,
+.lib-tab-btn.active:hover {
   color: var(--color-light);
   background: var(--color-dark);
   border-color: var(--color-dark);
   box-shadow: var(--shadow-primary);
   cursor: default;
+  transform: none;
 }
 
-[data-theme="dark"] .lib-tab-btn.active {
+[data-theme="dark"] .lib-tab-btn.active,
+[data-theme="dark"] .lib-tab-btn.active:hover {
   color: var(--color-dark);
   background: var(--color-light);
   border-color: var(--color-light);
@@ -465,7 +467,7 @@ body {
 }
 
 .tab-badge-soon {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   padding: 2px 8px;
@@ -2939,7 +2941,7 @@ body {
   border-radius: var(--radius-card);
   color: var(--text-primary);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: border-color var(--dur-ui) var(--ease-out), outline-color var(--dur-ui) var(--ease-out);
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
@@ -3860,7 +3862,11 @@ body {
   border: 1px solid var(--border);
   cursor: pointer;
   box-shadow: var(--shadow-depth);
-  transition: all var(--dur-ui) var(--ease-out);
+  transition: background-color var(--dur-ui) var(--ease-out),
+              color var(--dur-ui) var(--ease-out),
+              border-color var(--dur-ui) var(--ease-out),
+              box-shadow var(--dur-ui) var(--ease-out),
+              transform var(--dur-ui) var(--ease-out);
 }
 
 .ui-chip .ui-chip-check {
@@ -4017,7 +4023,7 @@ body {
   border-bottom: 2px solid transparent;
   color: var(--text-secondary);
   cursor: pointer;
-  transition: all var(--dur-ui) ease;
+  transition: color var(--dur-ui) var(--ease-out), border-color var(--dur-ui) var(--ease-out);
   outline: none;
   margin-bottom: -1px;
 }
@@ -4052,6 +4058,149 @@ body {
 }
 
 .ui-tabpanel p {
+  margin: 0;
+}
+
+/* --- 6b. Segmented Control / Pill Switcher (Hub Nav Standard) --- */
+.ui-segmented-wrap {
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.ui-specimen-subhead {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ui-segmented-control {
+  display: inline-flex;
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  box-shadow: var(--shadow-depth);
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ui-segmented-control::-webkit-scrollbar {
+  display: none;
+}
+
+.ui-segmented-pill-bg {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  height: calc(100% - 8px);
+  background: var(--color-dark);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-primary);
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              width 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+[data-theme="dark"] .ui-segmented-pill-bg {
+  background: var(--color-light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+}
+
+.ui-segmented-btn {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+  outline: none;
+}
+
+.ui-segmented-btn:hover:not(.disabled):not(.active) {
+  color: var(--text-primary);
+}
+
+.ui-segmented-btn.active,
+.ui-segmented-btn.active:hover {
+  color: var(--color-light);
+}
+
+[data-theme="dark"] .ui-segmented-btn.active,
+[data-theme="dark"] .ui-segmented-btn.active:hover {
+  color: var(--color-dark);
+}
+
+.ui-segmented-btn.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.ui-segmented-btn:focus-visible {
+  outline: 2px solid var(--color-shadow);
+  outline-offset: 2px;
+}
+
+.ui-segmented-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-soft);
+  color: var(--text-secondary);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+[data-theme="dark"] .ui-segmented-badge {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.ui-segmented-btn.active .ui-segmented-badge {
+  background: rgba(240, 237, 244, 0.24);
+  color: var(--color-light);
+}
+
+[data-theme="dark"] .ui-segmented-btn.active .ui-segmented-badge {
+  background: rgba(28, 25, 23, 0.16);
+  color: var(--color-dark);
+}
+
+.ui-segmented-badge--soon {
+  background: var(--border) !important;
+  color: var(--text-muted) !important;
+  text-transform: uppercase;
+}
+
+.ui-segmented-panel {
+  padding: 14px 4px;
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.ui-segmented-panel p {
   margin: 0;
 }
 
@@ -4466,11 +4615,11 @@ body {
   }
 
   .ui-state-name {
-    font-size: 0.6875rem;
+    font-size: 0.75rem;
   }
 
   .ui-state-token {
-    font-size: 0.625rem;
+    font-size: 0.75rem;
     text-align: center;
   }
 

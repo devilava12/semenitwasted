@@ -3,6 +3,11 @@
 
 <head>
   <meta charset="UTF-8">
+  <script>
+    if (location.protocol !== 'file:' && !location.pathname.endsWith('/') && !location.pathname.endsWith('.html')) {
+      location.replace(location.pathname + '/' + location.search + location.hash);
+    }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#F0EDF4">
@@ -10,6 +15,18 @@
   <meta name="description"
     content="Sistem ikon vektor Artificial Intelligence oleh semenitwasted. 50 konsep unik dalam varian Line & Glyph, dibangun di atas grid geometris 76×76px dengan estetika monokromatis dan Neumorphism halus.">
   <link rel="icon" type="image/svg+xml" href="../../assets/logo-nav.svg">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Artificial Intelligence Icons — Portfolio semenitwasted">
+  <meta property="og:description"
+    content="Sistem ikon vektor Artificial Intelligence oleh semenitwasted. 50 konsep unik dalam varian Line & Glyph, dibangun di atas grid geometris 76×76px.">
+  <meta property="og:image" content="../../assets/card-center.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Artificial Intelligence Icons — Portfolio semenitwasted">
+  <meta name="twitter:description"
+    content="Sistem ikon vektor Artificial Intelligence oleh semenitwasted. 50 konsep unik dalam varian Line & Glyph, dibangun di atas grid geometris 76×76px.">
+  <meta name="twitter:image" content="../../assets/card-center.png">
 
   <!-- Local Font: Rubik (Self-hosted) -->
   <link rel="stylesheet" href="../../assets/fonts/rubik.css">
@@ -21,8 +38,8 @@
 
   <!-- Shared Site Chrome & Theme Controller -->
   <script src="../../site-chrome.js"></script>
-  <!-- Embedded Icon Dataset -->
-  <script src="icons-data.js"></script>
+  <!-- Embedded Icon Dataset (Deferred to prevent 720KB parser blocking) -->
+  <script src="icons-data.js" defer></script>
   <!-- Interactive Gallery Script -->
   <script src="script.js" defer></script>
 </head>
@@ -92,6 +109,7 @@
 
       <!-- 2. INTERACTIVE SHOWCASE & TOOLBAR -->
       <section id="iconGallery" class="showcase-section" aria-label="Katalog interaktif ikon AI">
+        <h2 class="sr-only">Katalog Interaktif Ikon Artificial Intelligence</h2>
         
         <!-- TOOLBAR CONTROLS -->
         <div class="showcase-toolbar">

@@ -3,6 +3,11 @@
 
 <head>
   <meta charset="UTF-8">
+  <script>
+    if (location.protocol !== 'file:' && !location.pathname.endsWith('/') && !location.pathname.endsWith('.html')) {
+      location.replace(location.pathname + '/' + location.search + location.hash);
+    }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#F0EDF4">
@@ -10,6 +15,37 @@
   <meta name="description"
     content="Studi kasus desain Figma #AyoCekHPV untuk Roche Indonesia, dikerjakan bersama KelolaWeb.com sebagai rancangan antarmuka dan fondasi visual sebelum website diimplementasikan.">
   <link rel="icon" type="image/svg+xml" href="../../assets/logo-nav.svg">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Roche #AyoCekHPV — Portfolio semenitwasted">
+  <meta property="og:description"
+    content="Studi kasus desain Figma #AyoCekHPV untuk Roche Indonesia, dikerjakan bersama KelolaWeb.com sebagai rancangan antarmuka dan fondasi visual sebelum website diimplementasikan.">
+  <meta property="og:image" content="%23AyocekHPV.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Roche #AyoCekHPV — Portfolio semenitwasted">
+  <meta name="twitter:description"
+    content="Studi kasus desain Figma #AyoCekHPV untuk Roche Indonesia, dikerjakan bersama KelolaWeb.com sebagai rancangan antarmuka dan fondasi visual sebelum website diimplementasikan.">
+  <meta name="twitter:image" content="%23AyocekHPV.webp">
+
+  <!-- Structured Data: CreativeWork -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Roche #AyoCekHPV Website Design Case Study",
+    "headline": "Roche #AyoCekHPV — Portfolio semenitwasted",
+    "description": "Studi kasus desain antarmuka Figma untuk situs kampanye kesehatan #AyoCekHPV milik Roche Indonesia bersama KelolaWeb.com.",
+    "author": {
+      "@type": "Person",
+      "name": "I Putu Dicky Adi Pranatha"
+    },
+    "creator": {
+      "@type": "Person",
+      "name": "semenitwasted"
+    }
+  }
+  </script>
 
   <!-- Local Font: Rubik (Self-hosted) -->
   <link rel="stylesheet" href="../../assets/fonts/rubik.css">

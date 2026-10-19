@@ -921,7 +921,86 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- Demo E: ARIA Tabs with Roving Tabindex & Arrow Keys ---
+  // --- Demo E.1: Segmented Pill Switcher with Sliding Indicator (Hub Nav Standard) ---
+  const segControl = document.getElementById('demoSegmentedControl');
+  const segPillBg = document.getElementById('demoSegmentedPillBg');
+  if (segControl && segPillBg) {
+    const segButtons = Array.from(segControl.querySelectorAll('.ui-segmented-btn:not(.disabled)'));
+    const segPanels = Array.from(document.querySelectorAll('.ui-segmented-panel'));
+
+    function updatePillPosition(activeBtn) {
+      if (!activeBtn) return;
+      const offsetLeft = activeBtn.offsetLeft;
+      const width = activeBtn.offsetWidth;
+      segPillBg.style.transform = `translateX(${offsetLeft}px)`;
+      segPillBg.style.width = `${width}px`;
+    }
+
+    function selectSegTab(newBtn, setFocus = true) {
+      segButtons.forEach(btn => {
+        const isSelected = btn === newBtn;
+        btn.classList.toggle('active', isSelected);
+        btn.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+        btn.setAttribute('tabindex', isSelected ? '0' : '-1');
+        if (isSelected && setFocus) btn.focus();
+      });
+
+      updatePillPosition(newBtn);
+
+      const targetPanelId = newBtn.getAttribute('data-target-panel');
+      segPanels.forEach(panel => {
+        panel.hidden = panel.id !== targetPanelId;
+      });
+    }
+
+    // Set initial position
+    const initialActive = segControl.querySelector('.ui-segmented-btn.active');
+    if (initialActive) {
+      requestAnimationFrame(() => updatePillPosition(initialActive));
+    }
+
+    segButtons.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        selectSegTab(btn, false);
+      });
+
+      btn.addEventListener('keydown', (e) => {
+        let targetIndex = -1;
+        if (e.key === 'ArrowRight') {
+          targetIndex = (index + 1) % segButtons.length;
+        } else if (e.key === 'ArrowLeft') {
+          targetIndex = (index - 1 + segButtons.length) % segButtons.length;
+        } else if (e.key === 'Home') {
+          targetIndex = 0;
+        } else if (e.key === 'End') {
+          targetIndex = segButtons.length - 1;
+        }
+
+        if (targetIndex >= 0) {
+          e.preventDefault();
+          selectSegTab(segButtons[targetIndex], true);
+        }
+      });
+    });
+
+    // ResizeObserver ensures correct positioning even if parent was display:none on load
+    if (window.ResizeObserver) {
+      const ro = new ResizeObserver(() => {
+        const currentActive = segControl.querySelector('.ui-segmented-btn.active');
+        if (currentActive && currentActive.offsetWidth > 0) {
+          updatePillPosition(currentActive);
+        }
+      });
+      ro.observe(segControl);
+    } else {
+      window.addEventListener('resize', () => {
+        const currentActive = segControl.querySelector('.ui-segmented-btn.active');
+        if (currentActive) updatePillPosition(currentActive);
+      }, { passive: true });
+    }
+  }
+
+  // --- Demo E.2: ARIA Tabs with Roving Tabindex & Arrow Keys ---
   const cmpTabsContainer = document.getElementById('cmpTabs');
   if (cmpTabsContainer) {
     const tabList = cmpTabsContainer.querySelector('.ui-tablist');

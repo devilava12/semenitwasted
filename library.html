@@ -9,6 +9,18 @@
     content="Living design system and interactive animation library for semenitwasted. Interactive documentation of tactile motion, easing curves, timing tokens, and code snippets.">
   <link rel="icon" type="image/svg+xml" href="assets/logo-nav.svg">
 
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Library — Motion &amp; Animation System — semenitwasted">
+  <meta property="og:description"
+    content="Living design system and interactive animation library for semenitwasted. Interactive documentation of tactile motion, easing curves, timing tokens, and code snippets.">
+  <meta property="og:image" content="assets/card-center.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Library — Motion &amp; Animation System — semenitwasted">
+  <meta name="twitter:description"
+    content="Living design system and interactive animation library for semenitwasted. Interactive documentation of tactile motion, easing curves, timing tokens, and code snippets.">
+  <meta name="twitter:image" content="assets/card-center.png">
+
   <!-- Local Font: Rubik (Self-hosted) -->
   <link rel="stylesheet" href="assets/fonts/rubik.css">
 
@@ -395,7 +407,7 @@
               <div class="stage-caption">Media Frame — Hover to trigger subtle scale</div>
               <div class="stage-demo-area">
                 <div class="demo-media-frame">
-                  <img src="assets/card-center.png" alt="Demo artwork preview" class="demo-media-img">
+                  <img src="assets/card-center.png" alt="Demo artwork preview" class="demo-media-img" width="900" height="900">
                   <div class="demo-media-overlay">
                     <span class="media-scale-badge">scale(1.02)</span>
                   </div>
@@ -2371,42 +2383,89 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
             </div>
           </article>
 
-          <!-- 06. TABS & BREADCRUMB -->
-          <article class="bento-anim-card" data-category="navigation" id="cmp-tabs">
+          <!-- 06. TABS, SEGMENTED CONTROL & BREADCRUMB -->
+          <article class="bento-anim-card card-full-width" data-category="navigation" id="cmp-tabs">
             <header class="card-meta-header">
               <div class="meta-tag-wrap">
-                <span class="meta-tag">Navigation</span>
-                <span class="timing-badge">ARIA Tabs &middot; Breadcrumb</span>
+                <span class="meta-tag">Navigation &amp; Controls</span>
+                <span class="timing-badge">Segmented Pill &middot; ARIA Tabs &middot; Breadcrumb</span>
               </div>
-              <h2 class="anim-title">Tabs &amp; Breadcrumb</h2>
+              <h2 class="anim-title">Tabs, Segmented Controls &amp; Breadcrumb</h2>
               <p class="anim-desc">
-                Tab mengikuti pola ARIA dengan roving tabindex dan navigasi panah. Tab aktif ditandai garis bawah tebal + bobot huruf, bukan warna saja. Breadcrumb memakai <code>aria-current="page"</code>.
+                Dua standar navigasi tab semenitwasted: <strong>Pola Hub/Kategori</strong> berupa Segmented Pill Switcher dengan indikator luncur halus (fluid sliding indicator) &amp; badge counter, serta <strong>Pola Konten/Dokumen</strong> berupa ARIA Tabs bergaris bawah dengan navigasi panah &amp; breadcrumb.
               </p>
             </header>
 
             <div class="stage-canvas ui-stage ui-stage--left">
-              <nav class="ui-breadcrumb" aria-label="Breadcrumb contoh">
-                <ol>
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="library.html">Library</a></li>
-                  <li><span aria-current="page">Components &amp; UI</span></li>
-                </ol>
-              </nav>
+              <!-- PATTERN A: SEGMENTED PILL SWITCHER (HUB NAVIGATION) -->
+              <div class="ui-segmented-wrap">
+                <span class="ui-specimen-subhead">
+                  <span class="hero-eyebrow-dot"></span>
+                  Pola A &mdash; Segmented Pill Switcher (Sliding Indicator + Badge Counters)
+                </span>
+                
+                <div class="ui-segmented-control" id="demoSegmentedControl" role="tablist" aria-label="Kategori Hub Standar">
+                  <div class="ui-segmented-pill-bg" id="demoSegmentedPillBg" aria-hidden="true"></div>
+                  
+                  <button type="button" class="ui-segmented-btn active" role="tab" id="segTab1" data-target-panel="segPanel1" aria-selected="true" tabindex="0">
+                    <span>Motion &amp; Animation</span>
+                    <span class="ui-segmented-badge">10</span>
+                  </button>
+                  <button type="button" class="ui-segmented-btn" role="tab" id="segTab2" data-target-panel="segPanel2" aria-selected="false" tabindex="-1">
+                    <span>Design Tokens</span>
+                    <span class="ui-segmented-badge">8 Groups</span>
+                  </button>
+                  <button type="button" class="ui-segmented-btn" role="tab" id="segTab3" data-target-panel="segPanel3" aria-selected="false" tabindex="-1">
+                    <span>Components &amp; UI</span>
+                    <span class="ui-segmented-badge">8 Sets</span>
+                  </button>
+                  <button type="button" class="ui-segmented-btn disabled" role="tab" id="segTab4" aria-disabled="true" tabindex="-1" title="Akan datang">
+                    <span>Vectors &amp; Icons</span>
+                    <span class="ui-segmented-badge ui-segmented-badge--soon">Soon</span>
+                  </button>
+                </div>
 
-              <div class="ui-tabs" id="cmpTabs">
-                <div class="ui-tablist" role="tablist" aria-label="Contoh tab studi kasus">
-                  <button type="button" class="ui-tab" role="tab" id="cmpTab1" aria-controls="cmpPanel1" aria-selected="true" tabindex="0">Ringkasan</button>
-                  <button type="button" class="ui-tab" role="tab" id="cmpTab2" aria-controls="cmpPanel2" aria-selected="false" tabindex="-1">Proses</button>
-                  <button type="button" class="ui-tab" role="tab" id="cmpTab3" aria-controls="cmpPanel3" aria-selected="false" tabindex="-1">Hasil</button>
+                <div class="ui-segmented-panel" id="segPanel1" role="tabpanel" aria-labelledby="segTab1">
+                  <p><strong>Panel Aktif: Motion &amp; Animation.</strong> Menampilkan katalog 10 modul perilaku taktil gerak, kurva easing, dan timing tokens.</p>
                 </div>
-                <div class="ui-tabpanel" role="tabpanel" id="cmpPanel1" aria-labelledby="cmpTab1" tabindex="0">
-                  <p>[Ringkasan singkat studi kasus dalam 1&ndash;2 kalimat.]</p>
+                <div class="ui-segmented-panel" id="segPanel2" role="tabpanel" aria-labelledby="segTab2" hidden>
+                  <p><strong>Panel Aktif: Design Tokens.</strong> Menampilkan spesifikasi sistem nilai warna monokrom, bayangan bertingkat, radius, dan grid spacing.</p>
                 </div>
-                <div class="ui-tabpanel" role="tabpanel" id="cmpPanel2" aria-labelledby="cmpTab2" tabindex="0" hidden>
-                  <p>[Langkah proses utama: riset, eksplorasi, dan iterasi.]</p>
+                <div class="ui-segmented-panel" id="segPanel3" role="tabpanel" aria-labelledby="segTab3" hidden>
+                  <p><strong>Panel Aktif: Components &amp; UI.</strong> Menampilkan katalog komponen antarmuka mandiri: tombol, kartu bento, formulir, dan navigasi.</p>
                 </div>
-                <div class="ui-tabpanel" role="tabpanel" id="cmpPanel3" aria-labelledby="cmpTab3" tabindex="0" hidden>
-                  <p>[Hasil akhir dan pembelajaran dari proyek.]</p>
+              </div>
+
+              <!-- PATTERN B: CONTENT LINE TABS & BREADCRUMB -->
+              <div style="width: 100%; border-top: 1px solid var(--border); padding-top: 20px;">
+                <span class="ui-specimen-subhead">
+                  <span class="hero-eyebrow-dot"></span>
+                  Pola B &mdash; Content Line Tabs &amp; Breadcrumb (Studi Kasus &amp; Artikel)
+                </span>
+
+                <nav class="ui-breadcrumb" aria-label="Breadcrumb contoh">
+                  <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="library.html">Library</a></li>
+                    <li><span aria-current="page">Components &amp; UI</span></li>
+                  </ol>
+                </nav>
+
+                <div class="ui-tabs" id="cmpTabs">
+                  <div class="ui-tablist" role="tablist" aria-label="Contoh tab studi kasus">
+                    <button type="button" class="ui-tab" role="tab" id="cmpTab1" aria-controls="cmpPanel1" aria-selected="true" tabindex="0">Ringkasan</button>
+                    <button type="button" class="ui-tab" role="tab" id="cmpTab2" aria-controls="cmpPanel2" aria-selected="false" tabindex="-1">Proses</button>
+                    <button type="button" class="ui-tab" role="tab" id="cmpTab3" aria-controls="cmpPanel3" aria-selected="false" tabindex="-1">Hasil</button>
+                  </div>
+                  <div class="ui-tabpanel" role="tabpanel" id="cmpPanel1" aria-labelledby="cmpTab1" tabindex="0">
+                    <p>[Ringkasan singkat studi kasus dalam 1&ndash;2 kalimat.]</p>
+                  </div>
+                  <div class="ui-tabpanel" role="tabpanel" id="cmpPanel2" aria-labelledby="cmpTab2" tabindex="0" hidden>
+                    <p>[Langkah proses utama: riset, eksplorasi, dan iterasi.]</p>
+                  </div>
+                  <div class="ui-tabpanel" role="tabpanel" id="cmpPanel3" aria-labelledby="cmpTab3" tabindex="0" hidden>
+                    <p>[Hasil akhir dan pembelajaran dari proyek.]</p>
+                  </div>
                 </div>
               </div>
 
@@ -2414,22 +2473,45 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
             </div>
 
             <div class="card-snippet-drawer">
-              <pre><code>&lt;div role="tablist" aria-label="Studi kasus"&gt;
-  &lt;button role="tab" id="t1" aria-controls="p1" aria-selected="true" tabindex="0"&gt;Ringkasan&lt;/button&gt;
-  &lt;button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1"&gt;Proses&lt;/button&gt;
+              <pre><code>/* 1. HTML: Segmented Pill Switcher dengan Indikator Luncur */
+&lt;div class="segmented-control" role="tablist"&gt;
+  &lt;div class="segmented-pill-bg" aria-hidden="true"&gt;&lt;/div&gt;
+  &lt;button class="segmented-btn active" role="tab" aria-selected="true"&gt;
+    &lt;span&gt;Motion&lt;/span&gt;&lt;span class="badge"&gt;10&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="segmented-btn" role="tab" aria-selected="false"&gt;
+    &lt;span&gt;Tokens&lt;/span&gt;&lt;span class="badge"&gt;8&lt;/span&gt;
+  &lt;/button&gt;
 &lt;/div&gt;
-&lt;div role="tabpanel" id="p1" aria-labelledby="t1" tabindex="0"&gt;...&lt;/div&gt;
-&lt;div role="tabpanel" id="p2" aria-labelledby="t2" tabindex="0" hidden&gt;...&lt;/div&gt;
 
-.tab { min-height: 44px; padding: 8px 16px; font-weight: 500;
-  border: 0; border-bottom: 2px solid transparent; background: none; }
-.tab[aria-selected="true"] { font-weight: 700; border-bottom-color: var(--color-dark); }
-.tab:focus-visible { outline: var(--focus-ring); outline-offset: var(--focus-offset); }
+/* 2. CSS: Indikator Luncur &amp; Desain Taktil */
+.segmented-control {
+  position: relative; display: inline-flex; padding: 4px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 999px; box-shadow: var(--shadow-depth);
+}
+.segmented-pill-bg {
+  position: absolute; top: 4px; left: 0; height: calc(100% - 8px);
+  background: var(--color-dark); border-radius: 999px;
+  box-shadow: var(--shadow-primary);
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              width 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none; z-index: 1;
+}
+.segmented-btn {
+  position: relative; z-index: 2; display: inline-flex; align-items: center;
+  gap: 8px; padding: 8px 16px; border: none; background: transparent;
+  color: var(--text-secondary); border-radius: 999px; cursor: pointer;
+}
+.segmented-btn:hover:not(.disabled):not(.active) { color: var(--text-primary); }
+.segmented-btn.active, .segmented-btn.active:hover { color: var(--color-light); }
 
-.breadcrumb ol { display: flex; flex-wrap: wrap; gap: var(--space-8); list-style: none; }
-.breadcrumb li + li::before { content: "/"; margin-right: var(--space-8); color: var(--color-text-muted); }
-.breadcrumb [aria-current="page"] { font-weight: 600; }</code></pre>
-              <button class="btn-copy-code" aria-label="Salin kode Tabs dan Breadcrumb">
+/* 3. JavaScript: Sinkronisasi Posisi Indikator */
+function updatePill(btn, pillEl) {
+  pillEl.style.transform = `translateX(${btn.offsetLeft}px)`;
+  pillEl.style.width = `${btn.offsetWidth}px`;
+}</code></pre>
+              <button class="btn-copy-code" aria-label="Salin kode Tabs dan Segmented Control">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -2619,23 +2701,23 @@ dialog.addEventListener('close', () =&gt; trigger.focus());</code></pre>
       <div class="footer-platforms" aria-label="Platform links">
         <a href="https://www.linkedin.com/in/reionnyx/" target="_blank" rel="noopener noreferrer"
           class="footer-platform-card" aria-label="LinkedIn">
-          <img src="assets/linkedin.svg" alt="" class="footer-platform-icon footer-platform-icon--monochrome">
+          <img src="assets/linkedin.svg" alt="" width="24" height="24" class="footer-platform-icon footer-platform-icon--monochrome">
         </a>
         <a href="https://stock.adobe.com/contributor/207802543/dicky" target="_blank" rel="noopener noreferrer"
           class="footer-platform-card" aria-label="Adobe Stock">
-          <img src="assets/adobe-stock.svg" alt="" class="footer-platform-icon">
+          <img src="assets/adobe-stock.svg" alt="" width="24" height="24" class="footer-platform-icon">
         </a>
         <a href="https://www.canva.com/p/gambar-reion" target="_blank" rel="noopener noreferrer"
           class="footer-platform-card" aria-label="Canva">
-          <img src="assets/canva.svg" alt="" class="footer-platform-icon">
+          <img src="assets/canva.svg" alt="" width="24" height="24" class="footer-platform-icon">
         </a>
         <a href="https://thenounproject.com/creator/ReionDesign/" target="_blank" rel="noopener noreferrer"
           class="footer-platform-card" aria-label="The Noun Project">
-          <img src="assets/noun-project.svg" alt="" class="footer-platform-icon footer-platform-icon--monochrome">
+          <img src="assets/noun-project.svg" alt="" width="24" height="24" class="footer-platform-icon footer-platform-icon--monochrome">
         </a>
         <a href="https://www.flaticon.com/authors/reion" target="_blank" rel="noopener noreferrer"
           class="footer-platform-card" aria-label="Flaticon">
-          <img src="assets/flaticon.svg" alt="" class="footer-platform-icon footer-platform-icon--monochrome">
+          <img src="assets/flaticon.svg" alt="" width="24" height="24" class="footer-platform-icon footer-platform-icon--monochrome">
         </a>
       </div>
     </footer>
