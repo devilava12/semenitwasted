@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <filter id="monoShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="6" dy="8" stdDeviation="10" flood-color="#450D50" flood-opacity="0.18"/>
+    </filter>
+    <linearGradient id="bgMono" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCFAFD"/>
+      <stop offset="100%" stop-color="#F2EDF6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bgMono)"/>
+
+  <!-- Monochrome Split Harmony Bento -->
+  <g transform="translate(120, 60)">
+    <rect x="0" y="0" width="560" height="330" rx="10" fill="#FCFAFD" stroke="#E4DCE9" stroke-width="1.5" filter="url(#monoShadow)"/>
+
+    <!-- Header bar -->
+    <rect x="0" y="0" width="560" height="46" rx="10" fill="#F5F0F8"/>
+    <rect x="0" y="36" width="560" height="10" fill="#F5F0F8"/>
+    <line x1="0" y1="46" x2="560" y2="46" stroke="#E4DCE9" stroke-width="1"/>
+
+    <circle cx="28" cy="23" r="5" fill="#D5CCD9"/>
+    <circle cx="44" cy="23" r="5" fill="#D5CCD9"/>
+    <circle cx="60" cy="23" r="5" fill="#D5CCD9"/>
+    <text x="530" y="27" text-anchor="end" font-family="'Rubik', sans-serif" font-size="11" font-weight="600" fill="#756A7D" letter-spacing="1">MONOCHROME DUALITY &amp; HIERARCHY</text>
+
+    <!-- Split Visual: Light Canvas vs Dark Canvas -->
+    <g transform="translate(30, 68)">
+      <!-- Left: Light Mode Pillar -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="235" height="160" rx="8" fill="#F0EDF4" stroke="#E4DCE9" stroke-width="1.5" filter="url(#monoShadow)"/>
+        <text x="24" y="36" font-family="'Rubik', sans-serif" font-size="12" font-weight="600" fill="#756A7D">LIGHT SURFACE</text>
+        <text x="24" y="70" font-family="'Rubik', sans-serif" font-size="28" font-weight="700" fill="#211B28">Aa</text>
+        <rect x="24" y="90" width="120" height="8" rx="4" fill="#211B28"/>
+        <rect x="24" y="106" width="160" height="6" rx="3" fill="#756A7D"/>
+        <rect x="24" y="120" width="90" height="6" rx="3" fill="#E4DCE9"/>
+      </g>
+
+      <!-- Right: Dark Mode Pillar -->
+      <g transform="translate(265, 0)">
+        <rect x="0" y="0" width="235" height="160" rx="8" fill="#18121E" stroke="#3B3248" stroke-width="1.5" filter="url(#monoShadow)"/>
+        <text x="24" y="36" font-family="'Rubik', sans-serif" font-size="12" font-weight="600" fill="#B8AFC0">DARK SURFACE</text>
+        <text x="24" y="70" font-family="'Rubik', sans-serif" font-size="28" font-weight="700" fill="#FFFFFF">Aa</text>
+        <rect x="24" y="90" width="120" height="8" rx="4" fill="#ECE8F2"/>
+        <rect x="24" y="106" width="160" height="6" rx="3" fill="#B8AFC0"/>
+        <rect x="24" y="120" width="90" height="6" rx="3" fill="#3B3248"/>
+      </g>
+    </g>
+
+    <!-- Bottom Scale Strip -->
+    <g transform="translate(30, 248)">
+      <rect x="0" y="0" width="500" height="58" rx="8" fill="#F5F0F8" stroke="#E4DCE9" stroke-width="1"/>
+      <text x="20" y="34" font-family="'Rubik', sans-serif" font-size="11" font-weight="600" fill="#211B28">Contrast Ratio:</text>
+      <text x="130" y="34" font-family="monospace" font-size="12" fill="#450D50">14.8:1 (AAA Pass)</text>
+      <text x="310" y="34" font-family="'Rubik', sans-serif" font-size="11" fill="#756A7D">Zero decorative color needed</text>
+    </g>
+  </g>
+</svg>

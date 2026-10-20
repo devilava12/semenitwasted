@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <filter id="softDepth" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="6" dy="8" stdDeviation="10" flood-color="#450D50" flood-opacity="0.18"/>
+    </filter>
+    <linearGradient id="softBg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCFAFD"/>
+      <stop offset="100%" stop-color="#F2EDF6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#softBg3)"/>
+
+  <!-- Minimal Wireframe & Speed Metric Bento -->
+  <g transform="translate(130, 65)">
+    <!-- Main Card -->
+    <rect x="0" y="0" width="540" height="320" rx="10" fill="#FCFAFD" stroke="#E4DCE9" stroke-width="1.5" filter="url(#softDepth)"/>
+
+    <!-- Header bar -->
+    <rect x="0" y="0" width="540" height="46" rx="10" fill="#F5F0F8"/>
+    <rect x="0" y="36" width="540" height="10" fill="#F5F0F8"/>
+    <line x1="0" y1="46" x2="540" y2="46" stroke="#E4DCE9" stroke-width="1"/>
+
+    <circle cx="28" cy="23" r="5" fill="#D5CCD9"/>
+    <circle cx="44" cy="23" r="5" fill="#D5CCD9"/>
+    <circle cx="60" cy="23" r="5" fill="#D5CCD9"/>
+    <text x="510" y="27" text-anchor="end" font-family="'Rubik', sans-serif" font-size="11" font-weight="600" fill="#756A7D" letter-spacing="1">ZERO BLOAT · INSTANT LOAD</text>
+
+    <!-- Speed Gauge Left -->
+    <g transform="translate(32, 70)">
+      <rect x="0" y="0" width="180" height="220" rx="8" fill="#211B28" stroke="#3B3248" stroke-width="1.5" filter="url(#softDepth)"/>
+      <circle cx="90" cy="80" r="44" fill="none" stroke="#3B3248" stroke-width="6"/>
+      <circle cx="90" cy="80" r="44" fill="none" stroke="#ECE8F2" stroke-width="6" stroke-dasharray="240" stroke-dashoffset="30"/>
+      <text x="90" y="86" text-anchor="middle" font-family="'Rubik', sans-serif" font-size="24" font-weight="700" fill="#FFFFFF">100</text>
+      <text x="90" y="104" text-anchor="middle" font-family="'Rubik', sans-serif" font-size="9" fill="#B8AFC0">PERFORMANCE</text>
+
+      <rect x="24" y="146" width="132" height="24" rx="999" fill="#450D50"/>
+      <text x="90" y="162" text-anchor="middle" font-family="monospace" font-size="11" fill="#FFFFFF">&lt; 150ms</text>
+      <text x="90" y="196" text-anchor="middle" font-family="'Rubik', sans-serif" font-size="11" fill="#B8AFC0">Pure HTML + CSS</text>
+    </g>
+
+    <!-- RSS & Content Column Right -->
+    <g transform="translate(232, 70)">
+      <!-- RSS Card -->
+      <rect x="0" y="0" width="276" height="100" rx="8" fill="#F5F0F8" stroke="#E4DCE9" stroke-width="1" filter="url(#softDepth)"/>
+      <g transform="translate(20, 20)">
+        <path d="M0 24 A24 24 0 0 1 24 48 M0 12 A36 36 0 0 1 36 48" fill="none" stroke="#211B28" stroke-width="3"/>
+        <circle cx="4" cy="48" r="4" fill="#211B28"/>
+      </g>
+      <text x="76" y="44" font-family="'Rubik', sans-serif" font-size="14" font-weight="700" fill="#211B28">RSS / IndieWeb</text>
+      <text x="76" y="64" font-family="'Rubik', sans-serif" font-size="11" fill="#756A7D">Direct readers, zero algorithms.</text>
+
+      <!-- Clean Markdown doc card -->
+      <rect x="0" y="118" width="276" height="102" rx="8" fill="#FCFAFD" stroke="#E4DCE9" stroke-width="1" filter="url(#softDepth)"/>
+      <rect x="20" y="24" width="70" height="10" rx="4" fill="#211B28"/>
+      <rect x="20" y="44" width="236" height="6" rx="3" fill="#D5CCD9"/>
+      <rect x="20" y="58" width="210" height="6" rx="3" fill="#D5CCD9"/>
+      <rect x="20" y="72" width="160" height="6" rx="3" fill="#D5CCD9"/>
+    </g>
+  </g>
+</svg>

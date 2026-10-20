@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <filter id="tactileShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="6" dy="8" stdDeviation="10" flood-color="#450D50" flood-opacity="0.18"/>
+    </filter>
+    <linearGradient id="softCanvas" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCFAFD"/>
+      <stop offset="100%" stop-color="#F2EDF6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="100%" height="100%" fill="url(#softCanvas)"/>
+
+  <!-- Subtle Grid Lines -->
+  <g stroke="#E4DCE9" stroke-width="1" stroke-dasharray="4 6" opacity="0.6">
+    <line x1="80" y1="0" x2="80" y2="450"/>
+    <line x1="240" y1="0" x2="240" y2="450"/>
+    <line x1="400" y1="0" x2="400" y2="450"/>
+    <line x1="560" y1="0" x2="560" y2="450"/>
+    <line x1="720" y1="0" x2="720" y2="450"/>
+    <line x1="0" y1="150" x2="800" y2="150"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+  </g>
+
+  <!-- Main Tactile Bento Preview Container -->
+  <g transform="translate(100, 60)">
+    <!-- Backing Card -->
+    <rect x="0" y="0" width="600" height="330" rx="10" fill="#FCFAFD" stroke="#E4DCE9" stroke-width="1.5" filter="url(#tactileShadow)"/>
+
+    <!-- Header bar -->
+    <rect x="0" y="0" width="600" height="48" rx="10" fill="#F5F0F8"/>
+    <rect x="0" y="38" width="600" height="10" fill="#F5F0F8"/>
+    <line x1="0" y1="48" x2="600" y2="48" stroke="#E4DCE9" stroke-width="1"/>
+    
+    <!-- Dots -->
+    <circle cx="28" cy="24" r="5" fill="#D5CCD9"/>
+    <circle cx="44" cy="24" r="5" fill="#D5CCD9"/>
+    <circle cx="60" cy="24" r="5" fill="#D5CCD9"/>
+
+    <text x="560" y="28" text-anchor="end" font-family="'Rubik', sans-serif" font-size="11" font-weight="600" fill="#756A7D" letter-spacing="1">DESIGN TOKENS :ROOT</text>
+
+    <!-- Color Swatches & Tokens -->
+    <g transform="translate(32, 74)">
+      <!-- Swatch 1 -->
+      <rect x="0" y="0" width="160" height="100" rx="8" fill="#F0EDF4" stroke="#E4DCE9" stroke-width="1.5" filter="url(#tactileShadow)"/>
+      <text x="16" y="34" font-family="'Rubik', sans-serif" font-size="11" font-weight="600" fill="#756A7D">--color-light</text>
+      <text x="16" y="60" font-family="'Rubik', sans-serif" font-size="18" font-weight="700" fill="#211B28">#F0EDF4</text>
+      <text x="16" y="82" font-family="'Rubik', sans-serif" font-size="11" fill="#756A7D">Surface / Canvas</text>
+
+      <!-- Swatch 2 -->
+      <rect x="186" y="0" width="160" height="100" rx="8" fill="#211B28" stroke="#3B3248" stroke-width="1.5" filter="url(#tactileShadow)"/>
+      <text x="202" y="34" font-family="'Rubik', sans-serif" font-size="11" font-weight="600" fill="#B8AFC0">--color-dark</text>
+      <text x="202" y="60" font-family="'Rubik', sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">#211B28</text>
+      <text x="202" y="82" font-family="'Rubik', sans-serif" font-size="11" fill="#B8AFC0">High Contrast Text</text>
+
+      <!-- Swatch 3 -->
+      <rect x="372" y="0" width="164" height="100" rx="8" fill="#450D50" stroke="#5E186D" stroke-width="1.5" filter="url(#tactileShadow)"/>
+      <text x="388" y="34" font-family="'Rubik', sans-serif" font-size="11" font-weight="600" fill="#D8B5E4">--color-shadow</text>
+      <text x="388" y="60" font-family="'Rubik', sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">#450D50</text>
+      <text x="388" y="82" font-family="'Rubik', sans-serif" font-size="11" fill="#D8B5E4">Tactile Tint 20-25%</text>
+    </g>
+
+    <!-- Code & Geometry Strip -->
+    <g transform="translate(32, 196)">
+      <rect x="0" y="0" width="536" height="106" rx="8" fill="#F5F0F8" stroke="#E4DCE9" stroke-width="1"/>
+      <!-- Shadow sample pill -->
+      <rect x="20" y="24" width="140" height="58" rx="10" fill="#FCFAFD" stroke="#E4DCE9" stroke-width="1" filter="url(#tactileShadow)"/>
+      <text x="90" y="58" text-anchor="middle" font-family="'Rubik', sans-serif" font-size="12" font-weight="600" fill="#211B28">Radius 10px</text>
+
+      <g transform="translate(180, 26)">
+        <text x="0" y="16" font-family="monospace" font-size="12" fill="#211B28">--shadow-primary: 18px 18px 16px rgba(...);</text>
+        <text x="0" y="38" font-family="monospace" font-size="12" fill="#756A7D">--radius-card: 10px;  --radius-pill: 999px;</text>
+        <text x="0" y="58" font-family="monospace" font-size="12" fill="#450D50">even-scale: [ 4, 8, 12, 16, 24, 32, 48px ]</text>
+      </g>
+    </g>
+  </g>
+</svg>

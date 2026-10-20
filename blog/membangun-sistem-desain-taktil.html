@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membangun Sistem Desain Taktil: Dari Figma ke CSS Tokens — semenitwasted</title>
+  <meta name="description"
+    content="Bagaimana merancang efek tactile surface dan neumorphism yang tetap kontras, fungsional, dan memiliki hierarki tajam tanpa terjebak estetika artifisial berlebihan.">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo-nav.svg">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Membangun Sistem Desain Taktil: Dari Figma ke CSS Tokens — semenitwasted">
+  <meta property="og:description"
+    content="Bagaimana merancang efek tactile surface dan neumorphism yang tetap kontras, fungsional, dan memiliki hierarki tajam tanpa terjebak estetika artifisial berlebihan.">
+  <meta property="og:image" content="../assets/card-center.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Membangun Sistem Desain Taktil: Dari Figma ke CSS Tokens — semenitwasted">
+  <meta name="twitter:description"
+    content="Bagaimana merancang efek tactile surface dan neumorphism yang tetap kontras, fungsional, dan memiliki hierarki tajam tanpa terjebak estetika artifisial berlebihan.">
+  <meta name="twitter:image" content="../assets/card-center.png">
+
+  <!-- Structured Data: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Membangun Sistem Desain Taktil: Dari Figma ke CSS Tokens",
+    "datePublished": "2026-10-15",
+    "author": {
+      "@type": "Person",
+      "name": "I Putu Dicky Adi Pranatha",
+      "url": "https://semenitwasted.com/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "semenitwasted"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="../assets/fonts/rubik.css">
+  <link rel="stylesheet" href="../portfolio.css">
+  <link rel="stylesheet" href="../blog.css">
+  <script src="../site-chrome.js"></script>
+</head>
+
+<body>
+  <!-- Scroll Reading Progress Indicator -->
+  <div class="reading-progress-bar" id="readingProgressBar" aria-hidden="true"></div>
+
+  <div class="portfolio-page-wrapper blog-page-wrapper">
+
+    <!-- Global Navigation via site-chrome.js with relative base path -->
+    <div data-site-chrome data-active-page="blog" data-base-path="../"></div>
+
+    <main class="post-main" id="main-content">
+
+      <!-- Breadcrumbs -->
+      <nav class="post-breadcrumb" aria-label="Breadcrumbs">
+        <a href="../index.html">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="../blog.html">Blog</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Design Systems</span>
+      </nav>
+
+      <!-- Article Header -->
+      <header class="post-header">
+        <h1 class="post-title">Membangun Sistem Desain Taktil: Dari Figma ke CSS Tokens</h1>
+        <div class="post-meta-row">
+          <span>Oleh <strong>I Putu Dicky Adi Pranatha</strong></span>
+          <span aria-hidden="true">&bull;</span>
+          <time datetime="2026-10-15">15 Oktober 2026</time>
+          <span aria-hidden="true">&bull;</span>
+          <span>6 min read</span>
+          <span aria-hidden="true">&bull;</span>
+          <span class="category-pill-sm">Design Systems</span>
+        </div>
+      </header>
+
+      <!-- Post Cover Hero Figure -->
+      <figure class="post-hero-figure">
+        <div class="post-hero-frame">
+          <img src="../assets/blog/cover-design-systems.svg" alt="Diagram token sistem desain taktil dan swatch warna monokrom" class="post-hero-img" width="800" height="450" loading="eager">
+        </div>
+        <figcaption class="post-figure-caption">Living Tokens: Fondasi palet monokrom, bayangan taktil, dan struktur bento pada semenitwasted Design System.</figcaption>
+      </figure>
+
+      <!-- TL;DR Summary Bento Card -->
+      <div class="post-tldr-card" role="region" aria-label="Quick Summary">
+        <span class="tldr-badge">TL;DR / Ringkasan Cepat</span>
+        <ul class="tldr-list">
+          <li>Neumorphism sering gagal karena kurangnya kontras dan keterbacaan tepi (*edge affordance*).</li>
+          <li>Kuncinya adalah **Restrained Tactile Depth**: mengunci bayangan signature gelap bergradasi ungu-charcoal (`#450D50`) daripada bayangan abu-abu datar.</li>
+          <li>Menggunakan CSS Custom Properties (`tokens`) memastikan konsistensi antara prototipe Figma dan kode produksi Cloudflare Pages.</li>
+        </ul>
+      </div>
+
+      <!-- Article Body -->
+      <article class="post-prose">
+        <p>
+          Ketika tren <em>neumorphism</em> pertama kali meledak beberapa tahun lalu, banyak desainer terpesona oleh kelembutan permukaannya. Tombol tampak mencuat keluar dari layar layaknya tombol fisik pada remote kontrol atau konsol audio mahal.
+        </p>
+
+        <p>
+          Namun tak lama kemudian, gelombang kritik dari praktisi aksesibilitas (a11y) dan pengembang web bermunculan. Dan kritik itu 100% beralasan: teks sulit dibaca, batas tombol buram bagi pengguna dengan gangguan penglihatan, dan bayangan ganda yang dipaksakan membuat antarmuka terasa berlumpur.
+        </p>
+
+        <blockquote>
+          "Antarmuka digital tidak harus meniru plastik fisik seutuhnya; yang kita butuhkan adalah rasa keterabaan (tactility) yang tenang dan memperjelas fungsi, bukan dekorasi yang mengaburkan pesan."
+        </blockquote>
+
+        <h2>1. Masalah Utama Neumorphism Klasik</h2>
+        <p>
+          Neumorphism klasik biasanya mengandalkan dua bayangan ekstrem: bayangan putih menyilaukan di sudut kiri atas dan bayangan gelap pekat di sudut kanan bawah. Saat diterapkan pada latar belakang putih murni, hasilnya adalah hilangnya batas tepi elemen (<em>lost edges</em>).
+        </p>
+
+        <p>
+          Pada sistem desain <strong>semenitwasted</strong>, kami merumuskan pendekatan yang disebut <em>Restrained Neumorphism</em>. Alih-alih mengandalkan bayangan putih murni, kami menggunakan:
+        </p>
+
+        <ul>
+          <li><strong>Off-White Warm Canvas:</strong> Menggunakan <code>#F0EDF4</code> sebagai kanvas dasar yang nyaman di mata.</li>
+          <li><strong>Signature Shadow Tint:</strong> Mengganti bayangan abu-abu kusam dengan rona ungu gelap <code>#450D50</code> pada opasitas terukur (20% – 25%).</li>
+          <li><strong>Crisp Structural Border:</strong> Tetap menyertakan garis batas halus berketebalan 1px untuk mempertahankan ketegasan kartu.</li>
+        </ul>
+
+        <h2>2. Memetakan Token Figma ke CSS</h2>
+        <p>
+          Agar token di file desain Figma sinkron tanpa distorsi saat dikodekan, kami mengunci variabel CSS berikut pada tingkat root:
+        </p>
+
+        <pre><code>:root {
+  /* Core Monochrome Palette */
+  --color-light: #F0EDF4;
+  --color-dark: #211B28;
+  --color-shadow: #450D50;
+
+  /* Signature Tactile Shadows */
+  --shadow-primary: 18px 18px 16px rgb(69 13 80 / 20%);
+  --shadow-depth: 4px 4px 4px rgb(69 13 80 / 25%);
+  --shadow-hover: 8px 8px 8px rgb(69 13 80 / 22%);
+  --shadow-pressed: 2px 2px 2px rgb(69 13 80 / 30%);
+
+  /* Signature Radius */
+  --radius-card: 10px;
+  --radius-pill: 999px;
+}</code></pre>
+
+        <h2>3. Uji Interaksi: Sensasi Klik Taktil</h2>
+        <p>
+          Kekuatan sistem taktil terasa saat pengguna berinteraksi. Transisi halus antar status memberikan umpan balik fisik:
+        </p>
+
+        <ul>
+          <li><strong>Default:</strong> Elevasi tenang dengan <code>--shadow-primary</code> atau <code>--shadow-depth</code>.</li>
+          <li><strong>Hover:</strong> Sedikit terangkat dengan <code>transform: translateY(-2px)</code> dan bayangan memanjang.</li>
+          <li><strong>Active / Pressed:</strong> Tenggelam kembali ke posisi asal dengan <code>--shadow-pressed</code>, mensimulasikan saklar mekanis.</li>
+        </ul>
+
+        <h2>Penutup</h2>
+        <p>
+          Desain minimalis monokrom tidak harus membosankan atau terasa steril. Dengan meramu kedalaman bayangan taktil dan disiplin spasi bilangan genap, kita bisa menciptakan pengalaman web personal yang hangat, berkarakter, dan tetap cepat diakses.
+        </p>
+      </article>
+
+      <!-- Next & Prev Navigation -->
+      <nav class="post-navigator" aria-label="Article navigation">
+        <a href="melihat-antarmuka-dari-kacamata-dukungan-pelanggan.html" class="post-nav-card">
+          <span class="nav-direction">&larr; Artikel Sebelumnya</span>
+          <span class="nav-article-title">Melihat Antarmuka dari Kacamata Dukungan Pelanggan</span>
+        </a>
+        <a href="../blog.html" class="post-nav-card">
+          <span class="nav-direction">Kembali &rarr;</span>
+          <span class="nav-article-title">Katalog Semua Tulisan (Blog Hub)</span>
+        </a>
+      </nav>
+
+    </main>
+
+    <!-- 21. FOOTER (Matching library.html) -->
+    <footer class="portfolio-footer">
+      <div class="footer-left">
+        <span class="footer-brand">semenitwasted</span>
+        <span class="footer-subtitle">Design · Icons · Illustration · Web</span>
+      </div>
+      <div class="footer-platforms" aria-label="Platform links">
+        <a href="https://www.linkedin.com/in/reionnyx/" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="LinkedIn">
+          <img src="../assets/linkedin.svg" alt="" width="24" height="24" class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+        <a href="https://stock.adobe.com/contributor/207802543/dicky" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Adobe Stock">
+          <img src="../assets/adobe-stock.svg" alt="" width="24" height="24" class="footer-platform-icon">
+        </a>
+        <a href="https://www.canva.com/p/gambar-reion" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Canva">
+          <img src="../assets/canva.svg" alt="" width="24" height="24" class="footer-platform-icon">
+        </a>
+        <a href="https://thenounproject.com/creator/ReionDesign/" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="The Noun Project">
+          <img src="../assets/noun-project.svg" alt="" width="24" height="24" class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+        <a href="https://www.flaticon.com/authors/reion" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Flaticon">
+          <img src="../assets/flaticon.svg" alt="" width="24" height="24" class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Reading Progress Script -->
+  <script>
+    window.addEventListener('scroll', () => {
+      const bar = document.getElementById('readingProgressBar');
+      if (!bar) return;
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = totalScroll > 0 ? (window.scrollY / totalScroll) * 100 : 0;
+      bar.style.width = Math.min(100, Math.max(0, progress)) + '%';
+    }, { passive: true });
+  </script>
+</body>
+
+</html>

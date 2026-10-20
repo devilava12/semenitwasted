@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog & Thoughts — semenitwasted</title>
+  <meta name="description"
+    content="Field notes, essays, and devlogs on design systems, tactile surfaces, web interfaces, and product support by I Putu Dicky Adi Pranatha.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo-nav.svg">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Blog & Thoughts — semenitwasted">
+  <meta property="og:description"
+    content="Field notes, essays, and devlogs on design systems, tactile surfaces, web interfaces, and product support by I Putu Dicky Adi Pranatha.">
+  <meta property="og:image" content="assets/blog/cover-design-systems.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog & Thoughts — semenitwasted">
+  <meta name="twitter:description"
+    content="Field notes, essays, and devlogs on design systems, tactile surfaces, web interfaces, and product support by I Putu Dicky Adi Pranatha.">
+  <meta name="twitter:image" content="assets/blog/cover-design-systems.svg">
+
+  <!-- Structured Data: CollectionPage / Blog -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog & Thoughts — semenitwasted",
+    "description": "Essays and field notes on design systems, web development, and product support by I Putu Dicky Adi Pranatha.",
+    "author": {
+      "@type": "Person",
+      "name": "I Putu Dicky Adi Pranatha",
+      "url": "https://semenitwasted.com/about.html"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="assets/fonts/rubik.css">
+  <link rel="stylesheet" href="portfolio.css">
+  <link rel="stylesheet" href="blog.css">
+  <script src="site-chrome.js"></script>
+</head>
+
+<body>
+  <div class="portfolio-page-wrapper blog-page-wrapper">
+
+    <!-- Global Site Navigation injected by site-chrome.js -->
+    <div data-site-chrome data-active-page="blog"></div>
+
+    <main id="main-content" class="blog-main">
+
+      <!-- =================================================================
+           1. HERO & PHILOSOPHY
+           ================================================================= -->
+      <section class="blog-hero" aria-labelledby="blog-heading">
+        <div class="blog-hero-header">
+          <div class="hero-eyebrow">
+            <span class="hero-eyebrow-dot"></span>
+            WRITING &amp; FIELD NOTES
+          </div>
+          <h1 id="blog-heading" class="hero-title">Thoughts, devlogs, &amp; design notes.</h1>
+          <p class="hero-desc">
+            Essays on tactile design systems, minimal monochrome interfaces, frontend engineering, and real-world product support insights by I Putu Dicky Adi Pranatha.
+          </p>
+        </div>
+
+        <!-- Divider line seperti pada halaman library -->
+        <hr class="hero-divider" aria-hidden="true">
+
+        <!-- Bento Controls: Search & Category Pills -->
+        <div class="blog-controls-card" aria-label="Article filters and search">
+          <div class="blog-search-wrapper">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="search" id="blogSearchInput" class="blog-search-input" placeholder="Search essays by keyword, topic, or title..." aria-label="Search articles" autocomplete="off">
+            <button type="button" id="clearSearchBtn" class="blog-search-clear" aria-label="Clear search query" hidden>&times;</button>
+          </div>
+
+          <div class="blog-category-filter" role="group" aria-label="Filter by category" id="categoryFilterGroup">
+            <button type="button" class="category-pill active" data-category="all" aria-pressed="true">
+              <span>All Topics</span>
+              <span class="pill-count" id="count-all">5</span>
+            </button>
+            <button type="button" class="category-pill" data-category="design-systems" aria-pressed="false">
+              <span>Design Systems</span>
+              <span class="pill-count" id="count-design-systems">2</span>
+            </button>
+            <button type="button" class="category-pill" data-category="frontend-code" aria-pressed="false">
+              <span>Frontend &amp; Code</span>
+              <span class="pill-count" id="count-frontend-code">1</span>
+            </button>
+            <button type="button" class="category-pill" data-category="product-support" aria-pressed="false">
+              <span>Product &amp; Support</span>
+              <span class="pill-count" id="count-product-support">1</span>
+            </button>
+            <button type="button" class="category-pill" data-category="reflections" aria-pressed="false">
+              <span>Reflections</span>
+              <span class="pill-count" id="count-reflections">1</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           2. FEATURED ARTICLE SPOTLIGHT (WITH TACTILE COVER)
+           ================================================================= -->
+      <section class="blog-featured-section" aria-label="Featured Essay" id="featuredSection">
+        <article class="featured-bento-card" data-category="design-systems" id="featuredPostCard">
+          <div class="featured-card-accent" aria-hidden="true"></div>
+          
+          <div class="featured-bento-layout">
+            <div class="featured-card-content">
+              <div class="featured-meta">
+                <span class="badge-featured">Featured Essay</span>
+                <span class="featured-category-pill">Design Systems</span>
+                <span class="meta-separator" aria-hidden="true">&bull;</span>
+                <time datetime="2026-10-20" class="featured-date">20 Oktober 2026</time>
+                <span class="meta-separator" aria-hidden="true">&bull;</span>
+                <span class="reading-time">6 min read</span>
+              </div>
+
+              <h2 class="featured-title">
+                <a href="blog/memilih-karakter-visual-website-2026.html">Memilih Karakter Visual Website di Tahun 2026 Tanpa Terjebak Tren yang Cepat Usang</a>
+              </h2>
+
+              <p class="featured-excerpt">
+                Pelajari arah gaya visual website terbaik di tahun 2026. Temukan cara memilih desain berkarakter kuat tanpa mengorbankan kecepatan akses dan kenyamanan baca.
+              </p>
+
+              <div class="featured-footer">
+                <div class="tags-cluster" aria-label="Article tags">
+                  <span class="tag-chip">#WebDesign2026</span>
+                  <span class="tag-chip">#TactileUI</span>
+                  <span class="tag-chip">#BentoGrid</span>
+                </div>
+                <a href="blog/memilih-karakter-visual-website-2026.html" class="featured-read-btn" aria-label="Read essay: Memilih Karakter Visual Website di Tahun 2026">
+                  <span>Read Essay</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Featured Cover Image Frame -->
+            <div class="featured-media-wrapper">
+              <a href="blog/memilih-karakter-visual-website-2026.html" class="featured-media-link" tabindex="-1" aria-hidden="true">
+                <div class="featured-cover-frame">
+                  <img src="assets/blog/cover-style-website-2026.svg" alt="Diagram perbandingan empat gaya desain website modern 2026 dengan sistem grid taktil monokrom" class="featured-cover-img" width="800" height="450" loading="eager">
+                </div>
+              </a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- =================================================================
+           3. ARTICLES BENTO GRID (WITH COVER THUMBNAILS - NEWEST TO OLDEST)
+           ================================================================= -->
+      <section class="blog-catalog-section" aria-labelledby="catalog-heading">
+        <div class="catalog-header">
+          <h2 id="catalog-heading" class="catalog-heading">All Articles</h2>
+          <span class="catalog-status" id="catalogStatus" aria-live="polite">Showing 6 essays</span>
+        </div>
+
+        <!-- Articles Grid Container (Strictly Newest to Oldest) -->
+        <div class="blog-articles-grid" id="blogGridContainer">
+
+          <!-- 1. Post 6: 20 Oktober 2026 (Design Systems) -->
+          <article class="article-bento-card has-cover" data-category="design-systems" data-tags="web design 2026 tactile ui bento grid design systems">
+            <a href="blog/memilih-karakter-visual-website-2026.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
+              <div class="article-cover-frame">
+                <img src="assets/blog/cover-style-website-2026.svg" alt="Diagram perbandingan empat gaya desain website modern 2026 dengan sistem grid taktil monokrom" class="article-cover-img" width="800" height="450" loading="lazy">
+              </div>
+            </a>
+            <div class="article-card-body">
+              <div class="card-meta">
+                <span class="category-pill-sm">Design Systems</span>
+                <span class="meta-separator" aria-hidden="true">&bull;</span>
+                <span class="reading-time">6 min read</span>
+              </div>
+              <h3 class="card-title">
+                <a href="blog/memilih-karakter-visual-website-2026.html">Memilih Karakter Visual Website di Tahun 2026 Tanpa Terjebak Tren yang Cepat Usang</a>
+              </h3>
+              <p class="card-excerpt">
+                Pelajari arah gaya visual website terbaik di tahun 2026. Temukan cara memilih desain berkarakter kuat tanpa mengorbankan kecepatan akses dan kenyamanan baca.
+              </p>
+              <div class="card-footer">
+                <time datetime="2026-10-20" class="card-date">20 Oktober 2026</time>
+                <div class="tags-cluster">
+                  <span class="tag-chip">#WebDesign2026</span>
+                  <span class="tag-chip">#TactileUI</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Post 1: 15 Oktober 2026 (Design Systems) -->
+          <article class="article-bento-card has-cover" data-category="design-systems" data-tags="css tokens neumorphism design tokens">
+            <a href="blog/membangun-sistem-desain-taktil.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
+              <div class="article-cover-frame">
+                <img src="assets/blog/cover-design-systems.svg" alt="Diagram token sistem desain taktil dan swatch warna monokrom" class="article-cover-img" width="800" height="450" loading="lazy">
+              </div>
+            </a>
+            <div class="article-card-body">
+              <div class="card-meta">
+                <span class="category-pill-sm">Design Systems</span>
+                <span class="meta-separator" aria-hidden="true">&bull;</span>
+                <span class="reading-time">6 min read</span>
+              </div>
+              <h3 class="card-title">
+                <a href="blog/membangun-sistem-desain-taktil.html">Membangun Sistem Desain Taktil: Dari Figma ke CSS Tokens</a>
+              </h3>
+              <p class="card-excerpt">
+                Bagaimana merancang efek tactile surface dan neumorphism yang tetap kontras, fungsional, dan memiliki hierarki tajam tanpa terjebak estetika artifisial berlebihan.
+              </p>
+              <div class="card-footer">
+                <time datetime="2026-10-15" class="card-date">15 Oktober 2026</time>
+                <div class="tags-cluster">
+                  <span class="tag-chip">#CSSTokens</span>
+                  <span class="tag-chip">#Neumorphism</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Post 2: 28 September 2026 (Product & Support) -->
+          <article class="article-bento-card has-cover" data-category="product-support" data-tags="ux support product mindset">
+            <a href="blog/melihat-antarmuka-dari-kacamata-dukungan-pelanggan.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
+              <div class="article-cover-frame">
+                <img src="assets/blog/cover-customer-support.svg" alt="Ilustrasi bento tiket troubleshooting dan penyelesaian antarmuka UX" class="article-cover-img" width="800" height="450" loading="lazy">
+              </div>
+            </a>
+            <div class="article-card-body">
+              <div class="card-meta">
+                <span class="category-pill-sm">Product &amp; Support</span>
+                <span class="meta-separator" aria-hidden="true">&bull;</span>
+                <span class="reading-time">4 min read</span>
+              </div>
+              <h3 class="card-title">
+                <a href="blog/melihat-antarmuka-dari-kacamata-dukungan-pelanggan.html">Melihat Antarmuka dari Kacamata Dukungan Pelanggan</a>
+              </h3>
+              <p class="card-excerpt">
+                Pelajaran berharga dari ribuan sesi troubleshooting teknis: antarmuka terbaik bukan yang paling banyak fitur animasi, melainkan yang tidak membingungkan pengguna saat mereka tertekan.
+              </p>
+              <div class="card-footer">
+                <time datetime="2026-09-28" class="card-date">28 September 2026</time>
+                <div class="tags-cluster">
+                  <span class="tag-chip">#UX</span>
+                  <span class="tag-chip">#Support</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Post 3: 14 Agustus 2026 (Reflections) -->
+          <article class="article-bento-card has-cover" data-category="reflections" data-tags="indieweb web performance minimalism">
+            <a href="blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
+              <div class="article-cover-frame">
+                <img src="assets/blog/cover-simple-web.svg" alt="Indikator performa 100 persen dan kartu RSS feed IndieWeb" class="article-cover-img" width="800" height="450" loading="lazy">
+              </div>
+            </a>
+            <div class="article-card-body">
+              <div class="card-meta">
+                <span class="category-pill-sm">Reflections</span>
+                <span class="meta-separator" aria-hidden="true">&bull;</span>
+                <span class="reading-time">5 min read</span>
+              </div>
+              <h3 class="card-title">
+                <a href="blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana.html">Mengapa Web Pribadi Perlu Kembali ke Prinsip Sederhana &amp; Cepat</a>
+              </h3>
+              <p class="card-excerpt">
+                Refleksi atas tren web modern yang semakin sarat dependensi berat. Mengapa HTML, CSS terukur, dan RSS feed kembali menjadi ruang digital paling menyenangkan untuk dirawat.
+              </p>
+              <div class="card-footer">
+                <time datetime="2026-08-14" class="card-date">14 Agustus 2026</time>
+                <div class="tags-cluster">
+                  <span class="tag-chip">#IndieWeb</span>
+                  <span class="tag-chip">#Minimalism</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Post 4: 22 Juli 2026 (Frontend & Code) -->
+          <article class="article-bento-card has-cover" data-category="frontend-code" data-tags="css motion transitions micro-interactions">
+            <a href="blog/mikro-interaksi-taktil-pada-komponen-web.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
+              <div class="article-cover-frame">
+                <img src="assets/blog/cover-micro-interactions.svg" alt="Diagram tiga status tombol: default, hover, dan pressed dengan kurva easing" class="article-cover-img" width="800" height="450" loading="lazy">
+              </div>
+            </a>
+            <div class="article-card-body">
+              <div class="card-meta">
+                <span class="category-pill-sm">Frontend &amp; Code</span>
+                <span class="meta-separator" aria-hidden="true">&bull;</span>
+                <span class="reading-time">5 min read</span>
+              </div>
+              <h3 class="card-title">
+                <a href="blog/mikro-interaksi-taktil-pada-komponen-web.html">Mikro-Interaksi Taktil: Memberi Rasa Tekan pada Tombol Web</a>
+              </h3>
+              <p class="card-excerpt">
+                Eksperimen detail transisi cubic-bezier dan perubahan bayangan ganda untuk menghasilkan sensasi klik fisik yang lembut namun tegas pada elemen antarmuka.
+              </p>
+              <div class="card-footer">
+                <time datetime="2026-07-22" class="card-date">22 Juli 2026</time>
+                <div class="tags-cluster">
+                  <span class="tag-chip">#CSSMotion</span>
+                  <span class="tag-chip">#MicroInteractions</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Post 5: 10 Juni 2026 (Design Systems) -->
+          <article class="article-bento-card has-cover" data-category="design-systems" data-tags="monochrome typography hierarchy">
+            <a href="blog/eksplorasi-monokrom-kontras-tanpa-warna-dekoratif.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
+              <div class="article-cover-frame">
+                <img src="assets/blog/cover-monochrome.svg" alt="Studi dualitas kanvas terang dan gelap dengan rasio kontras 14 banding 1" class="article-cover-img" width="800" height="450" loading="lazy">
+              </div>
+            </a>
+            <div class="article-card-body">
+              <div class="card-meta">
+                <span class="category-pill-sm">Design Systems</span>
+                <span class="meta-separator" aria-hidden="true">&bull;</span>
+                <span class="reading-time">4 min read</span>
+              </div>
+              <h3 class="card-title">
+                <a href="blog/eksplorasi-monokrom-kontras-tanpa-warna-dekoratif.html">Eksplorasi Monokrom: Menggali Kontras Tanpa Warna Dekoratif</a>
+              </h3>
+              <p class="card-excerpt">
+                Membatasi palet warna ke dua spektrum utama memaksa kita mengasah senjata paling fundamental dalam desain grafis: bobot tipografi, ritme spasi, dan kejelasan struktur.
+              </p>
+              <div class="card-footer">
+                <time datetime="2026-06-10" class="card-date">10 Juni 2026</time>
+                <div class="tags-cluster">
+                  <span class="tag-chip">#Monochrome</span>
+                  <span class="tag-chip">#Hierarchy</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Empty State (When search returns 0 items) -->
+        <div class="blog-empty-state" id="blogEmptyState" hidden>
+          <div class="empty-state-card">
+            <div class="empty-icon-wrap" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+            </div>
+            <h3 class="empty-title">No matching articles found</h3>
+            <p class="empty-desc" id="emptyStateDesc">No essays matched your search criteria. Try a different keyword or reset category filters.</p>
+            <button type="button" class="btn-reset-filter" id="resetFilterBtn">Reset All Filters</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================
+           4. BOTTOM BENTO STRIP: RSS FEED & CONNECT
+           ================================================================= -->
+      <section class="blog-bottom-bento" aria-label="RSS Feed and Community Connect">
+        
+        <!-- RSS Card -->
+        <div class="connect-bento-card rss-bento-card">
+          <div class="connect-icon-wrapper" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 11a9 9 0 0 1 9 9"></path>
+              <path d="M4 4a16 16 0 0 1 16 16"></path>
+              <circle cx="5" cy="19" r="1"></circle>
+            </svg>
+          </div>
+          <div class="connect-content">
+            <span class="connect-badge">IndieWeb / RSS</span>
+            <h3 class="connect-title">Subscribe via RSS Feed</h3>
+            <p class="connect-desc">Prefer reading in NetNewsWire, Feedly, or your favorite reader? Add semenitwasted to your feeds.</p>
+            <div class="rss-action-row">
+              <code class="rss-url-pill" id="rssUrlDisplay">semenitwasted.com/rss.xml</code>
+              <button type="button" class="btn-copy-rss" id="copyRssBtn" aria-label="Copy RSS Feed URL">
+                <span id="copyRssText">Copy URL</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Discussion Card -->
+        <div class="connect-bento-card feedback-bento-card">
+          <div class="connect-icon-wrapper" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <div class="connect-content">
+            <span class="connect-badge">Have Thoughts?</span>
+            <h3 class="connect-title">Start a Discussion</h3>
+            <p class="connect-desc">Have a question, feedback on an essay, or want to exchange ideas on tactile web design? Let's talk.</p>
+            <a href="contact.html" class="btn-reach-out">
+              <span>Send a Message</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- 21. FOOTER (Matching library.html) -->
+    <footer class="portfolio-footer">
+      <div class="footer-left">
+        <span class="footer-brand">semenitwasted</span>
+        <span class="footer-subtitle">Design · Icons · Illustration · Web</span>
+      </div>
+      <div class="footer-platforms" aria-label="Platform links">
+        <a href="https://www.linkedin.com/in/reionnyx/" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="LinkedIn">
+          <img src="assets/linkedin.svg" alt="" width="24" height="24" class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+        <a href="https://stock.adobe.com/contributor/207802543/dicky" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Adobe Stock">
+          <img src="assets/adobe-stock.svg" alt="" width="24" height="24" class="footer-platform-icon">
+        </a>
+        <a href="https://www.canva.com/p/gambar-reion" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Canva">
+          <img src="assets/canva.svg" alt="" width="24" height="24" class="footer-platform-icon">
+        </a>
+        <a href="https://thenounproject.com/creator/ReionDesign/" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="The Noun Project">
+          <img src="assets/noun-project.svg" alt="" width="24" height="24" class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+        <a href="https://www.flaticon.com/authors/reion" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Flaticon">
+          <img src="assets/flaticon.svg" alt="" width="24" height="24" class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="blog-data.js"></script>
+  <script src="blog.js"></script>
+</body>
+
+</html>

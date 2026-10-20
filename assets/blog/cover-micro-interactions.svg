@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <filter id="elevated" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="8" dy="8" stdDeviation="8" flood-color="#450D50" flood-opacity="0.22"/>
+    </filter>
+    <filter id="pressedShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#450D50" flood-opacity="0.30"/>
+    </filter>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCFAFD"/>
+      <stop offset="100%" stop-color="#F2EDF6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+
+  <!-- Bento Canvas -->
+  <g transform="translate(110, 60)">
+    <rect x="0" y="0" width="580" height="330" rx="10" fill="#FCFAFD" stroke="#E4DCE9" stroke-width="1.5" filter="url(#elevated)"/>
+
+    <!-- Header bar -->
+    <rect x="0" y="0" width="580" height="46" rx="10" fill="#F5F0F8"/>
+    <rect x="0" y="36" width="580" height="10" fill="#F5F0F8"/>
+    <line x1="0" y1="46" x2="580" y2="46" stroke="#E4DCE9" stroke-width="1"/>
+
+    <circle cx="28" cy="23" r="5" fill="#D5CCD9"/>
+    <circle cx="44" cy="23" r="5" fill="#D5CCD9"/>
+    <circle cx="60" cy="23" r="5" fill="#D5CCD9"/>
+    <text x="550" y="27" text-anchor="end" font-family="'Rubik', sans-serif" font-size="11" font-weight="600" fill="#756A7D" letter-spacing="1">STATE DIAGRAM: DEFAULT · HOVER · ACTIVE</text>
+
+    <!-- 3 Button State Columns -->
+    <g transform="translate(36, 70)">
+      
+      <!-- 1. Default State -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="150" height="150" rx="8" fill="#F5F0F8" stroke="#E4DCE9" stroke-width="1"/>
+        <!-- Button in Default -->
+        <rect x="20" y="44" width="110" height="44" rx="10" fill="#FCFAFD" stroke="#E4DCE9" stroke-width="1" filter="url(#elevated)"/>
+        <text x="75" y="71" text-anchor="middle" font-family="'Rubik', sans-serif" font-size="12" font-weight="600" fill="#211B28">Rest</text>
+        <text x="75" y="118" text-anchor="middle" font-family="'Rubik', sans-serif" font-size="10" fill="#756A7D">translateY(0)</text>
+      </g>
+
+      <!-- 2. Hover State -->
+      <g transform="translate(178, 0)">
+        <rect x="0" y="0" width="150" height="150" rx="8" fill="#F5F0F8" stroke="#E4DCE9" stroke-width="1"/>
+        <!-- Button in Hover (Lifted) -->
+        <rect x="20" y="40" width="110" height="44" rx="10" fill="#FCFAFD" stroke="#E4DCE9" stroke-width="1" filter="url(#elevated)"/>
+        <text x="75" y="67" text-anchor="middle" font-family="'Rubik', sans-serif" font-size="12" font-weight="600" fill="#211B28">Hover</text>
+        <text x="75" y="118" text-anchor="middle" font-family="'Rubik', sans-serif" font-size="10" fill="#450D50">translateY(-2px)</text>
+      </g>
+
+      <!-- 3. Active / Pressed State -->
+      <g transform="translate(356, 0)">
+        <rect x="0" y="0" width="150" height="150" rx="8" fill="#211B28" stroke="#3B3248" stroke-width="1"/>
+        <!-- Button Pressed -->
+        <rect x="20" y="46" width="110" height="44" rx="10" fill="#211B28" stroke="#554A62" stroke-width="1" filter="url(#pressedShadow)"/>
+        <text x="75" y="73" text-anchor="middle" font-family="'Rubik', sans-serif" font-size="12" font-weight="600" fill="#FFFFFF">Pressed</text>
+        <text x="75" y="118" text-anchor="middle" font-family="'Rubik', sans-serif" font-size="10" fill="#B8AFC0">--shadow-pressed</text>
+      </g>
+
+    </g>
+
+    <!-- Curve Formula Strip -->
+    <g transform="translate(36, 240)">
+      <rect x="0" y="0" width="506" height="66" rx="8" fill="#F0EDF4" stroke="#E4DCE9" stroke-width="1"/>
+      <text x="24" y="28" font-family="'Rubik', sans-serif" font-size="11" font-weight="600" fill="#211B28">Tactile Physics Token:</text>
+      <text x="24" y="48" font-family="monospace" font-size="12" fill="#450D50">--ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);  --dur-micro: 150ms;</text>
+    </g>
+  </g>
+</svg>

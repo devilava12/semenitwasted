@@ -8,6 +8,7 @@
     { id: 'portfolio', label: 'Portfolio', href: 'portfolio.html' },
     { id: 'about', label: 'About', href: 'about.html' },
     { id: 'library', label: 'Library', href: 'library.html' },
+    { id: 'blog', label: 'Blog', href: 'blog.html' },
     { id: 'contact', label: 'Contact', href: 'contact.html' }
   ];
 
