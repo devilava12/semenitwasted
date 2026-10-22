@@ -29,6 +29,12 @@
   --shadow-hover: 8px 8px 8px rgb(69 13 80 / 22%);
   --shadow-pressed: 2px 2px 2px rgb(69 13 80 / 25%);
 
+  /* Emil Kowalski Easing & Spring Tokens (tactile-micro-interactions/SKILL.md) */
+  --ease-spring-snappy: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-press: cubic-bezier(0.4, 0, 0.2, 1);
+
   /* Radius (Signature 10px from SKILL.md) */
   --radius-card: 10px;
   --radius-sm: 8px;
@@ -294,8 +300,10 @@ h1, h2, h3, h4 {
 }
 
 .category-pill:active {
-  transform: translateY(0);
-  box-shadow: var(--shadow-pressed, 2px 2px 2px rgb(69 13 80 / 30%));
+  transform: translateY(1px) scale(0.985);
+  box-shadow: 0 2px 4px rgba(69, 13, 80, 0.16),
+              inset 0 1px 2px rgba(33, 27, 40, 0.12);
+  transition-duration: 0.06s;
 }
 
 .category-pill.active {
@@ -520,8 +528,10 @@ h1, h2, h3, h4 {
 }
 
 .featured-read-btn:active {
-  transform: translateY(0);
-  box-shadow: var(--shadow-pressed, 2px 2px 2px rgb(69 13 80 / 35%));
+  transform: translateY(1px) scale(0.985);
+  box-shadow: 0 2px 4px rgba(69, 13, 80, 0.16),
+              inset 0 1px 2px rgba(33, 27, 40, 0.12);
+  transition-duration: 0.06s;
 }
 
 /* --------------------------------------------------------------------------
@@ -585,8 +595,10 @@ h1, h2, h3, h4 {
 }
 
 .article-bento-card:active {
-  transform: translateY(0);
-  box-shadow: var(--shadow-pressed, 2px 2px 2px rgb(69 13 80 / 25%));
+  transform: translateY(1px) scale(0.985);
+  box-shadow: 0 2px 4px rgba(69, 13, 80, 0.16),
+              inset 0 1px 2px rgba(33, 27, 40, 0.12);
+  transition-duration: 0.06s;
 }
 
 .article-cover-link {
@@ -852,7 +864,9 @@ h1, h2, h3, h4 {
 }
 
 .btn-copy-rss:active {
-  transform: translateY(0);
+  transform: translateY(1px) scale(0.985);
+  box-shadow: 0 2px 4px rgba(69, 13, 80, 0.16);
+  transition-duration: 0.06s;
 }
 
 .btn-reach-out {
@@ -876,6 +890,12 @@ h1, h2, h3, h4 {
   transform: translateY(-1px);
 }
 
+.btn-reach-out:active {
+  transform: translateY(1px) scale(0.985);
+  box-shadow: 0 2px 4px rgba(69, 13, 80, 0.16);
+  transition-duration: 0.06s;
+}
+
 /* --------------------------------------------------------------------------
    07. Article Post Detail & Reading Experience
    -------------------------------------------------------------------------- */
@@ -887,7 +907,7 @@ h1, h2, h3, h4 {
   width: 0%;
   background: var(--color-dark, #211B28);
   z-index: 9999;
-  transition: width 80ms ease-out;
+  transition: width 0.1s var(--ease-spring-snappy, cubic-bezier(0.16, 1, 0.3, 1));
 }
 
 [data-theme="dark"] .reading-progress-bar {
@@ -1736,6 +1756,34 @@ h1, h2, h3, h4 {
     flex-direction: column;
     padding: 28px 20px;
   }
+}
+
+/* --------------------------------------------------------------------------
+   09. Tactile Keyboard Focus Visibility (tactile-micro-interactions/SKILL.md)
+   -------------------------------------------------------------------------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+.category-pill:focus-visible,
+.article-bento-card:focus-visible,
+.featured-read-btn:focus-visible,
+.btn-copy-rss:focus-visible,
+.btn-reach-out:focus-visible,
+.post-nav-card:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--background, #F0EDF4), 0 0 0 4px var(--color-shadow, #450D50);
+}
+
+[data-theme="dark"] a:focus-visible,
+[data-theme="dark"] button:focus-visible,
+[data-theme="dark"] input:focus-visible,
+[data-theme="dark"] .category-pill:focus-visible,
+[data-theme="dark"] .article-bento-card:focus-visible,
+[data-theme="dark"] .featured-read-btn:focus-visible,
+[data-theme="dark"] .btn-copy-rss:focus-visible,
+[data-theme="dark"] .btn-reach-out:focus-visible,
+[data-theme="dark"] .post-nav-card:focus-visible {
+  box-shadow: 0 0 0 2px #211B28, 0 0 0 4px #A580BF;
 }
 
 /* --------------------------------------------------------------------------

@@ -29,8 +29,8 @@
       featured: true,
       excerpt: 'Pelajari arah gaya visual website terbaik di tahun 2026. Temukan cara memilih desain berkarakter kuat tanpa mengorbankan kecepatan akses dan kenyamanan baca.',
       contentUrl: 'blog/memilih-karakter-visual-website-2026.html',
-      coverImage: 'assets/blog/cover-style-website-2026.svg',
-      coverAlt: 'Diagram perbandingan empat gaya desain website modern 2026 dengan sistem grid taktil monokrom',
+      coverImage: 'assets/blog/cover-style-website-2026.webp',
+      coverAlt: 'Ilustrasi studio desain editorial senja dengan tipografi Memilih Karakter Visual Website di Tahun 2026 Tanpa Terjebak Tren yang Cepat Usang, meja kerja desainer, buku web design, dan laptop berlatar pemandangan kota ungu',
       author: 'I Putu Dicky Adi Pranatha'
     },
     {
@@ -73,15 +73,15 @@
       title: 'Mengapa Web Pribadi Perlu Kembali ke Prinsip Sederhana & Cepat',
       date: '2026-08-14',
       formattedDate: '14 Agustus 2026',
-      readingTime: '5 min read',
+      readingTime: '6 min read',
       category: 'reflections',
       categoryLabel: 'Reflections',
       tags: ['IndieWeb', 'Web Performance', 'Minimalism'],
       featured: false,
       excerpt: 'Refleksi atas tren web modern yang semakin sarat dependensi berat. Mengapa HTML, CSS terukur, dan RSS feed kembali menjadi ruang digital paling menyenangkan untuk dirawat.',
       contentUrl: 'blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana.html',
-      coverImage: 'assets/blog/cover-simple-web.svg',
-      coverAlt: 'Indikator performa 100 persen dan kartu RSS feed IndieWeb',
+      coverImage: 'assets/blog/cover-simple-web.webp',
+      coverAlt: 'Ilustrasi studio kerja di teras pesisir yang cerah dengan laptop menampilkan kode HTML sederhana, kartu melayang HTML, CSS, Fast Instant Loading, RSS, dan tumpukan buku web development',
       author: 'I Putu Dicky Adi Pranatha'
     },
     {
