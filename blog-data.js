@@ -17,6 +17,23 @@
 
   const BLOG_POSTS = [
     {
+      id: 'post-8',
+      slug: 'php2shell-dan-sejarah-php',
+      title: 'PHP2Shell Mengguncang Sebagian Besar Web, dan Sejarah PHP Menjelaskan Kenapa Itu Bisa Terjadi',
+      date: '2026-10-23',
+      formattedDate: '23 Oktober 2026',
+      readingTime: '12 min read',
+      category: 'frontend-code',
+      categoryLabel: 'Frontend & Code',
+      tags: ['PHP', 'Web Security', 'CVE-2026-109618', 'Backend Architecture'],
+      featured: false,
+      excerpt: 'Bedah tuntas krisis PHP2Shell, bagaimana celah RCE mesin PHP ditemukan, konsekuensinya bagi jutaan server, serta akar sejarah 30 tahun PHP.',
+      contentUrl: 'blog/php2shell-dan-sejarah-php.html',
+      coverImage: 'assets/blog/Ruina%E2%80%99s%20Neon%20Cybersecurity%20Crisis.webp',
+      coverAlt: 'Ilustrasi Ruina panik di depan laptop saat krisis keamanan siber PHP2Shell melanda server web',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
       id: 'post-7',
       slug: 'kenapa-pesan-error-cantik-membuat-pengguna-panik',
       title: 'Kenapa Pesan Error yang Terlihat Cantik Justru Membuat Pengguna Makin Panik',

@@ -82,7 +82,7 @@
           <div class="blog-category-filter" role="group" aria-label="Filter by category" id="categoryFilterGroup">
             <button type="button" class="category-pill active" data-category="all" aria-pressed="true">
               <span>All Topics</span>
-              <span class="pill-count" id="count-all">6</span>
+              <span class="pill-count" id="count-all">8</span>
             </button>
             <button type="button" class="category-pill" data-category="design-systems" aria-pressed="false">
               <span>Design Systems</span>
@@ -90,7 +90,7 @@
             </button>
             <button type="button" class="category-pill" data-category="frontend-code" aria-pressed="false">
               <span>Frontend &amp; Code</span>
-              <span class="pill-count" id="count-frontend-code">1</span>
+              <span class="pill-count" id="count-frontend-code">2</span>
             </button>
             <button type="button" class="category-pill" data-category="product-support" aria-pressed="false">
               <span>Product &amp; Support</span>
@@ -164,13 +164,42 @@
       <section class="blog-catalog-section" aria-labelledby="catalog-heading">
         <div class="catalog-header">
           <h2 id="catalog-heading" class="catalog-heading">All Articles</h2>
-          <span class="catalog-status" id="catalogStatus" aria-live="polite">Showing 7 essays</span>
+          <span class="catalog-status" id="catalogStatus" aria-live="polite">Showing 8 essays</span>
         </div>
 
         <!-- Articles Grid Container (Strictly Newest to Oldest) -->
         <div class="blog-articles-grid" id="blogGridContainer">
 
-          <!-- 1. Post 7: 22 Oktober 2026 (Product & Support) -->
+          <!-- 1. Post 8: 23 Oktober 2026 (Frontend & Code / Web Security) -->
+          <article class="article-bento-card has-cover" data-category="frontend-code" data-tags="php web security cve-2026-109618 backend architecture">
+            <a href="blog/php2shell-dan-sejarah-php.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
+              <div class="article-cover-frame">
+                <img src="assets/blog/Ruina%E2%80%99s%20Neon%20Cybersecurity%20Crisis.webp" alt="Ilustrasi Ruina panik di depan laptop saat krisis keamanan siber PHP2Shell melanda server web" class="article-cover-img" width="800" height="450" loading="lazy">
+              </div>
+            </a>
+            <div class="article-card-body">
+              <div class="card-meta">
+                <span class="category-pill-sm">Frontend &amp; Code</span>
+                <span class="meta-separator" aria-hidden="true">&bull;</span>
+                <span class="reading-time">12 min read</span>
+              </div>
+              <h3 class="card-title">
+                <a href="blog/php2shell-dan-sejarah-php.html">PHP2Shell Mengguncang Sebagian Besar Web, dan Sejarah PHP Menjelaskan Kenapa Itu Bisa Terjadi</a>
+              </h3>
+              <p class="card-excerpt">
+                Bedah tuntas krisis PHP2Shell, bagaimana celah RCE mesin PHP ditemukan, konsekuensinya bagi jutaan server, serta akar sejarah 30 tahun PHP.
+              </p>
+              <div class="card-footer">
+                <time datetime="2026-10-23" class="card-date">23 Oktober 2026</time>
+                <div class="tags-cluster">
+                  <span class="tag-chip">#PHP</span>
+                  <span class="tag-chip">#WebSecurity</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Post 7: 22 Oktober 2026 (Product & Support) -->
           <article class="article-bento-card has-cover" data-category="product-support" data-tags="ux writing error state product support customer experience">
             <a href="blog/kenapa-pesan-error-cantik-membuat-pengguna-panik.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
               <div class="article-cover-frame">
