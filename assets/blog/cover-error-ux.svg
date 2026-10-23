@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <filter id="cardShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="6" dy="8" stdDeviation="10" flood-color="#450D50" flood-opacity="0.18"/>
+    </filter>
+    <linearGradient id="softBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCFAFD"/>
+      <stop offset="100%" stop-color="#F2EDF6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#softBg)"/>
+
+  <!-- Subtle Geometric Accents -->
+  <g opacity="0.6" stroke="#E4DCE9" stroke-width="1" stroke-dasharray="4 6">
+    <line x1="100" y1="0" x2="100" y2="450"/>
+    <line x1="700" y1="0" x2="700" y2="450"/>
+    <circle cx="400" cy="225" r="190" fill="none"/>
+  </g>
+
+  <!-- Central Support & UX Error State Bento -->
+  <g transform="translate(130, 60)">
+    <!-- Backing Frame -->
+    <rect x="0" y="0" width="540" height="330" rx="12" fill="#FCFAFD" stroke="#E4DCE9" stroke-width="1.5" filter="url(#cardShadow)"/>
+
+    <!-- Top Badge Bar -->
+    <rect x="0" y="0" width="540" height="46" rx="12" fill="#F5F0F8"/>
+    <rect x="0" y="36" width="540" height="10" fill="#F5F0F8"/>
+    <line x1="0" y1="46" x2="540" y2="46" stroke="#E4DCE9" stroke-width="1"/>
+
+    <circle cx="28" cy="23" r="5" fill="#D5CCD9"/>
+    <circle cx="44" cy="23" r="5" fill="#D5CCD9"/>
+    <circle cx="60" cy="23" r="5" fill="#D5CCD9"/>
+    <text x="512" y="27" text-anchor="end" font-family="'Rubik', -apple-system, sans-serif" font-size="11" font-weight="600" fill="#756A7D" letter-spacing="1">UX ERROR ARCHITECTURE</text>
+
+    <!-- Error State Left: Cluttered & Ambiguous -->
+    <g transform="translate(30, 68)">
+      <rect x="0" y="0" width="215" height="150" rx="8" fill="#F5F0F8" stroke="#E4DCE9" stroke-width="1" filter="url(#cardShadow)"/>
+      <rect x="16" y="16" width="70" height="12" rx="4" fill="#8C8295"/>
+      <text x="20" y="25" font-family="'Rubik', -apple-system, sans-serif" font-size="8" font-weight="600" fill="#FFFFFF">KLISE &amp; AMBIGU</text>
+      
+      <!-- Sad / Confused Icon Placeholder -->
+      <circle cx="40" cy="56" r="16" fill="#E4DCE9"/>
+      <path d="M34 52 Q40 48 46 52 M35 62 Q40 58 45 62" stroke="#756A7D" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <circle cx="36" cy="54" r="1.5" fill="#756A7D"/>
+      <circle cx="44" cy="54" r="1.5" fill="#756A7D"/>
+
+      <rect x="68" y="46" width="125" height="8" rx="3" fill="#211B28"/>
+      <rect x="68" y="60" width="110" height="6" rx="3" fill="#BDB3C3"/>
+      <rect x="16" y="86" width="180" height="6" rx="3" fill="#D5CCD9"/>
+      <rect x="16" y="98" width="140" height="6" rx="3" fill="#D5CCD9"/>
+
+      <!-- Dead-end Button -->
+      <rect x="16" y="118" width="60" height="18" rx="4" fill="#D5CCD9"/>
+      <text x="46" y="130" text-anchor="middle" font-family="'Rubik', -apple-system, sans-serif" font-size="8" font-weight="600" fill="#756A7D">TUTUP</text>
+    </g>
+
+    <!-- Transform Arrow Flow -->
+    <g transform="translate(255, 134)" stroke="#211B28" stroke-width="2" fill="none">
+      <path d="M0 10 L28 10 M20 2 L28 10 L20 18"/>
+    </g>
+
+    <!-- Error State Right: 3-Pillar Solution -->
+    <g transform="translate(295, 68)">
+      <rect x="0" y="0" width="215" height="150" rx="8" fill="#211B28" stroke="#3B3248" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="16" y="16" width="76" height="12" rx="4" fill="#450D50"/>
+      <text x="20" y="25" font-family="'Rubik', -apple-system, sans-serif" font-size="8" font-weight="600" fill="#D8B5E4">3 PILAR SOLUSI</text>
+
+      <!-- Clear Fact & Data Safe Badge -->
+      <rect x="16" y="44" width="130" height="8" rx="3" fill="#FCFAFD"/>
+      <rect x="16" y="58" width="180" height="6" rx="3" fill="#8C8295"/>
+      <rect x="16" y="70" width="150" height="6" rx="3" fill="#8C8295"/>
+
+      <!-- Data Safe Status Pill -->
+      <rect x="16" y="86" width="112" height="16" rx="999" fill="#2E2437" stroke="#450D50" stroke-width="1"/>
+      <circle cx="26" cy="94" r="3" fill="#52B788"/>
+      <text x="34" y="97" font-family="'Rubik', -apple-system, sans-serif" font-size="8" font-weight="500" fill="#E4DCE9">Draf Aman Tersimpan</text>
+
+      <!-- Recovery Button -->
+      <rect x="16" y="114" width="110" height="22" rx="4" fill="#FCFAFD"/>
+      <text x="71" y="128" text-anchor="middle" font-family="'Rubik', -apple-system, sans-serif" font-size="9" font-weight="600" fill="#211B28">Coba Simpan Ulang</text>
+    </g>
+
+    <!-- Bottom Lesson Quote Banner -->
+    <g transform="translate(30, 236)">
+      <rect x="0" y="0" width="480" height="74" rx="8" fill="#F0EDF4" stroke="#E4DCE9" stroke-width="1"/>
+      <text x="20" y="26" font-family="'Rubik', -apple-system, sans-serif" font-size="11" font-weight="600" fill="#211B28">Tiga Pilar Utama Pesan Kesalahan:</text>
+      <text x="20" y="46" font-family="'Rubik', -apple-system, sans-serif" font-size="11" fill="#4B4054">1. Status Kejadian Riil · 2. Kepastian Keamanan Data · 3. Jalur Pemulihan Mandiri</text>
+      <text x="20" y="62" font-family="'Rubik', -apple-system, sans-serif" font-size="10" fill="#756A7D">Meredakan kepanikan pengguna sebelum berubah menjadi tiket komplain operasional.</text>
+    </g>
+  </g>
+</svg>

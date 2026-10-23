@@ -17,6 +17,23 @@
 
   const BLOG_POSTS = [
     {
+      id: 'post-7',
+      slug: 'kenapa-pesan-error-cantik-membuat-pengguna-panik',
+      title: 'Kenapa Pesan Error yang Terlihat Cantik Justru Membuat Pengguna Makin Panik',
+      date: '2026-10-22',
+      formattedDate: '22 Oktober 2026',
+      readingTime: '5 min read',
+      category: 'product-support',
+      categoryLabel: 'Product & Support',
+      tags: ['UX Writing', 'Error State', 'Product Support', 'Customer Experience'],
+      featured: false,
+      excerpt: 'Pesan error visual yang estetik sering gagal menenangkan pengguna. Pelajari cara merancang pesan kesalahan yang jelas, solutif, dan mengurangi tiket komplain.',
+      contentUrl: 'blog/kenapa-pesan-error-cantik-membuat-pengguna-panik.html',
+      coverImage: 'assets/blog/Overwhelmed%20by%20Error%20Messages.webp',
+      coverAlt: 'Ilustrasi pengguna merasa kewalahan dan panik dikelilingi berbagai jendela pesan error pop-up di depan laptop',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
       id: 'post-6',
       slug: 'memilih-karakter-visual-website-2026',
       title: 'Memilih Karakter Visual Website di Tahun 2026 Tanpa Terjebak Tren yang Cepat Usang',
