@@ -65,8 +65,6 @@ Semantic colors such as success, warning, error, and info are allowed when a fun
 
 Images and user-supplied artwork may naturally contain their own colors.
 
-Lower-emphasis text (labels, metadata, supporting text) uses `--color-dark` at a reduced opacity instead of a new gray. See section 22. Semantic colors are defined only when a state needs them: choose values that reach at least 4.5:1 contrast on `--color-light`, and always pair them with text or an icon so color is never the only signal.
-
 ---
 
 ## 3. Shadow system
@@ -107,12 +105,6 @@ Use when an object sits behind or overlaps another object and needs additional d
 - Do not put a shadow on every element.
 - Neumorphism is a surface treatment, not the default behavior of every component.
 - Prefer depth through hierarchy and spacing before adding more shadow.
-
-All signature shadows fall toward the bottom right, as if lit from the top left. Do not mix shadow directions on one page.
-
-A primary shadow extends roughly 34px past the right and bottom edges of its surface. Do not place such a surface inside an `overflow: hidden` ancestor without leaving that much room, or the shadow will be clipped.
-
-Hover and pressed shadows for small controls are defined in section 22, so the signature values above stay untouched.
 
 ---
 
@@ -218,8 +210,6 @@ Do not use arbitrary odd-number values for:
 
 If a technical constraint produces an odd value, keep it isolated rather than redesigning the whole system around it.
 
-Hairline border widths (1px, 2px), focus ring widths, and line-heights are exempt from the even-number rule because they are not layout dimensions.
-
 ---
 
 ## 7. Grid system
@@ -244,8 +234,6 @@ When a layout requires a different number of columns for a specific component, t
 
 Do not force a 12-column grid into a layout where it creates unnecessary complexity.
 
-The default gutter is 24px on desktop, 20px on tablet, and 16px on mobile. Breakpoints follow `references/responsive.md` (tablet starts at 768px, desktop at 1024px). If that file is unavailable, use those same two values.
-
 ---
 
 ## 8. Container system
@@ -265,8 +253,6 @@ A larger container may be used when the page genuinely benefits from wide visual
 The container should establish a consistent alignment line across the page.
 
 Avoid unrelated sections using arbitrary independent maximum widths unless their content requires it.
-
-A good default for the fluid padding is `clamp(16px, 4vw, 48px)`.
 
 ---
 
@@ -354,8 +340,6 @@ Do not make every button visually dominant.
 
 Buttons must remain recognizable as buttons and must not depend on animation to communicate their function.
 
-Every button and other control needs a tap area of at least 44px by 44px. An icon-only button gets padding or a hit area to reach that size. Hover, pressed, focus, and disabled states are specified in section 22.
-
 ---
 
 ## 12. Borders
@@ -374,8 +358,6 @@ Use borders when they:
 - solve a specific visual ambiguity
 
 Do not outline every card and section by default.
-
-Because the system separates surfaces with shadow, those boundaries disappear in forced-colors (Windows high contrast) mode. Give cards, buttons, and inputs a `1px solid transparent` border at rest. It is invisible normally but becomes a visible system-color border in forced-colors mode. See section 24.
 
 ---
 
@@ -403,8 +385,6 @@ When the project already has an established Rubik implementation, preserve it.
 
 If the user explicitly requests another typeface, follow the user's instruction.
 
-Load Rubik self-hosted as a variable font when possible, with `font-display: swap` and a system fallback stack so layout stays stable while it loads: `'Rubik', system-ui, -apple-system, 'Segoe UI', sans-serif`. Suggested weights are 400 for body, 500 for labels and buttons, and 600 or 700 for headings. Keep line length around 60 to 75 characters. The full type scale is defined in `references/typography.md`.
-
 ---
 
 ## 14. Visual density
@@ -425,6 +405,74 @@ Do not fill empty space merely because it exists.
 Whitespace should help establish hierarchy and make the important content easier to see.
 
 Spacious does not mean unnecessarily long pages. Content should remain purposeful.
+
+## Visual Density and Whitespace
+
+The semenitwasted design system favors a spacious, breathable visual composition.
+
+Whitespace is an intentional part of the design system, not unused space.
+
+### Density
+
+Prefer comfortable visual density over tightly packed layouts.
+
+Use available space to:
+
+- establish hierarchy
+- separate unrelated content
+- group related elements
+- create visual rhythm
+- give important content room to breathe
+- reduce visual fatigue
+
+Do not fill available space simply because it is available.
+
+Do not compress content into smaller areas when additional whitespace improves clarity or hierarchy.
+
+### Spacing Relationships
+
+Spacing should communicate relationships.
+
+Use smaller spacing for elements that belong together:
+
+- label → heading
+- heading → description
+- icon → text
+- text → action
+
+Use larger spacing to separate independent groups:
+
+- component → component
+- content group → content group
+- section → section
+- major page regions
+
+Spacing should therefore increase with hierarchy rather than using one universal gap.
+
+### Section Breathing Room
+
+Major sections should have enough vertical space to feel visually distinct.
+
+Prefer generous section spacing when the page benefits from clear separation.
+
+Do not remove whitespace simply to make more content visible within the first viewport.
+
+The page should feel calm, deliberate, and comfortable to explore.
+
+### Controlled Spaciousness
+
+Spacious does not mean excessive.
+
+Avoid:
+
+- unnecessarily large gaps
+- excessive empty areas that weaken hierarchy
+- pushing related content too far apart
+- creating whitespace without a structural purpose
+
+The goal is **generous but controlled whitespace**.
+
+Use the established spacing scale and choose values according to hierarchy, content density, viewport size, and visual balance.
 
 ---
 
@@ -465,8 +513,6 @@ Do not add generic stock or generated imagery simply to fill an empty area.
 
 When imagery is decorative, keep it subordinate to the page's actual content.
 
-Give every image explicit `width` and `height` or an `aspect-ratio`, inside a container with the 10px radius, so it cannot cause layout shift. Use `object-fit: cover` only where the crop is acceptable for the subject. When no asset was supplied, use a placeholder block instead of stock imagery (see the placeholder rules in `SKILL.md`).
-
 ---
 
 ## 17. Interaction surfaces
@@ -500,8 +546,6 @@ Disabled:
 - visibly unavailable without destroying readability
 
 Do not use dramatic scaling, glow, or color explosions for normal interaction.
-
-Concrete values for hover, pressed, focus, and disabled states are defined in section 22.
 
 ---
 
@@ -567,169 +611,3 @@ Before finalizing a page, ask:
 - Does the design remain coherent without relying on animation?
 
 If most answers are yes, the page is likely consistent with the design system.
-
----
-
-## 21. Design tokens
-
-All values below come from sections 1 to 20 unless marked **derived**. Derived values were added to fill gaps (see section 22) and should be confirmed or replaced if the project has established values.
-
-```css
-:root {
-  /* Core colors */
-  --color-light: #F0EDF4;
-  --color-dark: #211B28;
-  --color-shadow: #450D50;
-
-  /* Signature shadows (preserve exactly) */
-  --shadow-primary: 18px 18px 16px rgb(69 13 80 / 20%);
-  --shadow-depth: 4px 4px 4px rgb(69 13 80 / 25%);
-
-  /* Radius and container */
-  --radius: 10px;
-  --container-max: 1200px;
-  --page-pad: clamp(16px, 4vw, 48px);
-
-  /* Spacing scale */
-  --space-4: 4px;   --space-8: 8px;   --space-12: 12px;  --space-16: 16px;
-  --space-20: 20px; --space-24: 24px; --space-32: 32px;  --space-40: 40px;
-  --space-48: 48px; --space-56: 56px; --space-64: 64px;  --space-80: 80px;
-  --space-96: 96px; --space-128: 128px;
-
-  /* Derived: text tones (contrast verified on --color-light) */
-  --color-text: var(--color-dark);                  /* 14.48:1 */
-  --color-text-muted: rgb(33 27 40 / 70%);          /* 5.78:1  */
-  --color-text-disabled: rgb(33 27 40 / 50%);       /* 3.16:1, disabled only */
-  --color-border-control: rgb(33 27 40 / 50%);      /* 3.16:1, input boundary */
-
-  /* Derived: shadow states for small controls */
-  --shadow-hover: 8px 8px 8px rgb(69 13 80 / 22%);
-  --shadow-pressed: 2px 2px 2px rgb(69 13 80 / 25%);
-
-  /* Derived: focus and touch */
-  --focus-ring: 2px solid var(--color-dark);
-  --focus-offset: 2px;
-  --tap-min: 44px;
-
-  /* Derived: gutter (mobile first) */
-  --gutter: 16px;
-}
-
-@media (min-width: 768px)  { :root { --gutter: 20px; } }
-@media (min-width: 1024px) { :root { --gutter: 24px; } }
-```
-
-Motion tokens are defined in `references/animation.md` section 26. Keep both token sets together in the page's stylesheet.
-
----
-
-## 22. State and tone tokens
-
-These fill the parts of the system that sections 11 and 17 describe but do not give values for.
-
-### Text tones
-
-| Role | On light surface | On dark surface | Contrast |
-|---|---|---|---|
-| Primary text | `--color-dark` | `--color-light` | 14.48:1 |
-| Muted (labels, metadata, supporting text) | `rgb(33 27 40 / 70%)` | `rgb(240 237 244 / 70%)` | 5.78:1 / 7.69:1 |
-| Disabled | `rgb(33 27 40 / 50%)` | `rgb(240 237 244 / 50%)` | 3.16:1 / 4.58:1 |
-
-Use muted text for secondary information, never for essential content smaller than body size. Disabled text is exempt from the normal 4.5:1 requirement but must stay readable.
-
-### Shadow states
-
-| Element | Rest | Hover | Pressed |
-|---|---|---|---|
-| Button or small control | `--shadow-depth` | `--shadow-hover` | `--shadow-pressed` |
-| Elevated or interactive card | `--shadow-primary` | `--shadow-primary` plus `translateY(-2px)` | `--shadow-primary`, no movement |
-
-Cards keep the exact signature shadow and show hover through movement only, so the signature values are never altered. `--shadow-hover` and `--shadow-pressed` are **derived**, not original values.
-
-### Focus
-
-- Ring: `outline: 2px solid var(--color-dark); outline-offset: 2px;` on light surfaces, and `--color-light` on dark surfaces. Both reach 14.48:1 on their own surface.
-- Use `:focus-visible` so the ring shows for keyboard users.
-- The ring is an outline shape, so it does not rely on color alone.
-
-### Disabled
-
-- Use the `disabled` attribute (or `aria-disabled="true"` for links) rather than styling alone.
-- Text uses the disabled tone, the shadow is removed, and there is no hover movement.
-- Keep the 1px border visible so the control is still recognizable.
-
----
-
-## 23. Form controls and icons
-
-### Form controls
-
-- Inputs, textareas, and selects use the 10px radius.
-- Every field has a visible label above it. A placeholder is never the only label.
-- The field boundary is `1px solid var(--color-border-control)`, which reaches 3.16:1 on the light surface, so the control is perceivable without relying on shadow.
-- Focus uses the focus ring from section 22.
-- Errors use text and an icon as well as a semantic color. Link the message with `aria-describedby` and set `aria-invalid="true"`.
-- Required fields are marked in text, not by color alone.
-
-### Icons
-
-- Use inline SVG with `currentColor` so icons follow the text tones.
-- Use even sizes (16, 20, 24px) and one consistent stroke width.
-- Decorative icons get `aria-hidden="true"`. Icon-only buttons need an accessible name.
-- Do not add icons only to decorate.
-
----
-
-## 24. Themes and forced colors
-
-### Themes
-
-The default page is light: `--color-light` as the surface and `--color-dark` as text. Dark surfaces are for emphasis (navigation, a featured block, a primary control), not a full dark theme.
-
-The signature shadow `#450D50` against `#211B28` has only 1.14:1 contrast, so depth does not read on dark surfaces. On a dark surface, separate elements with a surface step or a `1px solid rgb(240 237 244 / 50%)` border instead of relying on the shadow.
-
-A full dark theme is not part of the default system. Build one only on request, with the roles swapped (light as text, dark as surface), and record it as an assumption.
-
-For a light-only page, declare it in `<head>` so form controls and scrollbars match:
-
-```html
-<meta name="color-scheme" content="light">
-<meta name="theme-color" content="#F0EDF4">
-```
-
-### Forced colors
-
-Shadows are removed in forced-colors mode, so controls need a border that survives it. The `1px solid transparent` border from section 12 becomes visible there. Keep focus on `outline`, which forced-colors mode preserves.
-
-```css
-.card, .button, .input {
-  border: 1px solid transparent;
-}
-
-@media (forced-colors: active) {
-  .card, .button, .input {
-    border-color: CanvasText;
-  }
-}
-```
-
----
-
-## 25. Additional checks
-
-Run these together with the signature test in section 20:
-
-- [ ] Only the three core colors, the derived opacity tones, and functional semantic colors are used.
-- [ ] Signature shadow values are exact, and derived state shadows appear only on small controls.
-- [ ] No signature shadow is clipped by an `overflow: hidden` ancestor.
-- [ ] All shadows fall in the same direction.
-- [ ] Lower-emphasis text uses the muted tone and keeps at least 4.5:1 contrast.
-- [ ] Border widths are the only odd values. Every padding, margin, gap, and fixed size is on the even scale.
-- [ ] Every control has a tap area of at least 44px.
-- [ ] Inputs have a visible label and a boundary with at least 3:1 contrast.
-- [ ] The focus ring is visible on both light and dark surfaces.
-- [ ] Cards, buttons, and inputs keep a visible boundary in forced-colors mode.
-- [ ] Dark surfaces do not depend on the purple shadow for separation.
-- [ ] Rubik loads with a fallback stack and `font-display: swap`, without a layout jump.
-- [ ] Images have explicit dimensions or an `aspect-ratio`.
-- [ ] Semantic colors appear only for a real functional state, and always with text or an icon.

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node2Shell Membongkar Celah di Perbatasan JavaScript dan C, dan Sejarah Node.js Menjelaskan Asalnya | semenitwasted</title>
+  <meta name="description"
+    content="Bedah CVE-2026-111497 (Node2Shell): bug decoder Brotli di Node.js, cara ditemukan, kenapa bisa ada, dan sejarah 17 tahun Node yang melatarinya.">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo-nav.svg">
+  <link rel="canonical" href="https://semenitwasted.com/blog/node2shell-dan-sejarah-nodejs.html">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://semenitwasted.com/blog/node2shell-dan-sejarah-nodejs.html">
+  <meta property="og:title" content="Node2Shell Membongkar Celah di Perbatasan JavaScript dan C, dan Sejarah Node.js Menjelaskan Asalnya | semenitwasted">
+  <meta property="og:description"
+    content="Bedah CVE-2026-111497 (Node2Shell): bug decoder Brotli di Node.js, cara ditemukan, kenapa bisa ada, dan sejarah 17 tahun Node yang melatarinya.">
+  <meta property="og:image" content="https://semenitwasted.com/assets/blog/Node2Shell_%20Debugging%20Through%20the%20Night.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Node2Shell Membongkar Celah di Perbatasan JavaScript dan C, dan Sejarah Node.js Menjelaskan Asalnya | semenitwasted">
+  <meta name="twitter:description"
+    content="Bedah CVE-2026-111497 (Node2Shell): bug decoder Brotli di Node.js, cara ditemukan, kenapa bisa ada, dan sejarah 17 tahun Node yang melatarinya.">
+  <meta name="twitter:image" content="https://semenitwasted.com/assets/blog/Node2Shell_%20Debugging%20Through%20the%20Night.webp">
+
+  <!-- Structured Data: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Node2Shell Membongkar Celah di Perbatasan JavaScript dan C, dan Sejarah Node.js Menjelaskan Asalnya",
+    "description": "Bedah CVE-2026-111497 (Node2Shell): bug decoder Brotli di Node.js, cara ditemukan, kenapa bisa ada, dan sejarah 17 tahun Node yang melatarinya.",
+    "image": "https://semenitwasted.com/assets/blog/Node2Shell_%20Debugging%20Through%20the%20Night.webp",
+    "datePublished": "2026-10-24",
+    "dateModified": "2026-10-24",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://semenitwasted.com/blog/node2shell-dan-sejarah-nodejs.html"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "I Putu Dicky Adi Pranatha",
+      "url": "https://semenitwasted.com/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "semenitwasted",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://semenitwasted.com/assets/logo-nav.svg"
+      }
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="../assets/fonts/rubik.css">
+  <link rel="stylesheet" href="../portfolio.css">
+  <link rel="stylesheet" href="../blog.css">
+  <script src="../site-chrome.js"></script>
+</head>
+
+<body>
+  <!-- Scroll Reading Progress Indicator -->
+  <div class="reading-progress-bar" id="readingProgressBar" aria-hidden="true"></div>
+
+  <div class="portfolio-page-wrapper blog-page-wrapper">
+
+    <!-- Global Navigation via site-chrome.js with relative base path -->
+    <div data-site-chrome data-active-page="blog" data-base-path="../"></div>
+
+    <main class="post-main" id="main-content">
+
+      <!-- Breadcrumbs -->
+      <nav class="post-breadcrumb" aria-label="Breadcrumbs">
+        <a href="../index.html">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="../blog.html">Blog</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Frontend &amp; Code</span>
+      </nav>
+
+      <!-- Article Header -->
+      <header class="post-header">
+        <h1 class="post-title">Node2Shell Membongkar Celah di Perbatasan JavaScript dan C, dan Sejarah Node.js Menjelaskan Asalnya</h1>
+        <div class="post-meta-row">
+          <span>Oleh <strong>I Putu Dicky Adi Pranatha</strong></span>
+          <span aria-hidden="true">&bull;</span>
+          <time datetime="2026-10-24">24 Oktober 2026</time>
+          <span aria-hidden="true">&bull;</span>
+          <span>15 min read</span>
+          <span aria-hidden="true">&bull;</span>
+          <span class="category-pill-sm">Frontend &amp; Code</span>
+        </div>
+      </header>
+
+      <!-- Post Cover Hero Figure -->
+      <figure class="post-hero-figure">
+        <div class="post-hero-frame">
+          <img src="../assets/blog/Node2Shell_%20Debugging%20Through%20the%20Night.webp" alt="Ilustrasi developer perempuan begadang mencari penyebab bug Node2Shell di depan laptop berstiker Node.js, ditemani kucing tidur dan diagram visual overflow buffer Brotli libbrotlidec" class="post-hero-img" width="1672" height="941" loading="eager">
+        </div>
+        <figcaption class="post-figure-caption">Debugging larut malam: menelusuri aliran data Brotli dari lapisan JavaScript ke decoder C di mana luapan buffer delapan byte memicu celah Node2Shell (CVE-2026-111497).</figcaption>
+      </figure>
+
+      <!-- TL;DR Summary Bento Card -->
+      <div class="post-tldr-card" role="region" aria-label="Quick Summary">
+        <span class="tldr-badge">TL;DR / Ringkasan Cepat</span>
+        <ul class="tldr-list">
+          <li>Rilis keamanan Node.js tanggal 21 Oktober 2026 menambal sepuluh celah. Yang paling berbahaya adalah CVE-2026-111497, yang dijuluki media keamanan sebagai Node2Shell: penulisan di luar batas memori pada decoder Brotli bawaan yang dapat berujung eksekusi kode jarak jauh.</li>
+          <li>Aplikasi terpapar jika mendekompresi data Brotli dari pihak yang tidak tepercaya, misalnya body request dengan <code>Content-Encoding: br</code>, respons <code>fetch()</code> dari URL luar, atau panggilan langsung ke <code>node:zlib</code>.</li>
+          <li>Versi aman: v22.23.4, v24.22.1, dan v26.12.1. Node.js 20 ke bawah sudah melewati masa dukungan dan tidak menerima tambalan.</li>
+          <li>Empat dari sepuluh celah adalah perbaikan lama yang belum tuntas atau regresi. Hampir semuanya terjadi di titik temu antara JavaScript dan kode native, pola yang bisa dilacak sampai ke desain awal Node pada 2009.</li>
+        </ul>
+      </div>
+
+      <!-- Article Body -->
+      <article class="post-prose">
+        <p>
+          Jika server Node.js Anda mendekompresi data Brotli yang datang dari pihak yang tidak Anda kendalikan, perbarui runtime ke v22.23.4, v24.22.1, atau v26.12.1 hari ini juga. Celah CVE-2026-111497 memungkinkan data terkompresi yang sengaja dirusak untuk menulis melewati batas buffer internal decoder Brotli, dan menurut advisori resmi Node.js, kerusakan memori itu dapat berakhir pada <em>crash</em>, kebocoran isi memori proses, atau eksekusi kode jarak jauh.
+        </p>
+
+        <p>
+          Yang membuat insiden ini menarik bukan hanya tingkat bahayanya. Banyak pengembang JavaScript tumbuh dengan keyakinan bahwa bahasa mereka kebal dari <em>buffer overflow</em>, karena JavaScript mengelola memori secara otomatis. Keyakinan itu benar untuk kode yang Anda tulis, tetapi keliru untuk runtime yang menjalankannya. Node.js sejak lahir adalah lapisan JavaScript tipis di atas tumpukan pustaka C dan C++, dan rilis keamanan kali ini menunjukkan bahwa sebagian besar masalah serius muncul tepat di jahitan antara kedua dunia itu. Untuk melihat kenapa, kita perlu membongkar bug-nya, menelusuri siapa yang menemukannya, lalu mundur tujuh belas tahun ke panggung JSConf EU di Berlin.
+        </p>
+
+        <h2>Sepuluh Celah dalam Satu Rilis, dan Satu yang Bisa Menjalankan Kode dari Jauh</h2>
+        <p>
+          Pada Rabu, 21 Oktober 2026, Node.js Project menerbitkan pembaruan keamanan untuk tiga cabang rilis yang masih didukung: 22.x, 24.x, dan 26.x. Rilis ini memuat sepuluh nomor CVE milik Node sendiri, ditambah pembaruan dependensi untuk c-ares, OpenSSL, SQLite, Undici, serta daftar sertifikat CA yang menyingkirkan sertifikat perantara eMudhra yang dilaporkan telah disusupi.
+        </p>
+
+        <p>
+          Sebaran tingkat keparahannya cukup jelas. Empat celah berlabel <em>high</em>, tiga <em>medium</em>, dan tiga <em>low</em>. Tabel berikut merangkum semuanya agar Anda bisa langsung melihat area mana yang tersentuh:
+        </p>
+
+        <div class="post-prose-table-wrap" role="region" aria-label="Tabel ringkasan sepuluh CVE pada rilis keamanan Node.js Oktober 2026">
+          <table class="post-prose-table">
+            <thead>
+              <tr>
+                <th scope="col">CVE</th>
+                <th scope="col">Area</th>
+                <th scope="col">Tingkat</th>
+                <th scope="col">Inti Masalah</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>CVE-2026-111497</strong></td>
+                <td>zlib (Brotli)</td>
+                <td>High</td>
+                <td>Data Brotli rusak menulis melewati buffer internal delapan byte, berpotensi RCE.</td>
+              </tr>
+              <tr>
+                <td><strong>CVE-2026-105482</strong></td>
+                <td>dns</td>
+                <td>High</td>
+                <td>Nama host berisi karakter NUL dipotong diam-diam oleh <code>dns.resolve*()</code>. Perbaikan yang belum tuntas dari CVE-2026-48930.</td>
+              </tr>
+              <tr>
+                <td><strong>CVE-2026-105483</strong></td>
+                <td>tls</td>
+                <td>High</td>
+                <td>Alamat IP yang ditulis dengan digit lebar penuh (<code>１２７.0.0.1</code>) lolos pencocokan sertifikat. Regresi setelah perbaikan CVE-2026-48618.</td>
+              </tr>
+              <tr>
+                <td><strong>CVE-2026-106069</strong></td>
+                <td>tls</td>
+                <td>High</td>
+                <td>IPv4 dengan nol di depan dibaca oktal oleh validasi, tetapi desimal oleh resolver sistem operasi.</td>
+              </tr>
+              <tr>
+                <td><strong>CVE-2026-105481</strong></td>
+                <td>http Agent</td>
+                <td>Medium</td>
+                <td>Respons yang dikirim sebelum request dianggap sah pada socket keep-alive. Perbaikan yang belum tuntas dari CVE-2026-48931.</td>
+              </tr>
+              <tr>
+                <td><strong>CVE-2026-106072</strong></td>
+                <td>tls</td>
+                <td>Medium</td>
+                <td>Ejaan IPv4 non-kanonik (<code>0x7f.0.0.1</code>, <code>127.1</code>) membuat SAN DNS mengautentikasi alamat IP.</td>
+              </tr>
+              <tr>
+                <td><strong>CVE-2026-106074</strong></td>
+                <td>crypto</td>
+                <td>Medium</td>
+                <td>Cache entropi <code>randomUUID()</code> ikut tersimpan di snapshot, sehingga setiap proses mengulang nilai yang sama.</td>
+              </tr>
+              <tr>
+                <td><strong>CVE-2026-106070</strong></td>
+                <td>zlib.ZipFile</td>
+                <td>Low</td>
+                <td>Byte dari luar entri ZIP dikembalikan setelah validasi header gagal (hanya 26.x).</td>
+              </tr>
+              <tr>
+                <td><strong>CVE-2026-106071</strong></td>
+                <td>Permission Model</td>
+                <td>Low</td>
+                <td>Aturan wildcard <code>--allow-fs-read</code> memberi akses ke path yang lebih pendek dari prefiksnya (hanya 26.x).</td>
+              </tr>
+              <tr>
+                <td><strong>CVE-2026-106073</strong></td>
+                <td>Permission Model</td>
+                <td>Low</td>
+                <td><code>fs.realpathSync()</code> tidak diperiksa izinnya. Perbaikan yang belum tuntas dari CVE-2026-21715.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          Sembilan celah lain menuntut kondisi khusus agar bisa dieksploitasi. CVE-2026-111497 berbeda, karena satu-satunya syarat adalah aplikasi mau mendekompresi data Brotli kiriman penyerang. Syarat itu ternyata terpenuhi di jauh lebih banyak aplikasi daripada yang disadari pemiliknya.
+        </p>
+
+        <h3>Buffer Delapan Byte yang Terus Diisi</h3>
+        <p>
+          Brotli adalah format kompresi yang umum dipakai web modern untuk memperkecil ukuran HTML, CSS, JavaScript, dan respons API. Node.js membundel decoder Brotli berbahasa C dari proyek Google di dalam dirinya, lalu membukanya ke pengembang lewat modul <code>node:zlib</code>. Decoder ini bekerja secara <em>streaming</em>: data tidak harus datang utuh sekaligus, melainkan boleh tiba sepotong demi sepotong lewat jaringan.
+        </p>
+
+        <p>
+          Cara kerja <em>streaming</em> memaksa decoder membedakan dua kondisi yang sekilas mirip. Kondisi pertama adalah data yang <strong>belum lengkap</strong>: potongan berikutnya masih dalam perjalanan, jadi decoder perlu menyimpan beberapa byte sisa di buffer kecil lalu menunggu. Kondisi kedua adalah data yang <strong>rusak</strong>: formatnya salah dan tidak akan pernah benar, jadi decoder harus berhenti dan melaporkan galat. Advisori Node.js menjelaskan bahwa ketika decoder menemukan <em>block switch</em> yang tidak valid, ia keliru melaporkannya sebagai kondisi pertama. Decoder mengira datanya hanya kurang, padahal datanya cacat permanen.
+        </p>
+
+        <p>
+          Akibatnya, decoder terus menambahkan byte masukan ke buffer internal yang kapasitasnya hanya delapan byte. Bayangkan petugas pos yang punya baki kecil berisi delapan slot untuk surat yang halamannya belum lengkap. Karena ia salah membaca kondisi surat, ia terus menyelipkan halaman baru tanpa pernah memeriksa apakah bakinya sudah penuh. Halaman kesembilan dan seterusnya jatuh ke meja sebelah, menimpa berkas orang lain. Dalam bahasa C, "meja sebelah" itu adalah memori proses yang berisi data lain, termasuk penunjuk yang menentukan alur eksekusi program. Penyerang yang bisa mengatur isi byte yang meluap punya peluang membelokkan alur tersebut.
+        </p>
+
+        <p>
+          Perlu jujur soal batas informasi yang tersedia. Advisori resmi memberi label <em>high</em>, menyebut RCE sebagai kemungkinan, dan tidak menerbitkan kode eksploitasi. Julukan Node2Shell juga bukan nama resmi dari proyek Node, melainkan label yang dipakai sejumlah media keamanan. Angka skor CVSS yang beredar di beberapa situs pihak ketiga tidak tercantum di advisori Node, jadi sebaiknya tidak dijadikan patokan tunggal.
+        </p>
+
+        <h3>Siapa yang Benar-Benar Terpapar</h3>
+        <p>
+          Banyak aplikasi tidak pernah memanggil fungsi Brotli secara eksplisit, tetapi tetap mendekompresi Brotli secara otomatis lewat pustaka yang mereka pakai. Ada tiga jalur utama yang perlu Anda periksa:
+        </p>
+
+        <ul>
+          <li><strong>Body request masuk dengan <code>Content-Encoding: br</code>.</strong> Express 5 memakai body-parser versi 2 yang mendukung dekompresi Brotli secara bawaan. Artinya, endpoint <code>express.json()</code> biasa sudah cukup menjadi pintu masuk, tanpa satu baris kode Brotli pun di aplikasi Anda.</li>
+          <li><strong>Respons dari <code>fetch()</code> ke URL yang tidak Anda kendalikan.</strong> Implementasi <code>fetch()</code> bawaan Node (Undici) mendekompresi respons berdasarkan header <code>Content-Encoding</code> yang dikirim server. Fitur seperti pratinjau tautan, pengunduh webhook, pengambil RSS, atau <em>scraper</em> menjadi jalur yang realistis.</li>
+          <li><strong>Panggilan langsung ke <code>zlib.brotliDecompress()</code> atau <code>createBrotliDecompress()</code></strong> terhadap berkas unggahan atau data dari antrean pesan yang sumbernya tidak tepercaya.</li>
+        </ul>
+
+        <p>
+          Gunakan tabel triase berikut untuk menentukan urutan prioritas di lingkungan Anda:
+        </p>
+
+        <div class="post-prose-table-wrap" role="region" aria-label="Tabel triase paparan CVE-2026-111497 berdasarkan jenis aplikasi">
+          <table class="post-prose-table">
+            <thead>
+              <tr>
+                <th scope="col">Kondisi Aplikasi</th>
+                <th scope="col">Tingkat Paparan</th>
+                <th scope="col">Tindakan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>API publik dengan Express 5 atau dekompresi body manual</strong></td>
+                <td>Tinggi</td>
+                <td>Perbarui Node hari ini. Sambil menunggu, tolak body <code>br</code> di reverse proxy.</td>
+              </tr>
+              <tr>
+                <td><strong>Layanan yang mengambil URL dari input pengguna</strong></td>
+                <td>Tinggi</td>
+                <td>Perbarui Node hari ini. Pisahkan proses pengambil URL dengan hak akses minimal.</td>
+              </tr>
+              <tr>
+                <td><strong>Server yang hanya mengompresi respons keluar</strong></td>
+                <td>Rendah untuk celah ini</td>
+                <td>Tetap perbarui dalam siklus normal, karena sembilan celah lain masih relevan.</td>
+              </tr>
+              <tr>
+                <td><strong>Masih memakai Node.js 20, 18, atau lebih lama</strong></td>
+                <td>Tidak ada tambalan resmi</td>
+                <td>Migrasi ke 22.x atau 24.x. Versi EOL selalu ikut terdampak setiap kali rilis keamanan terbit.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          Satu miskonsepsi yang perlu diluruskan: mengatur header <code>Accept-Encoding: gzip</code> pada request keluar tidak bisa diandalkan sebagai perlindungan. Header itu hanya permintaan sopan kepada server. Server jahat tetap bisa membalas dengan <code>Content-Encoding: br</code>, dan klien yang mendekompresi berdasarkan header respons akan tetap memproses datanya.
+        </p>
+
+        <h2>Ditemukan oleh Mesin Audit, Ditambal oleh Manusia</h2>
+        <p>
+          Bug di decoder format kompresi termasuk jenis yang paling sulit ditemukan lewat pembacaan kode biasa. Logikanya berupa mesin status (<em>state machine</em>) dengan puluhan transisi, dan kesalahannya bukan pada satu baris yang jelas salah, melainkan pada klasifikasi kondisi yang keliru di satu cabang. Bug seperti ini bisa bertahan bertahun-tahun karena semua data yang valid tetap terdekompresi dengan sempurna.
+        </p>
+
+        <h3>Kredit untuk OpenAI Codex Security</h3>
+        <p>
+          Advisori Node.js mencatat bahwa CVE-2026-111497 dilaporkan oleh Khai Tran dan Sylvie Mayer dari OpenAI Codex Security. Perbaikannya dikerjakan oleh Matteo Collina dan Antoine du Hamel, dua anggota lama tim inti Node yang juga duduk di Technical Steering Committee. Pembagian peran ini mencerminkan pola yang mulai lazim di 2026: alat audit berbasis AI menemukan kandidat celah dalam skala besar, sementara manusia yang paham konteks proyek menilai dampaknya, menulis tambalan, dan memastikan perbaikan tidak merusak perilaku lain.
+        </p>
+
+        <p>
+          Proyek Node tidak merinci metode yang dipakai tim pelapor, jadi klaim bahwa "AI menemukannya sendirian" sebaiknya tidak ditelan mentah. Yang bisa dipastikan adalah prosesnya berjalan lewat jalur pengungkapan terkoordinasi: laporan masuk secara privat, tim keamanan Node menyiapkan tambalan di bawah embargo, rilis diumumkan lebih dulu tanpa detail teknis, lalu rincian celah baru dibuka ketika versi tambalan sudah tersedia untuk diunduh.
+        </p>
+
+        <p>
+          Sembilan celah lainnya dilaporkan oleh peneliti dengan latar yang beragam. Hasan Flayyih Abdullah tercatat melaporkan tiga celah sekaligus (DNS, TLS digit lebar penuh, dan keep-alive socket), sementara sisanya datang dari peneliti lain yang dicantumkan advisori hanya lewat nama pengguna mereka.
+        </p>
+
+        <h3>Rabu yang Sama dengan PHP2Shell</h3>
+        <p>
+          Ada kebetulan yang sulit diabaikan. Pada hari yang sama, 21 Oktober 2026, ekosistem PHP juga merilis tambalan darurat untuk dua celah eksekusi kode jarak jauh di interpreter-nya, yang dikenal sebagai PHP2Shell dan sudah kami bedah dalam artikel sebelumnya. Dua runtime server paling banyak dipakai di web menambal celah kerusakan memori di lapisan C pada hari yang sama, dan keduanya melibatkan peneliti yang memakai alat audit berbantuan AI.
+        </p>
+
+        <p>
+          Kebetulan tanggal tidak membuktikan hubungan sebab akibat. Namun, polanya layak dicatat: perangkat lunak fondasional yang ditulis dalam C pada era 1990-an dan 2000-an kini sedang diaudit ulang dengan kecepatan yang belum pernah ada sebelumnya. Bagi tim operasional, konsekuensinya praktis. Frekuensi rilis keamanan untuk runtime inti kemungkinan akan naik, dan proses pembaruan yang selama ini dikerjakan manual setahun dua kali perlu diubah menjadi rutinitas yang bisa dijalankan dalam hitungan jam.
+        </p>
+
+        <h2>Dari Progress Bar Flickr ke Runtime Server Paling Populer</h2>
+        <p>
+          Untuk memahami kenapa sebuah runtime JavaScript membawa decoder C di dalamnya, kita perlu kembali ke alasan Node diciptakan. Node tidak lahir sebagai proyek keamanan atau proyek bahasa pemrograman. Ia lahir dari kekesalan seorang pengembang terhadap cara server web menangani koneksi pada akhir 2000-an.
+        </p>
+
+        <h3>Ryan Dahl, V8, dan Taruhan pada I/O Non-Blocking</h3>
+        <p>
+          Ryan Dahl memperkenalkan Node.js di panggung JSConf EU di Berlin pada November 2009. Cerita yang sering ia ulang tentang asal idenya cukup sederhana: ia melihat <em>progress bar</em> unggahan berkas di Flickr dan merasa janggal bahwa peramban harus terus bertanya ke server untuk mengetahui sudah berapa persen berkas terkirim. Server pada masa itu, terutama Apache dengan model satu thread atau proses per koneksi, menghabiskan banyak sumber daya hanya untuk menunggu jaringan atau disk.
+        </p>
+
+        <p>
+          Dahl bertaruh pada model berbeda: satu <em>event loop</em> yang tidak pernah menunggu. Setiap operasi I/O didaftarkan, lalu program lanjut mengerjakan hal lain sampai hasilnya siap. Untuk bahasanya, ia memilih JavaScript karena dua alasan. Google baru merilis mesin V8 yang cepat bersama peramban Chrome pada 2008, dan JavaScript belum punya pustaka I/O <em>blocking</em> bawaan, sehingga tidak ada kebiasaan lama yang harus dibongkar. Pengembang JavaScript sudah terbiasa dengan <em>callback</em> dari dunia peramban.
+        </p>
+
+        <p>
+          Keputusan arsitektur yang paling relevan dengan bug hari ini dibuat sejak hari pertama. V8 hanya mengeksekusi JavaScript. Ia tidak tahu cara membuka socket, membaca berkas, menyelesaikan DNS, atau mendekompresi data. Semua kemampuan itu harus disediakan oleh kode C dan C++ yang dipasangkan ke V8. Node pada dasarnya adalah lem yang menghubungkan V8 dengan pustaka sistem: awalnya libev dan libeio, lalu libuv yang ditulis pada 2011 agar Node bisa berjalan di Windows. Setahun setelah peluncuran, Isaac Schlueter merilis npm, dan ekosistem paket yang meledak setelahnya membuat Node menjadi pilihan default untuk banyak tim web.
+        </p>
+
+        <h3>Fork io.js dan Pelajaran Tata Kelola</h3>
+        <p>
+          Masa awal Node berada di bawah naungan Joyent, perusahaan yang mempekerjakan Dahl dan memegang merek dagangnya. Pada 2014, frustrasi komunitas memuncak. Rilis berjalan lambat, versi 0.12 tertunda lama, dan banyak kontributor inti merasa keputusan teknis terlalu dikendalikan satu perusahaan. Pada Desember 2014, sekelompok kontributor membuat <em>fork</em> bernama io.js dengan jadwal rilis cepat dan tata kelola terbuka.
+        </p>
+
+        <p>
+          Perpecahan itu justru berakhir dengan penyatuan. Node.js Foundation dibentuk di bawah Linux Foundation pada 2015, io.js dan Node digabung kembali, dan Node.js 4.0 terbit pada September 2015 sebagai hasil penyatuan tersebut. Pada 2019, Node.js Foundation melebur dengan JS Foundation menjadi OpenJS Foundation. Dari rangkaian peristiwa inilah lahir hal-hal yang sekarang dianggap biasa: jadwal rilis LTS yang bisa diprediksi, Technical Steering Committee yang terbuka, serta proses rilis keamanan yang diumumkan lebih dulu dan menambal beberapa cabang sekaligus. Rilis tanggal 21 Oktober yang menambal 22.x, 24.x, dan 26.x secara serentak adalah produk langsung dari pelajaran tata kelola tersebut.
+        </p>
+
+        <h2>Kenapa Bug Ini Ada di Runtime yang Ditulis untuk JavaScript</h2>
+        <p>
+          Pertanyaan yang paling sering muncul setelah advisori terbit cukup wajar: kalau JavaScript tidak mengenal pengelolaan memori manual, bagaimana mungkin ada <em>buffer overflow</em> di Node? Jawabannya terletak pada perbedaan antara bahasa dan runtime, dan pada keputusan bertahun-tahun untuk memasukkan lebih banyak fungsi native ke inti Node.
+        </p>
+
+        <h3>Node Sebenarnya Adalah JavaScript yang Menumpang di Atas C dan C++</h3>
+        <p>
+          Setiap byte yang masuk ke aplikasi Node dari jaringan hampir selalu melewati kode native lebih dulu sebelum sampai ke kode JavaScript Anda. Daftar dependensi yang dibundel di folder <code>deps/</code> repositori Node memperlihatkan betapa tebalnya lapisan ini:
+        </p>
+
+        <ul>
+          <li><strong>V8</strong> (C++) untuk mengeksekusi JavaScript dan <strong>libuv</strong> (C) untuk <em>event loop</em>, socket, dan sistem berkas.</li>
+          <li><strong>llhttp</strong> untuk mengurai HTTP/1.1, <strong>nghttp2</strong> untuk HTTP/2, dan <strong>ada</strong> untuk mengurai URL.</li>
+          <li><strong>OpenSSL</strong> untuk TLS dan kriptografi, serta <strong>c-ares</strong> untuk resolusi DNS.</li>
+          <li><strong>zlib</strong> dan <strong>Brotli</strong> untuk kompresi, ditambah <strong>SQLite</strong> untuk modul <code>node:sqlite</code>.</li>
+        </ul>
+
+        <p>
+          JavaScript memang aman dari sisi memori, tetapi keamanan itu berhenti di batas tempat data diserahkan ke pustaka C. CVE-2026-105482 menggambarkan masalah ini dengan sangat jelas. String JavaScript boleh berisi karakter NUL (<code>\0</code>) di tengah-tengahnya, sedangkan string C menganggap NUL sebagai akhir teks. Ketika nama host <code>attacker.example\0.trusted.example</code> diperiksa di JavaScript, ia terlihat seperti subdomain milik <code>trusted.example</code> dan lolos daftar izin. Ketika diserahkan ke c-ares, nama itu terpotong menjadi <code>attacker.example</code>. Dua lapisan membaca string yang sama dan sampai pada kesimpulan berbeda.
+        </p>
+
+        <p>
+          CVE-2026-111497 berasal dari keluarga yang sama, hanya lebih dalam. Pengembang yang menulis <code>express.json()</code> merasa sedang bekerja di dunia JavaScript yang aman. Kenyataannya, setiap request dengan header <code>br</code> menyeret byte mentah dari internet langsung ke decoder C yang mengelola buffernya sendiri.
+        </p>
+
+        <h3>Brotli Masuk ke Inti Node pada 2019</h3>
+        <p>
+          Brotli dikembangkan di Google oleh Jyrki Alakuijala dan Zoltán Szabadka. Format ini awalnya dirancang pada 2013 untuk mengompresi font web WOFF 2.0, lalu diperluas menjadi format kompresi umum dan dibakukan sebagai RFC 7932 pada 2016. Karena rasionya lebih baik daripada gzip untuk teks web, peramban dan CDN cepat mengadopsinya.
+        </p>
+
+        <p>
+          Sebelum 2019, pengembang Node yang ingin memakai Brotli harus memasang paket npm terpisah, baik yang berupa <em>binding</em> native maupun hasil kompilasi ke JavaScript. Node kemudian menambahkan dukungan Brotli langsung ke modul <code>zlib</code> pada v11.7.0 dan memindahkannya ke cabang LTS v10.16.0 pada 2019. Keputusan ini masuk akal dari sisi pengalaman pengembang: satu API standar, tanpa dependensi tambahan, dengan performa native. Harga yang dibayar jarang dibicarakan. Sejak saat itu, setiap aplikasi Node membawa decoder Brotli berbahasa C, baik dipakai maupun tidak.
+        </p>
+
+        <p>
+          Permukaan serangannya membesar diam-diam dalam beberapa tahun berikutnya. <code>fetch()</code> bawaan hadir di Node 18 dan mendekompresi Brotli secara otomatis. Express 5 membawa body-parser versi baru yang ikut mendukung Brotli. Pengembang tidak menulis satu baris pun tentang Brotli, tetapi aplikasi mereka mulai mendekompresi Brotli dari internet. Decoder Brotli sendiri juga punya riwayat: pada 2020, proyek upstream menambal CVE-2020-8927, sebuah <em>buffer overflow</em> di decoder versi sebelum 1.0.9. Kode parser format biner berbahasa C memang termasuk wilayah paling rawan dalam perangkat lunak mana pun.
+        </p>
+
+        <h3>Penyesalan Ryan Dahl Soal Keamanan</h3>
+        <p>
+          Pada 2018, Ryan Dahl kembali ke panggung JSConf EU dengan presentasi berjudul "10 Things I Regret About Node.js". Salah satu penyesalan yang ia sebut adalah soal keamanan. V8 sebenarnya adalah <em>sandbox</em> yang sangat baik di dalam peramban, tetapi Node membuang sekat itu dan memberi setiap skrip akses penuh ke jaringan, sistem berkas, dan proses. Di presentasi yang sama, Dahl memperkenalkan Deno, runtime baru yang menolak akses tersebut secara bawaan sampai diberi izin eksplisit.
+        </p>
+
+        <p>
+          Node merespons gagasan itu dengan Permission Model yang diperkenalkan secara eksperimental di Node.js 20 pada 2023. Fitur ini memungkinkan Anda membatasi akses berkas lewat <code>--allow-fs-read</code> dan <code>--allow-fs-write</code>. Rilis Oktober 2026 menunjukkan bahwa fitur ini masih terus ditambal: dua celah berlabel <em>low</em> di rilis ini sama-sama berupa jalan pintas melewati Permission Model.
+        </p>
+
+        <p>
+          Ada batas penting yang sering terlewat. Dokumentasi resmi Node menyebut Permission Model sebagai sabuk pengaman untuk mencegah kode tepercaya melakukan hal yang tidak disengaja, bukan pelindung dari kode jahat. Celah seperti CVE-2026-111497 terjadi di memori native, di bawah lapisan tempat pemeriksaan izin dijalankan. Penyerang yang berhasil mengendalikan alur eksekusi lewat kerusakan memori tidak perlu meminta izin kepada Permission Model. Jika Anda butuh isolasi sungguhan, gunakan batas di tingkat sistem operasi seperti kontainer dengan hak minimal, pengguna non-root, atau proses terpisah.
+        </p>
+
+        <h2>Pola yang Berulang, Tambalan yang Belum Tuntas</h2>
+        <p>
+          Membaca sepuluh celah ini sekaligus memperlihatkan sesuatu yang tidak terlihat jika kita hanya fokus pada Node2Shell. Sebagian besar masalah tidak muncul dari fitur baru, melainkan dari perbaikan lama yang hanya menutup satu pintu ketika ada beberapa pintu lain yang menuju ruangan yang sama.
+        </p>
+
+        <h3>Empat dari Sepuluh Celah Adalah Sisa Perbaikan Lama</h3>
+        <p>
+          Advisori Node menyebut secara terbuka bahwa empat celah di rilis ini berkaitan langsung dengan tambalan sebelumnya:
+        </p>
+
+        <ol>
+          <li><strong>CVE-2026-105482</strong> melengkapi CVE-2026-48930. Perbaikan lama hanya menangani karakter NUL di <code>dns.lookup()</code> dan opsi host pada <code>net</code> serta <code>tls</code>, sementara <code>dns.resolve*()</code> dan <code>dns.reverse()</code> terlewat.</li>
+          <li><strong>CVE-2026-105483</strong> adalah regresi yang muncul setelah perbaikan CVE-2026-48618. Tambalan untuk satu cara penulisan nama host justru membuka jalur baru lewat digit lebar penuh.</li>
+          <li><strong>CVE-2026-105481</strong> melengkapi CVE-2026-48931. Penjaga socket keep-alive hanya bekerja saat <em>event loop</em> memeriksa I/O, sehingga data yang sudah tiba ketika <em>event loop</em> sibuk dengan kode sinkron lolos tanpa diperiksa.</li>
+          <li><strong>CVE-2026-106073</strong> melengkapi CVE-2026-21715. Perbaikan lama hanya menambahkan pemeriksaan izin pada <code>fs.realpathSync.native()</code>, sedangkan <code>fs.realpathSync()</code> biasa tertinggal.</li>
+        </ol>
+
+        <p>
+          Pola ini bukan hal baru. Pada April 2024, Node menambal CVE-2024-27980, celah injeksi perintah pada <code>child_process.spawn</code> di Windows yang dikenal sebagai BatBadBut. Tiga bulan kemudian, rilis Juli 2024 memuat CVE-2024-36138 yang secara resmi disebut sebagai jalan pintas atas perbaikan yang belum tuntas dari CVE-2024-27980.
+        </p>
+
+        <p>
+          Akar polanya terletak pada cara perbaikan ditulis. Tambalan sering dirancang per fungsi, padahal masalahnya bersifat per batas. Jika aturan "nama host tidak boleh berisi NUL" ditegakkan di satu titik tempat semua string diserahkan ke C, semua fungsi DNS ikut terlindungi sekaligus. Jika aturan itu disalin ke setiap fungsi satu per satu, selalu ada fungsi yang terlupa. Pelajaran ini berlaku juga untuk kode aplikasi Anda sendiri: validasi input paling kuat dipasang di gerbang tempat data masuk, bukan ditaburkan di setiap fungsi yang kebetulan memakainya.
+        </p>
+
+        <h3>Dua Parser yang Membaca Angka yang Sama Secara Berbeda</h3>
+        <p>
+          Tiga dari empat celah TLS di rilis ini berasal dari satu fenomena yang dikenal sebagai <em>parser differential</em>: dua komponen membaca masukan yang sama dan menghasilkan tafsiran berbeda. Contoh paling jelas ada di CVE-2026-106069. Fungsi <code>tls.checkServerIdentity()</code> mengikuti aturan URL WHATWG, sehingga alamat <code>0127.0.0.1</code> dibaca sebagai bilangan oktal dan berubah menjadi <code>87.0.0.1</code>. Resolver sistem operasi di sebagian platform seperti macOS membaca angka yang sama sebagai desimal, yaitu <code>127.0.0.1</code>.
+        </p>
+
+        <p>
+          Akibatnya, koneksi sungguhan dibuat ke satu alamat, sementara sertifikat diperiksa terhadap alamat lain. Variasi lain dari masalah yang sama muncul lewat penulisan yang sah tetapi jarang dipakai, seperti <code>0x7f.0.0.1</code>, <code>2130706433</code>, atau <code>127.1</code>, yang semuanya merujuk ke 127.0.0.1. Ketika keamanan bergantung pada dua sistem yang sepakat tentang arti sebuah string, setiap ketidaksepakatan kecil menjadi celah. Ini masalah yang sama dengan karakter NUL di DNS, hanya dengan wajah yang berbeda.
+        </p>
+
+        <h3>UUID Kembar dari Snapshot yang Sama</h3>
+        <p>
+          Celah yang paling menarik secara konsep justru berlabel <em>medium</em>. Fungsi <code>crypto.randomUUID()</code> dan <code>crypto.randomInt()</code> menyimpan cadangan bilangan acak di cache internal agar tidak perlu meminta entropi ke sistem operasi setiap kali dipanggil. Node juga punya fitur <em>startup snapshot</em> (<code>--build-snapshot</code>) dan <em>Single Executable Application</em> yang membekukan kondisi memori aplikasi agar proses bisa menyala lebih cepat.
+        </p>
+
+        <p>
+          CVE-2026-106074 terjadi ketika dua optimasi itu bertemu. Jika salah satu fungsi acak tersebut dipanggil saat snapshot dibuat, cache bilangan acaknya ikut dibekukan. Setiap proses yang dinyalakan dari snapshot yang sama akan menghasilkan hingga 127 UUID pertama dan sekitar 1.000 nilai <code>randomInt()</code> yang identik. ID yang seharusnya unik bisa bertabrakan antarproses, dan nilai yang diterbitkan satu proses bisa ditebak dengan mengamati proses lain. Tidak ada kode yang salah secara terpisah. Bug-nya baru muncul ketika dua keputusan yang masing-masing masuk akal digabungkan.
+        </p>
+
+        <h2>Memeriksa Versi Node Hari Ini dan Membaca Runtime dengan Lebih Jujur</h2>
+        <p>
+          Tindakan paling penting bisa diselesaikan dalam lima belas menit ke depan. Periksa versi Node di setiap lingkungan yang menjalankan kode Anda, termasuk server produksi, <em>image</em> kontainer, dan pipeline CI:
+        </p>
+
+        <pre><code># Periksa versi Node yang aktif
+node -v
+
+# Aman jika minimal salah satu dari:
+#   v22.23.4   v24.22.1   v26.12.1
+
+# Untuk kontainer, tarik ulang image dasar lalu build ulang
+docker pull node:22
+docker build --no-cache -t aplikasi-anda .</code></pre>
+
+        <p>
+          Pengguna kontainer perlu memberi perhatian khusus. Mengubah <code>package.json</code> atau <em>lockfile</em> tidak memperbarui runtime Node, karena versinya ditentukan oleh <em>image</em> dasar. Selama <em>image</em> lama masih tersimpan di <em>cache</em> build, aplikasi Anda tetap berjalan di atas runtime yang rentan. Jika aplikasi berjalan di platform <em>serverless</em> atau PaaS, periksa kebijakan penyedia tentang kapan runtime terkelola mereka menerima pembaruan.
+        </p>
+
+        <p>
+          Jika pembaruan belum bisa dilakukan hari ini, tutup jalur masuk yang paling mudah di reverse proxy. Konfigurasi Nginx berikut menolak body request yang dikompresi Brotli sebelum sampai ke Node:
+        </p>
+
+        <pre><code># Mitigasi sementara: tolak body request terkompresi Brotli
+if ($http_content_encoding ~* "br") {
+    return 415;
+}</code></pre>
+
+        <p>
+          Mitigasi ini hanya menutup jalur request masuk. Jalur <code>fetch()</code> ke URL luar tidak punya tombol konfigurasi yang bersih, jadi satu-satunya perlindungan sungguhan untuk fitur semacam itu adalah memperbarui Node atau memindahkan proses pengambil URL ke lingkungan terisolasi dengan hak akses minimal.
+        </p>
+
+        <p>
+          Di luar urusan tambalan, insiden ini memberi cara pandang yang lebih jujur tentang Node. Node tidak rentan karena memakai JavaScript, dan Node juga tidak aman hanya karena memakai JavaScript. Ryan Dahl membangunnya pada 2009 sebagai jembatan antara bahasa yang aman dari sisi memori dan pustaka sistem yang ditulis dalam C, dan jembatan itulah yang membuat Node cepat sekaligus menjadi tempat sebagian besar celah seriusnya muncul. Memahami di mana jahitan itu berada membantu Anda menentukan prioritas: pantau rilis keamanan Node lewat milis nodejs-sec, jadikan pembaruan runtime sebagai rutinitas mingguan alih-alih proyek tahunan, dan perlakukan setiap data dari internet yang menyeberang ke lapisan native sebagai data yang paling perlu dicurigai.
+        </p>
+
+        <h2>Referensi</h2>
+        <ul>
+          <li>Node.js Project. (2026). Wednesday, October 21, 2026 Security Releases. <a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" target="_blank" rel="noopener noreferrer">https://nodejs.org/en/blog/vulnerability/october-2026-security-releases</a></li>
+          <li>Node.js Project. (2024). Wednesday, July 10, 2024 Security Releases. <a href="https://nodejs.org/en/blog/vulnerability/july-2024-security-releases" target="_blank" rel="noopener noreferrer">https://nodejs.org/en/blog/vulnerability/july-2024-security-releases</a></li>
+          <li>Node.js Documentation. Permissions. <a href="https://nodejs.org/api/permissions.html" target="_blank" rel="noopener noreferrer">https://nodejs.org/api/permissions.html</a></li>
+          <li>Node.js Documentation. Zlib. <a href="https://nodejs.org/api/zlib.html" target="_blank" rel="noopener noreferrer">https://nodejs.org/api/zlib.html</a></li>
+          <li>Node.js Release Working Group. Release Schedule. <a href="https://github.com/nodejs/release#release-schedule" target="_blank" rel="noopener noreferrer">https://github.com/nodejs/release</a></li>
+          <li>Alakuijala, J., &amp; Szabadka, Z. (2016). RFC 7932: Brotli Compressed Data Format. IETF. <a href="https://www.rfc-editor.org/rfc/rfc7932" target="_blank" rel="noopener noreferrer">https://www.rfc-editor.org/rfc/rfc7932</a></li>
+          <li>National Vulnerability Database. CVE-2020-8927: Brotli Decoder Buffer Overflow. <a href="https://nvd.nist.gov/vuln/detail/CVE-2020-8927" target="_blank" rel="noopener noreferrer">https://nvd.nist.gov/vuln/detail/CVE-2020-8927</a></li>
+          <li>Dahl, R. (2018). 10 Things I Regret About Node.js. JSConf EU. <a href="https://www.youtube.com/watch?v=M3BM9TB-8yA" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=M3BM9TB-8yA</a></li>
+        </ul>
+      </article>
+
+      <!-- Next & Prev Navigation -->
+      <nav class="post-navigator" aria-label="Article navigation">
+        <a href="php2shell-dan-sejarah-php.html" class="post-nav-card">
+          <span class="nav-direction">&larr; Artikel Sebelumnya</span>
+          <span class="nav-article-title">PHP2Shell Mengguncang Sebagian Besar Web, dan Sejarah PHP Menjelaskan Kenapa Itu Bisa Terjadi</span>
+        </a>
+        <a href="../blog.html" class="post-nav-card">
+          <span class="nav-direction">Kembali &rarr;</span>
+          <span class="nav-article-title">Katalog Semua Tulisan (Blog Hub)</span>
+        </a>
+      </nav>
+
+    </main>
+
+    <!-- Footer (Matching library.html) -->
+    <footer class="portfolio-footer">
+      <div class="footer-left">
+        <span class="footer-brand">semenitwasted</span>
+        <span class="footer-subtitle">Design · Icons · Illustration · Web</span>
+      </div>
+      <div class="footer-platforms" aria-label="Platform links">
+        <a href="https://www.linkedin.com/in/reionnyx/" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="LinkedIn">
+          <img src="../assets/linkedin.svg" alt="" width="24" height="24" class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+        <a href="https://stock.adobe.com/contributor/207802543/dicky" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Adobe Stock">
+          <img src="../assets/adobe-stock.svg" alt="" width="24" height="24" class="footer-platform-icon">
+        </a>
+        <a href="https://www.canva.com/p/gambar-reion" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Canva">
+          <img src="../assets/canva.svg" alt="" width="24" height="24" class="footer-platform-icon">
+        </a>
+        <a href="https://thenounproject.com/creator/ReionDesign/" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="The Noun Project">
+          <img src="../assets/noun-project.svg" alt="" width="24" height="24" class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+        <a href="https://www.flaticon.com/authors/reion" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Flaticon">
+          <img src="../assets/flaticon.svg" alt="" width="24" height="24" class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Reading Progress Script -->
+  <script>
+    window.addEventListener('scroll', () => {
+      const bar = document.getElementById('readingProgressBar');
+      if (!bar) return;
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = totalScroll > 0 ? (window.scrollY / totalScroll) * 100 : 0;
+      bar.style.width = Math.min(100, Math.max(0, progress)) + '%';
+    }, { passive: true });
+  </script>
+</body>
+
+</html>

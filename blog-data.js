@@ -17,6 +17,23 @@
 
   const BLOG_POSTS = [
     {
+      id: 'post-9',
+      slug: 'node2shell-dan-sejarah-nodejs',
+      title: 'Node2Shell Membongkar Celah di Perbatasan JavaScript dan C, dan Sejarah Node.js Menjelaskan Asalnya',
+      date: '2026-10-24',
+      formattedDate: '24 Oktober 2026',
+      readingTime: '15 min read',
+      category: 'frontend-code',
+      categoryLabel: 'Frontend & Code',
+      tags: ['Node.js', 'Web Security', 'CVE-2026-111497', 'Brotli'],
+      featured: false,
+      excerpt: 'Bedah CVE-2026-111497 (Node2Shell): bug decoder Brotli di Node.js, cara ditemukan, kenapa bisa ada, dan sejarah 17 tahun Node yang melatarinya.',
+      contentUrl: 'blog/node2shell-dan-sejarah-nodejs.html',
+      coverImage: 'assets/blog/Node2Shell_%20Debugging%20Through%20the%20Night.webp',
+      coverAlt: 'Ilustrasi developer perempuan begadang mencari penyebab bug Node2Shell di depan laptop berstiker Node.js, ditemani kucing tidur dan diagram visual overflow buffer Brotli libbrotlidec',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
       id: 'post-8',
       slug: 'php2shell-dan-sejarah-php',
       title: 'PHP2Shell Mengguncang Sebagian Besar Web, dan Sejarah PHP Menjelaskan Kenapa Itu Bisa Terjadi',
