@@ -17,6 +17,23 @@
 
   const BLOG_POSTS = [
     {
+      id: 'post-10',
+      slug: 'membedakan-kaya-tampilan-dan-sejahtera-finansial',
+      title: 'Membedakan Kaya Tampilan dan Sejahtera Finansial Tanpa Terjebak Perlombaan Status',
+      date: '2026-10-24',
+      formattedDate: '24 Oktober 2026',
+      readingTime: '11 min read',
+      category: 'reflections',
+      categoryLabel: 'Reflections',
+      tags: ['Personal Finance', 'Reflections', 'Mindset', 'Life Design'],
+      featured: false,
+      excerpt: 'Kekayaan sejati tidak diukur dari kemewahan yang tampak di media sosial, melainkan dari ketenangan batin, kesehatan arus kas 10-20-30-40, dan angka cukup.',
+      contentUrl: 'blog/membedakan-kaya-tampilan-dan-sejahtera-finansial.html',
+      coverImage: 'assets/blog/Cyber-Luxury%20Jet%20Glamour.webp',
+      coverAlt: 'Ilustrasi perempuan berbusana mewah berkilau di dalam kabin jet pribadi bersama kucing kesayangannya, merefleksikan daya pikat gaya hidup kaya tampilan dan perlombaan status semu',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
       id: 'post-9',
       slug: 'node2shell-dan-sejarah-nodejs',
       title: 'Node2Shell Membongkar Celah di Perbatasan JavaScript dan C, dan Sejarah Node.js Menjelaskan Asalnya',

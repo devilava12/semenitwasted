@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <filter id="tactileShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="4" dy="8" stdDeviation="8" flood-color="#450D50" flood-opacity="0.14"/>
+    </filter>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCFAFD"/>
+      <stop offset="100%" stop-color="#F0EAF5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+
+  <!-- Bento Grid Container -->
+  <g transform="translate(60, 45)">
+    <!-- Header Badge -->
+    <rect x="0" y="0" width="680" height="42" rx="8" fill="#F4EDF8" stroke="#E3DAEA" stroke-width="1.5"/>
+    <circle cx="24" cy="21" r="5" fill="#450D50"/>
+    <text x="38" y="25" font-family="'Rubik', sans-serif" font-size="12" font-weight="600" fill="#211B28" letter-spacing="1.5">REFLEKSI FINANSIAL · KAYA VS SEJAHTERA</text>
+    <text x="656" y="25" text-anchor="end" font-family="'Rubik', sans-serif" font-size="11" font-weight="500" fill="#786B83">LIGWINA HANANTO × DANIEL MANANTA</text>
+
+    <!-- Card 1: Net Worth vs Visual Wealth (Left, 220px wide) -->
+    <g transform="translate(0, 56)">
+      <rect x="0" y="0" width="216" height="300" rx="10" fill="#211B28" stroke="#3D3349" stroke-width="1.5" filter="url(#tactileShadow)"/>
+      <text x="20" y="32" font-family="'Rubik', sans-serif" font-size="11" font-weight="700" fill="#B5A9C0" letter-spacing="1">NET WORTH FORMULA</text>
+      <text x="20" y="58" font-family="'Rubik', sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">Kekayaan Bersih</text>
+      <text x="20" y="78" font-family="'Rubik', sans-serif" font-size="11" fill="#ECE6F2">Bukan pamer gaya hidup</text>
+
+      <!-- Equation Box -->
+      <g transform="translate(16, 96)">
+        <rect x="0" y="0" width="184" height="74" rx="6" fill="#2E2638" stroke="#483D56" stroke-width="1"/>
+        <text x="14" y="24" font-family="'Rubik', sans-serif" font-size="10" font-weight="600" fill="#A89CB5">TOTAL HARTA</text>
+        <text x="14" y="42" font-family="'Rubik', sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Aset Produktif</text>
+        <line x1="14" y1="50" x2="170" y2="50" stroke="#483D56" stroke-width="1"/>
+        <text x="14" y="64" font-family="'Rubik', sans-serif" font-size="10" font-weight="600" fill="#FF8D9E">DIKURANGI TOTAL UTANG</text>
+      </g>
+
+      <!-- Status Comparison -->
+      <g transform="translate(16, 186)">
+        <rect x="0" y="0" width="184" height="98" rx="6" fill="#1B1621" stroke="#382E44" stroke-width="1"/>
+        <text x="14" y="24" font-family="'Rubik', sans-serif" font-size="10" font-weight="700" fill="#C2B7CE">KAYA TAMPILAN</text>
+        <text x="14" y="40" font-family="'Rubik', sans-serif" font-size="11" fill="#8E8299">Pengeluaran &amp; beban citra</text>
+        <line x1="14" y1="50" x2="170" y2="50" stroke="#332A3E" stroke-width="1"/>
+        <text x="14" y="68" font-family="'Rubik', sans-serif" font-size="10" font-weight="700" fill="#74D898">SEJAHTERA BATIN</text>
+        <text x="14" y="84" font-family="'Rubik', sans-serif" font-size="11" fill="#ECE6F2">Ketenangan &amp; tidur pulas</text>
+      </g>
+    </g>
+
+    <!-- Card 2: Cash Flow Rule 10 - 20 - 30 - 40 (Top Right, 448px wide) -->
+    <g transform="translate(232, 56)">
+      <rect x="0" y="0" width="448" height="174" rx="10" fill="#FCFAFD" stroke="#E3DAEA" stroke-width="1.5" filter="url(#tactileShadow)"/>
+      <text x="24" y="32" font-family="'Rubik', sans-serif" font-size="11" font-weight="700" fill="#756A7D" letter-spacing="1">FORMULA ARUS KAS BULANAN</text>
+      <text x="24" y="56" font-family="'Rubik', sans-serif" font-size="17" font-weight="700" fill="#211B28">Alokasi Sehat 10 - 20 - 30 - 40</text>
+
+      <!-- 4 Pillars of Cash Flow -->
+      <g transform="translate(20, 72)">
+        <!-- 10% Masa Depan -->
+        <g transform="translate(0, 0)">
+          <rect x="0" y="0" width="94" height="86" rx="6" fill="#F4EDF8" stroke="#DACFE2" stroke-width="1"/>
+          <text x="12" y="26" font-family="'Rubik', sans-serif" font-size="18" font-weight="800" fill="#450D50">10%</text>
+          <text x="12" y="44" font-family="'Rubik', sans-serif" font-size="10" font-weight="700" fill="#211B28">INVESTASI</text>
+          <text x="12" y="60" font-family="'Rubik', sans-serif" font-size="9" fill="#756A7D">Minimal batas</text>
+          <text x="12" y="72" font-family="'Rubik', sans-serif" font-size="9" fill="#756A7D">Masa depan</text>
+        </g>
+        <!-- 20% Lifestyle -->
+        <g transform="translate(104, 0)">
+          <rect x="0" y="0" width="94" height="86" rx="6" fill="#F8F6FA" stroke="#DACFE2" stroke-width="1"/>
+          <text x="12" y="26" font-family="'Rubik', sans-serif" font-size="18" font-weight="800" fill="#211B28">20%</text>
+          <text x="12" y="44" font-family="'Rubik', sans-serif" font-size="10" font-weight="700" fill="#211B28">LIFESTYLE</text>
+          <text x="12" y="60" font-family="'Rubik', sans-serif" font-size="9" fill="#756A7D">Maksimal batas</text>
+          <text x="12" y="72" font-family="'Rubik', sans-serif" font-size="9" fill="#756A7D">Hobi &amp; hiburan</text>
+        </g>
+        <!-- 30% Utang -->
+        <g transform="translate(208, 0)">
+          <rect x="0" y="0" width="94" height="86" rx="6" fill="#F8F6FA" stroke="#DACFE2" stroke-width="1"/>
+          <text x="12" y="26" font-family="'Rubik', sans-serif" font-size="18" font-weight="800" fill="#8F2A38">30%</text>
+          <text x="12" y="44" font-family="'Rubik', sans-serif" font-size="10" font-weight="700" fill="#211B28">CICILAN</text>
+          <text x="12" y="60" font-family="'Rubik', sans-serif" font-size="9" fill="#756A7D">Plafon aman</text>
+          <text x="12" y="72" font-family="'Rubik', sans-serif" font-size="9" fill="#756A7D">KPR / utang</text>
+        </g>
+        <!-- 40% Living & Sosial -->
+        <g transform="translate(312, 0)">
+          <rect x="0" y="0" width="96" height="86" rx="6" fill="#F4EDF8" stroke="#DACFE2" stroke-width="1"/>
+          <text x="12" y="26" font-family="'Rubik', sans-serif" font-size="18" font-weight="800" fill="#450D50">40%</text>
+          <text x="12" y="44" font-family="'Rubik', sans-serif" font-size="10" font-weight="700" fill="#211B28">RUTIN &amp; SOSIAL</text>
+          <text x="12" y="60" font-family="'Rubik', sans-serif" font-size="9" fill="#756A7D">Dapur, sekolah</text>
+          <text x="12" y="72" font-family="'Rubik', sans-serif" font-size="9" fill="#756A7D">Zakat &amp; berbagi</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Card 3: Separate Accounts & LPS Safety (Bottom Right, 448px wide) -->
+    <g transform="translate(232, 242)">
+      <rect x="0" y="0" width="448" height="114" rx="10" fill="#F6F1F8" stroke="#E3DAEA" stroke-width="1.5" filter="url(#tactileShadow)"/>
+      <g transform="translate(20, 16)">
+        <text x="0" y="16" font-family="'Rubik', sans-serif" font-size="11" font-weight="700" fill="#450D50" letter-spacing="1">MANAJEMEN REKENING TIKET MENTAL</text>
+        <text x="0" y="36" font-family="'Rubik', sans-serif" font-size="14" font-weight="700" fill="#211B28">Uang Mengalir Seperti Air: Pisahkan Wadah</text>
+
+        <!-- 3 Badges of Accounts -->
+        <g transform="translate(0, 48)">
+          <rect x="0" y="0" width="124" height="32" rx="6" fill="#FFFFFF" stroke="#DACFE2" stroke-width="1"/>
+          <circle cx="12" cy="16" r="4" fill="#450D50"/>
+          <text x="24" y="20" font-family="'Rubik', sans-serif" font-size="10" font-weight="600" fill="#211B28">Harian (QRIS)</text>
+
+          <rect x="134" y="0" width="134" height="32" rx="6" fill="#FFFFFF" stroke="#DACFE2" stroke-width="1"/>
+          <circle cx="146" cy="16" r="4" fill="#786B83"/>
+          <text x="158" y="20" font-family="'Rubik', sans-serif" font-size="10" font-weight="600" fill="#211B28">Mingguan &amp; Bulanan</text>
+
+          <rect x="278" y="0" width="130" height="32" rx="6" fill="#211B28"/>
+          <text x="343" y="20" text-anchor="middle" font-family="'Rubik', sans-serif" font-size="10" font-weight="600" fill="#FFFFFF">LPS Syarat 3T (2M)</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
