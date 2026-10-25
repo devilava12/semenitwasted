@@ -26,21 +26,29 @@
       : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
   }
 
+  function getHomeHref(basePath, active) {
+    if (active) return '#home';
+    const isWeb = typeof window !== 'undefined' && (window.location.protocol === 'http:' || window.location.protocol === 'https:');
+    return isWeb ? '/' : `${basePath}index.html`;
+  }
+
   function linkMarkup(page, activePage, className, basePath = '') {
     const active = page.id === activePage;
-    return `<a href="${basePath}${page.href}"${className ? ` class="${className}${active ? ' active' : ''}"` : active ? ' class="active"' : ''}${active ? ' aria-current="page"' : ''}>${page.label}</a>`;
+    const href = page.id === 'home' ? getHomeHref(basePath, active) : `${basePath}${page.href}`;
+    return `<a href="${href}"${className ? ` class="${className}${active ? ' active' : ''}"` : active ? ' class="active"' : ''}${active ? ' aria-current="page"' : ''}>${page.label}</a>`;
   }
 
   function renderChrome(host) {
     const activePage = host.dataset.activePage;
     const basePath = host.dataset.basePath || '';
+    const homeHref = getHomeHref(basePath, activePage === 'home');
     const navLinks = pages.map(page => `<li>${linkMarkup(page, activePage, 'nav-link-item', basePath)}</li>`).join('');
     const drawerLinks = pages.map(page => linkMarkup(page, activePage, '', basePath)).join('');
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
 
     host.outerHTML = `
       <header class="portfolio-navbar">
-        <a href="${basePath}index.html" class="brand-link" aria-label="semenitwasted Home">
+        <a href="${homeHref}" class="brand-link" aria-label="semenitwasted Home">
           <img src="${basePath}assets/logo-nav.svg" alt="semenitwasted logo" class="brand-logo-img" width="116" height="48">
         </a>
         <nav aria-label="Main navigation">
@@ -61,6 +69,16 @@
 
   function initialise() {
     document.querySelectorAll('[data-site-chrome]').forEach(renderChrome);
+
+    const isWeb = typeof window !== 'undefined' && (window.location.protocol === 'http:' || window.location.protocol === 'https:');
+    if (isWeb) {
+      document.querySelectorAll('a[href$="index.html"]').forEach(link => {
+        const rawHref = link.getAttribute('href');
+        if (rawHref === 'index.html' || rawHref === '../index.html' || rawHref === '../../index.html') {
+          link.setAttribute('href', '/');
+        }
+      });
+    }
 
     const toggleButtons = document.querySelectorAll('.theme-toggle-btn');
     const drawer = document.getElementById('mobileNavDrawer');
