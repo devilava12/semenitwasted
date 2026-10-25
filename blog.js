@@ -438,7 +438,7 @@
     // ------------------------------------------------------------------------
     if (copyRssBtn) {
       copyRssBtn.addEventListener('click', async () => {
-        const feedUrl = 'https://semenitwasted.com/rss.xml';
+        const feedUrl = 'https://semenitwasted.web.id/rss.xml';
 
         try {
           if (navigator.clipboard && navigator.clipboard.writeText) {

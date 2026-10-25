@@ -8,20 +8,20 @@
   <meta name="description"
     content="Bedah CVE-2026-111497 (Node2Shell): bug decoder Brotli di Node.js, cara ditemukan, kenapa bisa ada, dan sejarah 17 tahun Node yang melatarinya.">
   <link rel="icon" type="image/svg+xml" href="../assets/logo-nav.svg">
-  <link rel="canonical" href="https://semenitwasted.com/blog/node2shell-dan-sejarah-nodejs.html">
+  <link rel="canonical" href="https://semenitwasted.web.id/blog/node2shell-dan-sejarah-nodejs">
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://semenitwasted.com/blog/node2shell-dan-sejarah-nodejs.html">
+  <meta property="og:url" content="https://semenitwasted.web.id/blog/node2shell-dan-sejarah-nodejs">
   <meta property="og:title" content="Node2Shell Membongkar Celah di Perbatasan JavaScript dan C, dan Sejarah Node.js Menjelaskan Asalnya | semenitwasted">
   <meta property="og:description"
     content="Bedah CVE-2026-111497 (Node2Shell): bug decoder Brotli di Node.js, cara ditemukan, kenapa bisa ada, dan sejarah 17 tahun Node yang melatarinya.">
-  <meta property="og:image" content="https://semenitwasted.com/assets/blog/Node2Shell_%20Debugging%20Through%20the%20Night.webp">
+  <meta property="og:image" content="https://semenitwasted.web.id/assets/blog/Node2Shell_%20Debugging%20Through%20the%20Night.webp">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Node2Shell Membongkar Celah di Perbatasan JavaScript dan C, dan Sejarah Node.js Menjelaskan Asalnya | semenitwasted">
   <meta name="twitter:description"
     content="Bedah CVE-2026-111497 (Node2Shell): bug decoder Brotli di Node.js, cara ditemukan, kenapa bisa ada, dan sejarah 17 tahun Node yang melatarinya.">
-  <meta name="twitter:image" content="https://semenitwasted.com/assets/blog/Node2Shell_%20Debugging%20Through%20the%20Night.webp">
+  <meta name="twitter:image" content="https://semenitwasted.web.id/assets/blog/Node2Shell_%20Debugging%20Through%20the%20Night.webp">
 
   <!-- Structured Data: BlogPosting -->
   <script type="application/ld+json">
@@ -30,24 +30,24 @@
     "@type": "BlogPosting",
     "headline": "Node2Shell Membongkar Celah di Perbatasan JavaScript dan C, dan Sejarah Node.js Menjelaskan Asalnya",
     "description": "Bedah CVE-2026-111497 (Node2Shell): bug decoder Brotli di Node.js, cara ditemukan, kenapa bisa ada, dan sejarah 17 tahun Node yang melatarinya.",
-    "image": "https://semenitwasted.com/assets/blog/Node2Shell_%20Debugging%20Through%20the%20Night.webp",
-    "datePublished": "2026-10-24",
-    "dateModified": "2026-10-24",
+    "image": "https://semenitwasted.web.id/assets/blog/Node2Shell_%20Debugging%20Through%20the%20Night.webp",
+    "datePublished": "2026-10-24T08:00:00+07:00",
+    "dateModified": "2026-10-24T08:00:00+07:00",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://semenitwasted.com/blog/node2shell-dan-sejarah-nodejs.html"
+      "@id": "https://semenitwasted.web.id/blog/node2shell-dan-sejarah-nodejs"
     },
     "author": {
       "@type": "Person",
       "name": "I Putu Dicky Adi Pranatha",
-      "url": "https://semenitwasted.com/about.html"
+      "url": "https://semenitwasted.web.id/about.html"
     },
     "publisher": {
       "@type": "Organization",
       "name": "semenitwasted",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://semenitwasted.com/assets/logo-nav.svg"
+        "url": "https://semenitwasted.web.id/assets/logo-nav.svg"
       }
     }
   }
@@ -461,7 +461,7 @@ if ($http_content_encoding ~* "br") {
         </p>
 
         <p>
-          Di luar urusan tambalan, insiden ini memberi cara pandang yang lebih jujur tentang Node. Node tidak rentan karena memakai JavaScript, dan Node juga tidak aman hanya karena memakai JavaScript. Ryan Dahl membangunnya pada 2009 sebagai jembatan antara bahasa yang aman dari sisi memori dan pustaka sistem yang ditulis dalam C, dan jembatan itulah yang membuat Node cepat sekaligus menjadi tempat sebagian besar celah seriusnya muncul. Memahami di mana jahitan itu berada membantu Anda menentukan prioritas: pantau rilis keamanan Node lewat milis nodejs-sec, jadikan pembaruan runtime sebagai rutinitas mingguan alih-alih proyek tahunan, dan perlakukan setiap data dari internet yang menyeberang ke lapisan native sebagai data yang paling perlu dicurigai.
+          Di luar urusan tambalan, insiden ini memberi cara pandang yang lebih jujur tentang Node. Node tidak rentan karena memakai JavaScript, dan Node juga tidak aman hanya karena memakai JavaScript. Ryan Dahl membangunnya pada 2009 sebagai jembatan antara bahasa yang aman dari sisi memori dan pustaka sistem yang ditulis dalam C, dan jembatan itulah yang membuat Node cepat sekaligus menjadi tempat sebagian besar celah seriusnya muncul—pola kerapuhan arsitektur yang serupa dengan krisis mesin interpreter pada <a href="php2shell-dan-sejarah-php.html">PHP2Shell di ekosistem web</a>. Memahami di mana jahitan itu berada membantu Anda menentukan prioritas: pantau rilis keamanan Node lewat milis nodejs-sec, jadikan pembaruan runtime sebagai rutinitas mingguan alih-alih proyek tahunan, dan perlakukan setiap data dari internet yang menyeberang ke lapisan native sebagai data yang paling perlu dicurigai.
         </p>
 
         <h2>Referensi</h2>
