@@ -29,8 +29,8 @@
       featured: false,
       excerpt: 'Menghilangkan semua friksi pada antarmuka digital adalah resep bencana bagi tindakan berisiko tinggi. Pelajari cara merancang intentional friction yang melindungi pengguna.',
       contentUrl: 'blog/bahaya-desain-serba-instan-dan-kebutuhan-jeda-berpikir.html',
-      coverImage: 'assets/blog/Puzzled%20Neon%20Workspace%20with%20Cat.webp',
-      coverAlt: 'Ilustrasi kreator dan kucing di meja kerja neon yang sedang mengambil jeda berpikir di tengah tombol antarmuka serba cepat',
+      coverImage: 'assets/blog/Neon%20Creative%20Desk%20at%20Sunset.webp',
+      coverAlt: 'Ilustrasi meja kerja kreatif bernuansa neon saat matahari terbenam yang merefleksikan jeda berpikir di tengah antarmuka serba cepat',
       author: 'I Putu Dicky Adi Pranatha'
     },
     {
