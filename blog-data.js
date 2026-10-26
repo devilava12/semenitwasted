@@ -17,6 +17,23 @@
 
   const BLOG_POSTS = [
     {
+      id: 'post-11',
+      slug: 'bahaya-desain-serba-instan-dan-kebutuhan-jeda-berpikir',
+      title: 'Bahaya Desain Serba Instan Ketika Pengguna Justru Butuh Jeda untuk Berpikir',
+      date: '2026-10-26',
+      formattedDate: '26 Oktober 2026',
+      readingTime: '7 min read',
+      category: 'product-support',
+      categoryLabel: 'Product & Support',
+      tags: ['Intentional Friction', 'Product & Support', 'UX Design', 'Error Prevention'],
+      featured: false,
+      excerpt: 'Menghilangkan semua friksi pada antarmuka digital adalah resep bencana bagi tindakan berisiko tinggi. Pelajari cara merancang intentional friction yang melindungi pengguna.',
+      contentUrl: 'blog/bahaya-desain-serba-instan-dan-kebutuhan-jeda-berpikir.html',
+      coverImage: 'assets/blog/Puzzled%20Neon%20Workspace%20with%20Cat.webp',
+      coverAlt: 'Ilustrasi kreator dan kucing di meja kerja neon yang sedang mengambil jeda berpikir di tengah tombol antarmuka serba cepat',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
       id: 'post-10',
       slug: 'membedakan-kaya-tampilan-dan-sejahtera-finansial',
       title: 'Membedakan Kaya Tampilan dan Sejahtera Finansial Tanpa Terjebak Perlombaan Status',

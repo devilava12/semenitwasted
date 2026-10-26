@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <filter id="bentoShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#1A1822" flood-opacity="0.08"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#1A1822" flood-opacity="0.04"/>
+    </filter>
+    <linearGradient id="canvasBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBF9FC"/>
+      <stop offset="100%" stop-color="#F2EEF5"/>
+    </linearGradient>
+    <linearGradient id="activeRingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1822"/>
+      <stop offset="100%" stop-color="#4E4459"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="100%" height="100%" fill="url(#canvasBg)"/>
+
+  <!-- Subtle Blueprint Grid & Radial Lines -->
+  <g opacity="0.45" stroke="#E2DCE6" stroke-width="1" stroke-dasharray="3 6">
+    <line x1="80" y1="0" x2="80" y2="450"/>
+    <line x1="720" y1="0" x2="720" y2="450"/>
+    <line x1="0" y1="225" x2="800" y2="225"/>
+    <circle cx="400" cy="225" r="160" fill="none"/>
+  </g>
+
+  <!-- Main Bento Container Frame -->
+  <g transform="translate(110, 65)">
+    <!-- Container Body -->
+    <rect x="0" y="0" width="580" height="320" rx="14" fill="#FFFFFF" stroke="#E2DCE6" stroke-width="1.5" filter="url(#bentoShadow)"/>
+
+    <!-- Window Top Header -->
+    <rect x="0" y="0" width="580" height="46" rx="14" fill="#F8F5FA"/>
+    <rect x="0" y="32" width="580" height="14" fill="#F8F5FA"/>
+    <line x1="0" y1="46" x2="580" y2="46" stroke="#E2DCE6" stroke-width="1"/>
+
+    <!-- Window Controls -->
+    <circle cx="26" cy="23" r="4.5" fill="#D6CEDC"/>
+    <circle cx="40" cy="23" r="4.5" fill="#D6CEDC"/>
+    <circle cx="54" cy="23" r="4.5" fill="#D6CEDC"/>
+    
+    <text x="554" y="27" text-anchor="end" font-family="'Rubik', -apple-system, sans-serif" font-size="10.5" font-weight="600" fill="#7A7082" letter-spacing="1">INTENTIONAL FRICTION ARCHITECTURE</text>
+
+    <!-- LEFT CARD: Frictionless Trap (Accidental Danger) -->
+    <g transform="translate(32, 70)">
+      <rect x="0" y="0" width="236" height="218" rx="10" fill="#FAF8FC" stroke="#E7E2EC" stroke-width="1"/>
+      
+      <rect x="18" y="18" width="94" height="14" rx="4" fill="#E2DCE6"/>
+      <text x="24" y="29" font-family="'Rubik', sans-serif" font-size="8.5" font-weight="600" fill="#6A5F73">FRICTIONLESS</text>
+
+      <!-- Danger Button -->
+      <g transform="translate(18, 48)">
+        <rect x="0" y="0" width="200" height="36" rx="6" fill="#F4E8E8" stroke="#DCA8A8" stroke-width="1"/>
+        <text x="100" y="22" text-anchor="middle" font-family="'Rubik', sans-serif" font-size="11" font-weight="500" fill="#A83232">Hapus Proyek (1-Click)</text>
+      </g>
+
+      <!-- Result Error Message -->
+      <g transform="translate(18, 98)">
+        <rect x="0" y="0" width="200" height="96" rx="6" fill="#FFFFFF" stroke="#E7E2EC" stroke-width="1"/>
+        <circle cx="32" cy="30" r="12" fill="#F4E8E8"/>
+        <path d="M28 26 L36 34 M36 26 L28 34" stroke="#A83232" stroke-width="1.8" stroke-linecap="round"/>
+        <rect x="52" y="22" width="130" height="8" rx="3" fill="#DCA8A8"/>
+        <rect x="52" y="34" width="100" height="6" rx="3" fill="#E7E2EC"/>
+        <text x="20" y="68" font-family="'Rubik', sans-serif" font-size="9" font-weight="500" fill="#8C3A3A">Tiket #4092: "Saya tidak sengaja"</text>
+        <rect x="20" y="78" width="160" height="5" rx="2.5" fill="#F2E6E6"/>
+      </g>
+    </g>
+
+    <!-- CENTER ARROW: Cognitive Shift -->
+    <g transform="translate(276, 170)">
+      <circle cx="14" cy="0" r="16" fill="#F2EEF5" stroke="#D6CEDC" stroke-width="1"/>
+      <path d="M7 0 L21 0 M15 -5 L21 0 L15 5" stroke="#4E4459" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+
+    <!-- RIGHT CARD: Positive Friction (Deliberate Pause & Safety) -->
+    <g transform="translate(312, 70)">
+      <rect x="0" y="0" width="236" height="218" rx="10" fill="#1E1A26" stroke="#332C3E" stroke-width="1" filter="url(#bentoShadow)"/>
+      
+      <rect x="18" y="18" width="108" height="14" rx="4" fill="#332C3E"/>
+      <text x="24" y="29" font-family="'Rubik', sans-serif" font-size="8.5" font-weight="600" fill="#D6CEDC">DELIBERATE PAUSE</text>
+
+      <!-- Hold to Confirm Visual -->
+      <g transform="translate(18, 48)">
+        <rect x="0" y="0" width="200" height="38" rx="6" fill="#282232" stroke="#443B52" stroke-width="1"/>
+        <!-- Progress bar filling up -->
+        <rect x="2" y="2" width="136" height="34" rx="4" fill="#443B52"/>
+        <text x="100" y="23" text-anchor="middle" font-family="'Rubik', sans-serif" font-size="10.5" font-weight="600" fill="#FFFFFF">Tahan 3 Detik (68%)</text>
+      </g>
+
+      <!-- Type Verification Field -->
+      <g transform="translate(18, 98)">
+        <rect x="0" y="0" width="200" height="96" rx="6" fill="#282232" stroke="#3D354A" stroke-width="1"/>
+        <text x="16" y="22" font-family="'Rubik', sans-serif" font-size="9" font-weight="400" fill="#ADA2B8">Ketik nama repositori untuk lanjut:</text>
+        <rect x="16" y="32" width="168" height="24" rx="4" fill="#1A1822" stroke="#5C506D" stroke-width="1"/>
+        <text x="24" y="48" font-family="'Rubik', monospace" font-size="9.5" font-weight="500" fill="#EAE5F0">production-core|</text>
+        
+        <rect x="16" y="66" width="60" height="16" rx="4" fill="#3D354A"/>
+        <text x="46" y="77" text-anchor="middle" font-family="'Rubik', sans-serif" font-size="8" font-weight="600" fill="#69DB7C">TERVERIFIKASI</text>
+      </g>
+    </g>
+  </g>
+</svg>
