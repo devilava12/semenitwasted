@@ -17,6 +17,40 @@
 
   const BLOG_POSTS = [
     {
+      id: 'post-13',
+      slug: 'kenapa-chatbot-ai-sering-membuat-pelanggan-frustrasi',
+      title: 'Kenapa Chatbot AI Sering Membuat Pelanggan Frustrasi dan Kapan Harus Menyerahkannya ke Manusia',
+      date: '2026-10-27',
+      formattedDate: '27 Oktober 2026',
+      readingTime: '8 min read',
+      category: 'product-support',
+      categoryLabel: 'Product & Support',
+      tags: ['Customer Support', 'Chatbot AI', 'Product Strategy', 'UX Ethics', 'Human Handoff'],
+      featured: true,
+      excerpt: 'Chatbot AI sering gagal bukan karena bodoh, melainkan karena dipaksa menangani situasi genting tanpa empati. Pelajari kerangka triase automasi dan eskalasi ke manusia.',
+      contentUrl: 'blog/kenapa-chatbot-ai-sering-membuat-pelanggan-frustrasi.html',
+      coverImage: 'assets/blog/Frustrated%20Anime%20Girl%20and%20Chatbot.webp',
+      coverAlt: 'Ilustrasi perempuan merasa frustrasi di depan laptop dan smartphone menghadapi jawaban chatbot AI yang kaku dan berulang',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
+      id: 'post-12',
+      slug: 'jualan-laris-di-medsos-tapi-belum-punya-website',
+      title: 'Jualan Laris di Medsos tapi Belum Punya Website: Kapan Waktu yang Tepat Punya Toko Sendiri?',
+      date: '2026-10-26',
+      formattedDate: '26 Oktober 2026',
+      readingTime: '7 min read',
+      category: 'product-support',
+      categoryLabel: 'Product & Support',
+      tags: ['E-Commerce', 'David Alfa Sunarna', 'Owned Asset', 'Digital Strategy', 'Website Bisnis'],
+      featured: false,
+      excerpt: 'Jualan di medsos itu seperti numpang jualan di halaman orang lain. Pelajari kenapa kamu butuh website toko sendiri dan kapan waktu yang tepat untuk memulainya.',
+      contentUrl: 'blog/jualan-laris-di-medsos-tapi-belum-punya-website.html',
+      coverImage: 'assets/blog/Pemilik%20Toko%20Online%20Sedang%20Berpikir.webp',
+      coverAlt: 'Ilustrasi pemilik toko online sedang berpikir di depan laptop merenungkan strategi memiliki website toko sendiri',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
       id: 'post-11',
       slug: 'bahaya-desain-serba-instan-dan-kebutuhan-jeda-berpikir',
       title: 'Bahaya Desain Serba Instan Ketika Pengguna Justru Butuh Jeda untuk Berpikir',
