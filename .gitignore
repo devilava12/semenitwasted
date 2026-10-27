@@ -19,3 +19,6 @@ ehthumbs.db
 
 # File log
 *.log
+
+# Folder build lokal
+dist/
