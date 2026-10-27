@@ -27,7 +27,7 @@
       categoryLabel: 'Product & Support',
       tags: ['Customer Support', 'Chatbot AI', 'Product Strategy', 'UX Ethics', 'Human Handoff'],
       featured: true,
-      excerpt: 'Chatbot AI sering gagal bukan karena bodoh, melainkan karena dipaksa menangani situasi genting tanpa empati. Pelajari kerangka triase automasi dan eskalasi ke manusia.',
+      excerpt: 'Chatbot AI sering bikin kesal bukan karena bodoh, melainkan karena robot tanpa perasaan dipaksa menyelesaikan masalah genting saat orang sedang panik. Simak ulasan sederhana dan solusinya.',
       contentUrl: 'blog/kenapa-chatbot-ai-sering-membuat-pelanggan-frustrasi.html',
       coverImage: 'assets/blog/Frustrated%20Anime%20Girl%20and%20Chatbot.webp',
       coverAlt: 'Ilustrasi perempuan merasa frustrasi di depan laptop dan smartphone menghadapi jawaban chatbot AI yang kaku dan berulang',
