@@ -1,0 +1,11 @@
+# Abaikan metadata git
+.git/
+.git/**
+
+# Abaikan konfigurasi agent & workspace internal
+.agents/
+.agents/**
+.vscode/
+
+# Abaikan file spesifikasi dan dokumen markdown internal
+*.md
