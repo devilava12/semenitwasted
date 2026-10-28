@@ -17,6 +17,23 @@
 
   const BLOG_POSTS = [
     {
+      id: 'post-14',
+      slug: 'sisi-gelap-vibe-coding-dan-kebutuhan-pagar-pembatas',
+      title: 'Sisi Gelap Vibe Coding dan Cara Membangun Pagar Pembatas agar Kode Tidak Hancur',
+      date: '2026-10-28',
+      formattedDate: '28 Oktober 2026',
+      readingTime: '8 min read',
+      category: 'frontend-code',
+      categoryLabel: 'Frontend & Code',
+      tags: ['Vibe Coding', 'AI Engineering', 'Technical Debt', 'Web Development', 'Guardrails'],
+      featured: true,
+      excerpt: 'Vibe coding itu seperti menyuruh robot menyusun istana mainan secepat kilat: seru dan instan, tapi rawan ambruk kalau tidak dipasangi pagar pengaman yang kokoh.',
+      contentUrl: 'blog/sisi-gelap-vibe-coding-dan-kebutuhan-pagar-pembatas.html',
+      coverImage: 'assets/blog/Vibe%20Coding%20Behind%20the%20Firewall.webp',
+      coverAlt: 'Ilustrasi Vibe Coding Behind the Firewall menampilkan suasana ruang kerja developer dengan proteksi firewall saat mengeksplorasi kode AI',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
       id: 'post-13',
       slug: 'kenapa-chatbot-ai-sering-membuat-pelanggan-frustrasi',
       title: 'Kenapa Chatbot AI Sering Membuat Pelanggan Frustrasi dan Kapan Harus Menyerahkannya ke Manusia',
@@ -26,7 +43,7 @@
       category: 'product-support',
       categoryLabel: 'Product & Support',
       tags: ['Customer Support', 'Chatbot AI', 'Product Strategy', 'UX Ethics', 'Human Handoff'],
-      featured: true,
+      featured: false,
       excerpt: 'Chatbot AI sering bikin kesal bukan karena bodoh, melainkan karena robot tanpa perasaan dipaksa menyelesaikan masalah genting saat orang sedang panik. Simak ulasan sederhana dan solusinya.',
       contentUrl: 'blog/kenapa-chatbot-ai-sering-membuat-pelanggan-frustrasi.html',
       coverImage: 'assets/blog/Frustrated%20Anime%20Girl%20and%20Chatbot.webp',

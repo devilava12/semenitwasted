@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <filter id="elevated" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#141019" flood-opacity="0.10"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#141019" flood-opacity="0.06"/>
+    </filter>
+    <filter id="badgeShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#450D50" flood-opacity="0.18"/>
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#450D50" flood-opacity="0.10"/>
+    </filter>
+    <filter id="subtleShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#141019" flood-opacity="0.05"/>
+    </filter>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCFAFD"/>
+      <stop offset="100%" stop-color="#F2EDF6"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FAF7FC"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+
+  <!-- Main Bento Frame (Width: 680, Height: 360, centered at x=60, y=45) -->
+  <g transform="translate(60, 45)">
+    <rect x="0" y="0" width="680" height="360" rx="16" fill="url(#cardGrad)" stroke="#E4DCE9" stroke-width="1.5" filter="url(#elevated)"/>
+
+    <!-- Window Header -->
+    <rect x="0" y="0" width="680" height="46" rx="16" fill="#F4EEF7"/>
+    <rect x="0" y="32" width="680" height="14" fill="#F4EEF7"/>
+    <line x1="0" y1="46" x2="680" y2="46" stroke="#E4DCE9" stroke-width="1"/>
+
+    <!-- Window Controls -->
+    <circle cx="28" cy="23" r="5" fill="#E4DCE9" stroke="#C5BACB" stroke-width="1"/>
+    <circle cx="44" cy="23" r="5" fill="#E4DCE9" stroke="#C5BACB" stroke-width="1"/>
+    <circle cx="60" cy="23" r="5" fill="#E4DCE9" stroke="#C5BACB" stroke-width="1"/>
+
+    <text x="652" y="27" text-anchor="end" font-family="'Rubik', -apple-system, sans-serif" font-size="11" font-weight="600" fill="#756A7D" letter-spacing="1">DEFENSIVE ENGINEERING : GUARDRAILS</text>
+
+    <!-- Content Area: y=60, height=276 -->
+
+    <!-- Left Column: The Vibe Prompt Stream (Speed & Chaos) - Width: 268px, x=24 -->
+    <g transform="translate(24, 62)">
+      <rect x="0" y="0" width="268" height="274" rx="12" fill="#18141F" stroke="#2D2538" stroke-width="1.2" filter="url(#subtleShadow)"/>
+      
+      <!-- Terminal Header -->
+      <rect x="0" y="0" width="268" height="32" rx="12" fill="#231C2C"/>
+      <rect x="0" y="20" width="268" height="12" fill="#231C2C"/>
+      <line x1="0" y1="32" x2="268" y2="32" stroke="#2D2538" stroke-width="1"/>
+      <circle cx="16" cy="16" r="3.5" fill="#FF5F56"/>
+      <circle cx="28" cy="16" r="3.5" fill="#FFBD2E"/>
+      <circle cx="40" cy="16" r="3.5" fill="#27C93F"/>
+      <text x="56" y="20" font-family="'Courier New', monospace" font-size="10" fill="#A498B0">terminal : session-chaos</text>
+      
+      <!-- Prompt Lines -->
+      <text x="14" y="56" font-family="'Courier New', monospace" font-size="10.5" fill="#8CE8AD">&gt; prompt: "bikin landing page keren"</text>
+      <text x="14" y="74" font-family="'Courier New', monospace" font-size="9.5" fill="#93879F">AI generating 42 files instantly...</text>
+      
+      <!-- Chaos Warning Box 1 -->
+      <g transform="translate(14, 92)">
+        <rect x="0" y="0" width="240" height="34" rx="6" fill="#2E181C" stroke="#68343C" stroke-width="1"/>
+        <circle cx="14" cy="17" r="4" fill="#FF6B6B"/>
+        <text x="26" y="15" font-family="'Courier New', monospace" font-size="9.5" font-weight="bold" fill="#FFA8A8">WARNING: 12 dependencies</text>
+        <text x="26" y="27" font-family="'Courier New', monospace" font-size="8.5" fill="#D88A8A">Website mendadak berat &amp; lambat</text>
+      </g>
+      
+      <!-- Chaos Warning Box 2 -->
+      <g transform="translate(14, 134)">
+        <rect x="0" y="0" width="240" height="34" rx="6" fill="#2E181C" stroke="#68343C" stroke-width="1"/>
+        <circle cx="14" cy="17" r="4" fill="#FF6B6B"/>
+        <text x="26" y="15" font-family="'Courier New', monospace" font-size="9.5" font-weight="bold" fill="#FFA8A8">REGRESSION: broken site-chrome</text>
+        <text x="26" y="27" font-family="'Courier New', monospace" font-size="8.5" fill="#D88A8A">Tombol menu lama mendadak rusak</text>
+      </g>
+
+      <!-- Utang Teknis Box -->
+      <g transform="translate(14, 178)">
+        <rect x="0" y="0" width="240" height="82" rx="6" fill="#211A29" stroke="#372D43" stroke-width="1"/>
+        <text x="12" y="20" font-family="'Rubik', sans-serif" font-size="10" font-weight="700" fill="#E8DDF1">Utang Teknis Menumpuk:</text>
+        <text x="12" y="38" font-family="'Courier New', monospace" font-size="9" fill="#B4A6C0">• Kode kusut tidak dipahami manusia</text>
+        <text x="12" y="54" font-family="'Courier New', monospace" font-size="9" fill="#B4A6C0">• Duplikasi logika &amp; fungsi ganda</text>
+        <text x="12" y="70" font-family="'Courier New', monospace" font-size="9" fill="#B4A6C0">• Sangat sulit diperbaiki saat error</text>
+      </g>
+    </g>
+
+    <!-- Center Bridge Channel (Width: 96px, from x=292 to x=388, center at x=340) -->
+    <!-- Connecting dashed pipeline line -->
+    <line x1="292" y1="199" x2="388" y2="199" stroke="#C5BACB" stroke-width="2" stroke-dasharray="5 4"/>
+
+    <!-- Central Floating Shield Badge -->
+    <g transform="translate(315, 174)">
+      <!-- Outer Glow Card -->
+      <rect x="0" y="0" width="50" height="50" rx="25" fill="#FFFFFF" stroke="#D5CCD9" stroke-width="1.5" filter="url(#badgeShadow)"/>
+      <circle cx="25" cy="25" r="20" fill="#F4EEF7"/>
+      
+      <!-- Crisp Centered Arrow -->
+      <path d="M17 25 L32 25 M26 19 L33 25 L26 31" stroke="#450D50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Small Label Below Badge -->
+    <g transform="translate(316, 234)">
+      <rect x="0" y="0" width="48" height="18" rx="9" fill="#EADFEF"/>
+      <text x="24" y="12.5" text-anchor="middle" font-family="'Rubik', sans-serif" font-size="8.5" font-weight="700" fill="#450D50" letter-spacing="0.5">FILTER</text>
+    </g>
+
+    <!-- Right Column: The 5 Guardrails System (Stability & Quality) - Width: 268px, x=388 -->
+    <g transform="translate(388, 62)">
+      <rect x="0" y="0" width="268" height="274" rx="12" fill="#FFFFFF" stroke="#E4DCE9" stroke-width="1.2" filter="url(#subtleShadow)"/>
+      
+      <!-- Right Header -->
+      <rect x="0" y="0" width="268" height="32" rx="12" fill="#FAF7FC"/>
+      <rect x="0" y="20" width="268" height="12" fill="#FAF7FC"/>
+      <line x1="0" y1="32" x2="268" y2="32" stroke="#E4DCE9" stroke-width="1"/>
+      <text x="14" y="21" font-family="'Rubik', sans-serif" font-size="10.5" font-weight="700" fill="#211B28">5 PAGAR PEMBATAS (GUARDRAILS)</text>
+      
+      <!-- Guardrail 1 -->
+      <g transform="translate(12, 42)">
+        <rect x="0" y="0" width="244" height="40" rx="6" fill="#F6FCF8" stroke="#BCE3CD" stroke-width="1"/>
+        <circle cx="16" cy="20" r="5" fill="#34A853"/>
+        <text x="28" y="17" font-family="'Rubik', sans-serif" font-size="9.5" font-weight="700" fill="#137333">01. Zero Regression</text>
+        <text x="28" y="30" font-family="'Rubik', sans-serif" font-size="8.5" fill="#5F6368">Fitur lama &amp; menu tetap aman tanpa rusak</text>
+      </g>
+
+      <!-- Guardrail 2 -->
+      <g transform="translate(12, 88)">
+        <rect x="0" y="0" width="244" height="40" rx="6" fill="#F6FCF8" stroke="#BCE3CD" stroke-width="1"/>
+        <circle cx="16" cy="20" r="5" fill="#34A853"/>
+        <text x="28" y="17" font-family="'Rubik', sans-serif" font-size="9.5" font-weight="700" fill="#137333">02. Autonomous Verification</text>
+        <text x="28" y="30" font-family="'Rubik', sans-serif" font-size="8.5" fill="#5F6368">0 error di konsol &amp; rapi di layar ponsel</text>
+      </g>
+
+      <!-- Guardrail 3 -->
+      <g transform="translate(12, 134)">
+        <rect x="0" y="0" width="244" height="40" rx="6" fill="#F6FCF8" stroke="#BCE3CD" stroke-width="1"/>
+        <circle cx="16" cy="20" r="5" fill="#34A853"/>
+        <text x="28" y="17" font-family="'Rubik', sans-serif" font-size="9.5" font-weight="700" fill="#137333">03. Zero Dependency Creep</text>
+        <text x="28" y="30" font-family="'Rubik', sans-serif" font-size="8.5" fill="#5F6368">Murni web vanilla agar secepat kilat</text>
+      </g>
+
+      <!-- Guardrail 4 -->
+      <g transform="translate(12, 180)">
+        <rect x="0" y="0" width="244" height="40" rx="6" fill="#F6FCF8" stroke="#BCE3CD" stroke-width="1"/>
+        <circle cx="16" cy="20" r="5" fill="#34A853"/>
+        <text x="28" y="17" font-family="'Rubik', sans-serif" font-size="9.5" font-weight="700" fill="#137333">04. Zero Dead Ends</text>
+        <text x="28" y="30" font-family="'Rubik', sans-serif" font-size="8.5" fill="#5F6368">Semua tombol berfungsi, tanpa 404</text>
+      </g>
+
+      <!-- Guardrail 5 -->
+      <g transform="translate(12, 226)">
+        <rect x="0" y="0" width="244" height="40" rx="6" fill="#F6FCF8" stroke="#BCE3CD" stroke-width="1"/>
+        <circle cx="16" cy="20" r="5" fill="#34A853"/>
+        <text x="28" y="17" font-family="'Rubik', sans-serif" font-size="9.5" font-weight="700" fill="#137333">05. Surgical Code Diffs</text>
+        <text x="28" y="30" font-family="'Rubik', sans-serif" font-size="8.5" fill="#5F6368">Ganti baris yang rusak saja secara terukur</text>
+      </g>
+    </g>
+
+  </g>
+</svg>

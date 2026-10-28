@@ -4104,7 +4104,7 @@ body {
   height: calc(100% - 8px);
   background: var(--color-dark);
   border-radius: var(--radius-pill);
-  box-shadow: var(--shadow-primary);
+  box-shadow: none;
   transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
               width 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
   pointer-events: none;
@@ -4113,7 +4113,7 @@ body {
 
 [data-theme="dark"] .ui-segmented-pill-bg {
   background: var(--color-light);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+  box-shadow: none;
 }
 
 .ui-segmented-btn {
