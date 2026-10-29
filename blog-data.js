@@ -17,6 +17,23 @@
 
   const BLOG_POSTS = [
     {
+      id: 'post-15',
+      slug: 'kedaulatan-internet-indonesia-dan-sejarah-jaringan',
+      title: 'Benarkah 90 Persen Internet Indonesia Bisa Diputus Singapura dan Mengapa Kedaulatan Jaringan Kita Belum Tuntas',
+      date: '2026-10-29',
+      formattedDate: '29 Oktober 2026',
+      readingTime: '12 min read',
+      category: 'reflections',
+      categoryLabel: 'Reflections',
+      tags: ['Kedaulatan Digital', 'Sejarah Internet', 'Kabel Bawah Laut', 'Data Center', 'Token AI'],
+      featured: false,
+      excerpt: 'Bedah polemik ancaman putus 90% kabel internet RI dari Singapura, paradoks ekspor energi murah vs data center, sejarah Paguyuban Network hingga Gojek Tokopedia, dan solusi Token AI.',
+      contentUrl: 'blog/kedaulatan-internet-indonesia-dan-sejarah-jaringan.html',
+      coverImage: 'assets/blog/db1b7896-80f7-436d-b4a6-5ca948685a1a.webp',
+      coverAlt: 'Ilustrasi pengguna panik memegang kepala di depan laptop yang menampilkan peringatan No Internet ditemani kucing dan perangkat router, dengan latar siluet gedung Marina Bay Sands Singapura di kejauhan',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
       id: 'post-14',
       slug: 'sisi-gelap-vibe-coding-dan-kebutuhan-pagar-pembatas',
       title: 'Sisi Gelap Vibe Coding dan Cara Membangun Pagar Pembatas agar Kode Tidak Hancur',
