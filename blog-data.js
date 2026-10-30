@@ -17,6 +17,23 @@
 
   const BLOG_POSTS = [
     {
+      id: 'post-16',
+      slug: 'perbedaan-website-dan-landing-page',
+      title: 'Bingung Beda Website dan Landing Page? Arti, Sejarah Awal Dibuat, dan Panduan Memilihnya untuk Pemula',
+      date: '2026-10-30',
+      formattedDate: '30 Oktober 2026',
+      readingTime: '9 min read',
+      category: 'product-support',
+      categoryLabel: 'Product & Support',
+      tags: ['Website', 'Landing Page', 'Web History', 'Digital Strategy', 'Pemula'],
+      featured: false,
+      excerpt: 'Pahami apa itu website dan apa itu landing page dengan bahasa sederhana. Simak sejarah awal dibuatnya di CERN dan Microsoft, bedanya, serta panduan memilihnya.',
+      contentUrl: 'blog/perbedaan-website-dan-landing-page.html',
+      coverImage: 'assets/blog/Website%20vs%20Landing%20Page%20Dilemma.webp',
+      coverAlt: 'Ilustrasi pemula di depan laptop ditemani kucing sedang menimbang perbandingan kelebihan dan kekurangan antara Website multi-halaman di sisi kiri dan Landing Page fokus satu tujuan di sisi kanan',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
       id: 'post-15',
       slug: 'kedaulatan-internet-indonesia-dan-sejarah-jaringan',
       title: 'Benarkah 90 Persen Internet Indonesia Bisa Diputus Singapura dan Mengapa Kedaulatan Jaringan Kita Belum Tuntas',
