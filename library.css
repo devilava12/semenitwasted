@@ -4446,7 +4446,7 @@ body {
   gap: 12px;
 }
 
-/* Forced Colors High-Contrast Mode */
+/* Forced Colors High-Contrast Mode (Native OS + Interactive Simulator) */
 @media (forced-colors: active) {
   .ui-card,
   .ui-btn,
@@ -4458,6 +4458,138 @@ body {
   .ui-accordion-item {
     border-color: CanvasText !important;
   }
+}
+
+.library-page-wrapper.forced-colors-active #componentsCatalog {
+  --fc-canvas: #FFFFFF;
+  --fc-text: #000000;
+  --fc-highlight: #0038A8;
+  --fc-highlight-text: #FFFFFF;
+  --fc-gray: #595959;
+}
+
+[data-theme="dark"] .library-page-wrapper.forced-colors-active #componentsCatalog {
+  --fc-canvas: #000000;
+  --fc-text: #FFFFFF;
+  --fc-highlight: #1AEBFF;
+  --fc-highlight-text: #000000;
+  --fc-gray: #A6A6A6;
+}
+
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-stage,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-stage * {
+  box-shadow: none !important;
+}
+
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-stage {
+  background: var(--fc-canvas) !important;
+  color: var(--fc-text) !important;
+  border: 1.5px solid var(--fc-text) !important;
+}
+
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-card,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-media-placeholder,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-depth-layer,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-state-item,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-input,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-select,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-textarea,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-fieldset,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-chip,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-tag,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-badge,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-tabpanel,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-segmented-control,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-segmented-panel,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-accordion-item,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-alert,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-dialog {
+  background: var(--fc-canvas) !important;
+  color: var(--fc-text) !important;
+  border: 1.5px solid var(--fc-text) !important;
+}
+
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-card-title,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-card-text,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-card-kicker,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-label,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-legend,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-hint,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-state-name,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-state-token,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-accordion-trigger,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-accordion-inner p,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-tabpanel p,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-segmented-panel p,
+.library-page-wrapper.forced-colors-active #componentsCatalog .stage-caption,
+.library-page-wrapper.forced-colors-active #componentsCatalog .stage-status-indicator {
+  color: var(--fc-text) !important;
+  background: transparent !important;
+}
+
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-btn {
+  background: var(--fc-canvas) !important;
+  color: var(--fc-text) !important;
+  border: 1.5px solid var(--fc-text) !important;
+}
+
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-btn--quiet {
+  border-color: transparent !important;
+  text-decoration: underline !important;
+}
+
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-btn--primary:not(:disabled):not(.is-disabled),
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-chip[aria-pressed="true"],
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-switch[aria-checked="true"],
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-segmented-pill-bg {
+  background: var(--fc-highlight) !important;
+  color: var(--fc-highlight-text) !important;
+  border-color: var(--fc-text) !important;
+}
+
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-segmented-btn {
+  color: var(--fc-text) !important;
+}
+
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-segmented-btn.active,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-segmented-btn.active .ui-segmented-badge {
+  color: var(--fc-highlight-text) !important;
+}
+
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-switch {
+  background: var(--fc-canvas) !important;
+  border: 1.5px solid var(--fc-text) !important;
+}
+
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-switch-thumb {
+  background: var(--fc-text) !important;
+}
+
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-switch[aria-checked="true"] .ui-switch-thumb {
+  background: var(--fc-highlight-text) !important;
+}
+
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-tab {
+  color: var(--fc-text) !important;
+}
+
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-tab[aria-selected="true"] {
+  border-bottom: 3px solid var(--fc-highlight) !important;
+  color: var(--fc-highlight) !important;
+}
+
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-btn:disabled,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-specimen.is-disabled,
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-segmented-btn.disabled {
+  color: var(--fc-gray) !important;
+  border-color: var(--fc-gray) !important;
+  background: var(--fc-canvas) !important;
+  opacity: 1 !important;
+}
+
+.library-page-wrapper.forced-colors-active #componentsCatalog .ui-specimen.is-focus {
+  outline: 2px solid var(--fc-highlight) !important;
+  outline-offset: 2px !important;
 }
 
 /* Responsive Overrides for Components */

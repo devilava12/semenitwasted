@@ -17,6 +17,23 @@
 
   const BLOG_POSTS = [
     {
+      id: 'post-17',
+      slug: 'apa-itu-ui-dan-ux-serta-perbedaannya',
+      title: 'Apa Itu UI dan UX serta Bedanya Tampilan Cantik dengan Pengalaman yang Nyaman',
+      date: '2026-10-31',
+      formattedDate: '31 Oktober 2026',
+      readingTime: '11 min read',
+      category: 'design-systems',
+      categoryLabel: 'Design Systems',
+      tags: ['UI/UX', 'Affordance', 'Design History', 'Product Thinking', 'Pemula'],
+      featured: false,
+      excerpt: 'Pahami apa itu UI dan UX dengan bahasa sederhana. Simak bedanya, konsep affordance, sejarah siapa yang mengerjakannya dulu, hingga 3 sudut pandang developer.',
+      contentUrl: 'blog/apa-itu-ui-dan-ux-serta-perbedaannya.html',
+      coverImage: 'assets/blog/cover-apa-itu-ui-dan-ux.webp',
+      coverAlt: 'Seni kertas berlapis 3D menampilkan kartu antarmuka taktil dan gerbang lengkung putih gading yang terhubung dengan tiga cincin kertas lambang keseimbangan Pengguna, Bisnis, dan Teknologi di atas alur pita kertas yang mengalir tenang',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
       id: 'post-16',
       slug: 'perbedaan-website-dan-landing-page',
       title: 'Bingung Beda Website dan Landing Page? Arti, Sejarah Awal Dibuat, dan Panduan Memilihnya untuk Pemula',

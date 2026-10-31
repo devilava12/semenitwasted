@@ -24,10 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 2400);
   }
 
-  // --- 4. Simulator Modes (Reduced Motion & Slow Motion) ---
+  // --- 4. Simulator Modes (Reduced Motion, Slow Motion & Forced Colors) ---
   const pageWrapper = document.querySelector('.library-page-wrapper');
   const toggleReducedMotion = document.getElementById('toggleReducedMotion');
   const toggleSlowMotion = document.getElementById('toggleSlowMotion');
+  const toggleForcedColors = document.getElementById('toggleForcedColors');
 
   if (toggleReducedMotion) {
     toggleReducedMotion.addEventListener('click', () => {
@@ -46,6 +47,22 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleSlowMotion.setAttribute('aria-checked', String(nextState));
       pageWrapper.classList.toggle('slow-motion-active', nextState);
       showToast(nextState ? 'Slow Motion Active (0.5x Easing inspection)' : 'Normal Motion Speed Restored');
+    });
+  }
+
+  if (toggleForcedColors) {
+    toggleForcedColors.addEventListener('click', () => {
+      const isActive = toggleForcedColors.getAttribute('aria-checked') === 'true';
+      const nextState = !isActive;
+      toggleForcedColors.setAttribute('aria-checked', String(nextState));
+      if (pageWrapper) {
+        pageWrapper.classList.toggle('forced-colors-active', nextState);
+      }
+      showToast(
+        nextState
+          ? 'Forced Colors Preview aktif (Shadow dihapus, border kontras tinggi ditampilkan)'
+          : 'Forced Colors Preview dinonaktifkan'
+      );
     });
   }
 
@@ -102,6 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tokensToolbarControls.forEach(el => el.style.display = 'none');
       componentsToolbarControls.forEach(el => {
         if (el.classList.contains('filter-pills-group')) el.style.display = 'flex';
+        else if (el.classList.contains('simulator-control')) el.style.display = 'flex';
         else el.style.display = 'inline-flex';
       });
 

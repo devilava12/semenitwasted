@@ -4,5 +4,11 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: document-domain=()
 
+/library
+  X-Robots-Tag: noindex, follow
+
+/library.html
+  X-Robots-Tag: noindex, follow
+
 /assets/*
   Cache-Control: public, max-age=31536000, immutable

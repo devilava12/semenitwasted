@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apa Itu UI dan UX? Bedanya Tampilan Cantik dan Pengalaman Nyaman | semenitwasted</title>
+  <meta name="description"
+    content="Pahami apa itu UI dan UX dengan bahasa sederhana. Simak bedanya, konsep affordance, sejarah siapa yang mengerjakannya dulu, hingga 3 sudut pandang developer.">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo-nav.svg">
+  <link rel="canonical" href="https://semenitwasted.web.id/blog/apa-itu-ui-dan-ux-serta-perbedaannya">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://semenitwasted.web.id/blog/apa-itu-ui-dan-ux-serta-perbedaannya">
+  <meta property="og:title" content="Apa Itu UI dan UX? Bedanya Tampilan Cantik dan Pengalaman Nyaman | semenitwasted">
+  <meta property="og:description"
+    content="Pahami apa itu UI dan UX dengan bahasa sederhana. Simak bedanya, konsep affordance, sejarah siapa yang mengerjakannya dulu, hingga 3 sudut pandang developer.">
+  <meta property="og:image" content="https://semenitwasted.web.id/assets/blog/cover-apa-itu-ui-dan-ux.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Apa Itu UI dan UX? Bedanya Tampilan Cantik dan Pengalaman Nyaman | semenitwasted">
+  <meta name="twitter:description"
+    content="Pahami apa itu UI dan UX dengan bahasa sederhana. Simak bedanya, konsep affordance, sejarah siapa yang mengerjakannya dulu, hingga 3 sudut pandang developer.">
+  <meta name="twitter:image" content="https://semenitwasted.web.id/assets/blog/cover-apa-itu-ui-dan-ux.webp">
+
+  <!-- Structured Data: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Apa Itu UI dan UX serta Bedanya Tampilan Cantik dengan Pengalaman yang Nyaman",
+    "description": "Pahami apa itu UI dan UX dengan bahasa sederhana. Simak bedanya, konsep affordance, sejarah siapa yang mengerjakannya dulu, hingga 3 sudut pandang developer.",
+    "image": "https://semenitwasted.web.id/assets/blog/cover-apa-itu-ui-dan-ux.webp",
+    "datePublished": "2026-10-31T08:40:00+08:00",
+    "dateModified": "2026-10-31T08:40:00+08:00",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://semenitwasted.web.id/blog/apa-itu-ui-dan-ux-serta-perbedaannya"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "I Putu Dicky Adi Pranatha",
+      "url": "https://semenitwasted.web.id/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "semenitwasted",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://semenitwasted.web.id/assets/logo-nav.svg"
+      }
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="../assets/fonts/rubik.css">
+  <link rel="stylesheet" href="../portfolio.css">
+  <link rel="stylesheet" href="../blog.css">
+  <script src="../site-chrome.js"></script>
+</head>
+
+<body>
+  <!-- Scroll Reading Progress Indicator -->
+  <div class="reading-progress-bar" id="readingProgressBar" aria-hidden="true"></div>
+
+  <div class="portfolio-page-wrapper blog-page-wrapper">
+
+    <!-- Global Navigation via site-chrome.js with relative base path -->
+    <div data-site-chrome data-active-page="blog" data-base-path="../"></div>
+
+    <main class="post-main" id="main-content">
+
+      <!-- Breadcrumbs -->
+      <nav class="post-breadcrumb" aria-label="Breadcrumbs">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="../blog.html">Blog</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Design Systems</span>
+      </nav>
+
+      <!-- Article Header -->
+      <header class="post-header">
+        <h1 class="post-title">Apa Itu UI dan UX serta Bedanya Tampilan Cantik dengan Pengalaman yang Nyaman</h1>
+        <div class="post-meta-row">
+          <span>Oleh <strong>I Putu Dicky Adi Pranatha</strong></span>
+          <span aria-hidden="true">&bull;</span>
+          <time datetime="2026-10-31">31 Oktober 2026</time>
+          <span aria-hidden="true">&bull;</span>
+          <span>11 min read</span>
+          <span aria-hidden="true">&bull;</span>
+          <span class="category-pill-sm">Design Systems</span>
+        </div>
+      </header>
+
+      <!-- Post Cover Hero Figure -->
+      <figure class="post-hero-figure">
+        <div class="post-hero-frame">
+          <img src="../assets/blog/cover-apa-itu-ui-dan-ux.webp" alt="Seni kertas berlapis 3D menampilkan kartu antarmuka taktil dan gerbang lengkung putih gading yang terhubung dengan tiga cincin kertas lambang keseimbangan Pengguna, Bisnis, dan Teknologi di atas alur pita kertas yang mengalir tenang" class="post-hero-img" width="1376" height="768" loading="eager">
+        </div>
+        <figcaption class="post-figure-caption">Harmoni Tampilan dan Pengalaman: Ketika keindahan bentuk tombol (UI) berpadu dengan alur perjalanan yang ramah manusia serta keseimbangan antara pengguna, bisnis, dan teknologi (UX).</figcaption>
+      </figure>
+
+      <!-- Video Reference Banner Bento Card -->
+      <div class="post-tldr-card" role="region" aria-label="Video Referensi Utama" style="border-left: 4px solid var(--accent-primary, #450D50); margin-bottom: 24px;">
+        <span class="tldr-badge" style="background: #450D50; color: #FFFFFF;">Inspirasi Video &amp; Rujukan Diskusi</span>
+        <p style="margin: 8px 0 12px; font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary, #3B3248);">
+          Artikel ini terinspirasi dari dua episode edukasi desain legendaris kanal YouTube <strong>Extra Credits</strong> berjudul <strong>"Intro to UX Design - User Experience and You"</strong> serta <strong>"Affordances - How Design Teaches Us Without Words"</strong>, lalu memperluasnya dengan menelusuri sejarah siapa yang merancang antarmuka sebelum profesi UI/UX lahir hingga cara <em>developer</em> menengahi konflik antara pengguna, pemilik bisnis, dan batasan teknis.
+        </p>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px;">
+          <a href="https://www.youtube.com/watch?v=mPD5dUBFsps" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: #211B28; color: #FFFFFF; text-decoration: none; border-radius: 6px; font-size: 0.85rem; font-weight: 600;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            Tonton: Intro to UX Design
+          </a>
+          <a href="https://www.youtube.com/watch?v=QCSXEKHL6fc" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: #450D50; color: #FFFFFF; text-decoration: none; border-radius: 6px; font-size: 0.85rem; font-weight: 600;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            Tonton: Affordances in Design
+          </a>
+        </div>
+      </div>
+
+      <!-- TL;DR Summary Bento Card -->
+      <div class="post-tldr-card" role="region" aria-label="Quick Summary">
+        <span class="tldr-badge">TL;DR / Ringkasan Cepat</span>
+        <ul class="tldr-list">
+          <li><strong>UI (User Interface) adalah</strong> tampilan fisik dan visual di layar yang dilihat serta disentuh pengguna (seperti bentuk tombol, warna, ikon, dan ukuran huruf), sedangkan <strong>UX (User Experience) adalah</strong> keseluruhan rasa mudah, nyaman, dan tidak bingungnya seseorang saat memakai produk tersebut dari awal sampai tujuannya selesai.</li>
+          <li>Sebelum istilah UX diciptakan oleh <strong>Don Norman di Apple pada tahun 1993</strong>, pekerjaan merancang kenyamanan alat ini dikerjakan secara terpisah oleh insinyur ergonomi kokpit pesawat sejak Perang Dunia II, psikolog kognitif, desainer industri, hingga para <em>programmer</em> yang merangkap menata letak tombol sendiri.</li>
+          <li>Di dunia kerja nyata, seorang <em>developer</em> dan perancang produk wajib melihat desain dari tiga kacamata sekaligus, yaitu <strong>sisi Pengguna</strong> (apakah mudah dipakai), <strong>sisi Pemilik Usaha</strong> (apakah menguntungkan bisnis), dan <strong>sisi Teknis</strong> (apakah cepat, aman, serta sanggup dijalankan mesin).</li>
+        </ul>
+      </div>
+
+      <!-- Article Body -->
+      <article class="post-prose">
+        <p>
+          Perbedaan paling mudah untuk diingat antara UI dan UX adalah: <strong>UI (User Interface) adalah</strong> semua tampilan fisik yang bisa dilihat mata dan disentuh jari pada layar seperti warna, bentuk tombol, serta susunan huruf, sedangkan <strong>UX (User Experience) adalah</strong> seberapa mudah, lancar, dan nyamannya perasaan seseorang saat memakai aplikasi tersebut sampai urusannya beres. Sebuah aplikasi bisa saja memiliki UI yang sangat cantik seperti lukisan pameran, tetapi jika penggunanya kebingungan mencari tombol bayar atau aplikasinya macet saat ditekan, artinya aplikasi tersebut memiliki UX yang buruk.
+        </p>
+
+        <p>
+          Bagi mahasiswa baru jurusan teknologi informasi, desain komunikasi visual, maupun pemilik usaha yang baru ingin membuat situs web, istilah UI dan UX hampir selalu disebut berpasangan seperti sendok dan garpu. Karena selalu ditulis menyatu menjadi "UI/UX", banyak orang akhirnya mengira keduanya adalah satu pekerjaan yang sama persis, yaitu sekadar menggambar layar aplikasi yang estetik dan penuh warna.
+        </p>
+
+        <p>
+          Kesalahpahaman ini sering berbuntut panjang ketika masuk ke dunia kerja. Ada pemilik toko yang marah karena sudah membayar mahal desain tampilan yang keren tetapi jumlah pembelinya justru turun, dan ada pula desainer pemula yang bertengkar dengan tim pembuat kode program (<em>developer</em>) karena gambar rancangannya dianggap terlalu rumit untuk dijalankan di ponsel murah. Agar kamu memahami kedua konsep ini sampai ke akarnya, kita akan mengupas arti UI dan UX dengan perumpamaan sehari-hari, membongkar rahasia bagaimana desain yang baik bisa berbicara tanpa kata-kata, menengok sejarah siapa yang mengerjakan tugas ini sebelum profesi UI/UX lahir, hingga melihat bagaimana seorang <em>developer</em> menimbang sebuah desain dari sisi pengguna, bisnis, dan teknis.
+        </p>
+
+        <h2>Memahami Arti UI dan UX Lewat Benda Sehari-hari Tanpa Istilah Rumit</h2>
+
+        <p>
+          Cara paling gampang untuk memisahkan UI dan UX adalah dengan mengamati botol saus tomat di meja makan. Dahulu, saus tomat selalu dijual di dalam botol kaca bening berleher sempit yang terlihat sangat elegan, rapi, dan klasik. Tampilan botol kaca yang menawan di mata itulah yang disebut <strong>UI</strong>. Sayangnya, setiap kali saus di dalamnya tinggal setengah, kamu harus membalik botol itu, menepuk-nepuk bagian bawahnya dengan keras, lalu tiba-tiba sausnya muncrat berlebihan mengotori baju. Rasa kesal saat berusaha mengeluarkan saus itulah contoh <strong>UX</strong> yang buruk.
+        </p>
+
+        <p>
+          Produsen saus kemudian memutar otak dan merancang botol plastik lentur dengan tutup di bagian bawah. Bentuknya mungkin tidak semewah ukiran kaca klasik, tetapi begitu kamu membukanya dan memencet perlahan, saus langsung keluar tepat di atas piring dalam satu detik tanpa perlu diketuk-ketuk. Perbaikan cara kerja botol agar hidup manusia menjadi jauh lebih mudah itulah inti dari pekerjaan UX.
+        </p>
+
+        <h3>Apa Itu UI dan Mengapa Tugasnya Lebih dari Sekadar Memilih Warna yang Estetik</h3>
+
+        <p>
+          Secara harfiah, <strong>UI (User Interface) adalah</strong> jembatan tatap muka atau titik temu tempat manusia berinteraksi dengan sebuah mesin. Di dunia perangkat fisik, UI bisa berupa setir mobil, papan tombol mesin ATM, atau saklar lampu di dinding kamar. Di dunia layar digital, UI mencakup seluruh elemen visual yang tampil di hadapan mata pengunjung, mulai dari tombol yang bisa diklik, ikon keranjang belanja, keterbacaan jenis huruf (<em>typography</em>), perpaduan warna, hingga jarak ruang kosong antar-kotak informasi.
+        </p>
+
+        <p>
+          Banyak pemula mengira tugas perancang UI hanyalah menghias layar supaya tampak artistik. Padahal, tugas utama UI yang sesungguhnya adalah menciptakan <strong>kejelasan visual dan urutan perhatian</strong> (<em>visual hierarchy</em>). Ketika seseorang membuka layar aplikasi pemesanan ojek di bawah terik matahari siang, UI yang baik memastikan tulisan alamat tetap terbaca jelas karena kontras warnanya tajam, serta memastikan tombol "Pesan Sekarang" terlihat paling menonjol dibandingkan tombol-tombol kecil lainnya.
+        </p>
+
+        <h3>Apa Itu UX dan Bagaimana Ia Bekerja sebagai Penerjemah antara Mesin dan Manusia</h3>
+
+        <p>
+          Jika UI mengurus apa yang tampak di permukaan layar, maka <strong>UX (User Experience) adalah</strong> proses merancang alur perjalanan dan pengalaman batin seseorang sejak pertama kali membuka aplikasi hingga berhasil menyelesaikan tujuannya. Sebagaimana dijelaskan dengan sangat jernih dalam video edukasi <em>Extra Credits</em> berjudul <em>Intro to UX Design</em>, seorang perancang UX pada dasarnya bekerja sebagai <strong>penerjemah bahasa</strong> (<em>translator</em>) antara cara kerja mesin di kepala pembuat program dan cara berpikir manusia biasa.
+        </p>
+
+        <p>
+          Di balik layar sebuah aplikasi perbankan atau <em>video game</em>, komputer sebenarnya hanya bekerja menggunakan ribuan baris rumus matematika, tabel pangkalan data (<em>database</em>), dan kode logika yang dingin. Manusia biasa tentu tidak ingin melihat tabel kode saat hendak mengirim uang kepada orang tuanya. Tugas UX adalah menerjemahkan kerumitan mesin tersebut menjadi langkah-langkah yang masuk akal bagi manusia: berapa kali seseorang harus mengetuk layar untuk selesai membayar, bagaimana agar ia tidak bingung di halaman pertama (<em>onboarding</em>), dan tanda apa yang muncul di layar agar ia yakin uangnya sudah benar-benar terkirim (<em>feedback</em>).
+        </p>
+
+        <div class="post-prose-table-wrap" role="region" aria-label="Tabel Perbandingan UI dan UX">
+          <table class="post-prose-table">
+            <thead>
+              <tr>
+                <th scope="col" style="width: 22%;">Aspek Pembeda</th>
+                <th scope="col" style="width: 39%;">UI (User Interface / Antarmuka)</th>
+                <th scope="col" style="width: 39%;">UX (User Experience / Pengalaman)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Fokus Utama</strong></td>
+                <td>Bagaimana tampilan produk <strong>terlihat</strong> oleh mata dan terasa saat disentuh di layar.</td>
+                <td>Bagaimana produk tersebut <strong>bekerja</strong> memudahkan pengguna mencapai tujuannya.</td>
+              </tr>
+              <tr>
+                <td><strong>Pertanyaan Inti</strong></td>
+                <td><em>"Apakah tombolnya jelas, warnanya nyaman dilihat, dan tulisannya mudah dibaca?"</em></td>
+                <td><em>"Apakah langkahnya masuk akal, tidak berbelit-belit, dan bebas dari rasa bingung?"</em></td>
+              </tr>
+              <tr>
+                <td><strong>Analogi Mobil</strong></td>
+                <td>Warna cat bodi, bentuk gagang pintu, desain layar spedometer, dan jahitan kulit jok.</td>
+                <td>Kenyamanan posisi duduk, halusnya tarikan gas, dan mudahnya memarkir mobil di tempat sempit.</td>
+              </tr>
+              <tr>
+                <td><strong>Elemen yang Diurus</strong></td>
+                <td>Palet warna, tipografi, ikon, bentuk tombol, animasi mikro, dan tata letak visual.</td>
+                <td>Riset kebiasaan pengguna, alur langkah pemakaian, struktur menu, dan kejelasan umpan balik layar.</td>
+              </tr>
+              <tr>
+                <td><strong>Tanda Jika Gagal</strong></td>
+                <td>Tampilan terlihat berantakan, tulisan terlalu kecil, atau warna menyilaukan mata.</td>
+                <td>Pengguna tersesat mencari menu, salah pencet tombol hapus, atau batal membeli karena formulir terlalu panjang.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Rahasia Affordance Ketika Desain yang Baik Mengajari Pengguna Tanpa Satu Kata Pun</h2>
+
+        <p>
+          Pernahkah kamu bertanya mengapa anak kecil berusia empat tahun bisa langsung mengerti cara menggeser layar ponsel atau menekan tombol di dalam <em>game</em> padahal ia belum lancar membaca? Jawabannya terletak pada sebuah konsep psikologi desain yang sangat krusial bernama <strong>Affordance</strong> (petunjuk alami fungsi benda).
+        </p>
+
+        <p>
+          Istilah <em>affordance</em> pertama kali dicetuskan oleh ahli psikologi persepsi <strong>James J. Gibson</strong> pada tahun 1977, lalu dibawa ke dunia desain oleh <strong>Don Norman</strong> pada tahun 1988. Secara sederhana, <strong>affordance adalah</strong> sifat visual atau fisik pada sebuah benda yang secara otomatis memberi tahu manusia bagaimana cara memakainya tanpa memerlukan tulisan petunjuk. Kursi yang datar dan setinggi lutut memberi sinyal "duduklah di atasku", gagang cangkir yang melengkung memberi sinyal "masukkan jarimu dan angkat aku", dan gunting dengan dua lubang cincin memberi sinyal ke mana jempol serta telunjuk harus masuk.
+        </p>
+
+        <h3>Kisah Pintu yang Bikin Orang Salah Dorong dan Pentingnya Petunjuk Visual Alami</h3>
+
+        <p>
+          Contoh kegagalan <em>affordance</em> paling terkenal di dunia nyata yang sering kita alami hampir setiap minggu adalah pintu kaca di gedung perkantoran atau minimarket, yang di dunia desain dijuluki sebagai <strong>Norman Door</strong>. Bayangkan kamu sedang berjalan terburu-buru menuju sebuah pintu kaca yang dilengkapi gagang besi panjang yang tampak gagah untuk digenggam. Secara naluriah, tanganmu pasti langsung menggenggam besi itu dan menariknya ke belakang.
+        </p>
+
+        <p>
+          Anehnya, pintu itu bergeming tidak mau terbuka! Setelah kamu perhatikan baik-baik, ternyata di atas gagang besi itu tertempel kertas laminating lusuh bertuliskan huruf besar: <strong>"DORONG"</strong>. Mengapa kamu bisa salah? Bukan karena kamu kurang pintar membaca, melainkan karena bentuk pintu itu membohongi otakmu. Gagang yang menonjol keluar adalah sinyal alami untuk <strong>ditarik</strong>. Jika pemilik gedung ingin pintu itu hanya bisa didorong, seharusnya mereka tidak memasang gagang tarikan, melainkan cukup memasang lempengan besi datar tempat telapak tangan menempel untuk mendorong.
+        </p>
+
+        <div class="post-callout">
+          <p>
+            <strong>Hukum Emas UX dan Affordance:</strong> Jika sebuah benda sederhana seperti pintu atau tombol aplikasi sampai membutuhkan kalimat instruksi panjang untuk menjelaskan cara memencetnya, maka yang gagal bukanlah penggunanya, melainkan desain benda tersebut.
+          </p>
+        </div>
+
+        <h3>Pelajaran dari Video Game Saat Layar Memberi Umpan Balik Tanpa Buku Panduan Tebal</h3>
+
+        <p>
+          Dalam episode <em>Extra Credits</em> berjudul <em>Affordances - How Design Teaches Us Without Words</em>, dijelaskan betapa cerdasnya para perancang <em>video game</em> memanfaatkan konsep ini. Ketika seseorang memainkan sebuah <em>game</em> petualangan, ia akan langsung bosan dan menutup permainan jika di menit pertama dipaksa membaca sepuluh halaman teks penjelasan tentang dinding mana yang bisa dipanjat dan kotak mana yang berisi hadiah.
+        </p>
+
+        <p>
+          Sebagai gantinya, perancang menggunakan <strong>bahasa bisu visual</strong> (<em>perceived affordance</em>). Tebing batu yang bisa dipanjat diberi goresan warna kapur putih atau disinari cahaya lampu dari atas, peti harta karun yang bisa dibuka dibuat sedikit berkilau dibandingkan kotak kayu pajangan di sebelahnya, dan lantai yang rapuh digambar retak-retak disertai suara berderit saat diinjak. Prinsip yang persis sama berlaku saat kita merancang <a href="mikro-interaksi-taktil-pada-tombol-web.html">mikro-interaksi taktil pada tombol web</a>: tombol yang bisa diklik diberi sedikit bayangan timbul dan efek membal saat disentuh agar pengunjung langsung yakin bahwa elemen tersebut hidup, berbeda dengan teks judul biasa yang diam di tempat.
+        </p>
+
+        <h2>Sejarah Lahirnya UI dan UX serta Siapa yang Mengerjakannya Sebelum Profesi Ini Ada</h2>
+
+        <p>
+          Saat melihat banyaknya lowongan kerja <em>UI/UX Designer</em> hari ini, banyak mahasiswa mengira profesi ini baru muncul bersama populernya aplikasi ojek daring atau toko belanja di ponsel pintar. Padahal, pergulatan manusia untuk menjinakkan mesin yang rumit sudah berlangsung lebih dari delapan puluh tahun. Pertanyaan menariknya: <strong>sebelum istilah UI dan UX ditemukan, siapa sebenarnya orang-orang yang mengerjakan tugas ini?</strong>
+        </p>
+
+        <p>
+          Jauh sebelum ada aplikasi desain seperti Figma atau Sketch, pekerjaan merancang tampilan dan kenyamanan pakai ini dikerjakan secara terpisah-pisah oleh empat kelompok profesi dari latar belakang yang sangat berbeda.
+        </p>
+
+        <h3>Dari Kokpit Pesawat Perang Dunia Kedua hingga Masa Ketika Programmer Merangkap Desainer</h3>
+
+        <p>
+          Jika kita menarik garis waktu ke belakang, inilah orang-orang yang memikul tugas UI dan UX sebelum istilah tersebut lahir:
+        </p>
+
+        <ol>
+          <li><strong>Insinyur Ergonomi dan Psikolog Penerbangan (Era 1940-an):</strong> Pada masa Perang Dunia II tahun 1943, Angkatan Udara Amerika Serikat kebingungan karena banyak pesawat pengebom B-17 mengalami kecelakaan fatal justru saat baru saja mendarat di landasan yang aman. Ketika seorang psikolog dan perwira bernama <strong>Alphonse Chapanis</strong> ditugaskan menyelidiki bangkai pesawat, ia menemukan fakta mengejutkan: bukan pilotnya yang ceroboh dan bukan mesinnya yang rusak! Di dalam kokpit pesawat tersebut, tuas untuk melipat roda pendaratan dan tuas untuk mengatur kemiringan sayap (<em>flaps</em>) memiliki bentuk bulatan yang kembar identik dan dipasang tepat bersebelahan. Saat pilot kelelahan sehabis terbang malam, tangannya salah menarik tuas roda hingga perut pesawat menghantam aspal. Chapanis menyelesaikannya dengan cara yang sangat jenius: ia memasang ujung karet berbentuk <strong>ban bundar kecil</strong> pada tuas roda, dan ujung berbentuk <strong>segitiga sayap</strong> pada tuas sayap. Sejak hari itu, pilot bisa langsung membedakan fungsi tuas hanya dengan merabanya dalam gelap, dan angka kecelakaan tersebut langsung turun menjadi nol.</li>
+          <li><strong>Desainer Industri Barang Fisik (Era 1950-an):</strong> Memasuki masa damai, tokoh desainer industri seperti <strong>Henry Dreyfuss</strong> menulis buku bersejarah berjudul <em>Designing for People</em> pada tahun 1955. Bersama timnya, ia mengukur ribuan ukuran tangan, jari, dan telinga manusia untuk merancang gagang telepon meja Bell, mesin jahit, hingga kursi traktor pertanian agar alat-alat pabrik tunduk pada kenyamanan tubuh manusia, bukan memaksa tubuh manusia membungkuk mengikuti mesin.</li>
+          <li><strong>Ilmuwan Komputer dan Psikolog Kognitif (Era 1970-an hingga 1980-an):</strong> Pada masa awal komputer, layar hanyalah kotak hitam berisi barisan kode huruf hijau (<em>Command Line Interface</em>) yang hanya bisa dioperasikan oleh ilmuwan yang hafal ratusan perintah ketik. Pada tahun 1973, para peneliti dan psikolog di laboratorium <strong>Xerox PARC</strong> (seperti Alan Kay dan Larry Tesler) menciptakan komputer <strong>Xerox Alto</strong> yang pertama kali memperkenalkan layar bergambar (<em>Graphical User Interface</em> atau GUI). Mereka menciptakan perumpamaan meja kerja di layar: berkas data digambarkan sebagai "map kertas" (<em>folder</em>), penghapusan berkas digambarkan sebagai "tong sampah", dan tangan manusia diwakili oleh alat penggerak bernama <em>mouse</em>.</li>
+          <li><strong>Programmer, Desainer Grafis Cetak, dan Webmaster (Era 1980-an hingga Awal 2000-an):</strong> Ketika komputer pribadi dan jaringan internet awal mulai menyebar ke kantor-kantor, belum ada jabatan khusus desainer UI/UX. Lalu siapa yang menata layar aplikasi? Jawabannya adalah <strong>para programmer itu sendiri!</strong> Karena seorang <em>programmer</em> terbiasa berpikir dengan struktur tabel data yang kaku, mereka langsung menumpuk puluhan kotak isian dan tombol abu-abu dalam satu layar penuh asalkan programnya jalan. Ketika perusahaan merasa tampilannya terlalu kaku, mereka memanggil <strong>desainer grafis majalah atau brosur cetak</strong> untuk mewarnai tombolnya, sementara urusan teknis hingga pemasangan ke internet diborong oleh satu orang serbabisa yang dulu disebut <strong>Webmaster</strong>.</li>
+        </ol>
+
+        <h3>Alasan Don Norman Menciptakan Istilah User Experience di Apple pada Tahun 1993</h3>
+
+        <p>
+          Pemisahan kerja yang sepotong-sepotong antara pembuat kode dan penghias gambar itu akhirnya memicu masalah besar ketika komputer semakin populer di rumah tangga pada awal dekade 1990-an. Banyak orang biasa membeli komputer, namun mereka sudah stres bahkan sebelum komputernya menyala karena buku petunjuknya setebal kamus dan kabel di belakang mesinnya sangat membingungkan.
+        </p>
+
+        <p>
+          Pada tahun <strong>1993</strong>, ilmuwan kognitif <strong>Don Norman</strong> bergabung dengan perusahaan <strong>Apple Computer</strong>. Saat diminta menentukan nama jabatannya, Norman merasa istilah yang dipakai industri saat itu seperti <em>"Human Interface"</em> (antarmuka manusia) atau <em>"Usability"</em> terlalu sempit. Baginya, pengalaman seseorang bersama sebuah produk tidak dimulai saat jarinya mengklik tombol di layar, melainkan dimulai sejak ia melihat kotaknya di etalase toko, membawa kardusnya masuk ke mobil, membuka bungkusnya di ruang tamu, mencolokkan kabelnya, hingga meminta bantuan ketika ada masalah.
+        </p>
+
+        <p>
+          Untuk merangkum seluruh perjalanan utuh tersebut, Don Norman menciptakan gelar jabatan baru bagi timnya di Apple, yaitu <strong>User Experience Architect</strong>. Dari meja kerja Norman pada tahun 1993 itulah istilah <strong>UX (User Experience)</strong> resmi lahir dan kemudian berkembang pesat menjadi profesi mandiri ketika era layar sentuh ponsel pintar meledak ke seluruh penjuru bumi.
+        </p>
+
+        <h2>Cara Developer Melihat Desain dari Tiga Sudut Pandang dan Menangani Masalah di Lapangan</h2>
+
+        <p>
+          Setelah memahami arti dan sejarahnya, ada satu kenyataan penting di dunia kerja yang wajib dipahami oleh mahasiswa maupun calon pembuat produk: <strong>desain aplikasi tidak hidup di ruang hampa</strong>. Sebuah gambar rancangan layar yang mendapat nilai sempurna saat tugas kuliah bisa saja gagal total ketika dibangun di dunia nyata.
+        </p>
+
+        <p>
+          Dalam praktik pengembangan perangkat lunak sehari-hari, seorang <em>developer</em> atau perancang sistem yang matang tidak pernah melihat desain hanya dari satu sisi "apakah gambarnya bagus". Mereka selalu menimbang setiap tombol dan halaman dari <strong>tiga sudut pandang sekaligus</strong>, yaitu sisi pengguna, sisi pemilik usaha, dan sisi teknis mesin.
+        </p>
+
+        <h3>Menyeimbangkan Keinginan Pengguna, Target Pemilik Usaha, dan Batasan Teknis Mesin</h3>
+
+        <p>
+          Ketiga pihak ini sering kali memiliki keinginan alami yang saling tarik-menarik seperti permainan tarik tambang:
+        </p>
+
+        <div class="post-prose-table-wrap" role="region" aria-label="Tabel Tiga Sudut Pandang dalam Melihat Desain">
+          <table class="post-prose-table">
+            <thead>
+              <tr>
+                <th scope="col" style="width: 22%;">Sudut Pandang</th>
+                <th scope="col" style="width: 39%;">Apa yang Paling Dipedulikan</th>
+                <th scope="col" style="width: 39%;">Risiko Jika Sudut Pandang Ini Diabaikan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. Sisi Pengguna (User)</strong></td>
+                <td>Kenyamanan, kecepatan mencapai tujuan, kejelasan petunjuk, dan rasa aman saat memakai aplikasi tanpa harus berpikir keras.</td>
+                <td>Pengguna merasa frustrasi, salah pencet, gagal menyelesaikan transaksi, lalu menghapus aplikasi dan pindah ke pesaing.</td>
+              </tr>
+              <tr>
+                <td><strong>2. Sisi Pemilik Usaha (Bisnis)</strong></td>
+                <td>Pertumbuhan penjualan, pelanggan yang kembali berbelanja, kepercayaan merek, serta biaya pembuatan yang masuk akal.</td>
+                <td>Aplikasi sangat disukai karena serba gratis dan bebas gangguan, tetapi perusahaan kehabisan uang dan bangkrut karena tidak ada pemasukan.</td>
+              </tr>
+              <tr>
+                <td><strong>3. Sisi Teknis (Developer)</strong></td>
+                <td>Kecepatan muat layar di ponsel spesifikasi rendah, penghematan kuota data, keamanan dari peretas, dan kemudahan merawat kode.</td>
+                <td>Tampilan di layar desainer tampak sangat mewah, tetapi ketika dibuka pengguna nyata layarnya macet, lambat, atau mudah dibobol.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          Bayangkan sebuah restoran. <strong>Pengguna (tamu)</strong> tentu ingin porsi makanan paling besar, disajikan dalam satu menit, dengan harga semurah mungkin. <strong>Pemilik usaha</strong> ingin bahan bakunya hemat, mejanya cepat berganti pelanggan, dan keuntungannya tinggi. Sementara <strong>koki di dapur (tim teknis)</strong> tahu persis bahwa memasak daging matang sempurna butuh waktu minimal sepuluh menit di atas kompor agar pelanggan tidak sakit perut. Tugas tim produk adalah meramu titik temu yang adil di antara ketiganya.
+        </p>
+
+        <h3>Cara Tim Teknis Mencari Jalan Tengah Saat Desain Cantik Bertabrakan dengan Realitas</h3>
+
+        <p>
+          Lalu, bagaimana cara seorang <em>developer</em> menangani masalah ketika gambar desain UI/UX yang diserahkan kepadanya bertabrakan dengan target bisnis atau kemampuan mesin? Berikut adalah tiga contoh kasus nyata di lapangan beserta cara penanganannya:
+        </p>
+
+        <ol>
+          <li><strong>Kasus Pertama, Ketika Desain Terlalu Berat untuk Ponsel Pengguna:</strong> Seorang desainer UI merancang halaman depan toko dengan animasi tiga dimensi yang berputar halus dan video beresolusi tinggi. Di layar komputer kantor yang memakai internet super cepat, tampilannya tampak memukau. Namun, <em>developer</em> melihat dari <strong>sisi teknis dan sisi pengguna nyata</strong>: mayoritas pembeli toko tersebut memakai ponsel kelas menengah ke bawah dengan sinyal seluler yang naik-turun di perjalanan. Jika dipaksakan, halaman itu butuh waktu 15 detik untuk terbuka dan langsung menguras kuota pembeli. <strong>Solusi jalan tengahnya:</strong> <em>developer</em> tidak merusak keindahan desain, melainkan mengganti video berat tersebut dengan ilustrasi gambar berformat ringan (seperti <em>WebP</em>), menggunakan animasi kode CSS yang hemat baterai, serta menampilkan kerangka bayangan (<em>skeleton screen</em>) agar mata pengguna merasa halaman langsung merespons seketika.</li>
+          <li><strong>Kasus Kedua, Ketika Kemudahan Instan Bertabrakan dengan Keamanan dan Bisnis:</strong> Dari <strong>sisi pengguna</strong>, orang ingin semuanya serba instan dalam satu kali klik tanpa pernah diminta kata sandi atau konfirmasi ulang. Sebaliknya, dari <strong>sisi teknis dan bisnis</strong>, jika tombol "Hapus Akun" atau "Kirim Uang Jutaan Rupiah" dibuat terlalu gampang terpencet tanpa penghalang, perusahaan akan kebanjiran keluhan pelanggan yang kehilangan uang karena tidak sengaja tersentuh di saku celana. <strong>Solusi jalan tengahnya:</strong> menerapkan <a href="bahaya-desain-serba-instan-dan-pentingnya-intentional-friction.html">prinsip gesekan yang disengaja (intentional friction)</a>. Untuk hal-hal yang aman seperti melihat katalog barang atau menggulir berita, alurnya dibuat semulus jalan tol. Namun, khusus untuk tindakan berbahaya yang tidak bisa dibatalkan, <em>developer</em> dan desainer sengaja memasang "polisi tidur" berupa kotak konfirmasi yang jelas atau verifikasi sidik jari.</li>
+          <li><strong>Kasus Ketiga, Ketika Pengguna Bingung Saat Terjadi Gangguan Sistem:</strong> Di dunia nyata, koneksi internet bisa terputus atau <em>server</em> pembayaran bisa mengalami gangguan mendadak. Jika <em>developer</em> hanya berpikir dari <strong>sisi teknis</strong>, layar akan memunculkan kode mesin seperti <code>Error 502 Bad Gateway</code> atau justru menampilkan <a href="ketika-pesan-error-yang-cantik-justru-bikin-panik.html">pesan error yang tampak cantik tetapi menyembunyikan informasi penting</a>. Dengan menggabungkan <strong>kacamata dukungan pelanggan dan UX</strong> seperti yang pernah kita bahas dalam <a href="melihat-antarmuka-dari-kacamata-dukungan-pelanggan.html">cara melihat antarmuka dari sudut pandang customer support</a>, <em>developer</em> menangani masalah ini dengan tiga langkah tenang: memberi tahu pengguna secara jujur bahwa saldo mereka aman, menjelaskan penyebab gangguan dengan bahasa manusia, dan menyediakan satu tombol jelas untuk mencoba kembali tanpa harus mengisi formulir dari awal.</li>
+        </ol>
+
+        <h2>Melatih Kepekaan Melihat Desain di Sekitarmu Mulai Hari Ini</h2>
+
+        <p>
+          Memahami apa itu UI dan UX pada akhirnya bukan soal menghafal singkatan bahasa Inggris untuk ujian kampus atau wawancara kerja, melainkan soal melatih empati terhadap sesama manusia. Sejak zaman Alphonse Chapanis memperbaiki tuas kokpit pesawat pada tahun 1943, Don Norman merumuskan arsitektur pengalaman pengguna di Apple pada tahun 1993, hingga para pembuat aplikasi dan <em>website</em> bekerja hari ini, benang merahnya tidak pernah berubah: teknologi yang hebat adalah teknologi yang mengerti keterbatasan manusia, bukan yang memaksa manusia tunduk pada kerumitan mesin.
+        </p>
+
+        <p>
+          Sebagai latihan sederhana dalam lima belas menit ke depan, cobalah perhatikan satu benda fisik di dekatmu (seperti gagang pintu, kompor, atau kemasan makanan) dan satu aplikasi atau <a href="perbedaan-website-dan-landing-page.html">halaman website maupun landing page</a> yang paling sering kamu buka di ponsel. Tanyakan tiga hal kecil ini di dalam hati: bagian mana dari tampilannya yang langsung memberi petunjuk tanpa perlu kubaca (<strong>UI dan Affordance</strong>), langkah mana yang membuat urusanku cepat selesai tanpa bingung (<strong>UX</strong>), dan bagaimana pembuatnya menjaga agar layanan tersebut tetap ringan sekaligus menguntungkan (<strong>keseimbangan Teknis dan Bisnis</strong>). Begitu kamu terbiasa melihat dunia dengan ketiga kacamata tersebut, kamu sudah mulai berpikir selayaknya seorang perancang produk sejati.
+        </p>
+
+        <h2>Referensi</h2>
+        <ul>
+          <li>Extra Credits. (2018). <em>Intro to UX Design - User Experience and You</em>. YouTube. https://www.youtube.com/watch?v=mPD5dUBFsps</li>
+          <li>Extra Credits. (2014). <em>Affordances - How Design Teaches Us Without Words</em>. YouTube. https://www.youtube.com/watch?v=QCSXEKHL6fc</li>
+          <li>Norman, D. A. (2013). <em>The Design of Everyday Things: Revised and Expanded Edition</em>. Basic Books.</li>
+          <li>Gibson, J. J. (1977). <em>The Theory of Affordances</em>. Dalam R. Shaw &amp; J. Bransford (Eds.), <em>Perceiving, Acting, and Knowing</em>. Lawrence Erlbaum Associates.</li>
+          <li>Chapanis, A. (1999). <em>The Chapanis Chronicles: 50 Years of Human Factors Research, Education, and Design</em>. Aegean Publishing Company.</li>
+          <li>Dreyfuss, H. (1955). <em>Designing for People</em>. Simon and Schuster.</li>
+          <li>Nielsen, J., &amp; Norman, D. (1998). <em>The Definition of User Experience (UX)</em>. Nielsen Norman Group. https://www.nngroup.com/articles/definition-user-experience/</li>
+        </ul>
+      </article>
+
+      <!-- Next & Prev Navigation -->
+      <nav class="post-navigator" aria-label="Article navigation">
+        <a href="perbedaan-website-dan-landing-page.html" class="post-nav-card">
+          <span class="nav-direction">&larr; Artikel Sebelumnya</span>
+          <span class="nav-article-title">Bingung Beda Website dan Landing Page? Arti, Sejarah Awal Dibuat, dan Panduan Memilihnya untuk Pemula</span>
+        </a>
+        <a href="melihat-antarmuka-dari-kacamata-dukungan-pelanggan.html" class="post-nav-card">
+          <span class="nav-direction">Eksplorasi Terkait &rarr;</span>
+          <span class="nav-article-title">Melihat Antarmuka dari Kacamata Dukungan Pelanggan: Desain yang Mengurangi Tiket Komplain</span>
+        </a>
+      </nav>
+
+    </main>
+
+    <!-- Footer (Matching semenitwasted layout) -->
+    <footer class="portfolio-footer">
+      <div class="footer-left">
+        <span class="footer-brand">semenitwasted</span>
+        <span class="footer-subtitle">Design · Icons · Illustration · Web</span>
+      </div>
+      <div class="footer-platforms" aria-label="Platform links">
+        <a href="https://www.linkedin.com/in/reionnyx/" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="LinkedIn">
+          <img src="../assets/linkedin.svg" alt="" width="24" height="24" class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+        <a href="https://stock.adobe.com/contributor/207802543/dicky" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Adobe Stock">
+          <img src="../assets/adobe-stock.svg" alt="" width="24" height="24" class="footer-platform-icon">
+        </a>
+        <a href="https://www.canva.com/p/gambar-reion" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Canva">
+          <img src="../assets/canva.svg" alt="" width="24" height="24" class="footer-platform-icon">
+        </a>
+        <a href="https://thenounproject.com/creator/ReionDesign/" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="The Noun Project">
+          <img src="../assets/noun-project.svg" alt="" width="24" height="24" class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+        <a href="https://www.flaticon.com/authors/reion" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Flaticon">
+          <img src="../assets/flaticon.svg" alt="" width="24" height="24" class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Reading Progress Script -->
+  <script>
+    window.addEventListener('scroll', () => {
+      const bar = document.getElementById('readingProgressBar');
+      if (!bar) return;
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = totalScroll > 0 ? (window.scrollY / totalScroll) * 100 : 0;
+      bar.style.width = Math.min(100, Math.max(0, progress)) + '%';
+    }, { passive: true });
+  </script>
+</body>
+
+</html>
