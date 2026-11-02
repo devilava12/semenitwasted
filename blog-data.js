@@ -17,6 +17,40 @@
 
   const BLOG_POSTS = [
     {
+      id: 'post-19',
+      slug: 'sejarah-password-dan-kesalahan-keamanan-akun',
+      title: 'Pelajaran dari Diretasnya Papan Iklan Jalan Raya serta Sejarah Password dari Tahun 1961 hingga Era Passkey',
+      date: '2026-11-02',
+      formattedDate: '2 November 2026',
+      readingTime: '9 min read',
+      category: 'product-support',
+      categoryLabel: 'Product & Support',
+      tags: ['Cybersecurity', 'Password History', '2FA', 'Passkey', 'Pemula'],
+      featured: false,
+      excerpt: 'Pelajari sejarah awal password dibuat di MIT tahun 1961, evolusi cara kerjanya dari hashing hingga 2FA dan Passkey, serta 5 kesalahan yang bikin akun jebol.',
+      contentUrl: 'blog/sejarah-password-dan-kesalahan-keamanan-akun.html',
+      coverImage: 'assets/blog/cover-sejarah-dan-kesalahan-password.webp',
+      coverAlt: 'Seni kertas berlapis 3D menampilkan perisai dan lubang kunci mekanikal putih gading yang terhubung melalui pita kertas dari kartu berlubang era 1960-an di kiri bawah menuju cincin sidik jari biometrik modern di kanan atas',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
+      id: 'post-18',
+      slug: 'choice-paralysis-dan-cara-melihat-desain-website',
+      title: 'Kenapa Terlalu Banyak Pilihan di Website Bikin Pengunjung Kabur dan Cara Melatih Mata Melihat Desain',
+      date: '2026-11-01',
+      formattedDate: '1 November 2026',
+      readingTime: '10 min read',
+      category: 'design-systems',
+      categoryLabel: 'Design Systems',
+      tags: ['Choice Paralysis', 'Hicks Law', 'UX Psychology', 'Web Design', 'Pemula'],
+      featured: false,
+      excerpt: 'Pahami apa itu choice paralysis dan Hukum Hick dalam desain website. Pelajari cara merapikan menu, mencegah pengunjung bingung, dan melatih mata menganalisis UX.',
+      contentUrl: 'blog/choice-paralysis-dan-cara-melihat-desain-website.html',
+      coverImage: 'assets/blog/Purple-Eyed%20Cat%20Peeking%20Up.webp',
+      coverAlt: 'Ilustrasi perancang produk mengamati antarmuka melalui kaca pembesar ditemani kucing bermata ungu yang mengintip dari balik meja, menyederhanakan layar yang penuh banyak tombol di kiri menjadi satu tampilan jernih bertanda centang di kanan',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
       id: 'post-17',
       slug: 'apa-itu-ui-dan-ux-serta-perbedaannya',
       title: 'Apa Itu UI dan UX serta Bedanya Tampilan Cantik dengan Pengalaman yang Nyaman',
@@ -29,8 +63,8 @@
       featured: false,
       excerpt: 'Pahami apa itu UI dan UX dengan bahasa sederhana. Simak bedanya, konsep affordance, sejarah siapa yang mengerjakannya dulu, hingga 3 sudut pandang developer.',
       contentUrl: 'blog/apa-itu-ui-dan-ux-serta-perbedaannya.html',
-      coverImage: 'assets/blog/cover-apa-itu-ui-dan-ux.webp',
-      coverAlt: 'Seni kertas berlapis 3D menampilkan kartu antarmuka taktil dan gerbang lengkung putih gading yang terhubung dengan tiga cincin kertas lambang keseimbangan Pengguna, Bisnis, dan Teknologi di atas alur pita kertas yang mengalir tenang',
+      coverImage: 'assets/blog/Apa%20Itu%20UI%20dan%20UX_%20Workspace%20Kreatif.webp',
+      coverAlt: 'Ilustrasi perancang kreatif di meja kerja bersama kucing tidur, buku sketsa wireframe, dan laptop sedang membandingkan kartu elemen visual UI di sisi kiri dengan kartu alur kenyamanan pengguna UX di sisi kanan',
       author: 'I Putu Dicky Adi Pranatha'
     },
     {

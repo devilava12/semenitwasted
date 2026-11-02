@@ -9,7 +9,7 @@
   //   'halloween' -> Tema Musim Gugur & Labu Halloween (Light & Dark Mode)
   //   'christmas' -> Tema Musim Dingin, Pinus & Berry Natal (Light & Dark Mode)
   // =========================================================================
-  const SITE_SEASON = 'halloween';
+  const SITE_SEASON = 'default';
 
   const THEME_KEY = 'semenitwasted_theme';
   const pages = [
