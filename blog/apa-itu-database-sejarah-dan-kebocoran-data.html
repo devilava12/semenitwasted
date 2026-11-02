@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apa Itu Database, Sejarah 1970, dan Kenapa Data Aplikasi Bocor | semenitwasted</title>
+  <meta name="description"
+    content="Pahami apa itu database dan cara kerjanya dengan bahasa sederhana. Simak sejarah Edgar F. Codd 1970, pelajaran bocornya 5,7 juta data kopi, dan tips aman.">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo-nav.svg">
+  <link rel="canonical" href="https://semenitwasted.web.id/blog/apa-itu-database-sejarah-dan-kebocoran-data">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://semenitwasted.web.id/blog/apa-itu-database-sejarah-dan-kebocoran-data">
+  <meta property="og:title"
+    content="Apa Itu Database, Sejarah 1970, dan Kenapa Data Aplikasi Bocor | semenitwasted">
+  <meta property="og:description"
+    content="Pahami apa itu database dan cara kerjanya dengan bahasa sederhana. Simak sejarah Edgar F. Codd 1970, pelajaran bocornya 5,7 juta data kopi, dan tips aman.">
+  <meta property="og:image"
+    content="https://semenitwasted.web.id/assets/blog/Anime%20Data%20Breach%20Coffee%20Shock.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title"
+    content="Apa Itu Database, Sejarah 1970, dan Kenapa Data Aplikasi Bocor | semenitwasted">
+  <meta name="twitter:description"
+    content="Pahami apa itu database dan cara kerjanya dengan bahasa sederhana. Simak sejarah Edgar F. Codd 1970, pelajaran bocornya 5,7 juta data kopi, dan tips aman.">
+  <meta name="twitter:image"
+    content="https://semenitwasted.web.id/assets/blog/Anime%20Data%20Breach%20Coffee%20Shock.webp">
+
+  <!-- Structured Data: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Belajar dari Bocornya Jutaan Data Aplikasi Kopi serta Apa Itu Database dan Sejarah Awal Dibuatnya",
+    "description": "Pahami apa itu database dan cara kerjanya dengan bahasa sederhana. Simak sejarah Edgar F. Codd 1970, pelajaran bocornya 5,7 juta data kopi, dan tips aman.",
+    "image": "https://semenitwasted.web.id/assets/blog/Anime%20Data%20Breach%20Coffee%20Shock.webp",
+    "datePublished": "2026-11-03T06:58:00+08:00",
+    "dateModified": "2026-11-03T07:15:00+08:00",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://semenitwasted.web.id/blog/apa-itu-database-sejarah-dan-kebocoran-data"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "I Putu Dicky Adi Pranatha",
+      "url": "https://semenitwasted.web.id/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "semenitwasted",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://semenitwasted.web.id/assets/logo-nav.svg"
+      }
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="../assets/fonts/rubik.css">
+  <link rel="stylesheet" href="../portfolio.css">
+  <link rel="stylesheet" href="../blog.css">
+  <script src="../site-chrome.js"></script>
+</head>
+
+<body>
+  <!-- Scroll Reading Progress Indicator -->
+  <div class="reading-progress-bar" id="readingProgressBar" aria-hidden="true"></div>
+
+  <div class="portfolio-page-wrapper blog-page-wrapper">
+
+    <!-- Global Navigation via site-chrome.js with relative base path -->
+    <div data-site-chrome data-active-page="blog" data-base-path="../"></div>
+
+    <main class="post-main" id="main-content">
+
+      <!-- Breadcrumbs -->
+      <nav class="post-breadcrumb" aria-label="Breadcrumbs">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="../blog.html">Blog</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Frontend &amp; Code</span>
+      </nav>
+
+      <!-- Article Header -->
+      <header class="post-header">
+        <h1 class="post-title">Belajar dari Bocornya Jutaan Data Aplikasi Kopi serta Apa Itu Database dan Sejarah Awal
+          Dibuatnya</h1>
+        <div class="post-meta-row">
+          <span>Oleh <strong>I Putu Dicky Adi Pranatha</strong></span>
+          <span aria-hidden="true">&bull;</span>
+          <time datetime="2026-11-03">3 November 2026</time>
+          <span aria-hidden="true">&bull;</span>
+          <span>10 min read</span>
+          <span aria-hidden="true">&bull;</span>
+          <span class="category-pill-sm">Frontend &amp; Code</span>
+        </div>
+      </header>
+
+      <!-- Post Cover Hero Figure -->
+      <figure class="post-hero-figure">
+        <div class="post-hero-frame">
+          <img src="../assets/blog/Anime%20Data%20Breach%20Coffee%20Shock.webp"
+            alt="Ilustrasi gaya anime seorang penikmat kopi tersedak kaget di depan laptop yang menampilkan notifikasi Data Bocor, ditemani kucing yang ikut panik di sampingnya"
+            class="post-hero-img" width="1672" height="941" loading="eager">
+        </div>
+        <figcaption class="post-figure-caption">Kaget Saat Data Bocor: Ketika notifikasi kebocoran data di aplikasi kopi
+          favorit membuat siapa saja tersedak dan bertanya-tanya ke mana perginya data kita selama ini.
+        </figcaption>
+      </figure>
+
+      <!-- TL;DR Summary Bento Card -->
+      <div class="post-tldr-card" role="region" aria-label="Quick Summary">
+        <span class="tldr-badge">TL;DR / Ringkasan Cepat</span>
+        <ul class="tldr-list">
+          <li><strong>Database (basis data) adalah</strong> lemari arsip elektronik di dalam komputer <em>server</em>
+            yang bertugas menyimpan, mengelompokkan, dan mencari kembali jutaan informasi pengguna seperti nama, nomor
+            telepon, poin diskon, hingga riwayat pesanan kopi hanya dalam hitungan milidetik.</li>
+          <li>Konsep database modern yang menggunakan <strong>tabel berisi baris dan kolom yang saling
+              terhubung</strong> (<em>Relational Database</em>) ditemukan oleh ilmuwan matematika <strong>Edgar F. Codd
+              di laboratorium IBM pada tahun 1970</strong> untuk menggantikan pencarian data era roket Apollo yang masih
+            kaku dan rumit.</li>
+          <li>Belajar dari kasus bocornya <strong>5,7 juta data pengguna aplikasi kopi lokal</strong> baru-baru ini,
+            database sering kali bobol bukan karena brankas utamanya dijebol paksa, melainkan lewat "pintu samping"
+            seperti <strong>dasbor analitik internal</strong> atau celah <strong>SQL Injection</strong>, sekaligus
+            mengajarkan pentingnya prinsip <em>Data Minimization</em> (tidak meminta data KTP jika tidak perlu).</li>
+        </ul>
+      </div>
+
+      <!-- Article Body -->
+      <article class="post-prose">
+        <p>
+          Secara sederhana, <strong>database (basis data) adalah</strong> lemari arsip elektronik di dalam komputer
+          <em>server</em> yang bertugas menyimpan, merapikan, dan mengambil kembali jutaan informasi secara cepat agar
+          sebuah aplikasi atau <em>website</em> bisa mengenali penggunanya. Konsep penyimpanan data berbentuk tabel yang
+          kita gunakan di hampir seluruh aplikasi hari ini pertama kali ditemukan oleh ilmuwan komputer <strong>Edgar F.
+            Codd di laboratorium IBM pada tahun 1970</strong> melalui model <em>Relational Database</em>, dan ketika
+          kita mendengar berita jutaan data pelanggan bocor di internet, itu artinya ada pihak tak diundang yang
+          berhasil menyalin isi tabel di dalam lemari arsip tersebut lewat celah sistem yang lupa dikunci.
+        </p>
+
+        <p>
+          Beberapa hari terakhir di penghujung Oktober hingga awal November 2026 ini, linimasa media sosial di Indonesia
+          kembali ramai membicarakan kabar bocornya sekitar 5,7 juta data akun pelanggan dari sebuah aplikasi pemesanan
+          kopi lokal populer. Banyak pengguna setia aplikasi tersebut yang langsung bertanya-tanya dengan cemas:
+          <em>"Sebenarnya data kita itu disimpan di sebelah mana sih saat kita mendaftar di aplikasi ponsel? Kenapa
+            jutaan catatan pesanan kopi dan nomor telepon bisa diambil orang sekaligus, dan apakah saldo bank kita ikut
+            terancam?"</em>
+        </p>
+
+        <p>
+          Pertanyaan itu sangat wajar karena bagi kebanyakan orang, apa yang terjadi sesudah kita menekan tombol
+          <strong>"Daftar"</strong> atau <strong>"Pesan Sekarang"</strong> di layar ponsel terasa seperti kotak hitam
+          yang misterius. Agar kita tidak mudah panik sekaligus paham cara kerja teknologi yang kita pakai setiap hari,
+          mari kita bedah dengan bahasa manusia paling sederhana: apa sebenarnya <em>database</em> itu, bagaimana kisah
+          sejarah penciptaannya dari proyek roket pendaratan di Bulan hingga makalah legendaris tahun 1970, serta
+          pelajaran berharga apa yang bisa dipetik dari insiden 5,7 juta data aplikasi kopi tersebut.
+        </p>
+
+        <h2>Apa Sebenarnya Database Itu dan Ke Mana Perginya Data Kita Saat Menekan Tombol Daftar</h2>
+
+        <p>
+          Bayangkan kamu baru saja mengunduh aplikasi kedai kopi favoritmu di ponsel. Saat pertama kali membukanya,
+          aplikasi itu memintamu mengetik nama lengkap, alamat <em>email</em>, nomor telepon, tanggal lahir (supaya kamu
+          bisa diberi hadiah minuman gratis saat ulang tahun), dan alamat rumah untuk pengantaran. Begitu kamu menekan
+          tombol simpan, ke mana perginya tulisan yang baru saja kamu ketik itu?
+        </p>
+
+        <p>
+          Banyak pemula mengira data profil dan jumlah poin diskon kita disimpan di dalam memori ponsel kita
+          sendiri-sendiri. Padahal, kalau datanya hanya disimpan di dalam ponselmu, maka saat ponselmu hilang atau kamu
+          berganti HP baru, seluruh poin kopi dan riwayat pesananmu akan ikut lenyap selamanya! Supaya akunmu tetap bisa
+          dibuka dari HP mana saja dan kasir di kedai kopi bisa melihat pesananmu secara langsung, seluruh data itu
+          dikirim lewat internet menuju satu komputer induk milik perusahaan yang disebut <strong>Server</strong>, lalu
+          disusun rapi di dalam sebuah sistem bernama <strong>Database</strong>.
+        </p>
+
+        <h3>Analogi Buku Absen dan Lemari Berlaci untuk Memahami Tabel, Baris, serta Kolom</h3>
+
+        <p>
+          Jangan membayangkan <em>database</em> sebagai kumpulan rumus rumit yang melayang-layang di udara seperti di
+          film fiksi ilmiah. Jika kamu pernah melihat <strong>buku absen sekolah</strong> atau lembar tabel di aplikasi
+          <strong>Microsoft Excel / Google Sheets</strong>, maka kamu sebenarnya sudah memahami delapan puluh persen
+          bentuk asli sebuah <em>database</em>!
+        </p>
+
+        <p>
+          Di dalam <em>database</em> modern (yang secara teknis disebut sebagai <strong>Relational Database</strong>
+          atau basis data relasional), informasi disimpan di dalam laci-laci terpisah yang disebut
+          <strong>Tabel</strong> (<em>Table</em>). Agar pencatatannya tetap rapi dan mudah dicari, sebuah aplikasi kopi
+          membagi datanya ke dalam beberapa tabel khusus sesuai fungsinya:
+        </p>
+
+        <ul>
+          <li><strong>Tabel Pelanggan (Users):</strong> Laci pertama ini khusus mencatat daftar orang yang punya akun.
+            Setiap kotak ke samping disebut <strong>Kolom</strong> (<em>Column</em>) yang berisi kategori informasi
+            seperti <code>ID_Pelanggan</code>, <code>Nama</code>, <code>Nomor_HP</code>, <code>Tanggal_Lahir</code>, dan
+            <code>Alamat</code>. Sementara itu, setiap deret ke bawah disebut <strong>Baris</strong> (<em>Row</em>) yang
+            masing-masing mewakili satu orang pelanggan. Jadi, jika sebuah aplikasi memiliki 5,7 juta pelanggan, artinya
+            Tabel Pelanggan tersebut memiliki 5,7 juta baris ke bawah.</li>
+          <li><strong>Tabel Menu Kopi (Products):</strong> Laci kedua khusus mencatat daftar minuman yang dijual, mulai
+            dari kode menu, nama kopi, hingga harganya.</li>
+          <li><strong>Tabel Pesanan (Orders):</strong> Laci ketiga khusus mencatat transaksi harian, yaitu siapa memesan
+            apa, jam berapa, dan di cabang mana.</li>
+        </ul>
+
+        <p>
+          Lalu bagaimana caranya agar Tabel Pesanan tahu siapa yang membeli segelas Es Kopi Susu tanpa harus menulis
+          ulang nama lengkap, nomor HP, dan alamat panjang lebar di setiap struk pembelian? Jawabannya adalah
+          menggunakan <strong>Nomor Induk Unik</strong> yang di dunia komputer disebut <strong>Primary Key</strong>.
+          Sama seperti mahasiswa yang cukup menulis Nomor Induk Mahasiswa (NIM) di lembar ujian, sistem <em>database</em>
+          cukup menghubungkan <code>ID_Pelanggan: 1045</code> di Tabel Pelanggan dengan <code>ID_Pelanggan: 1045</code>
+          di Tabel Pesanan. Karena tabel-tabel ini saling berhubungan satu sama lain melalui nomor induk tersebut, maka
+          sistem ini dinamakan <strong>Relational Database</strong> (database yang saling berelasi).
+        </p>
+
+        <h3>Mengapa Aplikasi Membutuhkan Bahasa Khusus Bernama SQL untuk Mengambil Data</h3>
+
+        <p>
+          Meskipun bentuknya mirip lembar Excel, manusia biasa tidak mungkin sanggup menggulir layar berisi 5,7 juta
+          baris dengan mata telanjang untuk mencari satu nomor telepon pelanggan. Apalagi di jam sibuk makan siang, ada
+          ribuan orang di seluruh Indonesia yang menekan tombol pesan kopi pada detik yang bersamaan.
+        </p>
+
+        <p>
+          Di sinilah aplikasi membutuhkan seorang "pustakawan super cepat" yang berjaga di depan lemari laci
+          <em>database</em>. Saat kamu membuka aplikasi kopi di ponselmu, layar aplikasi (bagian depan yang pernah kita
+          bahas di artikel <a href="apa-itu-ui-dan-ux-serta-perbedaannya.html">perbedaan tampilan UI dan pengalaman
+            UX</a>) akan mengirim surat perintah singkat ke pustakawan <em>database</em> di belakang layar.
+        </p>
+
+        <p>
+          Surat perintah itu ditulis menggunakan bahasa khusus bernama <strong>SQL</strong> (singkatan dari
+          <em>Structured Query Language</em>, sering dibaca <em>"sikuel"</em> atau <em>"es-kyu-el"</em>). SQL dirancang
+          menyerupai kalimat perintah bahasa Inggris sehari-hari yang terstruktur rapi. Misalnya, ketika kamu membuka
+          halaman profilmu, komputer cukup mengirimkan satu baris perintah SQL seperti ini kepada <em>database</em>:
+        </p>
+
+        <div class="post-callout">
+          <p>
+            <strong>Contoh Perintah SQL dalam Bahasa Manusia:</strong><br>
+            <code>SELECT nama, poin_kopi FROM tabel_pelanggan WHERE nomor_hp = '08123456789';</code><br>
+            Artinya persis seperti kalimat sehari-hari: <em>"Tolong ambilkan data <strong>nama</strong> dan
+              <strong>poin_kopi</strong> dari laci <strong>tabel_pelanggan</strong> khusus untuk orang yang
+              <strong>nomor_hp</strong> miliknya adalah 08123456789."</em> Dalam waktu kurang dari seperseratus detik,
+            pustakawan <em>database</em> langsung menyerahkan satu baris data itu ke layar ponselmu!
+          </p>
+        </div>
+
+        <h2>Sejarah Awal Database Dibuat dari Roket Apollo hingga Penemuan Edgar F. Codd Tahun 1970</h2>
+
+        <p>
+          Melihat betapa mudahnya aplikasi zaman sekarang mencari satu nama di antara jutaan baris data, kita mungkin
+          mengira komputer memang sudah pintar melakukan hal itu sejak pertama kali diciptakan. Padahal, pada era
+          1950-an hingga akhir 1960-an, menyimpan dan mencari data di dalam komputer adalah pekerjaan yang luar biasa
+          menyiksa bagi para ilmuwan.
+        </p>
+
+        <h3>Zaman Ketika Komputer Masih Mencari Data secara Urut di Dalam Gulungan Pita Kaset</h3>
+
+        <p>
+          Sebelum istilah <em>database</em> modern lahir, komputer pada dekade 1950-an menyimpan informasi di dalam
+          tumpukan kartu kertas berlubang (<em>punch cards</em>) atau gulungan <strong>pita magnetik besar</strong>
+          (<em>magnetic tape</em>) yang cara kerjanya persis seperti kaset pita lagu zaman dulu. Sistem penyimpanan kuno
+          ini disebut sebagai <em>Flat File</em> (berkas datar yang berurutan).
+        </p>
+
+        <p>
+          Apa kelemahan terbesar menyimpan data di dalam gulungan pita kaset? Bayangkan kamu punya kaset berisi rekaman
+          10 lagu, dan kamu ingin mendengarkan lagu nomor 9. Kamu tidak bisa langsung melompat ke lagu nomor 9! Mesin
+          pemutar harus memutar gulungan pita melewati lagu 1, 2, 3, 4, 5, 6, 7, dan 8 terlebih dahulu secara berurutan.
+          Begitu pula nasib komputer zaman dulu: kalau seorang <em>programmer</em> ingin mencari data pelanggan bernama
+          "Zulkifli" di urutan paling bawah, komputer harus membaca gulungan pita dari huruf A sampai Z selama berjam-jam!
+        </p>
+
+        <p>
+          Tantangan raksasa kemudian muncul pada pertengahan dekade <strong>1960-an</strong> ketika badan antariksa
+          Amerika Serikat (<strong>NASA</strong>) sedang mengebut proyek <strong>Program Apollo</strong> untuk
+          mendaratkan manusia pertama di permukaan Bulan. Sebuah roket <strong>Saturn V</strong> dan pesawat ruang
+          angkasa Apollo tersusun atas <strong>lebih dari dua juta suku cadang kecil</strong> (mulai dari baut, kabel,
+          katup bahan bakar, hingga panel listrik) yang diproduksi oleh ribuan pabrik berbeda. NASA kebingungan:
+          bagaimana cara melacak jutaan komponen roket itu di komputer agar jika ada satu baut yang cacat, teknisi bisa
+          langsung tahu baut itu dipasang di bagian mana?
+        </p>
+
+        <p>
+          Untuk membantu NASA meluncurkan roket Apollo, perusahaan komputer <strong>IBM</strong> bersama Rockwell dan
+          Caterpillar pada tahun <strong>1966 hingga 1968</strong> membangun salah satu sistem pengelola database
+          komersial pertama di dunia bernama <strong>IMS (Information Management System)</strong>. Sistem IMS ini
+          menyusun jutaan suku cadang roket Apollo menggunakan struktur <strong>Pohon Silsilah keluarga</strong>
+          (<em>Hierarchical Database</em>): dari batang utama bernama Roket Saturn V, bercabang ke Mesin Tahap Pertama,
+          bercabang lagi ke Pompa Bahan Bakar, hingga ranting terkecil berupa Nomor Baut.
+        </p>
+
+        <h3>Revolusi Tabel Saling Terhubung dari Laboratorium IBM yang Kita Pakai sampai Hari Ini</h3>
+
+        <p>
+          Sistem pohon silsilah buatan IBM untuk roket Apollo itu memang berhasil mengantarkan Neil Armstrong mendarat
+          di Bulan pada tahun 1969. Namun, ada satu kelemahan besar yang membuat para <em>programmer</em> di seluruh
+          dunia pusing tujuh keliling: struktur pohon sangat kaku! Jika kamu ingin mencari tahu <em>"Pabrik mana saja
+            yang mengirim baut ukuran 5 milimeter ke semua bagian roket?"</em>, komputer harus memanjat naik-turun
+          ribuan dahan pohon satu per satu, dan <em>programmer</em> harus menulis ulang kode pencariannya dari nol
+          setiap kali susunan cabangnya berubah.
+        </p>
+
+        <p>
+          Kerepotan itulah yang memicu keresahan seorang ilmuwan matematika kelahiran Inggris yang bekerja di
+          laboratorium riset IBM San Jose, California, bernama <strong>Edgar Frank "Ted" Codd</strong>. Sebagai mantan
+          pilot Angkatan Udara Kerajaan Inggris pada Perang Dunia II sekaligus ahli matematika murni, Ted Codd berpikir:
+          <em>"Mengapa manusia harus tahu di cabang mana atau di laci nomor berapa komputer menyimpan data? Seharusnya
+            manusia cukup menyebutkan data apa yang ia butuhkan, lalu biarkan komputer yang mencarikannya secara
+            otomatis!"</em>
+        </p>
+
+        <p>
+          Pada bulan <strong>Juni 1970</strong>, Edgar F. Codd menerbitkan makalah ilmiah sebelas halaman di jurnal
+          <em>Communications of the ACM</em> berjudul <em>"A Relational Model of Data for Large Shared Data Banks"</em>
+          yang kemudian menjadi fondasi matematis bagi seluruh sistem <em>database</em> modern. Di dalam makalah tahun
+          1970 itulah Codd mengusulkan pendekatan baru yang kini kita pakai setiap hari: <strong>tinggalkan struktur
+            pohon yang kaku, dan simpanlah seluruh data ke dalam bentuk Tabel sederhana yang terdiri dari baris serta
+            kolom yang saling terhubung!</strong>
+        </p>
+
+        <p>
+          Empat tahun setelah makalah Codd terbit, tepatnya pada tahun <strong>1974</strong>, dua rekan penelitinya di
+          proyek purwarupa <strong>IBM System R</strong> bernama <strong>Donald D. Chamberlin</strong> dan
+          <strong>Raymond F. Boyce</strong> merancang bahasa perintah bernama <strong>SEQUEL</strong> (<em>Structured
+            English Query Language</em>) untuk mengambil data dari tabel-tabel buatan Codd, yang kemudian disingkat
+          menjadi <strong>SQL</strong> karena alasan merek dagang dan diadopsi sebagai standar resmi ANSI/ISO pada tahun
+          1986. Menariknya, manajemen IBM sempat lambat memasarkan penemuan Codd karena khawatir mengganggu penjualan
+          sistem IMS lama mereka. Celah itu dimanfaatkan oleh <strong>Larry Ellison</strong> bersama rekan-rekannya yang
+          membaca makalah Codd dan spesifikasi SQL buatan IBM, lalu merilis <em>database</em> komersial
+          <strong>Oracle</strong> pada tahun 1979. Atas kontribusi fundamentalnya, Edgar F. Codd dianugerahi penghargaan
+          tertinggi dunia ilmu komputer, <strong>ACM Turing Award</strong>, pada tahun 1981.
+        </p>
+
+        <div class="post-prose-table-wrap" role="region"
+          aria-label="Tabel Perkembangan Sejarah Penyimpanan Database dari 1950 hingga Sekarang">
+          <table class="post-prose-table">
+            <thead>
+              <tr>
+                <th scope="col" style="width: 20%;">Era &amp; Sistem</th>
+                <th scope="col" style="width: 40%;">Perumpamaan Cara Kerja</th>
+                <th scope="col" style="width: 40%;">Kelebihan &amp; Keterbatasan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1950-an: Flat Files (Pita Magnetik)</strong></td>
+                <td>Seperti gulungan kaset lagu atau satu lembar catatan panjang dari atas ke bawah.</td>
+                <td>Hanya cocok untuk arsip urut; sangat lambat jika harus mencari satu data di tengah jutaan catatan.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>1966: Hierarchical DBMS (IBM IMS Apollo)</strong></td>
+                <td>Seperti diagram pohon silsilah keluarga yang bercabang dari induk ke anak-anaknya.</td>
+                <td>Cepat untuk melacak daftar suku cadang roket, tetapi sangat kaku jika pengguna ingin mencari data
+                  lintas cabang.</td>
+              </tr>
+              <tr>
+                <td><strong>1970: Relational Database &amp; SQL (Edgar F. Codd)</strong></td>
+                <td>Seperti kumpulan buku absen (tabel baris dan kolom) yang saling terhubung lewat Nomor Induk.</td>
+                <td><strong>Standar Emas Dunia:</strong> Sangat rapi, mudah dicari dengan kalimat SQL (dipakai oleh
+                  PostgreSQL, MySQL, Oracle, SQL Server).</td>
+              </tr>
+              <tr>
+                <td><strong>2000-an hingga Kini: NoSQL &amp; Cloud Database</strong></td>
+                <td>Seperti map dokumen fleksibel yang tidak mewajibkan setiap halaman punya kolom yang sama persis.
+                </td>
+                <td>Sangat gesit untuk menampung miliaran pesan <em>chat</em>, sensor lokasi, atau unggahan media sosial
+                  yang bentuknya beragam.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Pelajaran dari Kasus 5,7 Juta Data Aplikasi Kopi dan Tiga Jalur Kenapa Database Bisa Bocor</h2>
+
+        <p>
+          Setelah memahami bahwa jutaan profil pelanggan disimpan sebagai baris-baris tabel di dalam komputer
+          <em>server</em>, muncul pertanyaan besar berikutnya: jika pusat data perusahaan sudah dijaga berlapis-lapis,
+          <strong>bagaimana caranya peretas dari luar bisa mengambil dan menyalin jutaan baris tabel tersebut?</strong>
+        </p>
+
+        <figure class="post-inline-figure" style="margin: 32px 0;">
+          <div class="post-hero-frame">
+            <img src="../assets/blog/cover-apa-itu-database-dan-kebocoran-data.webp"
+              alt="Seni kertas berlapis 3D menampilkan lemari arsip laci database berwarna gading di dalam perisai pelindung, dengan satu laci terbuka yang mengeluarkan pita kertas berisi ikon profil pengguna dan cangkir kopi"
+              class="post-hero-img" width="1376" height="768" loading="lazy">
+          </div>
+          <figcaption class="post-figure-caption">Lemari Arsip di Balik Layar Aplikasi: Bagaimana jutaan baris data
+            pelanggan disimpan rapi di dalam tabel database dan mengapa satu celah kecil di pintu samping bisa membuatnya
+            bocor keluar.
+          </figcaption>
+        </figure>
+
+        <h3>Ketika Pintu Samping Dasbor Analitik dan Celah Suntikan Perintah Menjadi Jalan Masuk Peretas</h3>
+
+        <p>
+          Dalam praktik keamanan siber, sebuah <em>database</em> jarang sekali bobol karena peretas membongkar paksa
+          mesin penyimpanan utamanya. Hampir seluruh insiden kebocoran data aplikasi terjadi lewat salah satu dari
+          <strong>tiga jalur celah berikut</strong>:
+        </p>
+
+        <ol>
+          <li><strong>Jebolnya "Pintu Samping" Aplikasi Analitik Pihak Ketiga (Seperti Kasus Aplikasi Kopi):</strong>
+            Di sebuah perusahaan modern, tim pemasaran dan manajemen setiap hari perlu melihat grafik penjualan:
+            <em>"Kopi rasa apa yang paling laku minggu ini di Jakarta Selatan?"</em> Karena tim bisnis tidak bisa
+            mengetik kode <code>SQL</code> langsung ke dalam <em>database</em>, tim IT biasanya memasang sebuah program
+            papan grafik (<em>Business Intelligence / Analytics Dashboard</em>, seperti <strong>Metabase</strong>) yang
+            dihubungkan langsung dengan pipa khusus ke <em>database</em> utama. Dalam keterangan resmi manajemen kepada
+            Bursa Efek Indonesia pada 2 November 2026 terkait insiden aplikasi kopi lokal tersebut, terungkap bahwa
+            akses tanpa izin terjadi melalui <strong>celah keamanan pada platform analitik internal</strong> ini!
+            Ibarat rumah yang pintu depannya sudah dipasangi teralis baja berlapis-lapis, tetapi jendela ruang dapur
+            tempat asisten melihat stok barang ternyata memiliki engsel yang rusak dan bisa dibuka dari luar.</li>
+          <li><strong>Suntikan Perintah Jahat lewat Kolom Ketikan (SQL Injection):</strong>
+            Ingatkah kamu bahwa aplikasi mengobrol dengan <em>database</em> menggunakan kalimat perintah SQL? Pada
+             <a href="perbedaan-website-dan-landing-page.html"><em>website</em> atau aplikasi</a> yang dibuat secara
+            kurang teliti, kolom pencarian atau kolom formulir <em>login</em> tidak disaring dengan benar. Akibatnya,
+            alih-alih mengetik nama kopi di kotak pencarian, peretas justru mengetik potongan kalimat perintah
+            <code>SQL</code> licik seperti <code>' OR 1=1 --</code> yang menipu pustakawan <em>database</em> agar
+            memuntahkan seluruh isi laci tabel ke layar peretas! Teknik klasik bernama <strong>SQL Injection</strong>
+            ini sudah berumur puluhan tahun namun masih terus memakan korban pada sistem yang jarang diaudit.</li>
+          <li><strong>Kunci Akses Cloud yang Tertinggal atau Cadangan Data yang Lupa Dikunci:</strong>
+            Banyak kebocoran data raksasa terjadi karena kesalahan manusiawi pengembang web (<em>human error</em>),
+            misalnya tidak sengaja mengunggah berkas kode berisi kata sandi <em>database</em> ke repositori publik, atau
+            menyimpan berkas cadangan harian (<em>backup file</em>) di gudang penyimpanan internet (<em>cloud storage
+              bucket</em>) dengan pengaturan terbuka untuk umum tanpa kata sandi.</li>
+        </ol>
+
+        <h3>Sisi Positif yang Jarang Disadari Saat Aplikasi Tidak Meminta KTP dan Menggiling PIN Pengguna</h3>
+
+        <p>
+          Meskipun kabar bocornya 5,7 juta baris data yang memuat nama, alamat <em>email</em>, nomor telepon, tanggal
+          lahir, jenis kelamin, alamat pengantaran, dan riwayat pesanan kopi itu tetap merupakan insiden serius yang
+          merugikan privasi konsumen, ada <strong>tiga keputusan arsitektur keamanan yang patut diapresiasi dan wajib
+            dicontoh oleh para pembuat aplikasi pemula</strong> dari kasus tersebut:
+        </p>
+
+        <ul>
+          <li><strong>Pertama, PIN Akun Disimpan dalam Bentuk Gilingan Acak (Hashed PIN):</strong> Di dalam tabel yang
+            bocor tersebut, kode PIN 6 angka milik pengguna sudah digiling menggunakan fungsi kriptografi satu arah
+            (<em>hashed</em>) sehingga tidak tersimpan sebagai angka telanjang (<em>plain text</em>). Sebagaimana telah
+            kita bahas tuntas pada artikel mengenai <a href="sejarah-password-dan-kesalahan-keamanan-akun.html">sejarah
+              password komputer dan cara kerja mesin penggiling hashing</a>, peretas yang menyalin tabel tersebut tidak
+            bisa langsung membaca angka PIN aslimu tanpa melakukan proses tebak paksa.</li>
+          <li><strong>Kedua, Data Kartu Kredit dan Pembayaran Dipisahkan di Brankas Berbeda:</strong> Aplikasi yang
+            mengikuti standar industri menyerahkan pemrosesan nomor kartu kredit, kartu debit, dan saldo dompet digital
+            langsung ke lembaga gerbang pembayaran resmi (<em>Payment Gateway</em>) berstandar keamanan perbankan, tanpa
+            menyimpannya di <em>database</em> internal toko. Berkat pemisahan ini, ketika tabel pesanan kopi bocor, data
+            rekening bank dan kartu kredit pengguna tetap aman.</li>
+          <li><strong>Ketiga, Penerapan Prinsip "Diet Data" (Data Minimization) dengan Tidak Meminta KTP:</strong>
+            Pihak perusahaan menegaskan bahwa sejak awal berdiri, aplikasi mereka <strong>tidak pernah meminta atau
+              menyimpan Nomor Induk Kependudukan (NIK KTP)</strong> pelanggan. Dalam rekayasa sistem dan Undang-Undang
+            Pelindungan Data Pribadi (UU PDP), langkah ini dikenal sebagai <strong>Data Minimization</strong>:
+            <em>kumpulkan data seperlunya sesuai tujuan layanan, dan jangan pernah meminta data sensitif jika aplikasi
+              memang tidak membutuhkannya.</em> Risiko penyalahgunaan identitas pada insiden kemarin berhasil ditekan
+            karena aplikasi pemesanan kopi tidak memungut foto KTP pelanggan saat pendaftaran.</li>
+        </ul>
+
+        <h2>Langkah Penyelamatan Saat Data Kita Ikut Bocor dan Prinsip Diet Data bagi Pembuat Website</h2>
+
+        <p>
+          Lalu apa yang harus kita lakukan sebagai pengguna biasa jika nama, nomor telepon, alamat rumah, dan riwayat
+          pesanan kita terlanjur ikut bocor di internet? Dan apa yang harus dilakukan oleh mahasiswa IT atau pemilik
+          usaha yang sedang membangun <em>website</em> sendiri?
+        </p>
+
+        <p>
+          Bagi kamu sebagai <strong>pengguna aplikasi harian</strong>, lakukan tiga langkah perlindungan cerdas ini
+          sekarang juga:
+        </p>
+
+        <ol>
+          <li><strong>Waspadai Penipuan yang Menyebutkan Detail Pesanan Aslimu (Targeted Phishing):</strong> Risiko
+            utama dari bocornya data nama, nomor HP, alamat rumah, dan riwayat pesanan kopi terletak pada meningkatnya
+            akurasi serangan rekayasa sosial: <strong>penipu kini memegang detail transaksi nyata untuk membuat cerita
+              bohong yang terdengar sangat meyakinkan</strong>. Jika minggu depan ada orang menelepon atau mengirim
+            pesan WhatsApp sambil berkata, <em>"Halo Kak Budi, kami dari tim undian resmi, melihat Kakak sering memesan
+              Es Kopi Aren ke alamat Jalan Melati Nomor 12, Kakak berhak mendapat hadiah uang tunai, silakan klik tautan
+              ini atau sebutkan kode OTP,"</em> <strong>jangan pernah percaya!</strong> Penipu sengaja membacakan
+            riwayat pesanan dan alamat aslimu dari data yang bocor agar kamu mengira mereka petugas resmi.</li>
+          <li><strong>Jangan Pernah Memakai PIN Aplikasi Belanja yang Sama dengan PIN M-Banking:</strong> Walaupun PIN
+            di dalam <em>database</em> sudah digiling (<em>hashed</em>), kombinasi 6 angka (mulai dari
+            <code>000000</code> sampai <code>999999</code>) hanya memiliki tepat <strong>satu juta kemungkinan</strong>.
+            Bagi komputer modern, menebak paksa (<em>brute force</em>) gilingan 6 angka yang tidak dibumbui pengaman
+            kuat jauh lebih cepat dibandingkan menebak kata sandi huruf yang panjang. Oleh karena itu, <strong>bedakan
+              PIN aplikasi kopi/belanja dengan PIN kartu ATM dan Mobile Banking milikmu</strong>, serta jangan pernah
+            memakai tanggal lahirmu sebagai PIN (karena tanggal lahirmu ikut tertulis di kolom sebelahnya!).</li>
+          <li><strong>Tolak Memberikan Data Berlebih Saat Mendaftar Aplikasi:</strong> Biasakan bersikap kritis. Jika
+            ada aplikasi permainan, kupon diskon makanan, atau situs sederhana yang tiba-tiba meminta nomor KTP atau
+            nama gadis ibu kandung, batalkan pendaftaranmu.</li>
+        </ol>
+
+        <p>
+          Sementara itu, bagi kamu <strong>mahasiswa IT, desainer produk, atau pemilik usaha yang mengelola
+            website</strong>, jadikan peristiwa awal November 2026 ini sebagai pengingat berharga: pertama, terapkan
+          <strong>Data Minimization</strong> secara ketat dan jangan menimbun data pribadi pelanggan yang tidak perlu,
+          karena data yang tidak pernah kamu simpan adalah data yang tidak akan pernah bisa dicuri peretas; kedua,
+          pastikan setiap perangkat lunak tambahan yang tersambung ke <em>database</em> (seperti dasbor analitik
+          <em>Metabase</em> atau panel admin) selalu diperbarui ke versi terbaru sebagaimana prinsip yang kita pelajari
+          di artikel <a href="php2shell-celah-keamanan-php-dan-sejarahnya.html">pentingnya menutup celah keamanan
+            server sejak dini</a>, serta tidak pernah dibuka bebas ke jaringan internet publik tanpa pelindung jaringan
+          internal (VPN) dan autentikasi berlapis.
+        </p>
+
+        <h2>Referensi</h2>
+        <ul>
+          <li>Codd, E. F. (1970). <em>A Relational Model of Data for Large Shared Data Banks</em>. Communications of the
+            ACM, 13(6), 377-387. <a href="https://doi.org/10.1145/362384.362685" target="_blank"
+              rel="noopener noreferrer">https://doi.org/10.1145/362384.362685</a></li>
+          <li>Chamberlin, D. D., &amp; Boyce, R. F. (1974). <em>SEQUEL: A Structured English Query Language</em>.
+            Proceedings of the 1974 ACM SIGFIDET Workshop on Data Description, Access and Control, 249-264. <a
+              href="https://doi.org/10.1145/800296.811515" target="_blank"
+              rel="noopener noreferrer">https://doi.org/10.1145/800296.811515</a></li>
+          <li>IBM Corporation. (2024). <em>Information Management System (IMS) and the Apollo Space Program History</em>.
+            IBM Archives. <a href="https://www.ibm.com/history/ims" target="_blank"
+              rel="noopener noreferrer">https://www.ibm.com/history/ims</a></li>
+          <li>OWASP Foundation. (2025). <em>SQL Injection Prevention &amp; Database Security Cheat Sheet</em>. Open
+            Worldwide Application Security Project. <a
+              href="https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html"
+              target="_blank"
+              rel="noopener noreferrer">https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html</a>
+          </li>
+          <li>PT Bursa Efek Indonesia (BEI). (2026, 2 November). <em>Keterbukaan Informasi: Penjelasan atas Pemberitaan
+              Media Massa terkait Dugaan Insiden Keamanan Siber PT Fore Kopi Indonesia Tbk (FORE)</em>. Jakarta: IDX
+            Disclosure (<a href="https://www.idx.co.id/id/perusahaan-tercatat/keterbukaan-informasi/" target="_blank"
+              rel="noopener noreferrer">idx.co.id</a>).</li>
+          <li>Undang-Undang Republik Indonesia Nomor 27 Tahun 2022 tentang <em>Pelindungan Data Pribadi (UU PDP)</em>,
+            Pasal 16 ayat (2) huruf c mengenai Prinsip Pembatasan Pengumpulan Data Pribadi secara Terbatas dan Spesifik
+            (<a href="https://peraturan.bpk.go.id/Details/229798/uu-no-27-tahun-2022" target="_blank"
+              rel="noopener noreferrer">peraturan.bpk.go.id</a>).
+          </li>
+        </ul>
+      </article>
+
+      <!-- Next & Prev Navigation -->
+      <nav class="post-navigator" aria-label="Article navigation">
+        <a href="sejarah-password-dan-kesalahan-keamanan-akun.html" class="post-nav-card">
+          <span class="nav-direction">&larr; Artikel Sebelumnya</span>
+          <span class="nav-article-title">Pelajaran dari Diretasnya Papan Iklan Jalan Raya serta Sejarah Password dari
+            Tahun 1961 hingga Era Passkey</span>
+        </a>
+        <a href="php2shell-celah-keamanan-php-dan-sejarahnya.html" class="post-nav-card">
+          <span class="nav-direction">Eksplorasi Terkait &rarr;</span>
+          <span class="nav-article-title">Belajar dari Celah PHP2Shell: Sejarah Kelahiran PHP dan Kenapa Keamanan Server
+            Tidak Boleh Diabaikan</span>
+        </a>
+      </nav>
+
+    </main>
+
+    <!-- Footer (Matching semenitwasted layout) -->
+    <footer class="portfolio-footer">
+      <div class="footer-left">
+        <span class="footer-brand">semenitwasted</span>
+        <span class="footer-subtitle">Design · Icons · Illustration · Web</span>
+      </div>
+      <div class="footer-platforms" aria-label="Platform links">
+        <a href="https://www.linkedin.com/in/reionnyx/" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="LinkedIn">
+          <img src="../assets/linkedin.svg" alt="" width="24" height="24"
+            class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+        <a href="https://stock.adobe.com/contributor/207802543/dicky" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Adobe Stock">
+          <img src="../assets/adobe-stock.svg" alt="" width="24" height="24" class="footer-platform-icon">
+        </a>
+        <a href="https://www.canva.com/p/gambar-reion" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Canva">
+          <img src="../assets/canva.svg" alt="" width="24" height="24" class="footer-platform-icon">
+        </a>
+        <a href="https://thenounproject.com/creator/ReionDesign/" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="The Noun Project">
+          <img src="../assets/noun-project.svg" alt="" width="24" height="24"
+            class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+        <a href="https://www.flaticon.com/authors/reion" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Flaticon">
+          <img src="../assets/flaticon.svg" alt="" width="24" height="24"
+            class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Reading Progress Script -->
+  <script>
+    window.addEventListener('scroll', () => {
+      const bar = document.getElementById('readingProgressBar');
+      if (!bar) return;
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = totalScroll > 0 ? (window.scrollY / totalScroll) * 100 : 0;
+      bar.style.width = Math.min(100, Math.max(0, progress)) + '%';
+    }, { passive: true });
+  </script>
+</body>
+
+</html>

@@ -17,6 +17,23 @@
 
   const BLOG_POSTS = [
     {
+      id: 'post-20',
+      slug: 'apa-itu-database-sejarah-dan-kebocoran-data',
+      title: 'Belajar dari Bocornya Jutaan Data Aplikasi Kopi serta Apa Itu Database dan Sejarah Awal Dibuatnya',
+      date: '2026-11-03',
+      formattedDate: '3 November 2026',
+      readingTime: '10 min read',
+      category: 'frontend-code',
+      categoryLabel: 'Frontend & Code',
+      tags: ['Database', 'SQL', 'Edgar F. Codd', 'Data Privacy', 'Pemula'],
+      featured: false,
+      excerpt: 'Pahami apa itu database dan cara kerjanya dengan bahasa sederhana. Simak sejarah Edgar F. Codd 1970, pelajaran bocornya 5,7 juta data kopi, dan tips aman.',
+      contentUrl: 'blog/apa-itu-database-sejarah-dan-kebocoran-data.html',
+      coverImage: 'assets/blog/Anime%20Data%20Breach%20Coffee%20Shock.webp',
+      coverAlt: 'Ilustrasi gaya anime seorang penikmat kopi tersedak kaget di depan laptop yang menampilkan notifikasi Data Bocor, ditemani kucing yang ikut panik di sampingnya',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
       id: 'post-19',
       slug: 'sejarah-password-dan-kesalahan-keamanan-akun',
       title: 'Pelajaran dari Diretasnya Papan Iklan Jalan Raya serta Sejarah Password dari Tahun 1961 hingga Era Passkey',
