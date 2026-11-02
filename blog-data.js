@@ -29,8 +29,8 @@
       featured: false,
       excerpt: 'Pelajari sejarah awal password dibuat di MIT tahun 1961, evolusi cara kerjanya dari hashing hingga 2FA dan Passkey, serta 5 kesalahan yang bikin akun jebol.',
       contentUrl: 'blog/sejarah-password-dan-kesalahan-keamanan-akun.html',
-      coverImage: 'assets/blog/cover-sejarah-dan-kesalahan-password.webp',
-      coverAlt: 'Seni kertas berlapis 3D menampilkan perisai dan lubang kunci mekanikal putih gading yang terhubung melalui pita kertas dari kartu berlubang era 1960-an di kiri bawah menuju cincin sidik jari biometrik modern di kanan atas',
+      coverImage: 'assets/blog/Neon%20Hacked%20Highway%20Panic.webp',
+      coverAlt: 'Ilustrasi pengelola sistem dan kucingnya panik memegang kepala di depan laptop dengan peringatan gembok terbuka, sementara papan iklan digital jalan raya di belakangnya menampilkan simbol tengkorak HACKED',
       author: 'I Putu Dicky Adi Pranatha'
     },
     {
