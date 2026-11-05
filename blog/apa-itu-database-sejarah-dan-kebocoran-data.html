@@ -13,15 +13,13 @@
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://semenitwasted.web.id/blog/apa-itu-database-sejarah-dan-kebocoran-data">
-  <meta property="og:title"
-    content="Apa Itu Database, Sejarah 1970, dan Kenapa Data Aplikasi Bocor | semenitwasted">
+  <meta property="og:title" content="Apa Itu Database, Sejarah 1970, dan Kenapa Data Aplikasi Bocor | semenitwasted">
   <meta property="og:description"
     content="Pahami apa itu database dan cara kerjanya dengan bahasa sederhana. Simak sejarah Edgar F. Codd 1970, pelajaran bocornya 5,7 juta data kopi, dan tips aman.">
   <meta property="og:image"
     content="https://semenitwasted.web.id/assets/blog/Anime%20Data%20Breach%20Coffee%20Shock.webp">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title"
-    content="Apa Itu Database, Sejarah 1970, dan Kenapa Data Aplikasi Bocor | semenitwasted">
+  <meta name="twitter:title" content="Apa Itu Database, Sejarah 1970, dan Kenapa Data Aplikasi Bocor | semenitwasted">
   <meta name="twitter:description"
     content="Pahami apa itu database dan cara kerjanya dengan bahasa sederhana. Simak sejarah Edgar F. Codd 1970, pelajaran bocornya 5,7 juta data kopi, dan tips aman.">
   <meta name="twitter:image"
@@ -198,7 +196,8 @@
             seperti <code>ID_Pelanggan</code>, <code>Nama</code>, <code>Nomor_HP</code>, <code>Tanggal_Lahir</code>, dan
             <code>Alamat</code>. Sementara itu, setiap deret ke bawah disebut <strong>Baris</strong> (<em>Row</em>) yang
             masing-masing mewakili satu orang pelanggan. Jadi, jika sebuah aplikasi memiliki 5,7 juta pelanggan, artinya
-            Tabel Pelanggan tersebut memiliki 5,7 juta baris ke bawah.</li>
+            Tabel Pelanggan tersebut memiliki 5,7 juta baris ke bawah.
+          </li>
           <li><strong>Tabel Menu Kopi (Products):</strong> Laci kedua khusus mencatat daftar minuman yang dijual, mulai
             dari kode menu, nama kopi, hingga harganya.</li>
           <li><strong>Tabel Pesanan (Orders):</strong> Laci ketiga khusus mencatat transaksi harian, yaitu siapa memesan
@@ -209,7 +208,8 @@
           Lalu bagaimana caranya agar Tabel Pesanan tahu siapa yang membeli segelas Es Kopi Susu tanpa harus menulis
           ulang nama lengkap, nomor HP, dan alamat panjang lebar di setiap struk pembelian? Jawabannya adalah
           menggunakan <strong>Nomor Induk Unik</strong> yang di dunia komputer disebut <strong>Primary Key</strong>.
-          Sama seperti mahasiswa yang cukup menulis Nomor Induk Mahasiswa (NIM) di lembar ujian, sistem <em>database</em>
+          Sama seperti mahasiswa yang cukup menulis Nomor Induk Mahasiswa (NIM) di lembar ujian, sistem
+          <em>database</em>
           cukup menghubungkan <code>ID_Pelanggan: 1045</code> di Tabel Pelanggan dengan <code>ID_Pelanggan: 1045</code>
           di Tabel Pesanan. Karena tabel-tabel ini saling berhubungan satu sama lain melalui nomor induk tersebut, maka
           sistem ini dinamakan <strong>Relational Database</strong> (database yang saling berelasi).
@@ -271,7 +271,8 @@
           10 lagu, dan kamu ingin mendengarkan lagu nomor 9. Kamu tidak bisa langsung melompat ke lagu nomor 9! Mesin
           pemutar harus memutar gulungan pita melewati lagu 1, 2, 3, 4, 5, 6, 7, dan 8 terlebih dahulu secara berurutan.
           Begitu pula nasib komputer zaman dulu: kalau seorang <em>programmer</em> ingin mencari data pelanggan bernama
-          "Zulkifli" di urutan paling bawah, komputer harus membaca gulungan pita dari huruf A sampai Z selama berjam-jam!
+          "Zulkifli" di urutan paling bawah, komputer harus membaca gulungan pita dari huruf A sampai Z selama
+          berjam-jam!
         </p>
 
         <p>
@@ -390,7 +391,8 @@
               class="post-hero-img" width="1376" height="768" loading="lazy">
           </div>
           <figcaption class="post-figure-caption">Lemari Arsip di Balik Layar Aplikasi: Bagaimana jutaan baris data
-            pelanggan disimpan rapi di dalam tabel database dan mengapa satu celah kecil di pintu samping bisa membuatnya
+            pelanggan disimpan rapi di dalam tabel database dan mengapa satu celah kecil di pintu samping bisa
+            membuatnya
             bocor keluar.
           </figcaption>
         </figure>
@@ -413,15 +415,17 @@
             Bursa Efek Indonesia pada 2 November 2026 terkait insiden aplikasi kopi lokal tersebut, terungkap bahwa
             akses tanpa izin terjadi melalui <strong>celah keamanan pada platform analitik internal</strong> ini!
             Ibarat rumah yang pintu depannya sudah dipasangi teralis baja berlapis-lapis, tetapi jendela ruang dapur
-            tempat asisten melihat stok barang ternyata memiliki engsel yang rusak dan bisa dibuka dari luar.</li>
+            tempat asisten melihat stok barang ternyata memiliki engsel yang rusak dan bisa dibuka dari luar.
+          </li>
           <li><strong>Suntikan Perintah Jahat lewat Kolom Ketikan (SQL Injection):</strong>
             Ingatkah kamu bahwa aplikasi mengobrol dengan <em>database</em> menggunakan kalimat perintah SQL? Pada
-             <a href="perbedaan-website-dan-landing-page.html"><em>website</em> atau aplikasi</a> yang dibuat secara
+            <a href="perbedaan-website-dan-landing-page.html"><em>website</em> atau aplikasi</a> yang dibuat secara
             kurang teliti, kolom pencarian atau kolom formulir <em>login</em> tidak disaring dengan benar. Akibatnya,
             alih-alih mengetik nama kopi di kotak pencarian, peretas justru mengetik potongan kalimat perintah
             <code>SQL</code> licik seperti <code>' OR 1=1 --</code> yang menipu pustakawan <em>database</em> agar
             memuntahkan seluruh isi laci tabel ke layar peretas! Teknik klasik bernama <strong>SQL Injection</strong>
-            ini sudah berumur puluhan tahun namun masih terus memakan korban pada sistem yang jarang diaudit.</li>
+            ini sudah berumur puluhan tahun namun masih terus memakan korban pada sistem yang jarang diaudit.
+          </li>
           <li><strong>Kunci Akses Cloud yang Tertinggal atau Cadangan Data yang Lupa Dikunci:</strong>
             Banyak kebocoran data raksasa terjadi karena kesalahan manusiawi pengembang web (<em>human error</em>),
             misalnya tidak sengaja mengunggah berkas kode berisi kata sandi <em>database</em> ke repositori publik, atau
@@ -456,7 +460,8 @@
             Pelindungan Data Pribadi (UU PDP), langkah ini dikenal sebagai <strong>Data Minimization</strong>:
             <em>kumpulkan data seperlunya sesuai tujuan layanan, dan jangan pernah meminta data sensitif jika aplikasi
               memang tidak membutuhkannya.</em> Risiko penyalahgunaan identitas pada insiden kemarin berhasil ditekan
-            karena aplikasi pemesanan kopi tidak memungut foto KTP pelanggan saat pendaftaran.</li>
+            karena aplikasi pemesanan kopi tidak memungut foto KTP pelanggan saat pendaftaran.
+          </li>
         </ul>
 
         <h2>Langkah Penyelamatan Saat Data Kita Ikut Bocor dan Prinsip Diet Data bagi Pembuat Website</h2>
@@ -487,7 +492,8 @@
             Bagi komputer modern, menebak paksa (<em>brute force</em>) gilingan 6 angka yang tidak dibumbui pengaman
             kuat jauh lebih cepat dibandingkan menebak kata sandi huruf yang panjang. Oleh karena itu, <strong>bedakan
               PIN aplikasi kopi/belanja dengan PIN kartu ATM dan Mobile Banking milikmu</strong>, serta jangan pernah
-            memakai tanggal lahirmu sebagai PIN (karena tanggal lahirmu ikut tertulis di kolom sebelahnya!).</li>
+            memakai tanggal lahirmu sebagai PIN (karena tanggal lahirmu ikut tertulis di kolom sebelahnya!).
+          </li>
           <li><strong>Tolak Memberikan Data Berlebih Saat Mendaftar Aplikasi:</strong> Biasakan bersikap kritis. Jika
             ada aplikasi permainan, kupon diskon makanan, atau situs sederhana yang tiba-tiba meminta nomor KTP atau
             nama gadis ibu kandung, batalkan pendaftaranmu.</li>
@@ -514,7 +520,8 @@
             Proceedings of the 1974 ACM SIGFIDET Workshop on Data Description, Access and Control, 249-264. <a
               href="https://doi.org/10.1145/800296.811515" target="_blank"
               rel="noopener noreferrer">https://doi.org/10.1145/800296.811515</a></li>
-          <li>IBM Corporation. (2024). <em>Information Management System (IMS) and the Apollo Space Program History</em>.
+          <li>IBM Corporation. (2024). <em>Information Management System (IMS) and the Apollo Space Program
+              History</em>.
             IBM Archives. <a href="https://www.ibm.com/history/ims" target="_blank"
               rel="noopener noreferrer">https://www.ibm.com/history/ims</a></li>
           <li>OWASP Foundation. (2025). <em>SQL Injection Prevention &amp; Database Security Cheat Sheet</em>. Open
@@ -542,10 +549,10 @@
           <span class="nav-article-title">Pelajaran dari Diretasnya Papan Iklan Jalan Raya serta Sejarah Password dari
             Tahun 1961 hingga Era Passkey</span>
         </a>
-        <a href="php2shell-celah-keamanan-php-dan-sejarahnya.html" class="post-nav-card">
-          <span class="nav-direction">Eksplorasi Terkait &rarr;</span>
-          <span class="nav-article-title">Belajar dari Celah PHP2Shell: Sejarah Kelahiran PHP dan Kenapa Keamanan Server
-            Tidak Boleh Diabaikan</span>
+        <a href="cara-berpikir-dan-menganalisis-desain-website.html" class="post-nav-card">
+          <span class="nav-direction">Artikel Selanjutnya &rarr;</span>
+          <span class="nav-article-title">Cara Berpikir dan Menganalisis Website seperti Desainer Lewat Pelajaran dari
+            Dua Video Extra Credits</span>
         </a>
       </nav>
 

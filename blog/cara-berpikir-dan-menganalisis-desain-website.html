@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cara Berpikir dan Menganalisis Desain Website (Playing Like a Designer) | semenitwasted</title>
+  <meta name="description"
+    content="Pelajari cara menganalisis desain website lewat dua video Extra Credits (Playing Like a Designer I &amp; II), kerangka MDA, dan kebiasaan membedah sistem UI/UX.">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo-nav.svg">
+  <link rel="canonical" href="https://semenitwasted.web.id/blog/cara-berpikir-dan-menganalisis-desain-website">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://semenitwasted.web.id/blog/cara-berpikir-dan-menganalisis-desain-website">
+  <meta property="og:title"
+    content="Cara Berpikir dan Menganalisis Desain Website (Playing Like a Designer) | semenitwasted">
+  <meta property="og:description"
+    content="Pelajari cara menganalisis desain website lewat dua video Extra Credits (Playing Like a Designer I &amp; II), kerangka MDA, dan kebiasaan membedah sistem UI/UX.">
+  <meta property="og:image"
+    content="https://semenitwasted.web.id/assets/blog/Gadis%20Anime%20dan%20Kucing%20Gamer%20Misterius.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title"
+    content="Cara Berpikir dan Menganalisis Desain Website (Playing Like a Designer) | semenitwasted">
+  <meta name="twitter:description"
+    content="Pelajari cara menganalisis desain website lewat dua video Extra Credits (Playing Like a Designer I &amp; II), kerangka MDA, dan kebiasaan membedah sistem UI/UX.">
+  <meta name="twitter:image"
+    content="https://semenitwasted.web.id/assets/blog/Gadis%20Anime%20dan%20Kucing%20Gamer%20Misterius.webp">
+
+  <!-- Structured Data: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Cara Berpikir dan Menganalisis Website seperti Desainer Lewat Pelajaran dari Dua Video Extra Credits",
+    "description": "Pelajari cara menganalisis desain website lewat dua video Extra Credits (Playing Like a Designer I & II), kerangka MDA, dan kebiasaan membedah sistem UI/UX.",
+    "image": "https://semenitwasted.web.id/assets/blog/Gadis%20Anime%20dan%20Kucing%20Gamer%20Misterius.webp",
+    "datePublished": "2026-11-05T18:10:00+08:00",
+    "dateModified": "2026-11-05T18:10:00+08:00",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://semenitwasted.web.id/blog/cara-berpikir-dan-menganalisis-desain-website"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "I Putu Dicky Adi Pranatha",
+      "url": "https://semenitwasted.web.id/about.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "semenitwasted",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://semenitwasted.web.id/assets/logo-nav.svg"
+      }
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="../assets/fonts/rubik.css">
+  <link rel="stylesheet" href="../portfolio.css">
+  <link rel="stylesheet" href="../blog.css">
+  <script src="../site-chrome.js"></script>
+</head>
+
+<body>
+  <!-- Scroll Reading Progress Indicator -->
+  <div class="reading-progress-bar" id="readingProgressBar" aria-hidden="true"></div>
+
+  <div class="portfolio-page-wrapper blog-page-wrapper">
+
+    <!-- Global Navigation via site-chrome.js with relative base path -->
+    <div data-site-chrome data-active-page="blog" data-base-path="../"></div>
+
+    <main class="post-main" id="main-content">
+
+      <!-- Breadcrumbs -->
+      <nav class="post-breadcrumb" aria-label="Breadcrumbs">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="../blog.html">Blog</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Design Systems</span>
+      </nav>
+
+      <!-- Article Header -->
+      <header class="post-header">
+        <h1 class="post-title">Cara Berpikir dan Menganalisis Website seperti Desainer Lewat Pelajaran dari Dua Video
+          Extra Credits</h1>
+        <div class="post-meta-row">
+          <span>Oleh <strong>I Putu Dicky Adi Pranatha</strong></span>
+          <span aria-hidden="true">&bull;</span>
+          <time datetime="2026-11-05">5 November 2026</time>
+          <span aria-hidden="true">&bull;</span>
+          <span>11 min read</span>
+          <span aria-hidden="true">&bull;</span>
+          <span class="category-pill-sm">Design Systems</span>
+        </div>
+      </header>
+
+      <!-- Post Cover Hero Figure -->
+      <figure class="post-hero-figure">
+        <div class="post-hero-frame">
+          <img src="../assets/blog/Gadis%20Anime%20dan%20Kucing%20Gamer%20Misterius.webp"
+            alt="Ilustrasi gadis anime memegang kaca pembesar dengan tanda tanya di atas kepalanya sambil mengamati kucing putih ber-headphone yang sedang serius bermain game memakai stik kontroler di depan laptop"
+            class="post-hero-img" width="1671" height="941" loading="eager">
+        </div>
+        <figcaption class="post-figure-caption">Mengamati dengan Kaca Pembesar Desainer: Berpindah dari sekadar larut
+          dalam permainan menuju kebiasaan mengamati reaksi pengguna, menanyakan alasan di balik setiap emosi, dan
+          membedah cara kerja sistem di balik layar.</figcaption>
+      </figure>
+
+      <!-- Video Reference Banner Bento Card -->
+      <div class="post-tldr-card" role="region" aria-label="Video Referensi Utama"
+        style="border-left: 4px solid var(--accent-primary, #450D50); margin-bottom: 24px;">
+        <span class="tldr-badge" style="background: #450D50; color: #FFFFFF;">Inspirasi Video &amp; Rujukan
+          Diskusi</span>
+        <p style="margin: 8px 0 12px; font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary, #3B3248);">
+          Artikel ini membedah secara utuh dwilogi video edukasi desain dari kanal YouTube <strong>Extra
+            Credits</strong> (ditulis oleh James Portnow dan dinarasikan oleh Daniel Floyd) yang berjudul
+          <strong>"Playing Like a Designer - I: Examine Your Experiences"</strong> serta <strong>"Playing Like a
+            Designer - II: How to Analyze Game Design"</strong>, kemudian menerjemahkan metode analisis dari dunia
+          <em>video game</em> tersebut menjadi kerangka kerja praktis untuk merancang dan membedah <em>website</em>.
+        </p>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px;">
+          <a href="https://www.youtube.com/watch?v=_HmtmoGwpZc" target="_blank" rel="noopener noreferrer"
+            style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: #211B28; color: #FFFFFF; text-decoration: none; border-radius: 6px; font-size: 0.85rem; font-weight: 600;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+            Tonton Bagian 1: Examine Your Experiences
+          </a>
+          <a href="https://www.youtube.com/watch?v=6op8eV5OBwE" target="_blank" rel="noopener noreferrer"
+            style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: #450D50; color: #FFFFFF; text-decoration: none; border-radius: 6px; font-size: 0.85rem; font-weight: 600;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+            Tonton Bagian 2: How to Analyze Game Design
+          </a>
+        </div>
+      </div>
+
+      <!-- TL;DR Summary Bento Card -->
+      <div class="post-tldr-card" role="region" aria-label="Quick Summary">
+        <span class="tldr-badge">TL;DR / Ringkasan Cepat</span>
+        <ul class="tldr-list">
+          <li><strong>Berpikir seperti seorang desainer (Playing Like a Designer) adalah</strong> kemampuan menggeser
+            cara pandang dari konsumen pasif yang hanya menilai sebuah produk "bagus atau jelek" menjadi pengamat aktif
+            yang membedah mengapa sebuah pengalaman terasa nyaman, membingungkan, atau membuat ketagihan.</li>
+          <li>Dalam <strong>Bagian 1 (Examine Your Experiences)</strong> kita dilatih menangkap perubahan emosi diri
+            sendiri saat berinteraksi dengan layar, sedangkan dalam <strong>Bagian 2 (How to Analyze Game
+              Design)</strong> kita diajak melakukan rekayasa balik (<em>reverse-engineering</em>) untuk menebak masalah
+            apa yang sedang coba dipecahkan oleh pembuatnya serta bagaimana komponen-komponennya saling mengunci.</li>
+          <li>Bagi pembuat <em>website</em>, dwilogi ini mengajarkan tiga prinsip krusial: hindari mencontek potongan
+            antarmuka secara terpisah agar tidak melahirkan <strong>desain tambal sulam</strong>, pelajari situs-situs
+            yang buruk karena <strong>desain yang hebat sering kali tidak terlihat</strong> (<em>invisible design</em>),
+            dan gunakan jembatan <strong>MDA Framework (Mechanics, Dynamics, Aesthetics)</strong> untuk menerjemahkan
+            aturan visual menjadi kenyamanan pengunjung.</li>
+        </ul>
+      </div>
+
+      <!-- Article Body -->
+      <article class="post-prose">
+        <p>
+          <strong>Cara menganalisis desain website seperti seorang profesional adalah</strong> dengan menghentikan
+          kebiasaan menilai halaman web hanya dari selera "bagus atau jelek", lalu mulai melacak dua hal secara berurutan:
+          reaksi emosi di dalam kepalamu sendiri saat memakai halaman tersebut (pelajaran bagian pertama <em>Extra
+            Credits</em>) dan niat tersembunyi serta hubungan antarsistem yang dibangun oleh perancangnya di balik layar
+          (pelajaran bagian kedua). Ketika kamu menguasai cara pandang dua lapis ini, setiap <em>website</em> yang kamu
+          buka setiap hari otomatis berubah menjadi laboratorium belajar gratis yang membuatmu tidak lagi bingung saat
+          harus merancang halaman web sendiri dari nol.
+        </p>
+
+        <p>
+          Banyak pemula yang baru belajar membuat <em>website</em> atau mendalami <a
+            href="apa-itu-ui-dan-ux-serta-perbedaannya.html">bidang UI dan UX</a> sering mengeluhkan kebuntuan yang
+          sama. Mereka sudah mengikuti saran di internet untuk "rajin melihat referensi desain setiap hari", mengumpulkan
+          ratusan tangkapan layar situs keren di folder komputer, bahkan meniru bentuk tombol dan warna dari situs-situs
+          terkenal. Namun, begitu semua elemen yang mereka tiru itu digabungkan ke dalam proyek <em>website</em> mereka
+          sendiri, hasilnya justru terasa kaku, semrawut, dan membingungkan pengunjung.
+        </p>
+
+        <p>
+          Mengapa meniru tampilan situs yang bagus sering kali gagal menghasilkan <em>website</em> yang nyaman dipakai?
+          Jawabannya terletak pada cara kita melihat referensi tersebut. Selama ini kita masih melihat <em>website</em>
+          dengan mata seorang penonton pasif, bukan mata seorang perancang. Pada bulan Februari 2011, penulis skenario
+          <em>game</em> James Portnow dan animator Daniel Floyd melalui kanal edukasi <strong>Extra Credits</strong>
+          merilis dwilogi video legendaris berjudul <em>Playing Like a Designer</em> (Bagian I dan Bagian II). Meskipun
+          awalnya ditujukan bagi calon pembuat <em>video game</em>, prinsip yang mereka ajarkan tentang cara membedah
+          pengalaman dan menganalisis sistem ternyata merupakan salah satu panduan paling jernih untuk siapa saja yang
+          ingin merancang <em>website</em>.
+        </p>
+
+        <h2>Pelajaran Bagian Pertama tentang Mengamati Pengalaman Sendiri dan Berhenti Menjadi Pengunjung Pasif</h2>
+
+        <p>
+          Pada artikel sebelumnya mengenai <a href="choice-paralysis-dan-cara-melihat-desain-website.html">bahaya
+            terlalu banyak pilihan (choice paralysis) di halaman web</a>, kita sempat menyinggung sedikit gagasan pembuka
+          dari video pertama <em>Extra Credits</em> yang berjudul <em>Playing Like a Designer - I: Examine Your
+            Experiences</em>. Namun, jika kita kupas video bagian pertama ini secara utuh, pesan utamanya jauh lebih
+          mendalam: <strong>modal pertama untuk menjadi perancang yang tajam bukanlah menghafal ratusan istilah buku
+            teks, melainkan membelah kesadaranmu menjadi "pemakai" sekaligus "pengamat" setiap kali kamu menyentuh
+            sebuah produk.</strong>
+        </p>
+
+        <p>
+          Bayangkan perbedaan antara penonton biasa dan seorang pesulap saat menyaksikan pertunjukan sulap di atas
+          panggung. Penonton biasa duduk untuk terhibur, terpukau ketika burung merpati muncul dari balik topi, lalu
+          bertepuk tangan dan pulang. Sebaliknya, seorang pesulap yang duduk di kursi penonton tidak hanya menikmati
+          hiburannya. Matanya sibuk mengamati ke arah mana tangan kiri sang pesulap mengalihkan perhatian penonton saat
+          tangan kanannya mengambil sesuatu dari balik meja.
+        </p>
+
+        <p>
+          Di dunia <em>website</em> dan aplikasi, sembilan puluh sembilan persen pengguna internet bersikap seperti
+          penonton biasa. Mereka membuka situs toko daring untuk membeli sepatu, membaca berita, atau membayar tagihan,
+          lalu menutup layar begitu urusannya selesai. Jika kamu ingin bisa membuat <em>website</em> yang hebat, kamu
+          harus mulai duduk seperti pesulap tadi. Batas perumpamaan ini terletak pada tujuannya: seorang pesulap
+          menyembunyikan gerakan tangannya untuk mengecoh penonton, sedangkan seorang perancang web menyembunyikan
+          kerumitan sistem di balik layar agar pengunjung tidak perlu memeras otak saat mencari tombol yang mereka
+          butuhkan.
+        </p>
+
+        <h3>Membedah Puncak Emosi di Layar serta Membedakan Rasa Frustrasi yang Buruk dan yang Disengaja</h3>
+
+        <p>
+          Bagaimana cara melatih diri agar bisa mengamati pengalaman sendiri saat membuka sebuah <em>website</em>? Dalam
+          video bagian pertama, <em>Extra Credits</em> menyarankan kita untuk memasang "alarm pendeteksi emosi" di dalam
+          kepala kita sendiri. Selama kamu berselancar di sebuah halaman web dan semuanya berjalan lancar, biarkan dirimu
+          mengalir seperti pengunjung biasa. Akan tetapi, <strong>begitu muncul lonjakan emosi sekecil apa pun, entah
+            itu rasa kagum, lega, bosan, ragu, atau kesal, segera tekan tombol jeda di pikiranmu!</strong>
+        </p>
+
+        <p>
+          Jangan biarkan perasaan itu lewat begitu saja. Tanyakan langsung pada dirimu sendiri: <em>"Tunggu sebentar,
+            apa yang baru saja dilakukan oleh website ini sampai perasaanku berubah?"</em> Ketika kamu membiasakan diri
+          melacak penyebab emosi tersebut, kamu akan menemukan perbedaan menarik yang ditekankan oleh <em>Extra
+            Credits</em>, yaitu perbedaan antara <strong>friksi yang buruk</strong> (<em>bad frustration</em>) dan
+          <strong>friksi yang disengaja</strong> (<em>intentional challenge</em>):
+        </p>
+
+        <ul>
+          <li><strong>Friksi Buruk akibat Desain yang Ceroboh:</strong> Dalam <em>video game</em>, friksi buruk terjadi
+            ketika karaktermu mati bukan karena musuhnya pintar, melainkan karena tombol lompatnya macet atau sudut
+            kameranya terhalang tembok. Di dalam <em>website</em>, friksi buruk terjadi ketika pengunjung sudah capek
+            mengisi sepuluh kolom formulir pendaftaran, lalu saat menekan tombol kirim muncul pesan kesalahan dan
+            <strong>seluruh isian tadi terhapus bersih kembali menjadi kosong</strong>. Rasa kesal ini murni kesalahan
+            perancang yang merusak kepercayaan pengguna.</li>
+          <li><strong>Friksi yang Disengaja demi Melindungi Pengguna:</strong> Dalam <em>game</em> petualangan atau
+            <em>horor</em>, pembuatnya sengaja membatasi jumlah peluru agar pemain merasakan ketegangan dan berhati-hati
+            mengambil langkah. Dalam desain <em>website</em>, sebagaimana yang pernah kita bahas pada artikel <a
+              href="bahaya-desain-serba-instan-dan-kebutuhan-jeda-berpikir.html">kapan pengguna justru butuh jeda untuk
+              berpikir</a>, perancang yang matang sengaja menambahkan "hambatan kecil" pada tindakan berbahaya. Misalnya,
+            meminta pengguna mengetik ulang nama proyek sebelum menekan tombol "Hapus Permanen", atau memberi jeda
+            konfirmasi rincian rekening sebelum tombol "Kirim Uang" bisa ditekan.</li>
+        </ul>
+
+        <p>
+          Tanpa kebiasaan memeriksa pengalaman sendiri, seorang pemula sering kali menyamaratakan keduanya. Di titik
+          inilah letak batas perbedaan antara <em>video game</em> dan <em>website</em> yang wajib kamu sadari: pemain
+          membuka <em>game</em> untuk mencari tantangan dan menghabiskan waktu luang, sedangkan pengunjung membuka
+          <em>website</em> untuk menyelesaikan urusan secepat mungkin. Oleh karena itu, sementara <em>game</em> sengaja
+          memasang rintangan di sepanjang permainan agar terasa seru, sebuah <em>website</em> hanya boleh memasang
+          hambatan (friksi disengaja) pada keputusan yang berisiko merugikan pengguna.
+        </p>
+
+        <h3>Menembus Ilusi Tampilan Luar dan Menyadari Bahwa Kebiasaan Kita Bukanlah Standar Semua Orang</h3>
+
+        <p>
+          Masih di bagian pertama, James Portnow dan Daniel Floyd memperingatkan dua perangkap besar yang sering membuat
+          pengamatan seorang desainer pemula meleset jauh dari kenyataan.
+        </p>
+
+        <p>
+          <strong>Perangkap pertama adalah silau pada kemewahan kulit luar (Surface Spectacle).</strong> Di dunia
+          <em>game</em>, pemain awam mudah tertipu oleh kilau grafis tiga dimensi yang tampak nyata, padahal permainannya
+          sendiri membosankan. Di dunia desain web, penyakit ini persis dialami oleh pemula yang terlalu sering melihat
+          pameran visual di situs penghargaan desain: mereka terpukau pada kursor yang mengeluarkan percikan cahaya,
+          teks raksasa yang berputar saat layar digulir, atau efek kaca buram yang berlapis-lapis. Ketika kamu belajar
+          melihat seperti desainer, kamu melatih matamu untuk mengupas kulit kosmetik tersebut dan bertanya:
+          <em>"Kalau semua animasi dan hiasan warna di halaman ini saya matikan sekarang, apakah pengunjung masih tahu
+            di mana letak tombol belinya dan apa inti layanan yang ditawarkan?"</em>
+        </p>
+
+        <p>
+          <strong>Perangkap kedua adalah buta terhadap kebiasaan diri sendiri (Personal Bias).</strong> Karena seorang
+          pembuat <em>website</em> sudah menghabiskan waktu ribuan jam di depan layar laptop dengan koneksi internet
+          cepat, ia sering lupa bagaimana rasanya menjadi orang awam. Ia menganggap semua orang pasti paham bahwa garis
+          tiga di pojok atas adalah tombol menu, atau mengira semua orang nyaman membaca huruf abu-abu tipis berukuran
+          kecil. Oleh sebab itu, <em>Extra Credits</em> menyarankan satu latihan yang sangat berharga: <strong>amati
+            bagaimana orang lain di sekitarmu memakai produk digital!</strong> Duduklah diam-diam tanpa memberi petunjuk
+          saat orang tuamu, temanmu yang bukan orang IT, atau pelanggan baru mencoba memakai sebuah <em>website</em>.
+          Melihat di titik mana jari mereka ragu-ragu selama tiga detik akan mengajarkanmu lebih banyak ilmu desain
+          dibandingkan membaca sepuluh buku teori.
+        </p>
+
+        <h2>Pelajaran Bagian Kedua tentang Cara Membongkar Sistem di Balik Layar dan Menebak Niat Pembuatnya</h2>
+
+        <p>
+          Jika video bagian pertama melatih kita mengamati apa yang terjadi di <strong>dalam diri kita</strong> saat
+          memakai sebuah produk, maka video kelanjutannya yang berjudul <em>Playing Like a Designer - II: How to Analyze
+            Game Design</em> membawa kita melangkah ke tahap yang lebih tajam: <strong>bagaimana cara membongkar mesin
+            di balik produk tersebut secara objektif menggunakan kerangka analisis yang terstruktur.</strong>
+        </p>
+
+        <figure class="post-inline-figure" style="margin: 32px 0;">
+          <div class="post-hero-frame">
+            <img src="../assets/blog/cover-playing-like-a-designer-web.webp"
+              alt="Seni kertas berlapis 3D menampilkan kaca pembesar putih gading dan kartu antarmuka bento yang membuka lapisan atas untuk memperlihatkan roda gigi mekanik arang gelap serta kisi wireframe di balik layar"
+              class="post-hero-img" width="1376" height="768" loading="lazy">
+          </div>
+          <figcaption class="post-figure-caption">Mengintip ke Balik Tirai Permukaan: Membuka lapisan tampilan luar
+            antarmuka web untuk melihat bagaimana roda gigi sistem dan niat perancang saling mengunci di belakang layar.
+          </figcaption>
+        </figure>
+
+        <p>
+          Di bagian kedua ini, <em>Extra Credits</em> menegaskan bahwa kalimat seperti <em>"Game ini seru banget"</em>
+          atau <em>"Website ini tampilannya keren"</em> sama sekali tidak berguna bagi seorang perancang. Agar bisa
+          belajar dari karya orang lain, kita wajib melakukan apa yang di dunia rekayasa disebut sebagai
+          <strong>Reverse-Engineering Developer Intent</strong>, yaitu menebak mundur apa niat dan masalah yang sedang
+          coba diselesaikan oleh pembuat aslinya.
+        </p>
+
+        <div class="post-callout">
+          <p>
+            <strong>Pertanyaan Kunci Saat Membedah Website Orang Lain:</strong> Jangan berhenti pada pertanyaan
+            <em>"Apakah bagian ini kelihatan bagus?"</em>, tetapi tanyakanlah: <em>"Masalah apa yang sedang dihadapi oleh
+              pembuat website ini, mengapa mereka memilih menaruh elemen ini di sini, dan apakah solusi mereka
+              berhasil?"</em>
+          </p>
+        </div>
+
+        <p>
+          Sebagai contoh, ketika kamu membuka halaman pembayaran sebuah toko daring besar lalu melihat mereka
+          menghilangkan seluruh menu navigasi atas dan menyisakan logo toko serta kolom alamat, jangan berhenti pada
+          catatan "oh, halamannya polos". Tebaklah niat di balik keputusan perancangnya: <em>"Pembuat halaman ini
+            sengaja menyembunyikan menu atas supaya pembeli yang sudah mau membayar tidak tergoda mengklik halaman lain
+            dan batal menyelesaikan transaksi!"</em> Begitu kamu terbiasa menebak alasan di balik setiap letak tombol,
+          kamu tidak lagi meniru secara buta, melainkan memahami logika di balik keputusannya.
+        </p>
+
+        <h3>Mengapa Mencontek Potongan Desain Tanpa Memahami Ekosistemnya Akan Melahirkan Website Tambal Sulam</h3>
+
+        <p>
+          Salah satu pelajaran paling berharga dari <em>Playing Like a Designer - II</em> yang sangat relevan untuk
+          pembuatan <em>website</em> adalah konsep <strong>Interlocking Systems</strong> (sistem yang saling mengunci).
+          Dalam sebuah permainan, tidak ada satu pun fitur yang hidup sendirian di ruang hampa. Jika seorang pembuat
+          <em>game</em> mengubah kecepatan lari karakter utama menjadi dua kali lipat lebih cepat, maka ukuran peta yang
+          tadinya terasa luas mendadak menjadi sempit, musuh menjadi terlalu mudah dihindari, dan waktu permainan
+          menjadi terlalu singkat. Satu perubahan kecil akan mengguncang seluruh bagian lainnya.
+        </p>
+
+        <p>
+          Sekarang perhatikan kesalahan paling umum yang dilakukan pembuat <em>website</em> pemula ketika mereka tidak
+          memahami prinsip sistem yang saling mengunci ini: mereka melakukan <strong>desain tambal sulam</strong>
+          (sering dijuluki sebagai <em>Frankenstein Design</em>).
+        </p>
+
+        <p>
+          Saat diminta membuat sebuah situs bisnis, sang pemula membuka lima situs berbeda lalu memotong bagian-bagian
+          yang menurutnya keren:
+        </p>
+
+        <ol>
+          <li>Ia meniru bagian pembuka (<em>hero section</em>) dari situs produk teknologi mewah seperti Apple yang
+            sangat minimalis, penuh ruang kosong, dan hanya berisi satu foto besar tanpa penjelasan panjang.</li>
+          <li>Tepat di bawahnya, ia menempelkan tabel perbandingan harga yang dicontek dari situs layanan penyewaan
+            <em>server</em> yang sangat padat, penuh angka teknis, dan memiliki lima kolom berhimpitan.</li>
+          <li>Di bagian pojok kanan bawah, ia memasang tombol <em>pop-up</em> obrolan dan spanduk diskon berkedip-kedip
+            yang ia tiru dari situs belanja <em>marketplace</em>.</li>
+        </ol>
+
+        <p>
+          Mengapa ketika ketiganya disatukan, <em>website</em> tersebut langsung terasa aneh dan murahan? Karena sang
+          pemula mencabut elemen-elemen itu dari ekosistem aslinya! Situs Apple berani memakai halaman pembuka yang
+          minim teks karena merek mereka sudah dikenal seluruh dunia dan pengunjungnya memang mencari kemewahan visual.
+          Sementara itu, situs <em>marketplace</em> sengaja tampil padat karena pengunjungnya datang dengan niat
+          membandingkan harga barang harian yang sudah mereka pahami fungsinya. Ketika kamu menganalisis <em>website</em>
+          seperti desainer sesuai pesan <em>Extra Credits</em> Bagian II, kamu akan selalu memeriksa <strong>bagaimana
+            tipografi, jarak spasi, warna tombol, dan gaya bahasa saling menopang satu tujuan yang sama</strong>, bukan
+          sekadar mencomot komponen yang sedang viral.
+        </p>
+
+        <h3>Rahasia Belajar Lebih Cepat dari Website yang Buruk ketika Desain yang Bagus Justru Tidak Terlihat</h3>
+
+        <p>
+          Jika kamu bertanya kepada para perancang senior tentang situs apa yang harus dianalisis untuk melatih
+          kepekaan desain, kebanyakan orang akan menyuruhmu mempelajari situs-situs kelas dunia yang sudah memenangkan
+          banyak piala. Namun, di dalam <em>Playing Like a Designer - II</em>, terdapat satu nasihat brilian yang
+          membalik kebiasaan tersebut: <strong>kamu justru akan belajar jauh lebih cepat dan lebih banyak dengan
+            menganalisis karya yang buruk, gagal, atau berasal dari bidang yang tidak kamu sukai!</strong>
+        </p>
+
+        <p>
+          Mengapa demikian? Pakar psikologi desain kognitif <strong>Don Norman</strong> dalam bukunya yang terkenal,
+          <em>The Design of Everyday Things</em>, menjelaskan bahwa <strong>desain yang sangat bagus itu sifatnya tidak
+            terlihat (Invisible Design)</strong>. Ketika sebuah <em>website</em> dirancang dengan sangat sempurna, semua
+          alur kliknya terasa begitu alami sampai-sampai pengunjung menyelesaikan urusannya tanpa sadar bahwa ada kerja
+          keras perancang di balik layar. Karena jahitannya begitu rapi dan tersembunyi, pemula sering kali kesulitan
+          melihat trik apa yang sebenarnya membuat situs bagus itu bekerja.
+        </p>
+
+        <p>
+          Sebaliknya, ketika kamu membuka sebuah <em>website</em> yang buruk, kaku, atau membingungkan, seluruh
+          "jahitannya yang rusak" langsung mencuat ke permukaan! Kamu bisa langsung melihat dengan mata telanjang:
+          <em>"Oh, bagian ini bikin pusing karena judul dan teks isinya punya ukuran huruf yang sama besar! Bagian ini
+            bikin ragu karena tombol batalkan warnanya justru lebih terang daripada tombol simpan!"</em>
+        </p>
+
+        <p>
+          Selain menganalisis produk yang kurang rapi, <em>Extra Credits</em> juga mendorong kita untuk keluar dari zona
+          nyaman. Jika kamu selama ini hanya suka melihat desain <em>website</em> portofolio kreatif atau kafe kekinian,
+          cobalah sesekali membedah situs pendaftaran rumah sakit, portal administrasi pemerintahan, atau katalog toko
+          bahan bangunan. Menganalisis bagaimana situs-situs di luar seleramu itu berusaha menyajikan informasi yang
+          rumit kepada masyarakat luas akan memperkaya kotak peralatan mentalmu (<em>mental toolkit</em>) saat
+          menghadapi klien atau proyek nyata.
+        </p>
+
+        <h2>Bagian Terbaik yang Bisa Diambil untuk Membuat Desain Website Lewat Kerangka MDA dan Pengajaran Tanpa Teks</h2>
+
+        <p>
+          Lalu, jika kita rangkum seluruh isi video Bagian I dan Bagian II dari <em>Extra Credits</em> tersebut, bagian
+          konkret apa saja dari ilmu perancangan <em>video game</em> yang bisa langsung kita ambil dan terapkan saat
+          merancang sebuah <em>website</em>?
+        </p>
+
+        <p>
+          Setidaknya ada dua harta karun besar dari dunia desain <em>game</em> yang bisa membuat kualitas desain
+          <em>website</em> buatanmu melompat jauh lebih matang: cara memetakan jembatan antara kode dan perasaan lewat
+          <strong>Kerangka MDA</strong>, serta teknik memandu pengunjung baru tanpa buku panduan lewat <strong>Silent
+            Onboarding</strong>.
+        </p>
+
+        <h3>Jembatan Mechanics Dynamics dan Aesthetics yang Menjelaskan Perbedaan Cara Pandang Pembuat dan Pengunjung</h3>
+
+        <p>
+          Di dalam video <em>Extra Credits</em>, kita diajak menghubungkan titik-titik antara "aturan teknis yang dibuat
+          perancang" dan "pengalaman emosi yang dirasakan pengguna". Dalam literatur ilmiah desain interaksi dan
+          <em>game</em>, hubungan ini dirumuskan secara sangat rapi oleh tiga peneliti bernama <strong>Robin Hunicke,
+            Marc LeBlanc, dan Robert Zubek</strong> pada tahun <strong>2004</strong> melalui makalah terkenal mereka yang
+          memperkenalkan <strong>MDA Framework</strong> (singkatan dari <em>Mechanics, Dynamics, dan Aesthetics</em>).
+        </p>
+
+        <p>
+          Kerangka MDA ini membagi setiap produk interaktif (termasuk <em>website</em> dan aplikasi) ke dalam tiga
+          lapisan yang saling terhubung:
+        </p>
+
+        <ul>
+          <li><strong>Mechanics (Aturan &amp; Komponen Dasar):</strong> Ini adalah bahan baku teknis yang diatur
+            langsung oleh pembuat web, seperti ukuran huruf CSS, warna tombol, jumlah kolom formulir, kecepatan muat
+            halaman, dan struktur <a href="membangun-sistem-desain-taktil.html">token sistem desain</a>.</li>
+          <li><strong>Dynamics (Perilaku Saat Dipakai):</strong> Ini adalah interaksi yang muncul ketika jari dan mata
+            pengunjung mulai menyentuh komponen tadi di layar nyata. Misalnya: mata pengunjung otomatis melirik ke kotak
+            harga yang paling kontras, atau pengunjung menggulir halaman dengan cepat melewati paragraf yang terlalu
+            tebal.</li>
+          <li><strong>Aesthetics (Rasa &amp; Emosi yang Muncul):</strong> Ini adalah perasaan akhir yang tumbuh di hati
+            pengunjung setelah berinteraksi, seperti rasa tenang, yakin bahwa toko ini terpercaya, merasa pintar karena
+            mudah menemukan barang, atau justru merasa tertekan dan buru-buru.</li>
+        </ul>
+
+        <div class="post-callout">
+          <p>
+            <strong>Rahasia Terbesar Kerangka MDA:</strong> Seorang <strong>Perancang (Desainer)</strong> bekerja dari
+            kiri ke kanan: ia mengatur <em>Mechanics</em> (kode dan tata letak) untuk menciptakan <em>Dynamics</em>
+            (alur klik) demi melahirkan <em>Aesthetics</em> (rasa percaya). Sebaliknya, seorang <strong>Pengunjung
+              (User)</strong> merasakan dari kanan ke kiri: mereka merasakan <em>Aesthetics</em> (emosi nyaman atau
+            kesal) terlebih dahulu di detik pertama, sebelum menyadari <em>Dynamics</em> dan <em>Mechanics</em> di
+            baliknya!
+          </p>
+        </div>
+
+        <figure class="post-inline-figure" style="margin: 32px 0;">
+          <div class="post-hero-frame" style="background: #F0EDF4; padding: 24px; border-radius: 16px;">
+            <svg viewBox="0 0 860 320" width="100%" height="auto" role="img"
+              aria-labelledby="mda-diagram-title mda-diagram-desc"
+              style="display: block; max-width: 100%; height: auto; font-family: 'Rubik', sans-serif;">
+              <title id="mda-diagram-title">Diagram Alur Dua Arah Kerangka MDA dalam Analisis Desain Website</title>
+              <desc id="mda-diagram-desc">Diagram kotak dan panah yang memperlihatkan bagaimana Perancang bekerja dari kiri ke kanan (Mechanics ke Dynamics ke Aesthetics), sementara Pengunjung dan analisis Extra Credits bergerak dari kanan ke kiri (Aesthetics ke Dynamics ke Mechanics).</desc>
+
+              <!-- Top Row: Designer Flow (Left to Right) -->
+              <rect x="30" y="20" width="800" height="36" rx="8" fill="#E4DCE9" />
+              <text x="430" y="43" text-anchor="middle" fill="#211B28" font-size="13" font-weight="600">
+                ARAH KERJA PEMBUAT WEB: Merancang aturan kode dari kiri ke kanan
+              </text>
+
+              <!-- Node 1: Mechanics -->
+              <rect x="30" y="88" width="220" height="116" rx="12" fill="#FCFAFD" stroke="#211B28" stroke-width="2" />
+              <text x="140" y="118" text-anchor="middle" fill="#450D50" font-size="12" font-weight="700">1. MECHANICS</text>
+              <text x="140" y="142" text-anchor="middle" fill="#211B28" font-size="14" font-weight="600">Aturan &amp; Komponen</text>
+              <text x="140" y="166" text-anchor="middle" fill="#756A7D" font-size="12">CSS, ukuran huruf, warna</text>
+              <text x="140" y="184" text-anchor="middle" fill="#756A7D" font-size="12">tombol, kolom formulir</text>
+
+              <!-- Node 2: Dynamics -->
+              <rect x="320" y="88" width="220" height="116" rx="12" fill="#FCFAFD" stroke="#211B28" stroke-width="2" />
+              <text x="430" y="118" text-anchor="middle" fill="#450D50" font-size="12" font-weight="700">2. DYNAMICS</text>
+              <text x="430" y="142" text-anchor="middle" fill="#211B28" font-size="14" font-weight="600">Perilaku Interaksi</text>
+              <text x="430" y="166" text-anchor="middle" fill="#756A7D" font-size="12">Alur lirikan mata, gerak</text>
+              <text x="430" y="184" text-anchor="middle" fill="#756A7D" font-size="12">gulir layar, kecepatan klik</text>
+
+              <!-- Node 3: Aesthetics -->
+              <rect x="610" y="88" width="220" height="116" rx="12" fill="#211B28" stroke="#450D50" stroke-width="2" />
+              <text x="720" y="118" text-anchor="middle" fill="#E4DCE9" font-size="12" font-weight="700">3. AESTHETICS</text>
+              <text x="720" y="142" text-anchor="middle" fill="#FCFAFD" font-size="14" font-weight="600">Reaksi Emosi</text>
+              <text x="720" y="166" text-anchor="middle" fill="#F0EDF4" font-size="12">Rasa tenang, percaya,</text>
+              <text x="720" y="184" text-anchor="middle" fill="#F0EDF4" font-size="12">bingung, atau kesal</text>
+
+              <!-- Forward Arrows (Designer: Left to Right) -->
+              <line x1="252" y1="122" x2="314" y2="122" stroke="#211B28" stroke-width="2" />
+              <polygon points="318,122 308,117 308,127" fill="#211B28" />
+              <text x="285" y="112" text-anchor="middle" fill="#211B28" font-size="11" font-weight="600">membentuk</text>
+
+              <line x1="542" y1="122" x2="604" y2="122" stroke="#211B28" stroke-width="2" />
+              <polygon points="608,122 598,117 598,127" fill="#211B28" />
+              <text x="575" y="112" text-anchor="middle" fill="#211B28" font-size="11" font-weight="600">memicu</text>
+
+              <!-- Reverse Arrows (Extra Credits Analysis: Right to Left) -->
+              <line x1="608" y1="172" x2="546" y2="172" stroke="#450D50" stroke-width="2" stroke-dasharray="5,3" />
+              <polygon points="542,172 552,167 552,177" fill="#450D50" />
+              <text x="575" y="192" text-anchor="middle" fill="#450D50" font-size="11" font-weight="600">lacak pemicu</text>
+
+              <line x1="318" y1="172" x2="256" y2="172" stroke="#450D50" stroke-width="2" stroke-dasharray="5,3" />
+              <polygon points="252,172 262,167 262,177" fill="#450D50" />
+              <text x="285" y="192" text-anchor="middle" fill="#450D50" font-size="11" font-weight="600">bongkar aturan</text>
+
+              <!-- Bottom Row: User & Analyst Flow (Right to Left) -->
+              <rect x="30" y="236" width="385" height="58" rx="8" fill="#FCFAFD" stroke="#450D50" stroke-width="1.5" />
+              <text x="222" y="260" text-anchor="middle" fill="#450D50" font-size="12" font-weight="700">
+                TAHAP 2 (Video Bagian II: Analyze Design)
+              </text>
+              <text x="222" y="280" text-anchor="middle" fill="#211B28" font-size="12">
+                Menebak niat pembuat di balik alur &amp; komponen
+              </text>
+
+              <rect x="445" y="236" width="385" height="58" rx="8" fill="#450D50" />
+              <text x="637" y="260" text-anchor="middle" fill="#FCFAFD" font-size="12" font-weight="700">
+                TAHAP 1 (Video Bagian I: Examine Experiences)
+              </text>
+              <text x="637" y="280" text-anchor="middle" fill="#F0EDF4" font-size="12">
+                Mulai dari sini: tangkap perubahan emosi di hati
+              </text>
+            </svg>
+          </div>
+          <figcaption class="post-figure-caption">Bagaimana arah kerja Perancang (Desainer) dan arah pengamatan Pengunjung bertemu di dalam Kerangka MDA?</figcaption>
+        </figure>
+
+        <p>
+          Mulailah membaca diagram di atas dari kotak gelap nomor 3 (<strong>Aesthetics</strong>) di sebelah kanan, lalu
+          ikuti garis putus-putus ke arah kiri menuju kotak <strong>Dynamics</strong> dan <strong>Mechanics</strong>.
+          Satu hal utama yang perlu kamu perhatikan adalah arah panah analisis dari dwilogi <em>Extra Credits</em> selalu
+          bergerak <strong>berlawanan arah</strong> dengan urutan kerja pembuat <em>website</em>: pengunjung merasakan
+          emosi di ujung kanan terlebih dahulu (fokus Bagian I), kemudian pengamat melacak mundur ke kiri untuk
+          menemukan aturan komponen apa yang memicunya (fokus Bagian II).
+        </p>
+
+        <p>
+          Selain kerangka MDA, ilmu desain <em>game</em> juga menyumbangkan teknik <strong>Silent Onboarding</strong>
+          (pengajaran tanpa teks penjelasan panjang). Dalam <em>game</em> klasik seperti <em>Super Mario Bros</em>
+          (World 1-1) atau <em>Portal</em>, pemain tidak pernah disuruh membaca sepuluh halaman buku peraturan sebelum
+          bermain. Perancangnya sengaja meletakkan satu rintangan kecil yang aman di layar pertama agar pemain belajar
+          cara melompat secara naluriah sambil berjalan. Prinsip yang sama persis bisa kamu ambil untuk desain
+          <em>website</em>: <strong>jangan pernah menyambut pengunjung dengan layar panduan (pop-up tutorial) berlapis-lapis
+            yang menyuruh mereka membaca cara memakai situsmu!</strong> Rancanglah halaman depan yang begitu jelas
+          hierarki tombolnya dan berikan contoh isian langsung di dalam kotak pencarian (<em>placeholder</em> yang
+          informatif), sehingga pengunjung langsung paham cara memakai situsmu sejak klik pertama tanpa perlu berpikir.
+        </p>
+
+        <h3>Tabel Terjemahan Ilmu Game Design ke Dalam Praktik Merancang Website Sehari-hari</h3>
+
+        <p>
+          Agar kamu bisa langsung menggunakan kacamata analisis dari kedua video <em>Extra Credits</em> ini saat
+          merancang atau memperbaiki halaman web, perhatikan tabel pemetaan praktis berikut:
+        </p>
+
+        <div class="post-prose-table-wrap" role="region"
+          aria-label="Tabel Terjemahan Prinsip Playing Like a Designer ke Desain Website">
+          <table class="post-prose-table">
+            <thead>
+              <tr>
+                <th scope="col" style="width: 22%;">Konsep di Video Extra Credits</th>
+                <th scope="col" style="width: 26%;">Cara Kerja di Dunia Video Game</th>
+                <th scope="col" style="width: 26%;">Terjemahannya dalam Desain Website</th>
+                <th scope="col" style="width: 26%;">Pertanyaan Audit Saat Membuat Web</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Examine Your Experiences (Lacak Emosi)</strong></td>
+                <td>Menangkap detik saat pemain merasa bosan, tegang, atau kesal ketika melewati sebuah rintangan.</td>
+                <td>Menangkap detik saat mata kita sendiri merasa lelah, ragu mengklik, atau malas membaca halaman web.
+                </td>
+                <td><em>"Di bagian halaman mana jari pengguna mulai berhenti menggulir dan merasa ragu?"</em></td>
+              </tr>
+              <tr>
+                <td><strong>Reverse-Engineering Intent (Tebak Niat)</strong></td>
+                <td>Menebak mengapa pembuat <em>game</em> meletakkan titik simpan (<em>checkpoint</em>) tepat sebelum
+                  ruangan bos.</td>
+                <td>Menebak mengapa sebuah situs menaruh garansi uang kembali tepat di bawah tombol "Beli Sekarang".
+                </td>
+                <td><em>"Ketakutan pengunjung apa yang sedang coba ditenangkan oleh elemen di bagian ini?"</em></td>
+              </tr>
+              <tr>
+                <td><strong>Interlocking Systems (Ekosistem Mengunci)</strong></td>
+                <td>Mengubah kecepatan senjata akan memengaruhi ukuran peta, jumlah musuh, dan keseimbangan permainan.
+                </td>
+                <td>Mengubah ukuran huruf atau menambah menu baru akan memengaruhi kepadatan layar HP dan fokus tombol
+                  utama.</td>
+                <td><em>"Jika saya menambahkan fitur baru ini, apakah elemen penting di sebelahnya jadi tenggelam?"</em>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Silent Onboarding (Belajar Tanpa Teks)</strong></td>
+                <td>Mengajarkan pemain cara melompat lewat tata letak level pertama yang aman tanpa buku petunjuk.</td>
+                <td>Membuat <a href="perbedaan-website-dan-landing-page.html">struktur halaman arahan</a> dan tombol
+                  yang langsung jelas fungsinya tanpa perlu teks petunjuk panjang.</td>
+                <td><em>"Bisakah orang awam menyelesaikan tujuannya di halaman ini dalam 10 detik tanpa bertanya?"</em>
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Pacing &amp; Rest Beats (Ritme &amp; Jeda)</strong></td>
+                <td>Memberi ruang istirahat yang tenang sesudah pertarungan sengit agar pemain tidak kelelahan mental.
+                </td>
+                <td>Memberikan ruang kosong (<em>white space</em>) yang lega di antara seksi informasi yang padat.</td>
+                <td><em>"Apakah halaman ini terus-menerus membombardir mata pengunjung tanpa memberi ruang
+                    bernapas?"</em></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          Ada satu batasan penting (<em>boundary condition</em>) yang perlu kamu jaga: <strong>jangan
+            menyalakan kacamata analisis ini secara berlebihan ketika kamu baru saja mulai menggambar sketsa kasar
+            pertamamu!</strong> Jika kamu terlalu sibuk mengkritik setiap garis pada lima menit pertama proses kreatif,
+          tanganmu justru akan kaku dan takut memulai. Biarkan ide kasarmu tertuang dulu di atas kertas atau kanvas,
+          barulah gunakan pisau analisis dari <em>Extra Credits</em> ini saat kamu meninjau ulang hasil drafmu atau saat
+          mempelajari karya orang lain.
+        </p>
+
+        <h2>Melatih Kebiasaan Membawa Buku Catatan Pengamat Saat Berselancar di Internet Hari Ini</h2>
+
+        <p>
+          Pelajaran terbesar dari dwilogi <em>Playing Like a Designer</em> Bagian I dan Bagian II adalah bahwa keahlian
+          merancang yang hebat tidak jatuh dari langit lewat bakat bawaan, melainkan tumbuh dari kebiasaan kecil yang
+          dilakukan berulang-ulang setiap hari. Mulai hari ini, kamu tidak perlu menunggu sampai mendapat proyek besar
+          untuk melatih otot desainmu, karena setiap halaman web yang kamu buka di ponsel maupun laptop adalah ruang
+          kelas yang hidup.
+        </p>
+
+        <p>
+          Untuk mengubah ilmu dari kedua video ini menjadi keahlian nyata di tanganmu, cobalah lakukan <strong>latihan
+            15 menit Bedah Desain (Design Teardown)</strong> ini sekarang juga. Siapkan satu halaman catatan kosong di
+          aplikasi catatanmu, lalu bukalah <strong>satu website yang paling sering membuatmu kesal</strong> (misalnya
+          situs portal layanan lama atau toko yang membingungkan) dan <strong>satu website yang paling nyaman kamu
+            pakai</strong>. Tuliskan masing-masing tiga kalimat pengamatan menggunakan rumus sederhana ini: <em>"Saat
+            membuka bagian [X], saya merasakan emosi [Y], karena perancangnya mengatur elemen [Z], dan jika saya harus
+            memperbaikinya hari ini, langkah pertama yang akan saya ubah adalah..."</em> Lakukan kebiasaan kecil ini
+          cukup dua kali seminggu, maka dalam satu bulan ke depan, matamu tidak akan pernah lagi melihat sebuah
+          <em>website</em> dengan cara yang sama.
+        </p>
+
+        <h2>Referensi</h2>
+        <ul>
+          <li>Extra Credits (Portnow, J., &amp; Floyd, D.). (2011, 2 Februari). <em>Playing Like a Designer - I: Examine
+              Your Experiences</em>. YouTube. <a href="https://www.youtube.com/watch?v=_HmtmoGwpZc" target="_blank"
+              rel="noopener noreferrer">https://www.youtube.com/watch?v=_HmtmoGwpZc</a></li>
+          <li>Extra Credits (Portnow, J., &amp; Floyd, D.). (2011, 9 Februari). <em>Playing Like a Designer - II: How to
+              Analyze Game Design</em>. YouTube. <a href="https://www.youtube.com/watch?v=6op8eV5OBwE" target="_blank"
+              rel="noopener noreferrer">https://www.youtube.com/watch?v=6op8eV5OBwE</a></li>
+          <li>Hunicke, R., LeBlanc, M., &amp; Zubek, R. (2004). <em>MDA: A Formal Approach to Game Design and Game
+              Research</em>. Proceedings of the AAAI Workshop on Challenges in Game AI, 1722(1), 1-5. <a
+              href="https://users.cs.northwestern.edu/~hunicke/MDA.pdf" target="_blank"
+              rel="noopener noreferrer">https://users.cs.northwestern.edu/~hunicke/MDA.pdf</a></li>
+          <li>Norman, D. A. (2013). <em>The Design of Everyday Things: Revised and Expanded Edition</em>. Basic Books.
+          </li>
+          <li>Schell, J. (2008). <em>The Art of Game Design: A Book of Lenses</em>. Morgan Kaufmann Publishers.</li>
+        </ul>
+      </article>
+
+      <!-- Next & Prev Navigation -->
+      <nav class="post-navigator" aria-label="Article navigation">
+        <a href="apa-itu-database-sejarah-dan-kebocoran-data.html" class="post-nav-card">
+          <span class="nav-direction">&larr; Artikel Sebelumnya</span>
+          <span class="nav-article-title">Belajar dari Bocornya Jutaan Data Aplikasi Kopi serta Apa Itu Database dan
+            Sejarah Awal Dibuatnya</span>
+        </a>
+        <a href="choice-paralysis-dan-cara-melihat-desain-website.html" class="post-nav-card">
+          <span class="nav-direction">Eksplorasi Terkait &rarr;</span>
+          <span class="nav-article-title">Kenapa Terlalu Banyak Pilihan di Website Bikin Pengunjung Kabur dan Cara
+            Melatih Mata Melihat Desain</span>
+        </a>
+      </nav>
+
+    </main>
+
+    <!-- Footer (Matching semenitwasted layout) -->
+    <footer class="portfolio-footer">
+      <div class="footer-left">
+        <span class="footer-brand">semenitwasted</span>
+        <span class="footer-subtitle">Design · Icons · Illustration · Web</span>
+      </div>
+      <div class="footer-platforms" aria-label="Platform links">
+        <a href="https://www.linkedin.com/in/reionnyx/" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="LinkedIn">
+          <img src="../assets/linkedin.svg" alt="" width="24" height="24"
+            class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+        <a href="https://stock.adobe.com/contributor/207802543/dicky" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Adobe Stock">
+          <img src="../assets/adobe-stock.svg" alt="" width="24" height="24" class="footer-platform-icon">
+        </a>
+        <a href="https://www.canva.com/p/gambar-reion" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Canva">
+          <img src="../assets/canva.svg" alt="" width="24" height="24" class="footer-platform-icon">
+        </a>
+        <a href="https://thenounproject.com/creator/ReionDesign/" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="The Noun Project">
+          <img src="../assets/noun-project.svg" alt="" width="24" height="24"
+            class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+        <a href="https://www.flaticon.com/authors/reion" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Flaticon">
+          <img src="../assets/flaticon.svg" alt="" width="24" height="24"
+            class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Reading Progress Script -->
+  <script>
+    window.addEventListener('scroll', () => {
+      const bar = document.getElementById('readingProgressBar');
+      if (!bar) return;
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = totalScroll > 0 ? (window.scrollY / totalScroll) * 100 : 0;
+      bar.style.width = Math.min(100, Math.max(0, progress)) + '%';
+    }, { passive: true });
+  </script>
+</body>
+
+</html>

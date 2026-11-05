@@ -17,6 +17,23 @@
 
   const BLOG_POSTS = [
     {
+      id: 'post-21',
+      slug: 'cara-berpikir-dan-menganalisis-desain-website',
+      title: 'Cara Berpikir dan Menganalisis Website seperti Desainer Lewat Pelajaran dari Dua Video Extra Credits',
+      date: '2026-11-05',
+      formattedDate: '5 November 2026',
+      readingTime: '11 min read',
+      category: 'design-systems',
+      categoryLabel: 'Design Systems',
+      tags: ['Design Analysis', 'Extra Credits', 'MDA Framework', 'UI/UX', 'Pemula'],
+      featured: false,
+      excerpt: 'Pelajari cara menganalisis desain website lewat dua video Extra Credits (Playing Like a Designer I & II), kerangka MDA, dan kebiasaan membedah sistem UI/UX.',
+      contentUrl: 'blog/cara-berpikir-dan-menganalisis-desain-website.html',
+      coverImage: 'assets/blog/Gadis%20Anime%20dan%20Kucing%20Gamer%20Misterius.webp',
+      coverAlt: 'Ilustrasi gadis anime memegang kaca pembesar dengan tanda tanya di atas kepalanya sambil mengamati kucing putih ber-headphone yang sedang serius bermain game memakai stik kontroler di depan laptop',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
       id: 'post-20',
       slug: 'apa-itu-database-sejarah-dan-kebocoran-data',
       title: 'Belajar dari Bocornya Jutaan Data Aplikasi Kopi serta Apa Itu Database dan Sejarah Awal Dibuatnya',

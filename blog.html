@@ -86,11 +86,11 @@
           <div class="blog-category-filter" role="group" aria-label="Filter by category" id="categoryFilterGroup">
             <button type="button" class="category-pill active" data-category="all" aria-pressed="true">
               <span>All Topics</span>
-              <span class="pill-count" id="count-all">20</span>
+              <span class="pill-count" id="count-all">21</span>
             </button>
             <button type="button" class="category-pill" data-category="design-systems" aria-pressed="false">
               <span>Design Systems</span>
-              <span class="pill-count" id="count-design-systems">5</span>
+              <span class="pill-count" id="count-design-systems">6</span>
             </button>
             <button type="button" class="category-pill" data-category="frontend-code" aria-pressed="false">
               <span>Frontend &amp; Code</span>
@@ -168,11 +168,41 @@
       <section class="blog-catalog-section" aria-labelledby="catalog-heading">
         <div class="catalog-header">
           <h2 id="catalog-heading" class="catalog-heading">All Articles</h2>
-          <span class="catalog-status" id="catalogStatus" aria-live="polite">Showing 20 essays</span>
+          <span class="catalog-status" id="catalogStatus" aria-live="polite">Showing 21 essays</span>
         </div>
 
         <!-- Articles Grid Container (Strictly Newest to Oldest) -->
         <div class="blog-articles-grid" id="blogGridContainer">
+
+          <!-- 0. Post 21: 5 November 2026 (Design Systems / Playing Like a Designer I & II & Web Design Analysis) -->
+          <article class="article-bento-card has-cover" data-category="design-systems" data-tags="cara menganalisis desain website berpikir seperti desainer playing like a designer extra credits mda framework mechanics dynamics aesthetics invisible design silent onboarding ui ux pemula">
+            <a href="blog/cara-berpikir-dan-menganalisis-desain-website.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
+              <div class="article-cover-frame">
+                <img src="assets/blog/Gadis%20Anime%20dan%20Kucing%20Gamer%20Misterius.webp" alt="Ilustrasi gadis anime memegang kaca pembesar dengan tanda tanya di atas kepalanya sambil mengamati kucing putih ber-headphone yang sedang serius bermain game memakai stik kontroler di depan laptop" class="article-cover-img" width="800" height="450" loading="lazy">
+              </div>
+            </a>
+            <div class="article-card-body">
+              <div class="card-meta">
+                <span class="category-pill-sm">Design Systems</span>
+                <span class="meta-separator" aria-hidden="true">&bull;</span>
+                <span class="reading-time">11 min read</span>
+              </div>
+              <h3 class="card-title">
+                <a href="blog/cara-berpikir-dan-menganalisis-desain-website.html">Cara Berpikir dan Menganalisis Website seperti Desainer Lewat Pelajaran dari Dua Video Extra Credits</a>
+              </h3>
+              <p class="card-excerpt">
+                Pelajari cara menganalisis desain website lewat dua video Extra Credits (Playing Like a Designer I &amp; II), kerangka MDA, dan kebiasaan membedah sistem UI/UX.
+              </p>
+              <div class="card-footer">
+                <time datetime="2026-11-05" class="card-date">5 November 2026</time>
+                <div class="tags-cluster">
+                  <span class="tag-chip">#DesignAnalysis</span>
+                  <span class="tag-chip">#MDAFramework</span>
+                  <span class="tag-chip">#ExtraCredits</span>
+                </div>
+              </div>
+            </div>
+          </article>
 
           <!-- 0. Post 20: 3 November 2026 (Frontend & Code / Apa Itu Database, Sejarah 1970 & Kebocoran Data) -->
           <article class="article-bento-card has-cover" data-category="frontend-code" data-tags="apa itu database adalah sejarah database edgar f codd 1970 relational database sql adalah kenapa data aplikasi bocor sql injection data minimization">
