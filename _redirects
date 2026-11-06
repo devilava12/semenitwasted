@@ -1,0 +1,31 @@
+# Legacy portfolio case study moved into /portfolio/roche/
+/portfolio-roche /portfolio/roche/ 301
+/portfolio-roche.html /portfolio/roche/ 301
+
+# Fix broken relative navigation paths under /blog/ (Google Search Console 404s)
+/blog/index.html / 301
+/blog/portfolio.html /portfolio 301
+/blog/portfolio /portfolio 301
+/blog/about.html /about 301
+/blog/about /about 301
+/blog/contact.html /contact 301
+/blog/contact /contact 301
+/blog/library.html /library 301
+/blog/library /library 301
+/blog/blog.html /blog 301
+
+# Resolve trailing-slash ambiguity between blog.html and blog/ directory
+/blog/ /blog 301
+
+# Legacy / renamed blog article slugs
+/blog/monokrom-bukan-berarti-tanpa-warna /blog/eksplorasi-monokrom-kontras-tanpa-warna-dekoratif 301
+/blog/monokrom-bukan-berarti-tanpa-warna.html /blog/eksplorasi-monokrom-kontras-tanpa-warna-dekoratif 301
+/blog/php2shell-celah-keamanan-php-dan-sejarahnya /blog/php2shell-dan-sejarah-php 301
+/blog/php2shell-celah-keamanan-php-dan-sejarahnya.html /blog/php2shell-dan-sejarah-php 301
+/blog/mikro-interaksi-taktil-pada-tombol-web /blog/mikro-interaksi-taktil-pada-komponen-web 301
+/blog/mikro-interaksi-taktil-pada-tombol-web.html /blog/mikro-interaksi-taktil-pada-komponen-web 301
+/blog/bahaya-desain-serba-instan-dan-pentingnya-intentional-friction /blog/bahaya-desain-serba-instan-dan-kebutuhan-jeda-berpikir 301
+/blog/bahaya-desain-serba-instan-dan-pentingnya-intentional-friction.html /blog/bahaya-desain-serba-instan-dan-kebutuhan-jeda-berpikir 301
+/blog/ketika-pesan-error-yang-cantik-justru-bikin-panik /blog/kenapa-pesan-error-cantik-membuat-pengguna-panik 301
+/blog/ketika-pesan-error-yang-cantik-justru-bikin-panik.html /blog/kenapa-pesan-error-cantik-membuat-pengguna-panik 301
+

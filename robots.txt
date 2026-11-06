@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /library
+Disallow: /library.html
+Disallow: /blog/coming-soon
+Disallow: /blog/coming-soon.html
+
+Sitemap: https://semenitwasted.web.id/sitemap.xml
+

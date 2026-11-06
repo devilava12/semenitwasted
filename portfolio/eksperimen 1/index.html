@@ -3,10 +3,16 @@
 
 <head>
   <meta charset="UTF-8">
+  <script>
+    if (location.protocol !== 'file:' && !location.pathname.endsWith('/') && !location.pathname.endsWith('.html')) {
+      location.replace(location.pathname + '/' + location.search + location.hash);
+    }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Character Design — Selenia</title>
   <meta name="description" content="Website eksplorasi desain karakter Selenia berdasarkan rancangan Frame 14 di Figma.">
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="canonical" href="https://semenitwasted.web.id/portfolio/eksperimen%201/">
 
   <!-- Local Font: Rubik (Self-hosted) -->
   <link rel="stylesheet" href="../../assets/fonts/rubik.css">

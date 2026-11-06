@@ -10,5 +10,17 @@
 /library.html
   X-Robots-Tag: noindex, follow
 
+/blog/coming-soon
+  X-Robots-Tag: noindex, follow
+
+/blog/coming-soon.html
+  X-Robots-Tag: noindex, follow
+
+/blog/monokrom-bukan-berarti-tanpa-warna
+  X-Robots-Tag: noindex, follow
+
+/blog/monokrom-bukan-berarti-tanpa-warna.html
+  X-Robots-Tag: noindex, follow
+
 /assets/*
   Cache-Control: public, max-age=31536000, immutable

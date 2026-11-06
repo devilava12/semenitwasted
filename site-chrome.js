@@ -13,12 +13,12 @@
 
   const THEME_KEY = 'semenitwasted_theme';
   const pages = [
-    { id: 'home', label: 'Home', href: 'index.html' },
-    { id: 'portfolio', label: 'Portfolio', href: 'portfolio.html' },
-    { id: 'about', label: 'About', href: 'about.html' },
-    { id: 'library', label: 'Library', href: 'library.html' },
-    { id: 'blog', label: 'Blog', href: 'blog.html' },
-    { id: 'contact', label: 'Contact', href: 'contact.html' }
+    { id: 'home', label: 'Home', href: 'index.html', webHref: '/' },
+    { id: 'portfolio', label: 'Portfolio', href: 'portfolio.html', webHref: '/portfolio' },
+    { id: 'about', label: 'About', href: 'about.html', webHref: '/about' },
+    { id: 'library', label: 'Library', href: 'library.html', webHref: '/library' },
+    { id: 'blog', label: 'Blog', href: 'blog.html', webHref: '/blog' },
+    { id: 'contact', label: 'Contact', href: 'contact.html', webHref: '/contact' }
   ];
 
   const SEASON_META = {
@@ -343,22 +343,41 @@
       : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
   }
 
+  function getEnvRouting() {
+    const isWeb = typeof window !== 'undefined' && (window.location.protocol === 'http:' || window.location.protocol === 'https:');
+    const isLocalServer = isWeb && (
+      window.location.hostname === 'localhost' ||
+      window.location.hostname === '127.0.0.1' ||
+      window.location.hostname === '[::1]'
+    );
+    return { isWeb, isLocalServer };
+  }
+
   function getHomeHref(basePath, active) {
     if (active) return '#home';
-    const isWeb = typeof window !== 'undefined' && (window.location.protocol === 'http:' || window.location.protocol === 'https:');
+    const { isWeb } = getEnvRouting();
     return isWeb ? '/' : `${basePath}index.html`;
+  }
+
+  function getPageHref(page, basePath, active) {
+    if (page.id === 'home') return getHomeHref(basePath, active);
+    const { isWeb, isLocalServer } = getEnvRouting();
+    if (!isWeb) return `${basePath}${page.href}`;
+    return isLocalServer ? `/${page.href}` : page.webHref;
   }
 
   function linkMarkup(page, activePage, className, basePath = '') {
     const active = page.id === activePage;
-    const href = page.id === 'home' ? getHomeHref(basePath, active) : `${basePath}${page.href}`;
+    const href = getPageHref(page, basePath, active);
     return `<a href="${href}"${className ? ` class="${className}${active ? ' active' : ''}"` : active ? ' class="active"' : ''}${active ? ' aria-current="page"' : ''}>${page.label}</a>`;
   }
 
   function renderChrome(host) {
     const activePage = host.dataset.activePage;
     const basePath = host.dataset.basePath || '';
+    const { isWeb } = getEnvRouting();
     const homeHref = getHomeHref(basePath, activePage === 'home');
+    const logoSrc = isWeb ? '/assets/logo-nav.svg' : `${basePath}assets/logo-nav.svg`;
     const navLinks = pages.map(page => `<li>${linkMarkup(page, activePage, 'nav-link-item', basePath)}</li>`).join('');
     const drawerLinks = pages.map(page => linkMarkup(page, activePage, '', basePath)).join('');
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
@@ -366,7 +385,7 @@
     host.outerHTML = `
       <header class="portfolio-navbar">
         <a href="${homeHref}" class="brand-link" aria-label="semenitwasted Home">
-          <img src="${basePath}assets/logo-nav.svg" alt="semenitwasted logo" class="brand-logo-img" width="116" height="48">
+          <img src="${logoSrc}" alt="semenitwasted logo" class="brand-logo-img" width="116" height="48">
           ${seasonBadgeMarkup()}
         </a>
         <nav aria-label="Main navigation">
@@ -394,12 +413,24 @@
       homeBrand.insertAdjacentHTML('beforeend', seasonBadgeMarkup());
     }
 
-    const isWeb = typeof window !== 'undefined' && (window.location.protocol === 'http:' || window.location.protocol === 'https:');
+    const { isWeb, isLocalServer } = getEnvRouting();
     if (isWeb) {
-      document.querySelectorAll('a[href$="index.html"]').forEach(link => {
+      const topPageMap = {
+        index: { local: '/', prod: '/' },
+        portfolio: { local: '/portfolio.html', prod: '/portfolio' },
+        about: { local: '/about.html', prod: '/about' },
+        library: { local: '/library.html', prod: '/library' },
+        blog: { local: '/blog.html', prod: '/blog' },
+        contact: { local: '/contact.html', prod: '/contact' }
+      };
+      document.querySelectorAll('a[href]').forEach(link => {
         const rawHref = link.getAttribute('href');
-        if (rawHref === 'index.html' || rawHref === '../index.html' || rawHref === '../../index.html') {
-          link.setAttribute('href', '/');
+        if (!rawHref) return;
+        const match = rawHref.match(/^(?:\.\.\/)*(index|portfolio|about|library|blog|contact)\.html(#.*)?$/);
+        if (match) {
+          const target = topPageMap[match[1]];
+          const hash = match[2] || '';
+          link.setAttribute('href', (isLocalServer ? target.local : target.prod) + hash);
         }
       });
     }
