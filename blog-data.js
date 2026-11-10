@@ -17,6 +17,23 @@
 
   const BLOG_POSTS = [
     {
+      id: 'post-22',
+      slug: 'bank-diretas-dan-nasib-uang-nasabah-indonesia',
+      title: 'Belajar dari Kasus Bank Diretas Rp2 Triliun dan Bagaimana Nasib Uang Nasabah di Indonesia',
+      date: '2026-11-10',
+      formattedDate: '10 November 2026',
+      readingTime: '11 min read',
+      category: 'reflections',
+      categoryLabel: 'Reflections',
+      tags: ['Cybersecurity', 'Bennix', 'Perbankan', 'LPS & OJK', 'Pemula'],
+      featured: false,
+      excerpt: 'Bedah fakta kasus bank diretas Rp2 triliun (Crédit Mutuel Arkéa) dari video Bennix, aturan ganti rugi OJK vs syarat 3T LPS, serta cara mengamankan tabungan.',
+      contentUrl: 'blog/bank-diretas-dan-nasib-uang-nasabah-indonesia.html',
+      coverImage: 'assets/blog/Neon%20Anime%20Bank%20Heist%20Alert.webp',
+      coverAlt: 'Ilustrasi gadis anime terkejut memeriksa Buku Rekening di samping kucing hitam bermata ungu, dengan layar monitor menampilkan peringatan Bank Diretas Rp2.000.000.000.000 dan perisai penjaminan LPS di meja',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
       id: 'post-21',
       slug: 'cara-berpikir-dan-menganalisis-desain-website',
       title: 'Cara Berpikir dan Menganalisis Website seperti Desainer Lewat Pelajaran dari Dua Video Extra Credits',
