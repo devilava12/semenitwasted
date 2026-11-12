@@ -12,16 +12,83 @@
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="semenitwasted">
   <meta property="og:url" content="https://semenitwasted.web.id/portfolio">
   <meta property="og:title" content="Portfolio — semenitwasted">
   <meta property="og:description"
     content="Selected works, experiments & ideas by semenitwasted. Personal showcase of character design, icon systems, and web design concepts.">
-  <meta property="og:image" content="assets/card-center.png">
+  <meta property="og:image" content="https://semenitwasted.web.id/assets/card-center.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Portfolio — semenitwasted">
   <meta name="twitter:description"
     content="Selected works, experiments & ideas by semenitwasted. Personal showcase of character design, icon systems, and web design concepts.">
-  <meta name="twitter:image" content="assets/card-center.png">
+  <meta name="twitter:image" content="https://semenitwasted.web.id/assets/card-center.png">
+
+  <!-- Structured Data: CollectionPage & BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://semenitwasted.web.id/portfolio#webpage",
+        "url": "https://semenitwasted.web.id/portfolio",
+        "name": "Portfolio — semenitwasted",
+        "description": "Selected works, experiments & ideas by semenitwasted. Personal showcase of character design, icon systems, and web design concepts.",
+        "isPartOf": {
+          "@id": "https://semenitwasted.web.id/#website"
+        },
+        "author": {
+          "@type": "Person",
+          "@id": "https://semenitwasted.web.id/#person",
+          "name": "I Putu Dicky Adi Pranatha",
+          "url": "https://semenitwasted.web.id/about"
+        },
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Roche #AyoCekHPV — Website Design Case Study",
+              "url": "https://semenitwasted.web.id/portfolio/roche/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Artificial Intelligence Icons — 50 Vector Icon System",
+              "url": "https://semenitwasted.web.id/portfolio/artificial%20intelegent%20icon/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Character Design — Selenia",
+              "url": "https://semenitwasted.web.id/portfolio/eksperimen%201/"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://semenitwasted.web.id/portfolio#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://semenitwasted.web.id/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Portfolio",
+            "item": "https://semenitwasted.web.id/portfolio"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <!-- Local Font: Rubik (Self-hosted) -->
   <link rel="stylesheet" href="assets/fonts/rubik.css">

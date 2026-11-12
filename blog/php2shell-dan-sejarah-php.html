@@ -23,33 +23,213 @@
     content="Bedah tuntas krisis PHP2Shell (CVE-2026-109618 dan CVE-2026-109619), bagaimana celah RCE mesin PHP ditemukan, konsekuensinya bagi jutaan server, serta akar sejarah 30 tahun PHP.">
   <meta name="twitter:image" content="https://semenitwasted.web.id/assets/blog/Ruina%E2%80%99s%20Neon%20Cybersecurity%20Crisis.webp">
 
-  <!-- Structured Data: BlogPosting -->
+  <!-- Structured Data: Schema.org @graph (BlogPosting, BreadcrumbList, FAQPage, Person) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "PHP2Shell Mengguncang Sebagian Besar Web, dan Sejarah PHP Menjelaskan Kenapa Itu Bisa Terjadi",
-    "description": "Bedah tuntas krisis PHP2Shell (CVE-2026-109618 dan CVE-2026-109619), bagaimana celah RCE mesin PHP ditemukan, konsekuensinya bagi jutaan server, serta akar sejarah 30 tahun PHP.",
-    "image": "https://semenitwasted.web.id/assets/blog/Ruina%E2%80%99s%20Neon%20Cybersecurity%20Crisis.webp",
-    "datePublished": "2026-10-23T08:00:00+07:00",
-    "dateModified": "2026-10-23T08:00:00+07:00",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://semenitwasted.web.id/blog/php2shell-dan-sejarah-php"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "I Putu Dicky Adi Pranatha",
-      "url": "https://semenitwasted.web.id/about.html"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "semenitwasted",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://semenitwasted.web.id/assets/logo-nav.svg"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://semenitwasted.web.id/#website",
+        "name": "semenitwasted",
+        "url": "https://semenitwasted.web.id/",
+        "inLanguage": "id-ID",
+        "publisher": {
+          "@id": "https://semenitwasted.web.id/#organization"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://semenitwasted.web.id/#organization",
+        "name": "semenitwasted",
+        "url": "https://semenitwasted.web.id/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://semenitwasted.web.id/#logo",
+          "url": "https://semenitwasted.web.id/assets/logo-nav.svg"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://semenitwasted.web.id/#person",
+        "name": "I Putu Dicky Adi Pranatha",
+        "alternateName": "semenitwasted",
+        "jobTitle": "Designer & Product Support Professional",
+        "url": "https://semenitwasted.web.id/about",
+        "image": "https://semenitwasted.web.id/assets/avatar-illustration.png",
+        "sameAs": [
+          "https://www.linkedin.com/in/reionnyx/",
+          "https://www.instagram.com/reionportfolio/",
+          "https://stock.adobe.com/contributor/207802543/dicky",
+          "https://thenounproject.com/creator/ReionDesign/",
+          "https://www.flaticon.com/authors/reion"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://semenitwasted.web.id/blog/php2shell-dan-sejarah-php#webpage",
+        "url": "https://semenitwasted.web.id/blog/php2shell-dan-sejarah-php",
+        "name": "PHP2Shell Mengguncang Sebagian Besar Web, dan Sejarah PHP Menjelaskan Kenapa Itu Bisa Terjadi",
+        "description": "Bedah tuntas krisis PHP2Shell, bagaimana celah RCE mesin PHP ditemukan, konsekuensinya bagi jutaan server, serta akar sejarah 30 tahun PHP.",
+        "inLanguage": "id-ID",
+        "isPartOf": {
+          "@id": "https://semenitwasted.web.id/#website"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://semenitwasted.web.id/blog/php2shell-dan-sejarah-php#primaryimage"
+        },
+        "breadcrumb": {
+          "@id": "https://semenitwasted.web.id/blog/php2shell-dan-sejarah-php#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://semenitwasted.web.id/blog/php2shell-dan-sejarah-php#article"
+        }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://semenitwasted.web.id/blog/php2shell-dan-sejarah-php#article",
+        "mainEntityOfPage": {
+          "@id": "https://semenitwasted.web.id/blog/php2shell-dan-sejarah-php#webpage"
+        },
+        "headline": "PHP2Shell Mengguncang Sebagian Besar Web, dan Sejarah PHP Menjelaskan Kenapa Itu Bisa Terjadi",
+        "description": "Bedah tuntas krisis PHP2Shell, bagaimana celah RCE mesin PHP ditemukan, konsekuensinya bagi jutaan server, serta akar sejarah 30 tahun PHP.",
+        "image": {
+          "@type": "ImageObject",
+          "@id": "https://semenitwasted.web.id/blog/php2shell-dan-sejarah-php#primaryimage",
+          "url": "https://semenitwasted.web.id/assets/blog/Ruina%E2%80%99s%20Neon%20Cybersecurity%20Crisis.webp",
+          "contentUrl": "https://semenitwasted.web.id/assets/blog/Ruina%E2%80%99s%20Neon%20Cybersecurity%20Crisis.webp",
+          "width": 1920,
+          "height": 1080,
+          "caption": "Ilustrasi Ruina panik di depan laptop saat krisis keamanan siber PHP2Shell melanda server web"
+        },
+        "datePublished": "2026-10-23T08:00:00+07:00",
+        "dateModified": "2026-10-23T08:00:00+07:00",
+        "inLanguage": "id-ID",
+        "articleSection": "Frontend & Code",
+        "keywords": "PHP, Web Security, CVE-2026-109618, Backend Architecture",
+        "wordCount": 3060,
+        "timeRequired": "PT12M",
+        "author": {
+          "@id": "https://semenitwasted.web.id/#person"
+        },
+        "publisher": {
+          "@id": "https://semenitwasted.web.id/#organization"
+        },
+        "isPartOf": {
+          "@id": "https://semenitwasted.web.id/blog#blog"
+        },
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "PHP"
+          },
+          {
+            "@type": "Thing",
+            "name": "Web Security"
+          },
+          {
+            "@type": "Thing",
+            "name": "CVE-2026-109618"
+          },
+          {
+            "@type": "Thing",
+            "name": "Backend Architecture"
+          }
+        ],
+        "citation": [
+          {
+            "@type": "CreativeWork",
+            "name": "The PHP Project. (2026). Security Advisory: Critical Remote Code Execution Vulnerabilities (CVE-2026-109618, CVE-2026-109619). https://www.php.net",
+            "url": "https://www.php.net/archive/2026.php#2026-10-21-5"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "The PHP Foundation. (2026). Today's PHP Security Release, and How We're Strengthening PHP Security. https://thephp.foundation",
+            "url": "https://thephp.foundation/blog/"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "GitHub Advisory Database. (2026). GHSA-w8hw-w9fx-j79w: Out-of-memory Handling Memory Corruption in PHP Engine. https://github.com/php/php-src/security/advisories",
+            "url": "https://github.com/php/php-src/security/advisories"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "W3Techs. (2026). Usage Statistics and Market Share of PHP for Websites. https://w3techs.com",
+            "url": "https://w3techs.com/technologies/details/pl-php"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Lerdorf, R., Tatroe, K., & MacIntyre, P. (2013). Programming PHP (3rd ed.). O'Reilly Media."
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Gutmans, A., Suraski, Z., & Rethans, D. (2004). PHP 5 Power Programming. Prentice Hall PTR."
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "DEVCORE Research. (2024). CVE-2024-4577: Argument Injection in PHP-CGI Windows Architecture. https://devcore.io",
+            "url": "https://devcore.io/blog/"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://semenitwasted.web.id/blog/php2shell-dan-sejarah-php#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://semenitwasted.web.id/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://semenitwasted.web.id/blog"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "PHP2Shell Mengguncang Sebagian Besar Web, dan Sejarah PHP Menjelaskan Kenapa Itu Bisa Terjadi",
+            "item": "https://semenitwasted.web.id/blog/php2shell-dan-sejarah-php"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://semenitwasted.web.id/blog/php2shell-dan-sejarah-php#faq",
+        "isPartOf": {
+          "@id": "https://semenitwasted.web.id/blog/php2shell-dan-sejarah-php#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Apa itu kerentanan PHP2Shell (CVE-2026-109618 dan CVE-2026-109619)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "PHP2Shell adalah dua celah keamanan kritis tanpa autentikasi (skor CVSS 9.2) yang menyerang langsung mesin interpreter PHP sehingga memungkinkan eksekusi kode jarak jauh sebelum logika aplikasi web seperti WordPress atau Laravel sempat dijalankan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Konfigurasi server PHP mana yang memiliki risiko paling tinggi terhadap eksploitasi PHP2Shell?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Risiko tertinggi menimpa server web yang masih menjalankan PHP melalui modul lawas Apache mod_php serta instalasi PHP yang belum diperbarui ke cabang rilis yang masih didukung secara aktif."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Bagaimana cara menambal server agar aman dari celah PHP2Shell?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Satu-satunya langkah perbaikan permanen adalah memperbarui mesin PHP di server ke versi tambalan resmi: PHP 8.5.12, PHP 8.4.27, PHP 8.3.36, atau PHP 8.2.35."
+            }
+          }
+        ]
       }
-    }
+    ]
   }
   </script>
 

@@ -23,33 +23,196 @@
     content="Refleksi atas tren web modern yang sarat dependensi berat. Mengapa HTML, CSS terukur, dan kedaulatan data berkas statis menjadi ruang digital paling tenang untuk dirawat.">
   <meta name="twitter:image" content="https://semenitwasted.web.id/assets/blog/cover-simple-web.webp">
 
-  <!-- Structured Data: BlogPosting -->
+  <!-- Structured Data: Schema.org @graph (BlogPosting, BreadcrumbList, FAQPage, Person) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Mengapa Web Pribadi Perlu Kembali ke Prinsip Sederhana dan Cepat",
-    "description": "Refleksi atas tren web modern yang sarat dependensi berat. Mengapa HTML, CSS terukur, dan kedaulatan data berkas statis menjadi ruang digital paling tenang untuk dirawat.",
-    "image": "https://semenitwasted.web.id/assets/blog/cover-simple-web.webp",
-    "datePublished": "2026-08-14T08:00:00+07:00",
-    "dateModified": "2026-10-22T08:00:00+07:00",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://semenitwasted.web.id/blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "I Putu Dicky Adi Pranatha",
-      "url": "https://semenitwasted.web.id/about.html"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "semenitwasted",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://semenitwasted.web.id/assets/logo-nav.svg"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://semenitwasted.web.id/#website",
+        "name": "semenitwasted",
+        "url": "https://semenitwasted.web.id/",
+        "inLanguage": "id-ID",
+        "publisher": {
+          "@id": "https://semenitwasted.web.id/#organization"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://semenitwasted.web.id/#organization",
+        "name": "semenitwasted",
+        "url": "https://semenitwasted.web.id/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://semenitwasted.web.id/#logo",
+          "url": "https://semenitwasted.web.id/assets/logo-nav.svg"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://semenitwasted.web.id/#person",
+        "name": "I Putu Dicky Adi Pranatha",
+        "alternateName": "semenitwasted",
+        "jobTitle": "Designer & Product Support Professional",
+        "url": "https://semenitwasted.web.id/about",
+        "image": "https://semenitwasted.web.id/assets/avatar-illustration.png",
+        "sameAs": [
+          "https://www.linkedin.com/in/reionnyx/",
+          "https://www.instagram.com/reionportfolio/",
+          "https://stock.adobe.com/contributor/207802543/dicky",
+          "https://thenounproject.com/creator/ReionDesign/",
+          "https://www.flaticon.com/authors/reion"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://semenitwasted.web.id/blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana#webpage",
+        "url": "https://semenitwasted.web.id/blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana",
+        "name": "Mengapa Web Pribadi Perlu Kembali ke Prinsip Sederhana & Cepat",
+        "description": "Refleksi atas tren web modern yang semakin sarat dependensi berat. Mengapa HTML, CSS terukur, dan RSS feed kembali menjadi ruang digital paling menyenangkan untuk dirawat.",
+        "inLanguage": "id-ID",
+        "isPartOf": {
+          "@id": "https://semenitwasted.web.id/#website"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://semenitwasted.web.id/blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana#primaryimage"
+        },
+        "breadcrumb": {
+          "@id": "https://semenitwasted.web.id/blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://semenitwasted.web.id/blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana#article"
+        }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://semenitwasted.web.id/blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana#article",
+        "mainEntityOfPage": {
+          "@id": "https://semenitwasted.web.id/blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana#webpage"
+        },
+        "headline": "Mengapa Web Pribadi Perlu Kembali ke Prinsip Sederhana & Cepat",
+        "description": "Refleksi atas tren web modern yang semakin sarat dependensi berat. Mengapa HTML, CSS terukur, dan RSS feed kembali menjadi ruang digital paling menyenangkan untuk dirawat.",
+        "image": {
+          "@type": "ImageObject",
+          "@id": "https://semenitwasted.web.id/blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana#primaryimage",
+          "url": "https://semenitwasted.web.id/assets/blog/cover-simple-web.webp",
+          "contentUrl": "https://semenitwasted.web.id/assets/blog/cover-simple-web.webp",
+          "width": 800,
+          "height": 450,
+          "caption": "Ilustrasi studio kerja di teras pesisir yang cerah dengan laptop menampilkan kode HTML sederhana, kartu melayang HTML, CSS, Fast Instant Loading, RSS, dan tumpukan buku web development"
+        },
+        "datePublished": "2026-08-14T08:00:00+07:00",
+        "dateModified": "2026-10-22T08:00:00+07:00",
+        "inLanguage": "id-ID",
+        "articleSection": "Reflections",
+        "keywords": "IndieWeb, Web Performance, Minimalism",
+        "wordCount": 1328,
+        "timeRequired": "PT6M",
+        "author": {
+          "@id": "https://semenitwasted.web.id/#person"
+        },
+        "publisher": {
+          "@id": "https://semenitwasted.web.id/#organization"
+        },
+        "isPartOf": {
+          "@id": "https://semenitwasted.web.id/blog#blog"
+        },
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "IndieWeb"
+          },
+          {
+            "@type": "Thing",
+            "name": "Web Performance"
+          },
+          {
+            "@type": "Thing",
+            "name": "Minimalism"
+          }
+        ],
+        "citation": [
+          {
+            "@type": "CreativeWork",
+            "name": "IndieWeb Camp. (2025). Principles of the IndieWeb and Digital Self-Reliance. https://indieweb.org/principles",
+            "url": "https://indieweb.org/principles"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "HTTP Archive. (2025). Web Almanac: Page Weight and JavaScript Payload Trends. https://almanac.httparchive.org/",
+            "url": "https://almanac.httparchive.org/"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "World Wide Web Consortium. (2024). Web Sustainability Guidelines (WSG) 1.0. https://w3c.github.io/sustyweb/",
+            "url": "https://w3c.github.io/sustyweb/"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Google Chrome Developers. (2025). Understanding Core Web Vitals and Page Responsiveness. https://web.dev/articles/vitals",
+            "url": "https://web.dev/articles/vitals"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://semenitwasted.web.id/blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://semenitwasted.web.id/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://semenitwasted.web.id/blog"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Mengapa Web Pribadi Perlu Kembali ke Prinsip Sederhana & Cepat",
+            "item": "https://semenitwasted.web.id/blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://semenitwasted.web.id/blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana#faq",
+        "isPartOf": {
+          "@id": "https://semenitwasted.web.id/blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Mengapa banyak website pribadi modern cepat terbengkalai dan sulit dirawat dalam jangka panjang?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Banyak website pribadi dibangun menggunakan kerangka kerja (framework) berskala perusahaan dengan ratusan pustaka pihak ketiga, sehingga pemiliknya habis waktu mengurus pembaruan dependensi yang rusak alih-alih fokus menulis."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Apa keunggulan membangun website pribadi dengan HTML, CSS, dan JavaScript murni (vanilla)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Website berbasis HTML dan CSS semantik murni memiliki ukuran berkas yang sangat ringan (di bawah 50 KB), waktu muat instan di segala perangkat, nol risiko kerusakan paket tahunan, serta dapat dihosting secara gratis di layanan statis seperti Cloudflare Pages."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Mengapa kepemilikan domain sendiri dan RSS feed penting bagi penulis di era algoritma media sosial?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nama domain pribadi dan saluran RSS feed memastikan arsip tulisan tetap dimiliki sepenuhnya oleh penulis dan dapat menjangkau pembaca setia secara langsung tanpa bergantung pada perubahan algoritma platform pihak ketiga."
+            }
+          }
+        ]
       }
-    }
+    ]
   }
   </script>
 

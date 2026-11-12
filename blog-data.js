@@ -17,6 +17,23 @@
 
   const BLOG_POSTS = [
     {
+      id: 'post-23',
+      slug: 'api-adalah-sejarah-dan-cara-kerjanya',
+      title: 'API Adalah Pelayan Tak Terlihat di Balik Aplikasi Harian Kita serta Sejarah dan Cara Kerjanya untuk Pemula',
+      date: '2026-11-11',
+      formattedDate: '11 November 2026',
+      readingTime: '11 min read',
+      category: 'frontend-code',
+      categoryLabel: 'Frontend & Code',
+      tags: ['API', 'REST API', 'Roy Fielding', 'Web Security', 'Pemula'],
+      featured: false,
+      excerpt: 'Pahami apa itu API dengan bahasa sederhana. Simak analogi pelayan restoran, sejarah dari komputer EDSAC 1951 hingga REST API, contoh nyata, dan keamanannya.',
+      contentUrl: 'blog/api-adalah-sejarah-dan-cara-kerjanya.html',
+      coverImage: 'assets/blog/Neon%20API%20Notes%20in%20Cyberpunk%20Corridor.webp',
+      coverAlt: 'Ilustrasi gadis anime berkacamata mencatat alur kerja di lorong siber neon bersama kucing hitam-putih bermata ungu yang menatap layar skema API penghubung aplikasi ponsel, keranjang belanja, dan database server',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
       id: 'post-22',
       slug: 'bank-diretas-dan-nasib-uang-nasabah-indonesia',
       title: 'Belajar dari Kasus Bank Diretas Rp2 Triliun dan Bagaimana Nasib Uang Nasabah di Indonesia',

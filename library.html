@@ -12,15 +12,17 @@
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="semenitwasted">
+  <meta property="og:url" content="https://semenitwasted.web.id/library">
   <meta property="og:title" content="Library — Motion &amp; Animation System — semenitwasted">
   <meta property="og:description"
     content="Living design system and interactive animation library for semenitwasted. Interactive documentation of tactile motion, easing curves, timing tokens, and code snippets.">
-  <meta property="og:image" content="assets/card-center.png">
+  <meta property="og:image" content="https://semenitwasted.web.id/assets/card-center.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Library — Motion &amp; Animation System — semenitwasted">
   <meta name="twitter:description"
     content="Living design system and interactive animation library for semenitwasted. Interactive documentation of tactile motion, easing curves, timing tokens, and code snippets.">
-  <meta name="twitter:image" content="assets/card-center.png">
+  <meta name="twitter:image" content="https://semenitwasted.web.id/assets/card-center.png">
 
   <!-- Local Font: Rubik (Self-hosted) -->
   <link rel="stylesheet" href="assets/fonts/rubik.css">
@@ -93,7 +95,8 @@
           </div>
 
           <!-- Tokens Filter Pills -->
-          <div class="filter-pills-group" data-tab-scope="tokens" role="group" aria-label="Filter Kategori Design Tokens" style="display: none;">
+          <div class="filter-pills-group" data-tab-scope="tokens" role="group"
+            aria-label="Filter Kategori Design Tokens" style="display: none;">
             <button class="filter-pill active" data-token-filter="all">All Tokens</button>
             <button class="filter-pill" data-token-filter="color">Core Colors</button>
             <button class="filter-pill" data-token-filter="text">Text Tones</button>
@@ -106,7 +109,8 @@
           </div>
 
           <!-- Components Filter Pills -->
-          <div class="filter-pills-group" data-tab-scope="components" role="group" aria-label="Filter Kategori Components" style="display: none;">
+          <div class="filter-pills-group" data-tab-scope="components" role="group"
+            aria-label="Filter Kategori Components" style="display: none;">
             <button class="filter-pill active" data-cmp-filter="all">All Components</button>
             <button class="filter-pill" data-cmp-filter="buttons">Buttons</button>
             <button class="filter-pill" data-cmp-filter="cards">Cards &amp; Surfaces</button>
@@ -151,7 +155,8 @@
           </button>
 
           <!-- Copy All :root CSS Button (Tokens Tab) -->
-          <button class="btn-tool tokens-tool-btn" id="btnCopyAllTokens" data-tab-scope="tokens" title="Salin seluruh token :root CSS ke clipboard" style="display: none;">
+          <button class="btn-tool tokens-tool-btn" id="btnCopyAllTokens" data-tab-scope="tokens"
+            title="Salin seluruh token :root CSS ke clipboard" style="display: none;">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
               <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -186,7 +191,8 @@
               </div>
               <h2 class="anim-title">Tactile Lift</h2>
               <p class="anim-desc">
-                Interaksi tombol fisik dengan sedikit pengangkatan pada hover dan reduksi kedalaman permukaan saat ditekan (active state).
+                Interaksi tombol fisik dengan sedikit pengangkatan pada hover dan reduksi kedalaman permukaan saat
+                ditekan (active state).
               </p>
             </header>
 
@@ -231,7 +237,8 @@
 .btn-tactile:active {
   transform: translateY(0);
 }</code></pre>
-              <button class="btn-copy-code" data-copy-target="anim-tactile-lift" aria-label="Salin kode CSS Tactile Lift">
+              <button class="btn-copy-code" data-copy-target="anim-tactile-lift"
+                aria-label="Salin kode CSS Tactile Lift">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -250,7 +257,8 @@
               </div>
               <h2 class="anim-title">Micro Tactile Lift</h2>
               <p class="anim-desc">
-                Versi lebih ringan dari Tactile Lift untuk kontrol ringkas seperti filter pills dan kategori. Mempertahankan bayangan depth tanpa switch ke primary shadow.
+                Versi lebih ringan dari Tactile Lift untuk kontrol ringkas seperti filter pills dan kategori.
+                Mempertahankan bayangan depth tanpa switch ke primary shadow.
               </p>
             </header>
 
@@ -267,7 +275,8 @@
                   <button type="button" class="demo-pill active">Personal</button>
                 </div>
               </div>
-              <div class="stage-status-indicator" id="statusMicroPills">Active: "Personal" (Primary shadow) · Hover to lift</div>
+              <div class="stage-status-indicator" id="statusMicroPills">Active: "Personal" (Primary shadow) · Hover to
+                lift</div>
             </div>
 
             <div class="tech-specs-bar">
@@ -318,7 +327,8 @@
   font-weight: 600;
   box-shadow: var(--shadow-primary);
 }</code></pre>
-              <button class="btn-copy-code" data-copy-target="anim-micro-tactile-lift" aria-label="Salin kode CSS Micro Tactile Lift">
+              <button class="btn-copy-code" data-copy-target="anim-micro-tactile-lift"
+                aria-label="Salin kode CSS Micro Tactile Lift">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -337,7 +347,8 @@
               </div>
               <h2 class="anim-title">Neumorphic Card Elevation</h2>
               <p class="anim-desc">
-                Peningkatan elevasi halus pada permukaan kartu Bento. Memberikan umpan balik fisik tactile yang membedakan kartu interaktif dari kartu statis.
+                Peningkatan elevasi halus pada permukaan kartu Bento. Memberikan umpan balik fisik tactile yang
+                membedakan kartu interaktif dari kartu statis.
               </p>
             </header>
 
@@ -381,7 +392,8 @@
   transform: translateY(-2px);
   box-shadow: 18px 18px 16px rgb(69 13 80 / 20%);
 }</code></pre>
-              <button class="btn-copy-code" data-copy-target="anim-card-elevation" aria-label="Salin kode CSS Card Elevation">
+              <button class="btn-copy-code" data-copy-target="anim-card-elevation"
+                aria-label="Salin kode CSS Card Elevation">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -400,7 +412,8 @@
               </div>
               <h2 class="anim-title">Image Subtle Scale</h2>
               <p class="anim-desc">
-                Pembesaran foto/grafis yang tertahan (scale 1.01–1.03) dengan overflow terpotong rapi. Dilarang zoom agresif agar konten visual tetap tenang.
+                Pembesaran foto/grafis yang tertahan (scale 1.01–1.03) dengan overflow terpotong rapi. Dilarang zoom
+                agresif agar konten visual tetap tenang.
               </p>
             </header>
 
@@ -408,7 +421,8 @@
               <div class="stage-caption">Media Frame — Hover to trigger subtle scale</div>
               <div class="stage-demo-area">
                 <div class="demo-media-frame">
-                  <img src="assets/card-center.png" alt="Demo artwork preview" class="demo-media-img" width="900" height="900">
+                  <img src="assets/card-center.png" alt="Demo artwork preview" class="demo-media-img" width="900"
+                    height="900">
                   <div class="demo-media-overlay">
                     <span class="media-scale-badge">scale(1.02)</span>
                   </div>
@@ -443,7 +457,8 @@
 .media-frame:hover .media-img {
   transform: scale(1.02);
 }</code></pre>
-              <button class="btn-copy-code" data-copy-target="anim-image-scale" aria-label="Salin kode CSS Image Subtle Scale">
+              <button class="btn-copy-code" data-copy-target="anim-image-scale"
+                aria-label="Salin kode CSS Image Subtle Scale">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -462,7 +477,8 @@
               </div>
               <h2 class="anim-title">Page Entrance Sequence</h2>
               <p class="anim-desc">
-                Kemunculan konten bertingkat: Heading (0ms) → Subtitle (50ms) → Primary Action (100ms) → Main Content (150ms). Menghindari jeda yang memperlambat pengguna.
+                Kemunculan konten bertingkat: Heading (0ms) → Subtitle (50ms) → Primary Action (100ms) → Main Content
+                (150ms). Menghindari jeda yang memperlambat pengguna.
               </p>
             </header>
 
@@ -518,7 +534,8 @@
 .hero-desc   { animation: pageEntrance 0.35s ease 0.05s forwards; }
 .hero-action { animation: pageEntrance 0.35s ease 0.10s forwards; }
 .hero-grid   { animation: pageEntrance 0.35s ease 0.15s forwards; }</code></pre>
-              <button class="btn-copy-code" data-copy-target="anim-page-entrance" aria-label="Salin kode CSS Page Entrance">
+              <button class="btn-copy-code" data-copy-target="anim-page-entrance"
+                aria-label="Salin kode CSS Page Entrance">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -537,7 +554,8 @@
               </div>
               <h2 class="anim-title">Scroll Reveal (Observer)</h2>
               <p class="anim-desc">
-                Animasi satu kali (one-time) saat konten melintasi viewport. Menggunakan IntersectionObserver efisien tanpa mendengarkan event scroll secara konstan.
+                Animasi satu kali (one-time) saat konten melintasi viewport. Menggunakan IntersectionObserver efisien
+                tanpa mendengarkan event scroll secara konstan.
               </p>
             </header>
 
@@ -586,7 +604,8 @@
   opacity: 1;
   transform: translateY(0);
 }</code></pre>
-              <button class="btn-copy-code" data-copy-target="anim-scroll-reveal" aria-label="Salin kode CSS Scroll Reveal">
+              <button class="btn-copy-code" data-copy-target="anim-scroll-reveal"
+                aria-label="Salin kode CSS Scroll Reveal">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -605,7 +624,8 @@
               </div>
               <h2 class="anim-title">Magnetic Button</h2>
               <p class="anim-desc">
-                Interaksi selektif untuk tombol konversi utama (CTA). Tombol bergeser halus beberapa pixel mengikuti arah kursor dan kembali elastis saat kursor keluar.
+                Interaksi selektif untuk tombol konversi utama (CTA). Tombol bergeser halus beberapa pixel mengikuti
+                arah kursor dan kembali elastis saat kursor keluar.
               </p>
             </header>
 
@@ -644,7 +664,8 @@ btn.style.transform = `translate(${dx}px, ${dy}px)`;
 
 // On mouse leave:
 btn.style.transform = 'translate(0, 0)';</code></pre>
-              <button class="btn-copy-code" data-copy-target="anim-magnetic-button" aria-label="Salin kode JS Magnetic Button">
+              <button class="btn-copy-code" data-copy-target="anim-magnetic-button"
+                aria-label="Salin kode JS Magnetic Button">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -663,7 +684,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               </div>
               <h2 class="anim-title">Navigation Indicator Transition</h2>
               <p class="anim-desc">
-                Pergeseran penanda aktif (active pill/underline) antar tautan navigasi. Memberikan kepastian orientasi dan kehalusan visual pada bar navigasi.
+                Pergeseran penanda aktif (active pill/underline) antar tautan navigasi. Memberikan kepastian orientasi
+                dan kehalusan visual pada bar navigasi.
               </p>
             </header>
 
@@ -703,7 +725,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
   background: var(--surface-soft);
   border-radius: 999px;
 }</code></pre>
-              <button class="btn-copy-code" data-copy-target="anim-nav-indicator" aria-label="Salin kode CSS Navigation Indicator">
+              <button class="btn-copy-code" data-copy-target="anim-nav-indicator"
+                aria-label="Salin kode CSS Navigation Indicator">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -722,7 +745,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               </div>
               <h2 class="anim-title">Focus State Indicator</h2>
               <p class="anim-desc">
-                Transisi cincin fokus ganda (high contrast outline + subtle glow) yang memenuhi standar aksesibilitas keyboard tanpa mengorbankan estetika visual.
+                Transisi cincin fokus ganda (high contrast outline + subtle glow) yang memenuhi standar aksesibilitas
+                keyboard tanpa mengorbankan estetika visual.
               </p>
             </header>
 
@@ -760,7 +784,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
   box-shadow: 0 0 0 3px rgb(69 13 80 / 14%);
   transition: box-shadow 0.15s ease, border-color 0.15s ease;
 }</code></pre>
-              <button class="btn-copy-code" data-copy-target="anim-focus-indicator" aria-label="Salin kode CSS Focus Indicator">
+              <button class="btn-copy-code" data-copy-target="anim-focus-indicator"
+                aria-label="Salin kode CSS Focus Indicator">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -779,7 +804,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               </div>
               <h2 class="anim-title">Tactile Submit Spinner</h2>
               <p class="anim-desc">
-                Transisi status aksi form dari resting ke status proses (spinner) tanpa pergeseran layout (zero CLS) dan kembali dengan sinyal konfirmasi sukses.
+                Transisi status aksi form dari resting ke status proses (spinner) tanpa pergeseran layout (zero CLS) dan
+                kembali dengan sinyal konfirmasi sukses.
               </p>
             </header>
 
@@ -822,7 +848,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
 @keyframes spin {
   to { transform: rotate(360deg); }
 }</code></pre>
-              <button class="btn-copy-code" data-copy-target="anim-submit-spinner" aria-label="Salin kode CSS Submit Spinner">
+              <button class="btn-copy-code" data-copy-target="anim-submit-spinner"
+                aria-label="Salin kode CSS Submit Spinner">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -836,7 +863,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
       </section>
 
       <!-- DESIGN TOKENS CATALOG GRID (Bento Layout) -->
-      <section class="tokens-catalog" id="tokensCatalog" aria-label="Katalog Design Tokens semenitwasted" style="display: none;">
+      <section class="tokens-catalog" id="tokensCatalog" aria-label="Katalog Design Tokens semenitwasted"
+        style="display: none;">
         <div class="bento-catalog-grid">
 
           <!-- 01. CORE MONOCHROME PALETTE -->
@@ -848,7 +876,9 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               </div>
               <h2 class="anim-title">Core Monochrome Palette</h2>
               <p class="anim-desc">
-                Fondasi palet monokrom semenitwasted yang terkunci ketat: kanvas terang <code>#F0EDF4</code>, teks &amp; permukaan gelap <code>#211B28</code>, dan bayangan signature <code>#450D50</code>. Tidak ada warna aksen atau gradasi buatan.
+                Fondasi palet monokrom semenitwasted yang terkunci ketat: kanvas terang <code>#F0EDF4</code>, teks &amp;
+                permukaan gelap <code>#211B28</code>, dan bayangan signature <code>#450D50</code>. Tidak ada warna aksen
+                atau gradasi buatan.
               </p>
             </header>
 
@@ -856,7 +886,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               <div class="stage-caption">Color Swatches — Click Swatch to Copy CSS Variable</div>
               <div class="token-swatches-grid">
                 <!-- Swatch 1: Light Canvas -->
-                <button type="button" class="token-swatch-card" data-copy-token="var(--color-light)" aria-label="Salin var(--color-light)">
+                <button type="button" class="token-swatch-card" data-copy-token="var(--color-light)"
+                  aria-label="Salin var(--color-light)">
                   <div class="swatch-color-box swatch-color-light">
                     <span class="swatch-badge-contrast">14.48:1 (AAA)</span>
                   </div>
@@ -868,7 +899,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                 </button>
 
                 <!-- Swatch 2: Dark Solid -->
-                <button type="button" class="token-swatch-card" data-copy-token="var(--color-dark)" aria-label="Salin var(--color-dark)">
+                <button type="button" class="token-swatch-card" data-copy-token="var(--color-dark)"
+                  aria-label="Salin var(--color-dark)">
                   <div class="swatch-color-box swatch-color-dark">
                     <span class="swatch-badge-contrast">Primary Text</span>
                   </div>
@@ -880,7 +912,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                 </button>
 
                 <!-- Swatch 3: Signature Purple Shadow -->
-                <button type="button" class="token-swatch-card" data-copy-token="var(--color-shadow)" aria-label="Salin var(--color-shadow)">
+                <button type="button" class="token-swatch-card" data-copy-token="var(--color-shadow)"
+                  aria-label="Salin var(--color-shadow)">
                   <div class="swatch-color-box swatch-color-shadow">
                     <span class="swatch-badge-contrast">Signature Tint</span>
                   </div>
@@ -891,7 +924,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                   </div>
                 </button>
               </div>
-              <div class="stage-status-indicator" id="statusCoreColor">Click any swatch to copy CSS variable · Zero decorative gradients</div>
+              <div class="stage-status-indicator" id="statusCoreColor">Click any swatch to copy CSS variable · Zero
+                decorative gradients</div>
             </div>
 
             <div class="tech-specs-bar">
@@ -916,7 +950,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
   --color-dark:   #211B28; /* Primary text & dark surface */
   --color-shadow: #450D50; /* Signature tactile shadow tint */
 }</code></pre>
-              <button class="btn-copy-code" data-copy-target="token-core-palette" aria-label="Salin kode CSS Core Monochrome Palette">
+              <button class="btn-copy-code" data-copy-target="token-core-palette"
+                aria-label="Salin kode CSS Core Monochrome Palette">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -935,7 +970,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               </div>
               <h2 class="anim-title">Derived Text Tones &amp; States</h2>
               <p class="anim-desc">
-                Tingkatan kontras teks berbasis penurunan opacity dari <code>--color-dark</code> untuk menjaga keharmonisan tanpa menambah warna abu-abu acak. Setiap level lolos uji kontras WCAG 2.2 AA.
+                Tingkatan kontras teks berbasis penurunan opacity dari <code>--color-dark</code> untuk menjaga
+                keharmonisan tanpa menambah warna abu-abu acak. Setiap level lolos uji kontras WCAG 2.2 AA.
               </p>
             </header>
 
@@ -950,31 +986,38 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                   </div>
                   <div class="tone-right">
                     <span class="contrast-score-badge contrast-aaa">14.48:1 AAA</span>
-                    <button type="button" class="btn-mini-copy" data-copy-token="var(--color-text)" title="Salin var(--color-text)">Copy</button>
+                    <button type="button" class="btn-mini-copy" data-copy-token="var(--color-text)"
+                      title="Salin var(--color-text)">Copy</button>
                   </div>
                 </div>
 
                 <!-- Tone 2: Muted Text -->
                 <div class="tone-specimen-row">
                   <div class="tone-left">
-                    <span class="tone-sample-text tone-sample-muted">Supporting labels, metadata, captions, and secondary notes</span>
-                    <span class="tone-var-label"><code>--color-text-muted</code> : <code>rgb(33 27 40 / 70%)</code></span>
+                    <span class="tone-sample-text tone-sample-muted">Supporting labels, metadata, captions, and
+                      secondary notes</span>
+                    <span class="tone-var-label"><code>--color-text-muted</code> :
+                      <code>rgb(33 27 40 / 70%)</code></span>
                   </div>
                   <div class="tone-right">
                     <span class="contrast-score-badge contrast-aa">5.78:1 AA</span>
-                    <button type="button" class="btn-mini-copy" data-copy-token="var(--color-text-muted)" title="Salin var(--color-text-muted)">Copy</button>
+                    <button type="button" class="btn-mini-copy" data-copy-token="var(--color-text-muted)"
+                      title="Salin var(--color-text-muted)">Copy</button>
                   </div>
                 </div>
 
                 <!-- Tone 3: Disabled Text -->
                 <div class="tone-specimen-row">
                   <div class="tone-left">
-                    <span class="tone-sample-text tone-sample-disabled">Inactive control label and disabled placeholder state</span>
-                    <span class="tone-var-label"><code>--color-text-disabled</code> : <code>rgb(33 27 40 / 50%)</code></span>
+                    <span class="tone-sample-text tone-sample-disabled">Inactive control label and disabled placeholder
+                      state</span>
+                    <span class="tone-var-label"><code>--color-text-disabled</code> :
+                      <code>rgb(33 27 40 / 50%)</code></span>
                   </div>
                   <div class="tone-right">
                     <span class="contrast-score-badge contrast-exempt">3.16:1 Disabled</span>
-                    <button type="button" class="btn-mini-copy" data-copy-token="var(--color-text-disabled)" title="Salin var(--color-text-disabled)">Copy</button>
+                    <button type="button" class="btn-mini-copy" data-copy-token="var(--color-text-disabled)"
+                      title="Salin var(--color-text-disabled)">Copy</button>
                   </div>
                 </div>
 
@@ -984,15 +1027,18 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                     <div class="input-boundary-preview">
                       <span class="input-boundary-text">Input Field Boundary (Perceivable without shadow)</span>
                     </div>
-                    <span class="tone-var-label"><code>--color-border-control</code> : <code>rgb(33 27 40 / 50%)</code></span>
+                    <span class="tone-var-label"><code>--color-border-control</code> :
+                      <code>rgb(33 27 40 / 50%)</code></span>
                   </div>
                   <div class="tone-right">
                     <span class="contrast-score-badge contrast-ui">3.16:1 UI AA</span>
-                    <button type="button" class="btn-mini-copy" data-copy-token="var(--color-border-control)" title="Salin var(--color-border-control)">Copy</button>
+                    <button type="button" class="btn-mini-copy" data-copy-token="var(--color-border-control)"
+                      title="Salin var(--color-border-control)">Copy</button>
                   </div>
                 </div>
               </div>
-              <div class="stage-status-indicator" id="statusTextTones">Muted text maintains &ge; 4.5:1 on light canvas (5.78:1) and &ge; 7.0:1 on dark canvas</div>
+              <div class="stage-status-indicator" id="statusTextTones">Muted text maintains &ge; 4.5:1 on light canvas
+                (5.78:1) and &ge; 7.0:1 on dark canvas</div>
             </div>
 
             <div class="tech-specs-bar">
@@ -1018,7 +1064,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
   --color-text-disabled:  rgb(33 27 40 / 50%);        /* 3.16:1 (Disabled) */
   --color-border-control: rgb(33 27 40 / 50%);        /* 3.16:1 (Input boundary) */
 }</code></pre>
-              <button class="btn-copy-code" data-copy-target="token-text-tones" aria-label="Salin kode CSS Derived Text Tones">
+              <button class="btn-copy-code" data-copy-target="token-text-tones"
+                aria-label="Salin kode CSS Derived Text Tones">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -1037,7 +1084,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               </div>
               <h2 class="anim-title">Signature Shadow &amp; Depth System</h2>
               <p class="anim-desc">
-                Bayangan taktil terkunci dengan rona signature <code>#450D50</code> yang jatuh ke arah kanan bawah (lit from top-left). Nilai bayangan tidak boleh diubah atau diganti dengan multi-layer shadow acak.
+                Bayangan taktil terkunci dengan rona signature <code>#450D50</code> yang jatuh ke arah kanan bawah (lit
+                from top-left). Nilai bayangan tidak boleh diubah atau diganti dengan multi-layer shadow acak.
               </p>
             </header>
 
@@ -1045,7 +1093,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               <div class="stage-caption">Tactile Elevation Sandbox — Click Box to Copy Token</div>
               <div class="token-elevation-sandbox">
                 <!-- Shadow 1: Primary -->
-                <button type="button" class="elevation-box elevation-primary" data-copy-token="var(--shadow-primary)" aria-label="Salin var(--shadow-primary)">
+                <button type="button" class="elevation-box elevation-primary" data-copy-token="var(--shadow-primary)"
+                  aria-label="Salin var(--shadow-primary)">
                   <div class="elevation-content">
                     <span class="elevation-title">Primary Shadow</span>
                     <span class="elevation-token">--shadow-primary</span>
@@ -1055,7 +1104,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                 </button>
 
                 <!-- Shadow 2: Depth -->
-                <button type="button" class="elevation-box elevation-depth" data-copy-token="var(--shadow-depth)" aria-label="Salin var(--shadow-depth)">
+                <button type="button" class="elevation-box elevation-depth" data-copy-token="var(--shadow-depth)"
+                  aria-label="Salin var(--shadow-depth)">
                   <div class="elevation-content">
                     <span class="elevation-title">Depth Shadow</span>
                     <span class="elevation-token">--shadow-depth</span>
@@ -1065,7 +1115,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                 </button>
 
                 <!-- Shadow 3: Hover -->
-                <button type="button" class="elevation-box elevation-hover" data-copy-token="var(--shadow-hover)" aria-label="Salin var(--shadow-hover)">
+                <button type="button" class="elevation-box elevation-hover" data-copy-token="var(--shadow-hover)"
+                  aria-label="Salin var(--shadow-hover)">
                   <div class="elevation-content">
                     <span class="elevation-title">Hover Shadow</span>
                     <span class="elevation-token">--shadow-hover</span>
@@ -1075,7 +1126,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                 </button>
 
                 <!-- Shadow 4: Pressed -->
-                <button type="button" class="elevation-box elevation-pressed" data-copy-token="var(--shadow-pressed)" aria-label="Salin var(--shadow-pressed)">
+                <button type="button" class="elevation-box elevation-pressed" data-copy-token="var(--shadow-pressed)"
+                  aria-label="Salin var(--shadow-pressed)">
                   <div class="elevation-content">
                     <span class="elevation-title">Pressed Shadow</span>
                     <span class="elevation-token">--shadow-pressed</span>
@@ -1084,7 +1136,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                   </div>
                 </button>
               </div>
-              <div class="stage-status-indicator" id="statusShadowSystem">Dark surfaces cannot rely on purple shadow (1.14:1 contrast); use surface steps or light 1px borders instead</div>
+              <div class="stage-status-indicator" id="statusShadowSystem">Dark surfaces cannot rely on purple shadow
+                (1.14:1 contrast); use surface steps or light 1px borders instead</div>
             </div>
 
             <div class="tech-specs-bar">
@@ -1110,7 +1163,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
   --shadow-hover:   8px 8px 8px rgb(69 13 80 / 22%);   /* Derived small hover */
   --shadow-pressed: 2px 2px 2px rgb(69 13 80 / 25%);   /* Derived active */
 }</code></pre>
-              <button class="btn-copy-code" data-copy-target="token-shadow-system" aria-label="Salin kode CSS Signature Shadow & Depth">
+              <button class="btn-copy-code" data-copy-target="token-shadow-system"
+                aria-label="Salin kode CSS Signature Shadow & Depth">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -1129,7 +1183,9 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               </div>
               <h2 class="anim-title">Border Radius &amp; Shape Language</h2>
               <p class="anim-desc">
-                Radius baku <code>10px</code> untuk seluruh kartu, tombol, dan input form, dipadukan dengan radius pill <code>999px</code> untuk filter pills dan status badge. Termasuk border transparan 1px untuk mode High Contrast.
+                Radius baku <code>10px</code> untuk seluruh kartu, tombol, dan input form, dipadukan dengan radius pill
+                <code>999px</code> untuk filter pills dan status badge. Termasuk border transparan 1px untuk mode High
+                Contrast.
               </p>
             </header>
 
@@ -1137,7 +1193,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               <div class="stage-caption">Geometry Specimens — Click Specimen to Copy Token</div>
               <div class="token-radius-sandbox">
                 <!-- Specimen 1: Signature 10px -->
-                <button type="button" class="radius-specimen-card radius-card-10" data-copy-token="var(--radius)" aria-label="Salin var(--radius)">
+                <button type="button" class="radius-specimen-card radius-card-10" data-copy-token="var(--radius)"
+                  aria-label="Salin var(--radius)">
                   <div class="specimen-shape shape-radius-10">
                     <span class="shape-corner-label">10px</span>
                   </div>
@@ -1149,7 +1206,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                 </button>
 
                 <!-- Specimen 2: Pill 999px -->
-                <button type="button" class="radius-specimen-card radius-card-pill" data-copy-token="var(--radius-pill)" aria-label="Salin var(--radius-pill)">
+                <button type="button" class="radius-specimen-card radius-card-pill" data-copy-token="var(--radius-pill)"
+                  aria-label="Salin var(--radius-pill)">
                   <div class="specimen-shape shape-radius-pill">
                     <span class="shape-corner-label">999px Pill</span>
                   </div>
@@ -1161,7 +1219,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                 </button>
 
                 <!-- Specimen 3: Small 6px -->
-                <button type="button" class="radius-specimen-card radius-card-sm" data-copy-token="var(--radius-sm)" aria-label="Salin var(--radius-sm)">
+                <button type="button" class="radius-specimen-card radius-card-sm" data-copy-token="var(--radius-sm)"
+                  aria-label="Salin var(--radius-sm)">
                   <div class="specimen-shape shape-radius-6">
                     <span class="shape-corner-label">6px</span>
                   </div>
@@ -1184,7 +1243,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                   </div>
                 </div>
               </div>
-              <div class="stage-status-indicator" id="statusRadiusSystem">All control radii use 10px or 999px · No arbitrary odd radii</div>
+              <div class="stage-status-indicator" id="statusRadiusSystem">All control radii use 10px or 999px · No
+                arbitrary odd radii</div>
             </div>
 
             <div class="tech-specs-bar">
@@ -1213,7 +1273,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
 .card, .button, .input {
   border: 1px solid transparent; /* Visible in forced-colors mode */
 }</code></pre>
-              <button class="btn-copy-code" data-copy-target="token-radius-system" aria-label="Salin kode CSS Radius Tokens">
+              <button class="btn-copy-code" data-copy-target="token-radius-system"
+                aria-label="Salin kode CSS Radius Tokens">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -1232,7 +1293,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               </div>
               <h2 class="anim-title">Even-Number Spacing Scale</h2>
               <p class="anim-desc">
-                Skala modular genap tanpa angka ganjil untuk padding, margin, dan gap. Menjamin proporsi visual teratur dan bebas kerapuhan layout. Klik baris bar untuk menyalin token.
+                Skala modular genap tanpa angka ganjil untuk padding, margin, dan gap. Menjamin proporsi visual teratur
+                dan bebas kerapuhan layout. Klik baris bar untuk menyalin token.
               </p>
             </header>
 
@@ -1242,90 +1304,119 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                 <!-- 14 Even Spacing Steps -->
                 <div class="spacing-step-row" data-token="--space-4" data-px="4" data-scope="Internals">
                   <span class="step-label">--space-4</span>
-                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 4px;"></div></div>
+                  <div class="step-bar-track">
+                    <div class="step-bar-fill" style="width: 4px;"></div>
+                  </div>
                   <span class="step-px">4px</span>
                   <span class="step-scope">Micro gap / icon padding</span>
                 </div>
                 <div class="spacing-step-row" data-token="--space-8" data-px="8" data-scope="Internals">
                   <span class="step-label">--space-8</span>
-                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 8px;"></div></div>
+                  <div class="step-bar-track">
+                    <div class="step-bar-fill" style="width: 8px;"></div>
+                  </div>
                   <span class="step-px">8px</span>
                   <span class="step-scope">Label &rarr; Heading gap</span>
                 </div>
                 <div class="spacing-step-row" data-token="--space-12" data-px="12" data-scope="Internals">
                   <span class="step-label">--space-12</span>
-                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 14px;"></div></div>
+                  <div class="step-bar-track">
+                    <div class="step-bar-fill" style="width: 14px;"></div>
+                  </div>
                   <span class="step-px">12px</span>
                   <span class="step-scope">Card sub-element spacing</span>
                 </div>
                 <div class="spacing-step-row" data-token="--space-16" data-px="16" data-scope="Related">
                   <span class="step-label">--space-16</span>
-                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 22px;"></div></div>
+                  <div class="step-bar-track">
+                    <div class="step-bar-fill" style="width: 22px;"></div>
+                  </div>
                   <span class="step-px">16px</span>
                   <span class="step-scope">Base mobile gutter &amp; padding</span>
                 </div>
                 <div class="spacing-step-row" data-token="--space-20" data-px="20" data-scope="Related">
                   <span class="step-label">--space-20</span>
-                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 30px;"></div></div>
+                  <div class="step-bar-track">
+                    <div class="step-bar-fill" style="width: 30px;"></div>
+                  </div>
                   <span class="step-px">20px</span>
                   <span class="step-scope">Tablet grid gutter</span>
                 </div>
                 <div class="spacing-step-row" data-token="--space-24" data-px="24" data-scope="Related">
                   <span class="step-label">--space-24</span>
-                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 40px;"></div></div>
+                  <div class="step-bar-track">
+                    <div class="step-bar-fill" style="width: 40px;"></div>
+                  </div>
                   <span class="step-px">24px</span>
                   <span class="step-scope">Desktop gutter / card padding</span>
                 </div>
                 <div class="spacing-step-row" data-token="--space-32" data-px="32" data-scope="Groups">
                   <span class="step-label">--space-32</span>
-                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 58px;"></div></div>
+                  <div class="step-bar-track">
+                    <div class="step-bar-fill" style="width: 58px;"></div>
+                  </div>
                   <span class="step-px">32px</span>
                   <span class="step-scope">Content block grouping</span>
                 </div>
                 <div class="spacing-step-row" data-token="--space-40" data-px="40" data-scope="Groups">
                   <span class="step-label">--space-40</span>
-                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 76px;"></div></div>
+                  <div class="step-bar-track">
+                    <div class="step-bar-fill" style="width: 76px;"></div>
+                  </div>
                   <span class="step-px">40px</span>
                   <span class="step-scope">Section padding rhythm</span>
                 </div>
                 <div class="spacing-step-row" data-token="--space-48" data-px="48" data-scope="Sections">
                   <span class="step-label">--space-48</span>
-                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 96px;"></div></div>
+                  <div class="step-bar-track">
+                    <div class="step-bar-fill" style="width: 96px;"></div>
+                  </div>
                   <span class="step-px">48px</span>
                   <span class="step-scope">Mobile section separation</span>
                 </div>
                 <div class="spacing-step-row" data-token="--space-56" data-px="56" data-scope="Sections">
                   <span class="step-label">--space-56</span>
-                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 116px;"></div></div>
+                  <div class="step-bar-track">
+                    <div class="step-bar-fill" style="width: 116px;"></div>
+                  </div>
                   <span class="step-px">56px</span>
                   <span class="step-scope">Medium section padding</span>
                 </div>
                 <div class="spacing-step-row" data-token="--space-64" data-px="64" data-scope="Sections">
                   <span class="step-label">--space-64</span>
-                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 138px;"></div></div>
+                  <div class="step-bar-track">
+                    <div class="step-bar-fill" style="width: 138px;"></div>
+                  </div>
                   <span class="step-px">64px</span>
                   <span class="step-scope">Tablet section separation</span>
                 </div>
                 <div class="spacing-step-row" data-token="--space-80" data-px="80" data-scope="Sections">
                   <span class="step-label">--space-80</span>
-                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 172px;"></div></div>
+                  <div class="step-bar-track">
+                    <div class="step-bar-fill" style="width: 172px;"></div>
+                  </div>
                   <span class="step-px">80px</span>
                   <span class="step-scope">Large block separation</span>
                 </div>
                 <div class="spacing-step-row" data-token="--space-96" data-px="96" data-scope="Sections">
                   <span class="step-label">--space-96</span>
-                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 210px;"></div></div>
+                  <div class="step-bar-track">
+                    <div class="step-bar-fill" style="width: 210px;"></div>
+                  </div>
                   <span class="step-px">96px</span>
                   <span class="step-scope">Desktop section gap</span>
                 </div>
                 <div class="spacing-step-row" data-token="--space-128" data-px="128" data-scope="Sections">
                   <span class="step-label">--space-128</span>
-                  <div class="step-bar-track"><div class="step-bar-fill" style="width: 260px;"></div></div>
+                  <div class="step-bar-track">
+                    <div class="step-bar-fill" style="width: 260px;"></div>
+                  </div>
                   <span class="step-px">128px</span>
                   <span class="step-scope">Hero breathing room</span>
                 </div>
               </div>
-              <div class="stage-status-indicator" id="statusSpacingScale">Click any row to copy var(--space-X) · Odd-number values strictly prohibited</div>
+              <div class="stage-status-indicator" id="statusSpacingScale">Click any row to copy var(--space-X) ·
+                Odd-number values strictly prohibited</div>
             </div>
 
             <div class="tech-specs-bar">
@@ -1351,7 +1442,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
   --space-48:  48px;   --space-56:  56px;   --space-64:  64px;   --space-80:  80px;
   --space-96:  96px;   --space-128: 128px;
 }</code></pre>
-              <button class="btn-copy-code" data-copy-target="token-spacing-scale" aria-label="Salin kode CSS Spacing Scale">
+              <button class="btn-copy-code" data-copy-target="token-spacing-scale"
+                aria-label="Salin kode CSS Spacing Scale">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -1370,20 +1462,23 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               </div>
               <h2 class="anim-title">Fluid Typography Scale</h2>
               <p class="anim-desc">
-                Skala tipografi responsif Rubik berbasis <code>clamp()</code> dengan batas <code>rem</code> dan interpolasi <code>vw</code>. Menyesuaikan ukuran secara mulus antara 375px hingga 1280px+ tanpa lonjakan mendadak.
+                Skala tipografi responsif Rubik berbasis <code>clamp()</code> dengan batas <code>rem</code> dan
+                interpolasi <code>vw</code>. Menyesuaikan ukuran secara mulus antara 375px hingga 1280px+ tanpa lonjakan
+                mendadak.
               </p>
             </header>
 
             <div class="stage-canvas">
               <div class="stage-caption">Interactive Viewport Width Simulator (360px &mdash; 1440px)</div>
-              
+
               <!-- Viewport Width Slider for live clamp simulation -->
               <div class="type-scrubber-wrap">
                 <div class="scrubber-controls">
                   <label for="typeWidthSlider" class="scrubber-label">Simulated Viewport Width:</label>
                   <span class="scrubber-val" id="scrubberVal">1280px (Desktop)</span>
                 </div>
-                <input type="range" min="360" max="1440" value="1280" step="10" class="type-width-slider" id="typeWidthSlider">
+                <input type="range" min="360" max="1440" value="1280" step="10" class="type-width-slider"
+                  id="typeWidthSlider">
               </div>
 
               <div class="token-type-ladder" id="tokenTypeLadder">
@@ -1444,7 +1539,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                     <span class="type-clamp-formula">clamp(1.125rem, 1.05rem + 0.25vw, 1.25rem)</span>
                     <span class="type-computed-px" id="compIntro">20px (Desktop)</span>
                   </div>
-                  <div class="type-render-sample sample-intro">Quietly expressive personal aesthetic built for longevity.</div>
+                  <div class="type-render-sample sample-intro">Quietly expressive personal aesthetic built for
+                    longevity.</div>
                 </div>
 
                 <!-- Level: Body -->
@@ -1455,7 +1551,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                     <span class="type-computed-px">16px Fixed</span>
                   </div>
                   <p class="type-render-sample sample-body">
-                    Body text uses 16px font size with comfortable 1.6 line height and maximum measure constrained to 65 characters per line (<code>--measure: 65ch</code>) to maintain readable eye-tracking.
+                    Body text uses 16px font size with comfortable 1.6 line height and maximum measure constrained to 65
+                    characters per line (<code>--measure: 65ch</code>) to maintain readable eye-tracking.
                   </p>
                 </div>
 
@@ -1466,10 +1563,12 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                     <span class="type-clamp-formula">0.875rem &middot; 0.75rem (Minimum accessible size)</span>
                     <span class="type-computed-px">14px / 12px</span>
                   </div>
-                  <div class="type-render-sample sample-caption">Metadata &middot; Timestamps &middot; Secondary Badges &middot; System Version 2.0</div>
+                  <div class="type-render-sample sample-caption">Metadata &middot; Timestamps &middot; Secondary Badges
+                    &middot; System Version 2.0</div>
                 </div>
               </div>
-              <div class="stage-status-indicator" id="statusTypography">Drag slider above to watch clamp() headings fluidly interpolate in real time</div>
+              <div class="stage-status-indicator" id="statusTypography">Drag slider above to watch clamp() headings
+                fluidly interpolate in real time</div>
             </div>
 
             <div class="tech-specs-bar">
@@ -1507,7 +1606,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
   --leading-body: 1.6;     --leading-small: 1.5;
   --measure: 65ch;
 }</code></pre>
-              <button class="btn-copy-code" data-copy-target="token-typography-scale" aria-label="Salin kode CSS Typography Tokens">
+              <button class="btn-copy-code" data-copy-target="token-typography-scale"
+                aria-label="Salin kode CSS Typography Tokens">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -1526,16 +1626,20 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               </div>
               <h2 class="anim-title">Motion &amp; Timing Tokens</h2>
               <p class="anim-desc">
-                Kurva easing alami <code>cubic-bezier(0.2, 0.8, 0.2, 1)</code> dan token durasi terstandarisasi untuk mikro-interaksi, aksi UI, transisi spatial, dan entrance. Menjamin seluruh komponen bergerak dengan harmonis dan taktil.
+                Kurva easing alami <code>cubic-bezier(0.2, 0.8, 0.2, 1)</code> dan token durasi terstandarisasi untuk
+                mikro-interaksi, aksi UI, transisi spatial, dan entrance. Menjamin seluruh komponen bergerak dengan
+                harmonis dan taktil.
               </p>
             </header>
 
             <div class="stage-canvas">
-              <div class="stage-caption">Timing Comparison &amp; Live Motion Benchmark (Klik baris atau tombol untuk menguji)</div>
-              
+              <div class="stage-caption">Timing Comparison &amp; Live Motion Benchmark (Klik baris atau tombol untuk
+                menguji)</div>
+
               <div class="motion-timing-demo-wrap">
                 <!-- Bar 1: Micro -->
-                <div class="timing-meter-row" data-benchmark-row="micro" role="button" tabindex="0" title="Klik untuk memicu animasi durasi ini (150ms)">
+                <div class="timing-meter-row" data-benchmark-row="micro" role="button" tabindex="0"
+                  title="Klik untuk memicu animasi durasi ini (150ms)">
                   <div class="timing-meta-col">
                     <span class="timing-name">Micro Interaction</span>
                     <span class="timing-token">--dur-micro (150ms)</span>
@@ -1548,7 +1652,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                 </div>
 
                 <!-- Bar 2: UI Standard -->
-                <div class="timing-meter-row" data-benchmark-row="ui" role="button" tabindex="0" title="Klik untuk memicu animasi durasi ini (200ms)">
+                <div class="timing-meter-row" data-benchmark-row="ui" role="button" tabindex="0"
+                  title="Klik untuk memicu animasi durasi ini (200ms)">
                   <div class="timing-meta-col">
                     <span class="timing-name">Standard UI</span>
                     <span class="timing-token">--dur-ui (200ms)</span>
@@ -1561,7 +1666,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                 </div>
 
                 <!-- Bar 3: Reveal -->
-                <div class="timing-meter-row" data-benchmark-row="reveal" role="button" tabindex="0" title="Klik untuk memicu animasi durasi ini (400ms)">
+                <div class="timing-meter-row" data-benchmark-row="reveal" role="button" tabindex="0"
+                  title="Klik untuk memicu animasi durasi ini (400ms)">
                   <div class="timing-meta-col">
                     <span class="timing-name">Content Reveal</span>
                     <span class="timing-token">--dur-reveal (400ms)</span>
@@ -1574,7 +1680,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                 </div>
 
                 <!-- Bar 4: Spatial Move -->
-                <div class="timing-meter-row" data-benchmark-row="move" role="button" tabindex="0" title="Klik untuk memicu animasi durasi ini (500ms)">
+                <div class="timing-meter-row" data-benchmark-row="move" role="button" tabindex="0"
+                  title="Klik untuk memicu animasi durasi ini (500ms)">
                   <div class="timing-meta-col">
                     <span class="timing-name">Spatial Movement</span>
                     <span class="timing-token">--dur-move (500ms)</span>
@@ -1589,12 +1696,14 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                 <div class="motion-benchmark-trigger-row">
                   <div class="benchmark-controls-left">
                     <button type="button" class="demo-tactile-btn" id="btnTestMotionBenchmark">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
                         <polygon points="5 3 19 12 5 21 5 3"></polygon>
                       </svg>
                       <span>Play All Timing Benchmark (Full Track)</span>
                     </button>
-                    <span class="benchmark-live-status" id="benchmarkLiveStatus">Klik tombol atau klik salah satu baris di atas</span>
+                    <span class="benchmark-live-status" id="benchmarkLiveStatus">Klik tombol atau klik salah satu baris
+                      di atas</span>
                   </div>
                   <span class="motion-easing-label">Easing: <code>cubic-bezier(0.2, 0.8, 0.2, 1)</code></span>
                 </div>
@@ -1604,11 +1713,13 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                   <div class="distance-specimen-card" id="demoHoverLiftCard">
                     <div class="distance-specimen-preview">
                       <div class="lift-comparison-column">
-                        <button type="button" class="mini-lift-btn standard-lift" id="btnTestLiftStandard" title="Hover untuk menguji elevasi standar semenitwasted">
+                        <button type="button" class="mini-lift-btn standard-lift" id="btnTestLiftStandard"
+                          title="Hover untuk menguji elevasi standar semenitwasted">
                           <span>Hover: -2px (Standar)</span>
                           <span class="lift-badge-spec">semenitwasted</span>
                         </button>
-                        <button type="button" class="mini-lift-btn exaggerated-lift" id="btnTestLiftExaggerated" title="Hover untuk membandingkan dengan elevasi berlebihan">
+                        <button type="button" class="mini-lift-btn exaggerated-lift" id="btnTestLiftExaggerated"
+                          title="Hover untuk membandingkan dengan elevasi berlebihan">
                           <span>Hover: -8px (Berlebihan)</span>
                           <span class="lift-badge-spec non-std">non-standard</span>
                         </button>
@@ -1618,7 +1729,10 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                       <span class="distance-name">Tactile Hover Lift (Mengapa Hanya -2px?)</span>
                       <span class="distance-token"><code>--lift: -2px</code> (Bukan -8px atau -12px)</span>
                       <p class="distance-desc">
-                        <strong>Filosofi Restraint:</strong> Pada semenitwasted (<em>animation.md Section 8</em>), gerakan hover dibatasi hanya <strong>-2px</strong> agar elemen tetap terasa berpijak mantap (<em>tactile &amp; grounded</em>). Elevasi besar (-8px ke atas) membuat UI terasa melompat berlebihan dan tidak tenang.
+                        <strong>Filosofi Restraint:</strong> Pada semenitwasted (<em>animation.md Section 8</em>),
+                        gerakan hover dibatasi hanya <strong>-2px</strong> agar elemen tetap terasa berpijak mantap
+                        (<em>tactile &amp; grounded</em>). Elevasi besar (-8px ke atas) membuat UI terasa melompat
+                        berlebihan dan tidak tenang.
                       </p>
                     </div>
                   </div>
@@ -1629,24 +1743,31 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                         <div class="mini-reveal-box" id="miniRevealBox">
                           <span>12px Entrance</span>
                         </div>
-                        <button type="button" class="mini-trigger-btn" id="btnTriggerRevealDemo" title="Klik untuk memutar ulang animasi entrance 12px">
-                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        <button type="button" class="mini-trigger-btn" id="btnTriggerRevealDemo"
+                          title="Klik untuk memutar ulang animasi entrance 12px">
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                          </svg>
                           <span>Replay Entrance (12px)</span>
                         </button>
                       </div>
                     </div>
                     <div class="distance-specimen-info">
                       <span class="distance-name">Reveal Distance &amp; Easing</span>
-                      <span class="distance-token"><code>--reveal-distance: 12px</code> &bull; <code>--dur-reveal: 400ms</code></span>
+                      <span class="distance-token"><code>--reveal-distance: 12px</code> &bull;
+                        <code>--dur-reveal: 400ms</code></span>
                       <p class="distance-desc">
-                        Pergeseran vertikal halus 12px berbarengan dengan transisi opacity 0 &rarr; 1. Jarak 12px cukup untuk memberikan kesan kemunculan dinamis tanpa mengganggu fokus membaca pengguna.
+                        Pergeseran vertikal halus 12px berbarengan dengan transisi opacity 0 &rarr; 1. Jarak 12px cukup
+                        untuk memberikan kesan kemunculan dinamis tanpa mengganggu fokus membaca pengguna.
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="stage-status-indicator" id="statusMotionTokens">Under prefers-reduced-motion: --reveal-distance &rarr; 0px, --lift &rarr; 0px, durations &rarr; 150ms instant</div>
+              <div class="stage-status-indicator" id="statusMotionTokens">Under prefers-reduced-motion:
+                --reveal-distance &rarr; 0px, --lift &rarr; 0px, durations &rarr; 150ms instant</div>
             </div>
 
             <div class="tech-specs-bar">
@@ -1683,7 +1804,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
     --stagger-step: 0ms;
   }
 }</code></pre>
-              <button class="btn-copy-code" data-copy-target="token-motion-tokens" aria-label="Salin kode CSS Motion Tokens">
+              <button class="btn-copy-code" data-copy-target="token-motion-tokens"
+                aria-label="Salin kode CSS Motion Tokens">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -1702,24 +1824,35 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               </div>
               <h2 class="anim-title">Grid, Gutters &amp; Accessibility</h2>
               <p class="anim-desc">
-                Sistem kolom 12-8-4 responsif, kontainer maks 1200px / 1440px, tap target minimal 44px, dan cincin fokus kontras tinggi untuk seluruh interaksi keyboard.
+                Sistem kolom 12-8-4 responsif, kontainer maks 1200px / 1440px, tap target minimal 44px, dan cincin fokus
+                kontras tinggi untuk seluruh interaksi keyboard.
               </p>
             </header>
 
             <div class="stage-canvas">
               <div class="stage-caption">Responsive Columns &amp; Touch Target Demonstration</div>
-              
+
               <div class="layout-demo-sandbox">
                 <!-- Mini Grid Columns Reflow Visualization -->
                 <div class="mini-grid-preview">
                   <div class="mini-grid-header">
                     <span class="mini-grid-title">Responsive Columns Matrix:</span>
-                    <span class="mini-grid-breakpoint">Desktop: 12 Cols &middot; Tablet: 8 Cols &middot; Mobile: 4 Cols</span>
+                    <span class="mini-grid-breakpoint">Desktop: 12 Cols &middot; Tablet: 8 Cols &middot; Mobile: 4
+                      Cols</span>
                   </div>
                   <div class="mini-columns-row" aria-hidden="true">
-                    <div class="col-pill">1</div><div class="col-pill">2</div><div class="col-pill">3</div><div class="col-pill">4</div>
-                    <div class="col-pill col-tablet">5</div><div class="col-pill col-tablet">6</div><div class="col-pill col-tablet">7</div><div class="col-pill col-tablet">8</div>
-                    <div class="col-pill col-desktop">9</div><div class="col-pill col-desktop">10</div><div class="col-pill col-desktop">11</div><div class="col-pill col-desktop">12</div>
+                    <div class="col-pill">1</div>
+                    <div class="col-pill">2</div>
+                    <div class="col-pill">3</div>
+                    <div class="col-pill">4</div>
+                    <div class="col-pill col-tablet">5</div>
+                    <div class="col-pill col-tablet">6</div>
+                    <div class="col-pill col-tablet">7</div>
+                    <div class="col-pill col-tablet">8</div>
+                    <div class="col-pill col-desktop">9</div>
+                    <div class="col-pill col-desktop">10</div>
+                    <div class="col-pill col-desktop">11</div>
+                    <div class="col-pill col-desktop">12</div>
                   </div>
                 </div>
 
@@ -1747,7 +1880,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                 </div>
               </div>
 
-              <div class="stage-status-indicator" id="statusLayoutGrid">Sticky navbar includes scroll-padding-top to avoid obscuring focused elements</div>
+              <div class="stage-status-indicator" id="statusLayoutGrid">Sticky navbar includes scroll-padding-top to
+                avoid obscuring focused elements</div>
             </div>
 
             <div class="tech-specs-bar">
@@ -1777,7 +1911,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
 }
 @media (min-width: 768px)  { :root { --gutter: 20px; } }
 @media (min-width: 1024px) { :root { --gutter: 24px; } }</code></pre>
-              <button class="btn-copy-code" data-copy-target="token-layout-grid" aria-label="Salin kode CSS Layout & Grid Tokens">
+              <button class="btn-copy-code" data-copy-target="token-layout-grid"
+                aria-label="Salin kode CSS Layout & Grid Tokens">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -1796,7 +1931,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               </div>
               <h2 class="anim-title">Complete Design Tokens (:root)</h2>
               <p class="anim-desc">
-                Blok CSS variabel lengkap yang siap disalin dan digunakan langsung pada seluruh berkas stylesheet proyek untuk menjamin keselarasan dengan sistem desain semenitwasted.
+                Blok CSS variabel lengkap yang siap disalin dan digunakan langsung pada seluruh berkas stylesheet proyek
+                untuk menjamin keselarasan dengan sistem desain semenitwasted.
               </p>
             </header>
 
@@ -1887,7 +2023,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
     --stagger-step: 0ms;
   }
 }</code></pre>
-              <button class="btn-copy-code" data-copy-target="token-master-export" aria-label="Salin seluruh Master Design Tokens">
+              <button class="btn-copy-code" data-copy-target="token-master-export"
+                aria-label="Salin seluruh Master Design Tokens">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -1901,7 +2038,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
       </section>
 
       <!-- COMPONENTS & UI CATALOG -->
-      <section class="components-catalog" id="componentsCatalog" aria-label="Katalog Components &amp; UI semenitwasted" style="display: none;">
+      <section class="components-catalog" id="componentsCatalog" aria-label="Katalog Components &amp; UI semenitwasted"
+        style="display: none;">
         <div class="bento-catalog-grid">
 
           <!-- 01. BUTTON HIERARCHY & STATES -->
@@ -1913,7 +2051,9 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               </div>
               <h2 class="anim-title">Button Hierarchy &amp; States</h2>
               <p class="anim-desc">
-                Empat tingkat tombol &mdash; primer, sekunder, quiet, dan icon-only &mdash; dengan radius 10px, area sentuh minimal 44px, dan state yang konsisten. Gunakan satu aksi primer per kelompok agar hierarki tetap terbaca.
+                Empat tingkat tombol &mdash; primer, sekunder, quiet, dan icon-only &mdash; dengan radius 10px, area
+                sentuh minimal 44px, dan state yang konsisten. Gunakan satu aksi primer per kelompok agar hierarki tetap
+                terbaca.
               </p>
             </header>
 
@@ -1925,7 +2065,10 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                 <button type="button" class="ui-btn ui-btn--secondary" id="cmpBtnSecondary">Aksi Sekunder</button>
                 <button type="button" class="ui-btn ui-btn--quiet" id="cmpBtnQuiet">Aksi Ringan</button>
                 <button type="button" class="ui-btn ui-btn--icon" id="cmpBtnIcon" aria-label="Tambah item">
-                  <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+                  <svg aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
                 </button>
                 <button type="button" class="ui-btn ui-btn--primary" id="cmpBtnLoading">
                   <span class="ui-spinner" aria-hidden="true"></span>
@@ -1955,7 +2098,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                   <span class="ui-state-token">outline 2px &middot; offset 2px</span>
                 </li>
                 <li class="ui-state-item">
-                  <span class="ui-btn ui-btn--primary ui-specimen is-loading" aria-hidden="true"><span class="ui-spinner"></span>Label</span>
+                  <span class="ui-btn ui-btn--primary ui-specimen is-loading" aria-hidden="true"><span
+                      class="ui-spinner"></span>Label</span>
                   <span class="ui-state-name">Loading</span>
                   <span class="ui-state-token">aria-busy &middot; disabled</span>
                 </li>
@@ -1966,7 +2110,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                 </li>
               </ul>
 
-              <div class="stage-status-indicator" id="cmpButtonStatus" role="status">Klik tombol mana pun untuk melihat umpan balik</div>
+              <div class="stage-status-indicator" id="cmpButtonStatus" role="status">Klik tombol mana pun untuk melihat
+                umpan balik</div>
             </div>
 
             <div class="tech-specs-bar">
@@ -2006,7 +2151,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
 .btn:focus-visible    { outline: var(--focus-ring); outline-offset: var(--focus-offset); }
 .btn:disabled         { color: var(--color-text-disabled); box-shadow: none; transform: none; cursor: not-allowed; }</code></pre>
               <button class="btn-copy-code" aria-label="Salin kode CSS Button">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                 </svg>
@@ -2024,7 +2170,9 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               </div>
               <h2 class="anim-title">Cards &amp; Signature Surfaces</h2>
               <p class="anim-desc">
-                Keluarga kecil permukaan yang mudah dikenali: standard, elevated, depth, interactive, dan image/content. Kartu interaktif menunjukkan hover hanya lewat pergerakan &minus;2px, sehingga nilai shadow signature tidak pernah diubah.
+                Keluarga kecil permukaan yang mudah dikenali: standard, elevated, depth, interactive, dan image/content.
+                Kartu interaktif menunjukkan hover hanya lewat pergerakan &minus;2px, sehingga nilai shadow signature
+                tidak pernah diubah.
               </p>
             </header>
 
@@ -2034,7 +2182,12 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               <div class="ui-surface-bento">
                 <figure class="ui-card ui-card--media">
                   <div class="ui-media-placeholder" role="img" aria-label="Placeholder gambar proyek, rasio 4:3">
-                    <svg aria-hidden="true" focusable="false" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></svg>
+                    <svg aria-hidden="true" focusable="false" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="1.5">
+                      <rect x="3" y="4" width="18" height="16" rx="2" />
+                      <circle cx="9" cy="10" r="2" />
+                      <path d="m21 16-5-5-9 9" />
+                    </svg>
                     <span>[Gambar proyek &middot; 4:3]</span>
                   </div>
                   <figcaption class="ui-card-body">
@@ -2115,7 +2268,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
 
 @media (forced-colors: active) { .card { border-color: CanvasText; } }</code></pre>
               <button class="btn-copy-code" aria-label="Salin kode CSS Card">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                 </svg>
@@ -2133,7 +2287,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               </div>
               <h2 class="anim-title">Form Fields &amp; Validation</h2>
               <p class="anim-desc">
-                Label selalu terlihat di atas field, batas 1px dengan kontras 3:1, hint dan pesan error terhubung lewat <code>aria-describedby</code>. Error ditandai teks + ikon, bukan warna saja.
+                Label selalu terlihat di atas field, batas 1px dengan kontras 3:1, hint dan pesan error terhubung lewat
+                <code>aria-describedby</code>. Error ditandai teks + ikon, bukan warna saja.
               </p>
             </header>
 
@@ -2143,20 +2298,30 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               <form class="ui-form" id="cmpFormDemo" novalidate>
                 <div class="ui-field">
                   <label class="ui-label" for="cmpName">Nama <span class="ui-req">(wajib)</span></label>
-                  <input class="ui-input" id="cmpName" name="name" type="text" autocomplete="name" required minlength="2" aria-describedby="cmpNameHint">
+                  <input class="ui-input" id="cmpName" name="name" type="text" autocomplete="name" required
+                    minlength="2" aria-describedby="cmpNameHint">
                   <p class="ui-hint" id="cmpNameHint">Minimal 2 karakter.</p>
                   <p class="ui-error" id="cmpNameError" hidden>
-                    <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                    <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 8v4M12 16h.01" />
+                    </svg>
                     <span>Nama belum diisi. Tulis minimal 2 karakter.</span>
                   </p>
                 </div>
 
                 <div class="ui-field">
                   <label class="ui-label" for="cmpEmail">Email <span class="ui-req">(wajib)</span></label>
-                  <input class="ui-input" id="cmpEmail" name="email" type="email" autocomplete="email" required aria-describedby="cmpEmailHint">
+                  <input class="ui-input" id="cmpEmail" name="email" type="email" autocomplete="email" required
+                    aria-describedby="cmpEmailHint">
                   <p class="ui-hint" id="cmpEmailHint">Contoh: nama@domain.com</p>
                   <p class="ui-error" id="cmpEmailError" hidden>
-                    <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                    <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 8v4M12 16h.01" />
+                    </svg>
                     <span>Format email belum benar. Tambahkan tanda @ dan nama domain.</span>
                   </p>
                 </div>
@@ -2175,7 +2340,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
 
                 <div class="ui-field">
                   <label class="ui-label" for="cmpMessage">Pesan <span class="ui-opt">(opsional)</span></label>
-                  <textarea class="ui-input ui-textarea" id="cmpMessage" name="message" rows="3" maxlength="200" aria-describedby="cmpMessageCount"></textarea>
+                  <textarea class="ui-input ui-textarea" id="cmpMessage" name="message" rows="3" maxlength="200"
+                    aria-describedby="cmpMessageCount"></textarea>
                   <p class="ui-hint ui-hint--right" id="cmpMessageCount">0 / 200 karakter</p>
                 </div>
 
@@ -2212,7 +2378,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
 &lt;p id="email-error"&gt;Format email belum benar.&lt;/p&gt;
 &lt;p id="form-status" role="status"&gt;&lt;/p&gt;</code></pre>
               <button class="btn-copy-code" aria-label="Salin kode Form Field">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                 </svg>
@@ -2230,7 +2397,9 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               </div>
               <h2 class="anim-title">Selection Controls</h2>
               <p class="anim-desc">
-                Checkbox dan radio native dikelompokkan dalam <code>fieldset</code> + <code>legend</code>, setiap baris setinggi 44px. Switch memakai <code>role="switch"</code> dengan label teks status, sehingga tidak bergantung pada warna.
+                Checkbox dan radio native dikelompokkan dalam <code>fieldset</code> + <code>legend</code>, setiap baris
+                setinggi 44px. Switch memakai <code>role="switch"</code> dengan label teks status, sehingga tidak
+                bergantung pada warna.
               </p>
             </header>
 
@@ -2240,28 +2409,35 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               <div class="ui-selection-wrap" id="cmpSelectionGroup">
                 <fieldset class="ui-fieldset">
                   <legend class="ui-legend">Notifikasi</legend>
-                  <label class="ui-check"><input type="checkbox" name="cmpNotif" value="Email mingguan" checked><span>Email mingguan</span></label>
-                  <label class="ui-check"><input type="checkbox" name="cmpNotif" value="Update proyek baru"><span>Update proyek baru</span></label>
-                  <label class="ui-check is-disabled"><input type="checkbox" name="cmpNotif" value="SMS" disabled><span>SMS (belum tersedia)</span></label>
+                  <label class="ui-check"><input type="checkbox" name="cmpNotif" value="Email mingguan"
+                      checked><span>Email mingguan</span></label>
+                  <label class="ui-check"><input type="checkbox" name="cmpNotif" value="Update proyek baru"><span>Update
+                      proyek baru</span></label>
+                  <label class="ui-check is-disabled"><input type="checkbox" name="cmpNotif" value="SMS"
+                      disabled><span>SMS (belum tersedia)</span></label>
                 </fieldset>
 
                 <fieldset class="ui-fieldset">
                   <legend class="ui-legend">Kepadatan tampilan</legend>
-                  <label class="ui-check"><input type="radio" name="cmpDensity" value="Lapang" checked><span>Lapang (default)</span></label>
-                  <label class="ui-check"><input type="radio" name="cmpDensity" value="Standar"><span>Standar</span></label>
+                  <label class="ui-check"><input type="radio" name="cmpDensity" value="Lapang" checked><span>Lapang
+                      (default)</span></label>
+                  <label class="ui-check"><input type="radio" name="cmpDensity"
+                      value="Standar"><span>Standar</span></label>
                   <label class="ui-check"><input type="radio" name="cmpDensity" value="Rapat"><span>Rapat</span></label>
                 </fieldset>
 
                 <div class="ui-switch-row">
                   <span class="ui-switch-text" id="cmpSwitchLabel">Mode fokus</span>
-                  <button type="button" class="ui-switch" id="cmpSwitch" role="switch" aria-checked="false" aria-labelledby="cmpSwitchLabel">
+                  <button type="button" class="ui-switch" id="cmpSwitch" role="switch" aria-checked="false"
+                    aria-labelledby="cmpSwitchLabel">
                     <span class="ui-switch-thumb" aria-hidden="true"></span>
                   </button>
                   <span class="ui-switch-state" id="cmpSwitchState" aria-hidden="true">Nonaktif</span>
                 </div>
               </div>
 
-              <p class="stage-status-indicator ui-selection-summary" id="cmpSelectionSummary" role="status">Notifikasi: Email mingguan &middot; Kepadatan: Lapang &middot; Mode fokus: nonaktif</p>
+              <p class="stage-status-indicator ui-selection-summary" id="cmpSelectionSummary" role="status">Notifikasi:
+                Email mingguan &middot; Kepadatan: Lapang &middot; Mode fokus: nonaktif</p>
             </div>
 
             <div class="card-snippet-drawer">
@@ -2285,7 +2461,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
   transition: transform var(--dur-micro) var(--ease-out); }
 .switch[aria-checked="true"] .switch__thumb { transform: translateX(20px); }</code></pre>
               <button class="btn-copy-code" aria-label="Salin kode Selection Controls">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                 </svg>
@@ -2303,7 +2480,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               </div>
               <h2 class="anim-title">Tags, Chips &amp; Status Badges</h2>
               <p class="anim-desc">
-                Tag statis untuk kategori, chip toggle dengan <code>aria-pressed</code> dan ikon centang, serta badge status semantik yang selalu menggabungkan warna, ikon, dan teks.
+                Tag statis untuk kategori, chip toggle dengan <code>aria-pressed</code> dan ikon centang, serta badge
+                status semantik yang selalu menggabungkan warna, ikon, dan teks.
               </p>
             </header>
 
@@ -2322,15 +2500,24 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                 <h3 class="ui-subhead" id="cmpChipHeading">Filter chip (toggle)</h3>
                 <div class="ui-chip-group" role="group" aria-labelledby="cmpChipHeading">
                   <button type="button" class="ui-chip" aria-pressed="true">
-                    <svg class="ui-chip-check" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+                    <svg class="ui-chip-check" aria-hidden="true" focusable="false" width="16" height="16"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>
                     <span>Branding</span>
                   </button>
                   <button type="button" class="ui-chip" aria-pressed="false">
-                    <svg class="ui-chip-check" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+                    <svg class="ui-chip-check" aria-hidden="true" focusable="false" width="16" height="16"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>
                     <span>Editorial</span>
                   </button>
                   <button type="button" class="ui-chip" aria-pressed="false">
-                    <svg class="ui-chip-check" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+                    <svg class="ui-chip-check" aria-hidden="true" focusable="false" width="16" height="16"
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>
                     <span>UI Kit</span>
                   </button>
                 </div>
@@ -2340,19 +2527,32 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                 <h3 class="ui-subhead">Status badge</h3>
                 <ul class="ui-badge-list" aria-label="Contoh status badge">
                   <li class="ui-badge ui-badge--neutral">
-                    <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="9"/></svg>
+                    <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5">
+                      <circle cx="12" cy="12" r="9" />
+                    </svg>
                     Draft
                   </li>
                   <li class="ui-badge ui-badge--success">
-                    <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+                    <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5">
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>
                     Terbit
                   </li>
                   <li class="ui-badge ui-badge--warning">
-                    <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+                    <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5">
+                      <path
+                        d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" />
+                    </svg>
                     Perlu ditinjau
                   </li>
                   <li class="ui-badge ui-badge--error">
-                    <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                    <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5">
+                      <path d="M18 6 6 18M6 6l12 12" />
+                    </svg>
                     Gagal
                   </li>
                 </ul>
@@ -2375,7 +2575,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
 .badge--warning { color: #7A4F00; background: rgb(138 90 0 / 12%); }
 .badge--error   { color: #B3261E; background: rgb(179 38 30 / 10%); }</code></pre>
               <button class="btn-copy-code" aria-label="Salin kode Tags dan Badges">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                 </svg>
@@ -2393,7 +2594,9 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
               </div>
               <h2 class="anim-title">Tabs, Segmented Controls &amp; Breadcrumb</h2>
               <p class="anim-desc">
-                Dua standar navigasi tab semenitwasted: <strong>Pola Hub/Kategori</strong> berupa Segmented Pill Switcher dengan indikator luncur halus (fluid sliding indicator) &amp; badge counter, serta <strong>Pola Konten/Dokumen</strong> berupa ARIA Tabs bergaris bawah dengan navigasi panah &amp; breadcrumb.
+                Dua standar navigasi tab semenitwasted: <strong>Pola Hub/Kategori</strong> berupa Segmented Pill
+                Switcher dengan indikator luncur halus (fluid sliding indicator) &amp; badge counter, serta <strong>Pola
+                  Konten/Dokumen</strong> berupa ARIA Tabs bergaris bawah dengan navigasi panah &amp; breadcrumb.
               </p>
             </header>
 
@@ -2404,36 +2607,44 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                   <span class="hero-eyebrow-dot"></span>
                   Pola A &mdash; Segmented Pill Switcher (Sliding Indicator + Badge Counters)
                 </span>
-                
-                <div class="ui-segmented-control" id="demoSegmentedControl" role="tablist" aria-label="Kategori Hub Standar">
+
+                <div class="ui-segmented-control" id="demoSegmentedControl" role="tablist"
+                  aria-label="Kategori Hub Standar">
                   <div class="ui-segmented-pill-bg" id="demoSegmentedPillBg" aria-hidden="true"></div>
-                  
-                  <button type="button" class="ui-segmented-btn active" role="tab" id="segTab1" data-target-panel="segPanel1" aria-selected="true" tabindex="0">
+
+                  <button type="button" class="ui-segmented-btn active" role="tab" id="segTab1"
+                    data-target-panel="segPanel1" aria-selected="true" tabindex="0">
                     <span>Motion &amp; Animation</span>
                     <span class="ui-segmented-badge">10</span>
                   </button>
-                  <button type="button" class="ui-segmented-btn" role="tab" id="segTab2" data-target-panel="segPanel2" aria-selected="false" tabindex="-1">
+                  <button type="button" class="ui-segmented-btn" role="tab" id="segTab2" data-target-panel="segPanel2"
+                    aria-selected="false" tabindex="-1">
                     <span>Design Tokens</span>
                     <span class="ui-segmented-badge">8 Groups</span>
                   </button>
-                  <button type="button" class="ui-segmented-btn" role="tab" id="segTab3" data-target-panel="segPanel3" aria-selected="false" tabindex="-1">
+                  <button type="button" class="ui-segmented-btn" role="tab" id="segTab3" data-target-panel="segPanel3"
+                    aria-selected="false" tabindex="-1">
                     <span>Components &amp; UI</span>
                     <span class="ui-segmented-badge">8 Sets</span>
                   </button>
-                  <button type="button" class="ui-segmented-btn disabled" role="tab" id="segTab4" aria-disabled="true" tabindex="-1" title="Akan datang">
+                  <button type="button" class="ui-segmented-btn disabled" role="tab" id="segTab4" aria-disabled="true"
+                    tabindex="-1" title="Akan datang">
                     <span>Vectors &amp; Icons</span>
                     <span class="ui-segmented-badge ui-segmented-badge--soon">Soon</span>
                   </button>
                 </div>
 
                 <div class="ui-segmented-panel" id="segPanel1" role="tabpanel" aria-labelledby="segTab1">
-                  <p><strong>Panel Aktif: Motion &amp; Animation.</strong> Menampilkan katalog 10 modul perilaku taktil gerak, kurva easing, dan timing tokens.</p>
+                  <p><strong>Panel Aktif: Motion &amp; Animation.</strong> Menampilkan katalog 10 modul perilaku taktil
+                    gerak, kurva easing, dan timing tokens.</p>
                 </div>
                 <div class="ui-segmented-panel" id="segPanel2" role="tabpanel" aria-labelledby="segTab2" hidden>
-                  <p><strong>Panel Aktif: Design Tokens.</strong> Menampilkan spesifikasi sistem nilai warna monokrom, bayangan bertingkat, radius, dan grid spacing.</p>
+                  <p><strong>Panel Aktif: Design Tokens.</strong> Menampilkan spesifikasi sistem nilai warna monokrom,
+                    bayangan bertingkat, radius, dan grid spacing.</p>
                 </div>
                 <div class="ui-segmented-panel" id="segPanel3" role="tabpanel" aria-labelledby="segTab3" hidden>
-                  <p><strong>Panel Aktif: Components &amp; UI.</strong> Menampilkan katalog komponen antarmuka mandiri: tombol, kartu bento, formulir, dan navigasi.</p>
+                  <p><strong>Panel Aktif: Components &amp; UI.</strong> Menampilkan katalog komponen antarmuka mandiri:
+                    tombol, kartu bento, formulir, dan navigasi.</p>
                 </div>
               </div>
 
@@ -2454,9 +2665,12 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
 
                 <div class="ui-tabs" id="cmpTabs">
                   <div class="ui-tablist" role="tablist" aria-label="Contoh tab studi kasus">
-                    <button type="button" class="ui-tab" role="tab" id="cmpTab1" aria-controls="cmpPanel1" aria-selected="true" tabindex="0">Ringkasan</button>
-                    <button type="button" class="ui-tab" role="tab" id="cmpTab2" aria-controls="cmpPanel2" aria-selected="false" tabindex="-1">Proses</button>
-                    <button type="button" class="ui-tab" role="tab" id="cmpTab3" aria-controls="cmpPanel3" aria-selected="false" tabindex="-1">Hasil</button>
+                    <button type="button" class="ui-tab" role="tab" id="cmpTab1" aria-controls="cmpPanel1"
+                      aria-selected="true" tabindex="0">Ringkasan</button>
+                    <button type="button" class="ui-tab" role="tab" id="cmpTab2" aria-controls="cmpPanel2"
+                      aria-selected="false" tabindex="-1">Proses</button>
+                    <button type="button" class="ui-tab" role="tab" id="cmpTab3" aria-controls="cmpPanel3"
+                      aria-selected="false" tabindex="-1">Hasil</button>
                   </div>
                   <div class="ui-tabpanel" role="tabpanel" id="cmpPanel1" aria-labelledby="cmpTab1" tabindex="0">
                     <p>[Ringkasan singkat studi kasus dalam 1&ndash;2 kalimat.]</p>
@@ -2470,7 +2684,8 @@ btn.style.transform = 'translate(0, 0)';</code></pre>
                 </div>
               </div>
 
-              <p class="ui-demo-note">Keyboard: <kbd>&larr;</kbd> <kbd>&rarr;</kbd> pindah tab &middot; <kbd>Home</kbd> / <kbd>End</kbd> ke ujung.</p>
+              <p class="ui-demo-note">Keyboard: <kbd>&larr;</kbd> <kbd>&rarr;</kbd> pindah tab &middot; <kbd>Home</kbd>
+                / <kbd>End</kbd> ke ujung.</p>
             </div>
 
             <div class="card-snippet-drawer">
@@ -2513,7 +2728,8 @@ function updatePill(btn, pillEl) {
   pillEl.style.width = `${btn.offsetWidth}px`;
 }</code></pre>
               <button class="btn-copy-code" aria-label="Salin kode Tabs dan Segmented Control">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                 </svg>
@@ -2531,7 +2747,8 @@ function updatePill(btn, pillEl) {
               </div>
               <h2 class="anim-title">Accordion</h2>
               <p class="anim-desc">
-                Tombol pemicu di dalam heading dengan <code>aria-expanded</code> yang sesuai state nyata. Panel membuka lewat transisi tinggi yang halus dan langsung instan pada reduced motion.
+                Tombol pemicu di dalam heading dengan <code>aria-expanded</code> yang sesuai state nyata. Panel membuka
+                lewat transisi tinggi yang halus dan langsung instan pada reduced motion.
               </p>
             </header>
 
@@ -2539,42 +2756,57 @@ function updatePill(btn, pillEl) {
               <div class="ui-accordion" id="cmpAccordion">
                 <div class="ui-accordion-item">
                   <h3 class="ui-accordion-heading">
-                    <button type="button" class="ui-accordion-trigger" id="cmpAccBtn1" aria-expanded="true" aria-controls="cmpAccPanel1">
+                    <button type="button" class="ui-accordion-trigger" id="cmpAccBtn1" aria-expanded="true"
+                      aria-controls="cmpAccPanel1">
                       <span>Kapan memakai accordion?</span>
-                      <svg class="ui-accordion-icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                      <svg class="ui-accordion-icon" aria-hidden="true" focusable="false" width="20" height="20"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
                     </button>
                   </h3>
                   <div class="ui-accordion-panel is-open" id="cmpAccPanel1" role="region" aria-labelledby="cmpAccBtn1">
                     <div class="ui-accordion-inner">
-                      <p>Untuk konten sekunder yang panjang, seperti FAQ atau detail teknis. Jangan sembunyikan informasi utama di dalam accordion.</p>
+                      <p>Untuk konten sekunder yang panjang, seperti FAQ atau detail teknis. Jangan sembunyikan
+                        informasi utama di dalam accordion.</p>
                     </div>
                   </div>
                 </div>
 
                 <div class="ui-accordion-item">
                   <h3 class="ui-accordion-heading">
-                    <button type="button" class="ui-accordion-trigger" id="cmpAccBtn2" aria-expanded="false" aria-controls="cmpAccPanel2">
+                    <button type="button" class="ui-accordion-trigger" id="cmpAccBtn2" aria-expanded="false"
+                      aria-controls="cmpAccPanel2">
                       <span>Bagaimana dengan keyboard?</span>
-                      <svg class="ui-accordion-icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                      <svg class="ui-accordion-icon" aria-hidden="true" focusable="false" width="20" height="20"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
                     </button>
                   </h3>
                   <div class="ui-accordion-panel" id="cmpAccPanel2" role="region" aria-labelledby="cmpAccBtn2">
                     <div class="ui-accordion-inner">
-                      <p>Pemicu adalah <code>&lt;button&gt;</code> asli, jadi Tab, Enter, dan Space langsung bekerja tanpa skrip tambahan.</p>
+                      <p>Pemicu adalah <code>&lt;button&gt;</code> asli, jadi Tab, Enter, dan Space langsung bekerja
+                        tanpa skrip tambahan.</p>
                     </div>
                   </div>
                 </div>
 
                 <div class="ui-accordion-item">
                   <h3 class="ui-accordion-heading">
-                    <button type="button" class="ui-accordion-trigger" id="cmpAccBtn3" aria-expanded="false" aria-controls="cmpAccPanel3">
+                    <button type="button" class="ui-accordion-trigger" id="cmpAccBtn3" aria-expanded="false"
+                      aria-controls="cmpAccPanel3">
                       <span>Apakah panel tertutup tetap diakses?</span>
-                      <svg class="ui-accordion-icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                      <svg class="ui-accordion-icon" aria-hidden="true" focusable="false" width="20" height="20"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
                     </button>
                   </h3>
                   <div class="ui-accordion-panel" id="cmpAccPanel3" role="region" aria-labelledby="cmpAccBtn3">
                     <div class="ui-accordion-inner">
-                      <p>Tidak. Panel tertutup memakai <code>visibility: hidden</code> sehingga tidak bisa difokus dan tidak dibacakan screen reader.</p>
+                      <p>Tidak. Panel tertutup memakai <code>visibility: hidden</code> sehingga tidak bisa difokus dan
+                        tidak dibacakan screen reader.</p>
                     </div>
                   </div>
                 </div>
@@ -2601,7 +2833,8 @@ function updatePill(btn, pillEl) {
 .panel__inner { overflow: hidden; }
 [aria-expanded="true"] .icon { transform: rotate(180deg); }</code></pre>
               <button class="btn-copy-code" aria-label="Salin kode Accordion">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                 </svg>
@@ -2619,42 +2852,67 @@ function updatePill(btn, pillEl) {
               </div>
               <h2 class="anim-title">Alerts, Toast &amp; Dialog</h2>
               <p class="anim-desc">
-                Alert inline dengan ikon + judul teks, toast di region <code>role="status"</code> yang sudah ada sejak awal, dan dialog <code>&lt;dialog&gt;</code> native: fokus terkunci, Escape menutup, fokus kembali ke pemicu.
+                Alert inline dengan ikon + judul teks, toast di region <code>role="status"</code> yang sudah ada sejak
+                awal, dan dialog <code>&lt;dialog&gt;</code> native: fokus terkunci, Escape menutup, fokus kembali ke
+                pemicu.
               </p>
             </header>
 
             <div class="stage-canvas ui-stage ui-stage--left">
               <div class="ui-alert-stack">
                 <div class="ui-alert ui-alert--info">
-                  <svg class="ui-alert-icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                  <svg class="ui-alert-icon" aria-hidden="true" focusable="false" width="20" height="20"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 16v-4M12 8h.01" />
+                  </svg>
                   <div class="ui-alert-body"><strong>Info:</strong> Perubahan tersimpan otomatis setiap 30 detik.</div>
                 </div>
                 <div class="ui-alert ui-alert--success">
-                  <svg class="ui-alert-icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+                  <svg class="ui-alert-icon" aria-hidden="true" focusable="false" width="20" height="20"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="m8 12 3 3 5-6" />
+                  </svg>
                   <div class="ui-alert-body"><strong>Berhasil:</strong> File berhasil diunggah.</div>
                 </div>
                 <div class="ui-alert ui-alert--warning" id="cmpAlertDismissable">
-                  <svg class="ui-alert-icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+                  <svg class="ui-alert-icon" aria-hidden="true" focusable="false" width="20" height="20"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" />
+                  </svg>
                   <div class="ui-alert-body"><strong>Perhatian:</strong> Ukuran gambar melebihi 2&nbsp;MB.</div>
                   <button type="button" class="ui-alert-close" id="cmpAlertClose" aria-label="Tutup peringatan">
-                    <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                    <svg aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2.5">
+                      <path d="M18 6 6 18M6 6l12 12" />
+                    </svg>
                   </button>
                 </div>
                 <div class="ui-alert ui-alert--error">
-                  <svg class="ui-alert-icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></svg>
+                  <svg class="ui-alert-icon" aria-hidden="true" focusable="false" width="20" height="20"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="m15 9-6 6M9 9l6 6" />
+                  </svg>
                   <div class="ui-alert-body"><strong>Gagal:</strong> Koneksi terputus. Coba lagi.</div>
                 </div>
               </div>
 
               <div class="ui-feedback-actions">
                 <button type="button" class="ui-btn ui-btn--secondary" id="cmpToastTrigger">Tampilkan Toast</button>
-                <button type="button" class="ui-btn ui-btn--primary" id="cmpDialogTrigger" aria-haspopup="dialog" aria-controls="cmpDialog">Buka Dialog</button>
-                <button type="button" class="ui-btn ui-btn--quiet" id="cmpAlertRestore" hidden>Tampilkan peringatan lagi</button>
+                <button type="button" class="ui-btn ui-btn--primary" id="cmpDialogTrigger" aria-haspopup="dialog"
+                  aria-controls="cmpDialog">Buka Dialog</button>
+                <button type="button" class="ui-btn ui-btn--quiet" id="cmpAlertRestore" hidden>Tampilkan peringatan
+                  lagi</button>
               </div>
 
-              <dialog class="ui-dialog" id="cmpDialog" aria-labelledby="cmpDialogTitle" aria-describedby="cmpDialogDesc">
+              <dialog class="ui-dialog" id="cmpDialog" aria-labelledby="cmpDialogTitle"
+                aria-describedby="cmpDialogDesc">
                 <h3 class="ui-dialog-title" id="cmpDialogTitle">Hapus draft ini?</h3>
-                <p class="ui-dialog-desc" id="cmpDialogDesc">Contoh dialog konfirmasi. Ini hanya demo &mdash; tidak ada data yang benar-benar dihapus.</p>
+                <p class="ui-dialog-desc" id="cmpDialogDesc">Contoh dialog konfirmasi. Ini hanya demo &mdash; tidak ada
+                  data yang benar-benar dihapus.</p>
                 <div class="ui-dialog-actions">
                   <button type="button" class="ui-btn ui-btn--quiet" data-dialog-cancel>Batal</button>
                   <button type="button" class="ui-btn ui-btn--primary" data-dialog-confirm>Ya, hapus</button>
@@ -2679,7 +2937,8 @@ function updatePill(btn, pillEl) {
 trigger.addEventListener('click', () =&gt; dialog.showModal());
 dialog.addEventListener('close', () =&gt; trigger.focus());</code></pre>
               <button class="btn-copy-code" aria-label="Salin kode Feedback">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
                   <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                   <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                 </svg>
@@ -2702,7 +2961,8 @@ dialog.addEventListener('close', () =&gt; trigger.focus());</code></pre>
       <div class="footer-platforms" aria-label="Platform links">
         <a href="https://www.linkedin.com/in/reionnyx/" target="_blank" rel="noopener noreferrer"
           class="footer-platform-card" aria-label="LinkedIn">
-          <img src="assets/linkedin.svg" alt="" width="24" height="24" class="footer-platform-icon footer-platform-icon--monochrome">
+          <img src="assets/linkedin.svg" alt="" width="24" height="24"
+            class="footer-platform-icon footer-platform-icon--monochrome">
         </a>
         <a href="https://stock.adobe.com/contributor/207802543/dicky" target="_blank" rel="noopener noreferrer"
           class="footer-platform-card" aria-label="Adobe Stock">
@@ -2714,11 +2974,13 @@ dialog.addEventListener('close', () =&gt; trigger.focus());</code></pre>
         </a>
         <a href="https://thenounproject.com/creator/ReionDesign/" target="_blank" rel="noopener noreferrer"
           class="footer-platform-card" aria-label="The Noun Project">
-          <img src="assets/noun-project.svg" alt="" width="24" height="24" class="footer-platform-icon footer-platform-icon--monochrome">
+          <img src="assets/noun-project.svg" alt="" width="24" height="24"
+            class="footer-platform-icon footer-platform-icon--monochrome">
         </a>
         <a href="https://www.flaticon.com/authors/reion" target="_blank" rel="noopener noreferrer"
           class="footer-platform-card" aria-label="Flaticon">
-          <img src="assets/flaticon.svg" alt="" width="24" height="24" class="footer-platform-icon footer-platform-icon--monochrome">
+          <img src="assets/flaticon.svg" alt="" width="24" height="24"
+            class="footer-platform-icon footer-platform-icon--monochrome">
         </a>
       </div>
     </footer>

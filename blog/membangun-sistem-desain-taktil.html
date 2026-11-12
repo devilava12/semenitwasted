@@ -24,33 +24,174 @@
     content="Bagaimana merancang efek tactile surface dan neumorphism yang tetap kontras, fungsional, dan memiliki hierarki tajam tanpa terjebak estetika artifisial berlebihan.">
   <meta name="twitter:image" content="https://semenitwasted.web.id/assets/blog/cover-design-systems.svg">
 
-  <!-- Structured Data: BlogPosting -->
+  <!-- Structured Data: Schema.org @graph (BlogPosting, BreadcrumbList, FAQPage, Person) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Membangun Sistem Desain Taktil: Dari Figma ke CSS Tokens",
-    "description": "Bagaimana merancang efek tactile surface dan neumorphism yang tetap kontras, fungsional, dan memiliki hierarki tajam tanpa terjebak estetika artifisial berlebihan.",
-    "image": "https://semenitwasted.web.id/assets/blog/cover-design-systems.svg",
-    "datePublished": "2026-10-15T08:00:00+07:00",
-    "dateModified": "2026-10-15T08:00:00+07:00",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://semenitwasted.web.id/blog/membangun-sistem-desain-taktil"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "I Putu Dicky Adi Pranatha",
-      "url": "https://semenitwasted.web.id/about.html"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "semenitwasted",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://semenitwasted.web.id/assets/logo-nav.svg"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://semenitwasted.web.id/#website",
+        "name": "semenitwasted",
+        "url": "https://semenitwasted.web.id/",
+        "inLanguage": "id-ID",
+        "publisher": {
+          "@id": "https://semenitwasted.web.id/#organization"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://semenitwasted.web.id/#organization",
+        "name": "semenitwasted",
+        "url": "https://semenitwasted.web.id/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://semenitwasted.web.id/#logo",
+          "url": "https://semenitwasted.web.id/assets/logo-nav.svg"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://semenitwasted.web.id/#person",
+        "name": "I Putu Dicky Adi Pranatha",
+        "alternateName": "semenitwasted",
+        "jobTitle": "Designer & Product Support Professional",
+        "url": "https://semenitwasted.web.id/about",
+        "image": "https://semenitwasted.web.id/assets/avatar-illustration.png",
+        "sameAs": [
+          "https://www.linkedin.com/in/reionnyx/",
+          "https://www.instagram.com/reionportfolio/",
+          "https://stock.adobe.com/contributor/207802543/dicky",
+          "https://thenounproject.com/creator/ReionDesign/",
+          "https://www.flaticon.com/authors/reion"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://semenitwasted.web.id/blog/membangun-sistem-desain-taktil#webpage",
+        "url": "https://semenitwasted.web.id/blog/membangun-sistem-desain-taktil",
+        "name": "Membangun Sistem Desain Taktil: Dari Figma ke CSS Tokens",
+        "description": "Bagaimana merancang efek tactile surface dan neumorphism yang tetap kontras, fungsional, dan memiliki hierarki tajam tanpa terjebak estetika artifisial berlebihan.",
+        "inLanguage": "id-ID",
+        "isPartOf": {
+          "@id": "https://semenitwasted.web.id/#website"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://semenitwasted.web.id/blog/membangun-sistem-desain-taktil#primaryimage"
+        },
+        "breadcrumb": {
+          "@id": "https://semenitwasted.web.id/blog/membangun-sistem-desain-taktil#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://semenitwasted.web.id/blog/membangun-sistem-desain-taktil#article"
+        }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://semenitwasted.web.id/blog/membangun-sistem-desain-taktil#article",
+        "mainEntityOfPage": {
+          "@id": "https://semenitwasted.web.id/blog/membangun-sistem-desain-taktil#webpage"
+        },
+        "headline": "Membangun Sistem Desain Taktil: Dari Figma ke CSS Tokens",
+        "description": "Bagaimana merancang efek tactile surface dan neumorphism yang tetap kontras, fungsional, dan memiliki hierarki tajam tanpa terjebak estetika artifisial berlebihan.",
+        "image": {
+          "@type": "ImageObject",
+          "@id": "https://semenitwasted.web.id/blog/membangun-sistem-desain-taktil#primaryimage",
+          "url": "https://semenitwasted.web.id/assets/blog/cover-design-systems.svg",
+          "contentUrl": "https://semenitwasted.web.id/assets/blog/cover-design-systems.svg",
+          "width": 800,
+          "height": 450,
+          "caption": "Diagram token sistem desain taktil dan swatch warna monokrom"
+        },
+        "datePublished": "2026-10-15T08:00:00+07:00",
+        "dateModified": "2026-10-15T08:00:00+07:00",
+        "inLanguage": "id-ID",
+        "articleSection": "Design Systems",
+        "keywords": "CSS Tokens, Neumorphism, Design Tokens",
+        "wordCount": 380,
+        "timeRequired": "PT6M",
+        "author": {
+          "@id": "https://semenitwasted.web.id/#person"
+        },
+        "publisher": {
+          "@id": "https://semenitwasted.web.id/#organization"
+        },
+        "isPartOf": {
+          "@id": "https://semenitwasted.web.id/blog#blog"
+        },
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "CSS Tokens"
+          },
+          {
+            "@type": "Thing",
+            "name": "Neumorphism"
+          },
+          {
+            "@type": "Thing",
+            "name": "Design Tokens"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://semenitwasted.web.id/blog/membangun-sistem-desain-taktil#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://semenitwasted.web.id/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://semenitwasted.web.id/blog"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Membangun Sistem Desain Taktil: Dari Figma ke CSS Tokens",
+            "item": "https://semenitwasted.web.id/blog/membangun-sistem-desain-taktil"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://semenitwasted.web.id/blog/membangun-sistem-desain-taktil#faq",
+        "isPartOf": {
+          "@id": "https://semenitwasted.web.id/blog/membangun-sistem-desain-taktil#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Mengapa gaya desain Neumorphism klasik sering gagal memenuhi standar aksesibilitas web?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Neumorphism klasik sering gagal karena hanya mengandalkan bayangan putih dan abu-abu tipis di atas latar belakang senada tanpa garis batas yang jelas (kurangnya edge affordance), sehingga menyulitkan mata membedakan mana kartu pasif dan mana tombol interaktif."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Apa yang dimaksud dengan prinsip Restrained Tactile Depth pada sistem desain semenitwasted?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Restrained Tactile Depth adalah pendekatan yang menggabungkan permukaan monokrom lavender terang (#F0EDF4) dengan bayangan terarah berwarna ungu-arang pekat (#450D50) serta garis tepi halus agar elemen terasa memiliki bobot fisik namun tetap memiliki kontras baca yang tajam."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Mengapa penggunaan CSS Custom Properties (Design Tokens) penting saat menerjemahkan desain Figma ke kode?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CSS Custom Properties menyatukan nilai warna, radius sudut, bayangan, dan kurva transisi di satu tempat terpusat, sehingga perubahan tema terang ke gelap maupun pemeliharaan komponen di seluruh halaman tetap konsisten tanpa duplikasi kode."
+            }
+          }
+        ]
       }
-    }
+    ]
   }
   </script>
 

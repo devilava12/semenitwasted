@@ -25,33 +25,214 @@
   <meta name="twitter:image"
     content="https://semenitwasted.web.id/assets/blog/Anime%20Data%20Breach%20Coffee%20Shock.webp">
 
-  <!-- Structured Data: BlogPosting -->
+  <!-- Structured Data: Schema.org @graph (BlogPosting, BreadcrumbList, FAQPage, Person) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Belajar dari Bocornya Jutaan Data Aplikasi Kopi serta Apa Itu Database dan Sejarah Awal Dibuatnya",
-    "description": "Pahami apa itu database dan cara kerjanya dengan bahasa sederhana. Simak sejarah Edgar F. Codd 1970, pelajaran bocornya 5,7 juta data kopi, dan tips aman.",
-    "image": "https://semenitwasted.web.id/assets/blog/Anime%20Data%20Breach%20Coffee%20Shock.webp",
-    "datePublished": "2026-11-03T06:58:00+08:00",
-    "dateModified": "2026-11-03T07:15:00+08:00",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://semenitwasted.web.id/blog/apa-itu-database-sejarah-dan-kebocoran-data"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "I Putu Dicky Adi Pranatha",
-      "url": "https://semenitwasted.web.id/about.html"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "semenitwasted",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://semenitwasted.web.id/assets/logo-nav.svg"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://semenitwasted.web.id/#website",
+        "name": "semenitwasted",
+        "url": "https://semenitwasted.web.id/",
+        "inLanguage": "id-ID",
+        "publisher": {
+          "@id": "https://semenitwasted.web.id/#organization"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://semenitwasted.web.id/#organization",
+        "name": "semenitwasted",
+        "url": "https://semenitwasted.web.id/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://semenitwasted.web.id/#logo",
+          "url": "https://semenitwasted.web.id/assets/logo-nav.svg"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://semenitwasted.web.id/#person",
+        "name": "I Putu Dicky Adi Pranatha",
+        "alternateName": "semenitwasted",
+        "jobTitle": "Designer & Product Support Professional",
+        "url": "https://semenitwasted.web.id/about",
+        "image": "https://semenitwasted.web.id/assets/avatar-illustration.png",
+        "sameAs": [
+          "https://www.linkedin.com/in/reionnyx/",
+          "https://www.instagram.com/reionportfolio/",
+          "https://stock.adobe.com/contributor/207802543/dicky",
+          "https://thenounproject.com/creator/ReionDesign/",
+          "https://www.flaticon.com/authors/reion"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://semenitwasted.web.id/blog/apa-itu-database-sejarah-dan-kebocoran-data#webpage",
+        "url": "https://semenitwasted.web.id/blog/apa-itu-database-sejarah-dan-kebocoran-data",
+        "name": "Belajar dari Bocornya Jutaan Data Aplikasi Kopi serta Apa Itu Database dan Sejarah Awal Dibuatnya",
+        "description": "Pahami apa itu database dan cara kerjanya dengan bahasa sederhana. Simak sejarah Edgar F. Codd 1970, pelajaran bocornya 5,7 juta data kopi, dan tips aman.",
+        "inLanguage": "id-ID",
+        "isPartOf": {
+          "@id": "https://semenitwasted.web.id/#website"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://semenitwasted.web.id/blog/apa-itu-database-sejarah-dan-kebocoran-data#primaryimage"
+        },
+        "breadcrumb": {
+          "@id": "https://semenitwasted.web.id/blog/apa-itu-database-sejarah-dan-kebocoran-data#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://semenitwasted.web.id/blog/apa-itu-database-sejarah-dan-kebocoran-data#article"
+        }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://semenitwasted.web.id/blog/apa-itu-database-sejarah-dan-kebocoran-data#article",
+        "mainEntityOfPage": {
+          "@id": "https://semenitwasted.web.id/blog/apa-itu-database-sejarah-dan-kebocoran-data#webpage"
+        },
+        "headline": "Belajar dari Bocornya Jutaan Data Aplikasi Kopi serta Apa Itu Database dan Sejarah Awal Dibuatnya",
+        "description": "Pahami apa itu database dan cara kerjanya dengan bahasa sederhana. Simak sejarah Edgar F. Codd 1970, pelajaran bocornya 5,7 juta data kopi, dan tips aman.",
+        "image": {
+          "@type": "ImageObject",
+          "@id": "https://semenitwasted.web.id/blog/apa-itu-database-sejarah-dan-kebocoran-data#primaryimage",
+          "url": "https://semenitwasted.web.id/assets/blog/Anime%20Data%20Breach%20Coffee%20Shock.webp",
+          "contentUrl": "https://semenitwasted.web.id/assets/blog/Anime%20Data%20Breach%20Coffee%20Shock.webp",
+          "width": 1672,
+          "height": 941,
+          "caption": "Ilustrasi gaya anime seorang penikmat kopi tersedak kaget di depan laptop yang menampilkan notifikasi Data Bocor, ditemani kucing yang ikut panik di sampingnya"
+        },
+        "datePublished": "2026-11-03T06:58:00+08:00",
+        "dateModified": "2026-11-03T07:15:00+08:00",
+        "inLanguage": "id-ID",
+        "articleSection": "Frontend & Code",
+        "keywords": "Database, SQL, Edgar F. Codd, Data Privacy, Pemula",
+        "wordCount": 3055,
+        "timeRequired": "PT10M",
+        "author": {
+          "@id": "https://semenitwasted.web.id/#person"
+        },
+        "publisher": {
+          "@id": "https://semenitwasted.web.id/#organization"
+        },
+        "isPartOf": {
+          "@id": "https://semenitwasted.web.id/blog#blog"
+        },
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Database"
+          },
+          {
+            "@type": "Thing",
+            "name": "SQL"
+          },
+          {
+            "@type": "Thing",
+            "name": "Edgar F. Codd"
+          },
+          {
+            "@type": "Thing",
+            "name": "Data Privacy"
+          },
+          {
+            "@type": "Thing",
+            "name": "Pemula"
+          }
+        ],
+        "citation": [
+          {
+            "@type": "CreativeWork",
+            "name": "Codd, E. F. (1970). A Relational Model of Data for Large Shared Data Banks. Communications of the ACM, 13(6), 377-387. https://doi.org/10.1145/362384.362685",
+            "url": "https://doi.org/10.1145/362384.362685"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Chamberlin, D. D., & Boyce, R. F. (1974). SEQUEL: A Structured English Query Language. Proceedings of the 1974 ACM SIGFIDET Workshop on Data Description, Access and Control, 249-264. https://doi.org/10.1145/800296.811515",
+            "url": "https://doi.org/10.1145/800296.811515"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "IBM Corporation. (2024). Information Management System (IMS) and the Apollo Space Program History. IBM Archives. https://www.ibm.com/history/ims",
+            "url": "https://www.ibm.com/history/ims"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "OWASP Foundation. (2025). SQL Injection Prevention & Database Security Cheat Sheet. Open Worldwide Application Security Project. https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html",
+            "url": "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "PT Bursa Efek Indonesia (BEI). (2026, 2 November). Keterbukaan Informasi: Penjelasan atas Pemberitaan Media Massa terkait Dugaan Insiden Keamanan Siber PT Fore Kopi Indonesia Tbk (FORE). Jakarta: IDX Disclosure (idx.co.id).",
+            "url": "https://www.idx.co.id/id/perusahaan-tercatat/keterbukaan-informasi/"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Undang-Undang Republik Indonesia Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP), Pasal 16 ayat (2) huruf c mengenai Prinsip Pembatasan Pengumpulan Data Pribadi secara Terbatas dan Spesifik (peraturan.bpk.go.id).",
+            "url": "https://peraturan.bpk.go.id/Details/229798/uu-no-27-tahun-2022"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://semenitwasted.web.id/blog/apa-itu-database-sejarah-dan-kebocoran-data#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://semenitwasted.web.id/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://semenitwasted.web.id/blog"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Belajar dari Bocornya Jutaan Data Aplikasi Kopi serta Apa Itu Database dan Sejarah Awal Dibuatnya",
+            "item": "https://semenitwasted.web.id/blog/apa-itu-database-sejarah-dan-kebocoran-data"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://semenitwasted.web.id/blog/apa-itu-database-sejarah-dan-kebocoran-data#faq",
+        "isPartOf": {
+          "@id": "https://semenitwasted.web.id/blog/apa-itu-database-sejarah-dan-kebocoran-data#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Apa itu database (basis data) dan bagaimana cara kerjanya di balik aplikasi?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Database adalah lemari arsip elektronik di dalam komputer server yang bertugas menyimpan, mengelompokkan, dan mencari kembali jutaan informasi pengguna seperti nama, nomor telepon, poin diskon, hingga riwayat transaksi hanya dalam hitungan milidetik menggunakan bahasa kueri terstruktur (SQL)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Siapa penemu database relasional modern yang masih digunakan hingga hari ini?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Model database relasional yang menyusun data ke dalam tabel baris dan kolom yang saling terhubung melalui kunci unik (Primary Key dan Foreign Key) ditemukan oleh ilmuwan matematika Edgar F. Codd di laboratorium riset IBM San Jose pada bulan Juni 1970."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Mengapa kebocoran jutaan data pengguna aplikasi sering terjadi dan bagaimana cara meminimalkan risikonya?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kebocoran data sering terjadi bukan karena brankas utama dijebol paksa, melainkan melalui celah pintu samping seperti dasbor analitik pihak ketiga yang salah konfigurasi atau celah SQL Injection. Pengguna dapat meminimalkan risiko dengan menerapkan prinsip minimalisasi data, menggunakan alamat surel alias, dan membedakan kata sandi di setiap layanan."
+            }
+          }
+        ]
       }
-    }
+    ]
   }
   </script>
 

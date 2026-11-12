@@ -11,30 +11,69 @@
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="semenitwasted">
   <meta property="og:url" content="https://semenitwasted.web.id/about">
   <meta property="og:title" content="About — I Putu Dicky Adi Pranatha | semenitwasted">
   <meta property="og:description" content="Meet Dicky, a Bali-based customer and product support professional and designer with experience in product implementation, UI/UX, and digital creative work.">
-  <meta property="og:image" content="assets/avatar-illustration.png">
+  <meta property="og:image" content="https://semenitwasted.web.id/assets/avatar-illustration.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="About — I Putu Dicky Adi Pranatha | semenitwasted">
   <meta name="twitter:description" content="Meet Dicky, a Bali-based customer and product support professional and designer with experience in product implementation, UI/UX, and digital creative work.">
-  <meta name="twitter:image" content="assets/avatar-illustration.png">
+  <meta name="twitter:image" content="https://semenitwasted.web.id/assets/avatar-illustration.png">
 
-  <!-- Structured Data: Person -->
+  <!-- Structured Data: ProfilePage, Person & BreadcrumbList -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "I Putu Dicky Adi Pranatha",
-    "alternateName": "semenitwasted",
-    "description": "Bali-based designer and product support professional with a background in IT, customer support, and digital design.",
-    "jobTitle": "Designer & Product Support Professional",
-    "sameAs": [
-      "https://www.linkedin.com/in/reionnyx/",
-      "https://www.instagram.com/reionportfolio/",
-      "https://stock.adobe.com/contributor/207802543/dicky",
-      "https://thenounproject.com/creator/ReionDesign/",
-      "https://www.flaticon.com/authors/reion"
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": "https://semenitwasted.web.id/about#webpage",
+        "url": "https://semenitwasted.web.id/about",
+        "name": "About — I Putu Dicky Adi Pranatha | semenitwasted",
+        "description": "Meet Dicky, a Bali-based customer and product support professional and designer with experience in product implementation, UI/UX, and digital creative work.",
+        "isPartOf": {
+          "@id": "https://semenitwasted.web.id/#website"
+        },
+        "mainEntity": {
+          "@id": "https://semenitwasted.web.id/#person"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://semenitwasted.web.id/#person",
+        "name": "I Putu Dicky Adi Pranatha",
+        "alternateName": "semenitwasted",
+        "description": "Bali-based designer and product support professional with a background in IT, customer support, and digital design.",
+        "jobTitle": "Designer & Product Support Professional",
+        "url": "https://semenitwasted.web.id/about",
+        "image": "https://semenitwasted.web.id/assets/avatar-illustration.png",
+        "sameAs": [
+          "https://www.linkedin.com/in/reionnyx/",
+          "https://www.instagram.com/reionportfolio/",
+          "https://stock.adobe.com/contributor/207802543/dicky",
+          "https://thenounproject.com/creator/ReionDesign/",
+          "https://www.flaticon.com/authors/reion"
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://semenitwasted.web.id/about#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://semenitwasted.web.id/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About",
+            "item": "https://semenitwasted.web.id/about"
+          }
+        ]
+      }
     ]
   }
   </script>

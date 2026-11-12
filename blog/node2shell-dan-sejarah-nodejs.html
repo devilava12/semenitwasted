@@ -23,33 +23,220 @@
     content="Bedah CVE-2026-111497 (Node2Shell): bug decoder Brotli di Node.js, cara ditemukan, kenapa bisa ada, dan sejarah 17 tahun Node yang melatarinya.">
   <meta name="twitter:image" content="https://semenitwasted.web.id/assets/blog/Node2Shell_%20Debugging%20Through%20the%20Night.webp">
 
-  <!-- Structured Data: BlogPosting -->
+  <!-- Structured Data: Schema.org @graph (BlogPosting, BreadcrumbList, FAQPage, Person) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Node2Shell Membongkar Celah di Perbatasan JavaScript dan C, dan Sejarah Node.js Menjelaskan Asalnya",
-    "description": "Bedah CVE-2026-111497 (Node2Shell): bug decoder Brotli di Node.js, cara ditemukan, kenapa bisa ada, dan sejarah 17 tahun Node yang melatarinya.",
-    "image": "https://semenitwasted.web.id/assets/blog/Node2Shell_%20Debugging%20Through%20the%20Night.webp",
-    "datePublished": "2026-10-24T08:00:00+07:00",
-    "dateModified": "2026-10-24T08:00:00+07:00",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://semenitwasted.web.id/blog/node2shell-dan-sejarah-nodejs"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "I Putu Dicky Adi Pranatha",
-      "url": "https://semenitwasted.web.id/about.html"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "semenitwasted",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://semenitwasted.web.id/assets/logo-nav.svg"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://semenitwasted.web.id/#website",
+        "name": "semenitwasted",
+        "url": "https://semenitwasted.web.id/",
+        "inLanguage": "id-ID",
+        "publisher": {
+          "@id": "https://semenitwasted.web.id/#organization"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://semenitwasted.web.id/#organization",
+        "name": "semenitwasted",
+        "url": "https://semenitwasted.web.id/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://semenitwasted.web.id/#logo",
+          "url": "https://semenitwasted.web.id/assets/logo-nav.svg"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://semenitwasted.web.id/#person",
+        "name": "I Putu Dicky Adi Pranatha",
+        "alternateName": "semenitwasted",
+        "jobTitle": "Designer & Product Support Professional",
+        "url": "https://semenitwasted.web.id/about",
+        "image": "https://semenitwasted.web.id/assets/avatar-illustration.png",
+        "sameAs": [
+          "https://www.linkedin.com/in/reionnyx/",
+          "https://www.instagram.com/reionportfolio/",
+          "https://stock.adobe.com/contributor/207802543/dicky",
+          "https://thenounproject.com/creator/ReionDesign/",
+          "https://www.flaticon.com/authors/reion"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://semenitwasted.web.id/blog/node2shell-dan-sejarah-nodejs#webpage",
+        "url": "https://semenitwasted.web.id/blog/node2shell-dan-sejarah-nodejs",
+        "name": "Node2Shell Membongkar Celah di Perbatasan JavaScript dan C, dan Sejarah Node.js Menjelaskan Asalnya",
+        "description": "Bedah CVE-2026-111497 (Node2Shell): bug decoder Brotli di Node.js, cara ditemukan, kenapa bisa ada, dan sejarah 17 tahun Node yang melatarinya.",
+        "inLanguage": "id-ID",
+        "isPartOf": {
+          "@id": "https://semenitwasted.web.id/#website"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://semenitwasted.web.id/blog/node2shell-dan-sejarah-nodejs#primaryimage"
+        },
+        "breadcrumb": {
+          "@id": "https://semenitwasted.web.id/blog/node2shell-dan-sejarah-nodejs#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://semenitwasted.web.id/blog/node2shell-dan-sejarah-nodejs#article"
+        }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://semenitwasted.web.id/blog/node2shell-dan-sejarah-nodejs#article",
+        "mainEntityOfPage": {
+          "@id": "https://semenitwasted.web.id/blog/node2shell-dan-sejarah-nodejs#webpage"
+        },
+        "headline": "Node2Shell Membongkar Celah di Perbatasan JavaScript dan C, dan Sejarah Node.js Menjelaskan Asalnya",
+        "description": "Bedah CVE-2026-111497 (Node2Shell): bug decoder Brotli di Node.js, cara ditemukan, kenapa bisa ada, dan sejarah 17 tahun Node yang melatarinya.",
+        "image": {
+          "@type": "ImageObject",
+          "@id": "https://semenitwasted.web.id/blog/node2shell-dan-sejarah-nodejs#primaryimage",
+          "url": "https://semenitwasted.web.id/assets/blog/Node2Shell_%20Debugging%20Through%20the%20Night.webp",
+          "contentUrl": "https://semenitwasted.web.id/assets/blog/Node2Shell_%20Debugging%20Through%20the%20Night.webp",
+          "width": 1672,
+          "height": 941,
+          "caption": "Ilustrasi developer perempuan begadang mencari penyebab bug Node2Shell di depan laptop berstiker Node.js, ditemani kucing tidur dan diagram visual overflow buffer Brotli libbrotlidec"
+        },
+        "datePublished": "2026-10-24T08:00:00+07:00",
+        "dateModified": "2026-10-24T08:00:00+07:00",
+        "inLanguage": "id-ID",
+        "articleSection": "Frontend & Code",
+        "keywords": "Node.js, Web Security, CVE-2026-111497, Brotli",
+        "wordCount": 3538,
+        "timeRequired": "PT15M",
+        "author": {
+          "@id": "https://semenitwasted.web.id/#person"
+        },
+        "publisher": {
+          "@id": "https://semenitwasted.web.id/#organization"
+        },
+        "isPartOf": {
+          "@id": "https://semenitwasted.web.id/blog#blog"
+        },
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Node.js"
+          },
+          {
+            "@type": "Thing",
+            "name": "Web Security"
+          },
+          {
+            "@type": "Thing",
+            "name": "CVE-2026-111497"
+          },
+          {
+            "@type": "Thing",
+            "name": "Brotli"
+          }
+        ],
+        "citation": [
+          {
+            "@type": "CreativeWork",
+            "name": "Node.js Project. (2026). Wednesday, October 21, 2026 Security Releases. https://nodejs.org/en/blog/vulnerability/october-2026-security-releases",
+            "url": "https://nodejs.org/en/blog/vulnerability/october-2026-security-releases"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Node.js Project. (2024). Wednesday, July 10, 2024 Security Releases. https://nodejs.org/en/blog/vulnerability/july-2024-security-releases",
+            "url": "https://nodejs.org/en/blog/vulnerability/july-2024-security-releases"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Node.js Documentation. Permissions. https://nodejs.org/api/permissions.html",
+            "url": "https://nodejs.org/api/permissions.html"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Node.js Documentation. Zlib. https://nodejs.org/api/zlib.html",
+            "url": "https://nodejs.org/api/zlib.html"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Node.js Release Working Group. Release Schedule. https://github.com/nodejs/release",
+            "url": "https://github.com/nodejs/release#release-schedule"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Alakuijala, J., & Szabadka, Z. (2016). RFC 7932: Brotli Compressed Data Format. IETF. https://www.rfc-editor.org/rfc/rfc7932",
+            "url": "https://www.rfc-editor.org/rfc/rfc7932"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "National Vulnerability Database. CVE-2020-8927: Brotli Decoder Buffer Overflow. https://nvd.nist.gov/vuln/detail/CVE-2020-8927",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2020-8927"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Dahl, R. (2018). 10 Things I Regret About Node.js. JSConf EU. https://www.youtube.com/watch?v=M3BM9TB-8yA",
+            "url": "https://www.youtube.com/watch?v=M3BM9TB-8yA"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://semenitwasted.web.id/blog/node2shell-dan-sejarah-nodejs#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://semenitwasted.web.id/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://semenitwasted.web.id/blog"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Node2Shell Membongkar Celah di Perbatasan JavaScript dan C, dan Sejarah Node.js Menjelaskan Asalnya",
+            "item": "https://semenitwasted.web.id/blog/node2shell-dan-sejarah-nodejs"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://semenitwasted.web.id/blog/node2shell-dan-sejarah-nodejs#faq",
+        "isPartOf": {
+          "@id": "https://semenitwasted.web.id/blog/node2shell-dan-sejarah-nodejs#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Apa itu celah keamanan Node2Shell (CVE-2026-111497) pada Node.js?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Node2Shell (CVE-2026-111497) adalah celah penulisan di luar batas memori (out-of-bounds write) pada decoder kompresi Brotli bawaan di dalam Node.js yang memungkinkan penyerang memicu eksekusi kode jarak jauh (Remote Code Execution)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Aplikasi Node.js seperti apa yang rentan terhadap serangan Node2Shell?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Aplikasi menjadi rentan apabila memproses atau mendekompresi aliran data Brotli dari sumber yang tidak tepercaya, seperti menerima HTTP request dengan header Content-Encoding: br, mengambil respons fetch() dari URL eksternal, atau memanggil fungsi dekompresi Brotli di modul node:zlib."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Versi Node.js berapa saja yang sudah aman dari celah CVE-2026-111497?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pengembang wajib memperbarui instalasi Node.js ke versi tambalan resmi yang dirilis pada 21 Oktober 2026, yaitu Node.js v22.23.4, v24.22.1, atau v26.12.1."
+            }
+          }
+        ]
       }
-    }
+    ]
   }
   </script>
 
