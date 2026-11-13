@@ -17,6 +17,23 @@
 
   const BLOG_POSTS = [
     {
+      id: 'post-24',
+      slug: 'dark-pattern-adalah-jebakan-desain-dan-contohnya',
+      title: 'Dark Pattern Adalah Jebakan Desain yang Sengaja Dibikin agar Pengguna Salah Klik dan Susah Berhenti Langganan',
+      date: '2026-11-12',
+      formattedDate: '12 November 2026',
+      readingTime: '11 min read',
+      category: 'design-systems',
+      categoryLabel: 'Design Systems',
+      tags: ['Dark Pattern', 'Deceptive Design', 'Harry Brignull', 'UI/UX', 'Pemula'],
+      featured: false,
+      excerpt: 'Pahami apa itu dark pattern dengan bahasa sederhana. Simak sejarah Harry Brignull 2010, 5 contoh jebakan desain di aplikasi harian, dan cara menghindarinya.',
+      contentUrl: 'blog/dark-pattern-adalah-jebakan-desain-dan-contohnya.html',
+      coverImage: 'assets/blog/Panicked%20Subscription%20Trap%20at%20the%20Desk.webp',
+      coverAlt: 'Ilustrasi gadis anime memegang kepala karena panik di depan laptop bersama kucing hitamnya yang terkejut melihat jendela pop-up Kamu Berlangganan Paket Premium Rp 99.000/bulan, Penagihan Otomatis Aktif, dan tombol Batalkan Langganan yang terkunci Sangat Sulit',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
       id: 'post-23',
       slug: 'api-adalah-sejarah-dan-cara-kerjanya',
       title: 'API Adalah Pelayan Tak Terlihat di Balik Aplikasi Harian Kita serta Sejarah dan Cara Kerjanya untuk Pemula',
