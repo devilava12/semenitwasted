@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SSH Adalah: Arti, Cara Kerja, dan Kisah Celah XZ Utils | semenitwasted</title>
+  <meta name="description"
+    content="Pahami apa itu SSH dengan bahasa sederhana. Simak sejarah Tatu Ylönen 1995, cara kerja Public Key & Private Key, dan kisah celah XZ Utils dari Veritasium.">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo-nav.svg">
+  <link rel="canonical" href="https://semenitwasted.web.id/blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://semenitwasted.web.id/blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils">
+  <meta property="og:title"
+    content="SSH Adalah: Arti, Cara Kerja, dan Kisah Celah XZ Utils | semenitwasted">
+  <meta property="og:description"
+    content="Pahami apa itu SSH dengan bahasa sederhana. Simak sejarah Tatu Ylönen 1995, cara kerja Public Key & Private Key, dan kisah celah XZ Utils dari Veritasium.">
+  <meta property="og:image"
+    content="https://semenitwasted.web.id/assets/blog/Minecraft%20Sunset%20Gaming%20Haven.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title"
+    content="SSH Adalah: Arti, Cara Kerja, dan Kisah Celah XZ Utils | semenitwasted">
+  <meta name="twitter:description"
+    content="Pahami apa itu SSH dengan bahasa sederhana. Simak sejarah Tatu Ylönen 1995, cara kerja Public Key & Private Key, dan kisah celah XZ Utils dari Veritasium.">
+  <meta name="twitter:image"
+    content="https://semenitwasted.web.id/assets/blog/Minecraft%20Sunset%20Gaming%20Haven.webp">
+
+  <!-- Structured Data: Schema.org @graph (WebSite, Organization, Person, WebPage, BlogPosting, BreadcrumbList) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://semenitwasted.web.id/#website",
+        "name": "semenitwasted",
+        "url": "https://semenitwasted.web.id/",
+        "inLanguage": "id-ID",
+        "publisher": {
+          "@id": "https://semenitwasted.web.id/#organization"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://semenitwasted.web.id/#organization",
+        "name": "semenitwasted",
+        "url": "https://semenitwasted.web.id/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://semenitwasted.web.id/#logo",
+          "url": "https://semenitwasted.web.id/assets/logo-nav.svg"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://semenitwasted.web.id/#person",
+        "name": "I Putu Dicky Adi Pranatha",
+        "alternateName": "semenitwasted",
+        "jobTitle": "Designer & Product Support Professional",
+        "url": "https://semenitwasted.web.id/about",
+        "image": "https://semenitwasted.web.id/assets/avatar-illustration.png",
+        "sameAs": [
+          "https://www.linkedin.com/in/reionnyx/",
+          "https://www.instagram.com/reionportfolio/",
+          "https://stock.adobe.com/contributor/207802543/dicky",
+          "https://thenounproject.com/creator/ReionDesign/",
+          "https://www.flaticon.com/authors/reion"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://semenitwasted.web.id/blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils#webpage",
+        "url": "https://semenitwasted.web.id/blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils",
+        "name": "SSH Adalah Kunci Utama Server Internet dan Kisah Nyata Saat Seluruh Dunia Hampir Diretas Tanpa Sadar",
+        "description": "Pahami apa itu SSH dengan bahasa sederhana. Simak sejarah Tatu Ylönen 1995, cara kerja Public Key & Private Key, dan kisah celah XZ Utils dari Veritasium.",
+        "inLanguage": "id-ID",
+        "isPartOf": {
+          "@id": "https://semenitwasted.web.id/#website"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://semenitwasted.web.id/blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils#primaryimage"
+        },
+        "breadcrumb": {
+          "@id": "https://semenitwasted.web.id/blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://semenitwasted.web.id/blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils#article"
+        }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://semenitwasted.web.id/blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils#article",
+        "mainEntityOfPage": {
+          "@id": "https://semenitwasted.web.id/blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils#webpage"
+        },
+        "headline": "SSH Adalah Kunci Utama Server Internet dan Kisah Nyata Saat Seluruh Dunia Hampir Diretas Tanpa Sadar",
+        "description": "Pahami apa itu SSH dengan bahasa sederhana. Simak sejarah Tatu Ylönen 1995, cara kerja Public Key & Private Key, dan kisah celah XZ Utils dari Veritasium.",
+        "image": {
+          "@type": "ImageObject",
+          "@id": "https://semenitwasted.web.id/blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils#primaryimage",
+          "url": "https://semenitwasted.web.id/assets/blog/Minecraft%20Sunset%20Gaming%20Haven.webp",
+          "contentUrl": "https://semenitwasted.web.id/assets/blog/Minecraft%20Sunset%20Gaming%20Haven.webp",
+          "width": 1672,
+          "height": 941,
+          "caption": "Ilustrasi suasana meja komputer bernuansa senja dengan monitor menampilkan dunia blok dan jendela terminal jarak jauh, melambangkan pengelolaan server dari kamar sendiri lewat protokol SSH"
+        },
+        "datePublished": "2026-11-16T20:35:00+08:00",
+        "dateModified": "2026-11-16T21:00:00+08:00",
+        "inLanguage": "id-ID",
+        "articleSection": "Frontend & Code",
+        "keywords": "SSH adalah, Apa Itu SSH, Secure Shell, Cara Kerja SSH, Tatu Ylönen, OpenSSH, XZ Utils Backdoor, CVE-2024-3094, Veritasium, Pemula",
+        "wordCount": 3350,
+        "timeRequired": "PT13M",
+        "author": {
+          "@id": "https://semenitwasted.web.id/#person"
+        },
+        "publisher": {
+          "@id": "https://semenitwasted.web.id/#organization"
+        },
+        "isPartOf": {
+          "@id": "https://semenitwasted.web.id/blog#blog"
+        },
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Secure Shell (SSH)"
+          },
+          {
+            "@type": "Thing",
+            "name": "OpenSSH"
+          },
+          {
+            "@type": "Thing",
+            "name": "Public-Key Cryptography"
+          },
+          {
+            "@type": "Thing",
+            "name": "XZ Utils Backdoor (CVE-2024-3094)"
+          }
+        ],
+        "citation": [
+          {
+            "@type": "CreativeWork",
+            "name": "Veritasium. (2026, 25 Februari). The Internet Was Weeks Away From Disaster and No One Knew (How Someone Almost Hacked Every Linux Server on the Planet) [Video]. YouTube.",
+            "url": "https://www.youtube.com/watch?v=aoag03mSuXQ"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Ylönen, T. (1996). SSH - Secure Login Connections over the Internet. Proceedings of the 6th USENIX Security Symposium, San Jose, CA.",
+            "url": "https://www.usenix.org/legacy/publications/library/proceedings/sec96/ylonen.html"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Ylönen, T., & Lonvick, C. (2006). The Secure Shell (SSH) Protocol Architecture (RFC 4251). Internet Engineering Task Force (IETF).",
+            "url": "https://datatracker.ietf.org/doc/html/rfc4251"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Freund, A. (2024, 29 Maret). backdoor in upstream xz/liblzma leading to ssh server compromise. Openwall oss-security Mailing List.",
+            "url": "https://www.openwall.com/lists/oss-security/2024/03/29/4"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "National Institute of Standards and Technology (NIST). (2024). CVE-2024-3094 Detail: Malicious code in xz/liblzma versions 5.6.0 and 5.6.1. National Vulnerability Database (NVD).",
+            "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-3094"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Cox, R. (2024, 1 April). Timeline of the xz open source attack. research!rsc.",
+            "url": "https://research.swtch.com/xz-timeline"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://semenitwasted.web.id/blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://semenitwasted.web.id/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://semenitwasted.web.id/blog"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "SSH Adalah Kunci Utama Server Internet dan Kisah Nyata Saat Seluruh Dunia Hampir Diretas Tanpa Sadar",
+            "item": "https://semenitwasted.web.id/blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../assets/fonts/rubik.css">
+  <link rel="stylesheet" href="../portfolio.css">
+  <link rel="stylesheet" href="../blog.css">
+  <script src="../site-chrome.js"></script>
+</head>
+
+<body>
+  <!-- Scroll Reading Progress Indicator -->
+  <div class="reading-progress-bar" id="readingProgressBar" aria-hidden="true"></div>
+
+  <div class="portfolio-page-wrapper blog-page-wrapper">
+
+    <!-- Global Navigation via site-chrome.js with relative base path -->
+    <div data-site-chrome data-active-page="blog" data-base-path="../"></div>
+
+    <main class="post-main" id="main-content">
+
+      <!-- Breadcrumbs -->
+      <nav class="post-breadcrumb" aria-label="Breadcrumbs">
+        <a href="/">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="../blog.html">Blog</a>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">Frontend &amp; Code</span>
+      </nav>
+
+      <!-- Article Header -->
+      <header class="post-header">
+        <h1 class="post-title">SSH Adalah Kunci Utama Server Internet dan Kisah Nyata Saat Seluruh Dunia Hampir Diretas
+          Tanpa Sadar</h1>
+        <div class="post-meta-row">
+          <span>Oleh <strong>I Putu Dicky Adi Pranatha</strong></span>
+          <span aria-hidden="true">&bull;</span>
+          <time datetime="2026-11-16">16 November 2026</time>
+          <span aria-hidden="true">&bull;</span>
+          <span>13 min read</span>
+          <span aria-hidden="true">&bull;</span>
+          <span class="category-pill-sm">Frontend &amp; Code</span>
+        </div>
+      </header>
+
+      <!-- Post Cover Hero Figure -->
+      <figure class="post-hero-figure">
+        <div class="post-hero-frame">
+          <img src="../assets/blog/Minecraft%20Sunset%20Gaming%20Haven.webp"
+            alt="Ilustrasi suasana meja komputer bernuansa senja dengan monitor menampilkan dunia blok dan jendela terminal jarak jauh, melambangkan pengelolaan server dari kamar sendiri lewat protokol SSH"
+            class="post-hero-img" width="1672" height="941" loading="eager">
+        </div>
+        <figcaption class="post-figure-caption">Mengendalikan Server dari Meja Sendiri: Dari ruang kerja pribadi
+          bernuansa senja, seorang developer atau pengelola server bisa membuka pintu kendali jarak jauh ke jutaan
+          komputer server di seluruh dunia melalui terowongan SSH.
+        </figcaption>
+      </figure>
+
+      <!-- Video Reference Banner Bento Card -->
+      <div class="post-tldr-card" role="region" aria-label="Video Referensi Utama"
+        style="border-left: 4px solid var(--accent-primary, #450D50); margin-bottom: 24px;">
+        <span class="tldr-badge" style="background: #450D50; color: #FFFFFF;">Inspirasi Video &amp; Rujukan
+          Dokumenter</span>
+        <p style="margin: 8px 0 12px; font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary, #3B3248);">
+          Alur cerita dalam artikel ini terinspirasi dari dokumenter kanal YouTube <strong>Veritasium</strong> berjudul
+          <strong>"The Internet Was Weeks Away From Disaster and No One Knew"</strong> (<em>How Someone Almost Hacked
+            Every Linux Server on the Planet</em>). Kami merangkai kisah dokumenter tersebut dari awal hingga akhir
+          dengan bahasa sesederhana mungkin, mulai dari apa itu <strong>SSH (Secure Shell)</strong>, sejarah
+          kelahirannya pada tahun 1995, cara kerja gembok <strong>Public Key</strong> dan <strong>Private Key</strong>,
+          hingga bagaimana operasi penyusupan <strong>Jia Tan</strong> ke dalam <strong>XZ Utils</strong> nyaris
+          memasang <em>backdoor</em> di pintu masuk SSH jutaan <em>server</em> dunia.
+        </p>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px;">
+          <a href="https://youtu.be/aoag03mSuXQ?si=NxibCqPxXL0MUK2f" target="_blank" rel="noopener noreferrer"
+            style="display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: #211B28; color: #FFFFFF; text-decoration: none; border-radius: 6px; font-size: 0.85rem; font-weight: 600;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+            Tonton Dokumenter Veritasium di YouTube
+          </a>
+          <span style="font-size: 0.82rem; color: #786B83;">Kanal: Veritasium &bull; Topik: Open Source, Enkripsi SSH,
+            dan Operasi Backdoor XZ Utils (CVE-2024-3094)</span>
+        </div>
+      </div>
+
+      <!-- TL;DR Summary Bento Card -->
+      <div class="post-tldr-card" role="region" aria-label="Quick Summary">
+        <span class="tldr-badge">TL;DR / Ringkasan Cepat</span>
+        <ul class="tldr-list">
+          <li><strong>SSH (Secure Shell) adalah</strong> jalur terowongan rahasia yang terenkripsi (diacak dengan rumus
+            matematika) agar seorang <em>developer</em> bisa mengendalikan komputer <em>server</em> dari jarak jauh
+            lewat layar <em>terminal</em> tanpa takut <em>password</em> atau perintahnya diintip orang di tengah jalan.
+          </li>
+          <li>Protokol ini diciptakan pada <strong>tahun 1995 oleh peneliti Finlandia bernama Tatu Ylönen</strong> untuk
+            menggantikan protokol lama bernama <em>Telnet</em> yang mengirim ketikan secara telanjang
+            (<em>plaintext</em>), dengan memanfaatkan pasangan gembok <strong>Public Key</strong> di pintu
+            <em>server</em> dan anak kunci <strong>Private Key</strong> di laptop pemiliknya.</li>
+          <li>Sesuai alur dokumenter <strong>Veritasium</strong>, karena pintu depan <strong>OpenSSH</strong> terlalu
+            kuat untuk dijebol langsung, sosok misterius bernama <strong>Jia Tan</strong> menghabiskan 2,5 tahun
+            menyusup ke proyek kompresi <em>file</em> <strong>XZ Utils</strong> milik relawan <strong>Lasse
+              Collin</strong> demi menyelundupkan <em>backdoor</em> ke dalam proses <em>login</em> SSH, sebelum akhirnya
+            ketahuan oleh <em>engineer</em> <strong>Andres Freund</strong> gara-gara <em>delay</em> waktu <em>login</em>
+            sebesar <strong>500 milidetik</strong>.</li>
+        </ul>
+      </div>
+
+      <!-- Article Body -->
+      <article class="post-prose">
+        <p>
+          Secara sederhana, <strong>SSH adalah</strong> jalur terowongan rahasia di internet (singkatan dari <em>Secure
+            Shell</em>) yang dipakai oleh <em>developer</em> atau pengelola sistem untuk masuk dan mengendalikan
+          komputer <em>server</em> dari jarak jauh secara aman. Bayangkan komputer <em>server</em> tempat menyimpan
+          <em>website</em>, aplikasi <em>mobile banking</em>, atau <em>game online</em> itu seperti sebuah komputer
+          besar yang dikunci di dalam gedung ber-AC di Singapura atau Amerika Serikat. Komputer <em>server</em> itu
+          tidak punya layar monitor dan tidak dipasangi <em>keyboard</em>. Supaya <em>developer</em> yang sedang duduk
+          di kamar kos di Indonesia bisa menyalakan program, memindahkan <em>file</em>, atau memperbaiki <em>bug</em> di
+          komputer tersebut, mereka membuka layar hitam bernama <em>terminal</em> di laptop, lalu menyambungkannya ke
+          <em>server</em> lewat terowongan <strong>SSH</strong>.
+        </p>
+
+        <p>
+          Karena SSH adalah satu-satunya pintu gerbang utama untuk mengatur isi <em>server</em>, keamanan pintu ini
+          menentukan hidup dan matinya internet. Sekarang bayangkan, bagaimana jika ada seseorang yang diam-diam berhasil
+          memasang lubang kunci rahasia (<em>backdoor</em>) di pintu SSH pada jutaan <em>server</em> di seluruh dunia?
+          Tanpa perlu tahu <em>password</em> pemiliknya, orang itu bisa langsung nyelonong masuk sebagai penguasa
+          tertinggi (<em>root access</em>), mematikan layanan rumah sakit, menguras data perbankan, atau meruntuhkan
+          jaringan internet global dalam semalam.
+        </p>
+
+        <p>
+          Kisah mengerikan itu bukanlah cerita film <em>hacker</em> di bioskop. Seperti yang dibedah dalam video
+          dokumenter kanal YouTube <strong>Veritasium</strong>, pada <strong>akhir Maret 2024</strong> seluruh internet
+          dunia benar-benar hanya berjarak beberapa minggu dari bencana tersebut, dan nyaris tidak ada yang tahu. Agar
+          kamu benar-benar paham mengapa pintu seaman SSH bisa hampir kecolongan dari dalam, kita akan mengikuti alur
+          cerita video tersebut langkah demi langkah dengan bahasa paling gampang: mulai dari urusan <em>printer</em>
+          macet yang melahirkan gerakan <em>open-source</em>, cara kerja gembok <em>Public Key</em> dan <em>Private
+            Key</em> pada SSH, akal bulus <strong>Jia Tan</strong> menyusup ke aplikasi kompresi <strong>XZ
+            Utils</strong>, hingga bagaimana jeda setengah detik menyelamatkan internet kita.
+        </p>
+
+        <h2>Bagaimana Fondasi Internet Modern Berdiri di Atas Pundak Relawan Open Source yang Kelelahan</h2>
+
+        <p>
+          Sebelum kita membahas apa itu SSH dan bagaimana pintu keamanannya disusupi, dokumenter Veritasium mengajak
+          kita melihat satu fakta menarik yang jarang disadari pengguna internet awam. Saat kita memakai laptop
+          sehari-hari, kita terbiasa menggunakan sistem operasi berbayar seperti <em>Windows</em> buatan Microsoft atau
+          <em>macOS</em> buatan Apple. Karena itu, banyak orang mengira komputer <em>server</em> raksasa di internet
+          juga memakai sistem berbayar milik perusahaan triliunan dolar.
+        </p>
+
+        <p>
+          Padahal kenyataannya terbalik 180 derajat. Lebih dari 90 persen <em>cloud server</em> dan superkomputer yang
+          menjalankan internet dunia saat ini hidup di atas sistem operasi gratis yang kodenya dibuka untuk umum, yaitu
+          <strong>GNU/Linux</strong>. Uniknya, seluruh gerakan kode terbuka (<em>open-source software</em>) ini lahir
+          gara-gara sebuah <em>printer</em> kantor yang sering macet pada tahun 1980.
+        </p>
+
+        <h3>Dari Printer Xerox yang Macet Tahun 1980 hingga Lahirnya Sistem Open Source GNU dan Linux</h3>
+
+        <p>
+          Pada tahun 1980, seorang <em>programmer</em> bernama <strong>Richard Stallman</strong> bekerja di laboratorium
+          AI milik kampus MIT di Amerika Serikat. Suatu hari, kantor mereka kedatangan <em>printer laser</em> baru yang
+          sangat cepat bernama <strong>Xerox 9700</strong>. Sayangnya, <em>printer</em> mahal ini punya satu kebiasaan
+          buruk: kertasnya sering nyangkut (<em>paper jam</em>). Karena <em>printer</em> itu ditaruh di ruangan berbeda,
+          orang-orang yang sedang mencetak dokumen tidak sadar kalau <em>printer</em> sedang macet, sehingga antrean
+          dokumen menumpuk dan waktu kerja terbuang sia-sia.
+        </p>
+
+        <p>
+          Di <em>printer</em> kantor yang lama, Stallman pernah mengedit sedikit <em>source code</em> (resep kode
+          program) di dalamnya. Jadi, setiap kali kertas nyangkut, <em>printer</em> otomatis memunculkan pesan peringatan
+          di layar komputer orang yang sedang menunggu cetakan. Stallman pun ingin memasang fitur sederhana yang sama
+          ke <em>printer</em> Xerox 9700. Namun, ketika ia meminta <em>source code</em> tersebut, perusahaan Xerox
+          menolak mentah-mentah. Bagi Xerox, kode program itu adalah rahasia perusahaan yang dikunci rapat
+          (<em>closed-source</em> atau <em>proprietary software</em>).
+        </p>
+
+        <p>
+          Agar mudah membayangkan bedanya, anggap saja <em>software</em> itu seperti kue bolu:
+        </p>
+
+        <ul>
+          <li><strong>Closed-Source Software (Kode Tertutup):</strong> Perusahaan hanya menjual kue bolu yang sudah
+            matang di dalam kotak tersegel (seperti <em>Windows</em>, <em>macOS</em>, atau program <em>printer</em>
+            Xerox). Kalau kuenya kemanisan atau <em>printer</em>-nya macet, kamu dilarang melihat kertas resepnya dan
+            tidak boleh memperbaikinya sendiri.</li>
+          <li><strong>Open-Source Software (Kode Terbuka):</strong> Kertas resepnya (<em>source code</em>) ditempel
+            terbuka di papan pengumuman. Siapa saja di dunia boleh membaca resepnya, memeriksa apakah ada bahan beracun
+            di dalamnya, ikut memperbaiki rasanya, dan membagikannya secara gratis.</li>
+        </ul>
+
+        <p>
+          Karena kesal dilarang memperbaiki alat yang mereka pakai sendiri, Richard Stallman memutuskan keluar dari
+          pekerjaannya lalu memulai <strong>Proyek GNU pada tahun 1983</strong> serta mendirikan <strong>Free Software
+            Foundation (FSF) pada tahun 1985</strong> untuk membangun sistem operasi yang 100 persen terbuka. Delapan
+          tahun kemudian, pada <strong>Agustus 1991</strong>, seorang mahasiswa berusia 21 tahun di Finlandia bernama
+          <strong>Linus Torvalds</strong> membuat jantung utama sistem operasi (disebut <em>kernel</em>) yang ia namai
+          <strong>Linux</strong>, lalu mengunggahnya gratis ke internet. Gabungan peralatan GNU buatan Stallman dan
+          <em>kernel</em> Linux buatan Torvalds inilah yang hari ini menjadi pondasi bagi hampir seluruh <em>server</em>
+          di bumi.
+        </p>
+
+        <h3>Paradoks Menara Digital Triliunan Dolar yang Bertumpu pada Satu Maintainer Tak Dibayar</h3>
+
+        <p>
+          Meskipun sistem <em>open-source</em> membuat teknologi berkembang sangat cepat, ada satu celah manusiawi yang
+          sangat berbahaya di dalamnya. Di dunia pemrograman, fenomena ini paling pas digambarkan lewat komik terkenal
+          <strong>XKCD nomor 2347 berjudul "Dependency"</strong> yang juga ditampilkan oleh Veritasium: seluruh bangunan
+          internet modern digambarkan seperti menara balok raksasa yang megah, tetapi bagian paling bawahnya ditopang
+          oleh satu balok kecil yang dirawat sendirian tanpa gaji oleh satu orang sukarelawan sejak tahun 2003.
+        </p>
+
+        <p>
+          Mengapa bisa begitu? Karena saat <em>developer</em> di perusahaan raksasa membangun aplikasi, mereka tidak
+          menulis semua kode dari nol. Mereka menyusun aplikasinya seperti bermain balok Lego. Sebagaimana pernah kita
+          bahas pada artikel <a href="node2shell-dan-sejarah-nodejs.html">bagaimana celah di library kompresi Brotli
+            memicu krisis Node2Shell</a>, ratusan balok Lego siap pakai itu disebut <strong>library</strong> atau
+          <strong>dependency</strong> (komponen kode yang diandalkan oleh program lain).
+        </p>
+
+        <p>
+          Salah satu balok Lego kecil yang terpasang di hampir setiap komputer Linux di dunia bernama <strong>XZ
+            Utils</strong> (dengan mesin utamanya yang bernama <code>liblzma</code>). Kalau di laptop Windows kamu kenal
+          aplikasi <em>WinRAR</em> atau <em>7-Zip</em> untuk mengecilkan ukuran <em>file</em>, maka <strong>XZ Utils
+            adalah alat kompresi file (file compression) andalan di Linux</strong> yang memadatkan paket <em>software</em>
+          menjadi <em>file</em> berakhiran <code>.xz</code> supaya ukurannya mungil dan cepat diunduh.
+        </p>
+
+        <p>
+          Masalahnya, sejak sekitar tahun 2005, proyek XZ Utils yang dipakai oleh jutaan <em>server</em> bank dan
+          perusahaan raksasa ini diurus nyaris sendirian oleh satu orang <em>programmer</em> sukarelawan asal Finlandia
+          bernama <strong>Lasse Collin</strong>. Dalam istilah <em>open-source</em>, pengurus proyek seperti Lasse
+          disebut sebagai <strong>maintainer</strong>. Selama hampir dua puluh tahun, Lasse merawat XZ Utils di waktu
+          luangnya tanpa bayaran tetap. Ia sama sekali tidak menduga bahwa balok Lego kecil yang ia jaga sendirian itu
+          sedang diincar oleh komplotan peretas untuk membobol pintu gerbang paling krusial di internet:
+          <strong>SSH</strong>.
+        </p>
+
+        <h2>Apa Sebenarnya SSH Itu dan Mengapa Protokol Ini Menjadi Penjaga Pintu Setiap Server</h2>
+
+        <p>
+          Mengapa komplotan peretas kelas kakap rela menghabiskan waktu bertahun-tahun mengincar aplikasi pemadat
+          <em>file</em> seperti XZ Utils? Karena target asli mereka bukanlah <em>file</em> <code>.xz</code>, melainkan
+          <strong>pintu masuk SSH</strong>! Bagi kamu yang sedang belajar membuat <em>website</em>, menyewa VPS
+          (<em>Virtual Private Server</em>), atau mengunggah kodingan ke GitHub, memahami cara kerja SSH akan membuatmu
+          mengerti bagaimana seluruh <em>server</em> di dunia dikendalikan.
+        </p>
+
+        <p>
+          <strong>SSH adalah</strong> protokol jaringan (aturan komunikasi komputer) yang menciptakan sambungan
+          <em>command line</em> atau <em>terminal</em> jarak jauh yang dienkripsi penuh antara laptop pengguna
+          (<em>SSH Client</em>) dan komputer <em>server</em> tujuan (<em>SSH Server</em>). Kalau diibaratkan rumah,
+          komputer <em>server</em> memiliki ribuan nomor pintu komunikasi yang disebut <em>port</em>, dan pintu resmi
+          tempat SSH berjaga secara bawaan adalah <strong>Port 22</strong>.
+        </p>
+
+        <figure class="post-inline-figure" style="margin: 32px 0;">
+          <div class="post-hero-frame">
+            <img src="../assets/blog/cover-ssh-adalah-dan-kisah-celah-xz-utils.webp"
+              alt="Ilustrasi seni kertas berlapis 3D menampilkan gembok dan anak kunci kriptografi putih gading yang menjaga gerbang arsitektur server di atas aliran kontur topografi monokrom lavender dan arang"
+              class="post-hero-img" width="1376" height="768" loading="lazy">
+          </div>
+          <figcaption class="post-figure-caption">Gembok Kriptografi di Pintu Gerbang Internet: Ilustrasi seni kertas
+            berlapis (3D papercraft) yang melambangkan peran protokol SSH sebagai penjaga pintu utama jutaan server dunia
+            yang nyaris disusupi lewat celah backdoor tersembunyi.
+          </figcaption>
+        </figure>
+
+        <h3>Sejarah Tahun 1995 Saat Tatu Ylönen Menciptakan SSH untuk Menggantikan Jalur Telnet yang Telanjang</h3>
+
+        <p>
+          Supaya langsung paham betapa pentingnya SSH, bayangkan kondisi internet sebelum tahun 1995. Waktu itu, kalau
+          seorang teknisi ingin masuk ke komputer <em>server</em> dari jarak jauh, mereka memakai protokol tua buatan
+          tahun 1969 yang bernama <strong>Telnet</strong> atau perintah <code>rlogin</code>.
+        </p>
+
+        <p>
+          Celakanya, jalur Telnet punya satu kelemahan yang sangat fatal: <strong>Telnet mengirim setiap huruf yang kamu
+            ketik di keyboard dalam bentuk teks telanjang (plaintext) tanpa diacak sedikit pun!</strong> Sebagaimana
+          pernah kita bahas pada artikel <a href="sejarah-password-dan-kesalahan-keamanan-akun.html">sejarah password
+            dari tahun 1961 hingga celah keamanan akun</a>, mengirim <em>username</em> dan <em>password</em> lewat
+          Telnet itu persis seperti kamu menulis nomor PIN ATM di belakang selembar kartu pos tanpa amplop, lalu
+          menitipkannya secara estafet melewati sepuluh orang asing. Siapa pun yang memasang alat penyadap jaringan
+          (<em>network sniffer</em>) di kabel internet kampus atau kantor bisa langsung membaca <em>password</em> milikmu
+          huruf demi huruf di layar mereka.
+        </p>
+
+        <p>
+          Kejadian persis itulah yang mengguncang kampus <strong>Helsinki University of Technology di Espoo, Finlandia,
+            pada musim semi tahun 1995</strong>:
+        </p>
+
+        <ol>
+          <li><strong>Ribuan Password Kampus Disadap Hidup-Hidup:</strong> Seseorang diam-diam memasang alat
+            <em>password sniffer</em> di jaringan utama universitas. Dalam waktu singkat, ribuan <em>username</em> dan
+            <em>password</em> milik dosen, mahasiswa, hingga perusahaan riset milik peneliti bernama <strong>Tatu
+              Ylönen</strong> berhasil dicuri karena semuanya lewat di jalur Telnet yang telanjang.</li>
+          <li><strong>Lahirnya SSH pada Juli 1995:</strong> Kaget melihat betapa mudahnya jalur Telnet diintip, Tatu
+            Ylönen langsung mengurung diri mempelajari ilmu pengacakan pesan (kriptografi). Hanya dalam beberapa bulan,
+            tepatnya pada <strong>Juli 1995</strong>, ia meluncurkan program ciptaannya yang diberi nama <strong>SSH
+              (Secure Shell)</strong> secara gratis agar tidak ada lagi <em>password</em> yang lewat secara telanjang di
+            internet.</li>
+          <li><strong>Menjadi Standar Dunia Lewat OpenSSH (1999):</strong> Karya Tatu Ylönen langsung diadopsi di
+            seluruh dunia dan disahkan menjadi standar resmi internet oleh lembaga IETF lewat dokumen <strong>RFC
+              4251</strong>. Pada tahun 1999, komunitas pengembang OpenBSD merilis versi <em>open-source</em> gratisnya
+            yang bernama <strong>OpenSSH</strong> (dengan program penjaga pintu di sisi <em>server</em> yang bernama
+            <code>sshd</code> atau <em>SSH Daemon</em>). Hari ini, OpenSSH adalah penjaga pintu standar di hampir semua
+            <em>server</em> Linux di bumi.</li>
+        </ol>
+
+        <h3>Cara Kerja Public Key dan Private Key yang Membuat Jalur SSH Mustahil Ditebak dari Luar</h3>
+
+        <p>
+          Sekarang muncul pertanyaan paling seru yang juga dijelaskan dengan sangat jenius di video Veritasium:
+          <em>"Bagaimana cara laptop kita dan komputer server menyepakati bahasa sandi rahasia, padahal sejak detik
+            pertama ngobrol, kabel internet di antara mereka sudah penuh dengan penyadap?"</em>
+        </p>
+
+        <p>
+          Kalau kita memakai pengacakan biasa yang disebut <strong>Symmetric Encryption (Enkripsi Satu Kunci)</strong>,
+          kita akan menemui jalan buntu. Bayangkan kamu mengunci surat di dalam kotak besi memakai satu kunci rumah,
+          lalu mengirim kotak itu ke temanmu di luar negeri. Supaya temanmu bisa membuka kotaknya, kamu harus mengirim
+          anak kuncinya juga lewat kurir. Kalau kurir di tengah jalan menduplikat anak kunci itu, tamatlah rahasiamu!
+        </p>
+
+        <p>
+          Untuk memecahkan kebuntuan itu, SSH menggunakan keajaiban matematika yang disebut <strong>Asymmetric
+            Encryption (Enkripsi Pasangan Kunci Berbeda: Public Key &amp; Private Key)</strong>, seperti algoritma
+          <strong>RSA</strong> atau <strong>Ed25519</strong>. Cara kerjanya bisa kamu bayangkan lewat <strong>Analogi
+            Gembok Terbuka dan Anak Kunci Pribadi</strong> berikut ini:
+        </p>
+
+        <ul>
+          <li><strong>1. Public Key (Ibarat Gembok Besi dalam Posisi Terbuka):</strong> Ketika kamu membuat kunci SSH di
+            laptop, komputer akan mencetak dua benda berbeda. Benda pertama namanya <strong>Public Key</strong>.
+            Bayangkan ini sebagai sebuah gembok besi yang sedang terbuka. Kamu boleh memperbanyak gembok terbuka ini,
+            membagikannya ke seluruh dunia, dan menempelkannya di pintu komputer <em>server</em> (di dalam <em>file</em>
+            <code>authorized_keys</code>). Siapa pun di internet boleh melihat gembok ini dan menekannya sampai berbunyi
+            <em>"klik!"</em> untuk mengunci kotak pesan. Namun ingat: <strong>gembok tidak bisa dipakai untuk membuka
+              gembok itu sendiri</strong>.</li>
+          <li><strong>2. Private Key (Ibarat Satu-Satunya Anak Kunci Pembuka):</strong> Benda kedua namanya
+            <strong>Private Key</strong>. Ini adalah satu-satunya anak kunci yang cocok untuk membuka gembok <em>Public
+              Key</em> tadi. Anak kunci <em>Private Key</em> ini disimpan rapat-rapat di dalam laptopmu sendiri dan
+            <strong>pantang dikirim lewat kabel internet ke mana pun</strong>.</li>
+        </ul>
+
+        <p>
+          Jadi, setiap kali seorang <em>developer</em> mengetik <code>ssh user@alamat-server</code> di layar
+          <em>terminal</em> untuk masuk ke <em>server</em>, program SSH melakukan tiga langkah jabat tangan cepat
+          (<strong>SSH Handshake</strong>) dalam hitungan milidetik:
+        </p>
+
+        <ol>
+          <li><strong>Cek KTP Server (Host Verification):</strong> Komputer <em>server</em> menunjukkan identitasnya
+            lebih dulu. Laptopmu mencocokkannya dengan daftar catatan di <em>file</em> <code>known_hosts</code> untuk
+            memastikan kamu tidak salah masuk ke <em>server</em> tiruan milik penipu.</li>
+          <li><strong>Bikin Terowongan Kedap Sadapan (Session Key Exchange):</strong> Lewat rumus pertukaran kunci
+            (<em>Diffie-Hellman</em>), laptop dan <em>server</em> meracik satu kunci pengacak khusus yang hanya berlaku
+            untuk obrolan hari itu saja. Sejak detik ini, semua data yang lewat sudah terbungkus rapat.</li>
+          <li><strong>Ujian Kunci Pribadi Tanpa Mengirim Password (User Authentication):</strong> Bagaimana cara
+            <em>server</em> tahu bahwa kamu adalah pemilik sah tanpa kamu perlu mengirim <em>Private Key</em>?
+            <em>Server</em> akan mengunci sebuah teka-teki acak memakai gembok <strong>Public Key</strong> milikmu yang
+            tertempel di pintu <em>server</em>, lalu mengirim teka-teki terkunci itu ke laptopmu. Hanya laptopmu yang
+            memegang <strong>Private Key</strong> asli yang sanggup membukanya dan menandatanganinya! Di dalam
+            <em>server</em> OpenSSH (<code>sshd</code>), proses pemeriksaan tanda tangan kunci ini salah satunya
+            dikerjakan oleh fungsi kode bernama <code>RSA_public_decrypt</code>. Kalau cocok, pintu <em>server</em>
+            langsung terbuka lebar!</li>
+        </ol>
+
+        <p>
+          Supaya kamu punya gambaran jelas mengapa para praktisi IT selalu menyarankan memakai <strong>SSH Key</strong>
+          ketimbang mengetik <em>password</em> biasa, simak tabel perbandingan tiga cara masuk ke <em>server</em> di
+          bawah ini:
+        </p>
+
+        <div class="post-prose-table-wrap" role="region"
+          aria-label="Tabel Perbandingan Metode Login Server: Telnet vs SSH Password vs SSH Key">
+          <table class="post-prose-table">
+            <thead>
+              <tr>
+                <th scope="col" style="width: 22%;">Aspek Perbandingan</th>
+                <th scope="col" style="width: 26%;">Telnet (Cara Lama 1969)</th>
+                <th scope="col" style="width: 26%;">SSH + Password Biasa</th>
+                <th scope="col" style="width: 26%;">SSH + SSH Key (Public &amp; Private Key)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Kondisi Data di Kabel Internet</strong></td>
+                <td><strong>Teks telanjang (Plaintext)</strong>; semua ketikan dan <em>password</em> bisa dibaca langsung
+                  oleh penyadap Wi-Fi/jaringan.</td>
+                <td><strong>Terenkripsi penuh</strong> di dalam terowongan SSH, aman dari intipan di tengah jalan.</td>
+                <td><strong>Terenkripsi penuh</strong> dan tidak pernah mengirim kata sandi apa pun lewat kabel
+                  internet.</td>
+              </tr>
+              <tr>
+                <td><strong>Ketahanan dari Serangan Tebak Sandi (Brute-Force)</strong></td>
+                <td>Sangat berbahaya dan sudah dilarang untuk pengelolaan <em>server</em> modern.</td>
+                <td>Masih rawan ditembaki ribuan program <em>bot</em> otomatis yang menebak <em>password</em> di Port 22
+                  tiap detik.</td>
+                <td><strong>Mustahil ditebak paksa</strong>; komputer tercepat di dunia butuh waktu miliaran tahun untuk
+                  menebak pasangan kuncinya.</td>
+              </tr>
+              <tr>
+                <td><strong>Kepraktisan Buat Developer (VPS &amp; Git)</strong></td>
+                <td>Harus mengetik ulang sandi tanpa perlindungan.</td>
+                <td>Capek karena harus mengetik <em>password</em> berulang kali setiap mau <em>login</em> atau
+                  <em>push</em> kode.</td>
+                <td><strong>Praktis dan instan</strong>; cukup sekali tempel <em>Public Key</em> di <em>server</em> atau
+                  GitHub, langsung masuk otomatis.</td>
+              </tr>
+              <tr>
+                <td><strong>Rekomendasi Terbaik Saat Ini</strong></td>
+                <td><strong>Tinggalkan sepenuhnya</strong> untuk urusan <em>server</em> internet.</td>
+                <td>Hanya boleh dipakai di menit pertama saat baru menyewa VPS, lalu wajib dimatikan.</td>
+                <td><strong>Wajib dipakai</strong> (terutama tipe kunci <code>Ed25519</code>) untuk semua
+                  <em>server</em> dan akun Git.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Operasi Penyusupan Jia Tan Selama Dua Setengah Tahun untuk Membobol Pintu SSH dari Dalam</h2>
+
+        <p>
+          Setelah melihat cara kerja gembok <em>Public Key</em> dan <em>Private Key</em> di atas, kamu pasti langsung
+          paham mengapa para <em>hacker</em> maupun agen intelijen negara pusing tujuh keliling menghadapi
+          <strong>OpenSSH</strong>. Pintu depannya terlalu kuat. Kamu tidak bisa menyadap kabelnya, tidak bisa menebak
+          kunci matematikanya, dan tidak bisa menyelundupkan kode jahat langsung ke proyek OpenSSH karena ribuan pakar
+          keamanan memelototi <em>source code</em>-nya setiap hari.
+        </p>
+
+        <p>
+          Lalu bagaimana cara menembus benteng yang pintu depannya tidak mempan didobrak? Jawabannya persis seperti
+          taktik Kuda Troya: <strong>jangan serang penjaga pintunya, tapi menyusuplah ke pabrik pembuat baut kecil yang
+            dipakai di dalam engsel pintu tersebut!</strong> Dalam dunia <em>cybersecurity</em>, taktik memutar lewat
+          komponen pendukung ini disebut <strong>Supply-Chain Attack</strong> (serangan rantai pasok).
+        </p>
+
+        <figure class="post-inline-figure" style="margin: 32px 0;">
+          <div class="post-hero-frame" style="background: #F0EDF4; padding: 24px; border-radius: 16px;">
+            <svg viewBox="0 0 860 390" width="100%" height="auto" role="img"
+              aria-labelledby="xz-ssh-title xz-ssh-desc"
+              style="display: block; max-width: 100%; height: auto; font-family: 'Rubik', sans-serif;">
+              <title id="xz-ssh-title">Diagram Alur Penyusupan Backdoor XZ Utils (CVE-2024-3094) ke Pintu Login OpenSSH</title>
+              <desc id="xz-ssh-desc">Diagram empat tahap bagaimana Jia Tan menyembunyikan backdoor di test file XZ Utils,
+                mengekstraknya saat build process, menumpang lewat library systemd, hingga membajak fungsi
+                RSA_public_decrypt di dalam OpenSSH.</desc>
+
+              <!-- Header Banner -->
+              <rect x="24" y="16" width="812" height="36" rx="8" fill="#E4DCE9" />
+              <text x="430" y="39" text-anchor="middle" fill="#211B28" font-size="13" font-weight="600">
+                ALUR KUDA TROYA XZ UTILS (CVE-2024-3094): DARI APLIKASI KOMPRESI KE PINTU LOGIN SSH
+              </text>
+
+              <!-- Step 1: Infiltrasi Sosial & Test File -->
+              <rect x="24" y="72" width="188" height="190" rx="12" fill="#FCFAFD" stroke="#211B28" stroke-width="2" />
+              <text x="118" y="98" text-anchor="middle" fill="#450D50" font-size="11" font-weight="700">TAHAP 1 (2021 -
+                2024)</text>
+              <text x="118" y="120" text-anchor="middle" fill="#211B28" font-size="13" font-weight="600">Susupi XZ
+                Utils</text>
+              <text x="118" y="144" text-anchor="middle" fill="#756A7D" font-size="11.5">Jia Tan jadi co-maintainer</text>
+              <text x="118" y="161" text-anchor="middle" fill="#756A7D" font-size="11.5">&amp; sembunyikan backdoor</text>
+              <text x="118" y="178" text-anchor="middle" fill="#756A7D" font-size="11.5">di dalam test file rusak:</text>
+              <text x="118" y="195" text-anchor="middle" fill="#211B28" font-size="11" font-weight="600">bad-3-corrupt_lzma2.xz</text>
+              <rect x="42" y="218" width="152" height="28" rx="6" fill="#F0EDF4" />
+              <text x="118" y="236" text-anchor="middle" fill="#450D50" font-size="10.5" font-weight="600">Lolos Cek
+                Source Code</text>
+
+              <!-- Arrow 1 to 2 -->
+              <line x1="214" y1="167" x2="230" y2="167" stroke="#450D50" stroke-width="2.5" />
+              <polygon points="232,167 224,162 224,172" fill="#450D50" />
+
+              <!-- Step 2: Ekstraksi Build Script -->
+              <rect x="234" y="72" width="188" height="190" rx="12" fill="#FCFAFD" stroke="#211B28" stroke-width="2" />
+              <text x="328" y="98" text-anchor="middle" fill="#450D50" font-size="11" font-weight="700">TAHAP 2 (FEBRUARI
+                2024)</text>
+              <text x="328" y="120" text-anchor="middle" fill="#211B28" font-size="13" font-weight="600">Bongkar Saat
+                Build</text>
+              <text x="328" y="144" text-anchor="middle" fill="#756A7D" font-size="11.5">Script build-to-host.m4 di</text>
+              <text x="328" y="161" text-anchor="middle" fill="#756A7D" font-size="11.5">update XZ 5.6.0 &amp; 5.6.1</text>
+              <text x="328" y="178" text-anchor="middle" fill="#756A7D" font-size="11.5">menyuntikkan backdoor ke</text>
+              <text x="328" y="195" text-anchor="middle" fill="#211B28" font-size="11" font-weight="600">library
+                liblzma.so</text>
+              <rect x="252" y="218" width="152" height="28" rx="6" fill="#F0EDF4" />
+              <text x="328" y="236" text-anchor="middle" fill="#450D50" font-size="10.5" font-weight="600">Memakai Fitur
+                IFUNC</text>
+
+              <!-- Arrow 2 to 3 -->
+              <line x1="424" y1="167" x2="440" y2="167" stroke="#450D50" stroke-width="2.5" />
+              <polygon points="442,167 434,162 434,172" fill="#450D50" />
+
+              <!-- Step 3: Jembatan Systemd -->
+              <rect x="444" y="72" width="188" height="190" rx="12" fill="#FCFAFD" stroke="#450D50" stroke-width="2"
+                stroke-dasharray="6,4" />
+              <text x="538" y="98" text-anchor="middle" fill="#450D50" font-size="11" font-weight="700">TAHAP 3 (JALUR
+                NUMPANG)</text>
+              <text x="538" y="120" text-anchor="middle" fill="#211B28" font-size="13" font-weight="600">Jembatan
+                Systemd</text>
+              <text x="538" y="144" text-anchor="middle" fill="#756A7D" font-size="11.5">OpenSSH aslinya tidak</text>
+              <text x="538" y="161" text-anchor="middle" fill="#756A7D" font-size="11.5">pakai XZ, tapi distro Linux</text>
+              <text x="538" y="178" text-anchor="middle" fill="#756A7D" font-size="11.5">menyambungkan sshd ke</text>
+              <text x="538" y="195" text-anchor="middle" fill="#211B28" font-size="11" font-weight="600">libsystemd
+                &rarr; liblzma</text>
+              <rect x="462" y="218" width="152" height="28" rx="6" fill="#F0EDF4" />
+              <text x="538" y="236" text-anchor="middle" fill="#450D50" font-size="10.5" font-weight="600">Masuk ke
+                Memori SSH</text>
+
+              <!-- Arrow 3 to 4 -->
+              <line x1="634" y1="167" x2="650" y2="167" stroke="#211B28" stroke-width="2.5" />
+              <polygon points="652,167 644,162 644,172" fill="#211B28" />
+
+              <!-- Step 4: Pembajakan OpenSSH -->
+              <rect x="654" y="72" width="182" height="190" rx="12" fill="#211B28" stroke="#450D50" stroke-width="2" />
+              <text x="745" y="98" text-anchor="middle" fill="#E4DCE9" font-size="11" font-weight="700">TAHAP 4 (TARGET
+                UTAMA)</text>
+              <text x="745" y="120" text-anchor="middle" fill="#FCFAFD" font-size="13" font-weight="600">Bajak Login
+                OpenSSH</text>
+              <text x="745" y="144" text-anchor="middle" fill="#F0EDF4" font-size="11.5">Membelokkan fungsi</text>
+              <text x="745" y="161" text-anchor="middle" fill="#E4DCE9" font-size="11" font-weight="600">RSA_public_decrypt</text>
+              <text x="745" y="178" text-anchor="middle" fill="#F0EDF4" font-size="11.5">&amp; cek kunci master</text>
+              <text x="745" y="195" text-anchor="middle" fill="#F0EDF4" font-size="11.5">rahasia Ed448 Jia Tan</text>
+              <rect x="670" y="218" width="150" height="28" rx="6" fill="#450D50" />
+              <text x="745" y="236" text-anchor="middle" fill="#FCFAFD" font-size="10.5" font-weight="600">Root Access
+                Tanpa Login!</text>
+
+              <!-- Bottom Detection Callout inside SVG -->
+              <rect x="24" y="282" width="812" height="86" rx="10" fill="#FCFAFD" stroke="#450D50" stroke-width="1.8" />
+              <text x="430" y="310" text-anchor="middle" fill="#450D50" font-size="12.5" font-weight="700">
+                TITIK PENYELAMATAN (29 MARET 2024): DELAY 500 MILIDETIK ANDRES FREUND
+              </text>
+              <text x="430" y="332" text-anchor="middle" fill="#211B28" font-size="12">
+                Proses cek kunci rahasia Ed448 di Tahap 4 bikin waktu login gagal di OpenSSH melambat dari ~300 ms jadi
+                ~800 ms.
+              </text>
+              <text x="430" y="352" text-anchor="middle" fill="#756A7D" font-size="11.5">
+                Delay 0,5 detik itulah yang dicurigai oleh engineer Microsoft Andres Freund sebelum update menyebar ke
+                seluruh dunia.
+              </text>
+            </svg>
+          </div>
+          <figcaption class="post-figure-caption">Rantai Serangan Empat Tahap: Bagaimana kode backdoor yang disembunyikan
+            di dalam test file aplikasi kompresi XZ Utils berhasil menyeberang ke pintu login OpenSSH lewat jembatan
+            library systemd.</figcaption>
+        </figure>
+
+        <h3>Taktik Social Engineering Menekan Lasse Collin hingga Menyerahkan Akses Co-Maintainer XZ Utils</h3>
+
+        <p>
+          Kisah penyusupan paling sabar dalam sejarah internet ini dimulai pada <strong>Oktober 2021</strong>. Waktu
+          itu, muncul sebuah akun GitHub baru bernama <strong>Jia Tan</strong> (dengan <em>username</em>
+          <code>JiaT75</code>). Alih-alih langsung bertindak mencurigakan, Jia Tan datang bagaikan teman kerja impian.
+          Selama berbulan-bulan, ia rajin membantu mengirimkan <em>patch</em> (tambalan perbaikan kode) yang rapi dan
+          sangat membantu ke proyek <strong>XZ Utils</strong> yang diurus sendirian oleh Lasse Collin.
+        </p>
+
+        <p>
+          Namun, begitu memasuki bulan <strong>April hingga Juni 2022</strong>, komplotan ini mulai memainkan sandiwara
+          psikologis yang kejam (disebut <em>social engineering</em>). Tiba-tiba muncul akun-akun misterius bernama
+          <strong>Jigar Kumar</strong> dan <strong>Dennis Ens</strong> di forum <em>mailing list</em> XZ Utils. Para
+          peneliti keamanan siber meyakini akun-akun ini hanyalah akun palsu (<em>sockpuppet accounts</em>) yang
+          dikendalikan oleh komplotan Jia Tan sendiri untuk memainkan skenario "polisi jahat dan polisi baik":
+        </p>
+
+        <ul>
+          <li><strong>Akun Palsu Menyerang Mental Lasse Collin:</strong> Akun Jigar Kumar mengirim <em>email</em> bernada
+            marah-marah, memprotes mengapa Lasse Collin sangat lambat merilis <em>update</em>, dan mempermalukan Lasse di
+            depan umum dengan berkata bahwa proyek XZ Utils akan mati kalau tetap dipegang oleh Lasse sendirian.</li>
+          <li><strong>Lasse Collin Sedang Burnout Berat:</strong> Di tengah hujan kritik tersebut, Lasse Collin menjawab
+            dengan jujur bahwa ia memang sedang berjuang melawan masalah kesehatan mental jangka panjang dan kelelahan
+            fisik (<em>burnout</em>) setelah belasan tahun mengurus proyek itu sendirian tanpa gaji. Dalam <em>email</em>
+            itu, Lasse bercerita bahwa untungnya sekarang ada relawan baru yang sangat baik dan rajin membantunya, yaitu
+            <strong>Jia Tan</strong>!</li>
+          <li><strong>Kunci Gudang Kode Berpindah Tangan:</strong> Sandiwara itu berhasil seratus persen. Karena terus
+            didesak oleh akun-akun palsu tadi, pada akhir tahun 2022 hingga awal 2023, Lasse Collin yang kelelahan
+            akhirnya mengangkat Jia Tan menjadi pengurus pendamping (<strong>co-maintainer</strong>). Sejak hari itu, Jia
+            Tan resmi memegang kunci utama untuk mengubah dan merilis <em>update</em> XZ Utils ke seluruh dunia!</li>
+        </ul>
+
+        <h3>Cara Backdoor di File Kompresi XZ Membajak Proses Login OpenSSH Lewat Jalur Systemd</h3>
+
+        <p>
+          Saat membaca bagian ini, kamu mungkin langsung bertanya-tanya: <em>"Tunggu dulu, XZ Utils kan cuma aplikasi
+            kompresi file mirip ZIP atau WinRAR. Sedangkan pintu login server dijaga oleh OpenSSH. Memangnya apa
+            hubungan antara aplikasi kompresi file dengan pintu login SSH?"</em>
+        </p>
+
+        <p>
+          Pertanyaanmu sangat tepat! Aslinya, program <strong>OpenSSH (<code>sshd</code>) memang sama sekali tidak
+            memakai kode XZ Utils</strong>. Kalau kamu mengunduh OpenSSH murni dari pembuat aslinya, kuda Troya Jia Tan
+          tidak akan mempan.
+        </p>
+
+        <p>
+          Akan tetapi, di dunia nyata, sistem operasi Linux populer seperti <strong>Debian, Ubuntu, Fedora, dan Red
+            Hat</strong> menambahkan sedikit modifikasi pada OpenSSH mereka supaya bisa mengobrol dengan program pengatur
+          layanan latar belakang yang bernama <strong><code>systemd</code></strong> (tujuannya sederhana, supaya OpenSSH
+          bisa melapor ke <code>systemd</code>: <em>"Hei, pintu SSH sudah nyala dan siap menerima tamu!"</em>). Nah, di
+          sinilah letak celahnya: <em>library</em> <code>libsystemd</code> tersebut ternyata memakai
+          <strong><code>liblzma</code> (mesin milik XZ Utils)</strong> untuk mengecilkan ukuran <em>log file</em>
+          (catatan riwayat sistem)!
+        </p>
+
+        <p>
+          Gara-gara sambungan berantai itulah (<code>sshd</code> &rarr; <code>libsystemd</code> &rarr;
+          <code>liblzma</code>), kode XZ Utils otomatis ikut tersedot masuk ke dalam ruang memori yang sama dengan pintu
+          <em>login</em> OpenSSH! Mengetahui adanya jalur tikus tersebut, pada <strong>Februari 2024 (lewat update XZ
+            Utils versi 5.6.0 dan 5.6.1)</strong>, Jia Tan melancarkan empat langkah penyusupan yang luar biasa licik:
+        </p>
+
+        <ol>
+          <li><strong>Menyembunyikan Backdoor di Dalam "Test File" yang Rusak:</strong> Jia Tan tahu kalau ia menulis
+            kode jahat secara terang-terangan di dalam <em>source code</em> bahasa C di GitHub, <em>programmer</em> lain
+            pasti langsung curiga. Jadi, ia menyembunyikan kode <em>backdoor</em> yang sudah diacak ke dalam dua
+            <em>file</em> latihan (<em>test files</em>) bernama <code>bad-3-corrupt_lzma2.xz</code> dan
+            <code>good-large_compressed.lzma</code>. Kenapa tidak ada yang curiga melihat <em>file</em> berisi kode acak
+            di sana? Karena setiap aplikasi kompresi <em>file</em> memang wajib punya folder berisi contoh <em>file</em>
+            yang "rusak" untuk mengetes apakah aplikasinya bakal <em>error</em> atau tidak saat membuka <em>file</em>
+            rusak!</li>
+          <li><strong>Membongkar Isi Bom Saat Proses Build (Compile):</strong> Saat Jia Tan mengunggah paket
+            <em>release file</em> resmi berformat <code>.tar</code> untuk diambil oleh pengelola Linux, ia menyelipkan
+            <em>script</em> tersembunyi di dalam <em>file</em> <code>build-to-host.m4</code>. Ketika komputer pusat
+            Debian atau Fedora sedang merakit (<em>build / compile</em>) kode XZ Utils menjadi program siap pakai,
+            <em>script</em> itu diam-diam membongkar isi <em>test file</em> rusak tadi lalu menyuntikkan
+            <em>backdoor</em>-nya langsung ke dalam <em>library</em> matang <code>liblzma.so</code>.</li>
+          <li><strong>Membelokkan Fungsi Cek Kunci di OpenSSH:</strong> Begitu komputer <em>server</em> dinyalakan dan
+            OpenSSH memanggil <code>systemd</code>, kode <em>backdoor</em> di dalam <code>liblzma</code> langsung aktif.
+            Ia memakai fitur bawaan Linux bernama <strong><code>IFUNC</code> (GNU Indirect Function)</strong> untuk
+            membajak fungsi pemeriksa gembok SSH yang kita bahas tadi, yaitu fungsi
+            <strong><code>RSA_public_decrypt</code></strong>!</li>
+          <li><strong>Lubang Kunci Master Rahasia Milik Jia Tan:</strong> Setelah fungsi <code>RSA_public_decrypt</code>
+            dibajak, setiap kali ada orang mengetuk pintu <em>login</em> SSH di Port 22, <em>backdoor</em> tersebut akan
+            mengintip lebih dulu: <em>"Apakah orang yang mengetuk pintu ini membawa tanda tangan rahasia berjenis Ed448
+              milik Jia Tan?"</em> Kalau yang masuk adalah <em>developer</em> biasa, SSH berjalan normal seperti biasa.
+            Tapi kalau yang mengetuk pintu membawa <strong>Private Key</strong> rahasia milik Jia Tan, <em>backdoor</em>
+            itu langsung membuka pintu selebar-lebarnya dan memberikan hak kuasa penuh (<strong>root access</strong>)
+            untuk menjalankan perintah apa saja di <em>server</em> tanpa perlu <em>login</em> sama sekali!</li>
+        </ol>
+
+        <h2>Keajaiban Setengah Detik yang Menyelamatkan Internet dan Cara Mengamankan Server Hari Ini</h2>
+
+        <p>
+          Pada pertengahan Maret 2024, bom waktu buatan Jia Tan itu sudah berhasil masuk ke versi uji coba
+          (<em>testing branch</em>) berbagai sistem Linux besar, mulai dari <em>Debian Sid</em>, <em>Fedora Rawhide</em>,
+          hingga tahap awal <em>Ubuntu</em> dan <em>Red Hat</em>. Bahkan, komplotan Jia Tan sedang gencar membujuk para
+          pengurus Linux agar segera memasukkan <em>update</em> XZ Utils itu ke versi utama (<em>stable release</em>)
+          yang akan terpasang otomatis di jutaan <em>server</em> seluruh dunia dalam hitungan minggu.
+        </p>
+
+        <p>
+          Seluruh operasi intelijen yang disiapkan dengan sabar selama dua setengah tahun itu akhirnya gagal total hanya
+          karena satu hal sepele yang tidak pernah diduga oleh Jia Tan: <strong>rasa penasaran seorang engineer terhadap
+            delay setengah detik</strong>.
+        </p>
+
+        <h3>Kecurigaan Andres Freund pada Delay 500 Milidetik dan Jawaban atas Debat Keamanan Open Source</h3>
+
+        <p>
+          Di San Francisco, seorang <em>software engineer</em> berusia 38 tahun yang bekerja di
+          <strong>Microsoft</strong> sekaligus pengembang <em>database</em> <strong>PostgreSQL</strong> bernama
+          <strong>Andres Freund</strong> sedang mengetes performa komputernya yang memakai sistem <em>Debian Sid</em>.
+          Saat sedang memeriksa layar pemantau sistem, Andres melihat ada sesuatu yang agak aneh: program penjaga pintu
+          SSH (<strong><code>sshd</code></strong>) tiba-tiba memakan tenaga prosesor (CPU) sedikit lebih tinggi dari
+          biasanya.
+        </p>
+
+        <p>
+          Ketika Andres menghitung berapa lama waktu yang dibutuhkan saat seseorang gagal <em>login</em> ke pintu SSH, ia
+          menemukan selisih angka yang sangat kecil tetapi menyelamatkan dunia:
+        </p>
+
+        <div class="post-callout">
+          <p>
+            <strong>Fakta Delay 500 Milidetik (0,5 Detik) yang Membongkar Backdoor Jia Tan:</strong> Normalnya, proses
+            pengecekan <em>login</em> di pintu SSH hanya butuh waktu sekitar <strong>300 milidetik (0,3 detik)</strong>.
+            Namun setelah <em>update</em> XZ Utils 5.6.1 terpasang, proses yang sama melambat menjadi <strong>800
+              milidetik (0,8 detik)</strong>. Kenapa ada <strong>delay tambahan 500 milidetik (setengah detik)</strong>?
+            Karena setiap kali ada orang mengetuk pintu SSH, kode <em>backdoor</em> Jia Tan harus bekerja ekstra
+            menghitung rumus kriptografi <code>Ed448</code> untuk mengecek apakah tamu yang datang itu adalah Jia Tan
+            atau bukan!
+          </p>
+        </div>
+
+        <p>
+          Coba jujur pada diri kita sendiri: kalau laptop atau internet kita tiba-tiba terasa lambat setengah detik saja,
+          apa yang kita lakukan? Hampir semua orang di bumi pasti tidak akan sadar, atau paling-paling mengira sinyal
+          Wi-Fi sedang agak turun. Namun, <strong>Andres Freund</strong> tidak membiarkannya lewat begitu saja. Ia
+          membuka <em>tools</em> pelacak performa bernama <code>perf</code> dan pemeriksa memori <code>Valgrind</code>,
+          membongkar proses di dalam <code>sshd</code>, lalu melacak sumber pelambatan itu sampai ke <em>file</em>
+          <code>liblzma.so.5.6.1</code>.
+        </p>
+
+        <p>
+          Begitu melihat ada kode aneh yang sengaja disembunyikan di dalam XZ Utils untuk membajak OpenSSH, Andres
+          langsung mengirim <em>email</em> peringatan darurat ke forum keamanan dunia <code>oss-security</code> pada
+          <strong>29 Maret 2024</strong>. Temuan itu langsung diberi kode bahaya <strong>CVE-2024-3094</strong> dengan
+          skor keparahan maksimal <strong>10,0 dari 10,0 (Critical)</strong>. Dalam hitungan jam, seluruh pengelola Linux
+          di dunia langsung membatalkan <em>update</em> tersebut dan mencabut akses Jia Tan selamanya.
+        </p>
+
+        <p>
+          Lalu, siapa sebenarnya sosok di balik akun <strong>Jia Tan</strong>? Setelah kejadian itu meledak, para
+          peneliti memeriksa jam kerja dari ratusan <em>Git commits</em> (riwayat pengiriman kode) milik Jia Tan selama
+          2,5 tahun dan menemukan petunjuk kuat:
+        </p>
+
+        <ul>
+          <li><strong>Bekerja Sesuai Jam Kantor 9-to-5 di Zona Waktu Eropa Timur / Asia Barat:</strong> Walaupun Jia Tan
+            berusaha menyamar seolah tinggal di zona waktu Asia Timur (<code>UTC+8</code>), grafik jam kerjanya selama
+            bertahun-tahun selalu dimulai pukul 09.00 pagi dan berhenti pukul 17.00 sore dari Senin sampai Jumat pada
+            zona waktu <strong><code>UTC+2</code> atau <code>UTC+3</code></strong>, serta selalu libur tepat pada tanggal
+            merah di kawasan Eropa Timur.</li>
+          <li><strong>Bukan Hacker Kamar Tidur, Melainkan Operasi Negara:</strong> Melihat betapa rapinya kode kriptografi
+            <code>Ed448</code> yang dipakai, kesabaran merawat proyek selama 2,5 tahun tanpa salah langkah, serta jadwal
+            kerja persis pegawai kantoran tersebut, para pakar sepakat bahwa Jia Tan adalah tim operasi intelijen siber
+            yang dibiayai oleh negara (<em>state-sponsored actor</em>).</li>
+        </ul>
+
+        <p>
+          Di penghujung videonya, Veritasium menutup cerita ini dengan satu pertanyaan besar yang sering membuat orang
+          salah paham: <em>"Kalau sistem open-source seperti XZ Utils bisa disusupi orang jahat, apakah itu artinya
+            software tertutup (closed-source) seperti Windows atau macOS jauh lebih aman?"</em>
+        </p>
+
+        <p>
+          Jawabannya justru sebaliknya: <strong>kita semua selamat dari bencana ini murni karena Linux dan OpenSSH adalah
+            open-source!</strong> Coba bayangkan seandainya <em>delay</em> setengah detik (500 milidetik) tadi terjadi
+          setelah kamu melakukan <em>update</em> pada sistem operasi tertutup (<em>closed-source</em>) yang kodenya
+          dirahasiakan seperti <em>printer</em> Xerox di zaman Richard Stallman dulu. Di sistem tertutup, insinyur luar
+          seperti Andres Freund dilarang keras mengintip isi <em>source code</em>-nya. Kalau komputer melambat setengah
+          detik sehabis <em>update</em>, semua orang hanya akan mengeluh sebentar lalu menerimanya sebagai hal biasa,
+          sementara <em>backdoor</em> di dalamnya bisa leluasa mengintip seluruh dunia selama puluhan tahun tanpa ada
+          yang bisa membuktikannya!
+        </p>
+
+        <h3>Tiga Langkah Praktis Mengamankan Akses SSH bagi Developer dan Pemilik Server Pemula</h3>
+
+        <p>
+          Sebelum masuk ke tips praktis, ada tiga batasan penting (<em>negative knowledge</em>) yang wajib kamu tahu
+          supaya tidak salah memakai SSH di pekerjaan sehari-hari. <strong>Pertama</strong>, jangan pernah membagikan
+          akses <em>terminal</em> SSH kepada anggota tim non-teknis atau klien hanya untuk mengunggah artikel/gambar;
+          berikan mereka akses lewat halaman dasbor CMS yang aman. <strong>Kedua</strong>, jangan menjadikan terowongan
+          SSH sebagai pengganti <strong>VPN</strong> permanen untuk mengalirkan seluruh trafik internet kantor karena
+          tumpukan jalur TCP di atas TCP (<em>TCP-over-TCP</em>) akan membuat koneksi menjadi lambat saat sinyal kurang
+          stabil. <strong>Ketiga</strong>, ingat pelajaran dari kasus XZ Utils: sekuat apa pun enkripsi SSH milikmu,
+          <em>server</em> tetap bisa jebol kalau kamu gemar memasang paket aplikasi versi uji coba (<em>testing /
+            unstable</em>) yang belum matang di <em>server</em> utama.
+        </p>
+
+        <p>
+          Sebagaimana prinsip keamanan berlapis yang pernah kita bahas pada artikel <a
+            href="api-adalah-sejarah-dan-cara-kerjanya.html">cara mengamankan Secret API Key di server</a> serta <a
+            href="apa-itu-database-sejarah-dan-kebocoran-data.html">pelajaran dari kasus bocornya jutaan data
+            database</a>, kamu bisa langsung menerapkan tiga langkah sederhana ini dalam 15 menit ke depan untuk
+          mengamankan akses SSH di VPS maupun akun GitHub/GitLab milikmu:
+        </p>
+
+        <ol>
+          <li><strong>Ganti Login Password dengan SSH Key Ed25519 Sekarang Juga:</strong> Peringatan: jangan biarkan
+            pintu SSH di VPS milikmu hanya dijaga oleh <em>password</em> ketikan biasa karena ribuan <em>bot</em>
+            otomatis terus mencoba menebak sandi di Port 22 sepanjang hari. Buka <em>terminal</em> di laptopmu, lalu
+            buat pasangan <em>Public Key</em> dan <em>Private Key</em> modern dengan mengetik perintah
+            <code>ssh-keygen -t ed25519 -C "emailkamu@domain.com"</code>. Setelah gembok <em>Public Key</em>-nya kamu
+            tempel ke dalam <em>server</em>, buka <em>file</em> pengaturan <code>/etc/ssh/sshd_config</code> di
+            <em>server</em>, lalu ubah menjadi <code>PasswordAuthentication no</code> dan
+            <code>PermitRootLogin no</code> supaya tidak ada satu pun <em>hacker</em> yang bisa masuk memakai tebakan
+            <em>password</em>.</li>
+          <li><strong>Selalu Pakai Versi OS "Stable / LTS" untuk Server Produksi:</strong> Belajar dari kasus XZ Utils
+            yang menyebar lebih dulu di versi uji coba (<em>testing branch</em>), pastikan komputer <em>server</em>
+            tempat kamu menaruh <em>website</em> utama selalu menggunakan versi sistem operasi berlabel
+            <strong>LTS (Long-Term Support) atau Stable Release</strong>, serta aktifkan fitur tambalan keamanan otomatis
+            (<code>unattended-upgrades</code>).</li>
+          <li><strong>Pasang Firewall di Port 22 atau Gunakan Jaringan Privat:</strong> Kalau komputer <em>server</em>
+            tersebut hanya dikelola oleh dirimu sendiri, jangan biarkan Port 22 terbuka bebas untuk seluruh dunia.
+            Nyalakan pengaman seperti <code>UFW</code> dan <code>Fail2ban</code> (yang otomatis memblokir alamat IP yang
+            salah mengetuk pintu berkali-kali), atau bungkus akses SSH milikmu di dalam jaringan privat seperti
+            <em>Tailscale</em> / <em>WireGuard</em> agar pintu Port 22 sama sekali tidak terlihat oleh orang asing di
+            internet publik.</li>
+        </ol>
+
+        <h2>Referensi</h2>
+        <ul>
+          <li>Veritasium. (2026, 25 Februari). <em>The Internet Was Weeks Away From Disaster and No One Knew (How
+              Someone Almost Hacked Every Linux Server on the Planet)</em> [Video]. YouTube. <a
+              href="https://www.youtube.com/watch?v=aoag03mSuXQ" target="_blank"
+              rel="noopener noreferrer">https://www.youtube.com/watch?v=aoag03mSuXQ</a></li>
+          <li>Ylönen, T. (1996). <em>SSH - Secure Login Connections over the Internet</em>. Proceedings of the 6th USENIX
+            Security Symposium, San Jose, CA, 37-42. <a
+              href="https://www.usenix.org/legacy/publications/library/proceedings/sec96/ylonen.html" target="_blank"
+              rel="noopener noreferrer">https://www.usenix.org/legacy/publications/library/proceedings/sec96/ylonen.html</a>
+          </li>
+          <li>Ylönen, T., &amp; Lonvick, C. (2006). <em>The Secure Shell (SSH) Protocol Architecture</em> (RFC 4251).
+            Internet Engineering Task Force (IETF). <a href="https://datatracker.ietf.org/doc/html/rfc4251"
+              target="_blank" rel="noopener noreferrer">https://datatracker.ietf.org/doc/html/rfc4251</a></li>
+          <li>Freund, A. (2024, 29 Maret). <em>backdoor in upstream xz/liblzma leading to ssh server compromise</em>.
+            Openwall <code>oss-security</code> Mailing List. <a
+              href="https://www.openwall.com/lists/oss-security/2024/03/29/4" target="_blank"
+              rel="noopener noreferrer">https://www.openwall.com/lists/oss-security/2024/03/29/4</a></li>
+          <li>National Institute of Standards and Technology (NIST). (2024). <em>CVE-2024-3094 Detail: Malicious code in
+              xz/liblzma versions 5.6.0 and 5.6.1</em>. National Vulnerability Database (NVD). <a
+              href="https://nvd.nist.gov/vuln/detail/CVE-2024-3094" target="_blank"
+              rel="noopener noreferrer">https://nvd.nist.gov/vuln/detail/CVE-2024-3094</a></li>
+          <li>Cox, R. (2024, 1 April). <em>Timeline of the xz open source attack</em>. research!rsc. <a
+              href="https://research.swtch.com/xz-timeline" target="_blank"
+              rel="noopener noreferrer">https://research.swtch.com/xz-timeline</a></li>
+        </ul>
+      </article>
+
+      <!-- Next & Prev Navigation -->
+      <nav class="post-navigator" aria-label="Article navigation">
+        <a href="kenapa-miliarder-dunia-memperlambat-ai-dan-faktor-china.html" class="post-nav-card">
+          <span class="nav-direction">&larr; Artikel Sebelumnya</span>
+          <span class="nav-article-title">Kenapa Para Miliarder Dunia Tiba-Tiba Sepakat Memperlambat AI dan Apa
+            Hubungannya dengan China</span>
+        </a>
+        <a href="api-adalah-sejarah-dan-cara-kerjanya.html" class="post-nav-card">
+          <span class="nav-direction">Topik Terkait &rarr;</span>
+          <span class="nav-article-title">API Adalah Pelayan Tak Terlihat di Balik Aplikasi Harian Kita serta Sejarah
+            dan Cara Kerjanya untuk Pemula</span>
+        </a>
+      </nav>
+
+    </main>
+
+    <!-- Footer (Matching semenitwasted layout) -->
+    <footer class="portfolio-footer">
+      <div class="footer-left">
+        <span class="footer-brand">semenitwasted</span>
+        <span class="footer-subtitle">Design · Icons · Illustration · Web</span>
+      </div>
+      <div class="footer-platforms" aria-label="Platform links">
+        <a href="https://www.linkedin.com/in/reionnyx/" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="LinkedIn">
+          <img src="../assets/linkedin.svg" alt="" width="24" height="24"
+            class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+        <a href="https://stock.adobe.com/contributor/207802543/dicky" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Adobe Stock">
+          <img src="../assets/adobe-stock.svg" alt="" width="24" height="24" class="footer-platform-icon">
+        </a>
+        <a href="https://www.canva.com/p/gambar-reion" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Canva">
+          <img src="../assets/canva.svg" alt="" width="24" height="24" class="footer-platform-icon">
+        </a>
+        <a href="https://thenounproject.com/creator/ReionDesign/" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="The Noun Project">
+          <img src="../assets/noun-project.svg" alt="" width="24" height="24"
+            class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+        <a href="https://www.flaticon.com/authors/reion" target="_blank" rel="noopener noreferrer"
+          class="footer-platform-card" aria-label="Flaticon">
+          <img src="../assets/flaticon.svg" alt="" width="24" height="24"
+            class="footer-platform-icon footer-platform-icon--monochrome">
+        </a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Reading Progress Script -->
+  <script>
+    window.addEventListener('scroll', () => {
+      const bar = document.getElementById('readingProgressBar');
+      if (!bar) return;
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = totalScroll > 0 ? (window.scrollY / totalScroll) * 100 : 0;
+      bar.style.width = Math.min(100, Math.max(0, progress)) + '%';
+    }, { passive: true });
+  </script>
+</body>
+
+</html>

@@ -17,6 +17,40 @@
 
   const BLOG_POSTS = [
     {
+      id: 'post-26',
+      slug: 'ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils',
+      title: 'SSH Adalah Kunci Utama Server Internet dan Kisah Nyata Saat Seluruh Dunia Hampir Diretas Tanpa Sadar',
+      date: '2026-11-16',
+      formattedDate: '16 November 2026',
+      readingTime: '13 min read',
+      category: 'frontend-code',
+      categoryLabel: 'Frontend & Code',
+      tags: ['SSH', 'OpenSSH', 'Veritasium', 'XZ Utils', 'Pemula'],
+      featured: false,
+      excerpt: 'Pahami apa itu SSH dengan bahasa sederhana. Simak sejarah Tatu Ylönen 1995, cara kerja Public Key & Private Key, dan kisah celah XZ Utils dari Veritasium.',
+      contentUrl: 'blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils.html',
+      coverImage: 'assets/blog/Minecraft%20Sunset%20Gaming%20Haven.webp',
+      coverAlt: 'Ilustrasi suasana meja komputer bernuansa senja dengan monitor menampilkan dunia blok dan jendela terminal jarak jauh, melambangkan pengelolaan server dari kamar sendiri lewat protokol SSH',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
+      id: 'post-25',
+      slug: 'kenapa-miliarder-dunia-memperlambat-ai-dan-faktor-china',
+      title: 'Kenapa Para Miliarder Dunia Tiba-Tiba Sepakat Memperlambat AI dan Apa Hubungannya dengan China',
+      date: '2026-11-13',
+      formattedDate: '13 November 2026',
+      readingTime: '12 min read',
+      category: 'reflections',
+      categoryLabel: 'Reflections',
+      tags: ['AI Governance', 'Bennix', 'Wall Street', 'Geopolitik China', 'Pemula'],
+      featured: false,
+      excerpt: 'Bedah alasan miliarder teknologi (Anthropic & OpenAI) sepakat memperlambat AI dari video Bennix, insiden Hugging Face, motif IPO Wall Street, dan faktor China.',
+      contentUrl: 'blog/kenapa-miliarder-dunia-memperlambat-ai-dan-faktor-china.html',
+      coverImage: 'assets/blog/Anime%20Guardians%20Against%20the%20Cracked%20Radiant%20Door.webp',
+      coverAlt: 'Ilustrasi gadis anime berambut ungu-putih bersama kucing putihnya sedang menahan pintu raksasa yang mulai retak dan memancarkan kilatan cahaya ungu digital dari balik celahnya',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
       id: 'post-24',
       slug: 'dark-pattern-adalah-jebakan-desain-dan-contohnya',
       title: 'Dark Pattern Adalah Jebakan Desain yang Sengaja Dibikin agar Pengguna Salah Klik dan Susah Berhenti Langganan',
