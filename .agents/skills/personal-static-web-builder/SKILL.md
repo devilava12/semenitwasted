@@ -43,7 +43,7 @@ If the project already exists, look at its stack, folder layout, and existing pa
 Resolve conflicts in this order:
 
 1. The user's explicit instruction for the current task.
-2. An explicitly supplied design reference or existing approved implementation.
+2. An explicitly supplied design reference or existing approved implementation. In the `semenitwasted` workspace, `library.html` (`#tokens`, `#components`, `#motion`) + `[data-theme="dark"]` in `library.css` is the canonical approved reference; use the `semenitwasted-page-pipeline` skill (`Extract -> Build -> Audit` multi-agent flow) when creating or overhauling a page so live tokens, components, and animations stay locked to `library.html`.
 3. Existing project instructions, framework conventions, and established code patterns. Do not swap a project's framework or build setup to suit this skill.
 4. This skill's default design system and implementation rules.
 5. Minimal implementation assumptions.

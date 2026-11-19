@@ -59,8 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Interactive 3D Parallax Tilt on Desktop Stage ---
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (heroStage && window.innerWidth >= 992) {
-    heroStage.addEventListener('mousemove', (e) => {
+    heroStage.addEventListener('pointermove', (e) => {
+      if (e.pointerType === 'touch' || prefersReducedMotion.matches) return;
+
       const rect = heroStage.getBoundingClientRect();
       const x = e.clientX - rect.left - rect.width / 2;
       const y = e.clientY - rect.top - rect.height / 2;
@@ -68,22 +71,25 @@ document.addEventListener('DOMContentLoaded', () => {
       const normX = x / (rect.width / 2);
       const normY = y / (rect.height / 2);
 
-      // Subtle tilt for interactive cards
+      // Subtle tilt for interactive cards while preserving hover lift on hovered card
       interactiveCards.forEach((card, index) => {
-        const factor = (index % 3 + 1) * 2;
+        const factor = (index % 3 + 1) * 1.6;
         const tiltX = -normY * factor;
         const tiltY = normX * factor;
-        card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-4px)`;
+        const isHovered = card.matches(':hover');
+        const liftY = isHovered ? -8 : -2;
+        const scaleVal = isHovered ? 1.03 : 1;
+        card.style.transform = `perspective(1000px) rotateX(${tiltX.toFixed(2)}deg) rotateY(${tiltY.toFixed(2)}deg) translateY(${liftY}px) scale(${scaleVal})`;
       });
 
       // Subtle float for decorative background
       const darkBg = document.querySelector('.stage-dark-bg');
       if (darkBg) {
-        darkBg.style.transform = `translate(${normX * 5}px, ${normY * 5}px)`;
+        darkBg.style.transform = `translate(${(normX * 4).toFixed(2)}px, ${(normY * 4).toFixed(2)}px)`;
       }
     });
 
-    heroStage.addEventListener('mouseleave', () => {
+    heroStage.addEventListener('pointerleave', () => {
       interactiveCards.forEach(card => {
         card.style.transform = '';
       });
@@ -102,6 +108,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (href && href !== '#' && !href.startsWith('javascript')) {
       modalLink.href = href;
+      const isExternal = /^https?:\/\//i.test(href);
+      if (isExternal) {
+        modalLink.setAttribute('target', '_blank');
+        modalLink.setAttribute('rel', 'noopener noreferrer');
+      } else {
+        modalLink.removeAttribute('target');
+        modalLink.removeAttribute('rel');
+      }
       modalLink.style.display = 'inline-flex';
     } else {
       modalLink.style.display = 'none';

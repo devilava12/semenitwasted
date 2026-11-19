@@ -6,7 +6,15 @@
     <atom:link href="https://semenitwasted.web.id/rss.xml" rel="self" type="application/rss+xml" />
     <description>Ruang catatan digital seputar desain antarmuka, rekayasa kode frontend, keamanan web, dan refleksi berkarya oleh I Putu Dicky Adi Pranatha.</description>
     <language>id-ID</language>
-    <lastBuildDate>Mon, 16 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Kenapa Punya Ide Keren Saja Tidak Cukup untuk Menjadi Desainer Website dan Pelajaran Karier dari Extra Credits</title>
+      <link>https://semenitwasted.web.id/blog/cara-menjadi-desainer-website-dan-mitos-tukang-ide</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/cara-menjadi-desainer-website-dan-mitos-tukang-ide</guid>
+      <pubDate>Thu, 19 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Design Systems</category>
+      <description>Ingin jadi desainer website atau UI/UX? Bedah mitos Si Tukang Ide, 4 tahap mental desainer, dan keahlian lintas ilmu dari video klasik Extra Credits.</description>
+    </item>
     <item>
       <title>SSH Adalah Kunci Utama Server Internet dan Kisah Nyata Saat Seluruh Dunia Hampir Diretas Tanpa Sadar</title>
       <link>https://semenitwasted.web.id/blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils</link>

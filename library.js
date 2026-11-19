@@ -408,39 +408,46 @@ document.addEventListener('DOMContentLoaded', () => {
   const magneticStatus = document.getElementById('magneticStatus');
 
   if (magneticZone && magneticBtn) {
-    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    const isCoarseOnly = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+    if (isCoarseOnly && magneticStatus) {
+      magneticStatus.textContent = 'Touch device detected: Magnetic behavior disabled';
+    }
 
-    if (!isTouch) {
-      magneticZone.addEventListener('mousemove', (e) => {
-        if (pageWrapper.classList.contains('reduced-motion-active')) return;
-
-        const rect = magneticZone.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        const deltaX = (e.clientX - centerX) * 0.12;
-        const deltaY = (e.clientY - centerY) * 0.12;
-
-        // Clamped to subtle values
-        const clampX = Math.max(-8, Math.min(8, deltaX));
-        const clampY = Math.max(-8, Math.min(8, deltaY));
-
-        magneticBtn.style.transform = `translate(${clampX}px, ${clampY}px)`;
-        if (magneticStatus) {
-          magneticStatus.textContent = `Proximity Pull: dx=${clampX.toFixed(1)}px, dy=${clampY.toFixed(1)}px`;
-        }
-      });
-
-      magneticZone.addEventListener('mouseleave', () => {
+    magneticZone.addEventListener('pointermove', (e) => {
+      if (e.pointerType === 'touch') return;
+      if (pageWrapper && pageWrapper.classList.contains('reduced-motion-active')) {
         magneticBtn.style.transform = 'translate(0px, 0px)';
         if (magneticStatus) {
-          magneticStatus.textContent = 'Proximity: Spring Return to resting center';
+          magneticStatus.textContent = 'Reduced motion active: Magnetic pull disabled';
         }
-      });
-    } else {
-      if (magneticStatus) {
-        magneticStatus.textContent = 'Touch device detected: Magnetic behavior disabled';
+        return;
       }
-    }
+
+      const rect = magneticZone.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const deltaX = (e.clientX - centerX) * 0.25;
+      const deltaY = (e.clientY - centerY) * 0.25;
+
+      // Clamped to subtle ±8px range per spec
+      const clampX = Math.max(-8, Math.min(8, deltaX));
+      const clampY = Math.max(-8, Math.min(8, deltaY));
+
+      magneticBtn.classList.add('is-tracking');
+      magneticBtn.style.transform = `translate(${clampX.toFixed(2)}px, ${clampY.toFixed(2)}px)`;
+      if (magneticStatus) {
+        magneticStatus.textContent = `Proximity Pull: dx=${clampX.toFixed(1)}px, dy=${clampY.toFixed(1)}px`;
+      }
+    });
+
+    magneticZone.addEventListener('pointerleave', (e) => {
+      if (e.pointerType === 'touch') return;
+      magneticBtn.classList.remove('is-tracking');
+      magneticBtn.style.transform = 'translate(0px, 0px)';
+      if (magneticStatus) {
+        magneticStatus.textContent = 'Proximity: Spring Return to resting center';
+      }
+    });
   }
 
   // Demo 8: Navigation Sliding Indicator

@@ -51,7 +51,7 @@ DATA INPUT
 Website Name:
 {{semenitwasted}}
 Website URL:
-{{https://semenitwasted.my.id}}
+{{https://semenitwasted.web.id}}
 Article Topic:
 {Topik Pembahasan Spesifik}
 Primary Keyword:
@@ -552,9 +552,10 @@ Format terstruktur **WAJIB DIGUNAKAN** jika artikel:
 - **TOLAK**: Mengutip blog anonim, situs konten daur ulang murahan, atau sumber tanpa reputasi.
 
 #### Aturan Sitasi Alami:
-- Sebutkan rujukan secara alami di dalam kalimat.
+- Sebutkan rujukan eksternal secara alami di dalam kalimat.
 - **DILARANG** menggunakan tanda kurung angka bergaya jurnal kaku seperti `[1]`, `[2]`.
-- **DILARANG** menyisipkan tautan link di tengah teks utama (*no inline links in body prose*) agar tidak mengalihkan perhatian pembaca.
+- **DILARANG** menyisipkan URL eksternal mentah di tengah teks utama agar tidak mengganggu ritme baca; kumpulkan tautan rujukan eksternal di bagian `<h2 id="referensi">Referensi</h2>` di akhir artikel (tautan internal kontekstual ke artikel atau halaman pilar `semenitwasted` tetap dianjurkan sesuai Bagian 04.4 & `blog-curator`).
+- Untuk penjelasan konsep teknis bagi pembaca pemula (`Pemula`), padukan dengan prinsip kejelasan `eli5` (analogi konkret beserta batas analoginya, tanpa kata meremehkan seperti *mudah/cukup/jelas*, dan gunakan pipeline multi-agen `semenitwasted-blog-pipeline`).
 - *Contoh yang Baik*: `Menurut Sugiyono dalam metode penelitian kuantitatif, perumusan hipotesis harus berakar kuat pada kajian literatur yang relevan.`
 
 #### Daftar Referensi di Akhir Artikel:

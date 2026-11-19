@@ -39,9 +39,17 @@ Periksa struktur HTML atau Markdown dan pastikan hal-hal berikut:
 Cari dan perbaiki pola tulisan khas AI berikut:
 
 * **Hapus pembuka ala buku teks:** Hindari pembuka generik seperti *"Fenomena X di tengah masyarakat modern sering kali bermula dari..."*. Mulai dari masalah nyata, situasi yang mudah dikenali, pertanyaan yang relevan, atau konteks yang langsung mengarah ke pokok bahasan. Jangan membuat cerita personal palsu hanya agar pembuka lebih menarik.
-* **Perbaiki *translationese*:** Gunakan istilah yang lazim dipakai pembaca/praktisi Indonesia, sesuai konteks. Contoh:
+* **Perbaiki *translationese* & padanan bahasa Indonesia yang kaku/kurang familiar:** Gunakan istilah yang benar-benar akrab dipakai pembaca dan praktisi Indonesia sehari-hari (`technical_terms: repo-natural`), bukan terjemahan kamus yang terdengar asing di percakapan nyata. Contoh wajib:
+  * *Tetikus* → `mouse`.
+  * *Papan ketik / papan ketik virtual* → `keyboard` / `keyboard layar HP`.
+  * *Peramban* → `browser`.
+  * *Lokapasar* → `marketplace` (atau `toko online` sesuai konteks).
+  * *Galat* → `error` (mis. `pesan error`, `penanganan error`).
+  * *Pranala* → `link` atau `tautan`.
+  * *Jendela sembul* → `pop-up`.
+  * *Bilah samping* → `sidebar`.
+  * *Tajuk pembuka* → `hero section` (boleh diberi penjelasan singkat untuk pemula).
   * *Penulisan mikro* → `microcopy` atau `teks antarmuka`.
-  * *Papan ketik virtual* → `keyboard layar HP` atau istilah yang lebih alami dalam kalimat.
   * *Pemangku kepentingan* → `klien`, `manajemen`, `stakeholder`, atau istilah yang paling akurat untuk konteksnya.
   * *Empati operasional / kewajiban moral* → ungkapan yang lebih membumi seperti `empati desain` atau `tanggung jawab dasar`, jika maknanya memang sesuai.
 * **Pangkas pengulangan ide:** Gabungkan paragraf atau subbab yang mengulang pesan sama. Pertahankan nuansa berbeda yang benar-benar menambah konteks, contoh, bukti, atau implikasi.

@@ -1366,7 +1366,8 @@ button.bento-item {
   font-weight: 600;
   cursor: pointer;
   box-shadow: var(--shadow-depth);
-  transition: transform 200ms var(--ease-out), box-shadow 200ms var(--ease-out);
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .home-tactile-demo-btn:hover {
@@ -1511,7 +1512,9 @@ button.bento-item {
   border: 1px solid var(--border);
   background-color: var(--card-bg);
   box-shadow: var(--shadow-depth);
-  transition: border-color 180ms ease, transform 180ms var(--ease-out);
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.25s ease;
 }
 
 .home-rss-inline-link:hover {
@@ -1633,7 +1636,9 @@ button.bento-item {
   font-size: 0.94rem;
   font-weight: 600;
   text-decoration: none;
-  transition: transform 200ms var(--ease-out), box-shadow 200ms var(--ease-out), border-color 200ms ease;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.25s ease;
 }
 
 .home-btn-primary {
@@ -1648,15 +1653,25 @@ button.bento-item {
   box-shadow: var(--card-shadow);
 }
 
+.home-btn-primary:active,
+.home-btn-secondary:active,
+.footer-platform-card:active,
+.home-rss-inline-link:active {
+  transform: translateY(0) scale(0.99);
+  box-shadow: var(--shadow-depth);
+}
+
 .home-btn-secondary {
-  background-color: var(--surface-soft);
+  background-color: var(--card-bg);
   color: var(--text-primary);
   border: 1px solid var(--border);
+  box-shadow: var(--shadow-depth);
 }
 
 .home-btn-secondary:hover {
   transform: translateY(-2px);
-  border-color: var(--text-primary);
+  border-color: rgba(69, 13, 80, 0.20);
+  box-shadow: var(--card-shadow);
 }
 
 /* --- Unified Tactile Footer (Matching site-wide .portfolio-footer) --- */
@@ -1710,7 +1725,9 @@ button.bento-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 200ms var(--ease-out), box-shadow 200ms var(--ease-out), border-color 200ms ease;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.25s ease;
 }
 
 .footer-platform-card:hover {

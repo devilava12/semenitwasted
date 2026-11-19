@@ -10,6 +10,9 @@ Panduan ini mendefinisikan standar rekayasa animasi mikro (*micro-interactions*)
 
 Filosofi ini terinspirasi langsung dari karya **Emil Kowalski** (mantan Design Engineer di Linear, kreator Sonner, dan penulis *Animations on the Web*) yang dipadukan dengan identitas **Monokrom Taktil Neomorfik** khas semenitwasted (`#F0EDF4`, `#211B28`, `#450D50`).
 
+> [!IMPORTANT]
+> **Aturan Prioritas Workspace (`library.html` SSOT):** Untuk halaman web `semenitwasted`, katalog resmi di `library.html` (`#motion` & `#tokens` — termasuk `--ease-out: cubic-bezier(0.2, 0.8, 0.2, 1)`, `--dur-*`, `--shadow-depth/hover/pressed`, serta pola hover/active/focus) **selalu menang** jika terjadi tumpang tindih nilai. Gunakan pola dari skill ini hanya untuk mikro-interaksi tambahan yang belum ada di `library.html` (mis. *copy snippet haptic*, *reading progress bar*, *spotlight cursor*) atau jika pengguna secara eksplisit meminta gaya pegas Emil Kowalski.
+
 ---
 
 ## 1. FILOSOFI DASAR (MOTION & INTERACTION PHILOSOPHY)

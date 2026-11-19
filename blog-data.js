@@ -17,6 +17,23 @@
 
   const BLOG_POSTS = [
     {
+      id: 'post-27',
+      slug: 'cara-menjadi-desainer-website-dan-mitos-tukang-ide',
+      title: 'Kenapa Punya Ide Keren Saja Tidak Cukup untuk Menjadi Desainer Website dan Pelajaran Karier dari Extra Credits',
+      date: '2026-11-19',
+      formattedDate: '19 November 2026',
+      readingTime: '21 min read',
+      category: 'design-systems',
+      categoryLabel: 'Design Systems',
+      tags: ['Design Career', 'Extra Credits', 'UI/UX', 'Product Thinking', 'Pemula'],
+      featured: false,
+      excerpt: 'Ingin jadi desainer website atau UI/UX? Bedah mitos Si Tukang Ide, 4 tahap mental desainer, dan keahlian lintas ilmu dari video klasik Extra Credits.',
+      contentUrl: 'blog/cara-menjadi-desainer-website-dan-mitos-tukang-ide.html',
+      coverImage: 'assets/blog/Voxel%20Idea%20Lightbulb%20and%20Anime%20Dreamscape.webp',
+      coverAlt: 'Ilustrasi gadis anime berambut ungu duduk di bawah pohon sakura bergaya blok bersama kucing abu-abu putih di pangkuannya, memegang tablet gambar dan pena dengan bohlam ide berbentuk blok voxel menyala di atas kepalanya',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
       id: 'post-26',
       slug: 'ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils',
       title: 'SSH Adalah Kunci Utama Server Internet dan Kisah Nyata Saat Seluruh Dunia Hampir Diretas Tanpa Sadar',

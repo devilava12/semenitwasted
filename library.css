@@ -1098,9 +1098,15 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
-              box-shadow 0.2s ease;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
   will-change: transform;
+}
+
+.demo-magnetic-btn.is-tracking {
+  transition: transform 0.12s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: var(--shadow-primary);
 }
 
 [data-theme="dark"] .demo-magnetic-btn {
