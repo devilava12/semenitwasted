@@ -4,27 +4,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>semenitwasted — Creative Portfolio &amp; Design Systems</title>
+  <title>semenitwasted — Creative Portfolio, Design Systems &amp; Blog</title>
   <meta name="description"
-    content="Personal creative portfolio, tactile design systems, and digital design showcase by I Putu Dicky Adi Pranatha (semenitwasted).">
+    content="Portofolio kreatif, sistem desain taktil monokrom, library animasi interaktif, dan catatan blog desain web serta teknologi oleh I Putu Dicky Adi Pranatha (semenitwasted).">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F0EDF4">
   <link rel="icon" type="image/svg+xml" href="assets/logo-nav.svg">
   <link rel="canonical" href="https://semenitwasted.web.id/">
+  <link rel="alternate" type="application/rss+xml" title="semenitwasted Blog RSS Feed"
+    href="https://semenitwasted.web.id/rss.xml">
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="semenitwasted">
-  <meta property="og:title" content="semenitwasted — Creative Portfolio &amp; Design Systems">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:title" content="semenitwasted — Creative Portfolio, Design Systems &amp; Blog">
   <meta property="og:description"
-    content="Personal creative portfolio, tactile design systems, and digital design showcase by I Putu Dicky Adi Pranatha.">
+    content="Portofolio kreatif, sistem desain taktil monokrom, library animasi interaktif, dan catatan blog desain web serta teknologi oleh I Putu Dicky Adi Pranatha.">
   <meta property="og:image" content="https://semenitwasted.web.id/assets/card-center.png">
+  <meta property="og:image:alt" content="Ilustrasi karakter kreatif dan identitas visual semenitwasted">
   <meta property="og:url" content="https://semenitwasted.web.id/">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="semenitwasted — Creative Portfolio &amp; Design Systems">
+  <meta name="twitter:title" content="semenitwasted — Creative Portfolio, Design Systems &amp; Blog">
   <meta name="twitter:description"
-    content="Personal creative portfolio, tactile design systems, and digital design showcase by I Putu Dicky Adi Pranatha.">
+    content="Portofolio kreatif, sistem desain taktil monokrom, library animasi interaktif, dan catatan blog desain web serta teknologi oleh I Putu Dicky Adi Pranatha.">
   <meta name="twitter:image" content="https://semenitwasted.web.id/assets/card-center.png">
 
-  <!-- Structured Data: WebSite, Person & WebPage -->
+  <!-- Structured Data: WebSite, Organization, Person, ProfilePage & Blog -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -38,6 +44,28 @@
         "inLanguage": "id-ID",
         "publisher": {
           "@id": "https://semenitwasted.web.id/#person"
+        },
+        "hasPart": [
+          {
+            "@id": "https://semenitwasted.web.id/portfolio#webpage"
+          },
+          {
+            "@id": "https://semenitwasted.web.id/about#webpage"
+          },
+          {
+            "@id": "https://semenitwasted.web.id/blog#blog"
+          }
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://semenitwasted.web.id/#organization",
+        "name": "semenitwasted",
+        "url": "https://semenitwasted.web.id/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://semenitwasted.web.id/#logo",
+          "url": "https://semenitwasted.web.id/assets/logo-nav.svg"
         }
       },
       {
@@ -58,11 +86,25 @@
         ]
       },
       {
+        "@type": "Blog",
+        "@id": "https://semenitwasted.web.id/blog#blog",
+        "name": "Blog & Thoughts — semenitwasted",
+        "url": "https://semenitwasted.web.id/blog",
+        "inLanguage": "id-ID",
+        "author": {
+          "@id": "https://semenitwasted.web.id/#person"
+        },
+        "publisher": {
+          "@id": "https://semenitwasted.web.id/#organization"
+        }
+      },
+      {
         "@type": "ProfilePage",
         "@id": "https://semenitwasted.web.id/#webpage",
         "url": "https://semenitwasted.web.id/",
-        "name": "semenitwasted — Creative Portfolio & Design Systems",
-        "description": "Personal creative portfolio, tactile design systems, and digital design showcase by I Putu Dicky Adi Pranatha.",
+        "name": "semenitwasted — Creative Portfolio, Design Systems & Blog",
+        "description": "Portofolio kreatif, sistem desain taktil monokrom, library animasi interaktif, dan catatan blog desain web serta teknologi oleh I Putu Dicky Adi Pranatha.",
+        "inLanguage": "id-ID",
         "isPartOf": {
           "@id": "https://semenitwasted.web.id/#website"
         },
@@ -86,15 +128,15 @@
 
 <body>
   <!-- Ambient background glow elements -->
-  <div class="ambient-glow glow-1"></div>
-  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
 
   <!-- Main Container -->
   <div class="page-container">
 
     <!-- Top Navbar -->
     <header class="navbar-wrapper">
-      <nav class="navbar" id="mainNavbar">
+      <nav class="navbar" id="mainNavbar" aria-label="Main navigation">
         <a href="#home" class="nav-brand" aria-label="Home">
           <img src="assets/logo-nav.svg" alt="Brand Logo" class="brand-logo" width="116" height="48">
         </a>
@@ -127,7 +169,7 @@
         <!-- Mobile Controls -->
         <div class="mobile-nav-actions">
           <button class="theme-toggle-btn mobile-theme-btn" id="mobileThemeToggle" type="button" aria-label="Switch to dark theme"></button>
-          <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
@@ -148,234 +190,821 @@
       </ul>
     </div>
 
-    <!-- Hero Section -->
-    <main class="hero-section" id="home">
-      <h1 class="sr-only">semenitwasted — Creative Portfolio &amp; Design Systems by I Putu Dicky Adi Pranatha</h1>
+    <main id="main-content" class="home-main">
 
-      <!-- Desktop Interactive Canvas (>= 992px) -->
-      <div class="hero-stage-container">
-        <div class="hero-stage" id="heroStage">
+      <!-- =================================================================
+           SECTION 1: HERO INTERACTIVE STAGE & MOBILE BENTO (EXISTING)
+           ================================================================= -->
+      <section class="hero-section" id="home" aria-label="Interactive brand showcase">
 
-          <!-- Layer 1: Dark Graphic Composition Backdrop -->
-          <div class="stage-dark-bg" aria-hidden="true" style="left: 220px; top: 116px; width: 937px; height: 638px;">
-            <img src="assets/decorative-dark.svg" alt="" class="dark-svg-bg" draggable="false">
-          </div>
+        <!-- Desktop Interactive Canvas (>= 992px) -->
+        <div class="hero-stage-container">
+          <div class="hero-stage" id="heroStage">
 
-          <!-- Layer 2: White Decorative Floating Tiles -->
-          <div class="stage-decoratives" aria-hidden="true">
-            <div class="decor-tile decor-14" style="left: 439px; top: 128px; width: 79px; height: 69px;"></div>
-            <div class="decor-tile decor-13" style="left: 375px; top: 155px; width: 48px; height: 42px;"></div>
-            <div class="decor-tile decor-12" style="left: 153px; top: 351px; width: 43px; height: 43px;"></div>
-            <div class="decor-tile decor-11" style="left: 470px; top: 571px; width: 42px; height: 42px;"></div>
-            <div class="decor-tile decor-10" style="left: 484px; top: 629px; width: 28px; height: 28px;"></div>
-            <div class="decor-tile decor-09" style="left: 756px; top: 90px; width: 79px; height: 69px;"></div>
-            <div class="decor-tile decor-08" style="left: 851px; top: 191px; width: 48px; height: 42px;"></div>
-            <div class="decor-tile decor-08-bar" style="left: 657px; top: 656px; width: 217px; height: 41px;"></div>
-            <div class="decor-tile decor-07" style="left: 657px; top: 713px; width: 96px; height: 41px;"></div>
-            <div class="decor-tile decor-06" style="left: 769px; top: 713px; width: 28px; height: 41px;"></div>
-            <div class="decor-tile decor-05" style="left: 813px; top: 713px; width: 28px; height: 41px;"></div>
-            <div class="decor-tile decor-04" style="left: 884px; top: 656px; width: 40px; height: 41px;"></div>
-            <div class="decor-tile decor-03" style="left: 940px; top: 657px; width: 28px; height: 41px;"></div>
-            <div class="decor-tile decor-02" style="left: 984px; top: 657px; width: 28px; height: 41px;"></div>
-            <div class="decor-tile decor-01" style="left: 1141px; top: 379px; width: 48px; height: 42px;"></div>
-          </div>
+            <!-- Layer 1: Dark Graphic Composition Backdrop -->
+            <div class="stage-dark-bg" aria-hidden="true" style="left: 220px; top: 116px; width: 937px; height: 638px;">
+              <img src="assets/decorative-dark.svg" alt="" class="dark-svg-bg" draggable="false">
+            </div>
 
-          <!-- Layer 3: Main Interactive Cards -->
-          <div class="stage-cards">
+            <!-- Layer 2: White Decorative Floating Tiles -->
+            <div class="stage-decoratives" aria-hidden="true">
+              <div class="decor-tile decor-14" style="left: 439px; top: 128px; width: 79px; height: 69px;"></div>
+              <div class="decor-tile decor-13" style="left: 375px; top: 155px; width: 48px; height: 42px;"></div>
+              <div class="decor-tile decor-12" style="left: 153px; top: 351px; width: 43px; height: 43px;"></div>
+              <div class="decor-tile decor-11" style="left: 470px; top: 571px; width: 42px; height: 42px;"></div>
+              <div class="decor-tile decor-10" style="left: 484px; top: 629px; width: 28px; height: 28px;"></div>
+              <div class="decor-tile decor-09" style="left: 756px; top: 90px; width: 79px; height: 69px;"></div>
+              <div class="decor-tile decor-08" style="left: 851px; top: 191px; width: 48px; height: 42px;"></div>
+              <div class="decor-tile decor-08-bar" style="left: 657px; top: 656px; width: 217px; height: 41px;"></div>
+              <div class="decor-tile decor-07" style="left: 657px; top: 713px; width: 96px; height: 41px;"></div>
+              <div class="decor-tile decor-06" style="left: 769px; top: 713px; width: 28px; height: 41px;"></div>
+              <div class="decor-tile decor-05" style="left: 813px; top: 713px; width: 28px; height: 41px;"></div>
+              <div class="decor-tile decor-04" style="left: 884px; top: 656px; width: 40px; height: 41px;"></div>
+              <div class="decor-tile decor-03" style="left: 940px; top: 657px; width: 28px; height: 41px;"></div>
+              <div class="decor-tile decor-02" style="left: 984px; top: 657px; width: 28px; height: 41px;"></div>
+              <div class="decor-tile decor-01" style="left: 1141px; top: 379px; width: 48px; height: 42px;"></div>
+            </div>
 
-            <!-- Card 1: LinkedIn -->
-            <a href="https://www.linkedin.com/in/reionnyx/" target="_blank" rel="noopener noreferrer"
-              class="interactive-card card-linkedin" id="cardLinkedin" data-title="LinkedIn Profile"
-              data-desc="Connect on LinkedIn for professional collaborations and network."
-              style="left: 212px; top: 351px; width: 86px; height: 86px;">
-              <div class="card-inner">
-                <img src="assets/linkedin.svg" alt="LinkedIn" class="card-icon" width="61" height="60">
+            <!-- Layer 3: Main Interactive Cards -->
+            <div class="stage-cards">
+
+              <!-- Card 1: LinkedIn -->
+              <a href="https://www.linkedin.com/in/reionnyx/" target="_blank" rel="noopener noreferrer"
+                class="interactive-card card-linkedin" id="cardLinkedin" data-title="LinkedIn Profile"
+                data-desc="Connect on LinkedIn for professional collaborations and network."
+                style="left: 212px; top: 351px; width: 86px; height: 86px;">
+                <div class="card-inner">
+                  <img src="assets/linkedin.svg" alt="LinkedIn" class="card-icon" width="61" height="60">
+                </div>
+              </a>
+
+              <!-- Card 2: Portfolio -->
+              <a href="portfolio.html" class="interactive-card card-portfolio" id="cardPortfolio"
+                style="left: 344px; top: 265px; width: 174px; height: 70px; text-decoration: none;">
+                <div class="card-inner">
+                  <span class="card-text text-portfolio">Portfolio</span>
+                </div>
+              </a>
+
+              <!-- Card 3: Adobe Stock -->
+              <a href="https://stock.adobe.com/contributor/207802543/dicky" target="_blank" rel="noopener noreferrer"
+                class="interactive-card card-adobe" id="cardAdobe" data-title="Adobe Stock Contributor"
+                data-desc="High quality stock vectors, illustrations, and digital assets."
+                style="left: 314px; top: 351px; width: 204px; height: 204px;">
+                <div class="card-inner">
+                  <img src="assets/adobe-stock.svg" alt="Adobe Stock" class="card-icon adobe-icon" width="184"
+                    height="184">
+                </div>
+              </a>
+
+              <!-- Card 4: Central Avatar & Brand Logo Card -->
+              <div class="interactive-card card-center-hero" id="cardCenterHero" data-title="Creative Studio & Avatar"
+                data-desc="Original character artwork & personal brand signature."
+                style="left: 534px; top: 249px; width: 300px; height: 300px;">
+                <div class="card-inner hero-inner">
+                  <img src="assets/card-center.png" alt="Creative Illustration and Brand Mark" class="card-hero-img"
+                    width="300" height="300" fetchpriority="high">
+                  <div class="shimmer-effect"></div>
+                </div>
               </div>
-            </a>
 
-            <!-- Card 2: Portfolio -->
-            <a href="portfolio.html" class="interactive-card card-portfolio" id="cardPortfolio"
-              style="left: 344px; top: 265px; width: 174px; height: 70px; text-decoration: none;">
-              <div class="card-inner">
+              <!-- Card 5: E-Book -->
+              <a href="https://lynk.id/semenitwasted" target="_blank" rel="noopener noreferrer" class="interactive-card card-ebook" id="cardEbook" data-title="Design E-Book"
+                data-desc="Educational guides and design tutorials for creators."
+                style="left: 698px; top: 175px; width: 136px; height: 58px;">
+                <div class="card-inner">
+                  <span class="card-text text-ebook">E-Book</span>
+                </div>
+              </a>
+
+              <!-- Card 6: Instagram -->
+              <a href="https://www.instagram.com/reionportfolio/" target="_blank" rel="noopener noreferrer"
+                class="interactive-card card-instagram" id="cardInstagram" data-title="Instagram Visuals"
+                data-desc="Daily artwork updates, design experiments, and behind the scenes."
+                style="left: 850px; top: 249px; width: 172px; height: 172px;">
+                <div class="card-inner">
+                  <img src="assets/instagram.svg" alt="Instagram" class="card-icon instagram-icon" width="152"
+                    height="152">
+                </div>
+              </a>
+
+              <!-- Card 7: CV / Resume -->
+              <button type="button" class="interactive-card card-cv" id="cardCv" data-title="Curriculum Vitae"
+                data-desc="Professional background, skills, achievements, and career history."
+                style="left: 1038px; top: 344px; width: 87px; height: 77px;">
+                <div class="card-inner">
+                  <span class="card-text text-cv">CV</span>
+                </div>
+              </button>
+
+              <!-- Card 8: The Noun Project -->
+              <a href="https://thenounproject.com/creator/ReionDesign/" target="_blank" rel="noopener noreferrer"
+                class="interactive-card card-nounproject" id="cardNounProject" data-title="The Noun Project"
+                data-desc="Minimalist icon sets and symbols published for global designers."
+                style="left: 850px; top: 437px; width: 292px; height: 112px;">
+                <div class="card-inner">
+                  <img src="assets/noun-project.svg" alt="The Noun Project" class="card-icon noun-icon" width="272"
+                    height="92">
+                </div>
+              </a>
+
+              <!-- Card 9: Canva -->
+              <a href="https://www.canva.com/p/gambar-reion" target="_blank" rel="noopener noreferrer"
+                class="interactive-card card-canva" id="cardCanva" data-title="Canva Creator"
+                data-desc="Templates, graphic assets, and layouts for social media and brands."
+                style="left: 528px; top: 565px; width: 113px; height: 113px;">
+                <div class="card-inner">
+                  <img src="assets/canva.svg" alt="Canva" class="card-icon canva-icon" width="93" height="93">
+                </div>
+              </a>
+
+              <!-- Card 10: Flaticon -->
+              <a href="https://www.flaticon.com/authors/reion" target="_blank" rel="noopener noreferrer"
+                class="interactive-card card-flaticon" id="cardFlaticon" data-title="Flaticon Contributor"
+                data-desc="Vector icon packs and digital stickers available on Flaticon."
+                style="left: 657px; top: 565px; width: 302px; height: 75px;">
+                <div class="card-inner">
+                  <img src="assets/flaticon.svg" alt="Flaticon" class="card-icon flaticon-icon" width="282" height="55">
+                </div>
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile & Tablet Responsive Bento Grid (< 992px) -->
+        <div class="mobile-bento-grid">
+
+          <!-- Featured Avatar Centerpiece -->
+          <div class="bento-item bento-hero">
+            <div class="bento-card">
+              <img src="assets/card-center.png" alt="Creative Illustration" class="bento-hero-img" width="320" height="320" fetchpriority="high">
+            </div>
+          </div>
+
+          <div class="bento-row">
+            <!-- Portfolio Card -->
+            <a href="portfolio.html" class="bento-item bento-portfolio" style="text-decoration: none;">
+              <div class="bento-card">
                 <span class="card-text text-portfolio">Portfolio</span>
               </div>
             </a>
 
-            <!-- Card 3: Adobe Stock -->
-            <a href="https://stock.adobe.com/contributor/207802543/dicky" target="_blank" rel="noopener noreferrer"
-              class="interactive-card card-adobe" id="cardAdobe" data-title="Adobe Stock Contributor"
-              data-desc="High quality stock vectors, illustrations, and digital assets."
-              style="left: 314px; top: 351px; width: 204px; height: 204px;">
-              <div class="card-inner">
-                <img src="assets/adobe-stock.svg" alt="Adobe Stock" class="card-icon adobe-icon" width="184"
-                  height="184">
-              </div>
-            </a>
-
-            <!-- Card 4: Central Avatar & Brand Logo Card -->
-            <div class="interactive-card card-center-hero" id="cardCenterHero" data-title="Creative Studio & Avatar"
-              data-desc="Original character artwork & personal brand signature."
-              style="left: 534px; top: 249px; width: 300px; height: 300px;">
-              <div class="card-inner hero-inner">
-                <img src="assets/card-center.png" alt="Creative Illustration and Brand Mark" class="card-hero-img"
-                  width="300" height="300">
-                <div class="shimmer-effect"></div>
-              </div>
-            </div>
-
-            <!-- Card 5: E-Book -->
-            <a href="https://lynk.id/semenitwasted" target="_blank" rel="noopener noreferrer" class="interactive-card card-ebook" id="cardEbook" data-title="Design E-Book"
-              data-desc="Educational guides and design tutorials for creators."
-              style="left: 698px; top: 175px; width: 136px; height: 58px;">
-              <div class="card-inner">
+            <!-- E-Book Card -->
+            <a href="https://lynk.id/semenitwasted" target="_blank" rel="noopener noreferrer"
+              class="bento-item bento-ebook">
+              <div class="bento-card">
                 <span class="card-text text-ebook">E-Book</span>
               </div>
             </a>
 
-            <!-- Card 6: Instagram -->
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
-              class="interactive-card card-instagram" id="cardInstagram" data-title="Instagram Visuals"
-              data-desc="Daily artwork updates, design experiments, and behind the scenes."
-              style="left: 850px; top: 249px; width: 172px; height: 172px;">
-              <div class="card-inner">
-                <img src="assets/instagram.svg" alt="Instagram" class="card-icon instagram-icon" width="152"
-                  height="152">
-              </div>
-            </a>
-
-            <!-- Card 7: CV / Resume -->
-            <button type="button" class="interactive-card card-cv" id="cardCv" data-title="Curriculum Vitae"
-              data-desc="Professional background, skills, achievements, and career history."
-              style="left: 1038px; top: 344px; width: 87px; height: 77px;">
-              <div class="card-inner">
+            <!-- CV Card -->
+            <button type="button" class="bento-item bento-cv" data-title="Curriculum Vitae"
+              data-desc="Professional background, skills, achievements, and career history.">
+              <div class="bento-card">
                 <span class="card-text text-cv">CV</span>
               </div>
             </button>
+          </div>
 
-            <!-- Card 8: The Noun Project -->
-            <a href="https://thenounproject.com/creator/ReionDesign/" target="_blank" rel="noopener noreferrer"
-              class="interactive-card card-nounproject" id="cardNounProject" data-title="The Noun Project"
-              data-desc="Minimalist icon sets and symbols published for global designers."
-              style="left: 850px; top: 437px; width: 292px; height: 112px;">
-              <div class="card-inner">
-                <img src="assets/noun-project.svg" alt="The Noun Project" class="card-icon noun-icon" width="272"
-                  height="92">
+          <div class="bento-grid-2x2">
+            <!-- Adobe Stock -->
+            <a href="https://stock.adobe.com/contributor/207802543/dicky" target="_blank" rel="noopener noreferrer"
+              class="bento-item bento-brand">
+              <div class="bento-card">
+                <img src="assets/adobe-stock.svg" alt="Adobe Stock" class="bento-icon" width="70" height="70">
               </div>
             </a>
 
-            <!-- Card 9: Canva -->
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/reionportfolio/" target="_blank" rel="noopener noreferrer" class="bento-item bento-brand">
+              <div class="bento-card">
+                <img src="assets/instagram.svg" alt="Instagram" class="bento-icon" width="70" height="70">
+              </div>
+            </a>
+
+            <!-- Canva -->
             <a href="https://www.canva.com/p/gambar-reion" target="_blank" rel="noopener noreferrer"
-              class="interactive-card card-canva" id="cardCanva" data-title="Canva Creator"
-              data-desc="Templates, graphic assets, and layouts for social media and brands."
-              style="left: 528px; top: 565px; width: 113px; height: 113px;">
-              <div class="card-inner">
-                <img src="assets/canva.svg" alt="Canva" class="card-icon canva-icon" width="93" height="93">
+              class="bento-item bento-brand">
+              <div class="bento-card">
+                <img src="assets/canva.svg" alt="Canva" class="bento-icon" width="70" height="70">
               </div>
             </a>
 
-            <!-- Card 10: Flaticon -->
-            <a href="https://www.flaticon.com/authors/reion" target="_blank" rel="noopener noreferrer"
-              class="interactive-card card-flaticon" id="cardFlaticon" data-title="Flaticon Contributor"
-              data-desc="Vector icon packs and digital stickers available on Flaticon."
-              style="left: 657px; top: 565px; width: 302px; height: 75px;">
-              <div class="card-inner">
-                <img src="assets/flaticon.svg" alt="Flaticon" class="card-icon flaticon-icon" width="282" height="55">
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/reionnyx/" target="_blank" rel="noopener noreferrer" class="bento-item bento-brand">
+              <div class="bento-card">
+                <img src="assets/linkedin.svg" alt="LinkedIn" class="bento-icon" width="70" height="70">
               </div>
             </a>
-
           </div>
+
+          <!-- Flaticon & Noun Project wide cards -->
+          <a href="https://www.flaticon.com/authors/reion" target="_blank" rel="noopener noreferrer"
+            class="bento-item bento-wide">
+            <div class="bento-card">
+              <img src="assets/flaticon.svg" alt="Flaticon" class="bento-icon-wide" width="240" height="48">
+            </div>
+          </a>
+
+          <a href="https://thenounproject.com/creator/ReionDesign/" target="_blank" rel="noopener noreferrer"
+            class="bento-item bento-wide">
+            <div class="bento-card">
+              <img src="assets/noun-project.svg" alt="The Noun Project" class="bento-icon-wide" width="240" height="48">
+            </div>
+          </a>
+
         </div>
+      </section>
+
+      <!-- =================================================================
+           CURATED HOME SECTIONS CONTAINER (BELOW HERO)
+           ================================================================= -->
+      <div class="home-sections-wrapper">
+
+        <!-- Open Editorial Identity Intro (Visible H1 with Generous Breathing Space) -->
+        <section class="home-identity-strip" aria-labelledby="home-primary-heading">
+          <div class="identity-strip-open">
+            <div class="identity-strip-copy">
+              <div class="home-eyebrow">
+                <span class="home-eyebrow-dot" aria-hidden="true"></span>
+                BALI-BASED DESIGNER &amp; PRODUCT SUPPORT
+              </div>
+              <h1 class="home-primary-title" id="home-primary-heading">
+                Creative portfolio, tactile design systems &amp; digital field notes.
+              </h1>
+              <p class="home-primary-desc">
+                Ruang karya dan arsip terbuka milik <strong>I Putu Dicky Adi Pranatha (semenitwasted)</strong> yang
+                merangkum desain web, sistem ikon vektor, serta esai seputar antarmuka dan teknologi.
+              </p>
+            </div>
+            <nav class="identity-jump-nav" aria-label="Jump to home sections">
+              <a href="#home-portfolio" class="jump-pill">Portfolio</a>
+              <a href="#home-about" class="jump-pill">About</a>
+              <a href="#home-library" class="jump-pill">Library</a>
+              <a href="#home-blog" class="jump-pill">Blog</a>
+            </nav>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             SECTION 2: PORTFOLIO SHOWCASE
+             =============================================================== -->
+        <section class="home-section" id="home-portfolio" aria-labelledby="home-portfolio-title">
+          <div class="home-section-header">
+            <div class="home-section-heading-group">
+              <div class="home-eyebrow">
+                <span class="home-eyebrow-dot" aria-hidden="true"></span>
+                PORTFOLIO
+              </div>
+              <h2 class="home-section-title" id="home-portfolio-title">Selected works, experiments &amp; ideas</h2>
+              <p class="home-section-desc">
+                Koleksi karya desain web, studi kasus antarmuka, perancangan karakter, dan sistem ikon vektor presisi.
+              </p>
+            </div>
+            <a href="portfolio.html" class="home-section-cta">
+              <span>Explore All Works</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+
+          <div class="home-portfolio-grid">
+            <!-- Project 1: Roche #AyoCekHPV -->
+            <article class="home-bento-card home-project-card">
+              <a href="portfolio/roche/index.html" class="home-project-media-link" tabindex="-1" aria-hidden="true">
+                <div class="home-browser-frame">
+                  <div class="home-browser-bar">
+                    <span class="home-browser-dot"></span>
+                    <span class="home-browser-dot"></span>
+                    <span class="home-browser-dot"></span>
+                    <span class="home-browser-url">semenitwasted.web.id/portfolio/roche</span>
+                  </div>
+                  <div class="home-project-preview">
+                    <img src="portfolio/roche/%23AyocekHPV.webp"
+                      alt="Tampilan desain landing page #AyoCekHPV untuk Roche"
+                      class="home-project-img home-project-img--top" width="2880" height="3504" loading="lazy"
+                      decoding="async">
+                  </div>
+                </div>
+              </a>
+              <div class="home-card-body">
+                <div class="home-card-meta">
+                  <span class="home-pill-badge">Website Design</span>
+                  <span class="home-meta-muted">Figma · KelolaWeb.com</span>
+                </div>
+                <h3 class="home-card-title">
+                  <a href="portfolio/roche/index.html">Roche #AyoCekHPV</a>
+                </h3>
+                <p class="home-card-excerpt">
+                  Desain Figma untuk situs kampanye edukasi kesehatan #AyoCekHPV, dikerjakan bersama KelolaWeb.com.
+                </p>
+                <div class="home-card-footer">
+                  <a href="portfolio/roche/index.html" class="home-card-link">
+                    <span>Baca studi kasus <span class="sr-only">Roche #AyoCekHPV</span></span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 2: Selenia Character Design -->
+            <article class="home-bento-card home-project-card">
+              <a href="portfolio/eksperimen%201/index.html" class="home-project-media-link" tabindex="-1" aria-hidden="true">
+                <div class="home-browser-frame">
+                  <div class="home-browser-bar">
+                    <span class="home-browser-dot"></span>
+                    <span class="home-browser-dot"></span>
+                    <span class="home-browser-dot"></span>
+                    <span class="home-browser-url">semenitwasted.web.id/portfolio/selenia</span>
+                  </div>
+                  <div class="home-project-preview">
+                    <img src="portfolio/eksperimen%201/assets/frame14-overview.png"
+                      alt="Eksplorasi visual perancangan karakter Selenia dari sketsa hingga render final"
+                      class="home-project-img home-project-img--top" width="1440" height="2845" loading="lazy"
+                      decoding="async">
+                  </div>
+                </div>
+              </a>
+              <div class="home-card-body">
+                <div class="home-card-meta">
+                  <span class="home-pill-badge">Character &amp; Web</span>
+                  <span class="home-meta-muted">Illustrator · Experiments</span>
+                </div>
+                <h3 class="home-card-title">
+                  <a href="portfolio/eksperimen%201/index.html">Selenia — Character Design Experiment</a>
+                </h3>
+                <p class="home-card-excerpt">
+                  Eksplorasi perancangan karakter Selenia dari sketsa kertas, digitalisasi vektor, studi pencahayaan,
+                  hingga karya render final.
+                </p>
+                <div class="home-card-footer">
+                  <a href="portfolio/eksperimen%201/index.html" class="home-card-link">
+                    <span>Buka eksperimen <span class="sr-only">karakter Selenia</span></span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 3: AI Icon System -->
+            <article class="home-bento-card home-project-card">
+              <a href="portfolio/artificial%20intelegent%20icon/index.html" class="home-project-media-link" tabindex="-1" aria-hidden="true">
+                <div class="home-browser-frame">
+                  <div class="home-browser-bar">
+                    <span class="home-browser-dot"></span>
+                    <span class="home-browser-dot"></span>
+                    <span class="home-browser-dot"></span>
+                    <span class="home-browser-url">semenitwasted.web.id/portfolio/ai-icons</span>
+                  </div>
+                  <div class="home-project-preview home-project-preview--icons">
+                    <div class="home-mini-icon-grid" aria-hidden="true">
+                      <span class="home-mini-icon-cell">
+                        <img src="portfolio/artificial%20intelegent%20icon/Brain%20icon,%20line%20icon%20style.svg" alt="" width="28" height="28" loading="lazy">
+                      </span>
+                      <span class="home-mini-icon-cell">
+                        <img src="portfolio/artificial%20intelegent%20icon/AI%20icon,%20glyph%20icon%20style.svg" alt="" width="28" height="28" loading="lazy">
+                      </span>
+                      <span class="home-mini-icon-cell">
+                        <img src="portfolio/artificial%20intelegent%20icon/Chip%20icon,%20line%20icon%20style.svg" alt="" width="28" height="28" loading="lazy">
+                      </span>
+                      <span class="home-mini-icon-cell">
+                        <img src="portfolio/artificial%20intelegent%20icon/Robot%20icon,%20glyph%20icon%20style.svg" alt="" width="28" height="28" loading="lazy">
+                      </span>
+                      <span class="home-mini-icon-cell">
+                        <img src="portfolio/artificial%20intelegent%20icon/Database%20icon,%20line%20icon%20style.svg" alt="" width="28" height="28" loading="lazy">
+                      </span>
+                      <span class="home-mini-icon-cell">
+                        <img src="portfolio/artificial%20intelegent%20icon/Shield%20icon,%20glyph%20icon%20style.svg" alt="" width="28" height="28" loading="lazy">
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="home-card-body">
+                <div class="home-card-meta">
+                  <span class="home-pill-badge">Icon Design</span>
+                  <span class="home-meta-muted">50 Icons · 76px Grid</span>
+                </div>
+                <h3 class="home-card-title">
+                  <a href="portfolio/artificial%20intelegent%20icon/index.html">Artificial Intelligence Icon System</a>
+                </h3>
+                <p class="home-card-excerpt">
+                  Sistem ikon vektor bertema AI dengan 50 konsep unik dalam 2 gaya (Line &amp; Glyph) di atas grid presisi
+                  76&times;76 px.
+                </p>
+                <div class="home-card-footer">
+                  <a href="portfolio/artificial%20intelegent%20icon/index.html" class="home-card-link">
+                    <span>Jelajahi icon set <span class="sr-only">Artificial Intelligence</span></span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             SECTION 3: ABOUT & EXPERIENCE SNAPSHOT
+             =============================================================== -->
+        <section class="home-section" id="home-about" aria-labelledby="home-about-title">
+          <div class="home-section-header">
+            <div class="home-section-heading-group">
+              <div class="home-eyebrow">
+                <span class="home-eyebrow-dot" aria-hidden="true"></span>
+                ABOUT
+              </div>
+              <h2 class="home-section-title" id="home-about-title">I Putu Dicky Adi Pranatha</h2>
+              <p class="home-section-desc">
+                Menjembatani empati pengguna di lini dukungan produk dengan kejelasan visual pada antarmuka digital.
+              </p>
+            </div>
+            <a href="about.html" class="home-section-cta">
+              <span>Full Profile &amp; Resume</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+
+          <div class="home-about-bento">
+            <!-- Left Column (7 cols): Bio & Capabilities -->
+            <div class="home-bento-card home-about-bio-card">
+              <div class="home-about-role-row">
+                <span class="home-pill-badge">Customer Support</span>
+                <span class="home-pill-badge">Product Support</span>
+                <span class="home-pill-badge">UI/UX &amp; Icon Designer</span>
+              </div>
+              <p class="home-about-lead">
+                Saya seorang desainer dan profesional <em>product support</em> berbasis di Bali dengan latar belakang
+                Teknologi Informasi, dukungan pelanggan, implementasi produk, dan desain digital. Saya terbiasa bekerja
+                di persimpangan antara manusia, produk, dan komunikasi visual.
+              </p>
+              <div class="home-capabilities-grid">
+                <div class="home-capability-tile">
+                  <h3 class="home-capability-title">Product &amp; Customer Support</h3>
+                  <p class="home-capability-desc">Troubleshooting teknis, demo produk, pelatihan pengguna, dan pendampingan implementasi.</p>
+                </div>
+                <div class="home-capability-tile">
+                  <h3 class="home-capability-title">UI/UX &amp; Visual Design</h3>
+                  <p class="home-capability-desc">Perancangan antarmuka di Figma serta ilustrasi dan ikon vektor di Adobe Illustrator.</p>
+                </div>
+                <div class="home-capability-tile">
+                  <h3 class="home-capability-title">Digital &amp; Creative Tools</h3>
+                  <p class="home-capability-desc">WordPress, Elementor, produksi konten digital, manajemen YouTube, dan desain microstock.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column (5 cols): Experience Timeline & Education -->
+            <div class="home-bento-card home-about-timeline-card">
+              <div class="home-timeline-header">
+                <span class="home-card-kicker">Experience Snapshot</span>
+                <span class="home-meta-muted">2015–Present</span>
+              </div>
+              <ol class="home-timeline-list">
+                <li class="home-timeline-item">
+                  <span class="home-timeline-period">2023–Present</span>
+                  <div class="home-timeline-content">
+                    <h3 class="home-timeline-role">Freelance Designer &amp; Digital Creative</h3>
+                    <p class="home-timeline-org">Independent design, icon systems &amp; static web projects</p>
+                  </div>
+                </li>
+                <li class="home-timeline-item">
+                  <span class="home-timeline-period">2020–2022</span>
+                  <div class="home-timeline-content">
+                    <h3 class="home-timeline-role">IT Support, Customer Support &amp; SME Product Dev</h3>
+                    <p class="home-timeline-org">PT Bima Sakti Alterra — Smart Presence &amp; Internal UI/UX</p>
+                  </div>
+                </li>
+                <li class="home-timeline-item">
+                  <span class="home-timeline-period">2015–2020</span>
+                  <div class="home-timeline-content">
+                    <h3 class="home-timeline-role">IT Support &amp; Customer Support</h3>
+                    <p class="home-timeline-org">PT Bima Sakti Sanjaya — Onsite Implementation &amp; Training</p>
+                  </div>
+                </li>
+              </ol>
+              <div class="home-education-strip">
+                <span class="home-card-kicker">Education</span>
+                <p class="home-education-text"><strong>S1 in Information Technology</strong> &bull; STIKOM Bali (2014)</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             SECTION 4: LIVING DESIGN SYSTEM LIBRARY
+             =============================================================== -->
+        <section class="home-section" id="home-library" aria-labelledby="home-library-title">
+          <div class="home-section-header">
+            <div class="home-section-heading-group">
+              <div class="home-eyebrow">
+                <span class="home-eyebrow-dot" aria-hidden="true"></span>
+                LIVING DESIGN SYSTEM
+              </div>
+              <h2 class="home-section-title" id="home-library-title">Library &amp; Interactive Sandbox</h2>
+              <p class="home-section-desc">
+                Dokumentasi hidup standar visual semenitwasted: perilaku animasi taktil, token warna monokrom, dan
+                komponen UI siap pakai.
+              </p>
+            </div>
+            <a href="library.html" class="home-section-cta">
+              <span>Open Interactive Library</span>
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+
+          <div class="home-library-grid">
+            <!-- Pillar 1: Motion & Animation -->
+            <article class="home-bento-card home-library-card">
+              <div class="home-card-meta">
+                <span class="home-pill-badge">01. Motion &amp; Animation</span>
+                <span class="home-meta-muted">10 Modules</span>
+              </div>
+              <h3 class="home-card-title">Tactile Physics &amp; Easing</h3>
+              <p class="home-card-excerpt">
+                Eksperimen kurva <code>cubic-bezier(0.2, 0.8, 0.2, 1)</code>, simulator <em>Reduced Motion</em>, dan
+                mode <em>Slow Motion 0.5x</em>.
+              </p>
+              <div class="home-lib-stage">
+                <button type="button" class="home-tactile-demo-btn" id="homeTactileDemoBtn">
+                  <span>Try Tactile Lift</span>
+                  <span aria-hidden="true">&uarr;</span>
+                </button>
+                <span class="home-lib-stage-status" id="homeTactileDemoStatus" aria-live="polite">State: Resting (200ms)</span>
+              </div>
+              <div class="home-card-footer">
+                <a href="library.html" class="home-card-link">
+                  <span>Buka modul animasi <span class="sr-only">di Library</span></span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Pillar 2: Design Tokens -->
+            <article class="home-bento-card home-library-card">
+              <div class="home-card-meta">
+                <span class="home-pill-badge">02. Design Tokens</span>
+                <span class="home-meta-muted">8 Groups</span>
+              </div>
+              <h3 class="home-card-title">Monochrome Palette &amp; Depth</h3>
+              <p class="home-card-excerpt">
+                Token CSS terstruktur untuk warna monokrom, bayangan ungu lembut, radius <code>10px</code>, dan skala
+                spasi genap.
+              </p>
+              <div class="home-lib-stage home-lib-stage--tokens">
+                <div class="home-swatch-row" aria-label="Palet warna utama semenitwasted">
+                  <span class="home-swatch" style="--sw: #F0EDF4;" title="--color-light: #F0EDF4">
+                    <span class="home-swatch-dot"></span>
+                    <code>#F0EDF4</code>
+                  </span>
+                  <span class="home-swatch" style="--sw: #FCFAFD;" title="--surface: #FCFAFD">
+                    <span class="home-swatch-dot"></span>
+                    <code>#FCFAFD</code>
+                  </span>
+                  <span class="home-swatch" style="--sw: #211B28;" title="--color-dark: #211B28">
+                    <span class="home-swatch-dot"></span>
+                    <code>#211B28</code>
+                  </span>
+                  <span class="home-swatch" style="--sw: #450D50;" title="--color-shadow: #450D50">
+                    <span class="home-swatch-dot"></span>
+                    <code>#450D50</code>
+                  </span>
+                </div>
+              </div>
+              <div class="home-card-footer">
+                <a href="library.html" class="home-card-link">
+                  <span>Lihat daftar CSS tokens <span class="sr-only">di Library</span></span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Pillar 3: Components & UI -->
+            <article class="home-bento-card home-library-card">
+              <div class="home-card-meta">
+                <span class="home-pill-badge">03. Components &amp; UI</span>
+                <span class="home-meta-muted">8 Sets</span>
+              </div>
+              <h3 class="home-card-title">Accessible Tactile Controls</h3>
+              <p class="home-card-excerpt">
+                Komponen tombol, kartu, navigasi, dan <em>filter pills</em> yang teruji untuk fokus <em>keyboard</em>
+                dan mode <em>Forced Colors</em>.
+              </p>
+              <div class="home-lib-stage home-lib-stage--components" aria-hidden="true">
+                <div class="home-mini-ui-row">
+                  <span class="home-mini-ui-pill active">All</span>
+                  <span class="home-mini-ui-pill">Buttons</span>
+                  <span class="home-mini-ui-pill">Cards</span>
+                </div>
+                <div class="home-mini-ui-note">Tap target &ge; 44px &bull; Visible Focus Ring</div>
+              </div>
+              <div class="home-card-footer">
+                <a href="library.html" class="home-card-link">
+                  <span>Eksplorasi komponen UI <span class="sr-only">di Library</span></span>
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             SECTION 5: BLOG & TOPIC CLUSTERS HUB (CRAWL DEPTH 1 SEO)
+             =============================================================== -->
+        <section class="home-section" id="home-blog" aria-labelledby="home-blog-title">
+          <div class="home-section-header">
+            <div class="home-section-heading-group">
+              <div class="home-eyebrow">
+                <span class="home-eyebrow-dot" aria-hidden="true"></span>
+                WRITING &amp; FIELD NOTES
+              </div>
+              <h2 class="home-section-title" id="home-blog-title">Latest essays, devlogs &amp; design notes</h2>
+              <p class="home-section-desc">
+                Catatan mendalam seputar desain antarmuka, keamanan web, cara kerja teknologi, dan refleksi berkarya
+                dengan bahasa yang mudah dicerna.
+              </p>
+            </div>
+            <a href="blog.html" class="home-section-cta" id="homeBlogAllLink">
+              <!-- HOME_BLOG_COUNT_START --><span>Browse All 26 Articles</span><!-- HOME_BLOG_COUNT_END -->
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+
+          <!-- Latest 3 Articles Grid (Static HTML + Auto-Synced by build.js) -->
+          <div class="home-blog-grid" id="homeBlogGrid">
+            <!-- HOME_LATEST_POSTS_START -->
+            <article class="home-bento-card home-blog-card">
+              <a href="blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils.html" class="home-blog-cover-link" tabindex="-1" aria-hidden="true">
+                <div class="home-blog-cover-frame">
+                  <img src="assets/blog/Minecraft%20Sunset%20Gaming%20Haven.webp"
+                    alt="Ilustrasi suasana meja komputer bernuansa senja dengan monitor menampilkan dunia blok dan jendela terminal jarak jauh, melambangkan pengelolaan server dari kamar sendiri lewat protokol SSH"
+                    class="home-blog-cover-img" width="800" height="450" loading="lazy" decoding="async">
+                </div>
+              </a>
+              <div class="home-card-body">
+                <div class="home-card-meta">
+                  <span class="home-pill-badge">Frontend &amp; Code</span>
+                  <span class="home-meta-muted">13 min read</span>
+                </div>
+                <h3 class="home-card-title">
+                  <a href="blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils.html">SSH Adalah Kunci Utama Server Internet dan Kisah Nyata Saat Seluruh Dunia Hampir Diretas Tanpa Sadar</a>
+                </h3>
+                <p class="home-card-excerpt">
+                  Pahami apa itu SSH dengan bahasa sederhana. Simak sejarah Tatu Ylönen 1995, cara kerja Public Key &amp; Private Key, dan kisah celah XZ Utils dari Veritasium.
+                </p>
+                <div class="home-card-footer">
+                  <time datetime="2026-11-16" class="home-meta-muted">16 November 2026</time>
+                  <a href="blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils.html" class="home-card-link">
+                    <span>Baca <span class="sr-only">SSH Adalah Kunci Utama Server Internet dan Kisah Nyata Saat Seluruh Dunia Hampir Diretas Tanpa Sadar</span></span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="home-bento-card home-blog-card">
+              <a href="blog/kenapa-miliarder-dunia-memperlambat-ai-dan-faktor-china.html" class="home-blog-cover-link" tabindex="-1" aria-hidden="true">
+                <div class="home-blog-cover-frame">
+                  <img src="assets/blog/Anime%20Guardians%20Against%20the%20Cracked%20Radiant%20Door.webp"
+                    alt="Ilustrasi gadis anime berambut ungu-putih bersama kucing putihnya sedang menahan pintu raksasa yang mulai retak dan memancarkan kilatan cahaya ungu digital dari balik celahnya"
+                    class="home-blog-cover-img" width="800" height="450" loading="lazy" decoding="async">
+                </div>
+              </a>
+              <div class="home-card-body">
+                <div class="home-card-meta">
+                  <span class="home-pill-badge">Reflections</span>
+                  <span class="home-meta-muted">12 min read</span>
+                </div>
+                <h3 class="home-card-title">
+                  <a href="blog/kenapa-miliarder-dunia-memperlambat-ai-dan-faktor-china.html">Kenapa Para Miliarder Dunia Tiba-Tiba Sepakat Memperlambat AI dan Apa Hubungannya dengan China</a>
+                </h3>
+                <p class="home-card-excerpt">
+                  Bedah alasan miliarder teknologi (Anthropic &amp; OpenAI) sepakat memperlambat AI dari video Bennix, insiden Hugging Face, motif IPO Wall Street, dan faktor China.
+                </p>
+                <div class="home-card-footer">
+                  <time datetime="2026-11-13" class="home-meta-muted">13 November 2026</time>
+                  <a href="blog/kenapa-miliarder-dunia-memperlambat-ai-dan-faktor-china.html" class="home-card-link">
+                    <span>Baca <span class="sr-only">Kenapa Para Miliarder Dunia Tiba-Tiba Sepakat Memperlambat AI dan Apa Hubungannya dengan China</span></span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="home-bento-card home-blog-card">
+              <a href="blog/dark-pattern-adalah-jebakan-desain-dan-contohnya.html" class="home-blog-cover-link" tabindex="-1" aria-hidden="true">
+                <div class="home-blog-cover-frame">
+                  <img src="assets/blog/Panicked%20Subscription%20Trap%20at%20the%20Desk.webp"
+                    alt="Ilustrasi gadis anime memegang kepala karena panik di depan laptop bersama kucing hitamnya yang terkejut melihat jendela pop-up Kamu Berlangganan Paket Premium Rp 99.000/bulan, Penagihan Otomatis Aktif, dan tombol Batalkan Langganan yang terkunci Sangat Sulit"
+                    class="home-blog-cover-img" width="800" height="450" loading="lazy" decoding="async">
+                </div>
+              </a>
+              <div class="home-card-body">
+                <div class="home-card-meta">
+                  <span class="home-pill-badge">Design Systems</span>
+                  <span class="home-meta-muted">11 min read</span>
+                </div>
+                <h3 class="home-card-title">
+                  <a href="blog/dark-pattern-adalah-jebakan-desain-dan-contohnya.html">Dark Pattern Adalah Jebakan Desain yang Sengaja Dibikin agar Pengguna Salah Klik dan Susah Berhenti Langganan</a>
+                </h3>
+                <p class="home-card-excerpt">
+                  Pahami apa itu dark pattern dengan bahasa sederhana. Simak sejarah Harry Brignull 2010, 5 contoh jebakan desain di aplikasi harian, dan cara menghindarinya.
+                </p>
+                <div class="home-card-footer">
+                  <time datetime="2026-11-12" class="home-meta-muted">12 November 2026</time>
+                  <a href="blog/dark-pattern-adalah-jebakan-desain-dan-contohnya.html" class="home-card-link">
+                    <span>Baca <span class="sr-only">Dark Pattern Adalah Jebakan Desain yang Sengaja Dibikin agar Pengguna Salah Klik dan Susah Berhenti Langganan</span></span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+            <!-- HOME_LATEST_POSTS_END -->
+          </div>
+
+          <!-- Topic Cluster & Pillar Articles Hub (Direct Crawl Depth 1 Links) -->
+          <div class="home-topic-clusters" aria-label="Blog topic clusters and pillar essays">
+            <div class="home-clusters-header">
+              <span class="home-card-kicker">Explore by Topic Cluster</span>
+              <a href="rss.xml" class="home-rss-inline-link">RSS Feed (XML)</a>
+            </div>
+            <div class="home-clusters-grid">
+              <div class="home-cluster-card">
+                <div class="home-cluster-top">
+                  <h3 class="home-cluster-title"><a href="blog.html?category=design-systems">Design Systems</a></h3>
+                  <span class="home-cluster-arrow" aria-hidden="true">&rarr;</span>
+                </div>
+                <ul class="home-cluster-links">
+                  <li><a href="blog/memilih-karakter-visual-website-2026.html">Memilih Karakter Visual Website 2026</a></li>
+                  <li><a href="blog/apa-itu-ui-dan-ux-serta-perbedaannya.html">Apa Itu UI dan UX serta Perbedaannya</a></li>
+                </ul>
+              </div>
+
+              <div class="home-cluster-card">
+                <div class="home-cluster-top">
+                  <h3 class="home-cluster-title"><a href="blog.html?category=frontend-code">Frontend &amp; Code</a></h3>
+                  <span class="home-cluster-arrow" aria-hidden="true">&rarr;</span>
+                </div>
+                <ul class="home-cluster-links">
+                  <li><a href="blog/api-adalah-sejarah-dan-cara-kerjanya.html">API Adalah: Sejarah &amp; Cara Kerjanya</a></li>
+                  <li><a href="blog/apa-itu-database-sejarah-dan-kebocoran-data.html">Apa Itu Database &amp; Kebocoran Data</a></li>
+                </ul>
+              </div>
+
+              <div class="home-cluster-card">
+                <div class="home-cluster-top">
+                  <h3 class="home-cluster-title"><a href="blog.html?category=product-support">Product &amp; Support</a></h3>
+                  <span class="home-cluster-arrow" aria-hidden="true">&rarr;</span>
+                </div>
+                <ul class="home-cluster-links">
+                  <li><a href="blog/sejarah-password-dan-kesalahan-keamanan-akun.html">Sejarah Password &amp; Keamanan Akun</a></li>
+                  <li><a href="blog/perbedaan-website-dan-landing-page.html">Perbedaan Website dan Landing Page</a></li>
+                </ul>
+              </div>
+
+              <div class="home-cluster-card">
+                <div class="home-cluster-top">
+                  <h3 class="home-cluster-title"><a href="blog.html?category=reflections">Reflections</a></h3>
+                  <span class="home-cluster-arrow" aria-hidden="true">&rarr;</span>
+                </div>
+                <ul class="home-cluster-links">
+                  <li><a href="blog/kedaulatan-internet-indonesia-dan-sejarah-jaringan.html">Kedaulatan Internet Indonesia</a></li>
+                  <li><a href="blog/membedakan-kaya-tampilan-dan-sejahtera-finansial.html">Kaya Tampilan vs Sejahtera Finansial</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===============================================================
+             COLLABORATION CTA STRIP
+             =============================================================== -->
+        <section class="home-cta-section" aria-labelledby="home-cta-title">
+          <div class="home-bento-card home-cta-card">
+            <div class="home-cta-copy">
+              <div class="home-eyebrow">
+                <span class="home-eyebrow-dot" aria-hidden="true"></span>
+                LET'S CONNECT
+              </div>
+              <h2 class="home-cta-title" id="home-cta-title">Have an idea or project in mind?</h2>
+              <p class="home-cta-desc">
+                Terbuka untuk kolaborasi desain web statis, sistem ikon, diskusi produk, maupun pertukaran gagasan
+                seputar desain antarmuka.
+              </p>
+            </div>
+            <div class="home-cta-actions">
+              <a href="contact.html" class="home-btn-primary">Get in Touch &rarr;</a>
+              <a href="rss.xml" class="home-btn-secondary">RSS Feed</a>
+            </div>
+          </div>
+        </section>
+
       </div>
-
-      <!-- Mobile & Tablet Responsive Bento Grid (< 992px) -->
-      <div class="mobile-bento-grid">
-
-        <!-- Featured Avatar Centerpiece -->
-        <div class="bento-item bento-hero">
-          <div class="bento-card">
-            <img src="assets/card-center.png" alt="Creative Illustration" class="bento-hero-img">
-          </div>
-        </div>
-
-        <div class="bento-row">
-          <!-- Portfolio Card -->
-          <a href="portfolio.html" class="bento-item bento-portfolio" style="text-decoration: none;">
-            <div class="bento-card">
-              <span class="card-text text-portfolio">Portfolio</span>
-            </div>
-          </a>
-
-          <!-- E-Book Card -->
-          <a href="https://lynk.id/semenitwasted" target="_blank" rel="noopener noreferrer"
-            class="bento-item bento-ebook">
-            <div class="bento-card">
-              <span class="card-text text-ebook">E-Book</span>
-            </div>
-          </a>
-
-          <!-- CV Card -->
-          <div class="bento-item bento-cv">
-            <div class="bento-card">
-              <span class="card-text text-cv">CV</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="bento-grid-2x2">
-          <!-- Adobe Stock -->
-          <a href="https://stock.adobe.com/contributor/207802543/dicky" target="_blank" rel="noopener noreferrer"
-            class="bento-item bento-brand">
-            <div class="bento-card">
-              <img src="assets/adobe-stock.svg" alt="Adobe Stock" class="bento-icon">
-            </div>
-          </a>
-
-          <!-- Instagram -->
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="bento-item bento-brand">
-            <div class="bento-card">
-              <img src="assets/instagram.svg" alt="Instagram" class="bento-icon">
-            </div>
-          </a>
-
-          <!-- Canva -->
-          <a href="https://www.canva.com/p/gambar-reion" target="_blank" rel="noopener noreferrer"
-            class="bento-item bento-brand">
-            <div class="bento-card">
-              <img src="assets/canva.svg" alt="Canva" class="bento-icon">
-            </div>
-          </a>
-
-          <!-- LinkedIn -->
-          <a href="https://www.linkedin.com/in/reionnyx/" target="_blank" rel="noopener noreferrer" class="bento-item bento-brand">
-            <div class="bento-card">
-              <img src="assets/linkedin.svg" alt="LinkedIn" class="bento-icon">
-            </div>
-          </a>
-        </div>
-
-        <!-- Flaticon & Noun Project wide cards -->
-        <a href="https://www.flaticon.com/authors/reion" target="_blank" rel="noopener noreferrer"
-          class="bento-item bento-wide">
-          <div class="bento-card">
-            <img src="assets/flaticon.svg" alt="Flaticon" class="bento-icon-wide">
-          </div>
-        </a>
-
-        <a href="https://thenounproject.com/creator/ReionDesign/" target="_blank" rel="noopener noreferrer"
-          class="bento-item bento-wide">
-          <div class="bento-card">
-            <img src="assets/noun-project.svg" alt="The Noun Project" class="bento-icon-wide">
-          </div>
-        </a>
-
-      </div>
-
     </main>
 
     <!-- Modal for interactive card clicks -->
     <div class="modal-overlay" id="cardModal" aria-hidden="true" role="dialog">
       <div class="modal-content">
-        <button class="modal-close" id="modalClose" aria-label="Close dialog">&times;</button>
+        <button class="modal-close" id="modalClose" type="button" aria-label="Close dialog">&times;</button>
         <div class="modal-header">
           <h3 id="modalTitle">Item Details</h3>
         </div>
@@ -389,14 +1018,45 @@
       </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="page-footer">
-      <p>&copy; 2026 Creative Portfolio. Crafted with precision from Figma design.</p>
+    <!-- Unified Tactile Footer (Matching Portfolio, About, Library & Blog) -->
+    <footer class="home-footer-wrapper">
+      <div class="portfolio-footer">
+        <div class="footer-left">
+          <span class="footer-brand">semenitwasted</span>
+          <span class="footer-subtitle">Design &middot; Icons &middot; Illustration &middot; Web &middot; I Putu Dicky Adi Pranatha</span>
+        </div>
+        <div class="footer-platforms" aria-label="Platform links">
+          <a href="https://www.linkedin.com/in/reionnyx/" target="_blank" rel="noopener noreferrer"
+            class="footer-platform-card" aria-label="LinkedIn">
+            <img src="assets/linkedin.svg" alt="" width="24" height="24"
+              class="footer-platform-icon footer-platform-icon--monochrome" loading="lazy">
+          </a>
+          <a href="https://stock.adobe.com/contributor/207802543/dicky" target="_blank" rel="noopener noreferrer"
+            class="footer-platform-card" aria-label="Adobe Stock">
+            <img src="assets/adobe-stock.svg" alt="" width="24" height="24" class="footer-platform-icon" loading="lazy">
+          </a>
+          <a href="https://www.canva.com/p/gambar-reion" target="_blank" rel="noopener noreferrer"
+            class="footer-platform-card" aria-label="Canva">
+            <img src="assets/canva.svg" alt="" width="24" height="24" class="footer-platform-icon" loading="lazy">
+          </a>
+          <a href="https://thenounproject.com/creator/ReionDesign/" target="_blank" rel="noopener noreferrer"
+            class="footer-platform-card" aria-label="The Noun Project">
+            <img src="assets/noun-project.svg" alt="" width="24" height="24"
+              class="footer-platform-icon footer-platform-icon--monochrome" loading="lazy">
+          </a>
+          <a href="https://www.flaticon.com/authors/reion" target="_blank" rel="noopener noreferrer"
+            class="footer-platform-card" aria-label="Flaticon">
+            <img src="assets/flaticon.svg" alt="" width="24" height="24"
+              class="footer-platform-icon footer-platform-icon--monochrome" loading="lazy">
+          </a>
+        </div>
+      </div>
     </footer>
 
   </div>
 
-  <script src="script.js"></script>
+  <script src="blog-data.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 
 </html>

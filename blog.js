@@ -470,6 +470,18 @@
     // ------------------------------------------------------------------------
     syncDynamicPosts();
     buildAndRenderCategories();
+
+    // Support direct topic-cluster deep links like blog.html?category=design-systems
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialCategory = urlParams.get('category');
+    if (initialCategory && categoryFilterGroup) {
+      const matchingPill = categoryFilterGroup.querySelector(`.category-pill[data-category="${initialCategory}"]`);
+      if (matchingPill) {
+        setCategory(initialCategory);
+        return;
+      }
+    }
+
     filterArticles();
   }
 

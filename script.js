@@ -149,4 +149,96 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // --- Home Library Interactive Tactile Lift Demo ---
+  const demoBtn = document.getElementById('homeTactileDemoBtn');
+  const demoStatus = document.getElementById('homeTactileDemoStatus');
+  if (demoBtn && demoStatus) {
+    let clickResetTimer = null;
+
+    demoBtn.addEventListener('mouseenter', () => {
+      demoStatus.textContent = 'State: Hover (translateY -2px)';
+    });
+    demoBtn.addEventListener('mouseleave', () => {
+      demoStatus.textContent = 'State: Resting (200ms)';
+    });
+    demoBtn.addEventListener('pointerdown', () => {
+      demoStatus.textContent = 'State: Pressed (active depth)';
+    });
+    demoBtn.addEventListener('click', () => {
+      demoStatus.textContent = 'State: Tactile Click Confirmed';
+      if (clickResetTimer) clearTimeout(clickResetTimer);
+      clickResetTimer = setTimeout(() => {
+        demoStatus.textContent = 'State: Resting (200ms)';
+      }, 1400);
+    });
+  }
+
+  // --- Progressive Sync: Keep Home Blog Grid Synced with blog-data.js ---
+  const homeBlogGrid = document.getElementById('homeBlogGrid');
+  const homeBlogAllLink = document.getElementById('homeBlogAllLink');
+  if (homeBlogGrid && Array.isArray(window.BLOG_POSTS) && window.BLOG_POSTS.length > 0) {
+    const publishedPosts = window.BLOG_POSTS
+      .filter(p => p && p.slug && p.slug !== 'coming-soon')
+      .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
+
+    if (homeBlogAllLink) {
+      const labelSpan = homeBlogAllLink.querySelector('span:first-child');
+      if (labelSpan) {
+        labelSpan.textContent = `Browse All ${publishedPosts.length} Articles`;
+      }
+    }
+
+    const topThree = publishedPosts.slice(0, 3);
+    const firstExistingLink = homeBlogGrid.querySelector('.home-card-title a');
+    const firstExistingHref = firstExistingLink ? firstExistingLink.getAttribute('href') : '';
+
+    // Only re-render if blog-data.js has a newer top post than the static HTML
+    if (topThree.length > 0 && firstExistingHref !== topThree[0].contentUrl) {
+      const escapeHTML = (str) => String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+
+      homeBlogGrid.innerHTML = topThree.map(post => `
+        <article class="home-bento-card home-blog-card">
+          <a href="${escapeHTML(post.contentUrl)}" class="home-blog-cover-link" tabindex="-1" aria-hidden="true">
+            <div class="home-blog-cover-frame">
+              <img src="${escapeHTML(post.coverImage)}" alt="${escapeHTML(post.coverAlt || post.title)}" class="home-blog-cover-img" width="800" height="450" loading="lazy" decoding="async">
+            </div>
+          </a>
+          <div class="home-card-body">
+            <div class="home-card-meta">
+              <span class="home-pill-badge">${escapeHTML(post.categoryLabel || post.category)}</span>
+              <span class="home-meta-muted">${escapeHTML(post.readingTime || '')}</span>
+            </div>
+            <h3 class="home-card-title">
+              <a href="${escapeHTML(post.contentUrl)}">${escapeHTML(post.title)}</a>
+            </h3>
+            <p class="home-card-excerpt">${escapeHTML(post.excerpt || '')}</p>
+            <div class="home-card-footer">
+              <time datetime="${escapeHTML(post.date || '')}" class="home-meta-muted">${escapeHTML(post.formattedDate || post.date || '')}</time>
+              <a href="${escapeHTML(post.contentUrl)}" class="home-card-link">
+                <span>Baca <span class="sr-only">${escapeHTML(post.title)}</span></span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+  }
+
+  // --- Stretched-link convenience for Home Portfolio & Blog cards ---
+  document.querySelectorAll('.home-project-card, .home-blog-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a') || e.target.closest('button')) return;
+      const primaryLink = card.querySelector('.home-card-title a');
+      if (primaryLink && primaryLink.href) {
+        window.location.href = primaryLink.href;
+      }
+    });
+  });
+
 });

@@ -10,6 +10,8 @@
   <link rel="icon" type="image/svg+xml" href="../assets/logo-nav.svg">
 
   <link rel="canonical" href="https://semenitwasted.web.id/blog/membangun-sistem-desain-taktil">
+  <link rel="alternate" type="application/rss+xml" title="semenitwasted Blog RSS Feed"
+    href="https://semenitwasted.web.id/rss.xml">
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="article">
@@ -238,7 +240,7 @@
       <!-- Post Cover Hero Figure -->
       <figure class="post-hero-figure">
         <div class="post-hero-frame">
-          <img src="../assets/blog/cover-design-systems.svg" alt="Diagram token sistem desain taktil dan swatch warna monokrom" class="post-hero-img" width="800" height="450" loading="eager">
+          <img src="../assets/blog/cover-design-systems.svg" alt="Diagram token sistem desain taktil dan swatch warna monokrom" class="post-hero-img" width="800" height="450" loading="eager" fetchpriority="high">
         </div>
         <figcaption class="post-figure-caption">Living Tokens: Fondasi palet monokrom, bayangan taktil, dan struktur bento pada semenitwasted Design System.</figcaption>
       </figure>
@@ -252,6 +254,23 @@
           <li>Menggunakan CSS Custom Properties (`tokens`) memastikan konsistensi antara prototipe Figma dan kode produksi Cloudflare Pages.</li>
         </ul>
       </div>
+
+      <!-- AUTO_TOC_START -->
+      <details class="post-toc-card">
+        <summary class="post-toc-summary">
+          <span>Daftar Isi Artikel</span>
+          <span class="post-toc-chevron" aria-hidden="true">&#9662;</span>
+        </summary>
+        <nav aria-label="Daftar isi artikel">
+          <ol class="post-toc-list">
+            <li><a href="#1-masalah-utama-neumorphism-klasik">1. Masalah Utama Neumorphism Klasik</a></li>
+            <li><a href="#2-memetakan-token-figma-ke-css">2. Memetakan Token Figma ke CSS</a></li>
+            <li><a href="#3-uji-interaksi-sensasi-klik-taktil">3. Uji Interaksi: Sensasi Klik Taktil</a></li>
+            <li><a href="#penutup">Penutup</a></li>
+          </ol>
+        </nav>
+      </details>
+      <!-- AUTO_TOC_END -->
 
       <!-- Article Body -->
       <article class="post-prose">
@@ -267,7 +286,7 @@
           "Antarmuka digital tidak harus meniru plastik fisik seutuhnya; yang kita butuhkan adalah rasa keterabaan (tactility) yang tenang dan memperjelas fungsi, bukan dekorasi yang mengaburkan pesan."
         </blockquote>
 
-        <h2>1. Masalah Utama Neumorphism Klasik</h2>
+        <h2 id="1-masalah-utama-neumorphism-klasik">1. Masalah Utama Neumorphism Klasik</h2>
         <p>
           Neumorphism klasik biasanya mengandalkan dua bayangan ekstrem: bayangan putih menyilaukan di sudut kiri atas dan bayangan gelap pekat di sudut kanan bawah. Saat diterapkan pada latar belakang putih murni, hasilnya adalah hilangnya batas tepi elemen (<em>lost edges</em>).
         </p>
@@ -282,7 +301,7 @@
           <li><strong>Crisp Structural Border:</strong> Tetap menyertakan garis batas halus berketebalan 1px untuk mempertahankan ketegasan kartu.</li>
         </ul>
 
-        <h2>2. Memetakan Token Figma ke CSS</h2>
+        <h2 id="2-memetakan-token-figma-ke-css">2. Memetakan Token Figma ke CSS</h2>
         <p>
           Agar token di file desain Figma sinkron tanpa distorsi saat dikodekan, kami mengunci variabel CSS berikut pada tingkat root:
         </p>
@@ -304,7 +323,7 @@
   --radius-pill: 999px;
 }</code></pre>
 
-        <h2>3. Uji Interaksi: Sensasi Klik Taktil</h2>
+        <h2 id="3-uji-interaksi-sensasi-klik-taktil">3. Uji Interaksi: Sensasi Klik Taktil</h2>
         <p>
           Kekuatan sistem taktil terasa saat pengguna berinteraksi. Transisi halus antar status memberikan umpan balik fisik:
         </p>
@@ -315,11 +334,31 @@
           <li><strong>Active / Pressed:</strong> Tenggelam kembali ke posisi asal dengan <code>--shadow-pressed</code>, mensimulasikan saklar mekanis.</li>
         </ul>
 
-        <h2>Penutup</h2>
+        <h2 id="penutup">Penutup</h2>
         <p>
           Desain minimalis monokrom tidak harus membosankan atau terasa steril. Dengan meramu kedalaman bayangan taktil dan disiplin spasi bilangan genap, kita bisa menciptakan pengalaman web personal yang hangat, berkarakter, dan tetap cepat diakses—selaras dengan panduan <a href="memilih-karakter-visual-website-2026.html">memilih karakter visual website tanpa terjebak tren usang</a>.
         </p>
       </article>
+
+      <!-- AUTO_RELATED_START -->
+      <section class="post-related-section" aria-label="Artikel terkait di kategori Design Systems">
+        <h2 class="post-related-heading">Baca Juga di Topik Design Systems</h2>
+        <div class="post-related-grid">
+          <a href="dark-pattern-adalah-jebakan-desain-dan-contohnya.html" class="post-related-card">
+            <span class="post-related-meta">12 November 2026 &bull; 11 min read</span>
+            <span class="post-related-title">Dark Pattern Adalah Jebakan Desain yang Sengaja Dibikin agar Pengguna Salah Klik dan Susah Berhenti Langganan</span>
+          </a>
+          <a href="cara-berpikir-dan-menganalisis-desain-website.html" class="post-related-card">
+            <span class="post-related-meta">5 November 2026 &bull; 11 min read</span>
+            <span class="post-related-title">Cara Berpikir dan Menganalisis Website seperti Desainer Lewat Pelajaran dari Dua Video Extra Credits</span>
+          </a>
+          <a href="choice-paralysis-dan-cara-melihat-desain-website.html" class="post-related-card">
+            <span class="post-related-meta">1 November 2026 &bull; 10 min read</span>
+            <span class="post-related-title">Kenapa Terlalu Banyak Pilihan di Website Bikin Pengunjung Kabur dan Cara Melatih Mata Melihat Desain</span>
+          </a>
+        </div>
+      </section>
+      <!-- AUTO_RELATED_END -->
 
       <!-- Next & Prev Navigation -->
       <nav class="post-navigator" aria-label="Article navigation">

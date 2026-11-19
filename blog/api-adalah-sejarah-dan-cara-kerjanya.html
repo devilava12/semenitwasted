@@ -9,6 +9,8 @@
     content="Pahami apa itu API dengan bahasa sederhana. Simak analogi pelayan restoran, sejarah dari komputer EDSAC 1951 hingga REST API, contoh nyata, dan keamanannya.">
   <link rel="icon" type="image/svg+xml" href="../assets/logo-nav.svg">
   <link rel="canonical" href="https://semenitwasted.web.id/blog/api-adalah-sejarah-dan-cara-kerjanya">
+  <link rel="alternate" type="application/rss+xml" title="semenitwasted Blog RSS Feed"
+    href="https://semenitwasted.web.id/rss.xml">
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="article">
@@ -245,7 +247,7 @@
         <div class="post-hero-frame">
           <img src="../assets/blog/Neon%20API%20Notes%20in%20Cyberpunk%20Corridor.webp"
             alt="Ilustrasi gadis anime berkacamata mencatat alur kerja di lorong siber neon bersama kucing hitam-putih bermata ungu yang menatap layar skema API penghubung aplikasi ponsel, keranjang belanja, dan database server"
-            class="post-hero-img" width="1671" height="941" loading="eager">
+            class="post-hero-img" width="1671" height="941" loading="eager" fetchpriority="high">
         </div>
         <figcaption class="post-figure-caption">Menyambungkan Aplikasi Tanpa Membongkar Brankas Server: Bagaimana satu
           jembatan API di tengah layar menjadi penghubung resmi antara aplikasi di ponsel pengguna dan sistem database di
@@ -270,6 +272,23 @@
             membiarkan celah penebakan nomor urut pesanan (<em>Broken Object Level Authorization</em>).</li>
         </ul>
       </div>
+
+      <!-- AUTO_TOC_START -->
+      <details class="post-toc-card">
+        <summary class="post-toc-summary">
+          <span>Daftar Isi Artikel</span>
+          <span class="post-toc-chevron" aria-hidden="true">&#9662;</span>
+        </summary>
+        <nav aria-label="Daftar isi artikel">
+          <ol class="post-toc-list">
+            <li><a href="#apa-sebenarnya-api-itu-dan-kenapa-aplikasi-tidak-boleh-langsung">Apa Sebenarnya API Itu dan Kenapa Aplikasi Tidak Boleh Langsung Mengobok Isi Database</a></li>
+            <li><a href="#sejarah-awal-dibuatnya-api-dari-komputer-edsac-tahun-1951-hingga">Sejarah Awal Dibuatnya API dari Komputer EDSAC Tahun 1951 hingga Lahirnya Era REST API</a></li>
+            <li><a href="#contoh-kerja-api-dalam-kehidupan-sehari-hari-dan-cara-membaca-ko">Contoh Kerja API dalam Kehidupan Sehari-hari dan Cara Membaca Kode Statusnya</a></li>
+            <li><a href="#celah-keamanan-api-yang-sering-membuat-data-bocor-dan-kapan-kamu">Celah Keamanan API yang Sering Membuat Data Bocor dan Kapan Kamu Tidak Membutuhkannya</a></li>
+          </ol>
+        </nav>
+      </details>
+      <!-- AUTO_TOC_END -->
 
       <!-- Article Body -->
       <article class="post-prose">
@@ -302,7 +321,7 @@
           sering dilupakan.
         </p>
 
-        <h2>Apa Sebenarnya API Itu dan Kenapa Aplikasi Tidak Boleh Langsung Mengobok Isi Database</h2>
+        <h2 id="apa-sebenarnya-api-itu-dan-kenapa-aplikasi-tidak-boleh-langsung">Apa Sebenarnya API Itu dan Kenapa Aplikasi Tidak Boleh Langsung Mengobok Isi Database</h2>
 
         <p>
           Sebelum melihat cara kerja teknisnya, kita perlu menjawab satu pertanyaan paling mendasar terlebih dahulu:
@@ -430,7 +449,7 @@
           menghitung biaya bensin truk mereka; toko hanya menerima angka matang yang sudah siap ditampilkan.
         </p>
 
-        <h2>Sejarah Awal Dibuatnya API dari Komputer EDSAC Tahun 1951 hingga Lahirnya Era REST API</h2>
+        <h2 id="sejarah-awal-dibuatnya-api-dari-komputer-edsac-tahun-1951-hingga">Sejarah Awal Dibuatnya API dari Komputer EDSAC Tahun 1951 hingga Lahirnya Era REST API</h2>
 
         <p>
           Banyak orang mengira konsep API baru ditemukan ketika ponsel pintar dan aplikasi media sosial menjamur pada
@@ -540,7 +559,7 @@
           <em>Private API</em>.
         </p>
 
-        <h2>Contoh Kerja API dalam Kehidupan Sehari-hari dan Cara Membaca Kode Statusnya</h2>
+        <h2 id="contoh-kerja-api-dalam-kehidupan-sehari-hari-dan-cara-membaca-ko">Contoh Kerja API dalam Kehidupan Sehari-hari dan Cara Membaca Kode Statusnya</h2>
 
         <p>
           Agar konsep ini terasa makin nyata, coba perhatikan layar ponselmu hari ini. Hampir setiap kali kamu melakukan
@@ -658,7 +677,7 @@
           jaringan Wi-Fi di rumah, karena masalahnya murni berada di dapur <em>server</em> penyelenggara layanan.
         </p>
 
-        <h2>Celah Keamanan API yang Sering Membuat Data Bocor dan Kapan Kamu Tidak Membutuhkannya</h2>
+        <h2 id="celah-keamanan-api-yang-sering-membuat-data-bocor-dan-kapan-kamu">Celah Keamanan API yang Sering Membuat Data Bocor dan Kapan Kamu Tidak Membutuhkannya</h2>
 
         <p>
           Jika API memang dirancang sebagai pelayan penjaga yang melindungi <em>database</em>, mengapa kita masih sering
@@ -750,7 +769,7 @@
             terkejut oleh lonjakan tagihan tak terduga.</li>
         </ul>
 
-        <h2>Referensi</h2>
+        <h2 id="referensi">Referensi</h2>
         <ul>
           <li>Wilkes, M. V., Wheeler, D. J., &amp; Gill, S. (1951). <em>The Preparation of Programs for an Electronic
               Digital Computer: With Special Reference to the EDSAC and the Use of a Library of Subroutines</em>.
@@ -782,6 +801,26 @@
           </li>
         </ul>
       </article>
+
+      <!-- AUTO_RELATED_START -->
+      <section class="post-related-section" aria-label="Artikel terkait di kategori Frontend &amp; Code">
+        <h2 class="post-related-heading">Baca Juga di Topik Frontend &amp; Code</h2>
+        <div class="post-related-grid">
+          <a href="ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils.html" class="post-related-card">
+            <span class="post-related-meta">16 November 2026 &bull; 13 min read</span>
+            <span class="post-related-title">SSH Adalah Kunci Utama Server Internet dan Kisah Nyata Saat Seluruh Dunia Hampir Diretas Tanpa Sadar</span>
+          </a>
+          <a href="apa-itu-database-sejarah-dan-kebocoran-data.html" class="post-related-card">
+            <span class="post-related-meta">3 November 2026 &bull; 10 min read</span>
+            <span class="post-related-title">Belajar dari Bocornya Jutaan Data Aplikasi Kopi serta Apa Itu Database dan Sejarah Awal Dibuatnya</span>
+          </a>
+          <a href="sisi-gelap-vibe-coding-dan-kebutuhan-pagar-pembatas.html" class="post-related-card">
+            <span class="post-related-meta">28 Oktober 2026 &bull; 8 min read</span>
+            <span class="post-related-title">Sisi Gelap Vibe Coding dan Cara Membangun Pagar Pembatas agar Kode Tidak Hancur</span>
+          </a>
+        </div>
+      </section>
+      <!-- AUTO_RELATED_END -->
 
       <!-- Next & Prev Navigation -->
       <nav class="post-navigator" aria-label="Article navigation">

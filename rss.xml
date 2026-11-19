@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>semenitwasted — Blog &amp; Field Notes</title>
+    <link>https://semenitwasted.web.id/blog</link>
+    <atom:link href="https://semenitwasted.web.id/rss.xml" rel="self" type="application/rss+xml" />
+    <description>Ruang catatan digital seputar desain antarmuka, rekayasa kode frontend, keamanan web, dan refleksi berkarya oleh I Putu Dicky Adi Pranatha.</description>
+    <language>id-ID</language>
+    <lastBuildDate>Mon, 16 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>SSH Adalah Kunci Utama Server Internet dan Kisah Nyata Saat Seluruh Dunia Hampir Diretas Tanpa Sadar</title>
+      <link>https://semenitwasted.web.id/blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils</guid>
+      <pubDate>Mon, 16 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Frontend &amp; Code</category>
+      <description>Pahami apa itu SSH dengan bahasa sederhana. Simak sejarah Tatu Ylönen 1995, cara kerja Public Key &amp; Private Key, dan kisah celah XZ Utils dari Veritasium.</description>
+    </item>
+    <item>
+      <title>Kenapa Para Miliarder Dunia Tiba-Tiba Sepakat Memperlambat AI dan Apa Hubungannya dengan China</title>
+      <link>https://semenitwasted.web.id/blog/kenapa-miliarder-dunia-memperlambat-ai-dan-faktor-china</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/kenapa-miliarder-dunia-memperlambat-ai-dan-faktor-china</guid>
+      <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Reflections</category>
+      <description>Bedah alasan miliarder teknologi (Anthropic &amp; OpenAI) sepakat memperlambat AI dari video Bennix, insiden Hugging Face, motif IPO Wall Street, dan faktor China.</description>
+    </item>
+    <item>
+      <title>Dark Pattern Adalah Jebakan Desain yang Sengaja Dibikin agar Pengguna Salah Klik dan Susah Berhenti Langganan</title>
+      <link>https://semenitwasted.web.id/blog/dark-pattern-adalah-jebakan-desain-dan-contohnya</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/dark-pattern-adalah-jebakan-desain-dan-contohnya</guid>
+      <pubDate>Thu, 12 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Design Systems</category>
+      <description>Pahami apa itu dark pattern dengan bahasa sederhana. Simak sejarah Harry Brignull 2010, 5 contoh jebakan desain di aplikasi harian, dan cara menghindarinya.</description>
+    </item>
+    <item>
+      <title>API Adalah Pelayan Tak Terlihat di Balik Aplikasi Harian Kita serta Sejarah dan Cara Kerjanya untuk Pemula</title>
+      <link>https://semenitwasted.web.id/blog/api-adalah-sejarah-dan-cara-kerjanya</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/api-adalah-sejarah-dan-cara-kerjanya</guid>
+      <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Frontend &amp; Code</category>
+      <description>Pahami apa itu API dengan bahasa sederhana. Simak analogi pelayan restoran, sejarah dari komputer EDSAC 1951 hingga REST API, contoh nyata, dan keamanannya.</description>
+    </item>
+    <item>
+      <title>Belajar dari Kasus Bank Diretas Rp2 Triliun dan Bagaimana Nasib Uang Nasabah di Indonesia</title>
+      <link>https://semenitwasted.web.id/blog/bank-diretas-dan-nasib-uang-nasabah-indonesia</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/bank-diretas-dan-nasib-uang-nasabah-indonesia</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Reflections</category>
+      <description>Bedah fakta kasus bank diretas Rp2 triliun (Crédit Mutuel Arkéa) dari video Bennix, aturan ganti rugi OJK vs syarat 3T LPS, serta cara mengamankan tabungan.</description>
+    </item>
+    <item>
+      <title>Cara Berpikir dan Menganalisis Website seperti Desainer Lewat Pelajaran dari Dua Video Extra Credits</title>
+      <link>https://semenitwasted.web.id/blog/cara-berpikir-dan-menganalisis-desain-website</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/cara-berpikir-dan-menganalisis-desain-website</guid>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Design Systems</category>
+      <description>Pelajari cara menganalisis desain website lewat dua video Extra Credits (Playing Like a Designer I &amp; II), kerangka MDA, dan kebiasaan membedah sistem UI/UX.</description>
+    </item>
+    <item>
+      <title>Belajar dari Bocornya Jutaan Data Aplikasi Kopi serta Apa Itu Database dan Sejarah Awal Dibuatnya</title>
+      <link>https://semenitwasted.web.id/blog/apa-itu-database-sejarah-dan-kebocoran-data</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/apa-itu-database-sejarah-dan-kebocoran-data</guid>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Frontend &amp; Code</category>
+      <description>Pahami apa itu database dan cara kerjanya dengan bahasa sederhana. Simak sejarah Edgar F. Codd 1970, pelajaran bocornya 5,7 juta data kopi, dan tips aman.</description>
+    </item>
+    <item>
+      <title>Pelajaran dari Diretasnya Papan Iklan Jalan Raya serta Sejarah Password dari Tahun 1961 hingga Era Passkey</title>
+      <link>https://semenitwasted.web.id/blog/sejarah-password-dan-kesalahan-keamanan-akun</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/sejarah-password-dan-kesalahan-keamanan-akun</guid>
+      <pubDate>Mon, 02 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Product &amp; Support</category>
+      <description>Pelajari sejarah awal password dibuat di MIT tahun 1961, evolusi cara kerjanya dari hashing hingga 2FA dan Passkey, serta 5 kesalahan yang bikin akun jebol.</description>
+    </item>
+    <item>
+      <title>Kenapa Terlalu Banyak Pilihan di Website Bikin Pengunjung Kabur dan Cara Melatih Mata Melihat Desain</title>
+      <link>https://semenitwasted.web.id/blog/choice-paralysis-dan-cara-melihat-desain-website</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/choice-paralysis-dan-cara-melihat-desain-website</guid>
+      <pubDate>Sun, 01 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Design Systems</category>
+      <description>Pahami apa itu choice paralysis dan Hukum Hick dalam desain website. Pelajari cara merapikan menu, mencegah pengunjung bingung, dan melatih mata menganalisis UX.</description>
+    </item>
+    <item>
+      <title>Apa Itu UI dan UX serta Bedanya Tampilan Cantik dengan Pengalaman yang Nyaman</title>
+      <link>https://semenitwasted.web.id/blog/apa-itu-ui-dan-ux-serta-perbedaannya</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/apa-itu-ui-dan-ux-serta-perbedaannya</guid>
+      <pubDate>Sat, 31 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Design Systems</category>
+      <description>Pahami apa itu UI dan UX dengan bahasa sederhana. Simak bedanya, konsep affordance, sejarah siapa yang mengerjakannya dulu, hingga 3 sudut pandang developer.</description>
+    </item>
+    <item>
+      <title>Bingung Beda Website dan Landing Page? Arti, Sejarah Awal Dibuat, dan Panduan Memilihnya untuk Pemula</title>
+      <link>https://semenitwasted.web.id/blog/perbedaan-website-dan-landing-page</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/perbedaan-website-dan-landing-page</guid>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Product &amp; Support</category>
+      <description>Pahami apa itu website dan apa itu landing page dengan bahasa sederhana. Simak sejarah awal dibuatnya di CERN dan Microsoft, bedanya, serta panduan memilihnya.</description>
+    </item>
+    <item>
+      <title>Benarkah 90 Persen Internet Indonesia Bisa Diputus Singapura dan Mengapa Kedaulatan Jaringan Kita Belum Tuntas</title>
+      <link>https://semenitwasted.web.id/blog/kedaulatan-internet-indonesia-dan-sejarah-jaringan</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/kedaulatan-internet-indonesia-dan-sejarah-jaringan</guid>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Reflections</category>
+      <description>Bedah polemik ancaman putus 90% kabel internet RI dari Singapura, paradoks ekspor energi murah vs data center, sejarah Paguyuban Network hingga Gojek Tokopedia, dan solusi Token AI.</description>
+    </item>
+    <item>
+      <title>Sisi Gelap Vibe Coding dan Cara Membangun Pagar Pembatas agar Kode Tidak Hancur</title>
+      <link>https://semenitwasted.web.id/blog/sisi-gelap-vibe-coding-dan-kebutuhan-pagar-pembatas</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/sisi-gelap-vibe-coding-dan-kebutuhan-pagar-pembatas</guid>
+      <pubDate>Wed, 28 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Frontend &amp; Code</category>
+      <description>Vibe coding itu seperti menyuruh robot menyusun istana mainan secepat kilat: seru dan instan, tapi rawan ambruk kalau tidak dipasangi pagar pengaman yang kokoh.</description>
+    </item>
+    <item>
+      <title>Kenapa Chatbot AI Sering Membuat Pelanggan Frustrasi dan Kapan Harus Menyerahkannya ke Manusia</title>
+      <link>https://semenitwasted.web.id/blog/kenapa-chatbot-ai-sering-membuat-pelanggan-frustrasi</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/kenapa-chatbot-ai-sering-membuat-pelanggan-frustrasi</guid>
+      <pubDate>Tue, 27 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Product &amp; Support</category>
+      <description>Chatbot AI sering bikin kesal bukan karena bodoh, melainkan karena robot tanpa perasaan dipaksa menyelesaikan masalah genting saat orang sedang panik. Simak ulasan sederhana dan solusinya.</description>
+    </item>
+    <item>
+      <title>Jualan Laris di Medsos tapi Belum Punya Website: Kapan Waktu yang Tepat Punya Toko Sendiri?</title>
+      <link>https://semenitwasted.web.id/blog/jualan-laris-di-medsos-tapi-belum-punya-website</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/jualan-laris-di-medsos-tapi-belum-punya-website</guid>
+      <pubDate>Mon, 26 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Product &amp; Support</category>
+      <description>Jualan di medsos itu seperti numpang jualan di halaman orang lain. Pelajari kenapa kamu butuh website toko sendiri dan kapan waktu yang tepat untuk memulainya.</description>
+    </item>
+    <item>
+      <title>Bahaya Desain Serba Instan Ketika Pengguna Justru Butuh Jeda untuk Berpikir</title>
+      <link>https://semenitwasted.web.id/blog/bahaya-desain-serba-instan-dan-kebutuhan-jeda-berpikir</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/bahaya-desain-serba-instan-dan-kebutuhan-jeda-berpikir</guid>
+      <pubDate>Mon, 26 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Product &amp; Support</category>
+      <description>Menghilangkan semua friksi pada antarmuka digital adalah resep bencana bagi tindakan berisiko tinggi. Pelajari cara merancang intentional friction yang melindungi pengguna.</description>
+    </item>
+    <item>
+      <title>Membedakan Kaya Tampilan dan Sejahtera Finansial Tanpa Terjebak Perlombaan Status</title>
+      <link>https://semenitwasted.web.id/blog/membedakan-kaya-tampilan-dan-sejahtera-finansial</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/membedakan-kaya-tampilan-dan-sejahtera-finansial</guid>
+      <pubDate>Sat, 24 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Reflections</category>
+      <description>Kekayaan sejati tidak diukur dari kemewahan yang tampak di media sosial, melainkan dari ketenangan batin, kesehatan arus kas 10-20-30-40, dan angka cukup.</description>
+    </item>
+    <item>
+      <title>Node2Shell Membongkar Celah di Perbatasan JavaScript dan C, dan Sejarah Node.js Menjelaskan Asalnya</title>
+      <link>https://semenitwasted.web.id/blog/node2shell-dan-sejarah-nodejs</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/node2shell-dan-sejarah-nodejs</guid>
+      <pubDate>Sat, 24 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Frontend &amp; Code</category>
+      <description>Bedah CVE-2026-111497 (Node2Shell): bug decoder Brotli di Node.js, cara ditemukan, kenapa bisa ada, dan sejarah 17 tahun Node yang melatarinya.</description>
+    </item>
+    <item>
+      <title>PHP2Shell Mengguncang Sebagian Besar Web, dan Sejarah PHP Menjelaskan Kenapa Itu Bisa Terjadi</title>
+      <link>https://semenitwasted.web.id/blog/php2shell-dan-sejarah-php</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/php2shell-dan-sejarah-php</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Frontend &amp; Code</category>
+      <description>Bedah tuntas krisis PHP2Shell, bagaimana celah RCE mesin PHP ditemukan, konsekuensinya bagi jutaan server, serta akar sejarah 30 tahun PHP.</description>
+    </item>
+    <item>
+      <title>Kenapa Pesan Error yang Terlihat Cantik Justru Membuat Pengguna Makin Panik</title>
+      <link>https://semenitwasted.web.id/blog/kenapa-pesan-error-cantik-membuat-pengguna-panik</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/kenapa-pesan-error-cantik-membuat-pengguna-panik</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Product &amp; Support</category>
+      <description>Pesan error visual yang estetik sering gagal menenangkan pengguna. Pelajari cara merancang pesan kesalahan yang jelas, solutif, dan mengurangi tiket komplain.</description>
+    </item>
+    <item>
+      <title>Memilih Karakter Visual Website di Tahun 2026 Tanpa Terjebak Tren yang Cepat Usang</title>
+      <link>https://semenitwasted.web.id/blog/memilih-karakter-visual-website-2026</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/memilih-karakter-visual-website-2026</guid>
+      <pubDate>Tue, 20 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Design Systems</category>
+      <description>Pelajari arah gaya visual website terbaik di tahun 2026. Temukan cara memilih desain berkarakter kuat tanpa mengorbankan kecepatan akses dan kenyamanan baca.</description>
+    </item>
+    <item>
+      <title>Membangun Sistem Desain Taktil: Dari Figma ke CSS Tokens</title>
+      <link>https://semenitwasted.web.id/blog/membangun-sistem-desain-taktil</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/membangun-sistem-desain-taktil</guid>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
+      <category>Design Systems</category>
+      <description>Bagaimana merancang efek tactile surface dan neumorphism yang tetap kontras, fungsional, dan memiliki hierarki tajam tanpa terjebak estetika artifisial berlebihan.</description>
+    </item>
+    <item>
+      <title>Melihat Antarmuka dari Kacamata Dukungan Pelanggan</title>
+      <link>https://semenitwasted.web.id/blog/melihat-antarmuka-dari-kacamata-dukungan-pelanggan</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/melihat-antarmuka-dari-kacamata-dukungan-pelanggan</guid>
+      <pubDate>Mon, 28 Sep 2026 00:00:00 GMT</pubDate>
+      <category>Product &amp; Support</category>
+      <description>Pelajaran berharga dari ribuan sesi troubleshooting teknis: antarmuka terbaik bukan yang paling banyak fitur animasi, melainkan yang tidak membingungkan pengguna saat mereka tertekan.</description>
+    </item>
+    <item>
+      <title>Mengapa Web Pribadi Perlu Kembali ke Prinsip Sederhana &amp; Cepat</title>
+      <link>https://semenitwasted.web.id/blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana</guid>
+      <pubDate>Fri, 14 Aug 2026 00:00:00 GMT</pubDate>
+      <category>Reflections</category>
+      <description>Refleksi atas tren web modern yang semakin sarat dependensi berat. Mengapa HTML, CSS terukur, dan RSS feed kembali menjadi ruang digital paling menyenangkan untuk dirawat.</description>
+    </item>
+    <item>
+      <title>Mikro-Interaksi Taktil: Memberi Rasa Tekan pada Tombol Web</title>
+      <link>https://semenitwasted.web.id/blog/mikro-interaksi-taktil-pada-komponen-web</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/mikro-interaksi-taktil-pada-komponen-web</guid>
+      <pubDate>Wed, 22 Jul 2026 00:00:00 GMT</pubDate>
+      <category>Frontend &amp; Code</category>
+      <description>Eksperimen detail transisi cubic-bezier dan perubahan bayangan ganda untuk menghasilkan sensasi klik fisik yang lembut namun tegas pada elemen antarmuka.</description>
+    </item>
+    <item>
+      <title>Eksplorasi Monokrom: Menggali Kontras Tanpa Warna Dekoratif</title>
+      <link>https://semenitwasted.web.id/blog/eksplorasi-monokrom-kontras-tanpa-warna-dekoratif</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/eksplorasi-monokrom-kontras-tanpa-warna-dekoratif</guid>
+      <pubDate>Wed, 10 Jun 2026 00:00:00 GMT</pubDate>
+      <category>Design Systems</category>
+      <description>Membatasi palet warna ke dua spektrum utama memaksa kita mengasah senjata paling fundamental dalam desain grafis: bobot tipografi, ritme spasi, dan kejelasan struktur.</description>
+    </item>
+  </channel>
+</rss>

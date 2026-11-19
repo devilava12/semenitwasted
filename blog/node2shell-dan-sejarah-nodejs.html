@@ -9,6 +9,8 @@
     content="Bedah CVE-2026-111497 (Node2Shell): bug decoder Brotli di Node.js, cara ditemukan, kenapa bisa ada, dan sejarah 17 tahun Node yang melatarinya.">
   <link rel="icon" type="image/svg+xml" href="../assets/logo-nav.svg">
   <link rel="canonical" href="https://semenitwasted.web.id/blog/node2shell-dan-sejarah-nodejs">
+  <link rel="alternate" type="application/rss+xml" title="semenitwasted Blog RSS Feed"
+    href="https://semenitwasted.web.id/rss.xml">
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="article">
@@ -283,7 +285,7 @@
       <!-- Post Cover Hero Figure -->
       <figure class="post-hero-figure">
         <div class="post-hero-frame">
-          <img src="../assets/blog/Node2Shell_%20Debugging%20Through%20the%20Night.webp" alt="Ilustrasi developer perempuan begadang mencari penyebab bug Node2Shell di depan laptop berstiker Node.js, ditemani kucing tidur dan diagram visual overflow buffer Brotli libbrotlidec" class="post-hero-img" width="1672" height="941" loading="eager">
+          <img src="../assets/blog/Node2Shell_%20Debugging%20Through%20the%20Night.webp" alt="Ilustrasi developer perempuan begadang mencari penyebab bug Node2Shell di depan laptop berstiker Node.js, ditemani kucing tidur dan diagram visual overflow buffer Brotli libbrotlidec" class="post-hero-img" width="1672" height="941" loading="eager" fetchpriority="high">
         </div>
         <figcaption class="post-figure-caption">Debugging larut malam: menelusuri aliran data Brotli dari lapisan JavaScript ke decoder C di mana luapan buffer delapan byte memicu celah Node2Shell (CVE-2026-111497).</figcaption>
       </figure>
@@ -299,6 +301,25 @@
         </ul>
       </div>
 
+      <!-- AUTO_TOC_START -->
+      <details class="post-toc-card">
+        <summary class="post-toc-summary">
+          <span>Daftar Isi Artikel</span>
+          <span class="post-toc-chevron" aria-hidden="true">&#9662;</span>
+        </summary>
+        <nav aria-label="Daftar isi artikel">
+          <ol class="post-toc-list">
+            <li><a href="#sepuluh-celah-dalam-satu-rilis-dan-satu-yang-bisa-menjalankan-ko">Sepuluh Celah dalam Satu Rilis, dan Satu yang Bisa Menjalankan Kode dari Jauh</a></li>
+            <li><a href="#ditemukan-oleh-mesin-audit-ditambal-oleh-manusia">Ditemukan oleh Mesin Audit, Ditambal oleh Manusia</a></li>
+            <li><a href="#dari-progress-bar-flickr-ke-runtime-server-paling-populer">Dari Progress Bar Flickr ke Runtime Server Paling Populer</a></li>
+            <li><a href="#kenapa-bug-ini-ada-di-runtime-yang-ditulis-untuk-javascript">Kenapa Bug Ini Ada di Runtime yang Ditulis untuk JavaScript</a></li>
+            <li><a href="#pola-yang-berulang-tambalan-yang-belum-tuntas">Pola yang Berulang, Tambalan yang Belum Tuntas</a></li>
+            <li><a href="#memeriksa-versi-node-hari-ini-dan-membaca-runtime-dengan-lebih-j">Memeriksa Versi Node Hari Ini dan Membaca Runtime dengan Lebih Jujur</a></li>
+          </ol>
+        </nav>
+      </details>
+      <!-- AUTO_TOC_END -->
+
       <!-- Article Body -->
       <article class="post-prose">
         <p>
@@ -309,7 +330,7 @@
           Yang membuat insiden ini menarik bukan hanya tingkat bahayanya. Banyak pengembang JavaScript tumbuh dengan keyakinan bahwa bahasa mereka kebal dari <em>buffer overflow</em>, karena JavaScript mengelola memori secara otomatis. Keyakinan itu benar untuk kode yang Anda tulis, tetapi keliru untuk runtime yang menjalankannya. Node.js sejak lahir adalah lapisan JavaScript tipis di atas tumpukan pustaka C dan C++, dan rilis keamanan kali ini menunjukkan bahwa sebagian besar masalah serius muncul tepat di jahitan antara kedua dunia itu. Untuk melihat kenapa, kita perlu membongkar bug-nya, menelusuri siapa yang menemukannya, lalu mundur tujuh belas tahun ke panggung JSConf EU di Berlin.
         </p>
 
-        <h2>Sepuluh Celah dalam Satu Rilis, dan Satu yang Bisa Menjalankan Kode dari Jauh</h2>
+        <h2 id="sepuluh-celah-dalam-satu-rilis-dan-satu-yang-bisa-menjalankan-ko">Sepuluh Celah dalam Satu Rilis, dan Satu yang Bisa Menjalankan Kode dari Jauh</h2>
         <p>
           Pada Rabu, 21 Oktober 2026, Node.js Project menerbitkan pembaruan keamanan untuk tiga cabang rilis yang masih didukung: 22.x, 24.x, dan 26.x. Rilis ini memuat sepuluh nomor CVE milik Node sendiri, ditambah pembaruan dependensi untuk c-ares, OpenSSL, SQLite, Undici, serta daftar sertifikat CA yang menyingkirkan sertifikat perantara eMudhra yang dilaporkan telah disusupi.
         </p>
@@ -467,7 +488,7 @@
           Satu miskonsepsi yang perlu diluruskan: mengatur header <code>Accept-Encoding: gzip</code> pada request keluar tidak bisa diandalkan sebagai perlindungan. Header itu hanya permintaan sopan kepada server. Server jahat tetap bisa membalas dengan <code>Content-Encoding: br</code>, dan klien yang mendekompresi berdasarkan header respons akan tetap memproses datanya.
         </p>
 
-        <h2>Ditemukan oleh Mesin Audit, Ditambal oleh Manusia</h2>
+        <h2 id="ditemukan-oleh-mesin-audit-ditambal-oleh-manusia">Ditemukan oleh Mesin Audit, Ditambal oleh Manusia</h2>
         <p>
           Bug di decoder format kompresi termasuk jenis yang paling sulit ditemukan lewat pembacaan kode biasa. Logikanya berupa mesin status (<em>state machine</em>) dengan puluhan transisi, dan kesalahannya bukan pada satu baris yang jelas salah, melainkan pada klasifikasi kondisi yang keliru di satu cabang. Bug seperti ini bisa bertahan bertahun-tahun karena semua data yang valid tetap terdekompresi dengan sempurna.
         </p>
@@ -494,7 +515,7 @@
           Kebetulan tanggal tidak membuktikan hubungan sebab akibat. Namun, polanya layak dicatat: perangkat lunak fondasional yang ditulis dalam C pada era 1990-an dan 2000-an kini sedang diaudit ulang dengan kecepatan yang belum pernah ada sebelumnya. Bagi tim operasional, konsekuensinya praktis. Frekuensi rilis keamanan untuk runtime inti kemungkinan akan naik, dan proses pembaruan yang selama ini dikerjakan manual setahun dua kali perlu diubah menjadi rutinitas yang bisa dijalankan dalam hitungan jam.
         </p>
 
-        <h2>Dari Progress Bar Flickr ke Runtime Server Paling Populer</h2>
+        <h2 id="dari-progress-bar-flickr-ke-runtime-server-paling-populer">Dari Progress Bar Flickr ke Runtime Server Paling Populer</h2>
         <p>
           Untuk memahami kenapa sebuah runtime JavaScript membawa decoder C di dalamnya, kita perlu kembali ke alasan Node diciptakan. Node tidak lahir sebagai proyek keamanan atau proyek bahasa pemrograman. Ia lahir dari kekesalan seorang pengembang terhadap cara server web menangani koneksi pada akhir 2000-an.
         </p>
@@ -521,7 +542,7 @@
           Perpecahan itu justru berakhir dengan penyatuan. Node.js Foundation dibentuk di bawah Linux Foundation pada 2015, io.js dan Node digabung kembali, dan Node.js 4.0 terbit pada September 2015 sebagai hasil penyatuan tersebut. Pada 2019, Node.js Foundation melebur dengan JS Foundation menjadi OpenJS Foundation. Dari rangkaian peristiwa inilah lahir hal-hal yang sekarang dianggap biasa: jadwal rilis LTS yang bisa diprediksi, Technical Steering Committee yang terbuka, serta proses rilis keamanan yang diumumkan lebih dulu dan menambal beberapa cabang sekaligus. Rilis tanggal 21 Oktober yang menambal 22.x, 24.x, dan 26.x secara serentak adalah produk langsung dari pelajaran tata kelola tersebut.
         </p>
 
-        <h2>Kenapa Bug Ini Ada di Runtime yang Ditulis untuk JavaScript</h2>
+        <h2 id="kenapa-bug-ini-ada-di-runtime-yang-ditulis-untuk-javascript">Kenapa Bug Ini Ada di Runtime yang Ditulis untuk JavaScript</h2>
         <p>
           Pertanyaan yang paling sering muncul setelah advisori terbit cukup wajar: kalau JavaScript tidak mengenal pengelolaan memori manual, bagaimana mungkin ada <em>buffer overflow</em> di Node? Jawabannya terletak pada perbedaan antara bahasa dan runtime, dan pada keputusan bertahun-tahun untuk memasukkan lebih banyak fungsi native ke inti Node.
         </p>
@@ -572,7 +593,7 @@
           Ada batas penting yang sering terlewat. Dokumentasi resmi Node menyebut Permission Model sebagai sabuk pengaman untuk mencegah kode tepercaya melakukan hal yang tidak disengaja, bukan pelindung dari kode jahat. Celah seperti CVE-2026-111497 terjadi di memori native, di bawah lapisan tempat pemeriksaan izin dijalankan. Penyerang yang berhasil mengendalikan alur eksekusi lewat kerusakan memori tidak perlu meminta izin kepada Permission Model. Jika Anda butuh isolasi sungguhan, gunakan batas di tingkat sistem operasi seperti kontainer dengan hak minimal, pengguna non-root, atau proses terpisah.
         </p>
 
-        <h2>Pola yang Berulang, Tambalan yang Belum Tuntas</h2>
+        <h2 id="pola-yang-berulang-tambalan-yang-belum-tuntas">Pola yang Berulang, Tambalan yang Belum Tuntas</h2>
         <p>
           Membaca sepuluh celah ini sekaligus memperlihatkan sesuatu yang tidak terlihat jika kita hanya fokus pada Node2Shell. Sebagian besar masalah tidak muncul dari fitur baru, melainkan dari perbaikan lama yang hanya menutup satu pintu ketika ada beberapa pintu lain yang menuju ruangan yang sama.
         </p>
@@ -615,7 +636,7 @@
           CVE-2026-106074 terjadi ketika dua optimasi itu bertemu. Jika salah satu fungsi acak tersebut dipanggil saat snapshot dibuat, cache bilangan acaknya ikut dibekukan. Setiap proses yang dinyalakan dari snapshot yang sama akan menghasilkan hingga 127 UUID pertama dan sekitar 1.000 nilai <code>randomInt()</code> yang identik. ID yang seharusnya unik bisa bertabrakan antarproses, dan nilai yang diterbitkan satu proses bisa ditebak dengan mengamati proses lain. Tidak ada kode yang salah secara terpisah. Bug-nya baru muncul ketika dua keputusan yang masing-masing masuk akal digabungkan.
         </p>
 
-        <h2>Memeriksa Versi Node Hari Ini dan Membaca Runtime dengan Lebih Jujur</h2>
+        <h2 id="memeriksa-versi-node-hari-ini-dan-membaca-runtime-dengan-lebih-j">Memeriksa Versi Node Hari Ini dan Membaca Runtime dengan Lebih Jujur</h2>
         <p>
           Tindakan paling penting bisa diselesaikan dalam lima belas menit ke depan. Periksa versi Node di setiap lingkungan yang menjalankan kode Anda, termasuk server produksi, <em>image</em> kontainer, dan pipeline CI:
         </p>
@@ -651,7 +672,7 @@ if ($http_content_encoding ~* "br") {
           Di luar urusan tambalan, insiden ini memberi cara pandang yang lebih jujur tentang Node. Node tidak rentan karena memakai JavaScript, dan Node juga tidak aman hanya karena memakai JavaScript. Ryan Dahl membangunnya pada 2009 sebagai jembatan antara bahasa yang aman dari sisi memori dan pustaka sistem yang ditulis dalam C, dan jembatan itulah yang membuat Node cepat sekaligus menjadi tempat sebagian besar celah seriusnya muncul—pola kerapuhan arsitektur yang serupa dengan krisis mesin interpreter pada <a href="php2shell-dan-sejarah-php.html">PHP2Shell di ekosistem web</a>. Memahami di mana jahitan itu berada membantu Anda menentukan prioritas: pantau rilis keamanan Node lewat milis nodejs-sec, jadikan pembaruan runtime sebagai rutinitas mingguan alih-alih proyek tahunan, dan perlakukan setiap data dari internet yang menyeberang ke lapisan native sebagai data yang paling perlu dicurigai.
         </p>
 
-        <h2>Referensi</h2>
+        <h2 id="referensi">Referensi</h2>
         <ul>
           <li>Node.js Project. (2026). Wednesday, October 21, 2026 Security Releases. <a href="https://nodejs.org/en/blog/vulnerability/october-2026-security-releases" target="_blank" rel="noopener noreferrer">https://nodejs.org/en/blog/vulnerability/october-2026-security-releases</a></li>
           <li>Node.js Project. (2024). Wednesday, July 10, 2024 Security Releases. <a href="https://nodejs.org/en/blog/vulnerability/july-2024-security-releases" target="_blank" rel="noopener noreferrer">https://nodejs.org/en/blog/vulnerability/july-2024-security-releases</a></li>
@@ -663,6 +684,26 @@ if ($http_content_encoding ~* "br") {
           <li>Dahl, R. (2018). 10 Things I Regret About Node.js. JSConf EU. <a href="https://www.youtube.com/watch?v=M3BM9TB-8yA" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=M3BM9TB-8yA</a></li>
         </ul>
       </article>
+
+      <!-- AUTO_RELATED_START -->
+      <section class="post-related-section" aria-label="Artikel terkait di kategori Frontend &amp; Code">
+        <h2 class="post-related-heading">Baca Juga di Topik Frontend &amp; Code</h2>
+        <div class="post-related-grid">
+          <a href="ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils.html" class="post-related-card">
+            <span class="post-related-meta">16 November 2026 &bull; 13 min read</span>
+            <span class="post-related-title">SSH Adalah Kunci Utama Server Internet dan Kisah Nyata Saat Seluruh Dunia Hampir Diretas Tanpa Sadar</span>
+          </a>
+          <a href="api-adalah-sejarah-dan-cara-kerjanya.html" class="post-related-card">
+            <span class="post-related-meta">11 November 2026 &bull; 11 min read</span>
+            <span class="post-related-title">API Adalah Pelayan Tak Terlihat di Balik Aplikasi Harian Kita serta Sejarah dan Cara Kerjanya untuk Pemula</span>
+          </a>
+          <a href="apa-itu-database-sejarah-dan-kebocoran-data.html" class="post-related-card">
+            <span class="post-related-meta">3 November 2026 &bull; 10 min read</span>
+            <span class="post-related-title">Belajar dari Bocornya Jutaan Data Aplikasi Kopi serta Apa Itu Database dan Sejarah Awal Dibuatnya</span>
+          </a>
+        </div>
+      </section>
+      <!-- AUTO_RELATED_END -->
 
       <!-- Next & Prev Navigation -->
       <nav class="post-navigator" aria-label="Article navigation">

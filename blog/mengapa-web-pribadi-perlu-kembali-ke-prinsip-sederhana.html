@@ -9,6 +9,8 @@
     content="Refleksi atas tren web modern yang sarat dependensi berat. Mengapa HTML, CSS terukur, dan kedaulatan data berkas statis menjadi ruang digital paling tenang untuk dirawat.">
   <link rel="icon" type="image/svg+xml" href="../assets/logo-nav.svg">
   <link rel="canonical" href="https://semenitwasted.web.id/blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana">
+  <link rel="alternate" type="application/rss+xml" title="semenitwasted Blog RSS Feed"
+    href="https://semenitwasted.web.id/rss.xml">
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="article">
@@ -263,7 +265,7 @@
       <!-- Post Cover Hero Figure -->
       <figure class="post-hero-figure">
         <div class="post-hero-frame">
-          <img src="../assets/blog/cover-simple-web.webp" alt="Ilustrasi studio kerja di teras pesisir yang cerah dengan laptop menampilkan kode HTML sederhana, kartu melayang HTML, CSS, Fast Instant Loading, RSS, dan tumpukan buku web development" class="post-hero-img" width="800" height="450" loading="eager">
+          <img src="../assets/blog/cover-simple-web.webp" alt="Ilustrasi studio kerja di teras pesisir yang cerah dengan laptop menampilkan kode HTML sederhana, kartu melayang HTML, CSS, Fast Instant Loading, RSS, dan tumpukan buku web development" class="post-hero-img" width="800" height="450" loading="eager" fetchpriority="high">
         </div>
         <figcaption class="post-figure-caption">
           Studio Pesisir: Laptop menampilkan kode HTML bersih dengan kartu prinsip web ringan—HTML, CSS, Fast Loading, dan RSS feed—melambangkan kembalinya web pribadi ke kesederhanaan yang menenangkan.
@@ -280,13 +282,30 @@
         </ul>
       </div>
 
+      <!-- AUTO_TOC_START -->
+      <details class="post-toc-card">
+        <summary class="post-toc-summary">
+          <span>Daftar Isi Artikel</span>
+          <span class="post-toc-chevron" aria-hidden="true">&#9662;</span>
+        </summary>
+        <nav aria-label="Daftar isi artikel">
+          <ol class="post-toc-list">
+            <li><a href="#jebakan-ketergantungan-ekosistem-modern-pada-website-pribadi">Jebakan Ketergantungan Ekosistem Modern pada Website Pribadi</a></li>
+            <li><a href="#anatomi-web-minimalis-yang-mandiri-dan-tahan-uji-waktu">Anatomi Web Minimalis yang Mandiri dan Tahan Uji Waktu</a></li>
+            <li><a href="#menakar-kompromi-teknis-antara-kemudahan-pembuatan-dan-kecepatan">Menakar Kompromi Teknis Antara Kemudahan Pembuatan dan Kecepatan Akses</a></li>
+            <li><a href="#memulai-perampingan-dan-merawat-ruang-digital-yang-menenangkan">Memulai Perampingan dan Merawat Ruang Digital yang Menenangkan</a></li>
+          </ol>
+        </nav>
+      </details>
+      <!-- AUTO_TOC_END -->
+
       <!-- Article Body -->
       <article class="post-prose">
         <p>
           Website pribadi terbaik bukanlah yang paling sarat teknologi mutakhir, melainkan yang paling tangguh bertahan puluhan tahun tanpa rusak oleh pembaruan dependensi dan mampu menyajikan tulisan secara instan ke hadapan pembaca. Banyak kreator dan pengembang web memulai proyek situs pribadi dengan antusiasme tinggi, namun meninggalkannya terbengkalai setahun kemudian hanya karena lelah memperbaiki paket dependensi yang bertabrakan saat ingin menambahkan satu esai baru. Ketika sebuah blog berisi dua puluh artikel membutuhkan waktu kompilasi beberapa menit dan mengunduh berkas JavaScript sebesar dua megabita hanya untuk menampilkan teks statis, kita menyadari bahwa ekosistem pengembangan web telah kehilangan arah prioritasnya. Tulisan ini membedah mengapa kembali ke prinsip kesederhanaan bukan langkah mundur, melainkan keputusan arsitektur paling rasional untuk merawat ketenangan berpikir di ruang digital kita sendiri.
         </p>
 
-        <h2>Jebakan Ketergantungan Ekosistem Modern pada Website Pribadi</h2>
+        <h2 id="jebakan-ketergantungan-ekosistem-modern-pada-website-pribadi">Jebakan Ketergantungan Ekosistem Modern pada Website Pribadi</h2>
         <p>
           Industri perangkat lunak modern telah membentuk cara pandang bahwa setiap proyek web harus dibangun menggunakan tumpukan teknologi paling mutakhir. Pola pikir yang semula dirancang untuk kebutuhan produk berskala perusahaan, seperti manajemen status terpusat, kompilasi modul multi-tahap, dan perutean di sisi peramban, secara keliru diadopsi ke dalam proyek berukuran kecil.
         </p>
@@ -317,7 +336,7 @@
           "Ruang digital pribadi bukanlah laboratorium untuk memamerkan seluruh dependensi npm yang kita ketahui, melainkan tempat berlindung yang tenang untuk menyimpan pemikiran kita secara jujur dan tahan lama."
         </blockquote>
 
-        <h2>Anatomi Web Minimalis yang Mandiri dan Tahan Uji Waktu</h2>
+        <h2 id="anatomi-web-minimalis-yang-mandiri-dan-tahan-uji-waktu">Anatomi Web Minimalis yang Mandiri dan Tahan Uji Waktu</h2>
         <p>
           Web yang dirancang dengan kesederhanaan radikal memiliki daya tahan yang luar biasa. Berkas HTML semantik yang ditulis hari ini dijamin tetap dapat dibuka dan dibaca dengan sempurna oleh peramban internet dua puluh tahun ke depan tanpa memerlukan tambalan perangkat lunak apa pun.
         </p>
@@ -402,7 +421,7 @@
   &lt;/channel&gt;
 &lt;/rss&gt;</code></pre>
 
-        <h2>Menakar Kompromi Teknis Antara Kemudahan Pembuatan dan Kecepatan Akses</h2>
+        <h2 id="menakar-kompromi-teknis-antara-kemudahan-pembuatan-dan-kecepatan">Menakar Kompromi Teknis Antara Kemudahan Pembuatan dan Kecepatan Akses</h2>
         <p>
           Memilih tumpukan teknologi untuk website pribadi bukanlah tentang mencari mana yang paling superior di semua lini, melainkan tentang memahami trade-off yang sanggup kita jalani dalam jangka panjang. Sikap dogmatis yang menolak segala bentuk komputasi modern sama kelirunya dengan sikap malas yang memasang framework raksasa untuk masalah sepele.
         </p>
@@ -433,7 +452,7 @@
           <li><strong>Pencarian Teks Penuh Skala Masif:</strong> Basis data dengan ratusan ribu entri yang menuntut pengindeksan sisi server khusus ketimbang mengunduh seluruh indeks ke peramban klien.</li>
         </ul>
 
-        <h2>Memulai Perampingan dan Merawat Ruang Digital yang Menenangkan</h2>
+        <h2 id="memulai-perampingan-dan-merawat-ruang-digital-yang-menenangkan">Memulai Perampingan dan Merawat Ruang Digital yang Menenangkan</h2>
         <p>
           Menyederhanakan website pribadi tidak menuntut Anda merombak seluruh baris kode malam ini juga. Proses perampingan dapat dimulai secara bertahap melalui tiga langkah praktis yang bisa Anda selesaikan dalam waktu lima belas menit ke depan:
         </p>
@@ -454,7 +473,7 @@
           Website pribadi adalah rumah digital yang mencerminkan ketenangan pikiran pemiliknya. Ketika kita melepaskan diri dari tuntutan mengikuti setiap tren teknologi yang lewat begitu cepat, kita menemukan kembali kegembiraan murni dalam menulis, mendesain, dan membagikan karya di internet secara mandiri dan bersahaja—sebuah kesadaran yang juga mendasari refleksi kami dalam <a href="membedakan-kaya-tampilan-dan-sejahtera-finansial.html">membedakan ilusi kaya tampilan dari ketenangan sejati</a>.
         </p>
 
-        <h2>Referensi</h2>
+        <h2 id="referensi">Referensi</h2>
         <ul>
           <li>IndieWeb Camp. (2025). Principles of the IndieWeb and Digital Self-Reliance. <a href="https://indieweb.org/principles" target="_blank" rel="noopener noreferrer">https://indieweb.org/principles</a></li>
           <li>HTTP Archive. (2025). Web Almanac: Page Weight and JavaScript Payload Trends. <a href="https://almanac.httparchive.org/" target="_blank" rel="noopener noreferrer">https://almanac.httparchive.org/</a></li>
@@ -462,6 +481,26 @@
           <li>Google Chrome Developers. (2025). Understanding Core Web Vitals and Page Responsiveness. <a href="https://web.dev/articles/vitals" target="_blank" rel="noopener noreferrer">https://web.dev/articles/vitals</a></li>
         </ul>
       </article>
+
+      <!-- AUTO_RELATED_START -->
+      <section class="post-related-section" aria-label="Artikel terkait di kategori Reflections">
+        <h2 class="post-related-heading">Baca Juga di Topik Reflections</h2>
+        <div class="post-related-grid">
+          <a href="kenapa-miliarder-dunia-memperlambat-ai-dan-faktor-china.html" class="post-related-card">
+            <span class="post-related-meta">13 November 2026 &bull; 12 min read</span>
+            <span class="post-related-title">Kenapa Para Miliarder Dunia Tiba-Tiba Sepakat Memperlambat AI dan Apa Hubungannya dengan China</span>
+          </a>
+          <a href="bank-diretas-dan-nasib-uang-nasabah-indonesia.html" class="post-related-card">
+            <span class="post-related-meta">10 November 2026 &bull; 11 min read</span>
+            <span class="post-related-title">Belajar dari Kasus Bank Diretas Rp2 Triliun dan Bagaimana Nasib Uang Nasabah di Indonesia</span>
+          </a>
+          <a href="kedaulatan-internet-indonesia-dan-sejarah-jaringan.html" class="post-related-card">
+            <span class="post-related-meta">29 Oktober 2026 &bull; 12 min read</span>
+            <span class="post-related-title">Benarkah 90 Persen Internet Indonesia Bisa Diputus Singapura dan Mengapa Kedaulatan Jaringan Kita Belum Tuntas</span>
+          </a>
+        </div>
+      </section>
+      <!-- AUTO_RELATED_END -->
 
       <!-- Next & Prev Navigation -->
       <nav class="post-navigator" aria-label="Navigasi Artikel">

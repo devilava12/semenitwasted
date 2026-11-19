@@ -9,6 +9,8 @@
     content="Pahami apa itu SSH dengan bahasa sederhana. Simak sejarah Tatu Ylönen 1995, cara kerja Public Key & Private Key, dan kisah celah XZ Utils dari Veritasium.">
   <link rel="icon" type="image/svg+xml" href="../assets/logo-nav.svg">
   <link rel="canonical" href="https://semenitwasted.web.id/blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils">
+  <link rel="alternate" type="application/rss+xml" title="semenitwasted Blog RSS Feed"
+    href="https://semenitwasted.web.id/rss.xml">
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="article">
@@ -247,7 +249,7 @@
         <div class="post-hero-frame">
           <img src="../assets/blog/Minecraft%20Sunset%20Gaming%20Haven.webp"
             alt="Ilustrasi suasana meja komputer bernuansa senja dengan monitor menampilkan dunia blok dan jendela terminal jarak jauh, melambangkan pengelolaan server dari kamar sendiri lewat protokol SSH"
-            class="post-hero-img" width="1672" height="941" loading="eager">
+            class="post-hero-img" width="1672" height="941" loading="eager" fetchpriority="high">
         </div>
         <figcaption class="post-figure-caption">Mengendalikan Server dari Meja Sendiri: Dari ruang kerja pribadi
           bernuansa senja, seorang developer atau pengelola server bisa membuka pintu kendali jarak jauh ke jutaan
@@ -304,6 +306,23 @@
         </ul>
       </div>
 
+      <!-- AUTO_TOC_START -->
+      <details class="post-toc-card">
+        <summary class="post-toc-summary">
+          <span>Daftar Isi Artikel</span>
+          <span class="post-toc-chevron" aria-hidden="true">&#9662;</span>
+        </summary>
+        <nav aria-label="Daftar isi artikel">
+          <ol class="post-toc-list">
+            <li><a href="#bagaimana-fondasi-internet-modern-berdiri-di-atas-pundak-relawan">Bagaimana Fondasi Internet Modern Berdiri di Atas Pundak Relawan Open Source yang Kelelahan</a></li>
+            <li><a href="#apa-sebenarnya-ssh-itu-dan-mengapa-protokol-ini-menjadi-penjaga">Apa Sebenarnya SSH Itu dan Mengapa Protokol Ini Menjadi Penjaga Pintu Setiap Server</a></li>
+            <li><a href="#operasi-penyusupan-jia-tan-selama-dua-setengah-tahun-untuk-membo">Operasi Penyusupan Jia Tan Selama Dua Setengah Tahun untuk Membobol Pintu SSH dari Dalam</a></li>
+            <li><a href="#keajaiban-setengah-detik-yang-menyelamatkan-internet-dan-cara-me">Keajaiban Setengah Detik yang Menyelamatkan Internet dan Cara Mengamankan Server Hari Ini</a></li>
+          </ol>
+        </nav>
+      </details>
+      <!-- AUTO_TOC_END -->
+
       <!-- Article Body -->
       <article class="post-prose">
         <p>
@@ -338,7 +357,7 @@
             Utils</strong>, hingga bagaimana jeda setengah detik menyelamatkan internet kita.
         </p>
 
-        <h2>Bagaimana Fondasi Internet Modern Berdiri di Atas Pundak Relawan Open Source yang Kelelahan</h2>
+        <h2 id="bagaimana-fondasi-internet-modern-berdiri-di-atas-pundak-relawan">Bagaimana Fondasi Internet Modern Berdiri di Atas Pundak Relawan Open Source yang Kelelahan</h2>
 
         <p>
           Sebelum kita membahas apa itu SSH dan bagaimana pintu keamanannya disusupi, dokumenter Veritasium mengajak
@@ -436,7 +455,7 @@
           <strong>SSH</strong>.
         </p>
 
-        <h2>Apa Sebenarnya SSH Itu dan Mengapa Protokol Ini Menjadi Penjaga Pintu Setiap Server</h2>
+        <h2 id="apa-sebenarnya-ssh-itu-dan-mengapa-protokol-ini-menjadi-penjaga">Apa Sebenarnya SSH Itu dan Mengapa Protokol Ini Menjadi Penjaga Pintu Setiap Server</h2>
 
         <p>
           Mengapa komplotan peretas kelas kakap rela menghabiskan waktu bertahun-tahun mengincar aplikasi pemadat
@@ -620,7 +639,7 @@
           </table>
         </div>
 
-        <h2>Operasi Penyusupan Jia Tan Selama Dua Setengah Tahun untuk Membobol Pintu SSH dari Dalam</h2>
+        <h2 id="operasi-penyusupan-jia-tan-selama-dua-setengah-tahun-untuk-membo">Operasi Penyusupan Jia Tan Selama Dua Setengah Tahun untuk Membobol Pintu SSH dari Dalam</h2>
 
         <p>
           Setelah melihat cara kerja gembok <em>Public Key</em> dan <em>Private Key</em> di atas, kamu pasti langsung
@@ -837,7 +856,7 @@
             untuk menjalankan perintah apa saja di <em>server</em> tanpa perlu <em>login</em> sama sekali!</li>
         </ol>
 
-        <h2>Keajaiban Setengah Detik yang Menyelamatkan Internet dan Cara Mengamankan Server Hari Ini</h2>
+        <h2 id="keajaiban-setengah-detik-yang-menyelamatkan-internet-dan-cara-me">Keajaiban Setengah Detik yang Menyelamatkan Internet dan Cara Mengamankan Server Hari Ini</h2>
 
         <p>
           Pada pertengahan Maret 2024, bom waktu buatan Jia Tan itu sudah berhasil masuk ke versi uji coba
@@ -978,7 +997,7 @@
             internet publik.</li>
         </ol>
 
-        <h2>Referensi</h2>
+        <h2 id="referensi">Referensi</h2>
         <ul>
           <li>Veritasium. (2026, 25 Februari). <em>The Internet Was Weeks Away From Disaster and No One Knew (How
               Someone Almost Hacked Every Linux Server on the Planet)</em> [Video]. YouTube. <a
@@ -1005,6 +1024,26 @@
               rel="noopener noreferrer">https://research.swtch.com/xz-timeline</a></li>
         </ul>
       </article>
+
+      <!-- AUTO_RELATED_START -->
+      <section class="post-related-section" aria-label="Artikel terkait di kategori Frontend &amp; Code">
+        <h2 class="post-related-heading">Baca Juga di Topik Frontend &amp; Code</h2>
+        <div class="post-related-grid">
+          <a href="api-adalah-sejarah-dan-cara-kerjanya.html" class="post-related-card">
+            <span class="post-related-meta">11 November 2026 &bull; 11 min read</span>
+            <span class="post-related-title">API Adalah Pelayan Tak Terlihat di Balik Aplikasi Harian Kita serta Sejarah dan Cara Kerjanya untuk Pemula</span>
+          </a>
+          <a href="apa-itu-database-sejarah-dan-kebocoran-data.html" class="post-related-card">
+            <span class="post-related-meta">3 November 2026 &bull; 10 min read</span>
+            <span class="post-related-title">Belajar dari Bocornya Jutaan Data Aplikasi Kopi serta Apa Itu Database dan Sejarah Awal Dibuatnya</span>
+          </a>
+          <a href="sisi-gelap-vibe-coding-dan-kebutuhan-pagar-pembatas.html" class="post-related-card">
+            <span class="post-related-meta">28 Oktober 2026 &bull; 8 min read</span>
+            <span class="post-related-title">Sisi Gelap Vibe Coding dan Cara Membangun Pagar Pembatas agar Kode Tidak Hancur</span>
+          </a>
+        </div>
+      </section>
+      <!-- AUTO_RELATED_END -->
 
       <!-- Next & Prev Navigation -->
       <nav class="post-navigator" aria-label="Article navigation">
