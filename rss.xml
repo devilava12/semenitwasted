@@ -6,7 +6,15 @@
     <atom:link href="https://semenitwasted.web.id/rss.xml" rel="self" type="application/rss+xml" />
     <description>Ruang catatan digital seputar desain antarmuka, rekayasa kode frontend, keamanan web, dan refleksi berkarya oleh I Putu Dicky Adi Pranatha.</description>
     <language>id-ID</language>
-    <lastBuildDate>Thu, 19 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Kenapa Proyek Website Sering Terjebak Revisi Panjang dan Pelajaran Praproduksi dari Extra Credits</title>
+      <link>https://semenitwasted.web.id/blog/masalah-praproduksi-desain-website-dan-produk</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/masalah-praproduksi-desain-website-dan-produk</guid>
+      <pubDate>Sat, 21 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Design Systems</category>
+      <description>Kenapa proyek website sering revisi berulang dan lembur? Bedah masalah praproduksi Extra Credits, jebakan Waterfall, vertical slice, dan pola kerja Pixar.</description>
+    </item>
     <item>
       <title>Kenapa Punya Ide Keren Saja Tidak Cukup untuk Menjadi Desainer Website dan Pelajaran Karier dari Extra Credits</title>
       <link>https://semenitwasted.web.id/blog/cara-menjadi-desainer-website-dan-mitos-tukang-ide</link>

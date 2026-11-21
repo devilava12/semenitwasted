@@ -17,6 +17,23 @@
 
   const BLOG_POSTS = [
     {
+      id: 'post-28',
+      slug: 'masalah-praproduksi-desain-website-dan-produk',
+      title: 'Kenapa Proyek Website Sering Terjebak Revisi Panjang dan Pelajaran Praproduksi dari Extra Credits',
+      date: '2026-11-21',
+      formattedDate: '21 November 2026',
+      readingTime: '24 min read',
+      category: 'design-systems',
+      categoryLabel: 'Design Systems',
+      tags: ['Pre-Production', 'Extra Credits', 'UI/UX', 'Product Planning', 'Pemula'],
+      featured: false,
+      excerpt: 'Kenapa proyek website sering revisi berulang dan lembur? Bedah masalah praproduksi Extra Credits, jebakan Waterfall, vertical slice, dan pola kerja Pixar.',
+      contentUrl: 'blog/masalah-praproduksi-desain-website-dan-produk.html',
+      coverImage: 'assets/blog/Lavender%20Pixel%20Architect%20at%20Sunset.webp',
+      coverAlt: 'Ilustrasi gadis anime berambut ungu duduk di bawah pohon sakura bergaya blok bersama kucing ungu-putih di sampingnya, sedang merancang sketsa cetak biru di papan gambar sementara di latar belakang tampak kerangka halaman website raksasa yang sedang dibangun dengan perancah kayu, derek konstruksi, dan papan tanda panah putar revisi',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
       id: 'post-27',
       slug: 'cara-menjadi-desainer-website-dan-mitos-tukang-ide',
       title: 'Kenapa Punya Ide Keren Saja Tidak Cukup untuk Menjadi Desainer Website dan Pelajaran Karier dari Extra Credits',
