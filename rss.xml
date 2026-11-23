@@ -6,7 +6,15 @@
     <atom:link href="https://semenitwasted.web.id/rss.xml" rel="self" type="application/rss+xml" />
     <description>Ruang catatan digital seputar desain antarmuka, rekayasa kode frontend, keamanan web, dan refleksi berkarya oleh I Putu Dicky Adi Pranatha.</description>
     <language>id-ID</language>
-    <lastBuildDate>Sat, 21 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Producer Bukan Bos yang Hobi Menyuruh dan Pelajaran Memimpin Tim Developer dari Extra Credits</title>
+      <link>https://semenitwasted.web.id/blog/cara-menjadi-producer-dan-memimpin-tim-developer</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/cara-menjadi-producer-dan-memimpin-tim-developer</guid>
+      <pubDate>Mon, 23 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Product &amp; Support</category>
+      <description>Proyek web sering macet saat producer bertingkah jadi bos. Bedah peran servant leadership, Iron Triangle, dan cara memimpin tim developer ala Extra Credits.</description>
+    </item>
     <item>
       <title>Kenapa Proyek Website Sering Terjebak Revisi Panjang dan Pelajaran Praproduksi dari Extra Credits</title>
       <link>https://semenitwasted.web.id/blog/masalah-praproduksi-desain-website-dan-produk</link>

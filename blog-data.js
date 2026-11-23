@@ -17,6 +17,23 @@
 
   const BLOG_POSTS = [
     {
+      id: 'post-29',
+      slug: 'cara-menjadi-producer-dan-memimpin-tim-developer',
+      title: 'Producer Bukan Bos yang Hobi Menyuruh dan Pelajaran Memimpin Tim Developer dari Extra Credits',
+      date: '2026-11-23',
+      formattedDate: '23 November 2026',
+      readingTime: '27 min read',
+      category: 'product-support',
+      categoryLabel: 'Product & Support',
+      tags: ['Producer', 'Project Management', 'Extra Credits', 'Product Delivery', 'Pemula'],
+      featured: false,
+      excerpt: 'Proyek web sering macet saat producer bertingkah jadi bos. Bedah peran servant leadership, Iron Triangle, dan cara memimpin tim developer ala Extra Credits.',
+      contentUrl: 'blog/cara-menjadi-producer-dan-memimpin-tim-developer.html',
+      coverImage: 'assets/blog/Lavender%20Village%20Mastermind.webp',
+      coverAlt: 'Ilustrasi perempuan anime berambut lavender berkacamata dengan jas ungu dan tablet sedang mengoordinasikan para spesialis di desa bergaya blok bersama kucing ungu di kakinya, sementara petani, pandai besi, pustakawan, penambang, dan golem fokus menjalankan peran masing-masing dengan selaras',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
       id: 'post-28',
       slug: 'masalah-praproduksi-desain-website-dan-produk',
       title: 'Kenapa Proyek Website Sering Terjebak Revisi Panjang dan Pelajaran Praproduksi dari Extra Credits',
