@@ -6,7 +6,15 @@
     <atom:link href="https://semenitwasted.web.id/rss.xml" rel="self" type="application/rss+xml" />
     <description>Ruang catatan digital seputar desain antarmuka, rekayasa kode frontend, keamanan web, dan refleksi berkarya oleh I Putu Dicky Adi Pranatha.</description>
     <language>id-ID</language>
-    <lastBuildDate>Mon, 23 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Hafal Sintaks Saja Tidak Membuatmu Jadi Developer Andal dan Pelajaran dari Dua Video Extra Credits</title>
+      <link>https://semenitwasted.web.id/blog/cara-menjadi-developer-berpikir-algoritmis-dan-kerja-tim</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/cara-menjadi-developer-berpikir-algoritmis-dan-kerja-tim</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Frontend &amp; Code</category>
+      <description>Hafal sintaks saja belum cukup untuk jadi developer andal. Bedah pola pikir algoritmis, baca kode, estimasi proyek, dan kerja tim ala dua video Extra Credits.</description>
+    </item>
     <item>
       <title>Producer Bukan Bos yang Hobi Menyuruh dan Pelajaran Memimpin Tim Developer dari Extra Credits</title>
       <link>https://semenitwasted.web.id/blog/cara-menjadi-producer-dan-memimpin-tim-developer</link>

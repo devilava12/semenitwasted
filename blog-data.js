@@ -17,6 +17,23 @@
 
   const BLOG_POSTS = [
     {
+      id: 'post-30',
+      slug: 'cara-menjadi-developer-berpikir-algoritmis-dan-kerja-tim',
+      title: 'Hafal Sintaks Saja Tidak Membuatmu Jadi Developer Andal dan Pelajaran dari Dua Video Extra Credits',
+      date: '2026-11-24',
+      formattedDate: '24 November 2026',
+      readingTime: '31 min read',
+      category: 'frontend-code',
+      categoryLabel: 'Frontend & Code',
+      tags: ['Software Engineering', 'Extra Credits', 'Algorithmic Thinking', 'Estimasi Proyek', 'Pemula'],
+      featured: false,
+      excerpt: 'Hafal sintaks saja belum cukup untuk jadi developer andal. Bedah pola pikir algoritmis, baca kode, estimasi proyek, dan kerja tim ala dua video Extra Credits.',
+      contentUrl: 'blog/cara-menjadi-developer-berpikir-algoritmis-dan-kerja-tim.html',
+      coverImage: 'assets/blog/Lavender%20Scholar%20in%20the%20Voxel%20Library.webp',
+      coverAlt: 'Ilustrasi seorang developer berambut lavender yang duduk tekun membaca buku di perpustakaan bergaya blok sambil mengamati diagram holo sistem kode, basis data, struktur alur, dan gir di atas meja kayu bersama kucing lavender yang tertidur di samping buku terbuka.',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
       id: 'post-29',
       slug: 'cara-menjadi-producer-dan-memimpin-tim-developer',
       title: 'Producer Bukan Bos yang Hobi Menyuruh dan Pelajaran Memimpin Tim Developer dari Extra Credits',
