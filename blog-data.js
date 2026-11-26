@@ -17,6 +17,23 @@
 
   const BLOG_POSTS = [
     {
+      id: 'post-31',
+      slug: 'kecanduan-game-vs-kompulsi-dan-cara-pulih',
+      title: 'Bermain Game Berjam-Jam Belum Tentu Kecanduan dan Cara Memulihkan Kendali Hidup dari Dua Video Extra Credits',
+      date: '2026-11-26',
+      formattedDate: '26 November 2026',
+      readingTime: '14 min read',
+      category: 'reflections',
+      categoryLabel: 'Reflections',
+      tags: ['Game Compulsion', 'Psikologi Perilaku', 'Extra Credits', 'Gaming Disorder', 'Mindset'],
+      featured: false,
+      excerpt: 'Main game lama belum tentu adiksi kimiawi. Bedah beda kecanduan game vs kompulsi dari Extra Credits, kriteria WHO ICD-11, dan cara pulih yang nyata.',
+      contentUrl: 'blog/kecanduan-game-vs-kompulsi-dan-cara-pulih.html',
+      coverImage: 'assets/blog/Neon%20Butterfly%20Gamer%20in%20a%20Voxel%20Bedroom.webp',
+      coverAlt: 'Ilustrasi seorang pemain berambut ungu dengan jepit kupu-kupu yang menopang dagu menatap layar monitor sambil memegang kontroler di kamar remang bersama kucing yang terlelap, sementara cahaya matahari hangat bersinar di balik jendela.',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
       id: 'post-30',
       slug: 'cara-menjadi-developer-berpikir-algoritmis-dan-kerja-tim',
       title: 'Hafal Sintaks Saja Tidak Membuatmu Jadi Developer Andal dan Pelajaran dari Dua Video Extra Credits',
