@@ -287,6 +287,8 @@
 
     html[data-season][data-theme="dark"] .category-pill.active,
     html[data-season][data-theme="dark"] .filter-pill.active,
+    html[data-season][data-theme="dark"] .pagination-btn.is-active,
+    html[data-season][data-theme="dark"] .pagination-btn[aria-current="page"],
     html[data-season][data-theme="dark"] .featured-read-btn,
     html[data-season][data-theme="dark"] .btn-primary,
     html[data-season][data-theme="dark"] .btn-copy-rss,
@@ -361,9 +363,9 @@
 
   function getPageHref(page, basePath, active) {
     if (page.id === 'home') return getHomeHref(basePath, active);
-    const { isWeb, isLocalServer } = getEnvRouting();
+    const { isWeb } = getEnvRouting();
     if (!isWeb) return `${basePath}${page.href}`;
-    return isLocalServer ? `/${page.href}` : page.webHref;
+    return page.webHref;
   }
 
   function linkMarkup(page, activePage, className, basePath = '') {
@@ -405,6 +407,9 @@
   }
 
   function initialise() {
+    const chromeHost = document.querySelector('[data-site-chrome][data-base-path], [data-base-path]');
+    const fallbackBase = (chromeHost && chromeHost.getAttribute('data-base-path')) || '';
+
     document.querySelectorAll('[data-site-chrome]').forEach(renderChrome);
 
     // Inject seasonal badge on standalone home navbar (index.html) when active
@@ -413,25 +418,47 @@
       homeBrand.insertAdjacentHTML('beforeend', seasonBadgeMarkup());
     }
 
-    const { isWeb, isLocalServer } = getEnvRouting();
+    const { isWeb } = getEnvRouting();
+
     if (isWeb) {
-      const topPageMap = {
-        index: { local: '/', prod: '/' },
-        portfolio: { local: '/portfolio.html', prod: '/portfolio' },
-        about: { local: '/about.html', prod: '/about' },
-        library: { local: '/library.html', prod: '/library' },
-        blog: { local: '/blog.html', prod: '/blog' },
-        contact: { local: '/contact.html', prod: '/contact' }
-      };
+      // Defensive clean-URL normalizer if any legacy .html link remains on web
       document.querySelectorAll('a[href]').forEach(link => {
         const rawHref = link.getAttribute('href');
         if (!rawHref) return;
-        const match = rawHref.match(/^(?:\.\.\/)*(index|portfolio|about|library|blog|contact)\.html(#.*)?$/);
+        const match = rawHref.match(/^(?:\.\.\/)*(index|portfolio|about|library|blog|contact)\.html(\?[^#]*)?(#.*)?$/);
         if (match) {
-          const target = topPageMap[match[1]];
-          const hash = match[2] || '';
-          link.setAttribute('href', (isLocalServer ? target.local : target.prod) + hash);
+          const clean = match[1] === 'index' ? '/' : `/${match[1]}`;
+          link.setAttribute('href', `${clean}${match[2] || ''}${match[3] || ''}`);
+          return;
         }
+        const pageMatch = rawHref.match(/^(?:\.\.\/)*(?:blog\/)?page\/(\d+)\/index\.html(#.*)?$/);
+        if (pageMatch) {
+          link.setAttribute('href', `/blog/page/${pageMatch[1]}/${pageMatch[2] || ''}`);
+        }
+      });
+    } else {
+      // Local file:// fallback: resolve root-relative clean URLs back to local .html files
+      document.querySelectorAll('a[href^="/"]').forEach(link => {
+        const rawHref = link.getAttribute('href');
+        if (!rawHref || rawHref.startsWith('//')) return;
+        const hashIdx = rawHref.indexOf('#');
+        const hash = hashIdx >= 0 ? rawHref.slice(hashIdx) : '';
+        const noHash = hashIdx >= 0 ? rawHref.slice(0, hashIdx) : rawHref;
+        const qIdx = noHash.indexOf('?');
+        const query = qIdx >= 0 ? noHash.slice(qIdx) : '';
+        const cleanPath = qIdx >= 0 ? noHash.slice(0, qIdx) : noHash;
+
+        let localTarget = '';
+        if (cleanPath === '/') {
+          localTarget = `${fallbackBase}index.html`;
+        } else if (cleanPath.endsWith('/')) {
+          localTarget = `${fallbackBase}${cleanPath.slice(1)}index.html`;
+        } else if (/\.[a-z0-9]+$/i.test(cleanPath)) {
+          localTarget = `${fallbackBase}${cleanPath.slice(1)}`;
+        } else {
+          localTarget = `${fallbackBase}${cleanPath.slice(1)}.html`;
+        }
+        link.setAttribute('href', `${localTarget}${query}${hash}`);
       });
     }
 

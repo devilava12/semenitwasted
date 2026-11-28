@@ -23,6 +23,9 @@
   <meta name="twitter:image" content="https://semenitwasted.web.id/assets/card-center.png">
 
   <link rel="canonical" href="https://semenitwasted.web.id/blog">
+  <!-- BLOG_PAGINATION_HEAD_START -->
+  <link rel="next" href="https://semenitwasted.web.id/blog/page/2/">
+  <!-- BLOG_PAGINATION_HEAD_END -->
   <link rel="alternate" type="application/rss+xml" title="semenitwasted Blog RSS Feed"
     href="https://semenitwasted.web.id/rss.xml">
   <meta property="og:url" content="https://semenitwasted.web.id/blog">
@@ -103,7 +106,7 @@
     <!-- Global Site Navigation injected by site-chrome.js -->
     <div data-site-chrome data-active-page="blog"></div>
 
-    <main id="main-content" class="blog-main">
+    <main id="main-content" class="blog-main" data-base-path="">
 
       <!-- =================================================================
            1. HERO & PHILOSOPHY
@@ -116,7 +119,7 @@
           </div>
           <h1 id="blog-heading" class="hero-title">Thoughts, devlogs, &amp; design notes.</h1>
           <p class="hero-desc">
-            Ruang catatan digital dan arsip terbuka yang merangkum hal-hal yang menurut saya menarik—mulai dari eksplorasi desain antarmuka, rekayasa kode frontend, hingga refleksi berkala seputar pola pikir, cara berkarya, dan kehidupan sehari-hari.
+            Ruang catatan digital dan arsip terbuka yang merangkum hal-hal yang menurut saya menarik, mulai dari eksplorasi desain antarmuka, rekayasa kode frontend, hingga refleksi berkala seputar pola pikir, cara berkarya, dan kehidupan sehari-hari.
           </p>
         </div>
 
@@ -135,37 +138,39 @@
           </div>
 
           <div class="blog-category-filter" role="group" aria-label="Filter by category" id="categoryFilterGroup">
+            <!-- BLOG_CATEGORY_PILLS_START -->
             <button type="button" class="category-pill active" data-category="all" aria-pressed="true">
               <span>All Topics</span>
-              <span class="pill-count" id="count-all">26</span>
+              <span class="pill-count" id="count-all">32</span>
             </button>
             <button type="button" class="category-pill" data-category="design-systems" aria-pressed="false">
               <span>Design Systems</span>
-              <span class="pill-count" id="count-design-systems">7</span>
+              <span class="pill-count" id="count-design-systems">10</span>
             </button>
             <button type="button" class="category-pill" data-category="frontend-code" aria-pressed="false">
               <span>Frontend &amp; Code</span>
-              <span class="pill-count" id="count-frontend-code">7</span>
+              <span class="pill-count" id="count-frontend-code">8</span>
             </button>
             <button type="button" class="category-pill" data-category="product-support" aria-pressed="false">
               <span>Product &amp; Support</span>
-              <span class="pill-count" id="count-product-support">7</span>
+              <span class="pill-count" id="count-product-support">8</span>
             </button>
             <button type="button" class="category-pill" data-category="reflections" aria-pressed="false">
               <span>Reflections</span>
-              <span class="pill-count" id="count-reflections">5</span>
+              <span class="pill-count" id="count-reflections">6</span>
             </button>
+            <!-- BLOG_CATEGORY_PILLS_END -->
           </div>
         </div>
       </section>
 
       <!-- =================================================================
-           2. FEATURED ARTICLE SPOTLIGHT (WITH TACTILE COVER)
+           2. FEATURED ARTICLE SPOTLIGHT (WITH TACTILE COVER - PAGE 1 ONLY)
            ================================================================= -->
       <section class="blog-featured-section" aria-label="Featured Essay" id="featuredSection">
         <article class="featured-bento-card" data-category="design-systems" id="featuredPostCard">
           <div class="featured-card-accent" aria-hidden="true"></div>
-          
+
           <div class="featured-bento-layout">
             <div class="featured-card-content">
               <div class="featured-meta">
@@ -178,7 +183,7 @@
               </div>
 
               <h2 class="featured-title">
-                <a href="blog/memilih-karakter-visual-website-2026.html">Memilih Karakter Visual Website di Tahun 2026 Tanpa Terjebak Tren yang Cepat Usang</a>
+                <a href="/blog/memilih-karakter-visual-website-2026">Memilih Karakter Visual Website di Tahun 2026 Tanpa Terjebak Tren yang Cepat Usang</a>
               </h2>
 
               <p class="featured-excerpt">
@@ -191,7 +196,7 @@
                   <span class="tag-chip">#TactileUI</span>
                   <span class="tag-chip">#BentoGrid</span>
                 </div>
-                <a href="blog/memilih-karakter-visual-website-2026.html" class="featured-read-btn" aria-label="Read essay: Memilih Karakter Visual Website di Tahun 2026">
+                <a href="/blog/memilih-karakter-visual-website-2026" class="featured-read-btn" aria-label="Read essay: Memilih Karakter Visual Website di Tahun 2026">
                   <span>Read Essay</span>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -203,7 +208,7 @@
 
             <!-- Featured Cover Image Frame -->
             <div class="featured-media-wrapper">
-              <a href="blog/memilih-karakter-visual-website-2026.html" class="featured-media-link" tabindex="-1" aria-hidden="true">
+              <a href="/blog/memilih-karakter-visual-website-2026" class="featured-media-link" tabindex="-1" aria-hidden="true">
                 <div class="featured-cover-frame">
                   <img src="assets/blog/cover-style-website-2026.webp" alt="Seni kertas 3D bento diorama melambangkan empat karakter desain website 2026 dengan ukiran angka 2026 dan palet monokrom lavender-arang" class="featured-cover-img" width="800" height="450" loading="eager">
                 </div>
@@ -219,17 +224,190 @@
       <section class="blog-catalog-section" aria-labelledby="catalog-heading">
         <div class="catalog-header">
           <h2 id="catalog-heading" class="catalog-heading">All Articles</h2>
-          <span class="catalog-status" id="catalogStatus" aria-live="polite">Showing 26 essays</span>
+          <span class="catalog-status" id="catalogStatus" aria-live="polite"><!-- BLOG_CATALOG_STATUS_START -->Showing 1&ndash;8 of 32 essays &bull; Page 1 of 4<!-- BLOG_CATALOG_STATUS_END --></span>
         </div>
 
-        <!-- Articles Grid Container (Strictly Newest to Oldest) -->
+        <!-- Articles Grid Container (Strictly Newest to Oldest, Synced by build.js) -->
         <div class="blog-articles-grid" id="blogGridContainer">
-
-          <!-- 0. Post 26: 16 November 2026 (Frontend & Code / SSH Adalah, Cara Kerja & Kisah Celah XZ Utils Veritasium) -->
-          <article class="article-bento-card has-cover" data-category="frontend-code" data-tags="ssh adalah apa itu ssh secure shell cara kerja ssh tatu ylonen 1995 telnet openssh xz utils backdoor cve-2024-3094 jia tan lasse collin andres freund 500ms veritasium pemula">
-            <a href="blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
+          <!-- BLOG_GRID_START -->
+          <article class="article-bento-card has-cover" data-category="design-systems" data-tags="usability testing playtesting extra credits ui/ux pemula">
+            <a href="/blog/cara-playtesting-dan-usability-testing-desain-website" class="article-cover-link" tabindex="-1" aria-hidden="true">
               <div class="article-cover-frame">
-                <img src="assets/blog/Minecraft%20Sunset%20Gaming%20Haven.webp" alt="Ilustrasi suasana meja komputer bernuansa senja dengan monitor menampilkan dunia blok dan jendela terminal jarak jauh, melambangkan pengelolaan server dari kamar sendiri lewat protokol SSH" class="article-cover-img" width="800" height="450" loading="lazy">
+                <img src="assets/blog/Selenia%E2%80%99s%20Purple%20Crystal%20Sword%20Test.webp" alt="Ilustrasi pengrajin berambut lavender berkacamata goggle menyodorkan pedang kristal ungu rancangannya dengan penuh semangat kepada golem bergaya blok voxel, sementara golem dan kucing di bawahnya justru menatap bingung dengan tanda tanya di atas kepala mereka di samping meja cetak biru." class="article-cover-img" width="800" height="450" loading="lazy" decoding="async">
+              </div>
+            </a>
+            <div class="article-card-body">
+              <div class="card-meta">
+                <span class="category-pill-sm">Design Systems</span>
+                <span class="meta-separator" aria-hidden="true">&bull;</span>
+                <span class="reading-time">20 min read</span>
+              </div>
+              <h3 class="card-title">
+                <a href="/blog/cara-playtesting-dan-usability-testing-desain-website">Kenapa Desain Website yang Sudah Jelas Tetap Bikin Pengunjung Bingung dan Pelajaran Playtesting dari Extra Credits</a>
+              </h3>
+              <p class="card-excerpt">
+                Desain web terasa jelas bagimu tapi bikin pengunjung bingung? Bedah playtesting Extra Credits, usability testing 5 pengguna Nielsen, dan uji prototipe.
+              </p>
+              <div class="card-footer">
+                <time datetime="2026-11-28" class="card-date">28 November 2026</time>
+                <div class="tags-cluster">
+                  <span class="tag-chip">#Usability Testing</span>
+                  <span class="tag-chip">#Playtesting</span>
+                  <span class="tag-chip">#Extra Credits</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-bento-card has-cover" data-category="reflections" data-tags="game compulsion psikologi perilaku extra credits gaming disorder mindset">
+            <a href="/blog/kecanduan-game-vs-kompulsi-dan-cara-pulih" class="article-cover-link" tabindex="-1" aria-hidden="true">
+              <div class="article-cover-frame">
+                <img src="assets/blog/Neon%20Butterfly%20Gamer%20in%20a%20Voxel%20Bedroom.webp" alt="Ilustrasi seorang pemain berambut ungu dengan jepit kupu-kupu yang menopang dagu menatap layar monitor sambil memegang kontroler di kamar remang bersama kucing yang terlelap, sementara cahaya matahari hangat bersinar di balik jendela." class="article-cover-img" width="800" height="450" loading="lazy" decoding="async">
+              </div>
+            </a>
+            <div class="article-card-body">
+              <div class="card-meta">
+                <span class="category-pill-sm">Reflections</span>
+                <span class="meta-separator" aria-hidden="true">&bull;</span>
+                <span class="reading-time">14 min read</span>
+              </div>
+              <h3 class="card-title">
+                <a href="/blog/kecanduan-game-vs-kompulsi-dan-cara-pulih">Bermain Game Berjam-Jam Belum Tentu Kecanduan dan Cara Memulihkan Kendali Hidup dari Dua Video Extra Credits</a>
+              </h3>
+              <p class="card-excerpt">
+                Main game lama belum tentu adiksi kimiawi. Bedah beda kecanduan game vs kompulsi dari Extra Credits, kriteria WHO ICD-11, dan cara pulih yang nyata.
+              </p>
+              <div class="card-footer">
+                <time datetime="2026-11-26" class="card-date">26 November 2026</time>
+                <div class="tags-cluster">
+                  <span class="tag-chip">#Game Compulsion</span>
+                  <span class="tag-chip">#Psikologi Perilaku</span>
+                  <span class="tag-chip">#Extra Credits</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-bento-card has-cover" data-category="frontend-code" data-tags="software engineering extra credits algorithmic thinking estimasi proyek pemula">
+            <a href="/blog/cara-menjadi-developer-berpikir-algoritmis-dan-kerja-tim" class="article-cover-link" tabindex="-1" aria-hidden="true">
+              <div class="article-cover-frame">
+                <img src="assets/blog/Lavender%20Scholar%20in%20the%20Voxel%20Library.webp" alt="Ilustrasi seorang developer berambut lavender yang duduk tekun membaca buku di perpustakaan bergaya blok sambil mengamati diagram holo sistem kode, basis data, struktur alur, dan gir di atas meja kayu bersama kucing lavender yang tertidur di samping buku terbuka." class="article-cover-img" width="800" height="450" loading="lazy" decoding="async">
+              </div>
+            </a>
+            <div class="article-card-body">
+              <div class="card-meta">
+                <span class="category-pill-sm">Frontend &amp; Code</span>
+                <span class="meta-separator" aria-hidden="true">&bull;</span>
+                <span class="reading-time">31 min read</span>
+              </div>
+              <h3 class="card-title">
+                <a href="/blog/cara-menjadi-developer-berpikir-algoritmis-dan-kerja-tim">Hafal Sintaks Saja Tidak Membuatmu Jadi Developer Andal dan Pelajaran dari Dua Video Extra Credits</a>
+              </h3>
+              <p class="card-excerpt">
+                Hafal sintaks saja belum cukup untuk jadi developer andal. Bedah pola pikir algoritmis, baca kode, estimasi proyek, dan kerja tim ala dua video Extra Credits.
+              </p>
+              <div class="card-footer">
+                <time datetime="2026-11-24" class="card-date">24 November 2026</time>
+                <div class="tags-cluster">
+                  <span class="tag-chip">#Software Engineering</span>
+                  <span class="tag-chip">#Extra Credits</span>
+                  <span class="tag-chip">#Algorithmic Thinking</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-bento-card has-cover" data-category="product-support" data-tags="producer project management extra credits product delivery pemula">
+            <a href="/blog/cara-menjadi-producer-dan-memimpin-tim-developer" class="article-cover-link" tabindex="-1" aria-hidden="true">
+              <div class="article-cover-frame">
+                <img src="assets/blog/Lavender%20Village%20Mastermind.webp" alt="Ilustrasi perempuan anime berambut lavender berkacamata dengan jas ungu dan tablet sedang mengoordinasikan para spesialis di desa bergaya blok bersama kucing ungu di kakinya, sementara petani, pandai besi, pustakawan, penambang, dan golem fokus menjalankan peran masing-masing dengan selaras" class="article-cover-img" width="800" height="450" loading="lazy" decoding="async">
+              </div>
+            </a>
+            <div class="article-card-body">
+              <div class="card-meta">
+                <span class="category-pill-sm">Product &amp; Support</span>
+                <span class="meta-separator" aria-hidden="true">&bull;</span>
+                <span class="reading-time">27 min read</span>
+              </div>
+              <h3 class="card-title">
+                <a href="/blog/cara-menjadi-producer-dan-memimpin-tim-developer">Producer Bukan Bos yang Hobi Menyuruh dan Pelajaran Memimpin Tim Developer dari Extra Credits</a>
+              </h3>
+              <p class="card-excerpt">
+                Proyek web sering macet saat producer bertingkah jadi bos. Bedah peran servant leadership, Iron Triangle, dan cara memimpin tim developer ala Extra Credits.
+              </p>
+              <div class="card-footer">
+                <time datetime="2026-11-23" class="card-date">23 November 2026</time>
+                <div class="tags-cluster">
+                  <span class="tag-chip">#Producer</span>
+                  <span class="tag-chip">#Project Management</span>
+                  <span class="tag-chip">#Extra Credits</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-bento-card has-cover" data-category="design-systems" data-tags="pre-production extra credits ui/ux product planning pemula">
+            <a href="/blog/masalah-praproduksi-desain-website-dan-produk" class="article-cover-link" tabindex="-1" aria-hidden="true">
+              <div class="article-cover-frame">
+                <img src="assets/blog/Lavender%20Pixel%20Architect%20at%20Sunset.webp" alt="Ilustrasi gadis anime berambut ungu duduk di bawah pohon sakura bergaya blok bersama kucing ungu-putih di sampingnya, sedang merancang sketsa cetak biru di papan gambar sementara di latar belakang tampak kerangka halaman website raksasa yang sedang dibangun dengan perancah kayu, derek konstruksi, dan papan tanda panah putar revisi" class="article-cover-img" width="800" height="450" loading="lazy" decoding="async">
+              </div>
+            </a>
+            <div class="article-card-body">
+              <div class="card-meta">
+                <span class="category-pill-sm">Design Systems</span>
+                <span class="meta-separator" aria-hidden="true">&bull;</span>
+                <span class="reading-time">24 min read</span>
+              </div>
+              <h3 class="card-title">
+                <a href="/blog/masalah-praproduksi-desain-website-dan-produk">Kenapa Proyek Website Sering Terjebak Revisi Panjang dan Pelajaran Praproduksi dari Extra Credits</a>
+              </h3>
+              <p class="card-excerpt">
+                Kenapa proyek website sering revisi berulang dan lembur? Bedah masalah praproduksi Extra Credits, jebakan Waterfall, vertical slice, dan pola kerja Pixar.
+              </p>
+              <div class="card-footer">
+                <time datetime="2026-11-21" class="card-date">21 November 2026</time>
+                <div class="tags-cluster">
+                  <span class="tag-chip">#Pre-Production</span>
+                  <span class="tag-chip">#Extra Credits</span>
+                  <span class="tag-chip">#UI/UX</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-bento-card has-cover" data-category="design-systems" data-tags="design career extra credits ui/ux product thinking pemula">
+            <a href="/blog/cara-menjadi-desainer-website-dan-mitos-tukang-ide" class="article-cover-link" tabindex="-1" aria-hidden="true">
+              <div class="article-cover-frame">
+                <img src="assets/blog/Voxel%20Idea%20Lightbulb%20and%20Anime%20Dreamscape.webp" alt="Ilustrasi gadis anime berambut ungu duduk di bawah pohon sakura bergaya blok bersama kucing abu-abu putih di pangkuannya, memegang tablet gambar dan pena dengan bohlam ide berbentuk blok voxel menyala di atas kepalanya" class="article-cover-img" width="800" height="450" loading="lazy" decoding="async">
+              </div>
+            </a>
+            <div class="article-card-body">
+              <div class="card-meta">
+                <span class="category-pill-sm">Design Systems</span>
+                <span class="meta-separator" aria-hidden="true">&bull;</span>
+                <span class="reading-time">21 min read</span>
+              </div>
+              <h3 class="card-title">
+                <a href="/blog/cara-menjadi-desainer-website-dan-mitos-tukang-ide">Kenapa Punya Ide Keren Saja Tidak Cukup untuk Menjadi Desainer Website dan Pelajaran Karier dari Extra Credits</a>
+              </h3>
+              <p class="card-excerpt">
+                Ingin jadi desainer website atau UI/UX? Bedah mitos Si Tukang Ide, 4 tahap mental desainer, dan keahlian lintas ilmu dari video klasik Extra Credits.
+              </p>
+              <div class="card-footer">
+                <time datetime="2026-11-19" class="card-date">19 November 2026</time>
+                <div class="tags-cluster">
+                  <span class="tag-chip">#Design Career</span>
+                  <span class="tag-chip">#Extra Credits</span>
+                  <span class="tag-chip">#UI/UX</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="article-bento-card has-cover" data-category="frontend-code" data-tags="ssh openssh veritasium xz utils pemula">
+            <a href="/blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils" class="article-cover-link" tabindex="-1" aria-hidden="true">
+              <div class="article-cover-frame">
+                <img src="assets/blog/Minecraft%20Sunset%20Gaming%20Haven.webp" alt="Ilustrasi suasana meja komputer bernuansa senja dengan monitor menampilkan dunia blok dan jendela terminal jarak jauh, melambangkan pengelolaan server dari kamar sendiri lewat protokol SSH" class="article-cover-img" width="800" height="450" loading="lazy" decoding="async">
               </div>
             </a>
             <div class="article-card-body">
@@ -239,7 +417,7 @@
                 <span class="reading-time">13 min read</span>
               </div>
               <h3 class="card-title">
-                <a href="blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils.html">SSH Adalah Kunci Utama Server Internet dan Kisah Nyata Saat Seluruh Dunia Hampir Diretas Tanpa Sadar</a>
+                <a href="/blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils">SSH Adalah Kunci Utama Server Internet dan Kisah Nyata Saat Seluruh Dunia Hampir Diretas Tanpa Sadar</a>
               </h3>
               <p class="card-excerpt">
                 Pahami apa itu SSH dengan bahasa sederhana. Simak sejarah Tatu Ylönen 1995, cara kerja Public Key &amp; Private Key, dan kisah celah XZ Utils dari Veritasium.
@@ -248,18 +426,17 @@
                 <time datetime="2026-11-16" class="card-date">16 November 2026</time>
                 <div class="tags-cluster">
                   <span class="tag-chip">#SSH</span>
+                  <span class="tag-chip">#OpenSSH</span>
                   <span class="tag-chip">#Veritasium</span>
-                  <span class="tag-chip">#WebSecurity</span>
                 </div>
               </div>
             </div>
           </article>
 
-          <!-- 0. Post 25: 13 November 2026 (Reflections / Kenapa Miliarder Dunia Sepakat Memperlambat AI, Bennix & Faktor China) -->
-          <article class="article-bento-card has-cover" data-category="reflections" data-tags="miliarder dunia sepakat memperlambat ai bennix we must pace the frontier dario amodei sam altman anthropic openai hugging face ipo wall street slowdown cartel china deepseek qwen pemula">
-            <a href="blog/kenapa-miliarder-dunia-memperlambat-ai-dan-faktor-china.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
+          <article class="article-bento-card has-cover" data-category="reflections" data-tags="ai governance bennix wall street geopolitik china pemula">
+            <a href="/blog/kenapa-miliarder-dunia-memperlambat-ai-dan-faktor-china" class="article-cover-link" tabindex="-1" aria-hidden="true">
               <div class="article-cover-frame">
-                <img src="assets/blog/Anime%20Guardians%20Against%20the%20Cracked%20Radiant%20Door.webp" alt="Ilustrasi gadis anime berambut ungu-putih bersama kucing putihnya sedang menahan pintu raksasa yang mulai retak dan memancarkan kilatan cahaya ungu digital dari balik celahnya" class="article-cover-img" width="800" height="450" loading="lazy">
+                <img src="assets/blog/Anime%20Guardians%20Against%20the%20Cracked%20Radiant%20Door.webp" alt="Ilustrasi gadis anime berambut ungu-putih bersama kucing putihnya sedang menahan pintu raksasa yang mulai retak dan memancarkan kilatan cahaya ungu digital dari balik celahnya" class="article-cover-img" width="800" height="450" loading="lazy" decoding="async">
               </div>
             </a>
             <div class="article-card-body">
@@ -269,7 +446,7 @@
                 <span class="reading-time">12 min read</span>
               </div>
               <h3 class="card-title">
-                <a href="blog/kenapa-miliarder-dunia-memperlambat-ai-dan-faktor-china.html">Kenapa Para Miliarder Dunia Tiba-Tiba Sepakat Memperlambat AI dan Apa Hubungannya dengan China</a>
+                <a href="/blog/kenapa-miliarder-dunia-memperlambat-ai-dan-faktor-china">Kenapa Para Miliarder Dunia Tiba-Tiba Sepakat Memperlambat AI dan Apa Hubungannya dengan China</a>
               </h3>
               <p class="card-excerpt">
                 Bedah alasan miliarder teknologi (Anthropic &amp; OpenAI) sepakat memperlambat AI dari video Bennix, insiden Hugging Face, motif IPO Wall Street, dan faktor China.
@@ -277,693 +454,14 @@
               <div class="card-footer">
                 <time datetime="2026-11-13" class="card-date">13 November 2026</time>
                 <div class="tags-cluster">
-                  <span class="tag-chip">#AIGovernance</span>
+                  <span class="tag-chip">#AI Governance</span>
                   <span class="tag-chip">#Bennix</span>
-                  <span class="tag-chip">#GeopolitikAI</span>
+                  <span class="tag-chip">#Wall Street</span>
                 </div>
               </div>
             </div>
           </article>
-
-          <!-- 0. Post 24: 12 November 2026 (Design Systems / Dark Pattern Adalah, Sejarah Harry Brignull 2010 & Contohnya) -->
-          <article class="article-bento-card has-cover" data-category="design-systems" data-tags="dark pattern adalah apa itu dark pattern deceptive design harry brignull 2010 roach motel confirmshaming drip pricing ui ux etika desain pemula">
-            <a href="blog/dark-pattern-adalah-jebakan-desain-dan-contohnya.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
-              <div class="article-cover-frame">
-                <img src="assets/blog/Panicked%20Subscription%20Trap%20at%20the%20Desk.webp" alt="Ilustrasi gadis anime memegang kepala karena panik di depan laptop bersama kucing hitamnya yang terkejut melihat jendela pop-up Kamu Berlangganan Paket Premium Rp 99.000/bulan, Penagihan Otomatis Aktif, dan tombol Batalkan Langganan yang terkunci Sangat Sulit" class="article-cover-img" width="800" height="450" loading="lazy">
-              </div>
-            </a>
-            <div class="article-card-body">
-              <div class="card-meta">
-                <span class="category-pill-sm">Design Systems</span>
-                <span class="meta-separator" aria-hidden="true">&bull;</span>
-                <span class="reading-time">11 min read</span>
-              </div>
-              <h3 class="card-title">
-                <a href="blog/dark-pattern-adalah-jebakan-desain-dan-contohnya.html">Dark Pattern Adalah Jebakan Desain yang Sengaja Dibikin agar Pengguna Salah Klik dan Susah Berhenti Langganan</a>
-              </h3>
-              <p class="card-excerpt">
-                Pahami apa itu dark pattern dengan bahasa sederhana. Simak sejarah Harry Brignull 2010, 5 contoh jebakan desain di aplikasi harian, dan cara menghindarinya.
-              </p>
-              <div class="card-footer">
-                <time datetime="2026-11-12" class="card-date">12 November 2026</time>
-                <div class="tags-cluster">
-                  <span class="tag-chip">#DarkPattern</span>
-                  <span class="tag-chip">#DeceptiveDesign</span>
-                  <span class="tag-chip">#UIUX</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 0. Post 23: 11 November 2026 (Frontend & Code / API Adalah, Sejarah 1951 & Cara Kerjanya) -->
-          <article class="article-bento-card has-cover" data-category="frontend-code" data-tags="api adalah apa itu api cara kerja api sejarah api komputer edsac 1951 roy fielding rest api json http status code keamanan api bola pemula">
-            <a href="blog/api-adalah-sejarah-dan-cara-kerjanya.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
-              <div class="article-cover-frame">
-                <img src="assets/blog/Neon%20API%20Notes%20in%20Cyberpunk%20Corridor.webp" alt="Ilustrasi gadis anime berkacamata mencatat alur kerja di lorong siber neon bersama kucing hitam-putih bermata ungu yang menatap layar skema API penghubung aplikasi ponsel, keranjang belanja, dan database server" class="article-cover-img" width="800" height="450" loading="lazy">
-              </div>
-            </a>
-            <div class="article-card-body">
-              <div class="card-meta">
-                <span class="category-pill-sm">Frontend &amp; Code</span>
-                <span class="meta-separator" aria-hidden="true">&bull;</span>
-                <span class="reading-time">11 min read</span>
-              </div>
-              <h3 class="card-title">
-                <a href="blog/api-adalah-sejarah-dan-cara-kerjanya.html">API Adalah Pelayan Tak Terlihat di Balik Aplikasi Harian Kita serta Sejarah dan Cara Kerjanya untuk Pemula</a>
-              </h3>
-              <p class="card-excerpt">
-                Pahami apa itu API dengan bahasa sederhana. Simak analogi pelayan restoran, sejarah dari komputer EDSAC 1951 hingga REST API, contoh nyata, dan keamanannya.
-              </p>
-              <div class="card-footer">
-                <time datetime="2026-11-11" class="card-date">11 November 2026</time>
-                <div class="tags-cluster">
-                  <span class="tag-chip">#API</span>
-                  <span class="tag-chip">#RESTAPI</span>
-                  <span class="tag-chip">#WebSecurity</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 0. Post 22: 10 November 2026 (Reflections / Bank Diretas Rp2 Triliun, Bennix, LPS & OJK) -->
-          <article class="article-bento-card has-cover" data-category="reflections" data-tags="bank diretas 2 triliun bennix credit mutuel arkea nasib uang nasabah indonesia lps 3t pojk 22 2023 keamanan siber perbankan bi fast zachxbt">
-            <a href="blog/bank-diretas-dan-nasib-uang-nasabah-indonesia.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
-              <div class="article-cover-frame">
-                <img src="assets/blog/Neon%20Anime%20Bank%20Heist%20Alert.webp" alt="Ilustrasi gadis anime terkejut memeriksa Buku Rekening di samping kucing hitam bermata ungu, dengan layar monitor menampilkan peringatan Bank Diretas Rp2.000.000.000.000 dan perisai penjaminan LPS di meja" class="article-cover-img" width="800" height="450" loading="lazy">
-              </div>
-            </a>
-            <div class="article-card-body">
-              <div class="card-meta">
-                <span class="category-pill-sm">Reflections</span>
-                <span class="meta-separator" aria-hidden="true">&bull;</span>
-                <span class="reading-time">11 min read</span>
-              </div>
-              <h3 class="card-title">
-                <a href="blog/bank-diretas-dan-nasib-uang-nasabah-indonesia.html">Belajar dari Kasus Bank Diretas Rp2 Triliun dan Bagaimana Nasib Uang Nasabah di Indonesia</a>
-              </h3>
-              <p class="card-excerpt">
-                Bedah fakta kasus bank diretas Rp2 triliun (Crédit Mutuel Arkéa) dari video Bennix, aturan ganti rugi OJK vs syarat 3T LPS, serta cara mengamankan tabungan.
-              </p>
-              <div class="card-footer">
-                <time datetime="2026-11-10" class="card-date">10 November 2026</time>
-                <div class="tags-cluster">
-                  <span class="tag-chip">#Cybersecurity</span>
-                  <span class="tag-chip">#Perbankan</span>
-                  <span class="tag-chip">#Bennix</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 0. Post 21: 5 November 2026 (Design Systems / Playing Like a Designer I & II & Web Design Analysis) -->
-          <article class="article-bento-card has-cover" data-category="design-systems" data-tags="cara menganalisis desain website berpikir seperti desainer playing like a designer extra credits mda framework mechanics dynamics aesthetics invisible design silent onboarding ui ux pemula">
-            <a href="blog/cara-berpikir-dan-menganalisis-desain-website.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
-              <div class="article-cover-frame">
-                <img src="assets/blog/Gadis%20Anime%20dan%20Kucing%20Gamer%20Misterius.webp" alt="Ilustrasi gadis anime memegang kaca pembesar dengan tanda tanya di atas kepalanya sambil mengamati kucing putih ber-headphone yang sedang serius bermain game memakai stik kontroler di depan laptop" class="article-cover-img" width="800" height="450" loading="lazy">
-              </div>
-            </a>
-            <div class="article-card-body">
-              <div class="card-meta">
-                <span class="category-pill-sm">Design Systems</span>
-                <span class="meta-separator" aria-hidden="true">&bull;</span>
-                <span class="reading-time">11 min read</span>
-              </div>
-              <h3 class="card-title">
-                <a href="blog/cara-berpikir-dan-menganalisis-desain-website.html">Cara Berpikir dan Menganalisis Website seperti Desainer Lewat Pelajaran dari Dua Video Extra Credits</a>
-              </h3>
-              <p class="card-excerpt">
-                Pelajari cara menganalisis desain website lewat dua video Extra Credits (Playing Like a Designer I &amp; II), kerangka MDA, dan kebiasaan membedah sistem UI/UX.
-              </p>
-              <div class="card-footer">
-                <time datetime="2026-11-05" class="card-date">5 November 2026</time>
-                <div class="tags-cluster">
-                  <span class="tag-chip">#DesignAnalysis</span>
-                  <span class="tag-chip">#MDAFramework</span>
-                  <span class="tag-chip">#ExtraCredits</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 0. Post 20: 3 November 2026 (Frontend & Code / Apa Itu Database, Sejarah 1970 & Kebocoran Data) -->
-          <article class="article-bento-card has-cover" data-category="frontend-code" data-tags="apa itu database adalah sejarah database edgar f codd 1970 relational database sql adalah kenapa data aplikasi bocor sql injection data minimization">
-            <a href="blog/apa-itu-database-sejarah-dan-kebocoran-data.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
-              <div class="article-cover-frame">
-                <img src="assets/blog/Anime%20Data%20Breach%20Coffee%20Shock.webp" alt="Ilustrasi gaya anime seorang penikmat kopi tersedak kaget di depan laptop yang menampilkan notifikasi Data Bocor, ditemani kucing yang ikut panik di sampingnya" class="article-cover-img" width="800" height="450" loading="lazy">
-              </div>
-            </a>
-            <div class="article-card-body">
-              <div class="card-meta">
-                <span class="category-pill-sm">Frontend &amp; Code</span>
-                <span class="meta-separator" aria-hidden="true">&bull;</span>
-                <span class="reading-time">10 min read</span>
-              </div>
-              <h3 class="card-title">
-                <a href="blog/apa-itu-database-sejarah-dan-kebocoran-data.html">Belajar dari Bocornya Jutaan Data Aplikasi Kopi serta Apa Itu Database dan Sejarah Awal Dibuatnya</a>
-              </h3>
-              <p class="card-excerpt">
-                Pahami apa itu database dan cara kerjanya dengan bahasa sederhana. Simak sejarah Edgar F. Codd 1970, pelajaran bocornya 5,7 juta data kopi, dan tips aman.
-              </p>
-              <div class="card-footer">
-                <time datetime="2026-11-03" class="card-date">3 November 2026</time>
-                <div class="tags-cluster">
-                  <span class="tag-chip">#Database</span>
-                  <span class="tag-chip">#SQL</span>
-                  <span class="tag-chip">#DataPrivacy</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 0. Post 19: 2 November 2026 (Product & Support / Sejarah Password & Keamanan Akun) -->
-          <article class="article-bento-card has-cover" data-category="product-support" data-tags="sejarah password adalah siapa penemu password fernando corbato mit 1961 brute force adalah default password 2fa passkey hashing">
-            <a href="blog/sejarah-password-dan-kesalahan-keamanan-akun.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
-              <div class="article-cover-frame">
-                <img src="assets/blog/Neon%20Hacked%20Highway%20Panic.webp" alt="Ilustrasi pengelola sistem dan kucingnya panik memegang kepala di depan laptop dengan peringatan gembok terbuka, sementara papan iklan digital jalan raya di belakangnya menampilkan simbol tengkorak HACKED" class="article-cover-img" width="800" height="450" loading="lazy">
-              </div>
-            </a>
-            <div class="article-card-body">
-              <div class="card-meta">
-                <span class="category-pill-sm">Product &amp; Support</span>
-                <span class="meta-separator" aria-hidden="true">&bull;</span>
-                <span class="reading-time">9 min read</span>
-              </div>
-              <h3 class="card-title">
-                <a href="blog/sejarah-password-dan-kesalahan-keamanan-akun.html">Pelajaran dari Diretasnya Papan Iklan Jalan Raya serta Sejarah Password dari Tahun 1961 hingga Era Passkey</a>
-              </h3>
-              <p class="card-excerpt">
-                Pelajari sejarah awal password dibuat di MIT tahun 1961, evolusi cara kerjanya dari hashing hingga 2FA dan Passkey, serta 5 kesalahan yang bikin akun jebol.
-              </p>
-              <div class="card-footer">
-                <time datetime="2026-11-02" class="card-date">2 November 2026</time>
-                <div class="tags-cluster">
-                  <span class="tag-chip">#Password</span>
-                  <span class="tag-chip">#2FA</span>
-                  <span class="tag-chip">#Passkey</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 0. Post 18: 1 November 2026 (Design Systems / Choice Paralysis & Playing Like a Designer) -->
-          <article class="article-bento-card has-cover" data-category="design-systems" data-tags="choice paralysis adalah hicks law adalah psikologi desain website cara menganalisis desain website paradox of choice ui ux pemula">
-            <a href="blog/choice-paralysis-dan-cara-melihat-desain-website.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
-              <div class="article-cover-frame">
-                <img src="assets/blog/Purple-Eyed%20Cat%20Peeking%20Up.webp" alt="Ilustrasi perancang produk mengamati antarmuka melalui kaca pembesar ditemani kucing bermata ungu yang mengintip dari balik meja, menyederhanakan layar yang penuh banyak tombol di kiri menjadi satu tampilan jernih bertanda centang di kanan" class="article-cover-img" width="800" height="450" loading="lazy">
-              </div>
-            </a>
-            <div class="article-card-body">
-              <div class="card-meta">
-                <span class="category-pill-sm">Design Systems</span>
-                <span class="meta-separator" aria-hidden="true">&bull;</span>
-                <span class="reading-time">10 min read</span>
-              </div>
-              <h3 class="card-title">
-                <a href="blog/choice-paralysis-dan-cara-melihat-desain-website.html">Kenapa Terlalu Banyak Pilihan di Website Bikin Pengunjung Kabur dan Cara Melatih Mata Melihat Desain</a>
-              </h3>
-              <p class="card-excerpt">
-                Pahami apa itu choice paralysis dan Hukum Hick dalam desain website. Pelajari cara merapikan menu, mencegah pengunjung bingung, dan melatih mata menganalisis UX.
-              </p>
-              <div class="card-footer">
-                <time datetime="2026-11-01" class="card-date">1 November 2026</time>
-                <div class="tags-cluster">
-                  <span class="tag-chip">#ChoiceParalysis</span>
-                  <span class="tag-chip">#HicksLaw</span>
-                  <span class="tag-chip">#WebDesign</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 0. Post 17: 31 Oktober 2026 (Design Systems / Apa Itu UI dan UX) -->
-          <article class="article-bento-card has-cover" data-category="design-systems" data-tags="apa itu ui dan ux perbedaan ui dan ux ui adalah ux adalah affordance adalah sejarah ui ux don norman developer">
-            <a href="blog/apa-itu-ui-dan-ux-serta-perbedaannya.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
-              <div class="article-cover-frame">
-                <img src="assets/blog/Apa%20Itu%20UI%20dan%20UX_%20Workspace%20Kreatif.webp" alt="Ilustrasi perancang kreatif di meja kerja bersama kucing tidur, buku sketsa wireframe, dan laptop sedang membandingkan kartu elemen visual UI di sisi kiri dengan kartu alur kenyamanan pengguna UX di sisi kanan" class="article-cover-img" width="800" height="450" loading="lazy">
-              </div>
-            </a>
-            <div class="article-card-body">
-              <div class="card-meta">
-                <span class="category-pill-sm">Design Systems</span>
-                <span class="meta-separator" aria-hidden="true">&bull;</span>
-                <span class="reading-time">11 min read</span>
-              </div>
-              <h3 class="card-title">
-                <a href="blog/apa-itu-ui-dan-ux-serta-perbedaannya.html">Apa Itu UI dan UX serta Bedanya Tampilan Cantik dengan Pengalaman yang Nyaman</a>
-              </h3>
-              <p class="card-excerpt">
-                Pahami apa itu UI dan UX dengan bahasa sederhana. Simak bedanya, konsep affordance, sejarah siapa yang mengerjakannya dulu, hingga 3 sudut pandang developer.
-              </p>
-              <div class="card-footer">
-                <time datetime="2026-10-31" class="card-date">31 Oktober 2026</time>
-                <div class="tags-cluster">
-                  <span class="tag-chip">#UIUX</span>
-                  <span class="tag-chip">#Affordance</span>
-                  <span class="tag-chip">#Pemula</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 0. Post 16: 30 Oktober 2026 (Product & Support / Website vs Landing Page) -->
-          <article class="article-bento-card has-cover" data-category="product-support" data-tags="website adalah landing page adalah apa itu website apa itu landing page perbedaan website dan landing page sejarah web cern microsoft">
-            <a href="blog/perbedaan-website-dan-landing-page.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
-              <div class="article-cover-frame">
-                <img src="assets/blog/Website%20vs%20Landing%20Page%20Dilemma.webp" alt="Ilustrasi pemula di depan laptop ditemani kucing sedang menimbang perbandingan kelebihan dan kekurangan antara Website multi-halaman di sisi kiri dan Landing Page fokus satu tujuan di sisi kanan" class="article-cover-img" width="800" height="450" loading="lazy">
-              </div>
-            </a>
-            <div class="article-card-body">
-              <div class="card-meta">
-                <span class="category-pill-sm">Product &amp; Support</span>
-                <span class="meta-separator" aria-hidden="true">&bull;</span>
-                <span class="reading-time">9 min read</span>
-              </div>
-              <h3 class="card-title">
-                <a href="blog/perbedaan-website-dan-landing-page.html">Bingung Beda Website dan Landing Page? Arti, Sejarah Awal Dibuat, dan Panduan Memilihnya untuk Pemula</a>
-              </h3>
-              <p class="card-excerpt">
-                Pahami apa itu website dan apa itu landing page dengan bahasa sederhana. Simak sejarah awal dibuatnya di CERN dan Microsoft, bedanya, serta panduan memilihnya.
-              </p>
-              <div class="card-footer">
-                <time datetime="2026-10-30" class="card-date">30 Oktober 2026</time>
-                <div class="tags-cluster">
-                  <span class="tag-chip">#Website</span>
-                  <span class="tag-chip">#LandingPage</span>
-                  <span class="tag-chip">#Pemula</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 0. Post 15: 29 Oktober 2026 (Reflections / Kedaulatan Internet & Sejarah Jaringan) -->
-          <article class="article-bento-card has-cover" data-category="reflections" data-tags="kedaulatan digital sejarah internet kabel bawah laut data center token ai bennix gojek tokopedia paguyuban network iix">
-            <a href="blog/kedaulatan-internet-indonesia-dan-sejarah-jaringan.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
-              <div class="article-cover-frame">
-                <img src="assets/blog/db1b7896-80f7-436d-b4a6-5ca948685a1a.webp" alt="Ilustrasi pengguna panik memegang kepala di depan laptop yang menampilkan peringatan No Internet ditemani kucing dan perangkat router, dengan latar siluet gedung Marina Bay Sands Singapura di kejauhan" class="article-cover-img" width="800" height="450" loading="lazy">
-              </div>
-            </a>
-            <div class="article-card-body">
-              <div class="card-meta">
-                <span class="category-pill-sm">Reflections</span>
-                <span class="meta-separator" aria-hidden="true">&bull;</span>
-                <span class="reading-time">12 min read</span>
-              </div>
-              <h3 class="card-title">
-                <a href="blog/kedaulatan-internet-indonesia-dan-sejarah-jaringan.html">Benarkah 90 Persen Internet Indonesia Bisa Diputus Singapura dan Mengapa Kedaulatan Jaringan Kita Belum Tuntas</a>
-              </h3>
-              <p class="card-excerpt">
-                Bedah polemik ancaman putus 90% kabel internet RI dari Singapura, paradoks ekspor energi murah vs data center, sejarah Paguyuban Network hingga Gojek Tokopedia, dan solusi Token AI.
-              </p>
-              <div class="card-footer">
-                <time datetime="2026-10-29" class="card-date">29 Oktober 2026</time>
-                <div class="tags-cluster">
-                  <span class="tag-chip">#KedaulatanDigital</span>
-                  <span class="tag-chip">#SejarahInternet</span>
-                  <span class="tag-chip">#TokenAI</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 1. Post: 27 Oktober 2026 (Product & Support / AI Service) -->
-          <article class="article-bento-card has-cover" data-category="product-support" data-tags="customer support chatbot ai product strategy ux ethics human handoff eskalasi agen manusia">
-            <a href="blog/kenapa-chatbot-ai-sering-membuat-pelanggan-frustrasi.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
-              <div class="article-cover-frame">
-                <img src="assets/blog/Frustrated%20Anime%20Girl%20and%20Chatbot.webp" alt="Ilustrasi perempuan merasa frustrasi di depan laptop dan smartphone menghadapi jawaban chatbot AI yang kaku dan berulang" class="article-cover-img" width="800" height="450" loading="lazy">
-              </div>
-            </a>
-            <div class="article-card-body">
-              <div class="card-meta">
-                <span class="category-pill-sm">Product &amp; Support</span>
-                <span class="meta-separator" aria-hidden="true">&bull;</span>
-                <span class="reading-time">8 min read</span>
-              </div>
-              <h3 class="card-title">
-                <a href="blog/kenapa-chatbot-ai-sering-membuat-pelanggan-frustrasi.html">Kenapa Chatbot AI Sering Membuat Pelanggan Frustrasi dan Kapan Harus Menyerahkannya ke Manusia</a>
-              </h3>
-              <p class="card-excerpt">
-                Chatbot AI sering gagal bukan karena bodoh, melainkan karena dipaksa menangani situasi genting tanpa empati. Pelajari kerangka triase automasi dan eskalasi ke manusia.
-              </p>
-              <div class="card-footer">
-                <time datetime="2026-10-27" class="card-date">27 Oktober 2026</time>
-                <div class="tags-cluster">
-                  <span class="tag-chip">#CustomerSupport</span>
-                  <span class="tag-chip">#ChatbotAI</span>
-                  <span class="tag-chip">#UXEthics</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 2. Post: 26 Oktober 2026 (Product & Strategy / E-Commerce) -->
-          <article class="article-bento-card has-cover" data-category="product-support" data-tags="ecommerce david alfa sunarna website bisnis online toko online mandiri aset digital">
-            <a href="blog/jualan-laris-di-medsos-tapi-belum-punya-website.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
-              <div class="article-cover-frame">
-                <img src="assets/blog/Pemilik%20Toko%20Online%20Sedang%20Berpikir.webp" alt="Ilustrasi pemilik toko online sedang berpikir di depan laptop merenungkan strategi memiliki website toko sendiri" class="article-cover-img" width="800" height="450" loading="lazy">
-              </div>
-            </a>
-            <div class="article-card-body">
-              <div class="card-meta">
-                <span class="category-pill-sm">Product &amp; Strategy</span>
-                <span class="meta-separator" aria-hidden="true">&bull;</span>
-                <span class="reading-time">7 min read</span>
-              </div>
-              <h3 class="card-title">
-                <a href="blog/jualan-laris-di-medsos-tapi-belum-punya-website.html">Jualan Laris di Medsos tapi Belum Punya Website: Kapan Waktu yang Tepat Punya Toko Sendiri?</a>
-              </h3>
-              <p class="card-excerpt">
-                Jualan di medsos itu seperti numpang jualan di halaman orang lain. Pelajari kenapa kamu butuh website toko sendiri dan kapan waktu yang tepat untuk memulainya.
-              </p>
-              <div class="card-footer">
-                <time datetime="2026-10-26" class="card-date">26 Oktober 2026</time>
-                <div class="tags-cluster">
-                  <span class="tag-chip">#ECommerce</span>
-                  <span class="tag-chip">#DavidAlfaSunarna</span>
-                  <span class="tag-chip">#AsetDigital</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 2. Post: 26 Oktober 2026 (Product & Support) -->
-          <article class="article-bento-card has-cover" data-category="product-support" data-tags="intentional friction ux frictionless design positive friction error prevention">
-            <a href="blog/bahaya-desain-serba-instan-dan-kebutuhan-jeda-berpikir.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
-              <div class="article-cover-frame">
-                <img src="assets/blog/Neon%20Creative%20Desk%20at%20Sunset.webp" alt="Ilustrasi meja kerja kreatif bernuansa neon saat matahari terbenam yang merefleksikan jeda berpikir di tengah antarmuka serba instan" class="article-cover-img" width="800" height="450" loading="lazy">
-              </div>
-            </a>
-            <div class="article-card-body">
-              <div class="card-meta">
-                <span class="category-pill-sm">Product &amp; Support</span>
-                <span class="meta-separator" aria-hidden="true">&bull;</span>
-                <span class="reading-time">7 min read</span>
-              </div>
-              <h3 class="card-title">
-                <a href="blog/bahaya-desain-serba-instan-dan-kebutuhan-jeda-berpikir.html">Bahaya Desain Serba Instan Ketika Pengguna Justru Butuh Jeda untuk Berpikir</a>
-              </h3>
-              <p class="card-excerpt">
-                Menghilangkan semua friksi pada antarmuka digital adalah resep bencana bagi tindakan berisiko tinggi. Pelajari cara merancang intentional friction yang melindungi pengguna.
-              </p>
-              <div class="card-footer">
-                <time datetime="2026-10-26" class="card-date">26 Oktober 2026</time>
-                <div class="tags-cluster">
-                  <span class="tag-chip">#IntentionalFriction</span>
-                  <span class="tag-chip">#UXDesign</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 2. Post 9: 24 Oktober 2026 (Frontend & Code / Web Security) -->
-          <article class="article-bento-card has-cover" data-category="frontend-code" data-tags="nodejs web security cve-2026-111497 brotli">
-            <a href="blog/node2shell-dan-sejarah-nodejs.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
-              <div class="article-cover-frame">
-                <img src="assets/blog/Node2Shell_%20Debugging%20Through%20the%20Night.webp" alt="Ilustrasi developer perempuan begadang mencari penyebab bug Node2Shell di depan laptop berstiker Node.js, ditemani kucing tidur dan diagram visual overflow buffer Brotli libbrotlidec" class="article-cover-img" width="800" height="450" loading="lazy">
-              </div>
-            </a>
-            <div class="article-card-body">
-              <div class="card-meta">
-                <span class="category-pill-sm">Frontend &amp; Code</span>
-                <span class="meta-separator" aria-hidden="true">&bull;</span>
-                <span class="reading-time">15 min read</span>
-              </div>
-              <h3 class="card-title">
-                <a href="blog/node2shell-dan-sejarah-nodejs.html">Node2Shell Membongkar Celah di Perbatasan JavaScript dan C, dan Sejarah Node.js Menjelaskan Asalnya</a>
-              </h3>
-              <p class="card-excerpt">
-                Bedah CVE-2026-111497 (Node2Shell): bug decoder Brotli di Node.js, cara ditemukan, kenapa bisa ada, dan sejarah 17 tahun Node yang melatarinya.
-              </p>
-              <div class="card-footer">
-                <time datetime="2026-10-24" class="card-date">24 Oktober 2026</time>
-                <div class="tags-cluster">
-                  <span class="tag-chip">#Nodejs</span>
-                  <span class="tag-chip">#WebSecurity</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 3. Post: 24 Oktober 2026 (Reflections) -->
-          <article class="article-bento-card has-cover" data-category="reflections" data-tags="financial literacy mindset slow living status games">
-            <a href="blog/membedakan-kaya-tampilan-dan-sejahtera-finansial.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
-              <div class="article-cover-frame">
-                <img src="assets/blog/Cyber-Luxury%20Jet%20Glamour.webp" alt="Ilustrasi kemewahan artifisial vs ketenangan finansial sejati" class="article-cover-img" width="800" height="450" loading="lazy">
-              </div>
-            </a>
-            <div class="article-card-body">
-              <div class="card-meta">
-                <span class="category-pill-sm">Reflections</span>
-                <span class="meta-separator" aria-hidden="true">&bull;</span>
-                <span class="reading-time">8 min read</span>
-              </div>
-              <h3 class="card-title">
-                <a href="blog/membedakan-kaya-tampilan-dan-sejahtera-finansial.html">Membedakan Kaya Tampilan dan Sejahtera Finansial Tanpa Terjebak Perlombaan Status</a>
-              </h3>
-              <p class="card-excerpt">
-                Kekayaan sejati tidak diukur dari kemewahan yang tampak di media sosial, melainkan dari ketenangan batin, kesehatan arus kas 10-20-30-40, dan angka cukup.
-              </p>
-              <div class="card-footer">
-                <time datetime="2026-10-24" class="card-date">24 Oktober 2026</time>
-                <div class="tags-cluster">
-                  <span class="tag-chip">#FinancialMindset</span>
-                  <span class="tag-chip">#Reflections</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 2. Post 8: 23 Oktober 2026 (Frontend & Code / Web Security) -->
-          <article class="article-bento-card has-cover" data-category="frontend-code" data-tags="php web security cve-2026-109618 backend architecture">
-            <a href="blog/php2shell-dan-sejarah-php.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
-              <div class="article-cover-frame">
-                <img src="assets/blog/Ruina%E2%80%99s%20Neon%20Cybersecurity%20Crisis.webp" alt="Ilustrasi Ruina panik di depan laptop saat krisis keamanan siber PHP2Shell melanda server web" class="article-cover-img" width="800" height="450" loading="lazy">
-              </div>
-            </a>
-            <div class="article-card-body">
-              <div class="card-meta">
-                <span class="category-pill-sm">Frontend &amp; Code</span>
-                <span class="meta-separator" aria-hidden="true">&bull;</span>
-                <span class="reading-time">12 min read</span>
-              </div>
-              <h3 class="card-title">
-                <a href="blog/php2shell-dan-sejarah-php.html">PHP2Shell Mengguncang Sebagian Besar Web, dan Sejarah PHP Menjelaskan Kenapa Itu Bisa Terjadi</a>
-              </h3>
-              <p class="card-excerpt">
-                Bedah tuntas krisis PHP2Shell, bagaimana celah RCE mesin PHP ditemukan, konsekuensinya bagi jutaan server, serta akar sejarah 30 tahun PHP.
-              </p>
-              <div class="card-footer">
-                <time datetime="2026-10-23" class="card-date">23 Oktober 2026</time>
-                <div class="tags-cluster">
-                  <span class="tag-chip">#PHP</span>
-                  <span class="tag-chip">#WebSecurity</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 2. Post 7: 22 Oktober 2026 (Product & Support) -->
-          <article class="article-bento-card has-cover" data-category="product-support" data-tags="ux writing error state product support customer experience">
-            <a href="blog/kenapa-pesan-error-cantik-membuat-pengguna-panik.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
-              <div class="article-cover-frame">
-                <img src="assets/blog/Overwhelmed%20by%20Error%20Messages.webp" alt="Ilustrasi pengguna merasa kewalahan dan panik dikelilingi berbagai jendela pesan error pop-up di depan laptop" class="article-cover-img" width="800" height="450" loading="lazy">
-              </div>
-            </a>
-            <div class="article-card-body">
-              <div class="card-meta">
-                <span class="category-pill-sm">Product &amp; Support</span>
-                <span class="meta-separator" aria-hidden="true">&bull;</span>
-                <span class="reading-time">5 min read</span>
-              </div>
-              <h3 class="card-title">
-                <a href="blog/kenapa-pesan-error-cantik-membuat-pengguna-panik.html">Kenapa Pesan Error yang Terlihat Cantik Justru Membuat Pengguna Makin Panik</a>
-              </h3>
-              <p class="card-excerpt">
-                Pesan error visual yang estetik sering gagal menenangkan pengguna. Pelajari cara merancang pesan kesalahan yang jelas, solutif, dan mengurangi tiket komplain.
-              </p>
-              <div class="card-footer">
-                <time datetime="2026-10-22" class="card-date">22 Oktober 2026</time>
-                <div class="tags-cluster">
-                  <span class="tag-chip">#UXWriting</span>
-                  <span class="tag-chip">#ErrorState</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 2. Post 6: 20 Oktober 2026 (Design Systems) -->
-          <article class="article-bento-card has-cover" data-category="design-systems" data-tags="web design 2026 tactile ui bento grid design systems">
-            <a href="blog/memilih-karakter-visual-website-2026.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
-              <div class="article-cover-frame">
-                <img src="assets/blog/cover-style-website-2026.webp" alt="Seni kertas 3D bento diorama melambangkan empat karakter desain website 2026 dengan ukiran angka 2026 dan palet monokrom lavender-arang" class="article-cover-img" width="800" height="450" loading="lazy">
-              </div>
-            </a>
-            <div class="article-card-body">
-              <div class="card-meta">
-                <span class="category-pill-sm">Design Systems</span>
-                <span class="meta-separator" aria-hidden="true">&bull;</span>
-                <span class="reading-time">6 min read</span>
-              </div>
-              <h3 class="card-title">
-                <a href="blog/memilih-karakter-visual-website-2026.html">Memilih Karakter Visual Website di Tahun 2026 Tanpa Terjebak Tren yang Cepat Usang</a>
-              </h3>
-              <p class="card-excerpt">
-                Pelajari arah gaya visual website terbaik di tahun 2026. Temukan cara memilih desain berkarakter kuat tanpa mengorbankan kecepatan akses dan kenyamanan baca.
-              </p>
-              <div class="card-footer">
-                <time datetime="2026-10-20" class="card-date">20 Oktober 2026</time>
-                <div class="tags-cluster">
-                  <span class="tag-chip">#WebDesign2026</span>
-                  <span class="tag-chip">#TactileUI</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 2. Post 1: 15 Oktober 2026 (Design Systems) -->
-          <article class="article-bento-card has-cover" data-category="design-systems" data-tags="css tokens neumorphism design tokens">
-            <a href="blog/membangun-sistem-desain-taktil.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
-              <div class="article-cover-frame">
-                <img src="assets/blog/cover-design-systems.svg" alt="Diagram token sistem desain taktil dan swatch warna monokrom" class="article-cover-img" width="800" height="450" loading="lazy">
-              </div>
-            </a>
-            <div class="article-card-body">
-              <div class="card-meta">
-                <span class="category-pill-sm">Design Systems</span>
-                <span class="meta-separator" aria-hidden="true">&bull;</span>
-                <span class="reading-time">6 min read</span>
-              </div>
-              <h3 class="card-title">
-                <a href="blog/membangun-sistem-desain-taktil.html">Membangun Sistem Desain Taktil: Dari Figma ke CSS Tokens</a>
-              </h3>
-              <p class="card-excerpt">
-                Bagaimana merancang efek tactile surface dan neumorphism yang tetap kontras, fungsional, dan memiliki hierarki tajam tanpa terjebak estetika artifisial berlebihan.
-              </p>
-              <div class="card-footer">
-                <time datetime="2026-10-15" class="card-date">15 Oktober 2026</time>
-                <div class="tags-cluster">
-                  <span class="tag-chip">#CSSTokens</span>
-                  <span class="tag-chip">#Neumorphism</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 3. Post 2: 28 September 2026 (Product & Support) -->
-          <article class="article-bento-card has-cover" data-category="product-support" data-tags="ux support product mindset">
-            <a href="blog/melihat-antarmuka-dari-kacamata-dukungan-pelanggan.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
-              <div class="article-cover-frame">
-                <img src="assets/blog/cover-customer-support.svg" alt="Ilustrasi bento tiket troubleshooting dan penyelesaian antarmuka UX" class="article-cover-img" width="800" height="450" loading="lazy">
-              </div>
-            </a>
-            <div class="article-card-body">
-              <div class="card-meta">
-                <span class="category-pill-sm">Product &amp; Support</span>
-                <span class="meta-separator" aria-hidden="true">&bull;</span>
-                <span class="reading-time">4 min read</span>
-              </div>
-              <h3 class="card-title">
-                <a href="blog/melihat-antarmuka-dari-kacamata-dukungan-pelanggan.html">Melihat Antarmuka dari Kacamata Dukungan Pelanggan</a>
-              </h3>
-              <p class="card-excerpt">
-                Pelajaran berharga dari ribuan sesi troubleshooting teknis: antarmuka terbaik bukan yang paling banyak fitur animasi, melainkan yang tidak membingungkan pengguna saat mereka tertekan.
-              </p>
-              <div class="card-footer">
-                <time datetime="2026-09-28" class="card-date">28 September 2026</time>
-                <div class="tags-cluster">
-                  <span class="tag-chip">#UX</span>
-                  <span class="tag-chip">#Support</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 4. Post 3: 14 Agustus 2026 (Reflections) -->
-          <article class="article-bento-card has-cover" data-category="reflections" data-tags="indieweb web performance minimalism">
-            <a href="blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
-              <div class="article-cover-frame">
-                <img src="assets/blog/cover-simple-web.webp" alt="Seni kertas 3D melambangkan jendela browser minimalis dan pesawat kertas origami meluncur cepat meninggalkan tumpukan roda gigi mesin berat, dalam palet monokrom lavender dan arang" class="article-cover-img" width="800" height="450" loading="lazy">
-              </div>
-            </a>
-            <div class="article-card-body">
-              <div class="card-meta">
-                <span class="category-pill-sm">Reflections</span>
-                <span class="meta-separator" aria-hidden="true">&bull;</span>
-                <span class="reading-time">6 min read</span>
-              </div>
-              <h3 class="card-title">
-                <a href="blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana.html">Mengapa Web Pribadi Perlu Kembali ke Prinsip Sederhana &amp; Cepat</a>
-              </h3>
-              <p class="card-excerpt">
-                Refleksi atas tren web modern yang semakin sarat dependensi berat. Mengapa HTML, CSS terukur, dan RSS feed kembali menjadi ruang digital paling menyenangkan untuk dirawat.
-              </p>
-              <div class="card-footer">
-                <time datetime="2026-08-14" class="card-date">14 Agustus 2026</time>
-                <div class="tags-cluster">
-                  <span class="tag-chip">#IndieWeb</span>
-                  <span class="tag-chip">#Minimalism</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 5. Post 4: 22 Juli 2026 (Frontend & Code) -->
-          <article class="article-bento-card has-cover" data-category="frontend-code" data-tags="css motion transitions micro-interactions">
-            <a href="blog/mikro-interaksi-taktil-pada-komponen-web.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
-              <div class="article-cover-frame">
-                <img src="assets/blog/cover-micro-interactions.svg" alt="Diagram tiga status tombol: default, hover, dan pressed dengan kurva easing" class="article-cover-img" width="800" height="450" loading="lazy">
-              </div>
-            </a>
-            <div class="article-card-body">
-              <div class="card-meta">
-                <span class="category-pill-sm">Frontend &amp; Code</span>
-                <span class="meta-separator" aria-hidden="true">&bull;</span>
-                <span class="reading-time">5 min read</span>
-              </div>
-              <h3 class="card-title">
-                <a href="blog/mikro-interaksi-taktil-pada-komponen-web.html">Mikro-Interaksi Taktil: Memberi Rasa Tekan pada Tombol Web</a>
-              </h3>
-              <p class="card-excerpt">
-                Eksperimen detail transisi cubic-bezier dan perubahan bayangan ganda untuk menghasilkan sensasi klik fisik yang lembut namun tegas pada elemen antarmuka.
-              </p>
-              <div class="card-footer">
-                <time datetime="2026-07-22" class="card-date">22 Juli 2026</time>
-                <div class="tags-cluster">
-                  <span class="tag-chip">#CSSMotion</span>
-                  <span class="tag-chip">#MicroInteractions</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- 6. Post 5: 10 Juni 2026 (Design Systems) -->
-          <article class="article-bento-card has-cover" data-category="design-systems" data-tags="monochrome typography hierarchy">
-            <a href="blog/eksplorasi-monokrom-kontras-tanpa-warna-dekoratif.html" class="article-cover-link" tabindex="-1" aria-hidden="true">
-              <div class="article-cover-frame">
-                <img src="assets/blog/cover-monochrome.svg" alt="Studi dualitas kanvas terang dan gelap dengan rasio kontras 14 banding 1" class="article-cover-img" width="800" height="450" loading="lazy">
-              </div>
-            </a>
-            <div class="article-card-body">
-              <div class="card-meta">
-                <span class="category-pill-sm">Design Systems</span>
-                <span class="meta-separator" aria-hidden="true">&bull;</span>
-                <span class="reading-time">4 min read</span>
-              </div>
-              <h3 class="card-title">
-                <a href="blog/eksplorasi-monokrom-kontras-tanpa-warna-dekoratif.html">Eksplorasi Monokrom: Menggali Kontras Tanpa Warna Dekoratif</a>
-              </h3>
-              <p class="card-excerpt">
-                Membatasi palet warna ke dua spektrum utama memaksa kita mengasah senjata paling fundamental dalam desain grafis: bobot tipografi, ritme spasi, dan kejelasan struktur.
-              </p>
-              <div class="card-footer">
-                <time datetime="2026-06-10" class="card-date">10 Juni 2026</time>
-                <div class="tags-cluster">
-                  <span class="tag-chip">#Monochrome</span>
-                  <span class="tag-chip">#Hierarchy</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
+          <!-- BLOG_GRID_END -->
         </div>
 
         <!-- Empty State (When search returns 0 items) -->
@@ -981,13 +479,28 @@
             <button type="button" class="btn-reset-filter" id="resetFilterBtn">Reset All Filters</button>
           </div>
         </div>
+
+        <!-- Tactile Pagination Bar (Synced by build.js) -->
+        <!-- BLOG_PAGINATION_START -->
+        <nav class="blog-pagination" id="blogPagination" aria-label="Pagination" data-current-page="1" data-total-pages="4" data-per-page="8" data-base-path="">
+          <ul class="pagination-list">
+            <li><span class="pagination-btn pagination-btn--prev is-disabled" aria-disabled="true">&larr; Previous</span></li>
+            <li><span class="pagination-btn pagination-btn--num is-active" aria-current="page">1</span></li>
+            <li><a href="/blog/page/2/#catalog-heading" class="pagination-btn pagination-btn--num" aria-label="Go to page 2">2</a></li>
+            <li><a href="/blog/page/3/#catalog-heading" class="pagination-btn pagination-btn--num" aria-label="Go to page 3">3</a></li>
+            <li><a href="/blog/page/4/#catalog-heading" class="pagination-btn pagination-btn--num" aria-label="Go to page 4">4</a></li>
+            <li><a href="/blog/page/2/#catalog-heading" class="pagination-btn pagination-btn--next" rel="next" aria-label="Go to next page, page 2">Next &rarr;</a></li>
+          </ul>
+          <p class="pagination-summary">Page 1 of 4 &bull; 32 total essays</p>
+        </nav>
+        <!-- BLOG_PAGINATION_END -->
       </section>
 
       <!-- =================================================================
            4. BOTTOM BENTO STRIP: RSS FEED & CONNECT
            ================================================================= -->
       <section class="blog-bottom-bento" aria-label="RSS Feed and Community Connect">
-        
+
         <!-- RSS Card -->
         <div class="connect-bento-card rss-bento-card">
           <div class="connect-icon-wrapper" aria-hidden="true">
@@ -1021,7 +534,7 @@
             <span class="connect-badge">Have Thoughts?</span>
             <h3 class="connect-title">Start a Discussion</h3>
             <p class="connect-desc">Have a question, feedback on an essay, or want to exchange ideas on tactile web design? Let's talk.</p>
-            <a href="contact.html" class="btn-reach-out">
+            <a href="/contact" class="btn-reach-out">
               <span>Send a Message</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <line x1="5" y1="12" x2="19" y2="12"></line>

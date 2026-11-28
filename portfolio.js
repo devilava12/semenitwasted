@@ -20,7 +20,7 @@ const portfolioData = [
     urlText: "semenitwasted.com/portfolio/roche",
     previewType: "roche-case-study",
     featured: false,
-    href: "portfolio/roche/index.html",
+    href: "/portfolio/roche/",
     ctaText: "Baca studi kasus"
   },
   {
@@ -35,7 +35,7 @@ const portfolioData = [
     urlText: "semenitwasted.com/portfolio/eksperimen-1",
     previewType: "selenia-experiment-preview",
     featured: false,
-    href: "portfolio/eksperimen 1/index.html",
+    href: "/portfolio/eksperimen%201/",
     ctaText: "Buka eksperimen"
   },
   {
@@ -50,7 +50,7 @@ const portfolioData = [
     urlText: "semenitwasted.com/portfolio/ai-icons",
     previewType: "ai-icon-grid",
     featured: false,
-    href: "portfolio/artificial intelegent icon/index.html",
+    href: "/portfolio/artificial%20intelegent%20icon/",
     ctaText: "Jelajahi icon set"
   },
   {

@@ -328,15 +328,20 @@ function auditBlogFile(filePath, root, blogPosts) {
     const lineNo = lineNumberAt(html, lm.index);
     if (/^(https?:|mailto:|tel:|javascript:)/i.test(href)) continue;
 
+    const pathOnly = decodeURIComponent(href.split('?')[0]);
     let targetPath;
-    if (href.startsWith('/')) {
-      const cleanRel = href.replace(/^\//, '') || 'index.html';
-      targetPath = path.join(root, cleanRel.endsWith('.html') ? cleanRel : `${cleanRel}.html`);
+    if (pathOnly.startsWith('/')) {
+      const cleanRel = pathOnly.replace(/^\//, '') || 'index.html';
+      if (cleanRel.endsWith('/')) {
+        targetPath = path.join(root, cleanRel, 'index.html');
+      } else {
+        targetPath = path.join(root, cleanRel.endsWith('.html') ? cleanRel : `${cleanRel}.html`);
+      }
     } else {
-      targetPath = path.resolve(path.dirname(filePath), href);
+      targetPath = path.resolve(path.dirname(filePath), pathOnly);
     }
 
-    if (!fs.existsSync(targetPath) && !fs.existsSync(path.join(root, href.replace(/^\//, '')))) {
+    if (!fs.existsSync(targetPath) && !fs.existsSync(path.join(root, pathOnly.replace(/^\//, '')))) {
       findings.push({
         severity: 'FAIL',
         rule: 'broken-internal-link',

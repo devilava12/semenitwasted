@@ -1,19 +1,31 @@
 /**
- * semenitwasted — Blog Interactive Controller (blog.js)
- * Standalone IIFE:
- * - Dynamic Category Auto-Generation: automatically discovers new categories from
- *   blog-data.js and DOM cards, creating filter pills and calculating live counts.
- * - Dynamic Article Sync: seamlessly renders new articles added to blog-data.js.
- * - Client-side live search, category filtering, empty-state management, and RSS copy.
- * - 100% compatible with file:// protocol and Cloudflare Pages.
+ * semenitwasted - Blog Interactive Controller (blog.js)
+ * Standalone IIFE supporting dual-mode static + filtered client-side pagination:
+ * - Unfiltered default state: preserves build.js static 8-card pages & <a> pagination links
+ *   (rewriting relative .html hrefs cleanly on web/Cloudflare Pages while staying 100% file:// compatible).
+ * - Filtered / Search state (including ?category= deep links): hides #featuredSection,
+ *   filters across all published posts in window.BLOG_POSTS (newest -> oldest), and paginates
+ *   at 8 per page with accessible <button> controls in #blogPagination.
+ * - Resetting back to All Topics + empty search restores the static page snapshot & #featuredSection.
  */
 
 (function () {
   'use strict';
 
   // --------------------------------------------------------------------------
-  // Helpers
+  // Environment & Escaping Helpers
   // --------------------------------------------------------------------------
+  function getEnvRouting() {
+    const isWeb = typeof window !== 'undefined' &&
+      (window.location.protocol === 'http:' || window.location.protocol === 'https:');
+    const isLocalServer = isWeb && (
+      window.location.hostname === 'localhost' ||
+      window.location.hostname === '127.0.0.1' ||
+      window.location.hostname === '[::1]'
+    );
+    return { isWeb, isLocalServer };
+  }
+
   function escapeHTML(str) {
     if (str == null) return '';
     return String(str)
@@ -26,7 +38,9 @@
 
   function escapeAttr(str) {
     if (str == null) return '';
-    return String(str).replace(/"/g, '&quot;');
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/"/g, '&quot;');
   }
 
   function formatCategoryLabel(slug) {
@@ -36,128 +50,218 @@
       .filter(Boolean)
       .map(word => {
         if (word.toLowerCase() === 'and') return '&';
-        if (word.toLowerCase() === 'css' || word.toLowerCase() === 'ux' || word.toLowerCase() === 'ui') return word.toUpperCase();
+        if (word.toLowerCase() === 'css' || word.toLowerCase() === 'ux' || word.toLowerCase() === 'ui') {
+          return word.toUpperCase();
+        }
         return word.charAt(0).toUpperCase() + word.slice(1);
       })
       .join(' ');
-  }
-
-  function createArticleCardElement(post) {
-    const article = document.createElement('article');
-    article.className = 'article-bento-card' + (post.coverImage ? ' has-cover' : '');
-    article.setAttribute('data-category', post.category || '');
-
-    const tagsArr = Array.isArray(post.tags) ? post.tags : [];
-    const tagsAttr = tagsArr.map(t => String(t).replace(/^#/, '')).join(' ').toLowerCase();
-    article.setAttribute('data-tags', tagsAttr);
-
-    const tagsChips = tagsArr
-      .map(t => `<span class="tag-chip">#${escapeHTML(String(t).replace(/^#/, ''))}</span>`)
-      .join('');
-
-    const coverMarkup = post.coverImage ? `
-      <a href="${escapeAttr(post.contentUrl || '#')}" class="article-cover-link" tabindex="-1" aria-hidden="true">
-        <div class="article-cover-frame">
-          <img src="${escapeAttr(post.coverImage)}" alt="${escapeAttr(post.coverAlt || post.title || '')}" class="article-cover-img" width="800" height="450" loading="lazy">
-        </div>
-      </a>
-    ` : '';
-
-    const catLabel = post.categoryLabel || formatCategoryLabel(post.category);
-
-    article.innerHTML = `
-      ${coverMarkup}
-      <div class="article-card-body">
-        <div class="card-meta">
-          <span class="category-pill-sm">${escapeHTML(catLabel)}</span>
-          <span class="meta-separator" aria-hidden="true">&bull;</span>
-          <span class="reading-time">${escapeHTML(post.readingTime || '')}</span>
-        </div>
-        <h3 class="card-title">
-          <a href="${escapeAttr(post.contentUrl || '#')}">${escapeHTML(post.title || '')}</a>
-        </h3>
-        <p class="card-excerpt">
-          ${escapeHTML(post.excerpt || '')}
-        </p>
-        <div class="card-footer">
-          <time datetime="${escapeAttr(post.date || '')}" class="card-date">${escapeHTML(post.formattedDate || post.date || '')}</time>
-          <div class="tags-cluster">
-            ${tagsChips}
-          </div>
-        </div>
-      </div>
-    `.trim();
-
-    return article;
   }
 
   // --------------------------------------------------------------------------
   // Main Blog Controller
   // --------------------------------------------------------------------------
   function initBlog() {
-    // Core DOM Elements
+    const mainEl = document.getElementById('main-content');
     const searchInput = document.getElementById('blogSearchInput');
     const clearSearchBtn = document.getElementById('clearSearchBtn');
     const categoryFilterGroup = document.getElementById('categoryFilterGroup');
     const featuredSection = document.getElementById('featuredSection');
-    const featuredPostCard = document.getElementById('featuredPostCard');
     const catalogGrid = document.getElementById('blogGridContainer');
     const catalogStatus = document.getElementById('catalogStatus');
     const emptyState = document.getElementById('blogEmptyState');
     const emptyStateDesc = document.getElementById('emptyStateDesc');
     const resetFilterBtn = document.getElementById('resetFilterBtn');
+    const paginationNav = document.getElementById('blogPagination');
     const copyRssBtn = document.getElementById('copyRssBtn');
     const copyRssText = document.getElementById('copyRssText');
 
+    const { isWeb, isLocalServer } = getEnvRouting();
+    const basePath = (paginationNav && paginationNav.dataset.basePath !== undefined)
+      ? paginationNav.dataset.basePath
+      : ((mainEl && mainEl.dataset.basePath) || '');
+    const perPage = parseInt((paginationNav && paginationNav.dataset.perPage) || '8', 10) || 8;
+
+    // Published posts sorted strictly newest -> oldest
+    const allPublishedPosts = (window.BLOG_POSTS || [])
+      .filter(post => post && post.slug && post.slug !== 'coming-soon')
+      .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
+
     let currentCategory = 'all';
     let currentSearchQuery = '';
+    let currentFilteredPage = 1;
+    let isFilteredMode = false;
 
     // ------------------------------------------------------------------------
-    // 1. Sync Dynamic Posts from window.BLOG_POSTS into DOM (Newest to Oldest)
+    // URL Resolution (Compatible with file://, localhost, and Cloudflare Pages)
     // ------------------------------------------------------------------------
-    function syncDynamicPosts() {
-      if (!catalogGrid) return;
-      const posts = window.BLOG_POSTS || [];
-      if (posts.length === 0) return;
+    function resolveAssetUrl(relPath) {
+      if (!relPath) return '';
+      if (/^(https?:|\/|data:)/i.test(relPath)) return relPath;
+      if (isWeb) return '/' + relPath.replace(/^\/+/, '');
+      return `${basePath}${relPath}`;
+    }
 
-      // Collect all article URLs already in catalogGrid to avoid duplicate rendering
-      const existingHrefs = new Set();
-      const existingLinks = catalogGrid.querySelectorAll('a[href]');
-      existingLinks.forEach(a => {
-        const href = a.getAttribute('href');
-        if (href) existingHrefs.add(href.trim());
+    function resolveArticleUrl(post) {
+      const slug = post && post.slug ? encodeURI(post.slug) : '';
+      if (slug) {
+        return isWeb ? `/blog/${slug}` : `${basePath}blog/${slug}.html`;
+      }
+      const rawUrl = (post && post.contentUrl) || '';
+      if (!rawUrl) return '';
+      if (isWeb) return rawUrl.startsWith('/') ? rawUrl.replace(/\.html$/i, '') : '/' + rawUrl.replace(/^\/+/, '').replace(/\.html$/i, '');
+      const cleanRel = rawUrl.replace(/^\/+/, '');
+      return `${basePath}${cleanRel.endsWith('.html') ? cleanRel : `${cleanRel}.html`}`;
+    }
+
+    function rewriteStaticLinks() {
+      // On web (Cloudflare Pages & clean-URL servers), raw HTML already uses canonical clean URLs.
+      // Only rewrite on local file:// browsing so double-clicked HTML files navigate locally.
+      if (isWeb) return;
+
+      const scopes = [paginationNav, catalogGrid, featuredSection].filter(Boolean);
+      scopes.forEach(scope => {
+        scope.querySelectorAll('a[href^="/"]').forEach(link => {
+          const rawHref = link.getAttribute('href');
+          if (!rawHref || rawHref.startsWith('//')) return;
+          const hashIdx = rawHref.indexOf('#');
+          const hash = hashIdx >= 0 ? rawHref.slice(hashIdx) : '';
+          const noHash = hashIdx >= 0 ? rawHref.slice(0, hashIdx) : rawHref;
+          const qIdx = noHash.indexOf('?');
+          const query = qIdx >= 0 ? noHash.slice(qIdx) : '';
+          const cleanPath = qIdx >= 0 ? noHash.slice(0, qIdx) : noHash;
+
+          let localTarget = '';
+          if (cleanPath === '/') localTarget = `${basePath}index.html`;
+          else if (cleanPath.endsWith('/')) localTarget = `${basePath}${cleanPath.slice(1)}index.html`;
+          else if (/\.html$/i.test(cleanPath)) localTarget = `${basePath}${cleanPath.slice(1)}`;
+          else localTarget = `${basePath}${cleanPath.slice(1)}.html`;
+
+          link.setAttribute('href', `${localTarget}${query}${hash}`);
+        });
       });
+    }
 
-      // Sort posts in data by date descending (newest to oldest)
-      const sortedPosts = [...posts].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+    // Rewrite links before capturing static snapshots so restored state stays clean
+    rewriteStaticLinks();
 
-      sortedPosts.forEach(post => {
-        // If article is featured and already in spotlight, check if we also want it in grid or skip
-        if (post.contentUrl && existingHrefs.has(post.contentUrl.trim())) return;
+    const staticGridHTML = catalogGrid ? catalogGrid.innerHTML : '';
+    const staticPaginationHTML = paginationNav ? paginationNav.innerHTML : '';
+    const staticPaginationHidden = paginationNav ? paginationNav.hidden : false;
+    const staticStatusText = catalogStatus ? catalogStatus.textContent : '';
 
-        // Article in data is not present in catalog DOM -> dynamically create & append
-        const cardNode = createArticleCardElement(post);
-        catalogGrid.appendChild(cardNode);
-        if (post.contentUrl) existingHrefs.add(post.contentUrl.trim());
+    // ------------------------------------------------------------------------
+    // Card & Client-Side Pagination Renderers
+    // ------------------------------------------------------------------------
+    function createArticleCardElement(post) {
+      const article = document.createElement('article');
+      article.className = 'article-bento-card' + (post.coverImage ? ' has-cover' : '');
+      article.setAttribute('data-category', post.category || '');
+
+      const tagsArr = Array.isArray(post.tags) ? post.tags : [];
+      const tagsAttr = tagsArr.map(t => String(t).replace(/^#/, '')).join(' ').toLowerCase();
+      article.setAttribute('data-tags', tagsAttr);
+
+      const tagsChips = tagsArr
+        .slice(0, 3)
+        .map(t => `<span class="tag-chip">#${escapeHTML(String(t).replace(/^#/, ''))}</span>`)
+        .join('');
+
+      const articleHref = resolveArticleUrl(post);
+      const coverSrc = resolveAssetUrl(post.coverImage);
+
+      const coverMarkup = coverSrc ? `
+        <a href="${escapeAttr(articleHref)}" class="article-cover-link" tabindex="-1" aria-hidden="true">
+          <div class="article-cover-frame">
+            <img src="${escapeAttr(coverSrc)}" alt="${escapeAttr(post.coverAlt || post.title || '')}" class="article-cover-img" width="800" height="450" loading="lazy" decoding="async">
+          </div>
+        </a>
+      ` : '';
+
+      const catLabel = post.categoryLabel || formatCategoryLabel(post.category);
+
+      article.innerHTML = `
+        ${coverMarkup}
+        <div class="article-card-body">
+          <div class="card-meta">
+            <span class="category-pill-sm">${escapeHTML(catLabel)}</span>
+            <span class="meta-separator" aria-hidden="true">&bull;</span>
+            <span class="reading-time">${escapeHTML(post.readingTime || '')}</span>
+          </div>
+          <h3 class="card-title">
+            <a href="${escapeAttr(articleHref)}">${escapeHTML(post.title || '')}</a>
+          </h3>
+          <p class="card-excerpt">
+            ${escapeHTML(post.excerpt || '')}
+          </p>
+          <div class="card-footer">
+            <time datetime="${escapeAttr(post.date || '')}" class="card-date">${escapeHTML(post.formattedDate || post.date || '')}</time>
+            <div class="tags-cluster">
+              ${tagsChips}
+            </div>
+          </div>
+        </div>
+      `.trim();
+
+      return article;
+    }
+
+    function renderFilteredPagination(page, totalPages, totalMatches) {
+      if (!paginationNav) return;
+
+      if (totalMatches <= perPage || totalPages <= 1) {
+        paginationNav.hidden = true;
+        paginationNav.innerHTML = '';
+        return;
+      }
+
+      const items = [];
+
+      if (page === 1) {
+        items.push('<li><span class="pagination-btn pagination-btn--prev is-disabled" aria-disabled="true">&larr; Previous</span></li>');
+      } else {
+        items.push(`<li><button type="button" class="pagination-btn pagination-btn--prev" data-page="${page - 1}" aria-label="Go to previous page, page ${page - 1}">&larr; Previous</button></li>`);
+      }
+
+      for (let p = 1; p <= totalPages; p++) {
+        if (p === page) {
+          items.push(`<li><span class="pagination-btn pagination-btn--num is-active" aria-current="page">${p}</span></li>`);
+        } else {
+          items.push(`<li><button type="button" class="pagination-btn pagination-btn--num" data-page="${p}" aria-label="Go to page ${p}">${p}</button></li>`);
+        }
+      }
+
+      if (page === totalPages) {
+        items.push('<li><span class="pagination-btn pagination-btn--next is-disabled" aria-disabled="true">Next &rarr;</span></li>');
+      } else {
+        items.push(`<li><button type="button" class="pagination-btn pagination-btn--next" data-page="${page + 1}" aria-label="Go to next page, page ${page + 1}">Next &rarr;</button></li>`);
+      }
+
+      paginationNav.innerHTML = `
+        <ul class="pagination-list">
+          ${items.join('\n          ')}
+        </ul>
+        <p class="pagination-summary">Page ${page} of ${totalPages} &bull; ${totalMatches} matching essays</p>
+      `.trim();
+      paginationNav.hidden = false;
+    }
+
+    function scrollToCatalog() {
+      const target = document.getElementById('catalog-heading') || catalogGrid;
+      if (!target) return;
+      const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      target.scrollIntoView({
+        behavior: prefersReduced ? 'auto' : 'smooth',
+        block: 'start'
       });
-
-      // Guarantee all DOM cards in catalogGrid are strictly sorted newest to oldest
-      const allCards = Array.from(catalogGrid.querySelectorAll('.article-bento-card'));
-      allCards.sort((a, b) => {
-        const timeA = a.querySelector('time')?.getAttribute('datetime') || '';
-        const timeB = b.querySelector('time')?.getAttribute('datetime') || '';
-        return timeB.localeCompare(timeA);
-      });
-      allCards.forEach(card => catalogGrid.appendChild(card));
     }
 
     // ------------------------------------------------------------------------
-    // 2. Discover & Render Category Filter Buttons (Automatic & Dynamic)
+    // 1. Discover & Render Category Filter Buttons (No Featured Double-Count)
     // ------------------------------------------------------------------------
     function buildAndRenderCategories() {
       if (!categoryFilterGroup) return;
 
-      // Base category catalog
       const predefinedCategories = window.BLOG_CATEGORIES || [
         { id: 'all', label: 'All Topics' },
         { id: 'design-systems', label: 'Design Systems' },
@@ -166,10 +270,8 @@
         { id: 'reflections', label: 'Reflections' }
       ];
 
-      // Ordered category map
       const categoryMap = new Map();
 
-      // Seed predefined categories
       predefinedCategories.forEach(cat => {
         if (!cat || !cat.id) return;
         categoryMap.set(cat.id, {
@@ -179,85 +281,50 @@
         });
       });
 
-      // Ensure 'all' is always present as the first option
       if (!categoryMap.has('all')) {
         categoryMap.set('all', { id: 'all', label: 'All Topics', count: 0 });
       }
 
-      // 1. Discover from window.BLOG_POSTS
-      const posts = window.BLOG_POSTS || [];
-      let totalPosts = 0;
-
-      if (posts.length > 0) {
-        posts.forEach(post => {
-          totalPosts++;
+      if (allPublishedPosts.length > 0) {
+        allPublishedPosts.forEach(post => {
           const catId = post.category ? String(post.category).trim().toLowerCase() : '';
           if (!catId) return;
 
           if (!categoryMap.has(catId)) {
-            const label = post.categoryLabel || formatCategoryLabel(catId);
             categoryMap.set(catId, {
               id: catId,
-              label: label,
+              label: post.categoryLabel || formatCategoryLabel(catId),
               count: 0
             });
           }
           categoryMap.get(catId).count++;
         });
-        categoryMap.get('all').count = totalPosts;
-      }
-
-      // 2. Discover from any extra DOM cards (e.g. static HTML cards or edits)
-      const domCards = [];
-      if (featuredPostCard) domCards.push(featuredPostCard);
-      document.querySelectorAll('.blog-articles-grid .article-bento-card').forEach(c => domCards.push(c));
-
-      if (posts.length === 0) {
-        // Fallback: If BLOG_POSTS is missing, count purely from DOM cards
-        let domTotal = 0;
+        categoryMap.get('all').count = allPublishedPosts.length;
+      } else {
+        // Fallback if BLOG_POSTS failed to load: count grid cards only (never featured spotlight)
+        const domCards = document.querySelectorAll('.blog-articles-grid .article-bento-card');
         domCards.forEach(card => {
-          domTotal++;
           const catId = (card.getAttribute('data-category') || '').trim().toLowerCase();
           if (!catId) return;
-
           if (!categoryMap.has(catId)) {
             const pillSm = card.querySelector('.category-pill-sm');
-            const label = pillSm ? pillSm.textContent.trim() : formatCategoryLabel(catId);
             categoryMap.set(catId, {
               id: catId,
-              label: label,
+              label: pillSm ? pillSm.textContent.trim() : formatCategoryLabel(catId),
               count: 0
             });
           }
           categoryMap.get(catId).count++;
         });
-        categoryMap.get('all').count = domTotal;
-      } else {
-        // Cross-check DOM cards to discover any category not in BLOG_POSTS
-        domCards.forEach(card => {
-          const catId = (card.getAttribute('data-category') || '').trim().toLowerCase();
-          if (catId && !categoryMap.has(catId)) {
-            const pillSm = card.querySelector('.category-pill-sm');
-            const label = pillSm ? pillSm.textContent.trim() : formatCategoryLabel(catId);
-            categoryMap.set(catId, {
-              id: catId,
-              label: label,
-              count: 1
-            });
-            categoryMap.get('all').count++;
-          }
-        });
+        categoryMap.get('all').count = domCards.length;
       }
 
-      // Filter categories to render:
-      // Show 'all' plus any category that has at least 1 article or was explicitly configured
       const categoriesToRender = Array.from(categoryMap.values()).filter(cat => {
         if (cat.id === 'all') return true;
-        const isExplicit = (window.BLOG_CATEGORIES || []).some(c => c.id === cat.id);
+        const isExplicit = predefinedCategories.some(c => c.id === cat.id);
         return cat.count > 0 || isExplicit;
       });
 
-      // Render pills into container
       categoryFilterGroup.innerHTML = categoriesToRender.map(cat => {
         const isActive = cat.id === currentCategory;
         return `
@@ -270,65 +337,75 @@
     }
 
     // ------------------------------------------------------------------------
-    // 3. Filtering & Live Search Logic
+    // 2. Dual-Mode Filter & Pagination Controller
     // ------------------------------------------------------------------------
-    function filterArticles() {
-      const query = currentSearchQuery.trim().toLowerCase();
-      let visibleCatalogCount = 0;
-      let isFeaturedVisible = false;
-
-      // Filter Featured Post Card
-      if (featuredPostCard && featuredSection) {
-        const featuredCat = (featuredPostCard.getAttribute('data-category') || '').trim().toLowerCase();
-        const featuredText = (featuredPostCard.textContent || '').toLowerCase();
-
-        const catMatches = currentCategory === 'all' || featuredCat === currentCategory;
-        const searchMatches = !query || featuredText.includes(query);
-
-        if (catMatches && searchMatches) {
-          featuredSection.style.display = '';
-          isFeaturedVisible = true;
-        } else {
-          featuredSection.style.display = 'none';
+    function restoreStaticPage() {
+      if (featuredSection) featuredSection.style.display = '';
+      if (emptyState) emptyState.hidden = true;
+      if (catalogGrid) {
+        if (isFilteredMode) {
+          catalogGrid.innerHTML = staticGridHTML;
         }
+        catalogGrid.style.display = '';
+      }
+      if (paginationNav) {
+        if (isFilteredMode) {
+          paginationNav.innerHTML = staticPaginationHTML;
+        }
+        paginationNav.hidden = staticPaginationHidden;
+      }
+      if (catalogStatus && staticStatusText) {
+        catalogStatus.textContent = staticStatusText;
+      }
+      isFilteredMode = false;
+      currentFilteredPage = 1;
+    }
+
+    function applyFilterState({ resetPage = true } = {}) {
+      const query = currentSearchQuery.trim().toLowerCase();
+      const shouldFilter = currentCategory !== 'all' || query.length > 0;
+
+      if (!shouldFilter) {
+        restoreStaticPage();
+        return;
       }
 
-      // Filter Catalog Grid Cards (queries dynamically to include any newly synced cards)
-      const currentCards = catalogGrid ? catalogGrid.querySelectorAll('.article-bento-card') : [];
-      currentCards.forEach(card => {
-        const cardCat = (card.getAttribute('data-category') || '').trim().toLowerCase();
-        const cardTags = card.getAttribute('data-tags') || '';
-        const cardContent = (card.textContent + ' ' + cardTags).toLowerCase();
+      isFilteredMode = true;
+      if (resetPage) currentFilteredPage = 1;
 
-        const catMatches = currentCategory === 'all' || cardCat === currentCategory;
-        const searchMatches = !query || cardContent.includes(query);
+      // Featured spotlight is editorial-only for unfiltered Page 1
+      if (featuredSection) {
+        featuredSection.style.display = 'none';
+      }
 
-        if (catMatches && searchMatches) {
-          card.style.display = '';
-          visibleCatalogCount++;
-        } else {
-          card.style.display = 'none';
-        }
+      const filteredPosts = allPublishedPosts.filter(post => {
+        const postCat = (post.category || '').trim().toLowerCase();
+        const catMatches = currentCategory === 'all' || postCat === currentCategory;
+        if (!catMatches) return false;
+        if (!query) return true;
+
+        const tagsText = Array.isArray(post.tags) ? post.tags.join(' ') : '';
+        const haystack = [
+          post.title || '',
+          post.excerpt || '',
+          post.categoryLabel || '',
+          post.category || '',
+          post.formattedDate || '',
+          tagsText
+        ].join(' ').toLowerCase();
+
+        return haystack.includes(query);
       });
 
-      const totalVisible = (isFeaturedVisible ? 1 : 0) + visibleCatalogCount;
+      const totalMatches = filteredPosts.length;
 
-      // Update Catalog Status Label
-      if (catalogStatus) {
-        if (totalVisible === 0) {
-          catalogStatus.textContent = 'No essays found';
-        } else if (totalVisible === 1) {
-          catalogStatus.textContent = 'Showing 1 essay';
-        } else {
-          catalogStatus.textContent = `Showing ${totalVisible} essays`;
-        }
-      }
-
-      // Toggle Empty State Container
-      if (emptyState && catalogGrid) {
-        if (totalVisible === 0) {
-          emptyState.hidden = false;
+      if (totalMatches === 0) {
+        if (catalogGrid) {
+          catalogGrid.innerHTML = '';
           catalogGrid.style.display = 'none';
+        }
+        if (emptyState) {
+          emptyState.hidden = false;
           if (emptyStateDesc) {
             if (query) {
               emptyStateDesc.textContent = `No essays matched "${currentSearchQuery}". Try adjusting your keywords or clearing category filters.`;
@@ -336,15 +413,47 @@
               emptyStateDesc.textContent = 'No essays found in this category.';
             }
           }
+        }
+        if (catalogStatus) {
+          catalogStatus.textContent = 'No essays found';
+        }
+        if (paginationNav) {
+          paginationNav.hidden = true;
+          paginationNav.innerHTML = '';
+        }
+        return;
+      }
+
+      const totalFilteredPages = Math.max(1, Math.ceil(totalMatches / perPage));
+      currentFilteredPage = Math.min(Math.max(1, currentFilteredPage), totalFilteredPages);
+
+      const startIdx = (currentFilteredPage - 1) * perPage;
+      const pageSlice = filteredPosts.slice(startIdx, startIdx + perPage);
+
+      if (emptyState) emptyState.hidden = true;
+      if (catalogGrid) {
+        catalogGrid.innerHTML = '';
+        const frag = document.createDocumentFragment();
+        pageSlice.forEach(post => frag.appendChild(createArticleCardElement(post)));
+        catalogGrid.appendChild(frag);
+        catalogGrid.style.display = '';
+      }
+
+      if (catalogStatus) {
+        if (totalFilteredPages > 1) {
+          catalogStatus.textContent = `Showing ${startIdx + 1}\u2013${startIdx + pageSlice.length} of ${totalMatches} essays \u2022 Page ${currentFilteredPage} of ${totalFilteredPages}`;
+        } else if (totalMatches === 1) {
+          catalogStatus.textContent = 'Showing 1 essay';
         } else {
-          emptyState.hidden = true;
-          catalogGrid.style.display = '';
+          catalogStatus.textContent = `Showing ${totalMatches} essays`;
         }
       }
+
+      renderFilteredPagination(currentFilteredPage, totalFilteredPages, totalMatches);
     }
 
     // ------------------------------------------------------------------------
-    // 4. Category Switcher Logic
+    // 3. Category Switcher & Pagination Interaction
     // ------------------------------------------------------------------------
     function setCategory(targetCategory) {
       currentCategory = targetCategory || 'all';
@@ -359,16 +468,27 @@
         });
       }
 
-      filterArticles();
+      applyFilterState({ resetPage: true });
     }
 
-    // Delegated click event on filter group container
     if (categoryFilterGroup) {
       categoryFilterGroup.addEventListener('click', (e) => {
         const pill = e.target.closest('.category-pill');
         if (!pill) return;
         const cat = pill.getAttribute('data-category') || 'all';
         setCategory(cat);
+      });
+    }
+
+    if (paginationNav) {
+      paginationNav.addEventListener('click', (e) => {
+        const btn = e.target.closest('button.pagination-btn[data-page]');
+        if (!btn) return;
+        const targetPage = parseInt(btn.getAttribute('data-page'), 10);
+        if (!Number.isFinite(targetPage) || targetPage === currentFilteredPage) return;
+        currentFilteredPage = targetPage;
+        applyFilterState({ resetPage: false });
+        scrollToCatalog();
       });
     }
 
@@ -386,7 +506,7 @@
     }
 
     // ------------------------------------------------------------------------
-    // 5. Instant Search & Clear Logic
+    // 4. Instant Search & Clear Logic
     // ------------------------------------------------------------------------
     function resetSearch() {
       if (!searchInput) return;
@@ -394,18 +514,16 @@
       currentSearchQuery = '';
       if (clearSearchBtn) clearSearchBtn.hidden = true;
       searchInput.focus();
-      filterArticles();
+      applyFilterState({ resetPage: true });
     }
 
     if (searchInput) {
       searchInput.addEventListener('input', (e) => {
         currentSearchQuery = e.target.value;
-
         if (clearSearchBtn) {
           clearSearchBtn.hidden = currentSearchQuery.length === 0;
         }
-
-        filterArticles();
+        applyFilterState({ resetPage: true });
       });
 
       searchInput.addEventListener('keydown', (e) => {
@@ -420,7 +538,7 @@
     }
 
     // ------------------------------------------------------------------------
-    // 6. Reset All Filters (From Empty State)
+    // 5. Reset All Filters (From Empty State)
     // ------------------------------------------------------------------------
     if (resetFilterBtn) {
       resetFilterBtn.addEventListener('click', () => {
@@ -434,7 +552,7 @@
     }
 
     // ------------------------------------------------------------------------
-    // 7. Copy RSS URL Feedback
+    // 6. Copy RSS URL Feedback
     // ------------------------------------------------------------------------
     if (copyRssBtn) {
       copyRssBtn.addEventListener('click', async () => {
@@ -468,21 +586,18 @@
     // ------------------------------------------------------------------------
     // Initialization Sequence
     // ------------------------------------------------------------------------
-    syncDynamicPosts();
     buildAndRenderCategories();
 
-    // Support direct topic-cluster deep links like blog.html?category=design-systems
+    // Support direct topic-cluster deep links like /blog?category=design-systems
     const urlParams = new URLSearchParams(window.location.search);
     const initialCategory = urlParams.get('category');
     if (initialCategory && categoryFilterGroup) {
-      const matchingPill = categoryFilterGroup.querySelector(`.category-pill[data-category="${initialCategory}"]`);
+      const matchingPill = categoryFilterGroup.querySelector(`.category-pill[data-category="${CSS.escape ? CSS.escape(initialCategory) : initialCategory}"]`);
       if (matchingPill) {
         setCategory(initialCategory);
         return;
       }
     }
-
-    filterArticles();
   }
 
   // Safe bootstrap (handles both loading and interactive/complete DOM states)

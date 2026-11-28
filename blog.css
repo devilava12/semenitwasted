@@ -29,11 +29,15 @@
   --shadow-hover: 8px 8px 8px rgb(69 13 80 / 22%);
   --shadow-pressed: 2px 2px 2px rgb(69 13 80 / 25%);
 
-  /* Emil Kowalski Easing & Spring Tokens (tactile-micro-interactions/SKILL.md) */
-  --ease-spring-snappy: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-smooth-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-spring-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --ease-press: cubic-bezier(0.4, 0, 0.2, 1);
+  /* Canonical Motion, Geometry & Focus Tokens (library.html SSOT) */
+  --radius: 10px;
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-micro: 150ms;
+  --dur-ui: 200ms;
+  --lift: -2px;
+  --tap-min: 44px;
+  --focus-ring: 2px solid var(--color-dark);
+  --focus-offset: 2px;
 
   /* Radius (Signature 10px from SKILL.md) */
   --radius-card: 10px;
@@ -90,7 +94,8 @@
   --shadow-primary: 18px 18px 24px rgba(0, 0, 0, 0.46);
   --shadow-depth: 4px 4px 8px rgba(0, 0, 0, 0.36);
   --shadow-hover: 8px 8px 14px rgba(0, 0, 0, 0.40);
-  --shadow-pressed: 2px 2px 4px rgba(0, 0, 0, 0.45);
+  --shadow-pressed: 2px 2px 4px rgba(0, 0, 0, 0.36);
+  --focus-ring: 2px solid #F7F4FA;
 }
 
 /* Form Controls Typography Inheritance (typography.md Section 30) */
@@ -541,6 +546,7 @@ h1, h2, h3, h4 {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  scroll-margin-top: 112px;
 }
 
 .catalog-header {
@@ -558,6 +564,7 @@ h1, h2, h3, h4 {
   color: var(--text-primary, #211B28);
   margin: 0;
   letter-spacing: -0.01em;
+  scroll-margin-top: 112px;
 }
 
 .catalog-status {
@@ -759,6 +766,117 @@ h1, h2, h3, h4 {
 }
 
 /* --------------------------------------------------------------------------
+   05.5. Tactile Pagination Bar (library.html #cmp-buttons & #anim-tactile-lift)
+   -------------------------------------------------------------------------- */
+.blog-pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.blog-pagination[hidden] {
+  display: none;
+}
+
+.pagination-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pagination-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: var(--tap-min, 44px);
+  min-height: var(--tap-min, 44px);
+  padding: 0 16px;
+  background: var(--surface, #FCFAFD);
+  color: var(--text-primary, #211B28);
+  border: 1px solid transparent;
+  border-color: var(--border, #E4DCE9);
+  border-radius: var(--radius, 10px);
+  box-shadow: var(--shadow-depth);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform var(--dur-ui, 200ms) var(--ease-out),
+    box-shadow var(--dur-ui, 200ms) var(--ease-out),
+    background-color var(--dur-ui, 200ms) var(--ease-out),
+    border-color var(--dur-ui, 200ms) var(--ease-out),
+    color var(--dur-ui, 200ms) var(--ease-out);
+}
+
+.pagination-btn--num {
+  padding: 0 12px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pagination-btn:not(.is-active):not(.is-disabled):not([aria-current="page"]):hover {
+    transform: translateY(var(--lift, -2px));
+    box-shadow: var(--shadow-hover);
+    border-color: var(--color-shadow);
+  }
+}
+
+.pagination-btn:not(.is-active):not(.is-disabled):not([aria-current="page"]):active {
+  transform: none;
+  box-shadow: var(--shadow-pressed);
+}
+
+.pagination-btn.is-active,
+.pagination-btn[aria-current="page"] {
+  background: var(--color-dark, #211B28);
+  color: var(--color-light, #F0EDF4);
+  border-color: var(--color-dark, #211B28);
+  box-shadow: var(--shadow-primary);
+  cursor: default;
+}
+
+.pagination-btn.is-disabled {
+  opacity: 0.45;
+  box-shadow: none;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.pagination-btn:focus-visible {
+  outline: var(--focus-ring, 2px solid var(--color-dark));
+  outline-offset: var(--focus-offset, 2px);
+}
+
+.pagination-summary {
+  margin: 0;
+  font-size: var(--text-small, 0.875rem);
+  color: var(--text-secondary, #756A7D);
+  text-align: center;
+}
+
+@media (forced-colors: active) {
+  .pagination-btn {
+    border-color: CanvasText;
+  }
+
+  .pagination-btn.is-active,
+  .pagination-btn[aria-current="page"] {
+    background: Highlight;
+    color: HighlightText;
+    border-color: Highlight;
+  }
+}
+
+/* --------------------------------------------------------------------------
    06. Bottom Bento Strip: RSS & Connect
    -------------------------------------------------------------------------- */
 .blog-bottom-bento {
@@ -907,7 +1025,7 @@ h1, h2, h3, h4 {
   width: 0%;
   background: var(--color-dark, #211B28);
   z-index: 9999;
-  transition: width 0.1s var(--ease-spring-snappy, cubic-bezier(0.16, 1, 0.3, 1));
+  transition: width 0.1s var(--ease-out);
 }
 
 [data-theme="dark"] .reading-progress-bar {
@@ -1515,6 +1633,36 @@ h1, h2, h3, h4 {
   color: #18121E;
 }
 
+/* Tactile Pagination Bar (Dark Mode) */
+[data-theme="dark"] .pagination-btn {
+  background: var(--surface);
+  color: var(--text-primary);
+  border-color: var(--border);
+  box-shadow: var(--shadow-depth);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  [data-theme="dark"] .pagination-btn:not(.is-active):not(.is-disabled):not([aria-current="page"]):hover {
+    border-color: var(--color-accent);
+  }
+}
+
+[data-theme="dark"] .pagination-btn:not(.is-active):not(.is-disabled):not([aria-current="page"]):active {
+  transform: none;
+  box-shadow: var(--shadow-pressed);
+}
+
+[data-theme="dark"] .pagination-btn.is-active,
+[data-theme="dark"] .pagination-btn[aria-current="page"] {
+  background: #F7F4FA;
+  color: #18121E;
+  border-color: #F7F4FA;
+}
+
+[data-theme="dark"] .pagination-summary {
+  color: var(--text-secondary);
+}
+
 /* Article Detail Posts (post-main) */
 [data-theme="dark"] .post-breadcrumb a {
   color: var(--text-secondary);
@@ -1896,6 +2044,27 @@ h1, h2, h3, h4 {
   }
 }
 
+@media (max-width: 560px) {
+  .catalog-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .pagination-list {
+    gap: 8px;
+  }
+
+  .pagination-btn {
+    padding: 0 12px;
+    font-size: 0.875rem;
+  }
+
+  .pagination-btn--num {
+    padding: 0 10px;
+  }
+}
+
 /* --------------------------------------------------------------------------
    09. Tactile Keyboard Focus Visibility (tactile-micro-interactions/SKILL.md)
    -------------------------------------------------------------------------- */
@@ -1912,6 +2081,12 @@ input:focus-visible,
   box-shadow: 0 0 0 2px var(--background, #F0EDF4), 0 0 0 4px var(--color-shadow, #450D50);
 }
 
+.pagination-btn:focus-visible {
+  outline: var(--focus-ring, 2px solid var(--color-dark));
+  outline-offset: var(--focus-offset, 2px);
+  box-shadow: var(--shadow-depth);
+}
+
 [data-theme="dark"] a:focus-visible,
 [data-theme="dark"] button:focus-visible,
 [data-theme="dark"] input:focus-visible,
@@ -1924,10 +2099,20 @@ input:focus-visible,
   box-shadow: 0 0 0 2px #211B28, 0 0 0 4px #A580BF;
 }
 
+[data-theme="dark"] .pagination-btn:focus-visible {
+  outline: var(--focus-ring, 2px solid #F7F4FA);
+  outline-offset: var(--focus-offset, 2px);
+  box-shadow: var(--shadow-depth);
+}
+
 /* --------------------------------------------------------------------------
    10. Reduced Motion Accessibility (references/animation.md)
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
+  :root {
+    --lift: 0px;
+  }
+
   .blog-controls-card,
   .featured-bento-card,
   .article-bento-card,
@@ -1936,7 +2121,8 @@ input:focus-visible,
   .featured-read-btn,
   .btn-copy-rss,
   .btn-reach-out,
-  .post-nav-card {
+  .post-nav-card,
+  .pagination-btn {
     transition: none !important;
     transform: none !important;
   }

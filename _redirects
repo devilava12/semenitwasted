@@ -29,3 +29,64 @@
 /blog/ketika-pesan-error-yang-cantik-justru-bikin-panik /blog/kenapa-pesan-error-cantik-membuat-pengguna-panik 301
 /blog/ketika-pesan-error-yang-cantik-justru-bikin-panik.html /blog/kenapa-pesan-error-cantik-membuat-pengguna-panik 301
 
+# Canonical blog pagination & clean URL redirects (auto-synced by build.js)
+# AUTO_CLEAN_URL_REDIRECTS_START
+# Root pages (.html -> clean URL)
+/index.html / 301
+/portfolio.html /portfolio 301
+/about.html /about 301
+/blog.html /blog 301
+/contact.html /contact 301
+/library.html /library 301
+
+# Portfolio directory indexes (index.html -> clean trailing slash)
+/portfolio/roche/index.html /portfolio/roche/ 301
+/portfolio/eksperimen%201/index.html /portfolio/eksperimen%201/ 301
+/portfolio/artificial%20intelegent%20icon/index.html /portfolio/artificial%20intelegent%20icon/ 301
+
+# Blog pagination canonical redirects
+/blog/page/1 /blog 301
+/blog/page/1/ /blog 301
+/blog/page /blog 301
+/blog/page/ /blog 301
+/blog/page/2/index.html /blog/page/2/ 301
+/blog/page/3/index.html /blog/page/3/ 301
+/blog/page/4/index.html /blog/page/4/ 301
+
+# Published blog posts (.html -> clean URL)
+/blog/cara-playtesting-dan-usability-testing-desain-website.html /blog/cara-playtesting-dan-usability-testing-desain-website 301
+/blog/kecanduan-game-vs-kompulsi-dan-cara-pulih.html /blog/kecanduan-game-vs-kompulsi-dan-cara-pulih 301
+/blog/cara-menjadi-developer-berpikir-algoritmis-dan-kerja-tim.html /blog/cara-menjadi-developer-berpikir-algoritmis-dan-kerja-tim 301
+/blog/cara-menjadi-producer-dan-memimpin-tim-developer.html /blog/cara-menjadi-producer-dan-memimpin-tim-developer 301
+/blog/masalah-praproduksi-desain-website-dan-produk.html /blog/masalah-praproduksi-desain-website-dan-produk 301
+/blog/cara-menjadi-desainer-website-dan-mitos-tukang-ide.html /blog/cara-menjadi-desainer-website-dan-mitos-tukang-ide 301
+/blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils.html /blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils 301
+/blog/kenapa-miliarder-dunia-memperlambat-ai-dan-faktor-china.html /blog/kenapa-miliarder-dunia-memperlambat-ai-dan-faktor-china 301
+/blog/dark-pattern-adalah-jebakan-desain-dan-contohnya.html /blog/dark-pattern-adalah-jebakan-desain-dan-contohnya 301
+/blog/api-adalah-sejarah-dan-cara-kerjanya.html /blog/api-adalah-sejarah-dan-cara-kerjanya 301
+/blog/bank-diretas-dan-nasib-uang-nasabah-indonesia.html /blog/bank-diretas-dan-nasib-uang-nasabah-indonesia 301
+/blog/cara-berpikir-dan-menganalisis-desain-website.html /blog/cara-berpikir-dan-menganalisis-desain-website 301
+/blog/apa-itu-database-sejarah-dan-kebocoran-data.html /blog/apa-itu-database-sejarah-dan-kebocoran-data 301
+/blog/sejarah-password-dan-kesalahan-keamanan-akun.html /blog/sejarah-password-dan-kesalahan-keamanan-akun 301
+/blog/choice-paralysis-dan-cara-melihat-desain-website.html /blog/choice-paralysis-dan-cara-melihat-desain-website 301
+/blog/apa-itu-ui-dan-ux-serta-perbedaannya.html /blog/apa-itu-ui-dan-ux-serta-perbedaannya 301
+/blog/perbedaan-website-dan-landing-page.html /blog/perbedaan-website-dan-landing-page 301
+/blog/kedaulatan-internet-indonesia-dan-sejarah-jaringan.html /blog/kedaulatan-internet-indonesia-dan-sejarah-jaringan 301
+/blog/sisi-gelap-vibe-coding-dan-kebutuhan-pagar-pembatas.html /blog/sisi-gelap-vibe-coding-dan-kebutuhan-pagar-pembatas 301
+/blog/kenapa-chatbot-ai-sering-membuat-pelanggan-frustrasi.html /blog/kenapa-chatbot-ai-sering-membuat-pelanggan-frustrasi 301
+/blog/jualan-laris-di-medsos-tapi-belum-punya-website.html /blog/jualan-laris-di-medsos-tapi-belum-punya-website 301
+/blog/bahaya-desain-serba-instan-dan-kebutuhan-jeda-berpikir.html /blog/bahaya-desain-serba-instan-dan-kebutuhan-jeda-berpikir 301
+/blog/membedakan-kaya-tampilan-dan-sejahtera-finansial.html /blog/membedakan-kaya-tampilan-dan-sejahtera-finansial 301
+/blog/node2shell-dan-sejarah-nodejs.html /blog/node2shell-dan-sejarah-nodejs 301
+/blog/php2shell-dan-sejarah-php.html /blog/php2shell-dan-sejarah-php 301
+/blog/kenapa-pesan-error-cantik-membuat-pengguna-panik.html /blog/kenapa-pesan-error-cantik-membuat-pengguna-panik 301
+/blog/memilih-karakter-visual-website-2026.html /blog/memilih-karakter-visual-website-2026 301
+/blog/membangun-sistem-desain-taktil.html /blog/membangun-sistem-desain-taktil 301
+/blog/melihat-antarmuka-dari-kacamata-dukungan-pelanggan.html /blog/melihat-antarmuka-dari-kacamata-dukungan-pelanggan 301
+/blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana.html /blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana 301
+/blog/mikro-interaksi-taktil-pada-komponen-web.html /blog/mikro-interaksi-taktil-pada-komponen-web 301
+/blog/eksplorasi-monokrom-kontras-tanpa-warna-dekoratif.html /blog/eksplorasi-monokrom-kontras-tanpa-warna-dekoratif 301
+/blog/coming-soon.html /blog/coming-soon 301
+# AUTO_CLEAN_URL_REDIRECTS_END
+
+

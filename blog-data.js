@@ -17,6 +17,23 @@
 
   const BLOG_POSTS = [
     {
+      id: 'post-32',
+      slug: 'cara-playtesting-dan-usability-testing-desain-website',
+      title: 'Kenapa Desain Website yang Sudah Jelas Tetap Bikin Pengunjung Bingung dan Pelajaran Playtesting dari Extra Credits',
+      date: '2026-11-28',
+      formattedDate: '28 November 2026',
+      readingTime: '20 min read',
+      category: 'design-systems',
+      categoryLabel: 'Design Systems',
+      tags: ['Usability Testing', 'Playtesting', 'Extra Credits', 'UI/UX', 'Pemula'],
+      featured: false,
+      excerpt: 'Desain web terasa jelas bagimu tapi bikin pengunjung bingung? Bedah playtesting Extra Credits, usability testing 5 pengguna Nielsen, dan uji prototipe.',
+      contentUrl: '/blog/cara-playtesting-dan-usability-testing-desain-website',
+      coverImage: 'assets/blog/Selenia%E2%80%99s%20Purple%20Crystal%20Sword%20Test.webp',
+      coverAlt: 'Ilustrasi pengrajin berambut lavender berkacamata goggle menyodorkan pedang kristal ungu rancangannya dengan penuh semangat kepada golem bergaya blok voxel, sementara golem dan kucing di bawahnya justru menatap bingung dengan tanda tanya di atas kepala mereka di samping meja cetak biru.',
+      author: 'I Putu Dicky Adi Pranatha'
+    },
+    {
       id: 'post-31',
       slug: 'kecanduan-game-vs-kompulsi-dan-cara-pulih',
       title: 'Bermain Game Berjam-Jam Belum Tentu Kecanduan dan Cara Memulihkan Kendali Hidup dari Dua Video Extra Credits',
@@ -28,7 +45,7 @@
       tags: ['Game Compulsion', 'Psikologi Perilaku', 'Extra Credits', 'Gaming Disorder', 'Mindset'],
       featured: false,
       excerpt: 'Main game lama belum tentu adiksi kimiawi. Bedah beda kecanduan game vs kompulsi dari Extra Credits, kriteria WHO ICD-11, dan cara pulih yang nyata.',
-      contentUrl: 'blog/kecanduan-game-vs-kompulsi-dan-cara-pulih.html',
+      contentUrl: '/blog/kecanduan-game-vs-kompulsi-dan-cara-pulih',
       coverImage: 'assets/blog/Neon%20Butterfly%20Gamer%20in%20a%20Voxel%20Bedroom.webp',
       coverAlt: 'Ilustrasi seorang pemain berambut ungu dengan jepit kupu-kupu yang menopang dagu menatap layar monitor sambil memegang kontroler di kamar remang bersama kucing yang terlelap, sementara cahaya matahari hangat bersinar di balik jendela.',
       author: 'I Putu Dicky Adi Pranatha'
@@ -45,7 +62,7 @@
       tags: ['Software Engineering', 'Extra Credits', 'Algorithmic Thinking', 'Estimasi Proyek', 'Pemula'],
       featured: false,
       excerpt: 'Hafal sintaks saja belum cukup untuk jadi developer andal. Bedah pola pikir algoritmis, baca kode, estimasi proyek, dan kerja tim ala dua video Extra Credits.',
-      contentUrl: 'blog/cara-menjadi-developer-berpikir-algoritmis-dan-kerja-tim.html',
+      contentUrl: '/blog/cara-menjadi-developer-berpikir-algoritmis-dan-kerja-tim',
       coverImage: 'assets/blog/Lavender%20Scholar%20in%20the%20Voxel%20Library.webp',
       coverAlt: 'Ilustrasi seorang developer berambut lavender yang duduk tekun membaca buku di perpustakaan bergaya blok sambil mengamati diagram holo sistem kode, basis data, struktur alur, dan gir di atas meja kayu bersama kucing lavender yang tertidur di samping buku terbuka.',
       author: 'I Putu Dicky Adi Pranatha'
@@ -62,7 +79,7 @@
       tags: ['Producer', 'Project Management', 'Extra Credits', 'Product Delivery', 'Pemula'],
       featured: false,
       excerpt: 'Proyek web sering macet saat producer bertingkah jadi bos. Bedah peran servant leadership, Iron Triangle, dan cara memimpin tim developer ala Extra Credits.',
-      contentUrl: 'blog/cara-menjadi-producer-dan-memimpin-tim-developer.html',
+      contentUrl: '/blog/cara-menjadi-producer-dan-memimpin-tim-developer',
       coverImage: 'assets/blog/Lavender%20Village%20Mastermind.webp',
       coverAlt: 'Ilustrasi perempuan anime berambut lavender berkacamata dengan jas ungu dan tablet sedang mengoordinasikan para spesialis di desa bergaya blok bersama kucing ungu di kakinya, sementara petani, pandai besi, pustakawan, penambang, dan golem fokus menjalankan peran masing-masing dengan selaras',
       author: 'I Putu Dicky Adi Pranatha'
@@ -79,7 +96,7 @@
       tags: ['Pre-Production', 'Extra Credits', 'UI/UX', 'Product Planning', 'Pemula'],
       featured: false,
       excerpt: 'Kenapa proyek website sering revisi berulang dan lembur? Bedah masalah praproduksi Extra Credits, jebakan Waterfall, vertical slice, dan pola kerja Pixar.',
-      contentUrl: 'blog/masalah-praproduksi-desain-website-dan-produk.html',
+      contentUrl: '/blog/masalah-praproduksi-desain-website-dan-produk',
       coverImage: 'assets/blog/Lavender%20Pixel%20Architect%20at%20Sunset.webp',
       coverAlt: 'Ilustrasi gadis anime berambut ungu duduk di bawah pohon sakura bergaya blok bersama kucing ungu-putih di sampingnya, sedang merancang sketsa cetak biru di papan gambar sementara di latar belakang tampak kerangka halaman website raksasa yang sedang dibangun dengan perancah kayu, derek konstruksi, dan papan tanda panah putar revisi',
       author: 'I Putu Dicky Adi Pranatha'
@@ -96,7 +113,7 @@
       tags: ['Design Career', 'Extra Credits', 'UI/UX', 'Product Thinking', 'Pemula'],
       featured: false,
       excerpt: 'Ingin jadi desainer website atau UI/UX? Bedah mitos Si Tukang Ide, 4 tahap mental desainer, dan keahlian lintas ilmu dari video klasik Extra Credits.',
-      contentUrl: 'blog/cara-menjadi-desainer-website-dan-mitos-tukang-ide.html',
+      contentUrl: '/blog/cara-menjadi-desainer-website-dan-mitos-tukang-ide',
       coverImage: 'assets/blog/Voxel%20Idea%20Lightbulb%20and%20Anime%20Dreamscape.webp',
       coverAlt: 'Ilustrasi gadis anime berambut ungu duduk di bawah pohon sakura bergaya blok bersama kucing abu-abu putih di pangkuannya, memegang tablet gambar dan pena dengan bohlam ide berbentuk blok voxel menyala di atas kepalanya',
       author: 'I Putu Dicky Adi Pranatha'
@@ -113,7 +130,7 @@
       tags: ['SSH', 'OpenSSH', 'Veritasium', 'XZ Utils', 'Pemula'],
       featured: false,
       excerpt: 'Pahami apa itu SSH dengan bahasa sederhana. Simak sejarah Tatu Ylönen 1995, cara kerja Public Key & Private Key, dan kisah celah XZ Utils dari Veritasium.',
-      contentUrl: 'blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils.html',
+      contentUrl: '/blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils',
       coverImage: 'assets/blog/Minecraft%20Sunset%20Gaming%20Haven.webp',
       coverAlt: 'Ilustrasi suasana meja komputer bernuansa senja dengan monitor menampilkan dunia blok dan jendela terminal jarak jauh, melambangkan pengelolaan server dari kamar sendiri lewat protokol SSH',
       author: 'I Putu Dicky Adi Pranatha'
@@ -130,7 +147,7 @@
       tags: ['AI Governance', 'Bennix', 'Wall Street', 'Geopolitik China', 'Pemula'],
       featured: false,
       excerpt: 'Bedah alasan miliarder teknologi (Anthropic & OpenAI) sepakat memperlambat AI dari video Bennix, insiden Hugging Face, motif IPO Wall Street, dan faktor China.',
-      contentUrl: 'blog/kenapa-miliarder-dunia-memperlambat-ai-dan-faktor-china.html',
+      contentUrl: '/blog/kenapa-miliarder-dunia-memperlambat-ai-dan-faktor-china',
       coverImage: 'assets/blog/Anime%20Guardians%20Against%20the%20Cracked%20Radiant%20Door.webp',
       coverAlt: 'Ilustrasi gadis anime berambut ungu-putih bersama kucing putihnya sedang menahan pintu raksasa yang mulai retak dan memancarkan kilatan cahaya ungu digital dari balik celahnya',
       author: 'I Putu Dicky Adi Pranatha'
@@ -147,7 +164,7 @@
       tags: ['Dark Pattern', 'Deceptive Design', 'Harry Brignull', 'UI/UX', 'Pemula'],
       featured: false,
       excerpt: 'Pahami apa itu dark pattern dengan bahasa sederhana. Simak sejarah Harry Brignull 2010, 5 contoh jebakan desain di aplikasi harian, dan cara menghindarinya.',
-      contentUrl: 'blog/dark-pattern-adalah-jebakan-desain-dan-contohnya.html',
+      contentUrl: '/blog/dark-pattern-adalah-jebakan-desain-dan-contohnya',
       coverImage: 'assets/blog/Panicked%20Subscription%20Trap%20at%20the%20Desk.webp',
       coverAlt: 'Ilustrasi gadis anime memegang kepala karena panik di depan laptop bersama kucing hitamnya yang terkejut melihat jendela pop-up Kamu Berlangganan Paket Premium Rp 99.000/bulan, Penagihan Otomatis Aktif, dan tombol Batalkan Langganan yang terkunci Sangat Sulit',
       author: 'I Putu Dicky Adi Pranatha'
@@ -164,7 +181,7 @@
       tags: ['API', 'REST API', 'Roy Fielding', 'Web Security', 'Pemula'],
       featured: false,
       excerpt: 'Pahami apa itu API dengan bahasa sederhana. Simak analogi pelayan restoran, sejarah dari komputer EDSAC 1951 hingga REST API, contoh nyata, dan keamanannya.',
-      contentUrl: 'blog/api-adalah-sejarah-dan-cara-kerjanya.html',
+      contentUrl: '/blog/api-adalah-sejarah-dan-cara-kerjanya',
       coverImage: 'assets/blog/Neon%20API%20Notes%20in%20Cyberpunk%20Corridor.webp',
       coverAlt: 'Ilustrasi gadis anime berkacamata mencatat alur kerja di lorong siber neon bersama kucing hitam-putih bermata ungu yang menatap layar skema API penghubung aplikasi ponsel, keranjang belanja, dan database server',
       author: 'I Putu Dicky Adi Pranatha'
@@ -181,7 +198,7 @@
       tags: ['Cybersecurity', 'Bennix', 'Perbankan', 'LPS & OJK', 'Pemula'],
       featured: false,
       excerpt: 'Bedah fakta kasus bank diretas Rp2 triliun (Crédit Mutuel Arkéa) dari video Bennix, aturan ganti rugi OJK vs syarat 3T LPS, serta cara mengamankan tabungan.',
-      contentUrl: 'blog/bank-diretas-dan-nasib-uang-nasabah-indonesia.html',
+      contentUrl: '/blog/bank-diretas-dan-nasib-uang-nasabah-indonesia',
       coverImage: 'assets/blog/Neon%20Anime%20Bank%20Heist%20Alert.webp',
       coverAlt: 'Ilustrasi gadis anime terkejut memeriksa Buku Rekening di samping kucing hitam bermata ungu, dengan layar monitor menampilkan peringatan Bank Diretas Rp2.000.000.000.000 dan perisai penjaminan LPS di meja',
       author: 'I Putu Dicky Adi Pranatha'
@@ -198,7 +215,7 @@
       tags: ['Design Analysis', 'Extra Credits', 'MDA Framework', 'UI/UX', 'Pemula'],
       featured: false,
       excerpt: 'Pelajari cara menganalisis desain website lewat dua video Extra Credits (Playing Like a Designer I & II), kerangka MDA, dan kebiasaan membedah sistem UI/UX.',
-      contentUrl: 'blog/cara-berpikir-dan-menganalisis-desain-website.html',
+      contentUrl: '/blog/cara-berpikir-dan-menganalisis-desain-website',
       coverImage: 'assets/blog/Gadis%20Anime%20dan%20Kucing%20Gamer%20Misterius.webp',
       coverAlt: 'Ilustrasi gadis anime memegang kaca pembesar dengan tanda tanya di atas kepalanya sambil mengamati kucing putih ber-headphone yang sedang serius bermain game memakai stik kontroler di depan laptop',
       author: 'I Putu Dicky Adi Pranatha'
@@ -215,7 +232,7 @@
       tags: ['Database', 'SQL', 'Edgar F. Codd', 'Data Privacy', 'Pemula'],
       featured: false,
       excerpt: 'Pahami apa itu database dan cara kerjanya dengan bahasa sederhana. Simak sejarah Edgar F. Codd 1970, pelajaran bocornya 5,7 juta data kopi, dan tips aman.',
-      contentUrl: 'blog/apa-itu-database-sejarah-dan-kebocoran-data.html',
+      contentUrl: '/blog/apa-itu-database-sejarah-dan-kebocoran-data',
       coverImage: 'assets/blog/Anime%20Data%20Breach%20Coffee%20Shock.webp',
       coverAlt: 'Ilustrasi gaya anime seorang penikmat kopi tersedak kaget di depan laptop yang menampilkan notifikasi Data Bocor, ditemani kucing yang ikut panik di sampingnya',
       author: 'I Putu Dicky Adi Pranatha'
@@ -232,7 +249,7 @@
       tags: ['Cybersecurity', 'Password History', '2FA', 'Passkey', 'Pemula'],
       featured: false,
       excerpt: 'Pelajari sejarah awal password dibuat di MIT tahun 1961, evolusi cara kerjanya dari hashing hingga 2FA dan Passkey, serta 5 kesalahan yang bikin akun jebol.',
-      contentUrl: 'blog/sejarah-password-dan-kesalahan-keamanan-akun.html',
+      contentUrl: '/blog/sejarah-password-dan-kesalahan-keamanan-akun',
       coverImage: 'assets/blog/Neon%20Hacked%20Highway%20Panic.webp',
       coverAlt: 'Ilustrasi pengelola sistem dan kucingnya panik memegang kepala di depan laptop dengan peringatan gembok terbuka, sementara papan iklan digital jalan raya di belakangnya menampilkan simbol tengkorak HACKED',
       author: 'I Putu Dicky Adi Pranatha'
@@ -249,7 +266,7 @@
       tags: ['Choice Paralysis', 'Hicks Law', 'UX Psychology', 'Web Design', 'Pemula'],
       featured: false,
       excerpt: 'Pahami apa itu choice paralysis dan Hukum Hick dalam desain website. Pelajari cara merapikan menu, mencegah pengunjung bingung, dan melatih mata menganalisis UX.',
-      contentUrl: 'blog/choice-paralysis-dan-cara-melihat-desain-website.html',
+      contentUrl: '/blog/choice-paralysis-dan-cara-melihat-desain-website',
       coverImage: 'assets/blog/Purple-Eyed%20Cat%20Peeking%20Up.webp',
       coverAlt: 'Ilustrasi perancang produk mengamati antarmuka melalui kaca pembesar ditemani kucing bermata ungu yang mengintip dari balik meja, menyederhanakan layar yang penuh banyak tombol di kiri menjadi satu tampilan jernih bertanda centang di kanan',
       author: 'I Putu Dicky Adi Pranatha'
@@ -266,7 +283,7 @@
       tags: ['UI/UX', 'Affordance', 'Design History', 'Product Thinking', 'Pemula'],
       featured: false,
       excerpt: 'Pahami apa itu UI dan UX dengan bahasa sederhana. Simak bedanya, konsep affordance, sejarah siapa yang mengerjakannya dulu, hingga 3 sudut pandang developer.',
-      contentUrl: 'blog/apa-itu-ui-dan-ux-serta-perbedaannya.html',
+      contentUrl: '/blog/apa-itu-ui-dan-ux-serta-perbedaannya',
       coverImage: 'assets/blog/Apa%20Itu%20UI%20dan%20UX_%20Workspace%20Kreatif.webp',
       coverAlt: 'Ilustrasi perancang kreatif di meja kerja bersama kucing tidur, buku sketsa wireframe, dan laptop sedang membandingkan kartu elemen visual UI di sisi kiri dengan kartu alur kenyamanan pengguna UX di sisi kanan',
       author: 'I Putu Dicky Adi Pranatha'
@@ -283,7 +300,7 @@
       tags: ['Website', 'Landing Page', 'Web History', 'Digital Strategy', 'Pemula'],
       featured: false,
       excerpt: 'Pahami apa itu website dan apa itu landing page dengan bahasa sederhana. Simak sejarah awal dibuatnya di CERN dan Microsoft, bedanya, serta panduan memilihnya.',
-      contentUrl: 'blog/perbedaan-website-dan-landing-page.html',
+      contentUrl: '/blog/perbedaan-website-dan-landing-page',
       coverImage: 'assets/blog/Website%20vs%20Landing%20Page%20Dilemma.webp',
       coverAlt: 'Ilustrasi pemula di depan laptop ditemani kucing sedang menimbang perbandingan kelebihan dan kekurangan antara Website multi-halaman di sisi kiri dan Landing Page fokus satu tujuan di sisi kanan',
       author: 'I Putu Dicky Adi Pranatha'
@@ -300,7 +317,7 @@
       tags: ['Kedaulatan Digital', 'Sejarah Internet', 'Kabel Bawah Laut', 'Data Center', 'Token AI'],
       featured: false,
       excerpt: 'Bedah polemik ancaman putus 90% kabel internet RI dari Singapura, paradoks ekspor energi murah vs data center, sejarah Paguyuban Network hingga Gojek Tokopedia, dan solusi Token AI.',
-      contentUrl: 'blog/kedaulatan-internet-indonesia-dan-sejarah-jaringan.html',
+      contentUrl: '/blog/kedaulatan-internet-indonesia-dan-sejarah-jaringan',
       coverImage: 'assets/blog/db1b7896-80f7-436d-b4a6-5ca948685a1a.webp',
       coverAlt: 'Ilustrasi pengguna panik memegang kepala di depan laptop yang menampilkan peringatan No Internet ditemani kucing dan perangkat router, dengan latar siluet gedung Marina Bay Sands Singapura di kejauhan',
       author: 'I Putu Dicky Adi Pranatha'
@@ -317,7 +334,7 @@
       tags: ['Vibe Coding', 'AI Engineering', 'Technical Debt', 'Web Development', 'Guardrails'],
       featured: true,
       excerpt: 'Vibe coding itu seperti menyuruh robot menyusun istana mainan secepat kilat: seru dan instan, tapi rawan ambruk kalau tidak dipasangi pagar pengaman yang kokoh.',
-      contentUrl: 'blog/sisi-gelap-vibe-coding-dan-kebutuhan-pagar-pembatas.html',
+      contentUrl: '/blog/sisi-gelap-vibe-coding-dan-kebutuhan-pagar-pembatas',
       coverImage: 'assets/blog/Vibe%20Coding%20Behind%20the%20Firewall.webp',
       coverAlt: 'Ilustrasi Vibe Coding Behind the Firewall menampilkan suasana ruang kerja developer dengan proteksi firewall saat mengeksplorasi kode AI',
       author: 'I Putu Dicky Adi Pranatha'
@@ -334,7 +351,7 @@
       tags: ['Customer Support', 'Chatbot AI', 'Product Strategy', 'UX Ethics', 'Human Handoff'],
       featured: false,
       excerpt: 'Chatbot AI sering bikin kesal bukan karena bodoh, melainkan karena robot tanpa perasaan dipaksa menyelesaikan masalah genting saat orang sedang panik. Simak ulasan sederhana dan solusinya.',
-      contentUrl: 'blog/kenapa-chatbot-ai-sering-membuat-pelanggan-frustrasi.html',
+      contentUrl: '/blog/kenapa-chatbot-ai-sering-membuat-pelanggan-frustrasi',
       coverImage: 'assets/blog/Frustrated%20Anime%20Girl%20and%20Chatbot.webp',
       coverAlt: 'Ilustrasi perempuan merasa frustrasi di depan laptop dan smartphone menghadapi jawaban chatbot AI yang kaku dan berulang',
       author: 'I Putu Dicky Adi Pranatha'
@@ -351,7 +368,7 @@
       tags: ['E-Commerce', 'David Alfa Sunarna', 'Owned Asset', 'Digital Strategy', 'Website Bisnis'],
       featured: false,
       excerpt: 'Jualan di medsos itu seperti numpang jualan di halaman orang lain. Pelajari kenapa kamu butuh website toko sendiri dan kapan waktu yang tepat untuk memulainya.',
-      contentUrl: 'blog/jualan-laris-di-medsos-tapi-belum-punya-website.html',
+      contentUrl: '/blog/jualan-laris-di-medsos-tapi-belum-punya-website',
       coverImage: 'assets/blog/Pemilik%20Toko%20Online%20Sedang%20Berpikir.webp',
       coverAlt: 'Ilustrasi pemilik toko online sedang berpikir di depan laptop merenungkan strategi memiliki website toko sendiri',
       author: 'I Putu Dicky Adi Pranatha'
@@ -368,7 +385,7 @@
       tags: ['Intentional Friction', 'Product & Support', 'UX Design', 'Error Prevention'],
       featured: false,
       excerpt: 'Menghilangkan semua friksi pada antarmuka digital adalah resep bencana bagi tindakan berisiko tinggi. Pelajari cara merancang intentional friction yang melindungi pengguna.',
-      contentUrl: 'blog/bahaya-desain-serba-instan-dan-kebutuhan-jeda-berpikir.html',
+      contentUrl: '/blog/bahaya-desain-serba-instan-dan-kebutuhan-jeda-berpikir',
       coverImage: 'assets/blog/Neon%20Creative%20Desk%20at%20Sunset.webp',
       coverAlt: 'Ilustrasi meja kerja kreatif bernuansa neon saat matahari terbenam yang merefleksikan jeda berpikir di tengah antarmuka serba cepat',
       author: 'I Putu Dicky Adi Pranatha'
@@ -385,7 +402,7 @@
       tags: ['Personal Finance', 'Reflections', 'Mindset', 'Life Design'],
       featured: false,
       excerpt: 'Kekayaan sejati tidak diukur dari kemewahan yang tampak di media sosial, melainkan dari ketenangan batin, kesehatan arus kas 10-20-30-40, dan angka cukup.',
-      contentUrl: 'blog/membedakan-kaya-tampilan-dan-sejahtera-finansial.html',
+      contentUrl: '/blog/membedakan-kaya-tampilan-dan-sejahtera-finansial',
       coverImage: 'assets/blog/Cyber-Luxury%20Jet%20Glamour.webp',
       coverAlt: 'Ilustrasi perempuan berbusana mewah berkilau di dalam kabin jet pribadi bersama kucing kesayangannya, merefleksikan daya pikat gaya hidup kaya tampilan dan perlombaan status semu',
       author: 'I Putu Dicky Adi Pranatha'
@@ -402,7 +419,7 @@
       tags: ['Node.js', 'Web Security', 'CVE-2026-111497', 'Brotli'],
       featured: false,
       excerpt: 'Bedah CVE-2026-111497 (Node2Shell): bug decoder Brotli di Node.js, cara ditemukan, kenapa bisa ada, dan sejarah 17 tahun Node yang melatarinya.',
-      contentUrl: 'blog/node2shell-dan-sejarah-nodejs.html',
+      contentUrl: '/blog/node2shell-dan-sejarah-nodejs',
       coverImage: 'assets/blog/Node2Shell_%20Debugging%20Through%20the%20Night.webp',
       coverAlt: 'Ilustrasi developer perempuan begadang mencari penyebab bug Node2Shell di depan laptop berstiker Node.js, ditemani kucing tidur dan diagram visual overflow buffer Brotli libbrotlidec',
       author: 'I Putu Dicky Adi Pranatha'
@@ -419,7 +436,7 @@
       tags: ['PHP', 'Web Security', 'CVE-2026-109618', 'Backend Architecture'],
       featured: false,
       excerpt: 'Bedah tuntas krisis PHP2Shell, bagaimana celah RCE mesin PHP ditemukan, konsekuensinya bagi jutaan server, serta akar sejarah 30 tahun PHP.',
-      contentUrl: 'blog/php2shell-dan-sejarah-php.html',
+      contentUrl: '/blog/php2shell-dan-sejarah-php',
       coverImage: 'assets/blog/Ruina%E2%80%99s%20Neon%20Cybersecurity%20Crisis.webp',
       coverAlt: 'Ilustrasi Ruina panik di depan laptop saat krisis keamanan siber PHP2Shell melanda server web',
       author: 'I Putu Dicky Adi Pranatha'
@@ -436,7 +453,7 @@
       tags: ['UX Writing', 'Error State', 'Product Support', 'Customer Experience'],
       featured: false,
       excerpt: 'Pesan error visual yang estetik sering gagal menenangkan pengguna. Pelajari cara merancang pesan kesalahan yang jelas, solutif, dan mengurangi tiket komplain.',
-      contentUrl: 'blog/kenapa-pesan-error-cantik-membuat-pengguna-panik.html',
+      contentUrl: '/blog/kenapa-pesan-error-cantik-membuat-pengguna-panik',
       coverImage: 'assets/blog/Overwhelmed%20by%20Error%20Messages.webp',
       coverAlt: 'Ilustrasi pengguna merasa kewalahan dan panik dikelilingi berbagai jendela pesan error pop-up di depan laptop',
       author: 'I Putu Dicky Adi Pranatha'
@@ -453,7 +470,7 @@
       tags: ['Web Design 2026', 'Tactile UI', 'Bento Grid', 'Design Systems'],
       featured: true,
       excerpt: 'Pelajari arah gaya visual website terbaik di tahun 2026. Temukan cara memilih desain berkarakter kuat tanpa mengorbankan kecepatan akses dan kenyamanan baca.',
-      contentUrl: 'blog/memilih-karakter-visual-website-2026.html',
+      contentUrl: '/blog/memilih-karakter-visual-website-2026',
       coverImage: 'assets/blog/cover-style-website-2026.webp',
       coverAlt: 'Ilustrasi studio desain editorial senja dengan tipografi Memilih Karakter Visual Website di Tahun 2026 Tanpa Terjebak Tren yang Cepat Usang, meja kerja desainer, buku web design, dan laptop berlatar pemandangan kota ungu',
       author: 'I Putu Dicky Adi Pranatha'
@@ -470,7 +487,7 @@
       tags: ['CSS Tokens', 'Neumorphism', 'Design Tokens'],
       featured: false,
       excerpt: 'Bagaimana merancang efek tactile surface dan neumorphism yang tetap kontras, fungsional, dan memiliki hierarki tajam tanpa terjebak estetika artifisial berlebihan.',
-      contentUrl: 'blog/membangun-sistem-desain-taktil.html',
+      contentUrl: '/blog/membangun-sistem-desain-taktil',
       coverImage: 'assets/blog/cover-design-systems.svg',
       coverAlt: 'Diagram token sistem desain taktil dan swatch warna monokrom',
       author: 'I Putu Dicky Adi Pranatha'
@@ -487,7 +504,7 @@
       tags: ['UX', 'Support', 'Product Mindset'],
       featured: false,
       excerpt: 'Pelajaran berharga dari ribuan sesi troubleshooting teknis: antarmuka terbaik bukan yang paling banyak fitur animasi, melainkan yang tidak membingungkan pengguna saat mereka tertekan.',
-      contentUrl: 'blog/melihat-antarmuka-dari-kacamata-dukungan-pelanggan.html',
+      contentUrl: '/blog/melihat-antarmuka-dari-kacamata-dukungan-pelanggan',
       coverImage: 'assets/blog/cover-customer-support.svg',
       coverAlt: 'Ilustrasi bento tiket troubleshooting dan penyelesaian antarmuka UX',
       author: 'I Putu Dicky Adi Pranatha'
@@ -504,7 +521,7 @@
       tags: ['IndieWeb', 'Web Performance', 'Minimalism'],
       featured: false,
       excerpt: 'Refleksi atas tren web modern yang semakin sarat dependensi berat. Mengapa HTML, CSS terukur, dan RSS feed kembali menjadi ruang digital paling menyenangkan untuk dirawat.',
-      contentUrl: 'blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana.html',
+      contentUrl: '/blog/mengapa-web-pribadi-perlu-kembali-ke-prinsip-sederhana',
       coverImage: 'assets/blog/cover-simple-web.webp',
       coverAlt: 'Ilustrasi studio kerja di teras pesisir yang cerah dengan laptop menampilkan kode HTML sederhana, kartu melayang HTML, CSS, Fast Instant Loading, RSS, dan tumpukan buku web development',
       author: 'I Putu Dicky Adi Pranatha'
@@ -521,7 +538,7 @@
       tags: ['CSS Motion', 'Transitions', 'Micro-interactions'],
       featured: false,
       excerpt: 'Eksperimen detail transisi cubic-bezier dan perubahan bayangan ganda untuk menghasilkan sensasi klik fisik yang lembut namun tegas pada elemen antarmuka.',
-      contentUrl: 'blog/mikro-interaksi-taktil-pada-komponen-web.html',
+      contentUrl: '/blog/mikro-interaksi-taktil-pada-komponen-web',
       coverImage: 'assets/blog/cover-micro-interactions.svg',
       coverAlt: 'Diagram tiga status tombol: default, hover, dan pressed dengan kurva easing',
       author: 'I Putu Dicky Adi Pranatha'
@@ -538,7 +555,7 @@
       tags: ['Monochrome', 'Typography', 'Hierarchy'],
       featured: false,
       excerpt: 'Membatasi palet warna ke dua spektrum utama memaksa kita mengasah senjata paling fundamental dalam desain grafis: bobot tipografi, ritme spasi, dan kejelasan struktur.',
-      contentUrl: 'blog/eksplorasi-monokrom-kontras-tanpa-warna-dekoratif.html',
+      contentUrl: '/blog/eksplorasi-monokrom-kontras-tanpa-warna-dekoratif',
       coverImage: 'assets/blog/cover-monochrome.svg',
       coverAlt: 'Studi dualitas kanvas terang dan gelap dengan rasio kontras 14 banding 1',
       author: 'I Putu Dicky Adi Pranatha'

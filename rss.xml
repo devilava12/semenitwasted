@@ -6,7 +6,15 @@
     <atom:link href="https://semenitwasted.web.id/rss.xml" rel="self" type="application/rss+xml" />
     <description>Ruang catatan digital seputar desain antarmuka, rekayasa kode frontend, keamanan web, dan refleksi berkarya oleh I Putu Dicky Adi Pranatha.</description>
     <language>id-ID</language>
-    <lastBuildDate>Thu, 26 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 28 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Kenapa Desain Website yang Sudah Jelas Tetap Bikin Pengunjung Bingung dan Pelajaran Playtesting dari Extra Credits</title>
+      <link>https://semenitwasted.web.id/blog/cara-playtesting-dan-usability-testing-desain-website</link>
+      <guid isPermaLink="true">https://semenitwasted.web.id/blog/cara-playtesting-dan-usability-testing-desain-website</guid>
+      <pubDate>Sat, 28 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Design Systems</category>
+      <description>Desain web terasa jelas bagimu tapi bikin pengunjung bingung? Bedah playtesting Extra Credits, usability testing 5 pengguna Nielsen, dan uji prototipe.</description>
+    </item>
     <item>
       <title>Bermain Game Berjam-Jam Belum Tentu Kecanduan dan Cara Memulihkan Kendali Hidup dari Dua Video Extra Credits</title>
       <link>https://semenitwasted.web.id/blog/kecanduan-game-vs-kompulsi-dan-cara-pulih</link>

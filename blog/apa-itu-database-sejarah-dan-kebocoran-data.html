@@ -259,7 +259,7 @@
       <nav class="post-breadcrumb" aria-label="Breadcrumbs">
         <a href="/">Home</a>
         <span aria-hidden="true">/</span>
-        <a href="../blog.html">Blog</a>
+        <a href="/blog">Blog</a>
         <span aria-hidden="true">/</span>
         <span aria-current="page">Frontend &amp; Code</span>
       </nav>
@@ -426,7 +426,7 @@
         <p>
           Di sinilah aplikasi membutuhkan seorang "pustakawan super cepat" yang berjaga di depan lemari laci
           <em>database</em>. Saat kamu membuka aplikasi kopi di ponselmu, layar aplikasi (bagian depan yang pernah kita
-          bahas di artikel <a href="apa-itu-ui-dan-ux-serta-perbedaannya.html">perbedaan tampilan UI dan pengalaman
+          bahas di artikel <a href="/blog/apa-itu-ui-dan-ux-serta-perbedaannya">perbedaan tampilan UI dan pengalaman
             UX</a>) akan mengirim surat perintah singkat ke pustakawan <em>database</em> di belakang layar.
         </p>
 
@@ -619,7 +619,7 @@
           </li>
           <li><strong>Suntikan Perintah Jahat lewat Kolom Ketikan (SQL Injection):</strong>
             Ingatkah kamu bahwa aplikasi mengobrol dengan <em>database</em> menggunakan kalimat perintah SQL? Pada
-            <a href="perbedaan-website-dan-landing-page.html"><em>website</em> atau aplikasi</a> yang dibuat secara
+            <a href="/blog/perbedaan-website-dan-landing-page"><em>website</em> atau aplikasi</a> yang dibuat secara
             kurang teliti, kolom pencarian atau kolom formulir <em>login</em> tidak disaring dengan benar. Akibatnya,
             alih-alih mengetik nama kopi di kotak pencarian, peretas justru mengetik potongan kalimat perintah
             <code>SQL</code> licik seperti <code>' OR 1=1 --</code> yang menipu pustakawan <em>database</em> agar
@@ -646,7 +646,7 @@
           <li><strong>Pertama, PIN Akun Disimpan dalam Bentuk Gilingan Acak (Hashed PIN):</strong> Di dalam tabel yang
             bocor tersebut, kode PIN 6 angka milik pengguna sudah digiling menggunakan fungsi kriptografi satu arah
             (<em>hashed</em>) sehingga tidak tersimpan sebagai angka telanjang (<em>plain text</em>). Sebagaimana telah
-            kita bahas tuntas pada artikel mengenai <a href="sejarah-password-dan-kesalahan-keamanan-akun.html">sejarah
+            kita bahas tuntas pada artikel mengenai <a href="/blog/sejarah-password-dan-kesalahan-keamanan-akun">sejarah
               password komputer dan cara kerja mesin penggiling hashing</a>, peretas yang menyalin tabel tersebut tidak
             bisa langsung membaca angka PIN aslimu tanpa melakukan proses tebak paksa.</li>
           <li><strong>Kedua, Data Kartu Kredit dan Pembayaran Dipisahkan di Brankas Berbeda:</strong> Aplikasi yang
@@ -706,7 +706,7 @@
           karena data yang tidak pernah kamu simpan adalah data yang tidak akan pernah bisa dicuri peretas; kedua,
           pastikan setiap perangkat lunak tambahan yang tersambung ke <em>database</em> (seperti dasbor analitik
           <em>Metabase</em> atau panel admin) selalu diperbarui ke versi terbaru sebagaimana prinsip yang kita pelajari
-          di artikel <a href="php2shell-dan-sejarah-php.html">pentingnya menutup celah keamanan
+          di artikel <a href="/blog/php2shell-dan-sejarah-php">pentingnya menutup celah keamanan
             server sejak dini</a>, serta tidak pernah dibuka bebas ke jaringan internet publik tanpa pelindung jaringan
           internal (VPN) dan autentikasi berlapis.
         </p>
@@ -746,15 +746,15 @@
       <section class="post-related-section" aria-label="Artikel terkait di kategori Frontend &amp; Code">
         <h2 class="post-related-heading">Baca Juga di Topik Frontend &amp; Code</h2>
         <div class="post-related-grid">
-          <a href="cara-menjadi-developer-berpikir-algoritmis-dan-kerja-tim.html" class="post-related-card">
+          <a href="/blog/cara-menjadi-developer-berpikir-algoritmis-dan-kerja-tim" class="post-related-card">
             <span class="post-related-meta">24 November 2026 &bull; 31 min read</span>
             <span class="post-related-title">Hafal Sintaks Saja Tidak Membuatmu Jadi Developer Andal dan Pelajaran dari Dua Video Extra Credits</span>
           </a>
-          <a href="ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils.html" class="post-related-card">
+          <a href="/blog/ssh-adalah-cara-kerja-dan-kisah-celah-xz-utils" class="post-related-card">
             <span class="post-related-meta">16 November 2026 &bull; 13 min read</span>
             <span class="post-related-title">SSH Adalah Kunci Utama Server Internet dan Kisah Nyata Saat Seluruh Dunia Hampir Diretas Tanpa Sadar</span>
           </a>
-          <a href="api-adalah-sejarah-dan-cara-kerjanya.html" class="post-related-card">
+          <a href="/blog/api-adalah-sejarah-dan-cara-kerjanya" class="post-related-card">
             <span class="post-related-meta">11 November 2026 &bull; 11 min read</span>
             <span class="post-related-title">API Adalah Pelayan Tak Terlihat di Balik Aplikasi Harian Kita serta Sejarah dan Cara Kerjanya untuk Pemula</span>
           </a>
@@ -764,12 +764,12 @@
 
       <!-- Next & Prev Navigation -->
       <nav class="post-navigator" aria-label="Article navigation">
-        <a href="sejarah-password-dan-kesalahan-keamanan-akun.html" class="post-nav-card">
+        <a href="/blog/sejarah-password-dan-kesalahan-keamanan-akun" class="post-nav-card">
           <span class="nav-direction">&larr; Artikel Sebelumnya</span>
           <span class="nav-article-title">Pelajaran dari Diretasnya Papan Iklan Jalan Raya serta Sejarah Password dari
             Tahun 1961 hingga Era Passkey</span>
         </a>
-        <a href="cara-berpikir-dan-menganalisis-desain-website.html" class="post-nav-card">
+        <a href="/blog/cara-berpikir-dan-menganalisis-desain-website" class="post-nav-card">
           <span class="nav-direction">Artikel Selanjutnya &rarr;</span>
           <span class="nav-article-title">Cara Berpikir dan Menganalisis Website seperti Desainer Lewat Pelajaran dari
             Dua Video Extra Credits</span>
